@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="ROBOTS" content="NOINDEX, FOLLOW" />
-<title>forum.bittorrent.org / Search results</title>
+<title>forum.bittorrent-archive.mythra.dev / Search results</title>
 <link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
 </head>
 <body>
@@ -15,13 +15,13 @@
 <div id="brdheader" class="block">
 	<div class="box">
 		<div id="brdtitle" class="inbox">
-			<h1><span>forum.bittorrent.org</span></h1>
+			<h1><span>forum.bittorrent-archive.mythra.dev</span></h1>
 			<p><span>BitTorrent.org community</span></p>
 		</div>
 		<div id="brdmenu" class="inbox">
 			<ul>
 				<li id="navindex"><a href="index.php">Index</a></li>
-				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent-archive.mythra.dev">Homepage</a></li>
 				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
 				<li id="navuserlist"><a href="userlist.php">User list</a></li>
 				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>

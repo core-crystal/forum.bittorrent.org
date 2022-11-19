@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>forum.bittorrent.org / A few comments about µTP (BEP-29)</title>
+<title>forum.bittorrent-archive.mythra.dev / A few comments about µTP (BEP-29)</title>
 <link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
 </head>
 <body>
@@ -14,13 +14,13 @@
 <div id="brdheader" class="block">
 	<div class="box">
 		<div id="brdtitle" class="inbox">
-			<h1><span>forum.bittorrent.org</span></h1>
+			<h1><span>forum.bittorrent-archive.mythra.dev</span></h1>
 			<p><span>BitTorrent.org community</span></p>
 		</div>
 		<div id="brdmenu" class="inbox">
 			<ul>
 				<li id="navindex"><a href="index.php">Index</a></li>
-				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent-archive.mythra.dev">Homepage</a></li>
 				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
 				<li id="navuserlist"><a href="userlist.php">User list</a></li>
 				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
@@ -187,7 +187,7 @@
 			<div class="postright">
 				<h3> Re: A few comments about µTP (BEP-29)</h3>
 				<div class="postmsg">
-					<p>As I've <a href="http://forum.bittorrent.org/viewtopic.php?pid=1310#p1310" rel="nofollow">already mentioned</a>,&nbsp; this has&nbsp; <a href="http://forum.utorrent.com/viewtopic.php?pid=470070#p470070" rel="nofollow">already been done</a> long ago, and any dev is (still) welcome to respond, also to the proposed speed-limiter algorithm. <br />But, nevertheless, I'll be glad to post one more time: <a href="http://forum.utorrent.com/viewtopic.php?id=74094" rel="nofollow">http://forum.utorrent.com/viewtopic.php?id=74094</a><br /><br />followup thread on uTP performance @ uTorrent.com &quot;Protocol Design Discussion&quot;: <br /><a href="http://forum.utorrent.com/viewtopic.php?pid=478028#p478028" rel="nofollow">http://forum.utorrent.com/viewtopic.php &hellip; 28#p478028</a></p>
+					<p>As I've <a href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1310#p1310" rel="nofollow">already mentioned</a>,&nbsp; this has&nbsp; <a href="http://forum.utorrent.com/viewtopic.php?pid=470070#p470070" rel="nofollow">already been done</a> long ago, and any dev is (still) welcome to respond, also to the proposed speed-limiter algorithm. <br />But, nevertheless, I'll be glad to post one more time: <a href="http://forum.utorrent.com/viewtopic.php?id=74094" rel="nofollow">http://forum.utorrent.com/viewtopic.php?id=74094</a><br /><br />followup thread on uTP performance @ uTorrent.com &quot;Protocol Design Discussion&quot;: <br /><a href="http://forum.utorrent.com/viewtopic.php?pid=478028#p478028" rel="nofollow">http://forum.utorrent.com/viewtopic.php &hellip; 28#p478028</a></p>
 					<p class="postedit"><em>Last edited by rafi (2010-04-23 09:52:01)</em></p>
 				</div>
 			</div>

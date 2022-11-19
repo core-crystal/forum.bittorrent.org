@@ -1,174 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-	<title type="html"><![CDATA[forum.bittorrent.org]]></title>
-	<link rel="self" href="http://forum.bittorrent.org/extern.php?action=feed&amp;type=atom"/>
-	<link href="http://forum.bittorrent.org/index.php"/>
+	<title type="html"><![CDATA[forum.bittorrent-archive.mythra.dev]]></title>
+	<link rel="self" href="http://forum.bittorrent-archive.mythra.dev/extern.php?action=feed&amp;type=atom"/>
+	<link href="http://forum.bittorrent-archive.mythra.dev/index.php"/>
 	<updated>2012-03-08T20:14:28Z</updated>
 	<generator>FluxBB</generator>
-	<id>http://forum.bittorrent.org/index.php</id>
+	<id>http://forum.bittorrent-archive.mythra.dev/index.php</id>
 	<entry>
 		<title type="html"><![CDATA[Supporting research]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?id=58&amp;action=new"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=58&amp;action=new"/>
 		<summary type="html"><![CDATA[<p>BitTorrent Search Engine/Site Survey</p><p>We are conducting an academic research study on use of BitTorrent search engines/sites. Please help us by:<br />&#160; * Completing the survey<br />&#160; * Sharing survey link with your friends on Facebook, Google+, Twitter, blogs, e-mails, etc. for wider participation</p><p>Link - <a href="http://www.cnrl.colostate.edu/Projects/CP2P/BTSurvey/">http://www.cnrl.colostate.edu/Projects/CP2P/BTSurvey/</a><br />Time - ~3 minutes</p><p>This survey is conducted by the Computer Networking Research Laboratory (CNRL) of the Colorado State University, USA.</p><p>Thank you.<br />- Dilum</p>]]></summary>
 		<author>
 			<name><![CDATA[dilumb]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=90304</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=90304</uri>
 		</author>
 		<updated>2012-03-08T20:14:28Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?id=58&amp;action=new</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=58&amp;action=new</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[UDP Tracker+IPv6 Support]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?id=400&amp;action=new"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=400&amp;action=new"/>
 		<summary type="html"><![CDATA[<p>So why is this stickied?</p>]]></summary>
 		<author>
 			<name><![CDATA[Olaf van der Spek]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=89609</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=89609</uri>
 		</author>
 		<updated>2012-02-06T17:01:45Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?id=400&amp;action=new</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=400&amp;action=new</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Include per-file hash?]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?id=140&amp;action=new"/>
-		<summary type="html"><![CDATA[<p>+1<br />It&#039;s better to use Tiger Tree Hash system<br /><a href="http://forum.bittorrent.org/viewtopic.php?id=360">http://forum.bittorrent.org/viewtopic.php?id=360</a></p>]]></summary>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=140&amp;action=new"/>
+		<summary type="html"><![CDATA[<p>+1<br />It&#039;s better to use Tiger Tree Hash system<br /><a href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=360">http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=360</a></p>]]></summary>
 		<author>
 			<name><![CDATA[ivan386]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=90852</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=90852</uri>
 		</author>
 		<updated>2011-12-14T20:43:41Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?id=140&amp;action=new</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=140&amp;action=new</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Hello]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?id=785&amp;action=new"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=785&amp;action=new"/>
 		<summary type="html"><![CDATA[<p>Hi, I&#039;m brand new in this specific website and also I just need to say hey there.</p>]]></summary>
 		<author>
 			<name><![CDATA[Crybrinly]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=96269</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=96269</uri>
 		</author>
 		<updated>2011-12-06T00:06:32Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?id=785&amp;action=new</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=785&amp;action=new</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Gallery3 and AppleTV]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?id=749&amp;action=new"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=749&amp;action=new"/>
 		<summary type="html"><![CDATA[<p>This has nothing to do with BitTorrent.</p>]]></summary>
 		<author>
 			<name><![CDATA[DreadWingKnight]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=90000</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=90000</uri>
 		</author>
 		<updated>2011-12-04T17:44:28Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?id=749&amp;action=new</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=749&amp;action=new</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[I need get warez XRumer 7.09 Elite!!!]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?id=747&amp;action=new"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=747&amp;action=new"/>
 		<summary type="html"><![CDATA[<p>No.</p>]]></summary>
 		<author>
 			<name><![CDATA[DreadWingKnight]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=90000</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=90000</uri>
 		</author>
 		<updated>2011-12-04T17:05:36Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?id=747&amp;action=new</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=747&amp;action=new</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[BitTorrent Comprehensive Specification]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?id=412&amp;action=new"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=412&amp;action=new"/>
 		<summary type="html"><![CDATA[<p>bump</p>]]></summary>
 		<author>
 			<name><![CDATA[FreeBorN]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=93814</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=93814</uri>
 		</author>
 		<updated>2011-11-30T13:43:54Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?id=412&amp;action=new</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=412&amp;action=new</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[UDP trackers]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?id=310&amp;action=new"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=310&amp;action=new"/>
 		<summary type="html"><![CDATA[<p>can you pm me i cant send pm</p>]]></summary>
 		<author>
 			<name><![CDATA[mymnhisecrini]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=95595</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=95595</uri>
 		</author>
 		<updated>2011-11-29T08:01:17Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?id=310&amp;action=new</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=310&amp;action=new</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[jack Jobs, 1985 -2011]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?id=543&amp;action=new"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=543&amp;action=new"/>
 		<summary type="html"><![CDATA[<p>His accomplishments were unmatched. People who can claim credit for game-changing products ?iconic inventions that become embedded in the culture and answers to Jeopardy questions decades later ?are few and far between. But Jobs has had not one, not two, but six of these breakthroughs, any one of which would have made for a magnificent career. In order: the Apple II, the Macintosh, the movie studio Pixar, the iPod, the iPhone and the iPad. (This doesn抰 even include the consistent, brilliant improvements to the Macintosh operating system, or the Apple retail store juggernaut.) Had he lived a natural lifespan, there would have almost certainly been more.</p>]]></summary>
 		<author>
 			<name><![CDATA[Shttapfirap]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=95557</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=95557</uri>
 		</author>
 		<updated>2011-11-28T22:02:50Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?id=543&amp;action=new</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=543&amp;action=new</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Superfluity reduction]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?id=539&amp;action=new"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=539&amp;action=new"/>
 		<summary type="html"><![CDATA[<p>Let me explain by example: 10000 users seed the same 10 GB file, if they will divide it, taking into account redundancy - 20 times multiplication, for example, each user will have only 20 MB piece.</p><p>In my opinion it can be implemented just as a client feature, not a protocol modification: technically clients should automatically remove superfluous pieces of torrents, based on DHT information, I suppose. But Im not quite sure.</p><p>It should be used for data what is not for everyday use: disc images, distributions, installers, movies - stuff that is quite common in bittorrent. But of course user should decide for what torrents this feature will be enabled.</p><p>This should just make seeding much easier.</p>]]></summary>
 		<author>
 			<name><![CDATA[scv011]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=95067</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=95067</uri>
 		</author>
 		<updated>2011-09-01T09:28:57Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?id=539&amp;action=new</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=539&amp;action=new</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[The file [language\\P2GRC.dll] is missing.?????]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?id=537&amp;action=new"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=537&amp;action=new"/>
 		<summary type="html"><![CDATA[<p>That&#039;s usage support which falls outside of the scope of these forums as well as the forum.bittorrent.com forums (so don&#039;t post there either).</p><p>You&#039;ll need to contact the site you got the torrent from.</p>]]></summary>
 		<author>
 			<name><![CDATA[DreadWingKnight]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=90000</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=90000</uri>
 		</author>
 		<updated>2011-09-01T01:37:25Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?id=537&amp;action=new</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=537&amp;action=new</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Help with tracker stats SCRAPE (BDecode/BEncode)]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?id=528&amp;action=new"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=528&amp;action=new"/>
 		<summary type="html"><![CDATA[<p>Hi I need some help.</p><br /><p>I want to be able to retrieve the seed/peers numbers from a torrent using php on my site</p><p>I am currently trying to use the bdecode/bencode php scripts to see the details of torrents and to scrape for their peers/seeds statistics.</p><p>I ran into a bit of a problem, for some reason there are some torrents that the scrape result is: &quot;Error with tracker response.&quot; even though when you enter in the scrape url in firefox manually it returns the encoded stats correctly.</p><p>Here is an example:</p><p><a href="http://174.140.161.136/parse.php?filename=Iron_Man_2_%282010%29_720p_-__x264_MKV_700MB_-_YIFY.torrent">http://174.140.161.136/parse.php?filena … FY.torrent</a>&#160; &lt;--<strong>ERROR </strong>(as seen at bottom of page)</p><p>while</p><p><a href="http://174.140.161.136/parse.php?filename=Kung_Fu_Panda_%282008%29_m-720p_-_450mb_-_YIFY.5992376_.TPB_%20%281%29.torrent">http://174.140.161.136/parse.php?filena … 29.torrent</a>&#160; &lt;--- <strong>SUCCESS </strong>(as seen at bottom of page)</p><br /><p>if I manually scrape both those torrent hash;s then I get successful result..</p><p><a href="http://inferno.demonoid.com:3402/scrape?info_hash=%5b%bb%ee%a6%26%5e%3c%93%4a%d7%d6%57%d5%c5%d5%bc%49%dd%6c%87">http://inferno.demonoid.com:3402/scrape … 9%dd%6c%87</a><br />Iron Man 2 (2010)</p><p><a href="http://inferno.demonoid.com:3410/scrape?info_hash=%50%60%56%e0%e8%06%15%88%3f%63%37%4d%64%0a%b1%e9%44%0d%d2%93">http://inferno.demonoid.com:3410/scrape … 4%0d%d2%93</a><br />kung fu panda (2008)</p><br /><br /><br /><p>So my question is, what do I need to alter in the php code to make it scrape the iron man 2 torrent for instants. (i found that about 20% of my torrent files give this error back... so i assume something is buggy with the php scraping code)</p><p>here is a link to the archived code I am using (php bencode bdecode scripts) <a href="http://174.140.161.136/code.zip">http://174.140.161.136/code.zip</a>&#160; </p><br /><p>any help will be greatly appreciated!</p>]]></summary>
 		<author>
 			<name><![CDATA[YIFY]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=94940</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=94940</uri>
 		</author>
 		<updated>2011-08-20T00:16:01Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?id=528&amp;action=new</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=528&amp;action=new</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Sandvine: How it Works, and Defeating It]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?id=6&amp;action=new"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=6&amp;action=new"/>
 		<summary type="html"><![CDATA[<p>@Arvid&#160; SSL does only what it has to in order to insure the best possible secuirty.&#160; &#160;This is not something you can just &quot;cut out&quot; of a protocol.&#160; &#160; Further more,&#160; you can use a ssl cipher suite with a DH Key exchange,&#160; with SHA1 and RC4.&#160; But I&#039;m not sure why you would want to because SHA1 and RC4 are both broken primitives.</p>]]></summary>
 		<author>
 			<name><![CDATA[TheRook]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=93230</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=93230</uri>
 		</author>
 		<updated>2011-08-17T19:30:11Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?id=6&amp;action=new</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=6&amp;action=new</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Which clients support DHT scrape?]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?id=498&amp;action=new"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=498&amp;action=new"/>
 		<summary type="html"><![CDATA[<p>Hi, are there any clients currently that support DHT scrape?&#160; <a href="http://www.bittorrent.org/beps/bep_0033.html">http://www.bittorrent.org/beps/bep_0033.html</a></p><p>I&#039;m mainly interested in whether uTorrent supports it (because of its huge userbase).</p><p>Thanks.</p>]]></summary>
 		<author>
 			<name><![CDATA[zoom1212]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=94516</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=94516</uri>
 		</author>
 		<updated>2011-07-21T12:48:57Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?id=498&amp;action=new</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=498&amp;action=new</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[show active seeders for a content I'm also seeding?]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?id=490&amp;action=new"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=490&amp;action=new"/>
 		<summary type="html"><![CDATA[<p>Outside of tracker scrape information, no it&#039;s not possible to determine how many seeds are online.</p><p>And it&#039;s never possible to determine if they are actually seeding.</p><p>There&#039;s also really no way to gather that information because of how the protocol works.</p><p>No client maintains connections to other seeds while seeding, so the &quot;actively seeding value shown&quot; will ALWAYS be zero when you&#039;re seeding, regardless of client.</p>]]></summary>
 		<author>
 			<name><![CDATA[DreadWingKnight]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=90000</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=90000</uri>
 		</author>
 		<updated>2011-07-19T08:56:16Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?id=490&amp;action=new</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=490&amp;action=new</id>
 	</entry>
 </feed>

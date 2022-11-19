@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Get .torrent file from .torrent (Page 1) / General / forum.bittorrent.org</title>
+<title>Get .torrent file from .torrent (Page 1) / General / forum.bittorrent-archive.mythra.dev</title>
 <link rel="stylesheet" type="text/css" href="style/Air.css" />
 <link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
 <link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
@@ -24,7 +24,7 @@
 <div id="brdheader" class="block">
 	<div class="box">
 		<div id="brdtitle" class="inbox">
-			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<h1><a href="index.php">forum.bittorrent-archive.mythra.dev</a></h1>
 			<div id="brddesc">BitTorrent.org community</div>
 		</div>
 		<div id="brdmenu" class="inbox">
@@ -90,7 +90,7 @@ https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
 				<div class="postright">
 					<h3>Get .torrent file from .torrent</h3>
 					<div class="postmsg">
-						<p>How can i do this: download torrent file from tracker forum, then - sometimes later - download torrent file of same seeding again using information from downloaded torrent file?</p><p>I watch BitTorrent protocol specifications, content of torrent file and internet forums, but, now i just can do this for specific tracker, not for everyone.</p><p>note: i read english much better then write <img src="http://forum.bittorrent.org/img/smilies/sad.png" width="15" height="15" alt="sad" /> I hope you understand me.</p>
+						<p>How can i do this: download torrent file from tracker forum, then - sometimes later - download torrent file of same seeding again using information from downloaded torrent file?</p><p>I watch BitTorrent protocol specifications, content of torrent file and internet forums, but, now i just can do this for specific tracker, not for everyone.</p><p>note: i read english much better then write <img src="http://forum.bittorrent-archive.mythra.dev/img/smilies/sad.png" width="15" height="15" alt="sad" /> I hope you understand me.</p>
 						<p class="postedit"><em>Last edited by Borshik (2011-03-07 01:53:56)</em></p>
 					</div>
 				</div>

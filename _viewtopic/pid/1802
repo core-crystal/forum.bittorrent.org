@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>A few comments about ÂµTP (BEP-29) (Page 2) / BEPs / forum.bittorrent.org</title>
+<title>A few comments about ÂµTP (BEP-29) (Page 2) / BEPs / forum.bittorrent-archive.mythra.dev</title>
 <link rel="stylesheet" type="text/css" href="style/Air.css" />
 <link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
 <link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
@@ -24,7 +24,7 @@
 <div id="brdheader" class="block">
 	<div class="box">
 		<div id="brdtitle" class="inbox">
-			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<h1><a href="index.php">forum.bittorrent-archive.mythra.dev</a></h1>
 			<div id="brddesc">BitTorrent.org community</div>
 		</div>
 		<div id="brdmenu" class="inbox">
@@ -171,7 +171,7 @@ https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
 				<div class="postright">
 					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
 					<div class="postmsg">
-						<div class="quotebox"><blockquote><div><p>ghazel wrote:<br />...This produces small packets because our Nagle implementation has a very short timeout and your window is always empty.<br />...<br />Er, sorry. I was thinking of Delayed ACK.</p></div></blockquote></div><p>Well, I did look @ Wikipedia for timeouts,&#160; and thought I could not find those cause of my poor English skills...&#160; <img src="http://forum.bittorrent.org/img/smilies/smile.png" width="15" height="15" alt="smile" /> </p><p>I guess, that since Nagle is ruled out, that leaves us with a possible&#160; reason for using very small packets (over loop-back, and even when the user specifies non-dynamic mode and use of&#160; &#160;large ones initially) - the way your speed-limiter works (or maybe inappropriate <a href="http://forum.utorrent.com/viewtopic.php?pid=471254#p471254">packets&#039; pacing logic</a> ?) ,&#160; false detection of congested conditions, or possibly - also a simple bug ?</p><div class="quotebox"><blockquote><div><p>jch wrote:<br />...the optimal packet size is somewhere around a few kB, which would imply that sending maximum sized packets on Ethernet is a good idea.</p><p>Your claims would seem to contradict the above &quot;well-known&quot; folklore, which I find very interesting.&#160; Could we please see your measurements?</p></div></blockquote></div><div class="quotebox"><blockquote><div><p>ghazel wrote:<br />...Please wait until 2.0.1 is released as a stable build ...</p></div></blockquote></div><p>This is released, and&#160; I guess a fix-release is probably on it&#039;s way next, why not try and fix/improve the size handling as well, and maybe get more efficient traffic too ?</p>
+						<div class="quotebox"><blockquote><div><p>ghazel wrote:<br />...This produces small packets because our Nagle implementation has a very short timeout and your window is always empty.<br />...<br />Er, sorry. I was thinking of Delayed ACK.</p></div></blockquote></div><p>Well, I did look @ Wikipedia for timeouts,&#160; and thought I could not find those cause of my poor English skills...&#160; <img src="http://forum.bittorrent-archive.mythra.dev/img/smilies/smile.png" width="15" height="15" alt="smile" /> </p><p>I guess, that since Nagle is ruled out, that leaves us with a possible&#160; reason for using very small packets (over loop-back, and even when the user specifies non-dynamic mode and use of&#160; &#160;large ones initially) - the way your speed-limiter works (or maybe inappropriate <a href="http://forum.utorrent.com/viewtopic.php?pid=471254#p471254">packets&#039; pacing logic</a> ?) ,&#160; false detection of congested conditions, or possibly - also a simple bug ?</p><div class="quotebox"><blockquote><div><p>jch wrote:<br />...the optimal packet size is somewhere around a few kB, which would imply that sending maximum sized packets on Ethernet is a good idea.</p><p>Your claims would seem to contradict the above &quot;well-known&quot; folklore, which I find very interesting.&#160; Could we please see your measurements?</p></div></blockquote></div><div class="quotebox"><blockquote><div><p>ghazel wrote:<br />...Please wait until 2.0.1 is released as a stable build ...</p></div></blockquote></div><p>This is released, and&#160; I guess a fix-release is probably on it&#039;s way next, why not try and fix/improve the size handling as well, and maybe get more efficient traffic too ?</p>
 					</div>
 				</div>
 			</div>
@@ -225,7 +225,7 @@ https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
 				<div class="postright">
 					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
 					<div class="postmsg">
-						<p>As I&#039;ve <a href="http://forum.bittorrent.org/viewtopic.php?pid=1310#p1310">already mentioned</a>,&#160; this has&#160; <a href="http://forum.utorrent.com/viewtopic.php?pid=470070#p470070">already been done</a> long ago, and any dev is (still) welcome to respond, also to the proposed speed-limiter algorithm. <br />But, nevertheless, I&#039;ll be glad to post one more time: <a href="http://forum.utorrent.com/viewtopic.php?id=74094">http://forum.utorrent.com/viewtopic.php?id=74094</a></p><p>followup thread on uTP performance @ uTorrent.com &quot;Protocol Design Discussion&quot;: <br /><a href="http://forum.utorrent.com/viewtopic.php?pid=478028#p478028">http://forum.utorrent.com/viewtopic.php … 28#p478028</a></p>
+						<p>As I&#039;ve <a href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1310#p1310">already mentioned</a>,&#160; this has&#160; <a href="http://forum.utorrent.com/viewtopic.php?pid=470070#p470070">already been done</a> long ago, and any dev is (still) welcome to respond, also to the proposed speed-limiter algorithm. <br />But, nevertheless, I&#039;ll be glad to post one more time: <a href="http://forum.utorrent.com/viewtopic.php?id=74094">http://forum.utorrent.com/viewtopic.php?id=74094</a></p><p>followup thread on uTP performance @ uTorrent.com &quot;Protocol Design Discussion&quot;: <br /><a href="http://forum.utorrent.com/viewtopic.php?pid=478028#p478028">http://forum.utorrent.com/viewtopic.php … 28#p478028</a></p>
 						<p class="postedit"><em>Last edited by rafi (2010-04-23 08:52:01)</em></p>
 					</div>
 				</div>
@@ -498,7 +498,7 @@ https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
 				<div class="postright">
 					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
 					<div class="postmsg">
-						<p>&gt; There&#039;s no PMTUD in libutp.</p><p><img src="http://forum.bittorrent.org/img/smilies/sad.png" width="15" height="15" alt="sad" /> So, why don&#039;t you just ask Arvid to put his code (now running successfully in v2.2.1) in there ? ... </p><p>-Rafi</p>
+						<p>&gt; There&#039;s no PMTUD in libutp.</p><p><img src="http://forum.bittorrent-archive.mythra.dev/img/smilies/sad.png" width="15" height="15" alt="sad" /> So, why don&#039;t you just ask Arvid to put his code (now running successfully in v2.2.1) in there ? ... </p><p>-Rafi</p>
 					</div>
 				</div>
 			</div>

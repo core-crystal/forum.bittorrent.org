@@ -1,97 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-	<title type="html"><![CDATA[forum.bittorrent.org / About ÂµTP: PMTU discovery and repacketisation]]></title>
-	<link rel="self" href="http://forum.bittorrent.org/extern.php?action=feed&amp;tid=119&amp;type=atom"/>
-	<link href="http://forum.bittorrent.org/viewtopic.php?id=119"/>
+	<title type="html"><![CDATA[forum.bittorrent-archive.mythra.dev / About ÂµTP: PMTU discovery and repacketisation]]></title>
+	<link rel="self" href="http://forum.bittorrent-archive.mythra.dev/extern.php?action=feed&amp;tid=119&amp;type=atom"/>
+	<link href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=119"/>
 	<updated>2010-07-18T13:25:36Z</updated>
 	<generator>FluxBB</generator>
-	<id>http://forum.bittorrent.org/viewtopic.php?id=119</id>
+	<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=119</id>
 	<entry>
 		<title type="html"><![CDATA[Re: About ÂµTP: PMTU discovery and repacketisation]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=1472#p1472"/>
-		<content type="html"><![CDATA[<p>A followup discussion on implementation related issues and considerations (in uTorrent) is over here: <br /><a href="http://forum.utorrent.com/viewtopic.php?pid=500186#p500186">http://forum.utorrent.com/viewtopic.php … 86#p500186</a></p><p>A brief description of the planned&#160; design will be welcomed <img src="http://forum.bittorrent.org/img/smilies/smile.png" width="15" height="15" alt="smile" /></p>]]></content>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1472#p1472"/>
+		<content type="html"><![CDATA[<p>A followup discussion on implementation related issues and considerations (in uTorrent) is over here: <br /><a href="http://forum.utorrent.com/viewtopic.php?pid=500186#p500186">http://forum.utorrent.com/viewtopic.php … 86#p500186</a></p><p>A brief description of the planned&#160; design will be welcomed <img src="http://forum.bittorrent-archive.mythra.dev/img/smilies/smile.png" width="15" height="15" alt="smile" /></p>]]></content>
 		<author>
 			<name><![CDATA[rafi]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=90868</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=90868</uri>
 		</author>
 		<updated>2010-07-18T13:25:36Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?pid=1472#p1472</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1472#p1472</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Re: About ÂµTP: PMTU discovery and repacketisation]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=770#p770"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=770#p770"/>
 		<content type="html"><![CDATA[<div class="quotebox"><cite>jch wrote:</cite><blockquote><div><div class="quotebox"><blockquote><div><p>If a connection becomes dysfunctional due to a skipped packet, just let it drop and re-establish.</p></div></blockquote></div><p>This is the sort of workaround that is commonly used with a deficient legacy protocol before it is fixed.&#160; It wouldn&#039;t expect such a hack to be needed with a new protocol.</p></div></blockquote></div><p>It isn&#039;t. Because the IP protocol can do fragmentation.</p>]]></content>
 		<author>
 			<name><![CDATA[arvid]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=89602</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=89602</uri>
 		</author>
 		<updated>2009-11-09T22:41:01Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?pid=770#p770</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=770#p770</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Re: About ÂµTP: PMTU discovery and repacketisation]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=768#p768"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=768#p768"/>
 		<content type="html"><![CDATA[<div class="quotebox"><blockquote><div><p>If a connection becomes dysfunctional due to a skipped packet, just let it drop and re-establish.</p></div></blockquote></div><p>This is the sort of workaround that is commonly used with a deficient legacy protocol before it is fixed.&#160; It wouldn&#039;t expect such a hack to be needed with a new protocol.</p><p>--Juliusz</p>]]></content>
 		<author>
 			<name><![CDATA[jch]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=90580</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=90580</uri>
 		</author>
 		<updated>2009-11-09T17:48:16Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?pid=768#p768</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=768#p768</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Re: About ÂµTP: PMTU discovery and repacketisation]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=759#p759"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=759#p759"/>
 		<content type="html"><![CDATA[<p>Solution:</p><p>(1) When the client gets a &quot;packet too big&quot; message, reduce the packet size.</p><p>(2) If a connection becomes dysfunctional due to a skipped packet, just let it drop and re-establish.</p><p>Done.</p>]]></content>
 		<author>
 			<name><![CDATA[TheSHAD0W]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=89998</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=89998</uri>
 		</author>
 		<updated>2009-11-09T02:01:00Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?pid=759#p759</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=759#p759</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Re: About ÂµTP: PMTU discovery and repacketisation]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=746#p746"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=746#p746"/>
 		<content type="html"><![CDATA[<div class="quotebox"><blockquote><div><p>you only get the ICMP packet too big if you set the don&#039;t-fragment bit, right? Which is not set by default.</p></div></blockquote></div><p>It is set by default on all modern systems.&#160; In the case of Windows, it is set in XP, 2003, 2008 and Vista.</p><p>--Juliusz</p>]]></content>
 		<author>
 			<name><![CDATA[jch]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=90580</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=90580</uri>
 		</author>
 		<updated>2009-11-07T03:16:09Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?pid=746#p746</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=746#p746</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Re: About ÂµTP: PMTU discovery and repacketisation]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=730#p730"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=730#p730"/>
 		<content type="html"><![CDATA[<p>you only get the ICMP packet too big if you set the don&#039;t-fragment bit, right? Which is not set by default.</p><p>The main advantage of acking packets instead of bytes is that the EACK message can be very very tiny and ack many more packets than a TCP SACK can (within reasonable space). It also keeps certain things simple, no need to worry about overlapping ranges for instance. Before allowing packets with arbitrary byte ranges, I would explore all alternatives to solving the PMTU discovery problem.</p><p>Even though IP fragmentation should be avoided because of performance reasons, it seems like it could be a reasonable solution to the scenario you talk about, while the PMTU is still being figured out.</p><p>Also, keep in mind that uTP starts off using 300 byte packets, and increases it gradually if the serialization delay appears to be below a certain threshold. In uTorrent, the connection does not increase its packet size more often than every 10 seconds. This allows plenty of time to first probe the new packet size before switching to it.</p>]]></content>
 		<author>
 			<name><![CDATA[arvid]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=89602</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=89602</uri>
 		</author>
 		<updated>2009-11-06T17:57:32Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?pid=730#p730</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=730#p730</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Re: About ÂµTP: PMTU discovery and repacketisation]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=725#p725"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=725#p725"/>
 		<content type="html"><![CDATA[<p>Thinking about it some more, I&#039;m coming to the conclusion that my favourite is</p><p><strong>6.</strong> Redesign ÂµTP incompatibly.</p><p>ÂµTP is a new protocol.&#160; We might as well get it right (with byte-range ACKs).</p><p>--Juliusz</p>]]></content>
 		<author>
 			<name><![CDATA[jch]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=90580</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=90580</uri>
 		</author>
 		<updated>2009-11-06T01:32:36Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?pid=725#p725</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=725#p725</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[About ÂµTP: PMTU discovery and repacketisation]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=724#p724"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=724#p724"/>
 		<content type="html"><![CDATA[<p>I believe that I may have found a serious issue with ÂµTP.</p><p>As it currently stands, ÂµTP does not allow repacketization.&#160; Once you&#039;ve sent a packet, you&#039;ve committed to either sending it unchanged to the other end, or dropping the connection.&#160; This is unlike TCP, which allows you to either split a packet when resending it, or to merge an already-sent packet with new data.</p><p>The main issue is with PMTU discovery (RFC 1191).&#160; When doing PMTU discovery, a node occasionally sends packets that are too big for the path being used; a router will then reply with a &quot;packet too big&quot; ICMP message, requesting that the sender send smaller packets.&#160; Reacting to the packet too big message requires repacketising.</p><p>Consider for example that your local MTU is 1500 octets (you&#039;re on Ethernet), but your PMTU to the Internet is 1480 (there&#039;s an ADSL line in the way).&#160; You send one 1500 octet packet, followed with a 500 octet one.&#160; The ADSL router sends you a &quot;packet too big&quot; message for the 1500 octet packet, but the 500 octet packet gets through, and is SACK-ed by the other endpoint.&#160; At this point you&#039;re stuck: you need to send a 1500 octet packet to fill the hole, but the router won&#039;t allow you to do that.</p><p>Assuming that I am right, we&#039;ll need to think about a solution.&#160; Here are a few ideas.</p><p><strong>1.</strong> Forcibly disable PMTU on ÂµTP sockets.</p><p>This can be done by using the IP_MTU_DISCOVER setsockopt.</p><p>This is not a good idea, even in IPv4.&#160; See <em>Fragmentation considered harmful</em>, by Kent and Mogul, 1995.</p><p><strong>2.</strong> Limit UDP datagram payload to 1024 octets.</p><p>This fits in 1280-octet packets, which is the minimum MTU in IPv6.&#160; Note that anything more than that will fail in a very common case -- Teredo uses 1280.</p><p>This is not a good idea.&#160; We definitely want BitTorrent to be able to use the full MTU on high-speed links.</p><p><strong>3.</strong> Extend the ÂµTP protocol to allow for application-layer fragmentation.</p><p>Add a new <em>fragment</em> message to ÂµTP that allows sending a single ÂµTP message in multiple UDP datagrams, and thus perform application-layer fragmentation.</p><p>This might be a good idea, but it complicates the protocol, and makes an incompatible change.</p><p><strong>4.</strong> Don&#039;t perform PMTU discovery on resent packets</p><p>Send each packet initially with PMTU discovery set, and resend with PMTU disabled.</p><p>This has the same cost as (1) above, but only on resent packets.&#160; It complicates the code.&#160; Additionally, toggling PMTU discovery on and off repeatedly might have some unpleasant effects on the performance of the system (it might, for example, flush the system&#039;s PMTU cache).</p><p><strong>5.</strong> Use (3) with new implementations, and (4) with old ones.</p><p>Negotiate the use of a protocol extension at connection establishment, then use either (3) or (4).&#160; Complicates the code enormously, has all the flaws of (3) and (4), except for the lack of compatibility with deployed implementations.</p><p>--Juliusz</p>]]></content>
 		<author>
 			<name><![CDATA[jch]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=90580</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=90580</uri>
 		</author>
 		<updated>2009-11-06T01:01:26Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?pid=724#p724</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=724#p724</id>
 	</entry>
 </feed>

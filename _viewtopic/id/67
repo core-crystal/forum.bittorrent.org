@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>forum.bittorrent.org / Staging Content via RSS, Encryption, and Withheld Keys</title>
+<title>forum.bittorrent-archive.mythra.dev / Staging Content via RSS, Encryption, and Withheld Keys</title>
 <link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
 </head>
 <body>
@@ -14,13 +14,13 @@
 <div id="brdheader" class="block">
 	<div class="box">
 		<div id="brdtitle" class="inbox">
-			<h1><span>forum.bittorrent.org</span></h1>
+			<h1><span>forum.bittorrent-archive.mythra.dev</span></h1>
 			<p><span>BitTorrent.org community</span></p>
 		</div>
 		<div id="brdmenu" class="inbox">
 			<ul>
 				<li id="navindex"><a href="index.php">Index</a></li>
-				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent-archive.mythra.dev">Homepage</a></li>
 				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
 				<li id="navuserlist"><a href="userlist.php">User list</a></li>
 				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
@@ -91,7 +91,7 @@
 			<div class="postright">
 				<h3> Re: Staging Content via RSS, Encryption, and Withheld Keys</h3>
 				<div class="postmsg">
-					<p>Both staging encrypted content and ISP caching encrypted content rely on the idea of including a URL of an encryption key in the .torrent file.&nbsp; For the discussion of ISP caching encrypted content see<br /><br />&nbsp; <a href="http://forum.bittorrent.org/viewtopic.php?id=66" rel="nofollow">http://forum.bittorrent.org/viewtopic.php?id=66</a><br /><br />However ISP caching encrypted content has no notion of a release date range, and with ISP caching the actual key could be placed in the .torrent file since the idea isn't to prevent users from decrypting the content until the key becomes available.</p>
+					<p>Both staging encrypted content and ISP caching encrypted content rely on the idea of including a URL of an encryption key in the .torrent file.&nbsp; For the discussion of ISP caching encrypted content see<br /><br />&nbsp; <a href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=66" rel="nofollow">http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=66</a><br /><br />However ISP caching encrypted content has no notion of a release date range, and with ISP caching the actual key could be placed in the .torrent file since the idea isn't to prevent users from decrypting the content until the key becomes available.</p>
 				</div>
 			</div>
 			<div class="clearer"></div>

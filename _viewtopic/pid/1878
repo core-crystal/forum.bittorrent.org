@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>BT-radio, DHT extension (Page 1) / BEPs / forum.bittorrent.org</title>
+<title>BT-radio, DHT extension (Page 1) / BEPs / forum.bittorrent-archive.mythra.dev</title>
 <link rel="stylesheet" type="text/css" href="style/Air.css" />
 <link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
 <link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
@@ -24,7 +24,7 @@
 <div id="brdheader" class="block">
 	<div class="box">
 		<div id="brdtitle" class="inbox">
-			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<h1><a href="index.php">forum.bittorrent-archive.mythra.dev</a></h1>
 			<div id="brddesc">BitTorrent.org community</div>
 		</div>
 		<div id="brdmenu" class="inbox">
@@ -90,7 +90,7 @@ https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
 				<div class="postright">
 					<h3>BT-radio, DHT extension</h3>
 					<div class="postmsg">
-						<p>Hi. </p><p>I&#039;d like to propose a way to notify BT network about a new shared file. I&#039;ve seen 2 other topics (http://forum.bittorrent.org/viewtopic.php?id=139 , <a href="http://forum.bittorrent.org/viewtopic.php?id=110)">http://forum.bittorrent.org/viewtopic.php?id=110)</a> on content discovery, but proposed approach is quite different.</p><p>Not to waste you time, new BEP proposal: <a href="http://sourceforge.net/projects/torrent-radio/files/bep_34.txt/download">http://sourceforge.net/projects/torrent … t/download</a><br />Sample implementation based on DHT code by jch (from transmission 2.13): <a href="http://sourceforge.net/projects/torrent-radio/files/">http://sourceforge.net/projects/torrent-radio/files/</a></p><p>I&#039;d be happy to get any feedback. I&#039;m very new to BT internals, just starting to get involved, so please don&#039;t judge too hard. At least I hope you&#039;ll like the core idea.</p><p>Also, my implementation wasn&#039;t given any testing, so it&#039;s rather a starting point than a working thing.<br />And sorry for my english, just in case.</p>
+						<p>Hi. </p><p>I&#039;d like to propose a way to notify BT network about a new shared file. I&#039;ve seen 2 other topics (http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=139 , <a href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=110)">http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=110)</a> on content discovery, but proposed approach is quite different.</p><p>Not to waste you time, new BEP proposal: <a href="http://sourceforge.net/projects/torrent-radio/files/bep_34.txt/download">http://sourceforge.net/projects/torrent … t/download</a><br />Sample implementation based on DHT code by jch (from transmission 2.13): <a href="http://sourceforge.net/projects/torrent-radio/files/">http://sourceforge.net/projects/torrent-radio/files/</a></p><p>I&#039;d be happy to get any feedback. I&#039;m very new to BT internals, just starting to get involved, so please don&#039;t judge too hard. At least I hope you&#039;ll like the core idea.</p><p>Also, my implementation wasn&#039;t given any testing, so it&#039;s rather a starting point than a working thing.<br />And sorry for my english, just in case.</p>
 					</div>
 				</div>
 			</div>
@@ -199,7 +199,7 @@ https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
 				<div class="postright">
 					<h3>Re: BT-radio, DHT extension</h3>
 					<div class="postmsg">
-						<p>It seems like content discovery is a hot topic lately.</p><p>If I understand correctly, the target is discovering new content related to anything the user has showed interest in.<br />Assuming user interest could be decided by latest downloads, Has anyone considered a torrent-exchange LTEP extension?<br />I&#039;m not getting into details but in short: Allow peers in the same swarm to exchange info hashes of their currently loaded torrents (add some of the discovered torrents to keep some level of privacy). Rank items by the number of peers that sent them. Reflect any item with rank above TBD to the user as &quot;Related downloads&quot;.</p><p>I personally don&#039;t like the idea of the DHT responsible for anything other than discovery of swarm peers. (As a side note, I would love to see <a href="http://forum.bittorrent.org/viewtopic.php?pid=1776#p1776">decentralized feeds over virtual torrents</a>. &#039;related feeds&#039; discovery, if necessary, could use the same extension described above).</p>
+						<p>It seems like content discovery is a hot topic lately.</p><p>If I understand correctly, the target is discovering new content related to anything the user has showed interest in.<br />Assuming user interest could be decided by latest downloads, Has anyone considered a torrent-exchange LTEP extension?<br />I&#039;m not getting into details but in short: Allow peers in the same swarm to exchange info hashes of their currently loaded torrents (add some of the discovered torrents to keep some level of privacy). Rank items by the number of peers that sent them. Reflect any item with rank above TBD to the user as &quot;Related downloads&quot;.</p><p>I personally don&#039;t like the idea of the DHT responsible for anything other than discovery of swarm peers. (As a side note, I would love to see <a href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1776#p1776">decentralized feeds over virtual torrents</a>. &#039;related feeds&#039; discovery, if necessary, could use the same extension described above).</p>
 					</div>
 				</div>
 			</div>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Communication between Peers behind NATs (Page 1) / General / forum.bittorrent.org</title>
+<title>Communication between Peers behind NATs (Page 1) / General / forum.bittorrent-archive.mythra.dev</title>
 <link rel="stylesheet" type="text/css" href="style/Air.css" />
 <link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
 <link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
@@ -24,7 +24,7 @@
 <div id="brdheader" class="block">
 	<div class="box">
 		<div id="brdtitle" class="inbox">
-			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<h1><a href="index.php">forum.bittorrent-archive.mythra.dev</a></h1>
 			<div id="brddesc">BitTorrent.org community</div>
 		</div>
 		<div id="brdmenu" class="inbox">
@@ -171,7 +171,7 @@ https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
 				<div class="postright">
 					<h3>Re: Communication between Peers behind NATs</h3>
 					<div class="postmsg">
-						<p>My experience tells me that C is much better than any higher level language, like C# or Java ... Because despite you have to implement everything by yourself, it&#039;s easier to manage problems like you &#039;ve mentioned. I had also many problems with implementation of this on my private Agent server starting from binding TCP socket up to closing it... Eventually, it led to development of my own protocol described here: <a href="http://forum.bittorrent.org/viewtopic.php?id=77">http://forum.bittorrent.org/viewtopic.php?id=77</a></p><p>So, now I just follow aforementioned logic on my private Agent server using my own protocol ...</p><p>P.S. I&#039;m very sorry but for now it&#039;s unavailable for public use.... maybe next year ...</p>
+						<p>My experience tells me that C is much better than any higher level language, like C# or Java ... Because despite you have to implement everything by yourself, it&#039;s easier to manage problems like you &#039;ve mentioned. I had also many problems with implementation of this on my private Agent server starting from binding TCP socket up to closing it... Eventually, it led to development of my own protocol described here: <a href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=77">http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=77</a></p><p>So, now I just follow aforementioned logic on my private Agent server using my own protocol ...</p><p>P.S. I&#039;m very sorry but for now it&#039;s unavailable for public use.... maybe next year ...</p>
 						<p class="postedit"><em>Last edited by zhah (2008-11-28 09:12:54)</em></p>
 					</div>
 				</div>

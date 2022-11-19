@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>forum.bittorrent.org / BEP 30: Merkle hash torrent extension</title>
+<title>forum.bittorrent-archive.mythra.dev / BEP 30: Merkle hash torrent extension</title>
 <link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
 </head>
 <body>
@@ -14,13 +14,13 @@
 <div id="brdheader" class="block">
 	<div class="box">
 		<div id="brdtitle" class="inbox">
-			<h1><span>forum.bittorrent.org</span></h1>
+			<h1><span>forum.bittorrent-archive.mythra.dev</span></h1>
 			<p><span>BitTorrent.org community</span></p>
 		</div>
 		<div id="brdmenu" class="inbox">
 			<ul>
 				<li id="navindex"><a href="index.php">Index</a></li>
-				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent-archive.mythra.dev">Homepage</a></li>
 				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
 				<li id="navuserlist"><a href="userlist.php">User list</a></li>
 				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
@@ -92,7 +92,7 @@
 			<div class="postright">
 				<h3> Re: BEP 30: Merkle hash torrent extension</h3>
 				<div class="postmsg">
-					<p>What are the benefits of Merkle Hash Torrents in the presence of ut_metadata extension?<br />Can't you achive the same goals by using torrent files that simply lack the info part of the metadata and use ut_metadata extension to complete the missing info?<br />This way you (1) Actually send less data (2) Keep compatibility with the HTTP extensions (3) Already have &quot;BitTorrent URLs&quot; (i.e. magnet links).<br /><br /><strong>Olaf van der Spek</strong><br /></p><blockquote><div class="incqbox"><p>The root hash depends on the piece size, this is undesirable and shouldn't be done.<br />The total size shouldn't be needed, the root hash should be enough.</p></div></blockquote><p>How would you know what pieces to ask for? How would you validate a received piece?<br /><br /></p><blockquote><div class="incqbox"><p>Has there been any thought about using per-file hashes? This would be a good opportunity to make this change as well.</p></div></blockquote><p>I'm not sure the problems you have in mind are related to the problems BEP30 tries to solve. If I understand you correctly you want to use the idea of merkle hash torrents for the issues discussed here <a href="http://forum.bittorrent.org/viewtopic.php?id=140" rel="nofollow">http://forum.bittorrent.org/viewtopic.php?id=140</a> . Please correct me if I'm wrong.</p>
+					<p>What are the benefits of Merkle Hash Torrents in the presence of ut_metadata extension?<br />Can't you achive the same goals by using torrent files that simply lack the info part of the metadata and use ut_metadata extension to complete the missing info?<br />This way you (1) Actually send less data (2) Keep compatibility with the HTTP extensions (3) Already have &quot;BitTorrent URLs&quot; (i.e. magnet links).<br /><br /><strong>Olaf van der Spek</strong><br /></p><blockquote><div class="incqbox"><p>The root hash depends on the piece size, this is undesirable and shouldn't be done.<br />The total size shouldn't be needed, the root hash should be enough.</p></div></blockquote><p>How would you know what pieces to ask for? How would you validate a received piece?<br /><br /></p><blockquote><div class="incqbox"><p>Has there been any thought about using per-file hashes? This would be a good opportunity to make this change as well.</p></div></blockquote><p>I'm not sure the problems you have in mind are related to the problems BEP30 tries to solve. If I understand you correctly you want to use the idea of merkle hash torrents for the issues discussed here <a href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=140" rel="nofollow">http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=140</a> . Please correct me if I'm wrong.</p>
 				</div>
 			</div>
 			<div class="clearer"></div>
@@ -480,7 +480,7 @@
 			<div class="postright">
 				<h3> Re: BEP 30: Merkle hash torrent extension</h3>
 				<div class="postmsg">
-					<blockquote><div class="incqbox"><p>Merkle torrents should use the root hash for tracker announces, primary DHT lookups and peer-peer connections instead of the infohash.</p></div></blockquote><p>If do it in that whay &quot;<a href="http://forum.bittorrent.org/viewtopic.php?id=190" rel="nofollow">Extesion for BitTorrent client to search file by URN in BitTorrent DHT</a>&quot; by use &quot;urn_hash&quot; (sha1 hash of bencoded dictionary whith urn) it don't break anything and may be used now.<br /><br />Nothing need to chenge for DHT nodes and trackers.<br /><br />But in magnet must be original urn insted urn_hash.<br /><br /><br /><strong>Tiger Tree</strong> <br />for each chunk of data (1024 bytes) add byte 0 at begin of it and then get tiger hash<br />tiger hash((byte) 0 + data_chunk)<br /><br />for each pair of hashes add byte 1 at begin of it and then get tiger hash (repeat untill get one root hash for each file)<br />tiger hash( (byte) 1 + hash1 + hash2 )<br /><br /></p><blockquote><div class="incqbox"><p>sort the root hashes by their binary values</p></div></blockquote><p>for each pair root hash (file tiger tree hash) add byte 2 at begin of it and then get tiger hash<br />tiger hash( (byte) 2 + root_hash1 + root_hash2 )<br /><br />for each pair of hashes add byte 4 at begin of it and then get tiger hash. (repeat untill get one file list hash)<br />tiger hash( (byte) 4 + hash1 + hash2 )</p>
+					<blockquote><div class="incqbox"><p>Merkle torrents should use the root hash for tracker announces, primary DHT lookups and peer-peer connections instead of the infohash.</p></div></blockquote><p>If do it in that whay &quot;<a href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=190" rel="nofollow">Extesion for BitTorrent client to search file by URN in BitTorrent DHT</a>&quot; by use &quot;urn_hash&quot; (sha1 hash of bencoded dictionary whith urn) it don't break anything and may be used now.<br /><br />Nothing need to chenge for DHT nodes and trackers.<br /><br />But in magnet must be original urn insted urn_hash.<br /><br /><br /><strong>Tiger Tree</strong> <br />for each chunk of data (1024 bytes) add byte 0 at begin of it and then get tiger hash<br />tiger hash((byte) 0 + data_chunk)<br /><br />for each pair of hashes add byte 1 at begin of it and then get tiger hash (repeat untill get one root hash for each file)<br />tiger hash( (byte) 1 + hash1 + hash2 )<br /><br /></p><blockquote><div class="incqbox"><p>sort the root hashes by their binary values</p></div></blockquote><p>for each pair root hash (file tiger tree hash) add byte 2 at begin of it and then get tiger hash<br />tiger hash( (byte) 2 + root_hash1 + root_hash2 )<br /><br />for each pair of hashes add byte 4 at begin of it and then get tiger hash. (repeat untill get one file list hash)<br />tiger hash( (byte) 4 + hash1 + hash2 )</p>
 					<p class="postedit"><em>Last edited by ivan386 (2010-03-27 13:49:19)</em></p>
 				</div>
 			</div>

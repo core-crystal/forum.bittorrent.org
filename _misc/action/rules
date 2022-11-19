@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="ROBOTS" content="NOINDEX, FOLLOW" />
-<title>Forum rules / forum.bittorrent.org</title>
+<title>Forum rules / forum.bittorrent-archive.mythra.dev</title>
 <link rel="stylesheet" type="text/css" href="style/Air.css" />
 <!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
 </head>
@@ -17,7 +17,7 @@
 <div id="brdheader" class="block">
 	<div class="box">
 		<div id="brdtitle" class="inbox">
-			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<h1><a href="index.php">forum.bittorrent-archive.mythra.dev</a></h1>
 			<div id="brddesc">BitTorrent.org community</div>
 		</div>
 		<div id="brdmenu" class="inbox">

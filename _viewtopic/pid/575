@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>forum.bittorrent.org / Communication between Peers behind NATs</title>
+<title>forum.bittorrent-archive.mythra.dev / Communication between Peers behind NATs</title>
 <link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
 </head>
 <body>
@@ -14,13 +14,13 @@
 <div id="brdheader" class="block">
 	<div class="box">
 		<div id="brdtitle" class="inbox">
-			<h1><span>forum.bittorrent.org</span></h1>
+			<h1><span>forum.bittorrent-archive.mythra.dev</span></h1>
 			<p><span>BitTorrent.org community</span></p>
 		</div>
 		<div id="brdmenu" class="inbox">
 			<ul>
 				<li id="navindex"><a href="index.php">Index</a></li>
-				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent-archive.mythra.dev">Homepage</a></li>
 				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
 				<li id="navuserlist"><a href="userlist.php">User list</a></li>
 				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
@@ -139,7 +139,7 @@
 			<div class="postright">
 				<h3> Re: Communication between Peers behind NATs</h3>
 				<div class="postmsg">
-					<p>My experience tells me that C is much better than any higher level language, like C# or Java ... Because despite you have to implement everything by yourself, it's easier to manage problems like you 've mentioned. I had also many problems with implementation of this on my private Agent server starting from binding TCP socket up to closing it... Eventually, it led to development of my own protocol described here: <a href="http://forum.bittorrent.org/viewtopic.php?id=77" rel="nofollow">http://forum.bittorrent.org/viewtopic.php?id=77</a><br /><br />So, now I just follow aforementioned logic on my private Agent server using my own protocol ...<br /><br />P.S. I'm very sorry but for now it's unavailable for public use.... maybe next year ...</p>
+					<p>My experience tells me that C is much better than any higher level language, like C# or Java ... Because despite you have to implement everything by yourself, it's easier to manage problems like you 've mentioned. I had also many problems with implementation of this on my private Agent server starting from binding TCP socket up to closing it... Eventually, it led to development of my own protocol described here: <a href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=77" rel="nofollow">http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=77</a><br /><br />So, now I just follow aforementioned logic on my private Agent server using my own protocol ...<br /><br />P.S. I'm very sorry but for now it's unavailable for public use.... maybe next year ...</p>
 					<p class="postedit"><em>Last edited by zhah (2008-11-28 09:12:54)</em></p>
 				</div>
 			</div>

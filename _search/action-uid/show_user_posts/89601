@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="ROBOTS" content="NOINDEX, FOLLOW" />
-<title>Search results (Page 1) / forum.bittorrent.org</title>
+<title>Search results (Page 1) / forum.bittorrent-archive.mythra.dev</title>
 <link rel="stylesheet" type="text/css" href="style/Air.css" />
 <!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
 </head>
@@ -17,7 +17,7 @@
 <div id="brdheader" class="block">
 	<div class="box">
 		<div id="brdtitle" class="inbox">
-			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<h1><a href="index.php">forum.bittorrent-archive.mythra.dev</a></h1>
 			<div id="brddesc">BitTorrent.org community</div>
 		</div>
 		<div id="brdmenu" class="inbox">
@@ -578,7 +578,7 @@ https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
 				</div>
 				<div class="postright">
 					<div class="postmsg">
-						<p>I&#039;m sorry.&#160; My writing about BEPs was far afield from what I should&#039;ve been saying.<br />Localization has been a hot topic in the IETF and in these forums.&#160; Please skim through this thread:</p><p><a href="http://forum.bittorrent.org/viewtopic.php?id=52">http://forum.bittorrent.org/viewtopic.php?id=52</a></p><p>We would like to include localization mechanisms in uTorrent, but mainly to minimize inter-ISP transits while retaining enough connections to outside the ISP to aid piece propagation and when possible work around bad ISP policy.&#160; Clearly localization would help performance for very large swarms, i.e., on the scale where multiple peers can be found on the same LAN or campus.&#160; Still wondering as to whether it makes a difference for the swarms we see today (usually less than 10000s of peers).&#160; </p><p>BTW do you have good research tools that you could contribute to the community?&#160; &#160;If so please please post about them in </p><p><a href="http://forum.bittorrent.org/viewforum.php?id=33">http://forum.bittorrent.org/viewforum.php?id=33</a></p>
+						<p>I&#039;m sorry.&#160; My writing about BEPs was far afield from what I should&#039;ve been saying.<br />Localization has been a hot topic in the IETF and in these forums.&#160; Please skim through this thread:</p><p><a href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=52">http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=52</a></p><p>We would like to include localization mechanisms in uTorrent, but mainly to minimize inter-ISP transits while retaining enough connections to outside the ISP to aid piece propagation and when possible work around bad ISP policy.&#160; Clearly localization would help performance for very large swarms, i.e., on the scale where multiple peers can be found on the same LAN or campus.&#160; Still wondering as to whether it makes a difference for the swarms we see today (usually less than 10000s of peers).&#160; </p><p>BTW do you have good research tools that you could contribute to the community?&#160; &#160;If so please please post about them in </p><p><a href="http://forum.bittorrent-archive.mythra.dev/viewforum.php?id=33">http://forum.bittorrent-archive.mythra.dev/viewforum.php?id=33</a></p>
 					</div>
 				</div>
 				<div class="clearer"></div>

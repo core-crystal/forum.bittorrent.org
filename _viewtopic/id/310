@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>UDP trackers (Page 1) / General / forum.bittorrent.org</title>
+<title>UDP trackers (Page 1) / General / forum.bittorrent-archive.mythra.dev</title>
 <link rel="stylesheet" type="text/css" href="style/Air.css" />
 <link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
 <link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
@@ -24,7 +24,7 @@
 <div id="brdheader" class="block">
 	<div class="box">
 		<div id="brdtitle" class="inbox">
-			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<h1><a href="index.php">forum.bittorrent-archive.mythra.dev</a></h1>
 			<div id="brddesc">BitTorrent.org community</div>
 		</div>
 		<div id="brdmenu" class="inbox">
@@ -90,7 +90,7 @@ https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
 				<div class="postright">
 					<h3>UDP trackers</h3>
 					<div class="postmsg">
-						<p>Hey guys,</p><p>I&#039;m trying to get the number of seeds and peers from trackers.<br />For the HTTP trackers everything is working ok. my problem now are the UDP trackers.<br />So, I read this: <a href="http://xbtt.sourceforge.net/udp_tracker_protocol.html">http://xbtt.sourceforge.net/udp_tracker_protocol.html</a>, and I came out with this small (Ruby) script:</p><p>host = &#039;tracker.openbittorrent.com&#039;<br />port = 80<br />info_hash = &#039;%26%0F%8D%E4%BF%C7%FB%5B%25e%F7%9D%B3%03%A6%1FfO%0B%BD&#039;</p><p>sock = UDPSocket.open<br />sock.connect(host, port)</p><p>connection_id = 0x41727101980<br />s = [connection_id &gt;&gt; 32, connection_id &amp; 0xffffffff, 0, 16].pack(&#039;NNNN&#039;)</p><p>sock.send(s, 0)<br />response = sock.recvfrom(1024)</p><p>action, trans_id, c0, c1 = response[0].unpack(&quot;NNNN&quot;)<br />conn_id = (c0 &lt;&lt; 32) | c1</p><p>The content of the variables are:</p><p>action = 0<br />trans_id = 16<br />conn_id = 2540598739861590271</p><p>so, I have my connection_id.</p><p>The next step is to fill the announce input and send it, so I can get the seeds and peers (my goal <img src="http://forum.bittorrent.org/img/smilies/smile.png" width="15" height="15" alt="smile" />).<br />I have one question here: All the fields are required, right? Because I don&#039;t really know some fields, like: peer_id, downloaded, left, uploaded, event, key. the field key, for example don&#039;t even appear in BitTorrent Tracker Protocol (<a href="http://wiki.theory.org/BitTorrent_Tracker_Protocol">http://wiki.theory.org/BitTorrent_Tracker_Protocol</a>)</p><p>For most of the HTTP trackers I just need to send the info_hash.</p><p>Anyone can help me?</p><p>Luis</p>
+						<p>Hey guys,</p><p>I&#039;m trying to get the number of seeds and peers from trackers.<br />For the HTTP trackers everything is working ok. my problem now are the UDP trackers.<br />So, I read this: <a href="http://xbtt.sourceforge.net/udp_tracker_protocol.html">http://xbtt.sourceforge.net/udp_tracker_protocol.html</a>, and I came out with this small (Ruby) script:</p><p>host = &#039;tracker.openbittorrent.com&#039;<br />port = 80<br />info_hash = &#039;%26%0F%8D%E4%BF%C7%FB%5B%25e%F7%9D%B3%03%A6%1FfO%0B%BD&#039;</p><p>sock = UDPSocket.open<br />sock.connect(host, port)</p><p>connection_id = 0x41727101980<br />s = [connection_id &gt;&gt; 32, connection_id &amp; 0xffffffff, 0, 16].pack(&#039;NNNN&#039;)</p><p>sock.send(s, 0)<br />response = sock.recvfrom(1024)</p><p>action, trans_id, c0, c1 = response[0].unpack(&quot;NNNN&quot;)<br />conn_id = (c0 &lt;&lt; 32) | c1</p><p>The content of the variables are:</p><p>action = 0<br />trans_id = 16<br />conn_id = 2540598739861590271</p><p>so, I have my connection_id.</p><p>The next step is to fill the announce input and send it, so I can get the seeds and peers (my goal <img src="http://forum.bittorrent-archive.mythra.dev/img/smilies/smile.png" width="15" height="15" alt="smile" />).<br />I have one question here: All the fields are required, right? Because I don&#039;t really know some fields, like: peer_id, downloaded, left, uploaded, event, key. the field key, for example don&#039;t even appear in BitTorrent Tracker Protocol (<a href="http://wiki.theory.org/BitTorrent_Tracker_Protocol">http://wiki.theory.org/BitTorrent_Tracker_Protocol</a>)</p><p>For most of the HTTP trackers I just need to send the info_hash.</p><p>Anyone can help me?</p><p>Luis</p>
 					</div>
 				</div>
 			</div>

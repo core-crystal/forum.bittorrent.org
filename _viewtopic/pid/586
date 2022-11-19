@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Concern for sanctity of P2P systems... (Page 1) / Attacks against BitTorrent / forum.bittorrent.org</title>
+<title>Concern for sanctity of P2P systems... (Page 1) / Attacks against BitTorrent / forum.bittorrent-archive.mythra.dev</title>
 <link rel="stylesheet" type="text/css" href="style/Air.css" />
 <link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
 <link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
@@ -24,7 +24,7 @@
 <div id="brdheader" class="block">
 	<div class="box">
 		<div id="brdtitle" class="inbox">
-			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<h1><a href="index.php">forum.bittorrent-archive.mythra.dev</a></h1>
 			<div id="brddesc">BitTorrent.org community</div>
 		</div>
 		<div id="brdmenu" class="inbox">
@@ -85,7 +85,7 @@ https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
 					<dl>
 						<dt><strong><a href="profile.php?id=90199">ZWizard666</a></strong></dt>
 						<dd class="usertitle"><strong>Member</strong></dd>
-						<dd class="postavatar"><img src="http://forum.bittorrent.org/img/avatars/90199.jpg?m=1357751465" width="100" height="100" alt="" /></dd>
+						<dd class="postavatar"><img src="http://forum.bittorrent-archive.mythra.dev/img/avatars/90199.jpg?m=1357751465" width="100" height="100" alt="" /></dd>
 					</dl>
 				</div>
 				<div class="postright">

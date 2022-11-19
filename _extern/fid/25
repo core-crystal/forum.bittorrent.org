@@ -1,80 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-	<title type="html"><![CDATA[forum.bittorrent.org / BEPs]]></title>
-	<link rel="self" href="http://forum.bittorrent.org/extern.php?action=feed&amp;fid=25&amp;type=atom"/>
-	<link href="http://forum.bittorrent.org/index.php"/>
+	<title type="html"><![CDATA[forum.bittorrent-archive.mythra.dev / BEPs]]></title>
+	<link rel="self" href="http://forum.bittorrent-archive.mythra.dev/extern.php?action=feed&amp;fid=25&amp;type=atom"/>
+	<link href="http://forum.bittorrent-archive.mythra.dev/index.php"/>
 	<updated>2012-02-06T17:01:45Z</updated>
 	<generator>FluxBB</generator>
-	<id>http://forum.bittorrent.org/index.php</id>
+	<id>http://forum.bittorrent-archive.mythra.dev/index.php</id>
 	<entry>
 		<title type="html"><![CDATA[UDP Tracker+IPv6 Support]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?id=400&amp;action=new"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=400&amp;action=new"/>
 		<summary type="html"><![CDATA[<p>So why is this stickied?</p>]]></summary>
 		<author>
 			<name><![CDATA[Olaf van der Spek]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=89609</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=89609</uri>
 		</author>
 		<updated>2012-02-06T17:01:45Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?id=400&amp;action=new</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=400&amp;action=new</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Include per-file hash?]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?id=140&amp;action=new"/>
-		<summary type="html"><![CDATA[<p>+1<br />It&#039;s better to use Tiger Tree Hash system<br /><a href="http://forum.bittorrent.org/viewtopic.php?id=360">http://forum.bittorrent.org/viewtopic.php?id=360</a></p>]]></summary>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=140&amp;action=new"/>
+		<summary type="html"><![CDATA[<p>+1<br />It&#039;s better to use Tiger Tree Hash system<br /><a href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=360">http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=360</a></p>]]></summary>
 		<author>
 			<name><![CDATA[ivan386]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=90852</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=90852</uri>
 		</author>
 		<updated>2011-12-14T20:43:41Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?id=140&amp;action=new</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=140&amp;action=new</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Superfluity reduction]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?id=539&amp;action=new"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=539&amp;action=new"/>
 		<summary type="html"><![CDATA[<p>Let me explain by example: 10000 users seed the same 10 GB file, if they will divide it, taking into account redundancy - 20 times multiplication, for example, each user will have only 20 MB piece.</p><p>In my opinion it can be implemented just as a client feature, not a protocol modification: technically clients should automatically remove superfluous pieces of torrents, based on DHT information, I suppose. But Im not quite sure.</p><p>It should be used for data what is not for everyday use: disc images, distributions, installers, movies - stuff that is quite common in bittorrent. But of course user should decide for what torrents this feature will be enabled.</p><p>This should just make seeding much easier.</p>]]></summary>
 		<author>
 			<name><![CDATA[scv011]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=95067</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=95067</uri>
 		</author>
 		<updated>2011-09-01T09:28:57Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?id=539&amp;action=new</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=539&amp;action=new</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Example vector for Tracker Exchange (BEP28)]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?id=476&amp;action=new"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=476&amp;action=new"/>
 		<summary type="html"><![CDATA[<p>Hi,</p><p>Would it be possible for someone to append a test vector in BEP28?</p><p>Basically just an arbitrary number of tracker urls and the resulting hash?</p>]]></summary>
 		<author>
 			<name><![CDATA[jonas]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=91008</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=91008</uri>
 		</author>
 		<updated>2011-07-13T10:04:40Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?id=476&amp;action=new</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=476&amp;action=new</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[DHT security feature]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?id=308&amp;action=new"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=308&amp;action=new"/>
 		<summary type="html"><![CDATA[<p>Arvid, I&#039;d be very interested to read the paper you mention. Is it available on-line?</p>]]></summary>
 		<author>
 			<name><![CDATA[rauljim]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=92540</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=92540</uri>
 		</author>
 		<updated>2011-06-21T09:45:00Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?id=308&amp;action=new</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=308&amp;action=new</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Transparent web/p2p downloads]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?id=318&amp;action=new"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=318&amp;action=new"/>
 		<summary type="html"><![CDATA[<p>this is now <a href="http://tools.ietf.org/html/rfc6249">RFC 6249</a>.</p>]]></summary>
 		<author>
 			<name><![CDATA[ant]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=92010</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=92010</uri>
 		</author>
 		<updated>2011-06-20T23:53:16Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?id=318&amp;action=new</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=318&amp;action=new</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Micro help on DHT]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?id=416&amp;action=new"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=416&amp;action=new"/>
 		<summary type="html"><![CDATA[<p>Developer can send to other client query</p><p>Query:<br /></p><div class="codebox"><pre><code>q = &quot;help&quot;
 a.path = &quot;a.name&quot;</code></pre></div><p>Response:<br /></p><div class="codebox"><pre><code>r.help = &quot;name of torrent&quot;</code></pre></div><p>Query:<br /></p><div class="codebox"><pre><code>q = &quot;help&quot;
 a.path = &quot;q&quot;</code></pre></div><p>Response:</p><div class="codebox"><pre><code>r.help = &quot;q=[help, ping, find_node, get_peers,  announce_peer]
@@ -82,102 +82,102 @@ help - Micro help about new parameter of dht packet.
  a.path (query packet) - path to new parameter
  r.help (responce packet) - help about new parameter
 
-more: http://forum.bittorrent.org/viewtopic.php?pid=2134
+more: http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=2134
 
 other see on http://bittorrent.org/beps/bep_0005.html&quot;</code></pre></div>]]></summary>
 		<author>
 			<name><![CDATA[ivan386]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=90852</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=90852</uri>
 		</author>
 		<updated>2011-06-06T18:44:47Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?id=416&amp;action=new</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=416&amp;action=new</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Decentralized search]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?id=376&amp;action=new"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=376&amp;action=new"/>
 		<summary type="html"><![CDATA[<div class="quotebox"><cite>harold wrote:</cite><blockquote><div><p>I did, and I have. I haven&#039;t found any techniques that would actually work - not on top of the current DHT anyway. In other words, they might be interesting and all, but they would only work if a major client implements it and that&#039;s a different way of saying &quot;it&#039;s not gonna happen&quot;.</p></div></blockquote></div><p>My understanding of your proposal is that it also would not work unless a significant portion of the DHT nodes would implement it. It doesn&#039;t seem like a very useful (or fruitful) criteria of a distributed search algorithm to work on the current BitTorrent DHT, without client support.</p>]]></summary>
 		<author>
 			<name><![CDATA[arvid]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=89602</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=89602</uri>
 		</author>
 		<updated>2011-05-26T22:23:33Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?id=376&amp;action=new</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=376&amp;action=new</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Shared encoding of video/audio data specified by the initial seeder]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?id=408&amp;action=new"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=408&amp;action=new"/>
 		<summary type="html"><![CDATA[<p>This is outside the scope of bittorrent. Bittorrent is a low-layer data distribution protocol like ftp or http that does not concern itself with what is actually distributed.</p><p>And re-encoding is not considered a common-use scenario. The need to distribute the load over many many clients is even less common.</p>]]></summary>
 		<author>
 			<name><![CDATA[The 8472]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=89618</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=89618</uri>
 		</author>
 		<updated>2011-05-26T19:33:21Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?id=408&amp;action=new</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=408&amp;action=new</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[cognitive radio networks]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?id=404&amp;action=new"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=404&amp;action=new"/>
 		<summary type="html"><![CDATA[<p>I&#039;m also working on Cognitive radio, and when I saw your message I thought that this forum was also treating cognitive radio subjects, but unfortunatly it doesn&#039;t&lt; So if you want we can choose another forum to speak about cognitive radios,</p>]]></summary>
 		<author>
 			<name><![CDATA[lativasson]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=93702</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=93702</uri>
 		</author>
 		<updated>2011-05-25T13:56:40Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?id=404&amp;action=new</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=404&amp;action=new</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[decentralized feeds]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?id=302&amp;action=new"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=302&amp;action=new"/>
 		<summary type="html"><![CDATA[<p>Trying to capture the spirit of caleb&#039;s proposal, I wrote this up (and implemented it in libtorrent):</p><p><a href="http://www.rasterbar.com/products/libtorrent/dht_store.html">http://www.rasterbar.com/products/libto … store.html</a></p><p>It&#039;s simpler by only using SHA-1 as hash function and only use RSA-2048 for signatures and by just adding &quot;put&quot; and &quot;get&quot;. I also fixed up some of the things I mentioned in earlier posts, like sticking &quot;token&quot; inside the &quot;a&quot; dict and allowing &quot;v&quot; to be of other types than strings.</p><p>The thing I haven&#039;t done (yet) is having a separate ID to hash the public key with. This has another side effect of simplifying the protocol since the public key doesn&#039;t have to be sliced (as in &quot;target&quot; + &quot;k&quot; in get messages).</p><p>Comments?</p>]]></summary>
 		<author>
 			<name><![CDATA[arvid]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=89602</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=89602</uri>
 		</author>
 		<updated>2011-05-25T02:48:22Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?id=302&amp;action=new</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=302&amp;action=new</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[BEP 33: DHT Scrapes]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?id=149&amp;action=new"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=149&amp;action=new"/>
 		<summary type="html"><![CDATA[<p>Yes, Peers is intended to mean downloaders in that BEP. To express &quot;members of the network&quot; i usually say Node. A bit of historic nomenclature.</p><p>I could change/clarify the prose if you like, but i&#039;d prefer not to change the protocol parameters themselves since i&#039;ve been implementing it for a while.</p>]]></summary>
 		<author>
 			<name><![CDATA[The 8472]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=89618</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=89618</uri>
 		</author>
 		<updated>2011-05-21T12:38:44Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?id=149&amp;action=new</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=149&amp;action=new</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Preventing Sequential Leechers from being a burden]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?id=406&amp;action=new"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=406&amp;action=new"/>
 		<summary type="html"><![CDATA[<p>Sequentially leeching pieces can be useful for the user (VLC can work with incomplete files, making it similar to streaming video), but is harmful to the whole swarm (seeders, leechers, and even their self). Here are my suggestions on how to prevent sequential leechers from being a burden to the swarm.</p><p>Notes:<br />When I say leechers in this post, I don&#039;t necessarily mean that they aren&#039;t uploading.<br />Position will be [piece number]/[piece total]<br />$Buffer=clamp(Total*Per,Min,Max) will be used to define a certain amount of bytes, Min might be [piece size]*[connection limit], and Max might be [Max dl speed]*[arbitrary amount of seconds]</p><p>Leeches by Order: These all require that there be a less strict version of sequential piece selection. These suggestions don&#039;t rely on each other, although #4 was created from a problem I found with #3 (rare pieces becoming common among other peers).<br />1. Prioritize pieces from left to right in an exponential manner, eg [fraction]^[position] could be inserted into the piece selection algorithm (Edit: didn&#039;t realize at first, the last piece&#039;s priority will be equal to the fraction, so 0.9984^([position]Ã—1000) is pointless since it equates to 0.2^[position])<br />2. Prioritize $Buffer bytes at the beginning (especially the first piece) higher than the rest, or exclusively<br />3. Maintain a piece buffer of $Buffer bytes outside of the contiguous block of pieces (the ones being sequentially downloaded) that are downloaded based on rarity like usual and make sure they are scattered so a new piece buffer doesn&#039;t have to be downloaded just because a gap was filled (eg 11102220-00020000, where 1 is sequential pieces and 2 are buffer, becoming 11111110-00020000, thus forcing a download of 3 new buffer pieces before continuing with sequential downloads)<br />4. Download a new rare piece for every 1MB downloaded (or 5 pieces worth of bytes, whichever is larger)</p><p>Leeches by Rarity:<br />1. Add a preference for pieces near the end in the piece selection algorithm (position of 0-1 translates to linear priority of [fraction] to 1)</p><p>Leeches of either kind:<br />1. Enable these additions only when a majority of the bytes are for media files or when sequential downloading is detected on other peers. (probably only the latter)</p>]]></summary>
 		<author>
 			<name><![CDATA[chinoto]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=93564</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=93564</uri>
 		</author>
 		<updated>2011-05-15T07:05:44Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?id=406&amp;action=new</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=406&amp;action=new</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[UDP+Compression]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?id=398&amp;action=new"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=398&amp;action=new"/>
 		<summary type="html"><![CDATA[<div class="quotebox"><blockquote><div><p>There is absolutely no requirement that announce requests must be small.&#160; &#160;This does not promote the health of a swarm.</p></div></blockquote></div><p><a href="http://wiki.theory.org/BitTorrentSpecification#Tracker_Response">http://wiki.theory.org/BitTorrentSpecif … r_Response</a><br /></p><div class="quotebox"><blockquote><div><p>Implementer&#039;s Note: Even 30 peers is plenty, the official client version 3 in fact only actively forms new connections if it has less than 30 peers and will refuse connections if it has 55. This value is important to performance. When a new piece has completed download, HAVE messages (see below) will need to be sent to most active peers. As a result the cost of broadcast traffic grows in direct proportion to the number of peers. Above 25, new peers are highly unlikely to increase download speed. UI designers are strongly advised to make this obscure and hard to change as it is very rare to be useful to do so.</p></div></blockquote></div><p>Sorry, but more isn&#039;t better.</p>]]></summary>
 		<author>
 			<name><![CDATA[DreadWingKnight]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=90000</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=90000</uri>
 		</author>
 		<updated>2011-04-30T21:53:31Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?id=398&amp;action=new</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=398&amp;action=new</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[UDP tracker, with TCP bootstrapping for source validation]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?id=374&amp;action=new"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=374&amp;action=new"/>
 		<summary type="html"><![CDATA[<p>How about just sticking the trackers public key in the .torrent itself. The client can send a challenge to the tracker on the first connect and verify the response using the key. It would be a very simple extension on top of the existing UDP tracker protocol.</p>]]></summary>
 		<author>
 			<name><![CDATA[arvid]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=89602</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=89602</uri>
 		</author>
 		<updated>2011-04-25T16:32:40Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?id=374&amp;action=new</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=374&amp;action=new</id>
 	</entry>
 </feed>

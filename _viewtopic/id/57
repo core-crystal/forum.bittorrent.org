@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>forum.bittorrent.org / Bittorrent via SSM</title>
+<title>forum.bittorrent-archive.mythra.dev / Bittorrent via SSM</title>
 <link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
 </head>
 <body>
@@ -14,13 +14,13 @@
 <div id="brdheader" class="block">
 	<div class="box">
 		<div id="brdtitle" class="inbox">
-			<h1><span>forum.bittorrent.org</span></h1>
+			<h1><span>forum.bittorrent-archive.mythra.dev</span></h1>
 			<p><span>BitTorrent.org community</span></p>
 		</div>
 		<div id="brdmenu" class="inbox">
 			<ul>
 				<li id="navindex"><a href="index.php">Index</a></li>
-				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent-archive.mythra.dev">Homepage</a></li>
 				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
 				<li id="navuserlist"><a href="userlist.php">User list</a></li>
 				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
@@ -117,7 +117,7 @@
 			<div class="postright">
 				<h3> Re: Bittorrent via SSM</h3>
 				<div class="postmsg">
-					<blockquote><div class="incqbox"><p>inserting routes in all intervening routers presents a scaling problem for Internet-wide multicast</p></div></blockquote><p>Actually... i don't think it might actually cause less load than running tracker software. Assuming internet-wide SSM you'd only need a few multicast groups per torrent, and even if you'd just SSM the top 1000 torrents with 5 SSM groups each (so, only 5k groups on the core routers, less the closer you get to the edge) you might already see a dramatic cut in bandwidth. I mean the peer count for the top 1000 torrents probably ranks in the millions.<br />Decentralized negotiation who uses which group and so on would be a tough nut to crack though.<br /><br />One of my <a href="http://forum.bittorrent.org/viewtopic.php?id=26" rel="nofollow">other goals</a><br />is coalescing different torrents sharing the same content, which might also help in the process.<br /><br />Maybe using global SSM above a certain threshold and otherwise use connected islands of ISP-local or multi-ISP-coop-local SSM could work too.<br /><br /><br /><br />Anyway... this topic is open-ended w/o information from people who know about the infrastructure.</p>
+					<blockquote><div class="incqbox"><p>inserting routes in all intervening routers presents a scaling problem for Internet-wide multicast</p></div></blockquote><p>Actually... i don't think it might actually cause less load than running tracker software. Assuming internet-wide SSM you'd only need a few multicast groups per torrent, and even if you'd just SSM the top 1000 torrents with 5 SSM groups each (so, only 5k groups on the core routers, less the closer you get to the edge) you might already see a dramatic cut in bandwidth. I mean the peer count for the top 1000 torrents probably ranks in the millions.<br />Decentralized negotiation who uses which group and so on would be a tough nut to crack though.<br /><br />One of my <a href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=26" rel="nofollow">other goals</a><br />is coalescing different torrents sharing the same content, which might also help in the process.<br /><br />Maybe using global SSM above a certain threshold and otherwise use connected islands of ISP-local or multi-ISP-coop-local SSM could work too.<br /><br /><br /><br />Anyway... this topic is open-ended w/o information from people who know about the infrastructure.</p>
 				</div>
 				<div class="postsignature"><hr />Az dev</div>
 			</div>

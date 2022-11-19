@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>forum.bittorrent.org / Discussion of BEP 10: Extension Protocol</title>
+<title>forum.bittorrent-archive.mythra.dev / Discussion of BEP 10: Extension Protocol</title>
 <link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
 </head>
 <body>
@@ -14,13 +14,13 @@
 <div id="brdheader" class="block">
 	<div class="box">
 		<div id="brdtitle" class="inbox">
-			<h1><span>forum.bittorrent.org</span></h1>
+			<h1><span>forum.bittorrent-archive.mythra.dev</span></h1>
 			<p><span>BitTorrent.org community</span></p>
 		</div>
 		<div id="brdmenu" class="inbox">
 			<ul>
 				<li id="navindex"><a href="index.php">Index</a></li>
-				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent-archive.mythra.dev">Homepage</a></li>
 				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
 				<li id="navuserlist"><a href="userlist.php">User list</a></li>
 				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
@@ -658,7 +658,7 @@
 			<div class="postright">
 				<h3> Re: Discussion of BEP 10: Extension Protocol</h3>
 				<div class="postmsg">
-					<blockquote><div class="incqbox"><p>Once support for the protocol is established, the client is supposed to support 1 new message:<br />name &nbsp; &nbsp; id<br />extended &nbsp; &nbsp; 20<br /><br />This message is sent as any other bittorrent message, with a 4 byte length prefix and a single byte identifying the message (the single byte being 20 in this case). At the start of the payload of the message, is a single byte message identifier.</p></div></blockquote><p>It creates an independent message id space. Original messages are transmitted using the old message IDs, creating 2nd class messages which fall outside the message name space, while extension messages use the fully negotiated extension ID space.<br /><br />This is just one of the issues i actually listed here: <a href="http://forum.bittorrent.org/viewtopic.php?pid=36#p36" rel="nofollow">http://forum.bittorrent.org/viewtopic.php?pid=36#p36</a> ...</p>
+					<blockquote><div class="incqbox"><p>Once support for the protocol is established, the client is supposed to support 1 new message:<br />name &nbsp; &nbsp; id<br />extended &nbsp; &nbsp; 20<br /><br />This message is sent as any other bittorrent message, with a 4 byte length prefix and a single byte identifying the message (the single byte being 20 in this case). At the start of the payload of the message, is a single byte message identifier.</p></div></blockquote><p>It creates an independent message id space. Original messages are transmitted using the old message IDs, creating 2nd class messages which fall outside the message name space, while extension messages use the fully negotiated extension ID space.<br /><br />This is just one of the issues i actually listed here: <a href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=36#p36" rel="nofollow">http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=36#p36</a> ...</p>
 					<p class="postedit"><em>Last edited by The 8472 (2008-08-29 17:19:50)</em></p>
 				</div>
 				<div class="postsignature"><hr />Az dev</div>

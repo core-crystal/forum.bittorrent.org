@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>forum.bittorrent.org / BEP 30: Merkle hash torrent extension</title>
+<title>forum.bittorrent-archive.mythra.dev / BEP 30: Merkle hash torrent extension</title>
 <link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
 </head>
 <body>
@@ -14,13 +14,13 @@
 <div id="brdheader" class="block">
 	<div class="box">
 		<div id="brdtitle" class="inbox">
-			<h1><span>forum.bittorrent.org</span></h1>
+			<h1><span>forum.bittorrent-archive.mythra.dev</span></h1>
 			<p><span>BitTorrent.org community</span></p>
 		</div>
 		<div id="brdmenu" class="inbox">
 			<ul>
 				<li id="navindex"><a href="index.php">Index</a></li>
-				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent-archive.mythra.dev">Homepage</a></li>
 				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
 				<li id="navuserlist"><a href="userlist.php">User list</a></li>
 				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
@@ -117,7 +117,7 @@
 			<div class="postright">
 				<h3> Re: BEP 30: Merkle hash torrent extension</h3>
 				<div class="postmsg">
-					<blockquote><div class="incqbox"><h4>Olaf van der Spek wrote:</h4><p>I think we both agree on these goals:<br />The per-file (root) hash should only depend on file data, not on meta data. <br />The swarm 'key' (previously info_hash) should only depend on file data.<br />These hashes should not include unnecessary implementation details.</p></div></blockquote><p>Correct. Special care has to be taken in the case of multifile torrents. <br /><br />See <a href="http://forum.bittorrent.org/viewtopic.php?pid=1196#p1196" rel="nofollow">http://forum.bittorrent.org/viewtopic.p &hellip; 1196#p1196</a> and <br /><a href="http://forum.bittorrent.org/viewtopic.php?pid=1224#p1224" rel="nofollow">http://forum.bittorrent.org/viewtopic.p &hellip; 1224#p1224</a> for things that have to be considered.<br /><br />To recap:<br />-per file tree (no more piece-spanning files or file-spanning pieces!)<br />-swarm key is based on sorted tree of file tree root hashes<br />-another hash that includes file names and some other metadata. only used for magnets and indexing sites. trackers and dht (mostly) use the swarm key.<br /><br />And interesting side effect is that the swarm key itself is not entirely useable since it only describes nameless files with uncertain length. You still need the metadata-key to get some file names and lengths.<br />Maybe we could do something about the lengths... names aren't as important, as you can simply rename them when worse comes to worse.</p>
+					<blockquote><div class="incqbox"><h4>Olaf van der Spek wrote:</h4><p>I think we both agree on these goals:<br />The per-file (root) hash should only depend on file data, not on meta data. <br />The swarm 'key' (previously info_hash) should only depend on file data.<br />These hashes should not include unnecessary implementation details.</p></div></blockquote><p>Correct. Special care has to be taken in the case of multifile torrents. <br /><br />See <a href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1196#p1196" rel="nofollow">http://forum.bittorrent-archive.mythra.dev/viewtopic.p &hellip; 1196#p1196</a> and <br /><a href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1224#p1224" rel="nofollow">http://forum.bittorrent-archive.mythra.dev/viewtopic.p &hellip; 1224#p1224</a> for things that have to be considered.<br /><br />To recap:<br />-per file tree (no more piece-spanning files or file-spanning pieces!)<br />-swarm key is based on sorted tree of file tree root hashes<br />-another hash that includes file names and some other metadata. only used for magnets and indexing sites. trackers and dht (mostly) use the swarm key.<br /><br />And interesting side effect is that the swarm key itself is not entirely useable since it only describes nameless files with uncertain length. You still need the metadata-key to get some file names and lengths.<br />Maybe we could do something about the lengths... names aren't as important, as you can simply rename them when worse comes to worse.</p>
 				</div>
 				<div class="postsignature"><hr />Az dev</div>
 			</div>

@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>forum.bittorrent.org / multitorrent magnet.</title>
+<title>forum.bittorrent-archive.mythra.dev / multitorrent magnet.</title>
 <link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
 </head>
 <body>
@@ -14,13 +14,13 @@
 <div id="brdheader" class="block">
 	<div class="box">
 		<div id="brdtitle" class="inbox">
-			<h1><span>forum.bittorrent.org</span></h1>
+			<h1><span>forum.bittorrent-archive.mythra.dev</span></h1>
 			<p><span>BitTorrent.org community</span></p>
 		</div>
 		<div id="brdmenu" class="inbox">
 			<ul>
 				<li id="navindex"><a href="index.php">Index</a></li>
-				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent-archive.mythra.dev">Homepage</a></li>
 				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
 				<li id="navuserlist"><a href="userlist.php">User list</a></li>
 				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
@@ -118,7 +118,7 @@
 			<div class="postright">
 				<h3> Re: multitorrent magnet.</h3>
 				<div class="postmsg">
-					<p>Yes, but in cases where you don not have control over the creation of torrents, it would be useful if all torrent maker apps would include at least a sha1 hash BY DEFAULT for each file in the torrent, it would then be possible to locate and identify identical content in multiple swarms, and by &quot;cross seeding&quot; make the content available in all separate swarms.<br /><br />Ether by a central service like i suggested here, <a href="http://forum.bittorrent.org/viewtopic.php?id=108" rel="nofollow">http://forum.bittorrent.org/viewtopic.php?id=108</a> or by a simple DHT message like &quot;Has anyone seen the file sha1-hash, in a torrent that is not info-hash (and not info-hash)..&quot;</p>
+					<p>Yes, but in cases where you don not have control over the creation of torrents, it would be useful if all torrent maker apps would include at least a sha1 hash BY DEFAULT for each file in the torrent, it would then be possible to locate and identify identical content in multiple swarms, and by &quot;cross seeding&quot; make the content available in all separate swarms.<br /><br />Ether by a central service like i suggested here, <a href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=108" rel="nofollow">http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=108</a> or by a simple DHT message like &quot;Has anyone seen the file sha1-hash, in a torrent that is not info-hash (and not info-hash)..&quot;</p>
 				</div>
 			</div>
 			<div class="clearer"></div>
@@ -166,7 +166,7 @@
 			<div class="postright">
 				<h3> Re: multitorrent magnet.</h3>
 				<div class="postmsg">
-					<blockquote><div class="incqbox"><h4>Fredrik Neij wrote:</h4><p>Yes, but in cases where you don not have control over the creation of torrents, it would be useful if all torrent maker apps would include at least a sha1 hash BY DEFAULT for each file in the torrent</p></div></blockquote><p>I have better approach here as it doesn't require additional hashes: <a href="http://forum.bittorrent.org/viewtopic.php?pid=1196#p1196" rel="nofollow">http://forum.bittorrent.org/viewtopic.p &hellip; 1196#p1196</a></p>
+					<blockquote><div class="incqbox"><h4>Fredrik Neij wrote:</h4><p>Yes, but in cases where you don not have control over the creation of torrents, it would be useful if all torrent maker apps would include at least a sha1 hash BY DEFAULT for each file in the torrent</p></div></blockquote><p>I have better approach here as it doesn't require additional hashes: <a href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1196#p1196" rel="nofollow">http://forum.bittorrent-archive.mythra.dev/viewtopic.p &hellip; 1196#p1196</a></p>
 				</div>
 				<div class="postsignature"><hr />Az dev</div>
 			</div>

@@ -1,174 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-	<title type="html"><![CDATA[forum.bittorrent.org / ÂµTorrent sending weird ÂµTP packets]]></title>
-	<link rel="self" href="http://forum.bittorrent.org/extern.php?action=feed&amp;tid=162&amp;type=atom"/>
-	<link href="http://forum.bittorrent.org/viewtopic.php?id=162"/>
+	<title type="html"><![CDATA[forum.bittorrent-archive.mythra.dev / ÂµTorrent sending weird ÂµTP packets]]></title>
+	<link rel="self" href="http://forum.bittorrent-archive.mythra.dev/extern.php?action=feed&amp;tid=162&amp;type=atom"/>
+	<link href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=162"/>
 	<updated>2010-11-16T00:06:54Z</updated>
 	<generator>FluxBB</generator>
-	<id>http://forum.bittorrent.org/viewtopic.php?id=162</id>
+	<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=162</id>
 	<entry>
 		<title type="html"><![CDATA[Re: ÂµTorrent sending weird ÂµTP packets]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=1634#p1634"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1634#p1634"/>
 		<content type="html"><![CDATA[<p>Do you intend to release the new UTP protocol to the community in the for of BEPXXX or BEP29 updated ?</p>]]></content>
 		<author>
 			<name><![CDATA[Hobywan]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=91540</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=91540</uri>
 		</author>
 		<updated>2010-11-16T00:06:54Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?pid=1634#p1634</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1634#p1634</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Re: ÂµTorrent sending weird ÂµTP packets]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=1120#p1120"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1120#p1120"/>
 		<content type="html"><![CDATA[<p>George: within the next two weeks.<br />We also hotfixed 2.0 with the correct header (and autoupdated everyone).</p>]]></content>
 		<author>
 			<name><![CDATA[Firon]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=725</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=725</uri>
 		</author>
 		<updated>2010-03-15T21:18:48Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?pid=1120#p1120</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1120#p1120</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Re: ÂµTorrent sending weird ÂµTP packets]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=1052#p1052"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1052#p1052"/>
 		<content type="html"><![CDATA[<p>Is the first byte a bitfield? Isn&#039;t the layout of it implementation dependend?</p>]]></content>
 		<author>
 			<name><![CDATA[Olaf van der Spek]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=89609</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=89609</uri>
 		</author>
 		<updated>2010-03-03T13:03:50Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?pid=1052#p1052</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1052#p1052</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Re: ÂµTorrent sending weird ÂµTP packets]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=1050#p1050"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1050#p1050"/>
 		<content type="html"><![CDATA[<p>When are you planning to release 2.0.1 ?</p>]]></content>
 		<author>
 			<name><![CDATA[George]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=89612</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=89612</uri>
 		</author>
 		<updated>2010-03-02T16:41:56Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?pid=1050#p1050</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1050#p1050</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Re: ÂµTorrent sending weird ÂµTP packets]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=1038#p1038"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1038#p1038"/>
 		<content type="html"><![CDATA[<p>At a closer inspection, it seems like this struct was in fact not packed. That&#039;s bad. I will fix this for the 2.0.1 release.</p>]]></content>
 		<author>
 			<name><![CDATA[arvid]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=89602</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=89602</uri>
 		</author>
 		<updated>2010-03-01T22:53:14Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?pid=1038#p1038</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1038#p1038</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Re: ÂµTorrent sending weird ÂµTP packets]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=1034#p1034"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1034#p1034"/>
 		<content type="html"><![CDATA[<p>This is the header used in uTorrent:</p><p>#pragma pack(push,1)<br />struct PacketFormatV1 {<br />&#160; &#160;uint version:4;<br />&#160; &#160;uint type:4;<br />&#160; &#160;byte ext;<br />&#160; &#160;uint16_big connid;<br />&#160; &#160;uint32_big tv_usec;<br />&#160; &#160;uint32_big reply_micro;<br />&#160; &#160;uint32_big windowsize;<br />&#160; &#160;uint16_big seq_nr;<br />&#160; &#160;uint16_big ack_nr;<br />};<br />#pragma pack(pop)</p><p>which seems to match the header in BEP 29.</p>]]></content>
 		<author>
 			<name><![CDATA[arvid]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=89602</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=89602</uri>
 		</author>
 		<updated>2010-03-01T22:45:05Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?pid=1034#p1034</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1034#p1034</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Re: ÂµTorrent sending weird ÂµTP packets]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=1026#p1026"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1026#p1026"/>
 		<content type="html"><![CDATA[<p>With bit 16 set, I get different packets, but still packets with 23 byte headers. The first byte seems to be OK though (version and type look OK, though the nibbles are not in the expected order)</p><p>Here is the trace:</p><p><a href="http://ktorrent.org/downloads/utp_new_header.trace">http://ktorrent.org/downloads/utp_new_header.trace</a></p><p>Looking closely, I&#039;m beginning to suspect that ÂµTorrent is not fully following BEP29, what should be the first byte (type and version) appear to be the first 4 bytes.</p><p>It is almost like they put the type and version in a 32 bit unsigned int and write that to the header. The rest of the header appears to be OK. Could be struct alignment, or something like that.</p>]]></content>
 		<author>
 			<name><![CDATA[George]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=89612</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=89612</uri>
 		</author>
 		<updated>2010-03-01T19:27:51Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?pid=1026#p1026</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1026#p1026</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Re: ÂµTorrent sending weird ÂµTP packets]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=1018#p1018"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1018#p1018"/>
 		<content type="html"><![CDATA[<div class="quotebox"><cite>George wrote:</cite><blockquote><div><p>So in short, there is a standard, and ÂµTorrent doesn&#039;t follow it, and I&#039;m left reverse engineering the protocol. How nice.</p></div></blockquote></div><p>Did you try to connect to a uT client with the specified protocol? That should work (and it has in all my tests so far).</p>]]></content>
 		<author>
 			<name><![CDATA[arvid]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=89602</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=89602</uri>
 		</author>
 		<updated>2010-03-01T06:36:52Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?pid=1018#p1018</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1018#p1018</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Re: ÂµTorrent sending weird ÂµTP packets]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=1016#p1016"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1016#p1016"/>
 		<content type="html"><![CDATA[<p>set bit 16 in bt.trans_disposition on uT and it will use the header specified in BEP29.</p><p>This is supported by all 2.0+ clients, but not by previous versions, that&#039;s why the default is still the old version of the header. We&#039;ll change this in 2.0.1.</p>]]></content>
 		<author>
 			<name><![CDATA[arvid]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=89602</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=89602</uri>
 		</author>
 		<updated>2010-03-01T06:34:31Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?pid=1016#p1016</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1016#p1016</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Re: ÂµTorrent sending weird ÂµTP packets]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=1014#p1014"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1014#p1014"/>
 		<content type="html"><![CDATA[<p>So in short, there is a standard, and ÂµTorrent doesn&#039;t follow it, and I&#039;m left reverse engineering the protocol. How nice.</p>]]></content>
 		<author>
 			<name><![CDATA[George]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=89612</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=89612</uri>
 		</author>
 		<updated>2010-02-28T17:46:16Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?pid=1014#p1014</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1014#p1014</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Re: ÂµTorrent sending weird ÂµTP packets]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=1012#p1012"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1012#p1012"/>
 		<content type="html"><![CDATA[<p>Bytes 5 to 8 look like the number of seconds since the epoch (so tv_sec in a struct timeval)<br />And bytes 9 to 12 appear to be the number of microseconds (tv_usec in a struct timeval), it is always smaller then a million.</p>]]></content>
 		<author>
 			<name><![CDATA[George]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=89612</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=89612</uri>
 		</author>
 		<updated>2010-02-28T17:40:20Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?pid=1012#p1012</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1012#p1012</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Re: ÂµTorrent sending weird ÂµTP packets]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=1010#p1010"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1010#p1010"/>
 		<content type="html"><![CDATA[<p>Also bytes 3 and 4 or the first 4 bytes are the connection id</p>]]></content>
 		<author>
 			<name><![CDATA[George]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=89612</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=89612</uri>
 		</author>
 		<updated>2010-02-28T11:05:20Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?pid=1010#p1010</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1010#p1010</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Re: ÂµTorrent sending weird ÂµTP packets]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=1008#p1008"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1008#p1008"/>
 		<content type="html"><![CDATA[<p>Here is a trace of two ÂµTorrent clients talking to each other over ÂµTP:</p><p><a href="http://ktorrent.org/downloads/utp_trace.cap">http://ktorrent.org/downloads/utp_trace.cap</a></p><p>Looking at the packets I&#039;m beginning to think that:</p><p>- The last 10 bytes of the first packets is the extension bits extension<br />- byte 19 is the type<br />- bytes 20 and 21 are the seq_nr<br />- bytes 22 and 23 are the ack_nr</p><p>Looks like the 23 byte long packets are state packets</p>]]></content>
 		<author>
 			<name><![CDATA[George]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=89612</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=89612</uri>
 		</author>
 		<updated>2010-02-28T10:30:51Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?pid=1008#p1008</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1008#p1008</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Re: ÂµTorrent sending weird ÂµTP packets]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=1002#p1002"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1002#p1002"/>
 		<content type="html"><![CDATA[<p>This is a trace of 3 uTP packets sent by ÂµTorrent, when it is trying to setup a connection to ktorrent:</p><p><a href="http://ktorrent.org/downloads/utorrent_utp.trace">http://ktorrent.org/downloads/utorrent_utp.trace</a></p>]]></content>
 		<author>
 			<name><![CDATA[George]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=89612</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=89612</uri>
 		</author>
 		<updated>2010-02-25T16:59:36Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?pid=1002#p1002</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1002#p1002</id>
 	</entry>
 	<entry>
 		<title type="html"><![CDATA[Re: ÂµTorrent sending weird ÂµTP packets]]></title>
-		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=1000#p1000"/>
+		<link rel="alternate" href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1000#p1000"/>
 		<content type="html"><![CDATA[<p>Could you post a copy of the wireshark capture of the traffic?</p>]]></content>
 		<author>
 			<name><![CDATA[DreadWingKnight]]></name>
-			<uri>http://forum.bittorrent.org/profile.php?id=90000</uri>
+			<uri>http://forum.bittorrent-archive.mythra.dev/profile.php?id=90000</uri>
 		</author>
 		<updated>2010-02-24T17:35:09Z</updated>
-		<id>http://forum.bittorrent.org/viewtopic.php?pid=1000#p1000</id>
+		<id>http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=1000#p1000</id>
 	</entry>
 </feed>

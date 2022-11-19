@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>forum.bittorrent.org / Cache Behavior</title>
+<title>forum.bittorrent-archive.mythra.dev / Cache Behavior</title>
 <link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
 </head>
 <body>
@@ -14,13 +14,13 @@
 <div id="brdheader" class="block">
 	<div class="box">
 		<div id="brdtitle" class="inbox">
-			<h1><span>forum.bittorrent.org</span></h1>
+			<h1><span>forum.bittorrent-archive.mythra.dev</span></h1>
 			<p><span>BitTorrent.org community</span></p>
 		</div>
 		<div id="brdmenu" class="inbox">
 			<ul>
 				<li id="navindex"><a href="index.php">Index</a></li>
-				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent-archive.mythra.dev">Homepage</a></li>
 				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
 				<li id="navuserlist"><a href="userlist.php">User list</a></li>
 				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
@@ -264,7 +264,7 @@
 			<div class="postright">
 				<h3> Re: Cache Behavior</h3>
 				<div class="postmsg">
-					<p>In response to <a href="http://forum.bittorrent.org/viewtopic.php?pid=332#p332" rel="nofollow">http://forum.bittorrent.org/viewtopic.php?pid=332#p332</a><br /><br />Well, a cache basically has to do two things<br />a) substitute for one or two ends in a transfer<br />b) store content based on unique identifiers and do the usual LFU&amp;similar drop-from-cache policies.<br /><br />A generic cache shouldn't try to hook itself into the protocol of the day, the clients should speak the cache protocol instead. Well... i guess the question is if how protocol-agnostic we really want to be. If you want to include FTP and HTTP you have to come up with a way to uniquely identify those files.<br /><br />If it's just a generic p2p-cache then you can base it on some common principles, i.e. that you'll have piece- or at least file-hashes and that transfers are often bidirectional.<br /><br /><br />Anyway... regardless of caching protocol the most important part is how to keep all parties honest. The peers should stop transfering that part of the traffic that the cache can hand out. If the cache only operates in one direction the peers should take care of the other direction.<br />The cache might want to minimize bandwidth by pretending to be a cache and thus making both peers stopping transfers. One or both of the peers might also be malicious and try to exploit the cache by using the additional bandwidth w/o stopping to transfer.<br />Having the peers check on the cache is easy, having 1 peer and the cache identify the other, malicious peer is also easy. But i'm not sure how to identify a collusion attack between both peers against the cache.</p>
+					<p>In response to <a href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=332#p332" rel="nofollow">http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=332#p332</a><br /><br />Well, a cache basically has to do two things<br />a) substitute for one or two ends in a transfer<br />b) store content based on unique identifiers and do the usual LFU&amp;similar drop-from-cache policies.<br /><br />A generic cache shouldn't try to hook itself into the protocol of the day, the clients should speak the cache protocol instead. Well... i guess the question is if how protocol-agnostic we really want to be. If you want to include FTP and HTTP you have to come up with a way to uniquely identify those files.<br /><br />If it's just a generic p2p-cache then you can base it on some common principles, i.e. that you'll have piece- or at least file-hashes and that transfers are often bidirectional.<br /><br /><br />Anyway... regardless of caching protocol the most important part is how to keep all parties honest. The peers should stop transfering that part of the traffic that the cache can hand out. If the cache only operates in one direction the peers should take care of the other direction.<br />The cache might want to minimize bandwidth by pretending to be a cache and thus making both peers stopping transfers. One or both of the peers might also be malicious and try to exploit the cache by using the additional bandwidth w/o stopping to transfer.<br />Having the peers check on the cache is easy, having 1 peer and the cache identify the other, malicious peer is also easy. But i'm not sure how to identify a collusion attack between both peers against the cache.</p>
 					<p class="postedit"><em>Last edited by The 8472 (2008-08-11 16:31:56)</em></p>
 				</div>
 				<div class="postsignature"><hr />Az dev</div>

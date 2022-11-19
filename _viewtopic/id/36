@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>forum.bittorrent.org / Discussion of BEP 22: BitTorrent Cache Discovery Protocol</title>
+<title>forum.bittorrent-archive.mythra.dev / Discussion of BEP 22: BitTorrent Cache Discovery Protocol</title>
 <link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
 </head>
 <body>
@@ -14,13 +14,13 @@
 <div id="brdheader" class="block">
 	<div class="box">
 		<div id="brdtitle" class="inbox">
-			<h1><span>forum.bittorrent.org</span></h1>
+			<h1><span>forum.bittorrent-archive.mythra.dev</span></h1>
 			<p><span>BitTorrent.org community</span></p>
 		</div>
 		<div id="brdmenu" class="inbox">
 			<ul>
 				<li id="navindex"><a href="index.php">Index</a></li>
-				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent-archive.mythra.dev">Homepage</a></li>
 				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
 				<li id="navuserlist"><a href="userlist.php">User list</a></li>
 				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
@@ -288,7 +288,7 @@
 			<div class="postright">
 				<h3> Re: Discussion of BEP 22: BitTorrent Cache Discovery Protocol</h3>
 				<div class="postmsg">
-					<p>... read: <a href="http://forum.bittorrent.org/viewtopic.php?pid=220#p220" rel="nofollow">http://forum.bittorrent.org/viewtopic.php?pid=220#p220</a><br /><br />and no, he could use a normal dns and tracker server if he wishes to do so.</p>
+					<p>... read: <a href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=220#p220" rel="nofollow">http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=220#p220</a><br /><br />and no, he could use a normal dns and tracker server if he wishes to do so.</p>
 				</div>
 				<div class="postsignature"><hr />Az dev</div>
 			</div>
@@ -534,7 +534,7 @@
 			<div class="postright">
 				<h3> Re: Discussion of BEP 22: BitTorrent Cache Discovery Protocol</h3>
 				<div class="postmsg">
-					<p>You wrote <a href="http://forum.bittorrent.org/viewtopic.php?pid=349#p349" rel="nofollow">here</a> that BEP22 might become an RFC. I don't think we have patted it down for usefulness sufficiently.<br /><br />E.g. how anyone could actually benefit from this protocol in a realworld scenario or what should be done if the ISP's users don't have reverse lookup entries.</p>
+					<p>You wrote <a href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?pid=349#p349" rel="nofollow">here</a> that BEP22 might become an RFC. I don't think we have patted it down for usefulness sufficiently.<br /><br />E.g. how anyone could actually benefit from this protocol in a realworld scenario or what should be done if the ISP's users don't have reverse lookup entries.</p>
 				</div>
 				<div class="postsignature"><hr />Az dev</div>
 			</div>

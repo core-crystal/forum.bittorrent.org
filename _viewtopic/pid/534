@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>forum.bittorrent.org / Top-BT: a BT client to speed downloading twice with less traffic</title>
+<title>forum.bittorrent-archive.mythra.dev / Top-BT: a BT client to speed downloading twice with less traffic</title>
 <link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
 </head>
 <body>
@@ -14,13 +14,13 @@
 <div id="brdheader" class="block">
 	<div class="box">
 		<div id="brdtitle" class="inbox">
-			<h1><span>forum.bittorrent.org</span></h1>
+			<h1><span>forum.bittorrent-archive.mythra.dev</span></h1>
 			<p><span>BitTorrent.org community</span></p>
 		</div>
 		<div id="brdmenu" class="inbox">
 			<ul>
 				<li id="navindex"><a href="index.php">Index</a></li>
-				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent-archive.mythra.dev">Homepage</a></li>
 				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
 				<li id="navuserlist"><a href="userlist.php">User list</a></li>
 				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
@@ -139,7 +139,7 @@
 			<div class="postright">
 				<h3> Re: Top-BT: a BT client to speed downloading twice with less traffic</h3>
 				<div class="postmsg">
-					<p>I'm sorry.&nbsp; My writing about BEPs was far afield from what I should've been saying.<br />Localization has been a hot topic in the IETF and in these forums.&nbsp; Please skim through this thread:<br /><br /><a href="http://forum.bittorrent.org/viewtopic.php?id=52" rel="nofollow">http://forum.bittorrent.org/viewtopic.php?id=52</a><br /><br />We would like to include localization mechanisms in uTorrent, but mainly to minimize inter-ISP transits while retaining enough connections to outside the ISP to aid piece propagation and when possible work around bad ISP policy.&nbsp; Clearly localization would help performance for very large swarms, i.e., on the scale where multiple peers can be found on the same LAN or campus.&nbsp; Still wondering as to whether it makes a difference for the swarms we see today (usually less than 10000s of peers).&nbsp; <br /><br />BTW do you have good research tools that you could contribute to the community?&nbsp; &nbsp;If so please please post about them in <br /><br /><a href="http://forum.bittorrent.org/viewforum.php?id=33" rel="nofollow">http://forum.bittorrent.org/viewforum.php?id=33</a></p>
+					<p>I'm sorry.&nbsp; My writing about BEPs was far afield from what I should've been saying.<br />Localization has been a hot topic in the IETF and in these forums.&nbsp; Please skim through this thread:<br /><br /><a href="http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=52" rel="nofollow">http://forum.bittorrent-archive.mythra.dev/viewtopic.php?id=52</a><br /><br />We would like to include localization mechanisms in uTorrent, but mainly to minimize inter-ISP transits while retaining enough connections to outside the ISP to aid piece propagation and when possible work around bad ISP policy.&nbsp; Clearly localization would help performance for very large swarms, i.e., on the scale where multiple peers can be found on the same LAN or campus.&nbsp; Still wondering as to whether it makes a difference for the swarms we see today (usually less than 10000s of peers).&nbsp; <br /><br />BTW do you have good research tools that you could contribute to the community?&nbsp; &nbsp;If so please please post about them in <br /><br /><a href="http://forum.bittorrent-archive.mythra.dev/viewforum.php?id=33" rel="nofollow">http://forum.bittorrent-archive.mythra.dev/viewforum.php?id=33</a></p>
 				</div>
 			</div>
 			<div class="clearer"></div>
