@@ -1,0 +1,675 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>forum.bittorrent.org / DHT Scrapes</title>
+<link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
+</head>
+<body>
+
+<div id="punwrap">
+<div id="punviewtopic" class="pun">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><span>forum.bittorrent.org</span></h1>
+			<p><span>BitTorrent.org community</span></p>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p>You are not logged in.</p>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<h2><span>Announcement</span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div>Posting about any illegal sharing of copyrighted content is strictly forbidden.</div>
+		</div>
+	</div>
+</div>
+
+<div class="linkst">
+	<div class="inbox">
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<p class="postlink conr">&nbsp;</p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;DHT Scrapes</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p774" class="blockpost rowodd firstpost">
+	<h2><span><span class="conr">#1&nbsp;</span><a href="viewtopic.php?pid=774#p774">2009-11-10 14:23:33</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3>DHT Scrapes</h3>
+				<div class="postmsg">
+					<p>The last missing piece of the puzzle of decentralized torrents are scrapes. Scrapes are necessary for seeding queue ordering and generally to give an impression of the swarm's state.<br /><br />There are 2 problems to solve:<br />a) the number of torrents to scrape can vastly outnumber the torrents to announce/get peers for. thus scrape-lookups have to be more optimized for lower resource usage than regular lookups. More aggressive caching of lookup paths, lower concurrency during the lookup are starting points.&nbsp; <br />b) nodes can't return any seeds:peers statistics at the moment, announces would have to include flags and we'd have to come up with a statistically reasonable way to add stats from multiple nodes together (i was thinking along the lines of using the similarity of small bloom filters as coincidence weights... but 1280 bytes doen't allow you to carry all that much data)<br /><br /><br />So, i'd just like to discuss this in general and see if anyone might come up with some shortcuts to make this reasonably efficient. Trivial implementations would be either too inaccurate to give more than an order-of-magnitude estimate or they'd increase the DHT traffic too much for too little gain.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p776" class="blockpost roweven">
+	<h2><span><span class="conr">#2&nbsp;</span><a href="viewtopic.php?pid=776#p776">2009-11-10 17:49:05</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: DHT Scrapes</h3>
+				<div class="postmsg">
+					<p>I think you're right about caching, it definitely makes sense. I would think that caching can be solved separately though, don't you think?<br /><br />I spent some time thinking about torrent metadata in general, and I wonder if it would make sense to have some slightly more generalized way of specifying how to treat data when it's requested. For instance there could be some prefixes to the names that indicates that its data either return average, median, max, min over some window. This would assume that clients who participate in the swarm announce their understanding of the number of peers and seeds.<br /><br />For this particular case though, it might make more sense to have the DHT nodes that track the torrent be the authoritative source of the scrape stats, instead of having nodes that announce to it say how many seeds and peers it knows of.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p779" class="blockpost rowodd">
+	<h2><span><span class="conr">#3&nbsp;</span><a href="viewtopic.php?pid=779#p779">2009-11-11 03:37:26</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: DHT Scrapes</h3>
+				<div class="postmsg">
+					<p>Well, caching node-addresses is something rather specific for high-load scenarios (like scraping 800 torrents every 30 minutes), otherwise regular, uncached lookups are preferable since the DHT piggybacks its routingtable management on them.<br /><br />About torrent-statistics... i wouldn't overcomplicate things. Getting the simple case of scraping the current seed/peer count is complex enough in the DHT environment because - for large swarms - no single node will have a complete view of the entire swarm (neither DHT nodes nor peers in the swarm). While in smaller swarms each seed/peer list is almost exhaustive.<br />That's also why i'm considering bloom filters as weighting. Let's say you have<br /><br />DHT Node nA <br />DHT Node nB<br /><br />Torrent t1 (5 seed, 10 peers)<br />Torrent t2 (100 seeds, 1000 peers)<br /><br /><br />For t1 both nA and nB will contain a almost-complete, almost-identical seed/peer-lists. Thus querying the t1 seed and peer count from nA and nB cannot be added up but should be averaged instead. Or rather, they should be added together with a weight applied based on their similiarity, effectively only averaging their common nodes and adding those where they differ.<br /><br />For t2 nA and nB might contain almost disjoint subsets of seed/peer lists. Thus it would make sense of adding their counts together. Again, with a weight based on similiarity so that we only (on average) add together the counts for differing peers and average those few that they share.<br /><br />Since we cannot request the complete lists i think we could use bloom-filters as stand-in for the sets to compare their similarity and thus derive a weight for the addition.<br /><br /><br />I'm just not sure if this is actually feasible and statistically sound, especially considering that we're restricted to 1280 bytes per packet.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p783" class="blockpost roweven">
+	<h2><span><span class="conr">#4&nbsp;</span><a href="viewtopic.php?pid=783#p783">2009-11-11 09:11:35</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: DHT Scrapes</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>The last missing piece of the puzzle of decentralized torrents are scrapes. Scrapes are necessary for seeding queue ordering...</p></div></blockquote><p>Since I'm not convinced that ordering the seeding queue according to peer count is such a hot idea, I'd rather we didn't add extra complexity for this purpose.<br /><br />(Ordering the queue according to seed count is a case of negative feedback, and it causes persistent oscillations in torrent state.)<br /><br />--Juliusz</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p784" class="blockpost rowodd">
+	<h2><span><span class="conr">#5&nbsp;</span><a href="viewtopic.php?pid=784#p784">2009-11-11 10:58:31</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: DHT Scrapes</h3>
+				<div class="postmsg">
+					<p>You have to do some ordering if you don't want to run all torrents at once. There are several possible options as ranking schemes.<br /><br />&quot;seeds : peers ratio&quot; allows every torrent to settle into a stable ratio, based on demand.<br />&quot;peers-seeds&quot; allows you to find the torrents the easiest to seed (private trackers)<br />&quot;seed count only, fall back to seeds : peers ratio after N seeds&quot; allows you to keep rare content alive<br /><br />Anyway, any of those rules can be written in a way to avoid oscillation. But that is up to the client developers. Imo scrapes are a useful feature, not just for queueing seeds but also to gauge the liveliness of a torrent... or rather, the current phase of its lifecycle.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p789" class="blockpost roweven">
+	<h2><span><span class="conr">#6&nbsp;</span><a href="viewtopic.php?pid=789#p789">2009-11-13 11:21:06</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: DHT Scrapes</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>Or rather, they should be added together with a weight applied based on their similiarity, effectively only averaging their common nodes and adding those where they differ.</p></div></blockquote><p>Just take the max.&nbsp; The node that you queried that has the most peers is the one that has been around the longest, and has the most complete vision of the swarm.<br /><br />--Juliusz</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p790" class="blockpost rowodd">
+	<h2><span><span class="conr">#7&nbsp;</span><a href="viewtopic.php?pid=790#p790">2009-11-14 08:02:41</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: DHT Scrapes</h3>
+				<div class="postmsg">
+					<p>That is assuming that all nodes have the same view, if nodes have a set limit of peers they store per key or peers get stored in different sets of nodes (e.g. due to perimeter widening) then each storing node will differing subsets of the actual peer list.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p791" class="blockpost roweven">
+	<h2><span><span class="conr">#8&nbsp;</span><a href="viewtopic.php?pid=791#p791">2009-11-14 09:48:04</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: DHT Scrapes</h3>
+				<div class="postmsg">
+					<p>&gt; e.g. due to perimeter widening<br /><br />First of all, what you call &quot;perimeter widening&quot; doesn't work, at least not in Kademlia.&nbsp; Don't do it, unless you are able to give a proof of your extension to Kademlia.&nbsp; (Not only that it doesn't break the DHT, but also that it serves a useful purpose.)<br /><br />Second, even if it did work, you wouldn't need it.&nbsp; If the torrent is very popular, and its 8 closest nodes are overloaded, you won't be able to announce yourself, but you'll still get information about other peers; that gives you 8*50=400 peers to connect to.&nbsp; While not all of those will be reachable, the 200 or so that will are more than enough to propagate your contact address over PEX.&nbsp; (And I know that you do implement the &quot;p&quot; parameter to LTEP.)<br /><br />Third, if Kademlia is implemented right, then the oldest among the 8 nodes have roughly the same data -- excepth when some of them have dropped some data due to overload.&nbsp; In the latter case, you don't care that you're inaccurate -- the information that &quot;the swarm has a lot of peers&quot; is enough for you to make your queueing decisions.<br /><br />I'd suggest a simple extension -- get_peers replies should contain the total number of values that the replying node has for a given torrent (which can be, in general, more than the number of returned values).<br /><br />Another extension could be adding a parameter to get_peers to specify the maximum number of values that the replying node should return -- the default being 50, as per BEP-5.<br /><br />--Juliusz</p>
+					<p class="postedit"><em>Last edited by jch (2009-11-14 09:49:19)</em></p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p792" class="blockpost rowodd">
+	<h2><span><span class="conr">#9&nbsp;</span><a href="viewtopic.php?pid=792#p792">2009-11-14 09:52:26</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: DHT Scrapes</h3>
+				<div class="postmsg">
+					<p>Speaking about PEX supplementing the DHT -- I see that Azureus doesn't send the &quot;ipv6&quot; parameter in the LTEP handshake.&nbsp; (µTorrent does, and I've added this for Transmission 1.80 -- in some swarms, the effects are rather dramatic for a node that's firewalled in IPv4 but has good IPv6 connectivity.)<br /><br />--Julusz</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p793" class="blockpost roweven">
+	<h2><span><span class="conr">#10&nbsp;</span><a href="viewtopic.php?pid=793#p793">2009-11-14 14:58:12</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: DHT Scrapes</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>jch wrote:</h4><p>Speaking about PEX supplementing the DHT -- I see that Azureus doesn't send the &quot;ipv6&quot; parameter in the LTEP handshake.</p></div></blockquote><p>We do since version 4.3.0.0. Which... has been released yesterday. <img src="img/smilies/wink.png" width="15" height="15" alt="wink" /><br /><br />The issue is that IPv6 + Windows + Java's nonblocking IO requires Java 7 to work properly, which is still in beta. So most ipv6 capable users are either linux or osx peers and the select few early adopters.<br /><br /></p><blockquote><div class="incqbox"><h4>jch wrote:</h4><p>&gt; e.g. due to perimeter widening<br /><br />First of all, what you call &quot;perimeter widening&quot; doesn't work, at least not in Kademlia.&nbsp; Don't do it, unless you are able to give a proof of your extension to Kademlia.&nbsp; (Not only that it doesn't break the DHT, but also that it serves a useful purpose.)</p></div></blockquote><p>Intuition tells me that - if properly implemented - it should work as it is no different from nodes close to the key simply failing and thus the nodes around them taking up the duty. Add that get-peers lookups can terminate early if they receive enough value lists and you would achieve your goal by putting load on other nodes than only the closest 8 ones.<br /><br /><br /><br /></p><blockquote><div class="incqbox"><h4>jch wrote:</h4><p>Second, even if it did work, you wouldn't need it.&nbsp; If the torrent is very popular, and its 8 closest nodes are overloaded, you won't be able to announce yourself, but you'll still get information about other peers; that gives you 8*50=400 peers to connect to.&nbsp; While not all of those will be reachable, the 200 or so that will are more than enough to propagate your contact address over PEX.&nbsp; (And I know that you do implement the &quot;p&quot; parameter to LTEP.)</p></div></blockquote><p>that is probably right, i'm just viewing this from the exhaustiveness angle. I.e. how to cover all peers/seeds and get mostly accurate statistics on big torrents.<br /><br />Consider that many NATed peers might insert themselves in the table, storing more nodes simply means possibly more non-nated ones to pick from. Assuming 50% nated nodes you'll only have 200 reachable nodes to test left. On a really big torrent (10k seeds, 15k peers for example) that would mean that those 200 nodes would have to act as gateways via PEX into the swarm, but it's possible that they can't simply because all those incoming connections make them reach their connection limit and thus they won't accept further connections.<br /><br />Attempting to store more peers in the DHT would spread the load and thus improve the time-to-join into the swarm and prevent a few peers from being hammered.<br /><br />And it's not just the peers that would get hammed... the 8 DHT nodes responsible for those values might get hammered by 25k different IPs with gets and puts over the course of one DHT announce interval.<br /><br /></p><blockquote><div class="incqbox"><h4>jch wrote:</h4><p>Third, if Kademlia is implemented right, then the oldest among the 8 nodes have roughly the same data -- excepth when some of them have dropped some data due to overload.&nbsp; In the latter case, you don't care that you're inaccurate -- the information that &quot;the swarm has a lot of peers&quot; is enough for you to make your queueing decisions.</p></div></blockquote><p>&quot;has lots of peers&quot; is not sufficient for sorting torrents properly<br /><br /></p><blockquote><div class="incqbox"><h4>jch wrote:</h4><p>I'd suggest a simple extension -- get_peers replies should contain the total number of values that the replying node has for a given torrent (which can be, in general, more than the number of returned values).<br /><br />Another extension could be adding a parameter to get_peers to specify the maximum number of values that the replying node should return -- the default being 50, as per BEP-5.</p></div></blockquote><p>Well, for simplicity's sake i guess this would be better than nothing. But we still should do separate accounting for seeds and peers, thus we'll also have to include an is seed/peer flag into the announces and store those.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p794" class="blockpost rowodd">
+	<h2><span><span class="conr">#11&nbsp;</span><a href="viewtopic.php?pid=794#p794">2009-11-14 15:38:08</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: DHT Scrapes</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><blockquote><div class="incqbox"><p>what you call &quot;perimeter widening&quot; doesn't work, at least not in Kademlia.&nbsp; Don't do it, unless you are able to give a proof of your extension to Kademlia</p></div></blockquote><p>Intuition tells me that it should work</p></div></blockquote><p>Oh my, there's not much I can answer to such a strong argument, can I?<br /><br />More seriously, please read the Kademlia paper again.<br /><br />While Kademlia is resilient to node outages, it is not resilient to frequent fluctuations in the set of nodes.&nbsp; When a node joins or leaves the network, there is a short period during which the router tables of its neighborhood are out of sync; during that time, different announces will store data in different sets of nodes.<br /><br />(Kademlia, as described in the paper, has a mechanism for making the window of time during which tables are unsynchronised smaller, but this is not in the Mainline DHT.)<br /><br />When you're doing your &quot;perimeter widening&quot; trick, you're basically pretending that a given node doesn't exist, and thus falling back to further away nodes.&nbsp; In effect, you're making the set of nodes vary on a very short timescale.&nbsp; Kademlia is not designed to work in the presence of such instabilities.<br /><br />Please don't do it.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p795" class="blockpost roweven">
+	<h2><span><span class="conr">#12&nbsp;</span><a href="viewtopic.php?pid=795#p795">2009-11-14 17:18:23</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: DHT Scrapes</h3>
+				<div class="postmsg">
+					<p>You are mixing up routing tables and lookup result sets here. The routing table would remain the same for all nodes, only GET_PEERS lookups would return doctored result sets and thus lead to stores on nodes that are slightly off-target.<br /><br />This does not lead to any routing table instabilities. In fact, it spreads load over more nodes and thus makes it less likely to force nodes to drop out completely due to overload.<br /><br />To keep your local buckets of the routing table up to date you'll be using FIND_NODES and PING requests, which would not be affected by perimeter widening. Only GET_PEERS requests would be.<br /><br />I don't see any problem here.<br /><br /><br /><br />In fact, what i call perimeter widening has been considered by the kademlia researchers before under the term &quot;caching along the path&quot;. It's just not spelled out in detail in their paper. To quote the relevant section:<br /><br /></p><blockquote><div class="incqbox"><p>Like Chord’s clockwise circle metric, XOR is unidirectional.Fo r any given<br />point x and distance Δ &gt; 0, there is exactly one point y such that d(x, y) = Δ.<br />Unidirectionality ensures that all lookups for the same key converge along the<br />same path, regardless of the originating node.Th us, caching &lt;key,value&gt; pairs<br />along the lookup path alleviates hot spots.Lik e Pastry and unlike Chord, the<br />XOR topology is also symmetric (d(x, y) = d(y, x) for all x and y).</p></div></blockquote><p>So, this strategy is actually a part of the Kademlia spec.<br /><br /><br /></p><blockquote><div class="incqbox"><h4>jch wrote:</h4><p>Oh my, there's not much I can answer to such a strong argument, can I?</p></div></blockquote><p>Strong enough now? :]<br /><br /><br /></p><blockquote><div class="incqbox"><h4>jch wrote:</h4><p>(Kademlia, as described in the paper, has a mechanism for making the window of time during which tables are unsynchronised smaller, but this is not in the Mainline DHT.)</p></div></blockquote><p>One extremely useful thing in the Kademlia spec are replacement buckets, i suggest implementing them, even though they're not mentioned in the mainline spec. In our implementation they work quite well.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p800" class="blockpost rowodd">
+	<h2><span><span class="conr">#13&nbsp;</span><a href="viewtopic.php?pid=800#p800">2009-11-18 04:51:08</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90624">h2p</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: DHT Scrapes</h3>
+				<div class="postmsg">
+					<p>[DELETED: I realise that now scrape it's needed for other stuff than central indexing]</p>
+					<p class="postedit"><em>Last edited by h2p (2009-11-18 05:22:29)</em></p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p807" class="blockpost roweven">
+	<h2><span><span class="conr">#14&nbsp;</span><a href="viewtopic.php?pid=807#p807">2009-11-18 18:35:39</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: DHT Scrapes</h3>
+				<div class="postmsg">
+					<p>Okay, I think I've finally managed to get my head around this.&nbsp; Apologies for being a little slow.<br /><br />Assuming we use the new semantics of get_peers (i.e. we always send nodes even when values are also being sent), perimeter widening should not break anything.<br /><br />I don't see why two distinct nodes should follow the same path when performing an announce, especially when they have cached nodes from a previous announce.&nbsp; Hence, I'm not convinced that it buys us anything.&nbsp; (This should be taken litterally -- I'm not saying they do not follow the same path, I'm only saying that I, personally, individually, speaking only for myself, do not see any argument why they should do, especially when nodes are caching the results of previous announces.)<br /><br />Perimeter widening does break nodes that follow the older semantics of get_peers (values and nodes being mutually exclusive).<br /><br />In conclusion, I'm not going to implement it myself, but have no objections to others implementing it.<br /><br />--Juliusz</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p808" class="blockpost rowodd">
+	<h2><span><span class="conr">#15&nbsp;</span><a href="viewtopic.php?pid=808#p808">2009-11-18 19:54:23</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: DHT Scrapes</h3>
+				<div class="postmsg">
+					<p>could you please describe how old nodes which break? I still don't quite understand what you see as issue here. Routing table maintenance happens through find_node requests, not get_peers ones.<br /><br />Assuming the following get_peers + announce logic:<br /><br />1. send get-peers to the N (N = concurrency) closest Nodest to target key T you know<br />2. repeat step 1 until we got K (K = bucket size) value-containing responses OR the set of the closest nodes which returned a token so far does not change for N queries<br />3. send announce to the first K nodes with values+tokens we have found, if we did not find enough nodes then perform the remaining announces on the closest-set<br /><br />Then storing nodes may or may not hit the &quot;core&quot; bucket around that key during their lookup. But they will only store data on<br />a) nodes that already contain data<br />b) nodes that are closer to the target than nodes in a)<br /><br />alternatively nodes may use the following (more conservative) algorithm:<br />1. send get-peers to the N (N = concurrency) closest Nodest to target key T you know<br />2. repeat step 1 until the set of the closest nodes which returned a token so far does not change for N queries<br />3. send announces to the K closest nodes found so far that did return a token<br /><br /><br /><br />The &quot;worst&quot; thing that could happen that the perimeter shields the closest nodes completely from incoming queries. But to achieve this a significantly <em>larger</em> set of nodes shielding them is necessary.<br /><br />Which is the whole point of parameter widening... to spread load.<br /><br /><br /><br />As for the path that nodes take. They do not take exactly the same path. But since XOR coordinates are always a projection onto a flat keyspace a lookup is projected onto the distance between the currently found node and the target key. Each point along the distance-projected-keyspace can only be inhabited by one node. Where the closest node to the key is the last node you'll find.<br /><br />A lookup will jump along this linear keyspace in exponentially decreasing steps, only ever moving forward, closer towards the K closest nodes.<br /><br /><br />The first hops will be mostly random since they'll most likely stem from the buckets spanning one half of the keyspace. But as they hop closer to the targets the routes their hops become smaller and the coincidences will increase, regardless where they come from. That in turn means that close to the target key the paths taken are mostly identical or at least have a high coincidence count.<br />The more popular a key gets the more nodes will approach the target during their lookups and more nodes will be statistically covered by the paths taken by the searching nodes. Which means more nodes near the target can perform value caching/accept stores.<br /><br />And when the key isn't popular then the coincidences among the incoming paths are smaller, but in that case there should be room for all data in the closest set and perimeter widening will not be necessary anyway.<br /><br /><br /><br />It is just important that nodes do at least one thing:<br />They have to keep track of who sent them tokens and do not count nodes which don't send tokens towards the K closest nodes set. This way the actual K closest nodes may refuse to store data by not sending a token and thus force store operations on slightly further away nodes.<br />This will increase the number of nodes storing the &lt;key, value&gt; pairs and allow other lookups to abort early/take load off the K closest ones.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p809" class="blockpost roweven">
+	<h2><span><span class="conr">#16&nbsp;</span><a href="viewtopic.php?pid=809#p809">2009-11-18 20:05:28</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: DHT Scrapes</h3>
+				<div class="postmsg">
+					<p>anyway, we drifted offtopic. This is supposed to be about scrapes.<br /><br />To enable scrapes we have to do 2 things:<br />- provide a get-scrape request and response to query nodes for seed and peer counts stored under a specific key. This reuqest should be implemented with a lower concurrency than regular lookups and caching of the set of <em>first</em> K nodes along the lookup path that returned scrape values<br />- add a isSeed=1/0 flag to announces (if it is not set at all then the announcing client is assumed to be a peer)</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p888" class="blockpost rowodd">
+	<h2><span><span class="conr">#17&nbsp;</span><a href="viewtopic.php?pid=888#p888">2009-12-25 19:30:08</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: DHT Scrapes</h3>
+				<div class="postmsg">
+					<p>I've implemented a bloom filter and i'm currently testing if i can find a better method than ANDing them to sum/average up (depending on common values) their sizes to calculate an aggregate value.<br /><br />But even ANDing seems good at the moment if the filters are correctly parametrized.<br /><br />With 512 bytes filters (4096 bits) configured for an expected set size of 1000 i can estimate an aggregate count of up to ~10000 before it breaks down, which should be sufficient for most swarms.<br /><br />2 filters, 512 bytes each would do for 10k seeds and 10k peers, i.e. it would fit into a single packet, but not much else, especially not a list of 8 IPv6 node addresses. Which means this has to go into a separate, new packet.<br /><br />Since we don't really want peer lists either if we're only scrapeing i suggest the following extension:<br /><br /><br />Adding a &quot;scr&quot; flag to the &quot;want&quot; list in a GET_PEERS request instructs the responding node NOT to include a &quot;values&quot; list even if it has peers in its database.<br />Instead it should respond with a list &quot;has&quot; that contains the value &quot;scr&quot;, which indicates that this node can be scraped and has values.<br /><br />Then the requesting node can send a new RPC type, called &quot;scrape&quot;, containing only the target key. the response contains two 512 byte long fields, named &quot;seeds&quot; and &quot;peers&quot;, which are the bloom filters containing all seeds and peers for that infohash known by that node.<br /><br /><br />To allow nodes to know whether it is a seed or peer ANNOUNCE_PEER requests should contain a new list named &quot;is&quot;, containing the entry &quot;seed&quot; if the announcing peer is seeding. If the list is not present or doe not cotain the entry &quot;seed&quot; then it is considered as a peer.<br /><br />Additionally, this new flag and nodes storing it in their database allows GET_PEER requests and responses to be adapted to a nodes needs with various additional flags. See below.<br /><br /><br /><br />Summary:<br /><br />&quot;want&quot;-list in GET_PEERS extended, now supports (together with BEP32):<br />n4 = node should send a nodes list (default on IPv4 sourced requests)<br />n6 = node should send a nodes6 list (default on IPv6 sourced requests)<br />scr = node may omit the values list even if it has values<br />vals = node should send the values list if it has any even when &quot;scr&quot; is set<br />peer = node should only send peers in its values list, implies &quot;vals&quot;<br /><br />&quot;has&quot;-list added to GET_PEERS response:<br />scr = node understands scrape requests and has a values, even when no values list is present in the response<br /><br />new RPC call &quot;scrape&quot;:<br />request only contains a &quot;target&quot; key<br />response contains 2 bloom filters (details not yet specified) &quot;seeds&quot; and &quot;peers&quot;<br /><br />&quot;is&quot;-list added to ANNOUNCE_PEER requests:<br />seed = the announcing client is a seed and should be stored as such in the database<br /><br /><br /><br />Edit: Thinking of it. To prevent the bloom filters from overflowing a node should not send tokens once it has more than R entries under the particular key in its database. where R still has to be parametrized, together with the bloom filters. Assuming properly implemented nodes this will also lead to perimeter widening on popular torrents as other nodes are forced store values further away from the closest-set.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p889" class="blockpost roweven">
+	<h2><span><span class="conr">#18&nbsp;</span><a href="viewtopic.php?pid=889#p889">2009-12-26 09:10:57</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: DHT Scrapes</h3>
+				<div class="postmsg">
+					<p>After some tinkering i've found an averaging algorithm that performs better than ANDing in the worst case, but i'm lacking a way to calculate |intersection(A1,...,An)| for bloom filters atm and combining |intersection(A1,A2)| recursively increases errors too much for the algorithm to perform well in the average case;<br /><br />So ANDing is the way to go for now, but that can be changed in the future since it's only a client-side algorithm. To estimate the number of entries of a bloom filter the following formula can be used:<br /><br />int size = round(log(1.0 - bitCount/<em>m</em>) / (<em>k</em> * log(1-1.0/<em>m</em>)))<br /><br /><br /><br />Anyway, apart from finding a better combining method the math stuff work fine, so we just have agree on the protocol-specific aspects.<br /><br />Feedback please ^^</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p893" class="blockpost rowodd">
+	<h2><span><span class="conr">#19&nbsp;</span><a href="viewtopic.php?pid=893#p893">2009-12-28 12:10:03</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: DHT Scrapes</h3>
+				<div class="postmsg">
+					<p>Summarising what I said on IRC.<br /><br />One must not forget why we are scraping in the first place: (1) to order torrents in the queue, and (2) to give a rough estimate of a torrent's health to the user.&nbsp; Neither of these applications requires accurate measures, rough estimates are enough.&nbsp; Additionally, estimates for large swarms can be extremely imprecise -- if the swarm is large and healthy, that's all you need to know, you don't care how large it is exactly.<br /><br />In the light of the above, I'm not sure if your solution isn't over-engineered.&nbsp; I'd be willing to bet that with the right fudge factors, you could find out sufficiently accurate data just by collecting (seeds, leeches) pairs of integers from the DHT nodes.<br /><br />If the bloom filters are actually needed, then the size you suggest is certainly too large.&nbsp; And the encoding of the &quot;want&quot; key is certainly uselessly flexible.<br /><br />--Juliusz</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p895" class="blockpost roweven">
+	<h2><span><span class="conr">#20&nbsp;</span><a href="viewtopic.php?pid=895#p895">2009-12-28 15:42:31</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: DHT Scrapes</h3>
+				<div class="postmsg">
+					<p>for documentation purposes:<br /><br /><br />The goal is to calculate the cardinality of the union of N bloom filters, since the error rate increases towards 1.0 (the |S| towards infinity) as c increases we can't just AND the filters together if the individual filters are already close to their max. capacity. Thus calculating the cardinality via the inclusion-exclusion principle would be the preferred approach, the problem is that intersecting bloom filters is not straight forward due to the probabilities associated with the bits set by each filter.<br /><br />For bloom filters representing the set Sx the bit count is denoted as cx. 0 &lt;= c &lt;= m. The 0-bit count is m - c.<br />Bloom filters have the same parameters m (bits) and k (hashes).<br />exponentiations and logarithms are performed to the basis b = 1 - 1/m.<br /><br /><br />only applies to singular or unioned bloom filters, not to intersected ones:<br />|S| = log_b(1 - c/m) / k <br /><br /><br />Edit, rewritten the problem statement a bit:<br />_______________________________________________________<br /><br />Task: intersection of N bloom filters<br />Basics: Bloom filters are a set representation with a false positive rate. They can map (through k hash functions) an infinite set S onto a finite set BF (represented by a bit array of m elements) where the probability of each bit being set after inserting n elements is p = 1 - (1-1/m)^k*n.<br />I'll use b = (1-1/m) as basis for exponentials and logarithms.<br /><br />|S| =~ log_b(1.0 - |BF|/m) / k<br /><br />Intersection of 2 bloom filters BF1, BF2 representing S1, S2:<br /><br />As per <a href="http://www.eecs.harvard.edu/~michaelm/postscripts/im2005b.pdf" rel="nofollow">http://www.eecs.harvard.edu/~michaelm/p &hellip; m2005b.pdf</a><br /><br />|Si| = the actual cardinality of intersection<br />|BFi| = the bits set to 1 in the intersected bloom filters<br /><br />p_i = (1-b^(k*|Si|)) + b^(k*|Si|) * ( 1 - b^(k*(|S1|-|Si|))) * ( 1 - b^(k*(|S2|-|Si|))) <br />&nbsp; &nbsp; &nbsp; &nbsp; (term 1)&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (term 2)&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(tern 3)&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(term 4)<br /><br />term1 : probability for each bit = 1 if we calculated the bloom filter of the intersection directly<br />term2 : probability of bits that should be 0<br />term3 * 4 : but aren't 0 because they were set by different elements in S1 and S2 and thus aren't part of the real intersection<br /><br />|BFi| =~ m * p_i<br /><br />replacing |S1|,|S2| with the approximation based on |BF1|,|BF2| we get<br /><br />|Si| = |intersect(S1,S2)| =~ log_b( (1-|BF1|/m) * (1-|BF2|/m) / ((1-|BF1|/m) + (1-|BF2|/m) - (1 - |BFi|/m))) / k;<br /><br /><br />Intersection of n bloom filters BF1,...BFn:<br /><br />|intersect(S1,...,Sn)| = ???</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p903" class="blockpost rowodd">
+	<h2><span><span class="conr">#21&nbsp;</span><a href="viewtopic.php?pid=903#p903">2010-01-08 13:33:19</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: DHT Scrapes</h3>
+				<div class="postmsg">
+					<p>*sigh* ... forum swallowed the message, so here it goes again. Demonstrating the simplicity of bloom filters with fixed parameters:<br /><br />k = 2<br />m = 256*8 // power of 2, makes bit arithemetic easy<br /><br />(everything is unsigned):<br /><br /><br />// the filter<br />byte[256] bloom <br /><br /><br />// insert IP 192.168.1.1 into the filter:<br /><br />byte[20] hash = sha1(byte[4] {192,168,1,1})<br /><br />int index1 = hash[0] &lt;&lt; 16 | hash[1]<br />int index2 = hash[2] &lt;&lt; 16 | hash[3]<br /><br />// truncate index to m<br />index1 %= m<br />index2 %= m<br /><br />bloom[index1 / 8] |= 0x01 &lt;&lt; index1 % 8<br />bloom[index2 / 8] |= 0x01 &lt;&lt; index2 % 8<br /><br />// done</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p905" class="blockpost roweven">
+	<h2><span><span class="conr">#22&nbsp;</span><a href="viewtopic.php?pid=905#p905">2010-01-09 02:31:40</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=725">Firon</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: DHT Scrapes</h3>
+				<div class="postmsg">
+					<p>Sorry about the missing posts. Won't happen again in the future!</p>
+				</div>
+				<div class="postsignature"><hr />Please read the <a href="http://forum.utorrent.com/viewtopic.php?id=458" rel="nofollow">rules</a> before posting.</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p918" class="blockpost rowodd">
+	<h2><span><span class="conr">#23&nbsp;</span><a href="viewtopic.php?pid=918#p918">2010-01-19 20:42:27</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: DHT Scrapes</h3>
+				<div class="postmsg">
+					<p>Note, worst case message size:<br /><br />nodes6 + nodes + 40 ipv6 values =<br /><br />8 * 38 + 8 * 28 + 40 * 21 = 1368 bytes (ignoring fixed packet content and IP/UDP overhead) =&gt; already too big for teredo tunnels. good thing we usually only need either nodes or nodes6<br /><br /><br />future(?):<br /><br />nodes6 + 2 bloom filters (each 256bytes) + X ipv6 values <br /><br />8 * 38 + 512 + 15 * 21 = 1.131 =&gt; can send 15 ipv6 values in addition to the bloom filters, maybe a bit less if we account for the remaining overhead<br /><br /><br />without bloom filters but 1 byte flags per peer:<br /><br />8 * 38 + 35 * 21 + 35 = 1.074 bytes</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox">
+		<p class="postlink conr">&nbsp;</p>
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;DHT Scrapes</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div class="inbox">
+
+			<div class="conl">
+				<form id="qjump" method="get" action="viewforum.php">
+					<div><label>Jump to
+					<br /><select name="id" onchange="window.location=('viewforum.php?id='+this.options[this.selectedIndex].value)">
+						<optgroup label="BitTorrent">
+							<option value="26">Announcements</option>
+							<option value="25" selected="selected">BEPs</option>
+							<option value="29">BEP process</option>
+							<option value="27">General</option>
+							<option value="33">Research Tools</option>
+							<option value="32">Cooperation between BitTorrent and ISPs</option>
+							<option value="30">Attacks against BitTorrent</option>
+							<option value="28">Feature Requests, Found Bugs &gt;&gt;&gt;</option>
+					</optgroup>
+					</select>
+					<input type="submit" value=" Go " accesskey="g" />
+					</label></div>
+				</form>
+			</div>
+			<p class="conr">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-116155-1";
+_udn = "utorrent.com";
+urchinTracker();
+</script>
+
+</body>
+</html>

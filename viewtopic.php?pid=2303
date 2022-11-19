@@ -1,0 +1,443 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Include per-file hash? (Page 1) / BEPs / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
+<script type="text/javascript" src="captcha/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript">
+	$(function(){var f=$("#sliderCaptcha");var b=$("#cleCaptcha");var d=$(".boutonsCaptcha");var a=$("#javascriptCaptcha");var e=[31,10,34,21,8,28,30,31,43,48,10,20,43,44,4,13,10,35,49,14,16,37,30,34,28,0,40,25,8,40,7,40,0,41,11,9,20,42,40,13,41,1,34,34,46,38,47,7,24,46];var h=0;var g=5;var c=0;a.hide();f.slider({value:0,min:0,max:g,step:1,slide:function(i,j){if(j.value>c){c=j.value;h+=c}},stop:function(j,k){var i=false;if(k.value==g){if(h==((g+Math.pow(g,2))/2)){i=true;f.slider("option","disabled",true);if(b.val().length!=e.length){$.post("captcha.php",{tokenCaptcha:b.val()},function(m){var l="";$.each(e,function(){l+=m.charAt(this%m.length)});b.val(l);d.removeAttr("disabled")})}}}if(!i){h=c=0;f.slider("option","value",h)}}})});
+</script>
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="punviewtopic" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex" class="isactive"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=140"><strong>Include per-file hash?</strong></a></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p857" class="blockpost rowodd firstpost blockpost1">
+	<h2><span><span class="conr">#1</span> <a href="viewtopic.php?pid=857#p857">2009-12-06 19:31:02</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90648">SibVic</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Include per-file hash?</h3>
+					<div class="postmsg">
+						<p>As you know, the main problem with torrent trackers is this:<br />Lets say you are trying to download some torrent with 10 files in it and it has no seeder at all. Your neighbor from the next room seeding exactly the same files but his torrent file from another tracker/made in with with different block size or contain more files than yours (from the same tracker). In this case peers will never found each other even if you both are using local retracker. <br />It can be solved if we add support of per-file hasg into protocol. We need to modify a client, so it will include into torrent file per-file hash (TTH for an example, like in Direct Connect) when it creates a torrent file (I&#039;m not really sure, is it possible with backwards compability), store on the traker a list of per-file hashes and in which torrent these files can be found and add ability to the client to get a torrent (&quot;torrent id&quot; and needed blocks?) by file hash. <br />I think, in the future, client software can be improved even more (in case of use DC-like TTH file has): clients can implement DC protocol, so torrents can be downloaded from both p2p networks: torrent and DC. Or even DC hub can be integrated into torrent tecker.<br />What do you think about that?</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p868" class="blockpost roweven">
+	<h2><span><span class="conr">#2</span> <a href="viewtopic.php?pid=868#p868">2009-12-12 05:29:46</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90000">DreadWingKnight</a></strong></dt>
+						<dd class="usertitle"><strong>CBTT/BNBT Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Include per-file hash?</h3>
+					<div class="postmsg">
+						<p>I think that some clients have already implemented this as well as some torrent makers.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Guy with a few torrent programs under his belt.</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p869" class="blockpost rowodd">
+	<h2><span><span class="conr">#3</span> <a href="viewtopic.php?pid=869#p869">2009-12-12 20:41:27</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90648">SibVic</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Include per-file hash?</h3>
+					<div class="postmsg">
+						<p>Yes, MLDonkey can download from the both networks. But there is one problem: torrent file does not contan other per-file hashes, so you cannot download torrent from the other networks.</p>
+						<p class="postedit"><em>Last edited by SibVic (2009-12-12 22:19:11)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p871" class="blockpost roweven">
+	<h2><span><span class="conr">#4</span> <a href="viewtopic.php?pid=871#p871">2009-12-14 08:37:24</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90000">DreadWingKnight</a></strong></dt>
+						<dd class="usertitle"><strong>CBTT/BNBT Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Include per-file hash?</h3>
+					<div class="postmsg">
+						<p>Not always the case.<br /><a href="http://wiki.depthstrike.com/index.php/P2P:Protocol:Specifications:Optional_Hashes">http://wiki.depthstrike.com/index.php/P … nal_Hashes</a></p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Guy with a few torrent programs under his belt.</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p872" class="blockpost rowodd">
+	<h2><span><span class="conr">#5</span> <a href="viewtopic.php?pid=872#p872">2009-12-14 08:58:54</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90648">SibVic</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Include per-file hash?</h3>
+					<div class="postmsg">
+						<p>I didn&#039;t know that. Thanks.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p966" class="blockpost roweven">
+	<h2><span><span class="conr">#6</span> <a href="viewtopic.php?pid=966#p966">2010-02-12 00:26:03</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90732">bridge2far</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Include per-file hash?</h3>
+					<div class="postmsg">
+						<p>I&#039;ve never found torrents having per-file hash. Any examples?</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p968" class="blockpost rowodd">
+	<h2><span><span class="conr">#7</span> <a href="viewtopic.php?pid=968#p968">2010-02-12 05:29:58</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90000">DreadWingKnight</a></strong></dt>
+						<dd class="usertitle"><strong>CBTT/BNBT Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Include per-file hash?</h3>
+					<div class="postmsg">
+						<p>A lot of ones on my sites have them (I have it as a requirement for uploading through my site&#039;s web interface).</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Guy with a few torrent programs under his belt.</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p970" class="blockpost roweven">
+	<h2><span><span class="conr">#8</span> <a href="viewtopic.php?pid=970#p970">2010-02-12 05:49:42</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90732">bridge2far</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Include per-file hash?</h3>
+					<div class="postmsg">
+						<p>Can you name one or few torrent clients having possibility to create such torrent files?</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p972" class="blockpost rowodd">
+	<h2><span><span class="conr">#9</span> <a href="viewtopic.php?pid=972#p972">2010-02-12 05:53:18</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90648">SibVic</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Include per-file hash?</h3>
+					<div class="postmsg">
+						<p>By the way: PeLink/GrayLink (DC client) developers had anonced pretty interesting torrent support (for the 6.0 version). PL/GL will be able to search torrent peers via DC network and recieve TTH hashes for the torrent (w/o TTH) from the users who already finished this torrent and seeding it via PL/GL. <img src="http://forum.bittorrent.org/img/smilies/smile.png" width="15" height="15" alt="smile" /></p>
+						<p class="postedit"><em>Last edited by SibVic (2010-02-12 05:53:57)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p974" class="blockpost roweven">
+	<h2><span><span class="conr">#10</span> <a href="viewtopic.php?pid=974#p974">2010-02-12 15:25:49</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90000">DreadWingKnight</a></strong></dt>
+						<dd class="usertitle"><strong>CBTT/BNBT Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Include per-file hash?</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>Can you name one or few torrent clients having possibility to create such torrent files?</p></div></blockquote></div><p>I already did, please re-read the page I linked in post 4.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Guy with a few torrent programs under his belt.</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2266" class="blockpost rowodd">
+	<h2><span><span class="conr">#11</span> <a href="viewtopic.php?pid=2266#p2266">2011-08-01 06:04:14</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=94666">runeks</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Include per-file hash?</h3>
+					<div class="postmsg">
+						<p>Have anyone considered making a formal BEP from these ideas?</p><p>I&#039;m in a situation where I have realized that this feature could be very useful, and I am very interested in seeing it implemented.<br />Also, the ability to identify individual files in a torrent, based on the content of these files, could be another very useful feature, where a single file present in multiple, different torrents could be downloaded across torrents, so to speak.</p><p>This example explains the usefulness of per-file hashes, for anyone wondering why they might be useful. Consider the following:</p><div class="quotebox"><blockquote><div><p>A torrent consisting of a directory containing two files:</p><p>README.TXT (size: 43 bytes)<br />ZIMAGE.IMG (size: 10 GB)</p><p>&quot;README.TXT&quot; contains the text: &quot;mount ZIMAGE.IMG using the &#039;mount&#039; command&quot;<br />&quot;ZIMAGE.IMG&quot; is a 10 GB image file containing some file system</p></div></blockquote></div><p>With the current specification, if we lose &quot;README.TXT&quot;, we are unable to verify the integrity of the first piece of ZIMAGE.IMG. Because the hash of the first piece depends on the content of &quot;README.TXT&quot;.<br />README.TXT is rather unimportant, and intentionally made so in this example. Additionally, it&#039;s not hard to imagine that many who download this torrent will deselect the README.TXT-file from being downloaded, and only download the image.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2303" class="blockpost roweven">
+	<h2><span><span class="conr">#12</span> <a href="viewtopic.php?pid=2303#p2303">2011-09-01 07:48:31</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=95067">scv011</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Include per-file hash?</h3>
+					<div class="postmsg">
+						<p>&gt; Include per-file hash?<br />+1</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=140"><strong>Include per-file hash?</strong></a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

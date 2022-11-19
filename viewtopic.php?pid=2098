@@ -1,0 +1,471 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>BEP 33: DHT Scrapes (Page 1) / BEPs / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
+<script type="text/javascript" src="captcha/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript">
+	$(function(){var f=$("#sliderCaptcha");var b=$("#cleCaptcha");var d=$(".boutonsCaptcha");var a=$("#javascriptCaptcha");var e=[33,19,28,16,27,20,13,0,22,10,48,2,38,10,27,43,49,24,0,6,10,13,20,41,20,9,45,19,14,6,2,48,26,31,14,4,1,28,5,24,38,3,27,27,13,5,20,12,29,21];var h=0;var g=5;var c=0;a.hide();f.slider({value:0,min:0,max:g,step:1,slide:function(i,j){if(j.value>c){c=j.value;h+=c}},stop:function(j,k){var i=false;if(k.value==g){if(h==((g+Math.pow(g,2))/2)){i=true;f.slider("option","disabled",true);if(b.val().length!=e.length){$.post("captcha.php",{tokenCaptcha:b.val()},function(m){var l="";$.each(e,function(){l+=m.charAt(this%m.length)});b.val(l);d.removeAttr("disabled")})}}}if(!i){h=c=0;f.slider("option","value",h)}}})});
+</script>
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="punviewtopic" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex" class="isactive"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=149"><strong>BEP 33: DHT Scrapes</strong></a></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p920" class="blockpost rowodd firstpost blockpost1">
+	<h2><span><span class="conr">#1</span> <a href="viewtopic.php?pid=920#p920">2010-01-19 22:40:03</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>BEP 33: DHT Scrapes</h3>
+					<div class="postmsg">
+						<p><a href="http://infinite-source.de/az/BEP_33.rst">http://infinite-source.de/az/BEP_33.rst</a></p><p>Feedback, i demand it.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p921" class="blockpost roweven">
+	<h2><span><span class="conr">#2</span> <a href="viewtopic.php?pid=921#p921">2010-01-22 16:29:29</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: BEP 33: DHT Scrapes</h3>
+					<div class="postmsg">
+						<p>I like it.</p><p>It might make sense to clarify that &quot;seed&quot;=1, &quot;scrape&quot;=1 and &quot;noseed&quot;=1 are supposed to be added to the &quot;a&quot; dictionary. And that &quot;BFsd&quot; and &quot;BFpe&quot; are supposed to be added to the &quot;r&quot; dictionary.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p926" class="blockpost rowodd">
+	<h2><span><span class="conr">#3</span> <a href="viewtopic.php?pid=926#p926">2010-01-25 18:23:04</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: BEP 33: DHT Scrapes</h3>
+					<div class="postmsg">
+						<p>I updated the BEP, it now includes test vectors, some legacy handling, arvid&#039;s changes and some changes to the BF pseudocode definition:</p><p>Same url as before: <a href="http://infinite-source.de/az/BEP_33.rst">http://infinite-source.de/az/BEP_33.rst</a></p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p927" class="blockpost roweven">
+	<h2><span><span class="conr">#4</span> <a href="viewtopic.php?pid=927#p927">2010-01-25 18:59:37</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=35956">ghazel</a></strong></dt>
+						<dd class="usertitle"><strong>BitTorrent Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: BEP 33: DHT Scrapes</h3>
+					<div class="postmsg">
+						<p>I like it, too.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1042" class="blockpost rowodd">
+	<h2><span><span class="conr">#5</span> <a href="viewtopic.php?pid=1042#p1042">2010-03-01 17:53:56</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: BEP 33: DHT Scrapes</h3>
+					<div class="postmsg">
+						<p>Sorry for the delay. I finally put up your bep on the site. It should be propagated and available soon.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1070" class="blockpost roweven">
+	<h2><span><span class="conr">#6</span> <a href="viewtopic.php?pid=1070#p1070">2010-03-05 05:44:36</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: BEP 33: DHT Scrapes</h3>
+					<div class="postmsg">
+						<p>It&#039;s still not there.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1122" class="blockpost rowodd">
+	<h2><span><span class="conr">#7</span> <a href="viewtopic.php?pid=1122#p1122">2010-03-15 16:49:42</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90630">NovaKing</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: BEP 33: DHT Scrapes</h3>
+					<div class="postmsg">
+						<p><a href="http://www.bittorrent.org/beps/bep_0033.html">http://www.bittorrent.org/beps/bep_0033.html</a></p><p>I like what I see so far.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1166" class="blockpost roweven">
+	<h2><span><span class="conr">#8</span> <a href="viewtopic.php?pid=1166#p1166">2010-03-21 18:10:23</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: BEP 33: DHT Scrapes</h3>
+					<div class="postmsg">
+						<p><a href="http://azureus.sourceforge.net/plugin_details.php?plugin=mlDHT">http://azureus.sourceforge.net/plugin_d … ugin=mlDHT</a></p><p>My implementation is publicly available now.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1282" class="blockpost rowodd">
+	<h2><span><span class="conr">#9</span> <a href="viewtopic.php?pid=1282#p1282">2010-04-05 13:23:18</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: BEP 33: DHT Scrapes</h3>
+					<div class="postmsg">
+						<p>I&#039;m very much undecided on this.</p><p>On the one hand -- it&#039;s certainly a very sexy piece of work.&#160; Merkle trees [edit: typo, I meant Bloom filters] are cool, and 8472 makes a rather elegant application of them.&#160; I feel that I&#039;ve learned something new.</p><p>On the other hand, I&#039;m not convinced that this extension is needed, and I&#039;m also not convinced that we want to trust BitTorrent implementors to get this right -- I expect a lot of buggy impementations of this to surface.</p><p>On the gripping hand, this extension only makes sense if it is deployed by a significant number of implementations.&#160; 8472, what are the ÂµTorrent fowks saying?</p>
+						<p class="postedit"><em>Last edited by jch (2010-04-05 14:05:18)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1286" class="blockpost roweven">
+	<h2><span><span class="conr">#10</span> <a href="viewtopic.php?pid=1286#p1286">2010-04-05 13:58:18</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89620">roee88</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: BEP 33: DHT Scrapes</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>On the one hand -- it&#039;s certainly a very sexy piece of work.&#160; Merkle trees are cool, and 8472 makes a rather elegant application of them.</p></div></blockquote></div><p>You either mentioned merkle trees by mistake or posted in the wrong thread.<br />Anyway, bloom filters are well known and easily implementable. <br />It is probably the best solution for distributed swarm size estimation.</p><p>Nice work The 8472 !</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1288" class="blockpost rowodd">
+	<h2><span><span class="conr">#11</span> <a href="viewtopic.php?pid=1288#p1288">2010-04-05 15:52:16</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: BEP 33: DHT Scrapes</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>jch wrote:</cite><blockquote><div><p>On the gripping hand, this extension only makes sense if it is deployed by a significant number of implementations.&#160; 8472, what are the ÂµTorrent fowks saying?</p></div></blockquote></div><p>As far as I&#039;ve understood it they&#039;re interested but it&#039;s a low priority thingy to implement.</p><br /><div class="quotebox"><cite>jch wrote:</cite><blockquote><div><p>On the other hand, I&#039;m not convinced that this extension is needed, and I&#039;m also not convinced that we want to trust BitTorrent implementors to get this right -- I expect a lot of buggy impementations of this to surface.</p></div></blockquote></div><p>I agree that this is a serious concern, considering the sloppyness of various DHT implementations.</p><p>That&#039;s why the provided bloom filter implementation is as simple as possible and i&#039;ve also provided a test vector.</p><p>All we can do now is see how it&#039;ll work out in practice, if it actually gets picked up.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2096" class="blockpost roweven">
+	<h2><span><span class="conr">#12</span> <a href="viewtopic.php?pid=2096#p2096">2011-05-20 23:06:50</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: BEP 33: DHT Scrapes</h3>
+					<div class="postmsg">
+						<p>@The 8472: The use of the terms &quot;seed&quot; and &quot;peer&quot; is a bit confusing in this BEP. I would imagine that both downloaders and seeds would be considered peers, but it sounds like in the BEP, &quot;peers&quot; are limited to just downloaders. I think it would be clearer if you would use the term &quot;downloader&quot; instead.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2098" class="blockpost rowodd">
+	<h2><span><span class="conr">#13</span> <a href="viewtopic.php?pid=2098#p2098">2011-05-21 04:38:44</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: BEP 33: DHT Scrapes</h3>
+					<div class="postmsg">
+						<p>Yes, Peers is intended to mean downloaders in that BEP. To express &quot;members of the network&quot; i usually say Node. A bit of historic nomenclature.</p><p>I could change/clarify the prose if you like, but i&#039;d prefer not to change the protocol parameters themselves since i&#039;ve been implementing it for a while.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=149"><strong>BEP 33: DHT Scrapes</strong></a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

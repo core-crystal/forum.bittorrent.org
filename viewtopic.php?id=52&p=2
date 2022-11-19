@@ -1,0 +1,716 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>forum.bittorrent.org / Latency Prioritizer</title>
+<link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
+</head>
+<body>
+
+<div id="punwrap">
+<div id="punviewtopic" class="pun">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><span>forum.bittorrent.org</span></h1>
+			<p><span>BitTorrent.org community</span></p>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p>You are not logged in.</p>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<h2><span>Announcement</span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div>Posting about any illegal sharing of copyrighted content is strictly forbidden.</div>
+		</div>
+	</div>
+</div>
+
+<div class="linkst">
+	<div class="inbox">
+		<p class="pagelink conl">Pages: <a href="viewtopic.php?id=52&amp;p=1">1</a>&nbsp;<strong>2</strong>&nbsp;<a href="viewtopic.php?id=52&amp;p=3">3</a></p>
+		<p class="postlink conr">&nbsp;</p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Latency Prioritizer</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p313" class="blockpost rowodd">
+	<h2><span><span class="conr">#26&nbsp;</span><a href="viewtopic.php?pid=313#p313">2008-08-01 09:26:53</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89879">herman</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<p>SSM is Source Specific Multicast? <a href="http://en.wikipedia.org/wiki/Source-specific_multicast" rel="nofollow">http://en.wikipedia.org/wiki/Source-specific_multicast</a></p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p314" class="blockpost roweven">
+	<h2><span><span class="conr">#27&nbsp;</span><a href="viewtopic.php?pid=314#p314">2008-08-01 16:52:24</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<p>yes</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p319" class="blockpost rowodd">
+	<h2><span><span class="conr">#28&nbsp;</span><a href="viewtopic.php?pid=319#p319">2008-08-07 15:14:32</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>So comcast basically wants that their users don't seed at<br />all.</p></div></blockquote><p>That is what they want.&nbsp; We cannot accomodate it.<br /><br />If ISP A customer can saturate his downlink elsewhere and ISP A<br />specifically says that A would prefer to incur transit costs over<br />proximity--- this we can accomodate.<br /><br /></p><blockquote><div class="incqbox"><p>I think randomizing the optimization and making it less greedy<br />is a better approach. E.g. when you try to connect to 70% local 30%<br />remote peers but optimistically disconnect based on performance then<br />you should be able to accumulate faster (remote) connections over time<br />if the local, proximity-based ones aren't performing well.</p></div></blockquote><p>Sounds like a reasonable default strategy in the absence of policy.<br />How would you fit policy into this?<br /><br /></p><blockquote><div class="incqbox"><p>The general problem is that we cannot trust information from<br />the ISP as they might use it to minimize costs at the expense of other<br />ISPs</p></div></blockquote><p>I am certain ISPs will do this. Neihboring ISPs can mutually benefit by<br />channeling traffic through a private peering point rather than through<br />upstream ISPs that charge both transits.&nbsp; To the extent we can affect<br />ISP costs through peer selection, I have no problem enabling such<br />arrangements when it improves or is neutral to peer performance.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p322" class="blockpost roweven">
+	<h2><span><span class="conr">#29&nbsp;</span><a href="viewtopic.php?pid=322#p322">2008-08-08 03:41:40</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>Sounds like a reasonable default strategy in the absence of policy.<br />How would you fit policy into this?</p></div></blockquote><p>I'd say retain the 70/30 rule but alter it from locality to whatever policy the ISP prefers.<br /><br /></p><blockquote><div class="incqbox"><p>I have no problem enabling such arrangements when it improves or is neutral to peer performance.</p></div></blockquote><p>And that's not what i was talking about. If 2 peers have a mutual agreement to steer bittorrent traffic to each other, i.e. extend the locality from ISP-local to peering-local then this is perfectly fine.<br />The problem starts when such decisions are unilateral and shift traffic to other ISPs, as mentioned in the Comcast example.<br /><br />See:<br /></p><blockquote><div class="incqbox"><p>If ISP A customer can saturate his downlink elsewhere and ISP A<br />specifically says that A would prefer to incur transit costs over<br />proximity--- this we can accomodate.</p></div></blockquote><p>This is indeed acceptable from the bittorrent perspective as it assumes surplus bandwidth being available somewhere. But it is globally suboptimal if a) it will divert bandwidth from external, active seeds that could be satisfied interally, which means the internal seeds go unutilized. Since bittorrent is a zero sum game and we are not downloading from the local uploaders either someone else will (making the policy pointless) or we're taking upload bandwidth out of the global pool, thus reducing the overall throughput of bittorrent.<br />and there's also b) that you will shift (up)loads to other ISPs (transit) unilateraly without allowing them to get upload from your peers.<br /><br />No matter how you spin it, policy can only redistribute connections, it cannot make upload go away without hurting one or more parties in the system.<br />Even assuming there is unutilized upload bandwidth and redistributing connections to such unutilized seeds would retain global bittorrent efficiency, but it would still cause potentially unfair loads on other ISPs, which in turn would provide incentive for them to discourage uploading on their end.<br />So the question is... are there really some underutilized seeds in big swarms which won't just start to seed other torrents if they upload capacity is unused?<br /><br />To accomodate Comcast's needs and optimal bittorrent performance (but not transit-balance) the following scenario would have to be true:<br /><ol style="list-style-type: decimal"><br /><li>The swarm must be large, otherwise it is unlikely that there'll much room for optimization</li><br /><li>The swarm must have nodes that have an idle upload link due to a massive surplus in upload bandwidth</li><br /><li>The mentioned uploaders must not have other torrents they can fallback to if their upload bandwidth is not used on the current torrent</li><br /><li>Those uploaders must reside outside networks that have problems with uploads</li><br /></ol><br /><br />Only if those conditions are true we can retain peer performance on a global level. Otherwise it will either hurt the swarm itself or other swarms. Now the question is... how common is this?</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p332" class="blockpost rowodd">
+	<h2><span><span class="conr">#30&nbsp;</span><a href="viewtopic.php?pid=332#p332">2008-08-11 13:47:59</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>Yes, a cache might work indeed, the problem is that this would be protocol-specific. When a new-protocol-of-the-day comes along you can't use it anymore.</p></div></blockquote><p>How do you make a cache truly generic?&nbsp; The BitTorrent protocol looks significantly different from HTTP, FTP, or file system protocols. <br /><br />I think it would be easier to introduce generic unicast group discovery mechanisms of which discovering caches is one application.<br /><br />What ties the BitTorrent tracker protocol to BitTorrent?&nbsp; The infohash could be grandfathered into a 20-byte group identifier.&nbsp; Statistics key-value pairs relevant to file transfers could be made optional.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p333" class="blockpost roweven">
+	<h2><span><span class="conr">#31&nbsp;</span><a href="viewtopic.php?pid=333#p333">2008-08-11 16:04:02</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>Only if those conditions are true we can retain peer performance on a global level. Otherwise it will either hurt the swarm itself or other swarms. Now the question is... how common is this?</p></div></blockquote><p>I do not know.<br /><br />Client instrumentation could answer this type of question.&nbsp; &nbsp;<br /><br />Learning how much capacity is available or how many torrents a client has joined are not exposed by tracker stats. <br /><br />BitTorrent, Inc. is afraid of introducing any additional instrumentation into uTorrent to avoid scaring the user base.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p335" class="blockpost rowodd">
+	<h2><span><span class="conr">#32&nbsp;</span><a href="viewtopic.php?pid=335#p335">2008-08-11 16:27:06</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<p>Well, even if it is common there's still the issue of shifting the load to other ISPs just because some ISP says &quot;i don't like seeding on my network&quot;.<br /><br />It's also an incentivization problem (as usual), why should some ISP not have a policy to refuse seeding? It could reduce their own peering traffic, copyright complaints, last mile congestion...<br />And once everyone starts doing it it becomes worthless.<br /><br /><br />Imo policy should work in the other direction. Instead of &quot;we don't like that traffic&quot; it should work more like &quot;we want this traffic to go over these routes if possible&quot;. This way an ISP can only control its local users instead of steering other, external users away from its own uploaders. This way they have an incentive to provide honest data that optimizes their own network usage. And if they wish they can strike deals with other ISPs or set up a larger infrastructure to coordinate such traffic-hints.</p>
+					<p class="postedit"><em>Last edited by The 8472 (2008-08-11 16:40:42)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p338" class="blockpost roweven">
+	<h2><span><span class="conr">#33&nbsp;</span><a href="viewtopic.php?pid=338#p338">2008-08-13 14:11:08</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>Only if those conditions are true we can retain peer performance on a global level. Otherwise it will either hurt the swarm itself or other swarms. Now the question is... how common is this?</p></div></blockquote><p>The more I think about this, I come to one conclusion:&nbsp; Do not argue with Aaron Grunthal (The 8472).&nbsp; Ask questions.&nbsp; But don't argue.<br /><br />It would be great to instrument clients to get a better notion of how often swarms are actually over-seeded or more generally to get a good characterization of how peers use their uplink capacity, but it does not look like I will get this from uTorrent or from BitTorrent mainline.<br /><br />Would anyone care to write an instrumented variant of Azureus or some other open source client that gathers statistics anonymously?&nbsp; We could create an archive of such data on bittorrent.org for researchers to use.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p342" class="blockpost rowodd">
+	<h2><span><span class="conr">#34&nbsp;</span><a href="viewtopic.php?pid=342#p342">2008-08-14 09:04:56</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<p>Hrrm, i think we can use plugins to send information to our update server, which then gets logged. So it should be possible to gather such statistics.<br /><br /></p><blockquote><div class="incqbox"><p>The more I think about this, I come to one conclusion:&nbsp; Do not argue with Aaron Grunthal (The 8472).&nbsp; Ask questions.&nbsp; But don't argue.</p></div></blockquote><p>Are you saying i'm right or i'm too argument-happy?<br /><br /><br /><br />Anyway, i think the points I made here are important to make the whole thing work at all: <a href="http://forum.bittorrent.org/viewtopic.php?pid=335#p335" rel="nofollow">http://forum.bittorrent.org/viewtopic.php?pid=335#p335</a><br />Otherwise you'll have a system that encourages misuse</p>
+					<p class="postedit"><em>Last edited by The 8472 (2008-08-14 09:09:05)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p343" class="blockpost roweven">
+	<h2><span><span class="conr">#35&nbsp;</span><a href="viewtopic.php?pid=343#p343">2008-08-14 17:31:17</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>Are you saying i'm right or i'm too argument-happy?</p></div></blockquote><p>ha ha.<br /><br />Join BitTorrent.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p344" class="blockpost rowodd">
+	<h2><span><span class="conr">#36&nbsp;</span><a href="viewtopic.php?pid=344#p344">2008-08-14 17:49:02</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>So it should be possible to gather such statistics.</p></div></blockquote><p>Is this an offer?<br /><br />Note: I started a forum for such discussions:<br />&nbsp; <a href="http://forum.bittorrent.org/viewforum.php?id=33" rel="nofollow">http://forum.bittorrent.org/viewforum.php?id=33</a><br /><br />and in particular wrt instrumentation:<br />&nbsp; <a href="http://forum.bittorrent.org/viewtopic.php?id=59" rel="nofollow">http://forum.bittorrent.org/viewtopic.php?id=59</a></p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p345" class="blockpost roweven">
+	<h2><span><span class="conr">#37&nbsp;</span><a href="viewtopic.php?pid=345#p345">2008-08-15 00:45:58</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89901">DeathfireD</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<p>It's pretty interesting to see all the new stuff you guys have been discussing. After reading this last page it sounds like the majority of the problems or &quot;walls&quot; you've encountered all have to do with ISP policy's lol. Has anyone in BitTorrent inc. attempted to communicate with ISPs like Comcast about the things you've been discussing? I think if they have a clear picture of all the alternatives, it might change their mentality a bit.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p346" class="blockpost rowodd">
+	<h2><span><span class="conr">#38&nbsp;</span><a href="viewtopic.php?pid=346#p346">2008-08-15 12:23:59</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>Has anyone in BitTorrent inc. attempted to communicate with ISPs like Comcast about the things you've been discussing?</p></div></blockquote><p>Yes.&nbsp; Absolutely.&nbsp; BitTorrent, inc. is under NDA with Comcast, and we have met with them.&nbsp; Despite what is implied by the press, I have never met with any enmity (I had a minor part in one delegation that met with their CTO).&nbsp; They honestly have a problem that affects the performance experienced by their customers, and they are looking for a solution that does not involve crafting TCP resets.<br /><br />We also talk to ISPs via the IETF.<br /><br />One of our engineers, Stas Shalunov, just returned from an IETF meeting in which BitTorrent participated in two BOFs (Birds of a Feather): one on background congestion control (TANA) and the other on peer selection/policy/etc (ALTO). <br /><br />Stas chaired the BOF on congestion control.&nbsp; Comcast presented in both BOFs.<br /><br />See <a href="http://www3.tools.ietf.org/agenda/72/tana.html" rel="nofollow">http://www3.tools.ietf.org/agenda/72/tana.html</a><br /><br />See <a href="http://tools.ietf.org/html/draft-marocco-alto-problem-statement-00" rel="nofollow">http://tools.ietf.org/html/draft-marocc &hellip; atement-00</a><br /><br />My understanding is that the TANA BOF was the most heavily attended BOF at the IETF.<br /><br />In addition to policy and congestion control, we have suggested caching to ISPs.<br /><br />BEP 22 was discussed at the IETF, and Stas is now working on an Internet draft version of that document.<br /><br />See <a href="http://www.bittorrent.org/beps/bep_0022.html" rel="nofollow">http://www.bittorrent.org/beps/bep_0022.html</a></p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p347" class="blockpost roweven">
+	<h2><span><span class="conr">#39&nbsp;</span><a href="viewtopic.php?pid=347#p347">2008-08-15 12:56:36</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>Yes.&nbsp; Absolutely.&nbsp; BitTorrent, inc. is under NDA with Comcast</p></div></blockquote><p>Which does not really help since bittorrent inc. is not the only entity releasing bittorrent clients. Deals behind closed doors are... not very helpful to everyone else.<br /><br />And yeah, i saw it on the IETF agenda, but too late. Both BOFs were over when i noticed *sigh*<br /><br /></p><blockquote><div class="incqbox"><p>Is this an offer?</p></div></blockquote><p>I haven't spoken with the others about it, i'm just saying it shouldn't make too much effort to implement it.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p349" class="blockpost rowodd">
+	<h2><span><span class="conr">#40&nbsp;</span><a href="viewtopic.php?pid=349#p349">2008-08-15 13:11:15</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>Which does not really help since bittorrent inc. is not the only entity releasing bittorrent clients.</p></div></blockquote><p>Comcast is understandably careful.<br /><br />Only a few things make sense, and we openly discuss these alternatives with other ISPs, the IETF, and in these forums, so the NDA doesn't matter that much.<br /><br />Everyone recognizes that there is more than one BitTorrent client.&nbsp; We cannot hope to achieve anything without getting cooperation from Azureus developers and others.&nbsp; BEP 22 comes from discussions with ISPs.&nbsp; There will hopefully be more BEPs to come.&nbsp; After discussion on .org, some BEPs as they relate to ISPs and network equipment vendors will be submitted as IETF drafts and then hopefully RFCs<br /><br />Please write a BEP that solidifies your ideas! <br /><br />Yeah.&nbsp; And I'll ask Stas to start cross-posting BitTorrent-related IETF stuff to BitTorrent.org.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p350" class="blockpost roweven">
+	<h2><span><span class="conr">#41&nbsp;</span><a href="viewtopic.php?pid=350#p350">2008-08-15 13:32:08</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>Please write a BEP that solidifies your ideas!</p></div></blockquote><p>I can't really do that since i basically have to make assumptions for everything that concerns the ISP side of any issue.<br />There's really nobody we (i.e. non BT-Inc.) people can talk to to bounce off ideas, get feedback... whatever. See my other article about SSM for example, i'm almost certain that there are important issues which i'm simply not aware of.<br /><br />Or here... all articles in <a href="http://forum.bittorrent.org/viewforum.php?id=32" rel="nofollow">this forum</a> are a dead and since we're just speculating without feedback.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p353" class="blockpost rowodd">
+	<h2><span><span class="conr">#42&nbsp;</span><a href="viewtopic.php?pid=353#p353">2008-08-15 14:01:16</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>I can't really do that since i basically have to make assumptions for everything that concerns the ISP side of any issue.</p></div></blockquote><p>Participate in IETF mailing lists for the TANA and ALTO BOFs.&nbsp; <br /><br />TANA:<br /><br /><a href="https://www.ietf.org/mailman/listinfo/tana" rel="nofollow">https://www.ietf.org/mailman/listinfo/tana</a><br /><br />ALTO:<br /><br /><a href="https://www.ietf.org/mailman/listinfo/p2pi" rel="nofollow">https://www.ietf.org/mailman/listinfo/p2pi</a><br /><br />We wrote BEP 22 because it is directed at BitTorrent developers.&nbsp; We also intend to present it as an IETF working draft but in a form that is more general to discovering ISP-offered services.<br /><br />Please still write BEPs for things that are BitTorrent-specific.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p360" class="blockpost roweven">
+	<h2><span><span class="conr">#43&nbsp;</span><a href="viewtopic.php?pid=360#p360">2008-08-15 15:39:13</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<p>bah... mailing lists.... someone should tell them about forum software ^^<br />ok, i'll subscribe. And the tana-archs are not browsable as it seems.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p369" class="blockpost rowodd">
+	<h2><span><span class="conr">#44&nbsp;</span><a href="viewtopic.php?pid=369#p369">2008-08-20 16:03:43</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=30435">bram</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<p>There are several different and sometimes conflicting goals being discussed here. Preferring to send traffic over shorter net links is never bad, and sometimes very good if it stays within the same ISP, but sometimes useless, since some backbone links are very underutilized anyway. Sending more data is good for consumers, but sometimes bad for ISPs. Sending less data is sometimes good for ISPs but bad for consumers. Doing congestion control in a way which doesn't create unacceptable latencies at full utilization the way TCP does is clearly a good thing all around, which is why we're emphasizing that approach.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p379" class="blockpost roweven">
+	<h2><span><span class="conr">#45&nbsp;</span><a href="viewtopic.php?pid=379#p379">2008-08-21 21:03:42</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89901">DeathfireD</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<p>Why not just apply all methods above that work? Or are you?<br />1) Send traffic over shortest distance (ie. Physical location, router distance,..etc).<br />2) Match up people that would be sharing data faster to each other.<br />3) Weed out people that are clogged up and haven't been able to upload or download from you after a certain amount of time.<br /><br />How much progress have you guys made with this issue so far? It seems like it's still in the debating stage <img src="img/smilies/sad.png" width="15" height="15" alt="sad" />.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p380" class="blockpost rowodd">
+	<h2><span><span class="conr">#46&nbsp;</span><a href="viewtopic.php?pid=380#p380">2008-08-22 12:27:48</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=30435">bram</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<p>It's well past the debating stage in that we've got real running code in the wild, but it mostly just distinguishes between LAN connections and internet connections, for the simple reason that for the consumer throughput and queue filling happen exactly the same regardless of where packets are coming from or going to, so it's unclear what, if anything, one might optimize for when trying to use internet mapping to decide where to upload to and download from.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p381" class="blockpost roweven">
+	<h2><span><span class="conr">#47&nbsp;</span><a href="viewtopic.php?pid=381#p381">2008-08-22 18:35:22</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89901">DeathfireD</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<p>So what your saying is, theres no clear way to solve this at the moment?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p382" class="blockpost rowodd">
+	<h2><span><span class="conr">#48&nbsp;</span><a href="viewtopic.php?pid=382#p382">2008-08-23 14:03:50</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=30435">bram</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>DeathfireD wrote:</h4><p>So what your saying is, theres no clear way to solve this at the moment?</p></div></blockquote><p>That's an oversimplified but not entirely misleading statement, yes. Some things can be done which are clearly good ideas, but none of them 'solve' the 'problem'.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p383" class="blockpost roweven">
+	<h2><span><span class="conr">#49&nbsp;</span><a href="viewtopic.php?pid=383#p383">2008-08-23 22:09:19</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89901">DeathfireD</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<p>I see, I guess theres not much else to say <img src="img/smilies/sad.png" width="15" height="15" alt="sad" />.<br /><br />How has your latest talks (if any) with Comcast gone so far? It seems they care very little about the issue and just want to remove p2p all togeathor. It would be great if there was some kind of RSS feed or blog on bittorent.org that keept us informed on things like this.<br /><br />Anyway, thanks for your fast replys.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p386" class="blockpost rowodd">
+	<h2><span><span class="conr">#50&nbsp;</span><a href="viewtopic.php?pid=386#p386">2008-08-26 16:25:40</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>Preferring to send traffic over shorter net links is never bad</p></div></blockquote><p>Depends on what you mean by &quot;prefer.&quot;&nbsp; As suggested by 8472, having a &quot;good&quot; mix of near and far connections would reasonably protect you from an ISP that has extremely limited customer uplink capacity but does not prevent transit traffic.&nbsp; I don't know if 70/30 is the correct number.&nbsp; In&nbsp; Bindal et al, each peer connected to only 1 peer outside the ISP, which for a cooperating ISP MIGHT be enough to maintain piece diffusion, but probably isn't enough to work around bad policy.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox">
+		<p class="postlink conr">&nbsp;</p>
+		<p class="pagelink conl">Pages: <a href="viewtopic.php?id=52&amp;p=1">1</a>&nbsp;<strong>2</strong>&nbsp;<a href="viewtopic.php?id=52&amp;p=3">3</a></p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Latency Prioritizer</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div class="inbox">
+
+			<div class="conl">
+				<form id="qjump" method="get" action="viewforum.php">
+					<div><label>Jump to
+					<br /><select name="id" onchange="window.location=('viewforum.php?id='+this.options[this.selectedIndex].value)">
+						<optgroup label="BitTorrent">
+							<option value="26">Announcements</option>
+							<option value="25" selected="selected">BEPs</option>
+							<option value="29">BEP process</option>
+							<option value="27">General</option>
+							<option value="33">Research Tools</option>
+							<option value="32">Cooperation between BitTorrent and ISPs</option>
+							<option value="30">Attacks against BitTorrent</option>
+							<option value="28">Feature Requests, Found Bugs &gt;&gt;&gt;</option>
+					</optgroup>
+					</select>
+					<input type="submit" value=" Go " accesskey="g" />
+					</label></div>
+				</form>
+			</div>
+			<p class="conr">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-116155-1";
+_udn = "utorrent.com";
+urchinTracker();
+</script>
+
+</body>
+</html>

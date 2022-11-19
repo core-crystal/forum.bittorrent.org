@@ -1,0 +1,552 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>decentralized feeds (Page 2) / BEPs / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
+<script type="text/javascript" src="captcha/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript">
+	$(function(){var f=$("#sliderCaptcha");var b=$("#cleCaptcha");var d=$(".boutonsCaptcha");var a=$("#javascriptCaptcha");var e=[12,22,44,47,35,4,29,31,9,41,42,5,10,10,47,1,22,20,27,16,37,24,9,12,24,14,18,2,42,5,41,4,27,35,2,13,40,32,44,49,23,37,5,34,47,3,35,20,24,12];var h=0;var g=5;var c=0;a.hide();f.slider({value:0,min:0,max:g,step:1,slide:function(i,j){if(j.value>c){c=j.value;h+=c}},stop:function(j,k){var i=false;if(k.value==g){if(h==((g+Math.pow(g,2))/2)){i=true;f.slider("option","disabled",true);if(b.val().length!=e.length){$.post("captcha.php",{tokenCaptcha:b.val()},function(m){var l="";$.each(e,function(){l+=m.charAt(this%m.length)});b.val(l);d.removeAttr("disabled")})}}}if(!i){h=c=0;f.slider("option","value",h)}}})});
+</script>
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="punviewtopic" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex" class="isactive"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=302"><strong>decentralized feeds</strong></a></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><a class="item1" href="viewtopic.php?id=302&amp;p=1">Previous</a> <a href="viewtopic.php?id=302&amp;p=1">1</a> <strong>2</strong></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p1846" class="blockpost rowodd blockpost1">
+	<h2><span><span class="conr">#26</span> <a href="viewtopic.php?pid=1846#p1846">2011-01-19 17:10:20</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<p>I&#039;ve updated this document with your feedback: <a href="http://www.rasterbar.com/products/libtorrent/dht_rss.html">http://www.rasterbar.com/products/libto … t_rss.html</a></p><div class="quotebox"><cite>hughw wrote:</cite><blockquote><div><p>1. Does the signature need to be specified in advance? Because ECDSA over Curve25519 hasn&#039;t been implemented, much less time-tested, I&#039;m not comfortable with it. I don&#039;t mind using OpenSSL and FIPS 186-3 P-256; I assume you are worried about potential patent infringement? It seems that just specifying which signature type is being used satisfies everyone, and allows it to be extensible in the future.</p></div></blockquote></div><p>I think RSA would be reasonable.</p><div class="quotebox"><blockquote><div><p>2. I would really like to see individual feed items time out of the swarm. I&#039;m currently running a few simulations of different drop patterns against different algorithms for assigning skip-list pointers to see how they fare. It seems like a possibly viable solution, but if we time out items in an undetermined order, most skip list implementations don&#039;t act well.</p></div></blockquote></div><p>I would imagine that a pretty common use case would be to keep items alive for as long as possible, i.e. until the interest in them has entirely died out. I would imagine you could specify timeouts in the items though, say, as posix time, at which time the item is dropped and no longer accepted by nodes.</p><div class="quotebox"><blockquote><div><p>3. It shouldn&#039;t matter too much what the actual document content is, but to the extent that this RFC targets a single document type, Atom is more flexible and extensible than RSS. Again, since you&#039;re not enforcing a single type in the spec, this is just a side note.</p></div></blockquote></div><p>Right, I think it makes sense to specify the fundamental &quot;tags&quot; for torrents, and then it&#039;s possible to pull in names of tags from Atom or RSS to extend the metadata for each item. Though, a 1-1 mapping of names may not be practical.</p><div class="quotebox"><blockquote><div><p>4. Keeping virtual torrents open, or using a gossip algorithm over DHT neighbors might introduce less load than clients periodically polling for new information on feedname+key. Using gossip over DHT is something we&#039;ve already tried, and might stick to for the sake of speed in getting information out.</p></div></blockquote></div><p>In order to store keys in the DHT, you need a write token from the node you&#039;re writing to, which means you need to do a get_item at some point.</p><p>You mean using gossip over the DHT to find out whether or not a key needs to be re-announced?</p><p>Btw. I checked in my implementation (and the source document I linked to in this post) to libtorrent trunk. It doesn&#039;t verify any signature yet, and it&#039;s only the storing end of the DHT node, not the announcing (yet).</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1852" class="blockpost roweven">
+	<h2><span><span class="conr">#27</span> <a href="viewtopic.php?pid=1852#p1852">2011-01-19 19:51:58</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>arvid wrote:</cite><blockquote><div><p>I&#039;ve updated this document with your feedback: <a href="http://www.rasterbar.com/products/libtorrent/dht_rss.html">http://www.rasterbar.com/products/libto … t_rss.html</a></p></div></blockquote></div><p>I see that you altered my republishing algorithm, but you did not preserve all its properties.</p><p>The goal was to always republish <strong>one</strong> or more entries, as needed. Now you republish zero or more entries. The trick behind republishing at least 1 entry is that given enough subscribers we&#039;ll always refresh all entries before they expire. If we wait for data being lost then there may be gaps in the coverage.</p><p>It&#039;s late here, i&#039;ll check the other parts tomorrow.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1856" class="blockpost rowodd">
+	<h2><span><span class="conr">#28</span> <a href="viewtopic.php?pid=1856#p1856">2011-01-20 02:50:48</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<p>I had a brilliant idea when i got up today. We can do away with distinguishing between HEAD/ITEM and at the same time also gain mutability for all elements.</p><p>The data structure format needs to be changed to the following:</p><p>item<br />&#160; &#160;key<br />&#160; &#160;uid | name<br />&#160; &#160;seq<br />&#160; &#160;ptr<br />&#160; &#160;...<br />sig</p><br /><br /><p>uid is a random 8byte binary string.</p><p>entries are checked for validity the following way:<br />1. (dht-id == sha1(uid+key)) or (dht-id == sha1(name+key))<br />2. verify_signature(key,sig,bencode(bdecode()[&quot;item&quot;]))<br />3. a) seq == old_seq -&gt; just update timeout<br />3. b) seq &gt; old_seq -&gt; replace data</p><br /><p>This way all entries will only be identified by their pubkey and 1 unique field (name or uid). This means they are mutable, should be practically collision-free and we don&#039;t really need to distinguish between cases apart from the DHT id checking.<br />I also renamed the &quot;next&quot; entry into &quot;ptr&quot; in case different data structures, such as trees or doubly linked lists, would be implemented using the storage since this is publisher and subscriber-side logic and not storage-node logic.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1858" class="blockpost roweven">
+	<h2><span><span class="conr">#29</span> <a href="viewtopic.php?pid=1858#p1858">2011-01-20 08:09:09</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=92006">hughw</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>Patents are an issue with point compression which is needed to keep the signatures compact. If there are other schemes that only require the X-coordinates on the curves those would work too.</p></div></blockquote></div><p>FIPS 186-2 specifies a minimum of 40 bytes for a 160-bit EC signature; the OpenSSL implementation uses 40 + 6 (ASN.1) bytes. What signature schemes use less? If you&#039;re talking about the coordinate compression for the efficiently of computing and verifying signatures, I don&#039;t know how the OpenSSL implementation works, but I suspect that it is much slower than Certicom&#039;s implementations. My point was that we needn&#039;t define the signature type in the spec, and allowing it to be replaceable might be a good thing.</p><div class="quotebox"><blockquote><div><p>Dealing with missing entries would be a failure recovery mode atm, not an intended feature. If you actually want to remove entries we basically have to make them mutable to alter the skiplist after the first publication.</p></div></blockquote></div><p>Right, I was assuming that the feed owner obsoletes items periodically, but doesn&#039;t know at the time that they are posted when that will be, and testing to see how a skip list would handle that. My needs may diverge enough from the main purposes of libtorrent that I just have to keep a separate fork, but I expect to replace items periodically.</p><div class="quotebox"><blockquote><div><p>DHT wide gossip certainly is not an option, since it would be too unspecific.</p></div></blockquote></div><p>What I had in mind was gossiping only among subscribers, which involves each client knowing which of their neighbors subscribe to the same channels the client does and passing enough metadata around to prevent flooding or too many redundant messages. Again, this may be something that you have no interest in, but it will cause faster response and less network congestion (than polling for updates) in the clients I&#039;m working on. My only worry with virtual torrents is that it would be less robust to high rates of node failures and targeted attacks.</p><div class="quotebox"><blockquote><div><p>I checked in my implementation (and the source document I linked to in this post) to libtorrent trunk.</p></div></blockquote></div><p>Thanks!</p><div class="quotebox"><blockquote><div><p>This way all entries will only be identified by their pubkey and 1 unique field (name or uid)</p></div></blockquote></div><p>I&#039;m likely confused. Do you mean that the data structure contains both a uid and a name, or either at the submitter&#039;s discretion? I assume the latter; this also means that all entries are stored under both keys, since nodes can&#039;t tell which will be used to access an entry, right? This might not be a problem, but in case I&#039;m confused, I thought I should ask.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1860" class="blockpost rowodd">
+	<h2><span><span class="conr">#30</span> <a href="viewtopic.php?pid=1860#p1860">2011-01-20 10:55:30</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>FIPS 186-2 specifies a minimum of 40 bytes for a 160-bit EC signature; the OpenSSL implementation uses 40 + 6 (ASN.1) bytes.</p></div></blockquote></div><p>I&#039;ll have a look at the standard then.</p><div class="quotebox"><blockquote><div><p>What I had in mind was gossiping only among subscribers, which involves each client knowing which of their neighbors subscribe to the same channels the client does and passing enough metadata around to prevent flooding or too many redundant messages. Again, this may be something that you have no interest in, but it will cause faster response and less network congestion (than polling for updates) in the clients I&#039;m working on. My only worry with virtual torrents is that it would be less robust to high rates of node failures and targeted attacks.</p></div></blockquote></div><p>Like i said, virtual torrents would require totally different connection behavior (using random walks) than normal ones.</p><p>Anyway, the DHT doesn&#039;t support any kind of gossip right now since nodes interested in similar data cannot find each other. It would require a pile of new features to support that.</p><br /><div class="quotebox"><blockquote><div><p>I&#039;m likely confused. Do you mean that the data structure contains both a uid and a name, or either at the submitter&#039;s discretion? I assume the latter;</p></div></blockquote></div><p>The latter.</p><div class="quotebox"><blockquote><div><p>this also means that all entries are stored under both keys, since nodes can&#039;t tell which will be used to access an entry, right?</p></div></blockquote></div><p>No, you would only store either a name+key or a uid+key entry, depending on your needs. name+key entries serve as HEAD entries, they are locateable by humans. uid+key entries serve as leaf nodes stored in randomized locations in the DHT.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1888" class="blockpost roweven">
+	<h2><span><span class="conr">#31</span> <a href="viewtopic.php?pid=1888#p1888">2011-02-22 09:28:04</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<p>Ok, i think my updated proposal is reasonable now. Comments are welcome.</p><p>Here&#039;s a patch against arvid&#039;s version:<br /><a href="http://dhtrss.pastebay.com/pastebay.php?dl=115163">http://dhtrss.pastebay.com/pastebay.php?dl=115163</a></p><p>And here the patched one:<br /><a href="http://dhtrss.pastebay.com/115164">http://dhtrss.pastebay.com/115164</a></p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1890" class="blockpost rowodd">
+	<h2><span><span class="conr">#32</span> <a href="viewtopic.php?pid=1890#p1890">2011-02-22 22:02:04</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=92442">Caleb James DeLisle</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<p>I wrote up some comments on that RFC.<br />The most major problem I see is truncation of a SHA-256. AFAICT there is never a validation of the entire SHA-256, only the high 160 bits. There might be literature on the collision resistance of truncated SHA-256 but I have not seen any.<br />My review inline:<br /><a href="http://dhtrss.pastebay.com/115225">http://dhtrss.pastebay.com/115225</a></p><p>I also wrote my own proposal for the low level get/put functions.<br /><a href="http://cjdns.pastebay.com/115023">http://cjdns.pastebay.com/115023</a><br />Basic properties include:<br />* Static content is stored as static thus removing the need for keys with each entry.<br />* Target id is first 20 bytes of public signing key (if mutable) or SHA-256 (if static) decreasing packet overhead and forcing publishers to use a different key for each mutable entry which, for security reasons, they should be doing anyway.<br />* Requesting node receives entry from storing node _without_ key (or hash if static), the requester must know the key, not take the storing node&#039;s word for it or rely on a truncated SHA-256.<br />* No pointer entries, these can and should be implemented at a higher level.<br />* Supports multiple cryptographic and hash algorithms providing a path forward as they become outdated. Packet overhead is so small enough a 768 byte entry should fit in a packet even with RSA-2048 key and signature! Default crypto algorithms should be NIST p256 and RSA-2048 for a good modern algorithm as well as an old standby.</p><p>Caleb</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1982" class="blockpost roweven">
+	<h2><span><span class="conr">#33</span> <a href="viewtopic.php?pid=1982#p1982">2011-04-25 08:29:07</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<p>Caleb, those pastes have expired now. Would you mind posting them directly in the forum or somewhere more persistent?</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2016" class="blockpost rowodd">
+	<h2><span><span class="conr">#34</span> <a href="viewtopic.php?pid=2016#p2016">2011-04-28 10:26:25</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<p>Before I update my spec... i&#039;d like to ask developers present here what they would be more likely to implement:</p><p>a) a generic, versioned, signed get/put and pointer RPC API on the DHT<br />b) something less flexible/potentially more traffic-heavy using modified bittorrent connections (limited broadcasts via random walkers on always-on virtual torrents), DHT would only serve as a way to join the virtual torrent</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2022" class="blockpost roweven">
+	<h2><span><span class="conr">#35</span> <a href="viewtopic.php?pid=2022#p2022">2011-04-28 11:21:22</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=92442">Caleb James DeLisle</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<p>Sorry, I didn&#039;t notice your message, if you&#039;re looking for me I&#039;m always on irc.<br />That is my proposal:<br /><a href="https://github.com/cjdelisle/cjdns/blob/master/rfcs/DHTStore.txt">https://github.com/cjdelisle/cjdns/blob … TStore.txt</a><br />It is partially implemented here:<br /><a href="https://github.com/cjdelisle/cjdns/blob/master/dht/dhtstore/SHA1Store.c">https://github.com/cjdelisle/cjdns/blob … HA1Store.c</a><br /><a href="https://github.com/cjdelisle/cjdns/blob/master/dht/dhtstore/DHTStoreModule.c">https://github.com/cjdelisle/cjdns/blob … reModule.c</a><br />and more interestingly the test is here:<br /><a href="https://github.com/cjdelisle/cjdns/blob/master/dht/dhtstore/test/SHA1Store_test.c">https://github.com/cjdelisle/cjdns/blob … ore_test.c</a></p><p>Unfortunately I don&#039;t seem to have the review anymore.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2094" class="blockpost rowodd">
+	<h2><span><span class="conr">#36</span> <a href="viewtopic.php?pid=2094#p2094">2011-05-20 09:23:56</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<p>@The 8472: Personally I would prefer option (a).<br />@Caleb: Is there a good reason to require implementations to support all of sha-1, sha-256, dsap and rsa? It would simplify implementations a lot by picking one of each and stick to it.</p><p>I like the idea of separating get/put and getm/putm. I would imagine they would be separate types. i.e. you can&#039;t store something with &quot;putm&quot; and get it with &quot;get&quot;.</p><p>would it make sense to allow &quot;v&quot; to be any bencoded type (not just a string), and the hash is the hash of the encoded form.<br />That way, uses of this extension would blend in nicely with the encoding of the message.</p><p>I also think the &quot;token&quot; argument should be passed inside the &quot;a&quot; dict, to be consistent with &quot;announce_peer&quot;.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2100" class="blockpost roweven">
+	<h2><span><span class="conr">#37</span> <a href="viewtopic.php?pid=2100#p2100">2011-05-21 05:06:31</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<p>i think mutable/non-mutable can be solved with a single query simply by properly specifying the invariants that nodes have to verify. With a properly placed OR we can both support sha1-only, non-mutable storage and signed, mutable storage with a single request.</p><p>I also don&#039;t want clients to implement tons of new RPC calls when they essentially do all the same with just minor variations. That&#039;s what parameters are good for. This also applies for the cryptographic primitives.</p><p>The thing is we have to specify binary formats for asymmetric primitives, all clients have to implement them in case someone decides to use a different one and yet we only need one at a time. </p><p>Considering that collision attacks are not a real issue and pre-image attacks on hashes are far out there compared to collisions then the real issue would be a broken private key of the asymmetric primitive. The damage of a compromised private key is the same whether we have a stronger backup function or not: Users would potentially auto-download malicious content. So the damage would be already done.<br />I mean, transitioning faster than we usually do would be nice, but the implementation costs are quite high for something we won&#039;t need for years to come.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2102" class="blockpost rowodd">
+	<h2><span><span class="conr">#38</span> <a href="viewtopic.php?pid=2102#p2102">2011-05-21 11:01:33</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<p>regarding using separate RPCs for mutable/non-mutable; I mostly like the idea of differentiating the concepts. I agree that it is nicer to just add two new RPCs.</p><p>In particular, I think mutable and immutable should be different *types*, by which I mean they should be stored in separate containers in the local node, and have separate limits on how many are allowed to be stored, and be evicted separately.</p><p>I haven&#039;t thought it all out yet, but it feels like a good idea to not have one able to overrun the other, just like these generic items should not be able to push out torrents.</p><p>Speaking of eviction, maybe the BEP should mention some ideas of how to determine what to evict when adding new items. The way I have implemented this in libtorrent is by keeping a bloom filter and a counter for each item, containing all IPs that have announced it. When evicting, items with more nodes announcing are prioritized. It seems like a reasonable general concept. Maybe it can be improved in some way.</p><p>I suppose there could be limits on how many items any single IP is allowed to announce as well.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2106" class="blockpost roweven">
+	<h2><span><span class="conr">#39</span> <a href="viewtopic.php?pid=2106#p2106">2011-05-23 16:50:03</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<p>@Caleb: we should probably not assume that MTU is 1500 bytes, 1280 seems like more reasonable, to avoid fragmentation on teredo.</p><p>Also, in a previous proposal, The 8472 suggested (iirc) having the target for mutable keys be the hash of the public key + name, where name was the name of the feed. The benefit would be that you could use a single key pair for multiple key-value pairs. Now, name of a channel doesn&#039;t make sense for the generic case, but maybe we could add some other key that can be combined with the public key.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2108" class="blockpost rowodd">
+	<h2><span><span class="conr">#40</span> <a href="viewtopic.php?pid=2108#p2108">2011-05-24 15:50:59</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>arvid wrote:</cite><blockquote><div><p>regarding using separate RPCs for mutable/non-mutable; I mostly like the idea of differentiating the concepts. I agree that it is nicer to just add two new RPCs.</p><p>In particular, I think mutable and immutable should be different *types*, by which I mean they should be stored in separate containers in the local node, and have separate limits on how many are allowed to be stored, and be evicted separately.</p></div></blockquote></div><p>Considering that they need to keep track of mutability anyway it&#039;s not absolutely necessary to store them in separate containers. you can just sieve them out if you need to. But that&#039;s really an implementation detail</p><p>And considering that we&#039;re using cryptographic methods with 80bit birthday space here it&#039;s not really necessary to avoid collisions by creating separate namespaces.</p><div class="quotebox"><blockquote><div><p>Speaking of eviction, maybe the BEP should mention some ideas of how to determine what to evict when adding new items. The way I have implemented this in libtorrent is by keeping a bloom filter and a counter for each item, containing all IPs that have announced it.</p></div></blockquote></div><p>Since my proposal contains strategies to reduce the number of concurrent put operations on a single key that wouldn&#039;t be a good measure.</p><p>Keeping the most-requested stuff around might work better but would ultimately allow people with more resources to push out other data.</p><p>I think first-come, first-serve basis, i.e. preferring the longest-lived data just like routing table entries is the safest approach, as long as they get refreshed of course.</p><div class="quotebox"><blockquote><div><p>Also, in a previous proposal, The 8472 suggested (iirc) having the target for mutable keys be the hash of the public key + name, where name was the name of the feed.</p></div></blockquote></div><p>pubkey + id. Where id can either be a randomly generated string or a human-readable one (with preference for random ones wherever possible).</p><p>That way i was able to achieve two properties:<br />a) decouple the target ID from the data (which is necessary for mutable data)<br />b) made it easy to many (billions) of possible target IDs (both human-readable and purely random) for a single public key.</p><br /><p>My idea for dealing with mutable and non-mutable data would be the following, nodes simply have to check the following invariants:</p><br /><p>target ID == hash(payload) || (new_version &gt;= current_version &amp;&amp; target ID == hash(pubkey, uid) &amp;&amp; check_signature(pubkey, sig,payload))</p><p>The first case is for immutable content and doesn&#039;t need any signatures, the 2nd case is fore mutable content.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2112" class="blockpost roweven">
+	<h2><span><span class="conr">#41</span> <a href="viewtopic.php?pid=2112#p2112">2011-05-24 18:48:22</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<p>Trying to capture the spirit of caleb&#039;s proposal, I wrote this up (and implemented it in libtorrent):</p><p><a href="http://www.rasterbar.com/products/libtorrent/dht_store.html">http://www.rasterbar.com/products/libto … store.html</a></p><p>It&#039;s simpler by only using SHA-1 as hash function and only use RSA-2048 for signatures and by just adding &quot;put&quot; and &quot;get&quot;. I also fixed up some of the things I mentioned in earlier posts, like sticking &quot;token&quot; inside the &quot;a&quot; dict and allowing &quot;v&quot; to be of other types than strings.</p><p>The thing I haven&#039;t done (yet) is having a separate ID to hash the public key with. This has another side effect of simplifying the protocol since the public key doesn&#039;t have to be sliced (as in &quot;target&quot; + &quot;k&quot; in get messages).</p><p>Comments?</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><a class="item1" href="viewtopic.php?id=302&amp;p=1">Previous</a> <a href="viewtopic.php?id=302&amp;p=1">1</a> <strong>2</strong></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=302"><strong>decentralized feeds</strong></a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

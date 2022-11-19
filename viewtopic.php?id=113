@@ -1,0 +1,569 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>forum.bittorrent.org / BEP 31 Tracker Failure Retry Extension</title>
+<link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
+</head>
+<body>
+
+<div id="punwrap">
+<div id="punviewtopic" class="pun">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><span>forum.bittorrent.org</span></h1>
+			<p><span>BitTorrent.org community</span></p>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p>You are not logged in.</p>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<h2><span>Announcement</span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div>Posting about any illegal sharing of copyrighted content is strictly forbidden.</div>
+		</div>
+	</div>
+</div>
+
+<div class="linkst">
+	<div class="inbox">
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<p class="postlink conr">&nbsp;</p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;BEP 31 Tracker Failure Retry Extension</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p655" class="blockpost rowodd firstpost">
+	<h2><span><span class="conr">#1&nbsp;</span><a href="viewtopic.php?pid=655#p655">2009-10-15 12:44:47</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3>BEP 31 Tracker Failure Retry Extension</h3>
+				<div class="postmsg">
+					<p>It's up at:<br /><br />&nbsp; <a href="http://bittorrent.org/beps/bep_0031.html" rel="nofollow">http://bittorrent.org/beps/bep_0031.html</a><br /><br />Some comments:<br /><br />1. Should the retry interval be encoded as an integer instead of as a string<br />2. Should the extension recommend interpretations of HTTP status codes?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p660" class="blockpost roweven">
+	<h2><span><span class="conr">#2&nbsp;</span><a href="viewtopic.php?pid=660#p660">2009-10-15 15:28:38</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 31 Tracker Failure Retry Extension</h3>
+				<div class="postmsg">
+					<p>i'm curious how this is supposed to happen &quot;by accident&quot;. i talked to someone who was affected by this problem but he didn't really provide any details. And that was the 1st time that i've ever heard of such a problem.<br /><br />So, it would be good if the practical necessity of this extension could be demonstrated.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p662" class="blockpost rowodd">
+	<h2><span><span class="conr">#3&nbsp;</span><a href="viewtopic.php?pid=662#p662">2009-10-15 15:43:24</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 31 Tracker Failure Retry Extension</h3>
+				<div class="postmsg">
+					<p>Yeah, good point.<br /><br />I could also be motivated as a way to protect people from attacks if somebody manages to slip in a url to a site they want to bring down in a very popular torrent.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p664" class="blockpost roweven">
+	<h2><span><span class="conr">#4&nbsp;</span><a href="viewtopic.php?pid=664#p664">2009-10-15 16:01:34</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 31 Tracker Failure Retry Extension</h3>
+				<div class="postmsg">
+					<p>well, do existing TEX implementations guard against such injections?</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p667" class="blockpost rowodd">
+	<h2><span><span class="conr">#5&nbsp;</span><a href="viewtopic.php?pid=667#p667">2009-10-15 16:10:35</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 31 Tracker Failure Retry Extension</h3>
+				<div class="postmsg">
+					<p>yes. The BEP prevents bad urls to spread by requiring a client to have received a successful response before handing it off to anybody else. It doesn't specify that trackers may be dropped if they fail though.<br /><br />The only implementation I know of is my own, which is barely deployed anywhere.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p697" class="blockpost roweven">
+	<h2><span><span class="conr">#6&nbsp;</span><a href="viewtopic.php?pid=697#p697">2009-10-19 03:37:06</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90590">fuzzel</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 31 Tracker Failure Retry Extension</h3>
+				<div class="postmsg">
+					<p>The &quot;Accident&quot; can easily be found on Google:<br /><a href="http://www.google.com/search?q=The+Pirate+Bay+sixxs.org" rel="nofollow">http://www.google.com/search?q=The+Pirate+Bay+sixxs.org</a><br /><br />In short: IPv6Gate is a IPv6&lt;-&gt;IPv4 gateway. TPB was down a couple of times but available over IPv6, thus reachable through that, and as the tracker protocol is running on top of a minimal HTTP, people started inserting the tracker hostname but with .sixxs.org behind it, even though that was blocked since the beginning (to avoid load issues, and also to be able to tell Paramount and other stupid illegal-download hunters that the hosts are not trackers). I guess people thought it worked, as something like <a href="http://www.thepiratebay.org.sixxs.org" rel="nofollow">www.thepiratebay.org.sixxs.org</a> does work, which is correct as that is just a normal website.<br /><br />Thus, now we are receiving about about half a million hits/sec for queries like /announce/ and /scrape. We tried 404s which is what we did originally, and now 301's, redirecting them to the TPB tracker as that is what The_8472 suggest might work, but it seems those clients keep on hammering on the boxes. Heck, we had to add a box so that the normal IPv6Gate function could keep on working.<br /><br />The user can't do much about it, and there is no way for them to 'stop' requests, they also don't care about it, as long as they get their stuff.<br /><br />The server (eg us) can't tell the client to stop either.<br /><br />As such, this request, so that clients that get something like this implemented so that it can request those clients to just buzzz off.<br /><br />Easiest would be if Torrent clients just behaved properly according to HTTP standards and handled 'HTTP 404' (Not Found) or 'HTTP 403' (Forbidden) correctly. But it seems at least the Azureus devs seem to have had issues with 404s which where being returned from broken PHP-based trackers (I wonder how it can return a 404 though) and seem to favor hammering on websites which actually don't have a tracker instead of telling the user &quot;hey this doesn't work at the moment, maybe try again later&quot;....<br /><br />As such, as apparently Torrent clients are made for hammering sites and getting what they need, this proposal for an extension, so that there is at least one way to tell clients to buzz off and never come back.<br /><br />(Yes, the installed base will keep on hammering, but hopefully people do upgrade their clients once in a while, thus it will slowly go away... just call it a security upgrade, which effectively it is as we could for instance now 301 those clients to an unsuspecting site and they would nicely get 500k hits/sec extra, can they cope with that? Directing it at a &quot;heavy&quot; page like something doing a lot of DB queries should have the proper effect.... good that we have no evil intentions eh <img src="img/smilies/wink.png" width="15" height="15" alt="wink" /></p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p698" class="blockpost rowodd">
+	<h2><span><span class="conr">#7&nbsp;</span><a href="viewtopic.php?pid=698#p698">2009-10-19 04:37:00</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 31 Tracker Failure Retry Extension</h3>
+				<div class="postmsg">
+					<p>Well, in that particular case how about just NOT resolving the tracker hostnames as you apparently do DNS mapping (something you forgot to mention when we talked about this)?<br /><br />That would make all of the traffic go away.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p699" class="blockpost roweven">
+	<h2><span><span class="conr">#8&nbsp;</span><a href="viewtopic.php?pid=699#p699">2009-10-19 04:43:55</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90590">fuzzel</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 31 Tracker Failure Retry Extension</h3>
+				<div class="postmsg">
+					<p>&gt; That would make all of the traffic go away.<br /><br />How exactly would what make the 'traffic go away'?<br /><br />*.sixxs.org is a full wildcard domain, can't just add random records there, how would we know which ones should be there? It is not only the various TPB trackers that are being requested. That is a similar exercise as actually having to add something to a server just because some clients are unable to do proper HTTP.<br /><br />Also, the whole point is that if somebody points a popular torrent to <a href="http://www.bittorrent.org" rel="nofollow">www.bittorrent.org</a> that you cannot just drop that hostname, unless you want to admit defeat in the DDoS that is.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p700" class="blockpost rowodd">
+	<h2><span><span class="conr">#9&nbsp;</span><a href="viewtopic.php?pid=700#p700">2009-10-19 05:05:10</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 31 Tracker Failure Retry Extension</h3>
+				<div class="postmsg">
+					<p>How is adding a specific subdomain A-record as exception to the wildcard any different from setting up a bencoded response with &quot;failure reason&quot;&nbsp; &nbsp; &nbsp; &nbsp; =&gt; &quot;Overloaded&quot; etc.?</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p701" class="blockpost roweven">
+	<h2><span><span class="conr">#10&nbsp;</span><a href="viewtopic.php?pid=701#p701">2009-10-19 05:08:13</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90590">fuzzel</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 31 Tracker Failure Retry Extension</h3>
+				<div class="postmsg">
+					<p>Because just matching for /announce or /scrape matches ALL the BitTorrent trackers, having to figure out maybe the thousands of trackers out there is not a scalable thing to do?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p702" class="blockpost rowodd">
+	<h2><span><span class="conr">#11&nbsp;</span><a href="viewtopic.php?pid=702#p702">2009-10-19 10:34:34</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 31 Tracker Failure Retry Extension</h3>
+				<div class="postmsg">
+					<p>why would you want to match ALL bittorrent trackers? I thought that this was about traffic, obviously you'd only have to match those that cause a disproportional amount of traffic, which should be a quite small amount, no?<br /><br />Not to mention that you're more or less providing an open proxy...<br /><br /><br />I'm not really convinced that this is actually a common scenario.<br /><br /><br /><br />Not to mention that - as i have stated earlier - that redirecting to the correct URL would be a much cleaner choice as your website is clearly meant to act as a proxy, redirecting to an un-proxied URL wouldn't deprive torrents of their trackers, simply telling them to never come back again on the other hand would.<br />So if anything redirects should be used (and fixed if they don't work) instead of a flat out denial of service.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p708" class="blockpost roweven">
+	<h2><span><span class="conr">#12&nbsp;</span><a href="viewtopic.php?pid=708#p708">2009-10-23 16:30:44</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90590">fuzzel</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 31 Tracker Failure Retry Extension</h3>
+				<div class="postmsg">
+					<p>&gt; why would you want to match ALL bittorrent trackers?<br /><br />Because of the high amount of queries, which we don't want, especially as it is BitTorrent Tracker requests, and not HTTP/Website traffic for which the system is meant.<br /><br />If it was true HTTP, it would not be there because the clients would understand a 404 and other things we tried for telling them to buzz off.<br /><br />&gt; I thought that this was about traffic, obviously you'd only have to match those that<br />&gt; cause a disproportional amount of traffic, which should be a quite small amount, no?<br /><br />Why try to figure out the bad ones if just blocking /announce + /scrape solves the problem? For that matter, we could also match on User Agent, but then again, we can't signal to the client that the data they are requesting is not there as the BitTorrent clients don't properly handle HTTP error codes and just keep on coming back; ergo..... the whole idea as written up in this proposal <img src="img/smilies/wink.png" width="15" height="15" alt="wink" /><br /><br />&gt; Not to mention that you're more or less providing an open proxy...<br /><br />For websites (real HTTP) more or less true not for BitTorrent trackers (some kind of misformed HTTP due to the clients not supporting it).<br /><br />&gt; I'm not really convinced that this is actually a common scenario.<br /><br />Why is it so difficult to accept that some people DON'T want to get requests from certain clients and would want the ability to tell those clients that they should stop hammering on them?<br /><br />&gt; Not to mention that - as i have stated earlier - that redirecting to the correct URL<br />&gt; would be a much cleaner choice as your website is clearly meant to act as a proxy,<br /><br />For this case, this is a possibility. But it does not work, as we have demonstrated by trying to send 301s and redirecting the clients to the real tracker. The clients, as you have stated yourself ignore these more or less as they try it the first time and then still come back, at the same rate as before; as such this does not solve the problem in any way.<br /><br />&gt; redirecting to an un-proxied URL wouldn't deprive torrents of their trackers, simply<br />&gt; telling them to never come back again on the other hand would.<br /><br />So, someone hardcodes for example <a href="http://www.bittorent.org" rel="nofollow">www.bittorent.org</a> in a popular torrent, because of that the site, even though it does not actually have a bittorrent tracker will get a zillion of requests!?<br /><br />Or even in another situation: somebody sets up a tracker (one of those PHP ones) on a shared hosting environment, this takes that host effectively down as it becomes popular, thus the ISP wants that site off that shared environment, but it does not have control over DNS, should the ISP then just null route that IP or something?<br /><br />I can see a lot of cases where there will be even a real tracker which will want to tell the clients to just buzz off for a short time or permanently.<br /><br />Which is why this proposal is there...</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p709" class="blockpost rowodd">
+	<h2><span><span class="conr">#13&nbsp;</span><a href="viewtopic.php?pid=709#p709">2009-10-23 17:23:47</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 31 Tracker Failure Retry Extension</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>For this case, this is a possibility. But it does not work, as we have demonstrated by trying to send 301s and redirecting the clients to the real tracker.</p></div></blockquote><p>Yes. But that could be fixed instead of implementing this proposal.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p773" class="blockpost roweven">
+	<h2><span><span class="conr">#14&nbsp;</span><a href="viewtopic.php?pid=773#p773">2009-11-09 17:36:07</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 31 Tracker Failure Retry Extension</h3>
+				<div class="postmsg">
+					<p>How about documenting the already deployed &quot;min interval&quot; response, and define that to be the retry interval for failures? This is already implemented by uTorrent. This seems like a simpler and shorter path to what you want to achieve with this proposal.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p859" class="blockpost rowodd">
+	<h2><span><span class="conr">#15&nbsp;</span><a href="viewtopic.php?pid=859#p859">2009-12-08 15:03:59</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90590">fuzzel</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 31 Tracker Failure Retry Extension</h3>
+				<div class="postmsg">
+					<p>&gt; How about documenting the already deployed &quot;min interval&quot; response,<br />&gt; and define that to be the retry interval for failures? This is already<br />&gt; implemented by uTorrent. This seems like a simpler and shorter path to<br />&gt; what you want to achieve with this proposal.<br /><br />If that retry interval can be set to 'unlimited' then that would be a partial plan. It might be 'nice' though for the user if the user can see a message from the server (which might be a real tracker) why that decision is being made for him/her/it though. As such one eventually comes into the BEP-31 proposal.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p876" class="blockpost roweven">
+	<h2><span><span class="conr">#16&nbsp;</span><a href="viewtopic.php?pid=876#p876">2009-12-18 01:17:33</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 31 Tracker Failure Retry Extension</h3>
+				<div class="postmsg">
+					<p>I think this is essentially what you want to respond with:<br /><br />{<br />&nbsp; 'failure reason': 'this is not a tracker',<br />&nbsp; 'min interval': 2147483647,<br />&nbsp; 'interval': 2147483647<br />}</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p908" class="blockpost rowodd">
+	<h2><span><span class="conr">#17&nbsp;</span><a href="viewtopic.php?pid=908#p908">2010-01-14 09:53:51</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89609">Olaf van der Spek</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 31 Tracker Failure Retry Extension</h3>
+				<div class="postmsg">
+					<p>I think using the HTTP status codes is better than new protocol features.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p909" class="blockpost roweven">
+	<h2><span><span class="conr">#18&nbsp;</span><a href="viewtopic.php?pid=909#p909">2010-01-14 10:23:27</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 31 Tracker Failure Retry Extension</h3>
+				<div class="postmsg">
+					<p>The main problem there is that trackers can rarely be trusted to return accurate status codes. Some trackers even return html on certain errors (esp. the ones running under apache). I believe that a significant portion of trackers returning error codes are not permanent errors, and should be retried, maybe even the majority.<br /><br />&quot;min interval&quot; is already a de-facto standard and supported by the majority of peers. Documenting it must surely be the shortest path to achieving fuzzel's goals.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p910" class="blockpost rowodd">
+	<h2><span><span class="conr">#19&nbsp;</span><a href="viewtopic.php?pid=910#p910">2010-01-14 14:46:39</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89609">Olaf van der Spek</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 31 Tracker Failure Retry Extension</h3>
+				<div class="postmsg">
+					<p>True. So the BEP should be updated to use &quot;min interval&quot; instead of &quot;retry in&quot;?<br /><br />What trackers return HTTP errors for temporary errors?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox">
+		<p class="postlink conr">&nbsp;</p>
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;BEP 31 Tracker Failure Retry Extension</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div class="inbox">
+
+			<div class="conl">
+				<form id="qjump" method="get" action="viewforum.php">
+					<div><label>Jump to
+					<br /><select name="id" onchange="window.location=('viewforum.php?id='+this.options[this.selectedIndex].value)">
+						<optgroup label="BitTorrent">
+							<option value="26">Announcements</option>
+							<option value="27">General</option>
+							<option value="25" selected="selected">BEPs</option>
+							<option value="29">BEP process</option>
+							<option value="33">Research Tools</option>
+							<option value="32">Cooperation between BitTorrent and ISPs</option>
+							<option value="30">Attacks against BitTorrent</option>
+							<option value="28">Feature Requests, Found Bugs &gt;&gt;&gt;</option>
+					</optgroup>
+					</select>
+					<input type="submit" value=" Go " accesskey="g" />
+					</label></div>
+				</form>
+			</div>
+			<p class="conr">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-116155-1";
+_udn = "utorrent.com";
+urchinTracker();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,497 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Extension for exchanging webseed urls (Page 1) / BEPs / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
+<script type="text/javascript" src="captcha/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript">
+	$(function(){var f=$("#sliderCaptcha");var b=$("#cleCaptcha");var d=$(".boutonsCaptcha");var a=$("#javascriptCaptcha");var e=[2,15,16,7,30,12,35,4,44,31,2,24,2,37,11,26,6,27,1,41,42,31,33,15,26,6,33,46,11,44,7,14,10,23,21,40,36,7,45,30,38,47,5,41,35,16,17,41,43,18];var h=0;var g=5;var c=0;a.hide();f.slider({value:0,min:0,max:g,step:1,slide:function(i,j){if(j.value>c){c=j.value;h+=c}},stop:function(j,k){var i=false;if(k.value==g){if(h==((g+Math.pow(g,2))/2)){i=true;f.slider("option","disabled",true);if(b.val().length!=e.length){$.post("captcha.php",{tokenCaptcha:b.val()},function(m){var l="";$.each(e,function(){l+=m.charAt(this%m.length)});b.val(l);d.removeAttr("disabled")})}}}if(!i){h=c=0;f.slider("option","value",h)}}})});
+</script>
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="punviewtopic" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex" class="isactive"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=550"><strong>Extension for exchanging webseed urls</strong></a></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p2336" class="blockpost rowodd firstpost blockpost1">
+	<h2><span><span class="conr">#1</span> <a href="viewtopic.php?pid=2336#p2336">2012-08-19 13:41:34</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=95188">sg</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Extension for exchanging webseed urls</h3>
+					<div class="postmsg">
+						<p><a href="http://blog.archive.org/2012/08/07/over-1000000-torrents-of-downloadable-books-music-and-movies/">In August of 2012 The Internet Archive started to make millions of legally archived files available to the public.</a> Prior the files where only available via a regular http download. This is not going to be the last archive that starts to make its content accessible through the bittorrent protocol to save bandwidth and costs in distribution.</p><p>Those archives rely on the fact that at least one intact copy of the file is available somewhere. If the archive is destroyed all files vanish as well. Bittorrent&#039;s core strenght is about distributing copies. If another party wants to mirror an archive to help avoid a disaster if either of one goes down the only way for the second party is to run a regular client. For a handfull of files this might pose a good solution but there is no good way for mirroring millions of files. </p><p>As of now webseed urls have to be hardcoded into the torrent file itself which means it is now possible for a client to discover an additinal mirror which might have been created after the torrent file was created. Without creating a new torrent there is no way to add new webseed urls to a torrent file.</p><p>This is where the extension for exchanging webseed urls comes into play. Like exchanging additional trackers a client might know about, we exchange additinal webseed urls between clients. This way a client could announce new webseed urls without changing the original torrent. </p><p>This ensure that other archives can participate in the original swarm as webseed and without introducing new torrents themselves.</p><p>I want to gathering thoughts on this proposal and start writing an official BEP if this addition seems useful.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2338" class="blockpost roweven">
+	<h2><span><span class="conr">#2</span> <a href="viewtopic.php?pid=2338#p2338">2012-08-19 15:50:59</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90000">DreadWingKnight</a></strong></dt>
+						<dd class="usertitle"><strong>CBTT/BNBT Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Extension for exchanging webseed urls</h3>
+					<div class="postmsg">
+						<p>I&#039;ve been in previous discussions for this.</p><p>Every time it gets shot down due to DDoS concerns.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Guy with a few torrent programs under his belt.</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2340" class="blockpost rowodd">
+	<h2><span><span class="conr">#3</span> <a href="viewtopic.php?pid=2340#p2340">2012-08-19 20:12:54</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=95188">sg</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Extension for exchanging webseed urls</h3>
+					<div class="postmsg">
+						<p>Did I get you correct that passing around urls via clients could become a possible source of a DDoS attack toward the server mentioned in the url?</p><p>If yes than <a href="http://www.bittorrent.org/beps/bep_0028.html">BEP-28 (Tracker Exchange)</a> should pose the same weakness then? Clients would start to announce to a non tracker http server resulting in the same effect. Basically I would say that the tracker exchange is usable for the same attack but still it was adopted. </p><p>The only counter against a possible DDoS attack from the BEP-28 point of view is:</p><div class="quotebox"><blockquote><div><p>Trackers discovered through this protocol SHOULD be treated with a certain amount of suspicion. Since the source of a tracker exchange message cannot be trusted, an implementation SHOULD have a lower number of retries before giving up entirely.</p></div></blockquote></div><p>Are there any other concerns beside a possible DDoS Attack? <br />How is this dealt with in BEP-28?<br />Do the benefits of mirroring for archives outweigh the threat?</p>
+						<p class="postedit"><em>Last edited by sg (2012-08-19 20:35:06)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2346" class="blockpost roweven">
+	<h2><span><span class="conr">#4</span> <a href="viewtopic.php?pid=2346#p2346">2012-08-20 04:06:17</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90000">DreadWingKnight</a></strong></dt>
+						<dd class="usertitle"><strong>CBTT/BNBT Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Extension for exchanging webseed urls</h3>
+					<div class="postmsg">
+						<p>BEP28 does have the same weakness, and it&#039;s also why the implementation of bep28 is as low as it is. (I&#039;m not aware of any client that implement it).</p><p>Archives like the one you listed are actually better suited to have the webseeds coded into the torrent than exchanged through the network of peers, since the list only needs to be sent out once instead of repeated out multiple times through the course of the download.</p><div class="quotebox"><blockquote><div><p>Without creating a new torrent there is no way to add new webseed urls to a torrent file.</p></div></blockquote></div><p>It&#039;s actually trivial to add webseeds to a torrent immediately prior to a user downloading the .torrent file without rebuilding it completely because the webseeds aren&#039;t in the info dictionary.</p><p>I&#039;m not sure if the benefits outweigh the threat, but given the number of low-end hosts out there, they probably don&#039;t.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Guy with a few torrent programs under his belt.</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2348" class="blockpost rowodd">
+	<h2><span><span class="conr">#5</span> <a href="viewtopic.php?pid=2348#p2348">2012-08-20 05:13:53</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=95188">sg</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Extension for exchanging webseed urls</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>I&#039;m not aware of any client that implement it</p></div></blockquote></div><p>libtorrent, qtorrent and uTorrent do. But I also do not know if this can be called widespread. I think BEP-28 serves as a good base how this should be implemented but they target completely different goals. While BEP-28 wants to get you more peers, the webseed exchange extensions wants to keep torrents alive by providing mirrors for existing torrents. Those mirrors do not necessarily need to know about each other. We should not confuse these goals because the implementation might be similar.</p><div class="quotebox"><blockquote><div><p>It&#039;s actually trivial to add webseeds to a torrent immediately prior to a user downloading the .torrent file without rebuilding it completely because the webseeds aren&#039;t in the info dictionary.</p></div></blockquote></div><p>Thats right. Creating a new torrent would work, but this would mean that every mirror has their own torrent file for the same data. If you download from one archive you would not be able to know about the other mirrors as well. With the extension it would be possible to extend the lifetime of a torrent without recreating the torrent on a site the user might not know about.</p><div class="quotebox"><blockquote><div><p>I&#039;m not sure if the benefits outweigh the threat, but given the number of low-end hosts out there, they probably don&#039;t.</p></div></blockquote></div><p>Please explain a bit more what do you mean by low-end hosts and that affects mirroring?</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2350" class="blockpost roweven">
+	<h2><span><span class="conr">#6</span> <a href="viewtopic.php?pid=2350#p2350">2012-08-20 06:51:41</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90000">DreadWingKnight</a></strong></dt>
+						<dd class="usertitle"><strong>CBTT/BNBT Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Extension for exchanging webseed urls</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>libtorrent, qtorrent and uTorrent</p></div></blockquote></div><p>I don&#039;t think uTorrent actually implements bep28 (Link the specific changelog that does), and it really is bad to implement anyway given how DHT and Peer Exchange cover the role with a lot less DDoS potential.</p><p>If you get a popular enough torrent to propagate the webseed address, you can actually permanently disable access to a lot of low-budget hosting packages out there, either by sheer number of requests per second or by the volume of requests.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Guy with a few torrent programs under his belt.</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2352" class="blockpost rowodd">
+	<h2><span><span class="conr">#7</span> <a href="viewtopic.php?pid=2352#p2352">2012-08-20 08:27:59</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=95188">sg</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Extension for exchanging webseed urls</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>I don&#039;t think uTorrent actually implements bep28</p></div></blockquote></div><p>I got the list from a <a href="https://trac.transmissionbt.com/ticket/2461">transmission trac ticket</a>.</p><div class="quotebox"><blockquote><div><p>If you get a popular enough torrent to propagate the webseed address, you can actually permanently disable access to a lot of low-budget hosting packages out there, either by sheer number of requests per second or by the volume of requests.</p></div></blockquote></div><p>I do not think that we should let a feature slip because we worry about low-budget hosting packages. Webseeds do not have the same priority while downloading as a regular client (at least in libtorrent). If enough clients exists the webseeds are not touched. </p><p>As you said it is possibly to recreate a torrent file with a webseed adress and low-level hosting packages still exists. I see your point with the DDoS Attack but I think the problem comes from the idea of using webservers in the first place to bootstrap a torrent. </p><p>Serving millions of torrent simultaneously from a regular host is not an option with a regular client due to RAM and CPU constraints. Bootstraping a million torrents from a webseed is something that can be done via regular http hosts without a problem as the host does not need to be part of the swarm itself. </p><p>Without the WEX (webseed exchange) a mirror would need to run a regular client and participate in the swarm (eg. not possible for millions of torrents). With the WEX a mirror would only need to run a http server and a lightweight client that only seeds the additional webseed urls.</p><p>Simply dynamically propagating these webseed urls does not pose a bigger threat than recreating the torrent with a new webseed address but opens up a few new options where the protocol could help preserve cultural goods.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2354" class="blockpost roweven">
+	<h2><span><span class="conr">#8</span> <a href="viewtopic.php?pid=2354#p2354">2012-08-20 10:26:33</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90000">DreadWingKnight</a></strong></dt>
+						<dd class="usertitle"><strong>CBTT/BNBT Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Extension for exchanging webseed urls</h3>
+					<div class="postmsg">
+						<p>I already have in-the-wild code that can dynamically update mirrors in a torrent when the torrent host is made aware of them.<br />Spreading urls like that via exchange adds up to a lot of wasted bandwidth as well, since they get relayed at frequent intervals instead of only once.</p><p>And transmission should only be considered authoritative on transmission features and not for other clients. I just checked with my contact in the uTorrent development team and bep28 isn&#039;t actually supported by uT.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Guy with a few torrent programs under his belt.</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2356" class="blockpost rowodd">
+	<h2><span><span class="conr">#9</span> <a href="viewtopic.php?pid=2356#p2356">2012-08-20 10:27:55</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90000">DreadWingKnight</a></strong></dt>
+						<dd class="usertitle"><strong>CBTT/BNBT Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Extension for exchanging webseed urls</h3>
+					<div class="postmsg">
+						<p>And besides, only the new peers that get the torrent after the new webseeds are added actually need the webseed address. Others don&#039;t need them because they can just get the pieces from the existing peers.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Guy with a few torrent programs under his belt.</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2358" class="blockpost roweven">
+	<h2><span><span class="conr">#10</span> <a href="viewtopic.php?pid=2358#p2358">2012-08-20 12:07:12</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=95188">sg</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Extension for exchanging webseed urls</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>I already have in-the-wild code that can dynamically update mirrors in a torrent when the torrent host is made aware of them.</p></div></blockquote></div><p>This is practical for a centralized system where only one instance gives out the torrent. If you have multiple sources for the torrent and not all are aware of each other this might become impractical since the webseed url is not the url to the services giving out the torrent.</p><div class="quotebox"><blockquote><div><p>Spreading urls like that via exchange adds up to a lot of wasted bandwidth as well, since they get relayed at frequent intervals instead of only once.</p></div></blockquote></div><p>I guess the bandwidth needed to spread a url is neglectable. As stated in BEP-28 the url is only sent once after that only updates are propagated. The url is not sent in intervals.</p><div class="quotebox"><blockquote><div><p>And besides, only the new peers that get the torrent after the new webseeds are added actually need the webseed address. Others don&#039;t need them because they can just get the pieces from the existing peers.</p></div></blockquote></div><p>Thats true but we talk about a different kind of files. There is a lot of content in archives that should be kept around but does not have a constant swarm. It is not like one of these files have thousands of clients in the swarm. <a href="http://bt1.archive.org/hotlist.php">Here are some stats from the internet archive about its swarm size for different torrents.</a></p><p>Let me sum up your concerns with the webseed exchange:</p><ul><li><p>Possible DDoS Attack from clients hammering a webseed</p></li><li><p>Exchanging urls results in wasted bandwidth</p></li></ul><p>Thank you for your valuable input DreadWingKnight. I would also like to here some other voices from the community regarding a webseed exchange extension.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2360" class="blockpost rowodd">
+	<h2><span><span class="conr">#11</span> <a href="viewtopic.php?pid=2360#p2360">2012-08-20 21:04:46</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=95188">sg</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Extension for exchanging webseed urls</h3>
+					<div class="postmsg">
+						<p>Another scenario where webseed exchaning would be useful:</p><div class="quotebox"><blockquote><div><p>BEP-19 (WebSeed - HTTP/FTP Seeding (GetRight style))<br />In the main area of the metadata file and not part of the &quot;info&quot; section, will be a new key, &quot;url-list&quot;.</p></div></blockquote></div><div class="quotebox"><blockquote><div><p>BEP-9 (Extension for Peers to Send Metadata Files)<br />This extension only transfers the info-dictionary part of the .torrent file.</p></div></blockquote></div><p>This would mean that any client who joins through a magnet link would not see the webseeds at all since the url is not transferred. This would mean that any source who gives out magnet links must have a client present in the swarm to proxy a connection to the webseed. This is a different kind of bandwidth burden than to have a client present to only exchange the metadata.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2366" class="blockpost roweven">
+	<h2><span><span class="conr">#12</span> <a href="viewtopic.php?pid=2366#p2366">2012-08-28 09:24:33</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90545">Fredrik Neij</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Extension for exchanging webseed urls</h3>
+					<div class="postmsg">
+						<p>My suggestion would be to add director URLs instead of direct URLs, assuming that clients accepts 301 and/or 302 responses from the server to guide it to the correct file. Like this for example:</p><p><a href="http://XX.director.domain.com/path/filename.bin">http://XX.director.domain.com/path/filename.bin</a><br /><a href="http://X.director.backupserver.com/path/filename.bin">http://X.director.backupserver.com/path/filename.bin</a><br /><a href="http://XXXX.director.lastresort.com/path/filename.bin">http://XXXX.director.lastresort.com/path/filename.bin</a></p><p>Where X is is the first 1 to 4-ish bytes (or more) of the info_hash in hex, to allow for some DNS trickery to do load balancing, doing something like this:</p><p>*.director.domain.com IN CNAME realserver.com.</p><p>or</p><p>0.director.domain.com IN CNAME 1.realserver.com.<br />1.director.domain.com IN CNAME 1.realserver.com.<br />..<br />7.director.domain.com IN CNAME 2.realserver.com.<br />8.director.domain.com IN CNAME 2.realserver.com.<br />..<br />E.director.domain.com IN CNAME 3.realserver.com.<br />F.director.domain.com IN CNAME 3.realserver.com.</p><p>to spread the load as needed. And keep the backup domains out of DNS until needed to save resources.</p><br /><p>But the real solution in my opinion is: PER FILE HASHES!, preferably more than one, like sha1,md5 and what else is popular. Yes md5 is weak and prone to collisions and sha1 is getting there, but it&#039;s the most popular hashes on the web to &quot;sign&quot; or &quot;verify&quot; downloads, and therefor the most likely way to locate the same file.</p><p>Having the info-dict a client can use range request to offset the start to the first unique piece in the info-dict and start http-downloading and compare, and ofcourse only continue of the data match.</p><p>This opens up a world of possibilities to find matching contents from other filesharing technologies to automated web searches of the hashes to find sources. Like searching for .md5 or .sha1 files like these <a href="https://www.apache.org/dist/apr/">https://www.apache.org/dist/apr/</a> and trying the underlying files.</p><p>And most importantly, just like DHT searches for torrent hashes, it could be used to search for file-hashes to find peers to get the same file from even if they are from different torrents. This will be especially useful when the same contents are available in multiple swarms, like when different creators add idiotic signature files in addition to the contents to each torrent.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2368" class="blockpost rowodd">
+	<h2><span><span class="conr">#13</span> <a href="viewtopic.php?pid=2368#p2368">2012-08-28 10:18:02</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=95188">sg</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Extension for exchanging webseed urls</h3>
+					<div class="postmsg">
+						<p>Seems to me that you are suggestion a totally new way how web seeding should be done. This thread should focus on the pros and cons of just &quot;relaying the webseed urls in the same way it is done with tracker links&quot;.</p><p>Maybe you should start a discussion around your idea by creating an entirely new topic for it.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2428" class="blockpost roweven">
+	<h2><span><span class="conr">#14</span> <a href="viewtopic.php?pid=2428#p2428">2012-10-09 16:39:23</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Extension for exchanging webseed urls</h3>
+					<div class="postmsg">
+						<p>tracker exchange is not widely implemented in uTorrent mostly for the reasons dwk mentions. It&#039;s also of questionable value to add a lot of trackers.</p><p>I don&#039;t doubt that it&#039;s possible to have a conservative specification to avoid&#160; DDoS attacks. It might be tricky though.</p><p>However, I also don&#039;t doubt that it&#039;s possible to bittorrent-seed a million torrents (especially not in the future).</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=550"><strong>Extension for exchanging webseed urls</strong></a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

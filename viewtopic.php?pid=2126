@@ -1,0 +1,304 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Decentralized search (Page 1) / BEPs / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
+<script type="text/javascript" src="captcha/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript">
+	$(function(){var f=$("#sliderCaptcha");var b=$("#cleCaptcha");var d=$(".boutonsCaptcha");var a=$("#javascriptCaptcha");var e=[46,28,0,47,13,6,42,18,6,41,11,42,42,43,36,48,31,14,39,5,7,44,19,1,13,22,0,37,49,48,47,45,27,48,43,40,4,35,9,11,26,21,3,19,15,40,17,46,4,7];var h=0;var g=5;var c=0;a.hide();f.slider({value:0,min:0,max:g,step:1,slide:function(i,j){if(j.value>c){c=j.value;h+=c}},stop:function(j,k){var i=false;if(k.value==g){if(h==((g+Math.pow(g,2))/2)){i=true;f.slider("option","disabled",true);if(b.val().length!=e.length){$.post("captcha.php",{tokenCaptcha:b.val()},function(m){var l="";$.each(e,function(){l+=m.charAt(this%m.length)});b.val(l);d.removeAttr("disabled")})}}}if(!i){h=c=0;f.slider("option","value",h)}}})});
+</script>
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="punviewtopic" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex" class="isactive"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=376"><strong>Decentralized search</strong></a></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p1978" class="blockpost rowodd firstpost blockpost1">
+	<h2><span><span class="conr">#1</span> <a href="viewtopic.php?pid=1978#p1978">2011-04-21 08:07:42</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90242">harold</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Decentralized search</h3>
+					<div class="postmsg">
+						<p>This may have been suggested a couple of times before. Add to that that this idea is actually quite bad. However, I believe some kind of decentralized search is highly desirable, so a discussion on how to do it best would be a Good Thing.</p><p>Motivation: <br />Torrent indexing and search sites are now a main &quot;point of failure&quot;. </p><p>edit: second version, see second post</p><p>The idea, roughly, is:<br />There are certain keywords associated with a torrent. A client that has that torrent should DHT Announce on all those keywords. A basic single-keyword query does GetPeers on the hash of the keyword, and then asks all peers for the complete list of keywords of the associated torrent is (along with the info hash). Compound queries combine the results of a number of simple queries.<br />BEP9 should be used when a torrent found this way is chosen to be downloaded.</p><p>Downsides to this approach:<br />- it&#039;s trivial to announce a torrent to whatever keyword you like. It&#039;s easy enough to filter the results on a client, but it wastes bandwidth etc.<br />- it puts quite a big load on the clients tracking the hashes of often-used keyword.<br />- queries with AND (or ALL) modifiers can only be implemented at the client, wasting lots of bandwidth to retrieve results that will be filtered out.<br />- the only way to tell whether a certain torrent is any good is BEP33. (it&#039;s possible to add a rating to the &quot;list of all keywords + info hash&quot;)</p><p>These are all possible points of improvement, I&#039;m open to any and all suggestions.</p><br /><p>Other issues (the answers are my personal opinion, feedback requested):</p><p>- where should the keywords come from?<br />* add a section to the torrent file to hold them.<br />- should it be in the info dictionary?<br />* yes, because then BEP9 can be used to validate whether the keywords were spoofed (otherwise BEP9 would not transfer them).<br />* yes, because otherwise fake keywords could be added to existing torrents.</p><p>- when asking a client for the complete list of keywords + info hash, should UDP be used or TCP?<br />* UDP, because the connections would be short-lived (just a single packed back and forth) and not transfer a lot of data, TCP would introduce a lot of overhead.</p><p>- should the entire info dictionary be included in the &quot;complete list of keywords + info hash&quot;?<br />* no, that would waste a lot of bandwidth because typically very few torrents will be selected to be downloaded.</p><p>- should a rating system be added?<br />* I don&#039;t know.</p><p>- should clients also announce on all pairs of different keywords for a torrent? It would help a lot with queries containing ANDs and it would spread the load more evenly among DHT-nodes, but there would be a Lot more announces.</p>
+						<p class="postedit"><em>Last edited by harold (2011-04-25 00:18:57)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1980" class="blockpost roweven">
+	<h2><span><span class="conr">#2</span> <a href="viewtopic.php?pid=1980#p1980">2011-04-25 00:37:28</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90242">harold</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Decentralized search</h3>
+					<div class="postmsg">
+						<p>After discussing the idea with some people, I&#039;ve changed it to the following:</p><p>A client wishing to query &quot;Ubuntu&quot; + &quot;server&quot; + &quot;amd64&quot; executes get_peers queries on the DHT for sha1(&quot;Ubuntu&quot;), sha1(&quot;server&quot;) and sha1(&quot;amd64&quot;). <br />It will then send all found peers a DHT-query of type &quot;get_torrents&quot; with as argument a dictionary containing an entry &quot;keywords&quot; set to a bencoded string which is the concatenation of all sha1&#039;s of the keywords.<br />The peers receiving such a message should send a DHT-reply back where the &quot;r&quot; dictionary contains an entry (&quot;name&quot; = info hash) for every torrent it knows that contains ALL keywords that were in the query - up until the message becomes so big that it would be fragmented.<br />A query with &quot;OR&quot; semantics is implemented with multiple queries.</p><p>Motivation for the changes: this way less bandwidth is wasted on results that would be filtered out. The clients handling incoming get_torrents queries use more download bandwidth and less upload bandwidth - which is typically a good thing.</p><p>I&#039;m not sure how to add a robust rating system. All ideas are welcome.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1986" class="blockpost rowodd">
+	<h2><span><span class="conr">#3</span> <a href="viewtopic.php?pid=1986#p1986">2011-04-25 08:47:41</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Decentralized search</h3>
+					<div class="postmsg">
+						<p>You would probably still have problems with hot-spots in the DHT. You might have to come up with a hard coded list of stop-words, which might be hard to build.</p><p>How about doing search in a bit more decentralized way, with less complete search results. Like this:</p><p>every client sniffs the DHT for get_peers, and announce_peer sent to it. For each of those messages, it pulls out the info-hash and downloads the .torrent file for that hash (either straight from torcache.com or by simply joining the swarm and slurping it down over the metadata extension). Ones it has the .torrent file, it indexes it in a local database (or a simple index). This means every client is slowly building a set of random torrents that it knows about.</p><p>Now, add a peer-wire extension message to let you ask your peers to search their indices. When the user searches for a specific word, look through the local index as well as query all peers for the same search.</p><p>In order to distribute the popular torrents into more peers&#039; indices, each response could contain a set of torrents that peer has seen a lot of searches for (maybe the top results from the last other peer that made a search).</p><p>If you&#039;re talking about rating of torrents, uTorrent 3.0 beta has a DHT based rating system. The general format is described here:</p><p><a href="http://comments.gmane.org/gmane.network.bit-torrent.devel/1009">http://comments.gmane.org/gmane.network … devel/1009</a></p><p>The hash votes are announced to is sha1(info-hash + &quot;rating&quot;)</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1988" class="blockpost roweven">
+	<h2><span><span class="conr">#4</span> <a href="viewtopic.php?pid=1988#p1988">2011-04-25 09:52:49</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90242">harold</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Decentralized search</h3>
+					<div class="postmsg">
+						<p>Yes the hotspotting is a problem, but I would vastly prefer to solve that in a different way than a complete redesign unless it would really end up being better.<br />A system such as you describe, for example, would have a couple of big disadvantages: first, due to the extra message that clients have to handle only clients that actually implement it can help, which means it would need significant adoption before it&#039;s worth anything. Second, the search results will be bad in any case.<br />Personally, I don&#039;t think those downsides are worth it.</p><p>Now, I&#039;ve been thinking about the hot spot problem of course, and I think it would help a lot if clients only announced their torrent to the rarest K combinations of 2 keywords (stats can come from the DHT on the fly and K is some smallish number) - after all, those are the ones that matter most and since clients search on all keywords in a query anyway (it would have to be changed to all combinations) it would still be found. That&#039;s a bit more query-heavy but much more spread out.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2018" class="blockpost rowodd">
+	<h2><span><span class="conr">#5</span> <a href="viewtopic.php?pid=2018#p2018">2011-04-28 10:36:07</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Decentralized search</h3>
+					<div class="postmsg">
+						<p>keyword searching via DHTs is a non-trivial problem and there&#039;s a lot of research going on in that area. I suggest you study a few papers before suggesting a naÃ¯ve algorithms.</p><p>There are the following problems:<br />a) tokenization of asian scripts and others without whitespaces<br />b) hotspots in the search space<br />c) potentially very large result sets associated with said hotspots, making distributed ANDing and ORing a potentially costly operation<br />d) anything that can be searched and allows anonymous publishing is an invitation for spammers and scammers. how would we combat this?<br />e) fuzzy searches are not possible with full-word hashing</p><br /><p>The Cubit approach seems much more interesting, especially considering a) and e)</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2032" class="blockpost roweven">
+	<h2><span><span class="conr">#6</span> <a href="viewtopic.php?pid=2032#p2032">2011-04-29 02:19:57</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90242">harold</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Decentralized search</h3>
+					<div class="postmsg">
+						<p>I did, and I have. I haven&#039;t found any techniques that would actually work - not on top of the current DHT anyway. In other words, they might be interesting and all, but they would only work if a major client implements it and that&#039;s a different way of saying &quot;it&#039;s not gonna happen&quot;.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2126" class="blockpost rowodd">
+	<h2><span><span class="conr">#7</span> <a href="viewtopic.php?pid=2126#p2126">2011-05-26 14:23:33</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Decentralized search</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>harold wrote:</cite><blockquote><div><p>I did, and I have. I haven&#039;t found any techniques that would actually work - not on top of the current DHT anyway. In other words, they might be interesting and all, but they would only work if a major client implements it and that&#039;s a different way of saying &quot;it&#039;s not gonna happen&quot;.</p></div></blockquote></div><p>My understanding of your proposal is that it also would not work unless a significant portion of the DHT nodes would implement it. It doesn&#039;t seem like a very useful (or fruitful) criteria of a distributed search algorithm to work on the current BitTorrent DHT, without client support.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=376"><strong>Decentralized search</strong></a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

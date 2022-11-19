@@ -1,0 +1,544 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>forum.bittorrent.org / Discussion of BEP 12: Multitracker Metadata Extension</title>
+<link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
+</head>
+<body>
+
+<div id="punwrap">
+<div id="punviewtopic" class="pun">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><span>forum.bittorrent.org</span></h1>
+			<p><span>BitTorrent.org community</span></p>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p>You are not logged in.</p>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<h2><span>Announcement</span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div>Posting about any illegal sharing of copyrighted content is strictly forbidden.</div>
+		</div>
+	</div>
+</div>
+
+<div class="linkst">
+	<div class="inbox">
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<p class="postlink conr">&nbsp;</p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Discussion of BEP 12: Multitracker Metadata Extension</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p43" class="blockpost rowodd firstpost">
+	<h2><span><span class="conr">#1&nbsp;</span><a href="viewtopic.php?pid=43#p43">2008-03-04 20:51:59</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3>Discussion of BEP 12: Multitracker Metadata Extension</h3>
+				<div class="postmsg">
+					<p>The original .torrent file specification by Bram Cohen only allows specification of a single announce URL (see <a href="http://www.bittorrent.org/beps/bep_0003.html" rel="nofollow">http://www.bittorrent.org/beps/bep_0003.html</a>).<br /><br />This BEP allows the .torrent file to specify multiple trackers.&nbsp; It is defined in such a manner to disambiguate the case when multiple trackers share state (load balanced) and when trackers are meant to only be used as failover.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p44" class="blockpost roweven">
+	<h2><span><span class="conr">#2&nbsp;</span><a href="viewtopic.php?pid=44#p44">2008-03-04 21:00:03</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 12: Multitracker Metadata Extension</h3>
+				<div class="postmsg">
+					<p>I would like to point out one limitation of the multi-tracker extension.&nbsp; It does not support the scenario when the requests should be broadcast to multiple trackers in parallel.&nbsp; For example, if a swarm exists on more than one tracker and the author of the .torrent file wants to merge the swarms.<br /><br />uTorrent assumes the example above is the dominant case and thus always sends tracker requests to all trackers within a tier.<br /><br />With uTorrent's reinterpretation of John Hoffman's proposal, load balancing can still be accomplished by associating multiple trackers with each URL, i.e., virtual IP or DNS load balancing.&nbsp; Unfortunately both require more access to the infrastructure than end user's typically have.&nbsp; <br /><br />Since I see value in both uTorrent's interpretation and Hoffman's original semantics, I think the proposal should be extended to support both.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p53" class="blockpost rowodd">
+	<h2><span><span class="conr">#3&nbsp;</span><a href="viewtopic.php?pid=53#p53">2008-03-05 03:39:50</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 12: Multitracker Metadata Extension</h3>
+				<div class="postmsg">
+					<p>i think announcing to multiple trackers at once amplifies the tracker load on a global scale and should be avoided/considered as greedy behavior, instead swarm-seeking should be performed, although it would require careful design to avoid swarms constantly migrating from one tracker to the next to the next.<br /><br />This could be especially useful with a tracker-exchange extension.</p>
+					<p class="postedit"><em>Last edited by The 8472 (2008-03-05 03:40:18)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p55" class="blockpost roweven">
+	<h2><span><span class="conr">#4&nbsp;</span><a href="viewtopic.php?pid=55#p55">2008-03-05 08:13:00</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89609">Olaf van der Spek</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 12: Multitracker Metadata Extension</h3>
+				<div class="postmsg">
+					<p>I agree. It doesn't make sense to announce to for example 8 trackers at once. If you do want to join each swarm, you could pick another tracker after 30 minutes or so.<br />PEX should do the rest.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p59" class="blockpost rowodd">
+	<h2><span><span class="conr">#5&nbsp;</span><a href="viewtopic.php?pid=59#p59">2008-03-05 11:48:30</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 12: Multitracker Metadata Extension</h3>
+				<div class="postmsg">
+					<p>right, if you throw &quot;DHT tracking when the seed+peer count is low&quot;-behavior into the mix then PEX should be able to merge swarms from various trackers and announcing to multiple trackers at once is just unnecessary load.<br /><br />One might argue that announcing to seperate trackers does not add extra load to the individual trackers. But if everyone does that it means that every user announces to more trackers and thus that there are more announces per tracker.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p61" class="blockpost roweven">
+	<h2><span><span class="conr">#6&nbsp;</span><a href="viewtopic.php?pid=61#p61">2008-03-05 15:27:25</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 12: Multitracker Metadata Extension</h3>
+				<div class="postmsg">
+					<p>I should be chastised.&nbsp; I looked through the uTorrent tracker code, and my initial interpretation of its behavior is incorrect.&nbsp; uTorrent does not &quot;broadcast&quot; to all trackers.&nbsp; It tries each round-robin regardless of tiers.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p62" class="blockpost rowodd">
+	<h2><span><span class="conr">#7&nbsp;</span><a href="viewtopic.php?pid=62#p62">2008-03-05 15:59:33</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 12: Multitracker Metadata Extension</h3>
+				<div class="postmsg">
+					<p>I hunted down Greg Hazel (ghazel/alus) to find out why he thought swarms partitioned across trackers is the dominant case.&nbsp; <br /><br />Greg stated that he obtained this belief by looking at .torrent files and looking at peer lists returned from trackers.<br /><br />uTorrent gets substantially different peer lists by rotating between trackers and this is not simply due to different random subsets being returned from trackers, because this occurs even when swarms are small enough that each tracker within the tier should return all peers in the swarm if the trackers were in fact sharing state.<br /><br />The hypothesis is that users do not understand or are not aware of the tiering semantics and simply put a list of trackers in the announce-list.&nbsp; As a result, the trackers within a tier are highly unlikely to share state. <br /><br />Regardless of how we document announce-list semantics in a BEP, it is unlikely to change user behavior.&nbsp; &nbsp;<br /><br />It would be useful if other developers would confirm this observation made by Greg Hazel.&nbsp; If it really occurs as often he suggests then we should take it into account.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p63" class="blockpost roweven">
+	<h2><span><span class="conr">#8&nbsp;</span><a href="viewtopic.php?pid=63#p63">2008-03-05 16:44:55</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 12: Multitracker Metadata Extension</h3>
+				<div class="postmsg">
+					<p>If Greg's observation is in fact correct then tiering is detrimental because it results in unintentional partitioning.<br /><br />How valuable is it to support load balancing within the url list?&nbsp; <br /><br />If you are tracker operator, do you use announce-lists to provide load balancing?&nbsp; Or do you use DNS load balancing or a virtual IP?&nbsp; Does any distributed state-sharing tracker operator not have access DNS?<br />Is there a good reason why users should be aware of state-sharing?<br /><br />uTorrent's solution works well if the user behavior observation is correct, but the solution is not optimal.&nbsp; I would prefer the semantics match user expectations. <br /><br />Does anyone disagree that if the users expect failover then the semantics should be failover?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p64" class="blockpost rowodd">
+	<h2><span><span class="conr">#9&nbsp;</span><a href="viewtopic.php?pid=64#p64">2008-03-05 16:49:10</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 12: Multitracker Metadata Extension</h3>
+				<div class="postmsg">
+					<p>Also it is dangerous to rely on PEX to bridge partitioned subgraphs because it doesn't do that.&nbsp; If a graph really is partitioned then PEX will only tell peers within their subgraph about peers in the same subgraph.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p68" class="blockpost roweven">
+	<h2><span><span class="conr">#10&nbsp;</span><a href="viewtopic.php?pid=68#p68">2008-03-06 03:11:14</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89609">Olaf van der Spek</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 12: Multitracker Metadata Extension</h3>
+				<div class="postmsg">
+					<p>&gt; Does any distributed state-sharing tracker operator not have access DNS?<br /><br />How many state-sharing trackers are there anyway? BNBT might be able to do it, but AFAIK it's not very popular. I'm not aware of any other state-sharing trackers.<br /><br />&gt; Also it is dangerous to rely on PEX to bridge partitioned subgraphs because it doesn't do that.&nbsp; <br /><br />That's why I also said: &quot;If you do want to join each swarm, you could pick another tracker after 30 minutes or so.&quot;<br /><br />And what about DHT? Shouldn't DHT combined with PEX merge the swarms?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p69" class="blockpost rowodd">
+	<h2><span><span class="conr">#11&nbsp;</span><a href="viewtopic.php?pid=69#p69">2008-03-06 04:31:44</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 12: Multitracker Metadata Extension</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>It would be useful if other developers would confirm this observation made by Greg Hazel.</p></div></blockquote><p>Most multitracker torrents i have seen use different trackers as &quot;backup trackers&quot;, not as state-sharing-trackers. Especially those from isohunt, which specializes in combining torrents from multiple sources.<br /><br /></p><blockquote><div class="incqbox"><p>If a graph really is partitioned then PEX will only tell peers within their subgraph about peers in the same subgraph.</p></div></blockquote><p>Only if there is not even a single articulation point. If there is and PEX is properly implemented the swarms will merge pretty fast. low-profile DHT tracking for multifiletorrents, with a DHT-announce probability based on the swarm size reported by the tracker should be sufficient to create such merging.<br /><br /></p><blockquote><div class="incqbox"><p>I'm not aware of any other state-sharing trackers.</p></div></blockquote><p>Oh... just everything that runs on opentracker, which includes TPB, denis.stalker and various special-interest trackers.<br /><br /></p><blockquote><div class="incqbox"><p>Regardless of how we document url-list semantics in a BEP, it is unlikely to change user behavior.</p></div></blockquote><p>Well, µTs multitracker editor is particularly inviting for that. Adding tiered trackers should be more &quot;complicated&quot; (regarding the # of clicks/keystrokes involved) than adding backup/non-sharing trackers.</p>
+					<p class="postedit"><em>Last edited by The 8472 (2008-03-06 04:34:14)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p70" class="blockpost roweven">
+	<h2><span><span class="conr">#12&nbsp;</span><a href="viewtopic.php?pid=70#p70">2008-03-06 06:01:35</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89609">Olaf van der Spek</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 12: Multitracker Metadata Extension</h3>
+				<div class="postmsg">
+					<p>&gt; Oh... just everything that runs on opentracker, which includes TPB, denis.stalker and various special-interest trackers.<br /><br />Ah, I didn't notice before. Has that been implemented recently?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p71" class="blockpost rowodd">
+	<h2><span><span class="conr">#13&nbsp;</span><a href="viewtopic.php?pid=71#p71">2008-03-06 08:30:50</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 12: Multitracker Metadata Extension</h3>
+				<div class="postmsg">
+					<p>last year i think</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p72" class="blockpost roweven">
+	<h2><span><span class="conr">#14&nbsp;</span><a href="viewtopic.php?pid=72#p72">2008-03-06 11:12:00</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 12: Multitracker Metadata Extension</h3>
+				<div class="postmsg">
+					<p>I agree that DHTs will bridge a partition... except when the users are partitioned across two DHTs (mainline vs. Azureus).&nbsp; The fact that there are two DHTs is only likely to matter when swarm sizes are small, which is the dominant case.<br /><br />Even though we use DHTs, should we rely on it when the use case in this context is fixing user confusion over semantics?&nbsp; Why not fix the confusion?<br />(If it is really a problem)<br /><br />BTW BitTorrent's tracker is distributed and uses state-sharing, but it uses a single virtual IP and load balances between trackers.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p74" class="blockpost rowodd">
+	<h2><span><span class="conr">#15&nbsp;</span><a href="viewtopic.php?pid=74#p74">2008-03-06 14:35:20</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=35956">ghazel</a></strong></dt>
+					<dd class="usertitle"><strong>BitTorrent Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 12: Multitracker Metadata Extension</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>dave wrote:</h4><p>I should be chastised.&nbsp; I looked through the uTorrent tracker code, and my initial interpretation of its behavior is incorrect.&nbsp; uTorrent does not &quot;broadcast&quot; to all trackers.&nbsp; It tries each round-robin regardless of tiers.</p></div></blockquote><p>More specifically, uTorrent rotates through tiers until enough peers are obtained. Inside a tier, it rotates urls on failure, but otherwise stays with the same url for a given tier.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p76" class="blockpost roweven">
+	<h2><span><span class="conr">#16&nbsp;</span><a href="viewtopic.php?pid=76#p76">2008-03-07 04:02:37</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89609">Olaf van der Spek</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 12: Multitracker Metadata Extension</h3>
+				<div class="postmsg">
+					<p>&gt; I agree that DHTs will bridge a partition... except when the users are partitioned across two DHTs (mainline vs. Azureus). <br /><br />And this partition exactly matches the partition by trackers. Isn't that quite unlikely?<br /><br />&gt; should we rely on it when the use case in this context is fixing user confusion over semantics?&nbsp; Why not fix the confusion? (If it is really a problem)<br /><br />If it's really a problem then a fix would be good.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p95" class="blockpost rowodd">
+	<h2><span><span class="conr">#17&nbsp;</span><a href="viewtopic.php?pid=95#p95">2008-03-13 13:44:40</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 12: Multitracker Metadata Extension</h3>
+				<div class="postmsg">
+					<p>Rewording an already posted question:&nbsp; Does any <em> tracker operator</em> use the state-sharing semantics in BEP 12?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p297" class="blockpost roweven">
+	<h2><span><span class="conr">#18&nbsp;</span><a href="viewtopic.php?pid=297#p297">2008-07-27 11:19:09</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89918">jlouis</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 12: Multitracker Metadata Extension</h3>
+				<div class="postmsg">
+					<p>I would like this BEP to have a section on tracker state semantics. It is clear, when you begin implementing the tracker part of the bitorrent protocol, that there is a stateful semantics in the 'event' field of tracker GET requests.<br /><br />It is pretty obvious what should happen if there is only a single tracker, as you can only prod the state of that single tracker. In the case of multiple trackers, however, it is far from obvious what the correct semantics are: it is highly dependent on how state sharing is done, if it is done at all.<br /><br />In any case, even if there is only one plausible way, I think it should be stated explicitly what a client should do. Or we may end up having slightly different interpretations.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox">
+		<p class="postlink conr">&nbsp;</p>
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Discussion of BEP 12: Multitracker Metadata Extension</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div class="inbox">
+
+			<div class="conl">
+				<form id="qjump" method="get" action="viewforum.php">
+					<div><label>Jump to
+					<br /><select name="id" onchange="window.location=('viewforum.php?id='+this.options[this.selectedIndex].value)">
+						<optgroup label="BitTorrent">
+							<option value="26">Announcements</option>
+							<option value="25" selected="selected">BEPs</option>
+							<option value="29">BEP process</option>
+							<option value="27">General</option>
+							<option value="32">Cooperation between BitTorrent and ISPs</option>
+							<option value="30">Attacks against BitTorrent</option>
+							<option value="28">Feature Requests, Found Bugs &gt;&gt;&gt;</option>
+					</optgroup>
+					</select>
+					<input type="submit" value=" Go " accesskey="g" />
+					</label></div>
+				</form>
+			</div>
+			<p class="conr">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-116155-1";
+_udn = "utorrent.com";
+urchinTracker();
+</script>
+
+</body>
+</html>

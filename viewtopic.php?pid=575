@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>forum.bittorrent.org / Communication between Peers behind NATs</title>
+<link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
+</head>
+<body>
+
+<div id="punwrap">
+<div id="punviewtopic" class="pun">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><span>forum.bittorrent.org</span></h1>
+			<p><span>BitTorrent.org community</span></p>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p>You are not logged in.</p>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<h2><span>Announcement</span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div>Posting about any illegal sharing of copyrighted content is strictly forbidden.</div>
+		</div>
+	</div>
+</div>
+
+<div class="linkst">
+	<div class="inbox">
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<p class="postlink conr">&nbsp;</p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=27">General</a></li><li>&nbsp;&raquo;&nbsp;Communication between Peers behind NATs</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p570" class="blockpost rowodd firstpost">
+	<h2><span><span class="conr">#1&nbsp;</span><a href="viewtopic.php?pid=570#p570">2008-11-24 05:35:36</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90158">mtayyab</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3>Communication between Peers behind NATs</h3>
+				<div class="postmsg">
+					<p>Can anybody tell how two bittorrent clients exchange data if both are behind different NATs. If there is no port forwarding and both doesn't allow incoming connections. I didn't find any text that explains the NAT traversal used by bittorrent.<br /><br />Bittorrent use TCP.... Can two bittorrent peers communicate if both are behind different NATs?? If yes please if you can tell the summary or the name of technique or can refer to some paper that explains that stuff.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p571" class="blockpost roweven">
+	<h2><span><span class="conr">#2&nbsp;</span><a href="viewtopic.php?pid=571#p571">2008-11-27 15:09:11</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90114">zhah</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Communication between Peers behind NATs</h3>
+				<div class="postmsg">
+					<p>there is a thing called Foreign and Home Agents ... borrowed actually from mobile IP concept... if you sit behind the NAT you need to establish a connection with agent with public IP. In this case your NAT will create a tunnel between YOU and AGENT ... then your only have to publish this temporal tunnel, IPEndPoint to be precise. As agent could serve static server or other users like it's done in Skype, where anyone follows this procedure.<br /><br />Now consider connection establishing Peer1 -&gt; Peer2:<br />1) Peer1 creates tunnel with static server (Home Agent)<br />2) Peer2 creates tunnel with his Home Agent (could be the same server)<br />3) Peer1 asks for tunnel for Peer2<br />4) Home Agent sends back to Peer1 temporal IPEndPoint of Peer2<br />5) Peer1 sends packets on this EndPoint.<br /><br />P.S. there is a small problem with implementation of this thing in .NET - it throws an exception when there is more than one sockets bind to the same port. So, you have to terminate previous connection and start to listen the same TCP port.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p574" class="blockpost rowodd">
+	<h2><span><span class="conr">#3&nbsp;</span><a href="viewtopic.php?pid=574#p574">2008-11-28 01:25:58</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90158">mtayyab</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Communication between Peers behind NATs</h3>
+				<div class="postmsg">
+					<p>Thanks zhah,<br /><br />Thanks for your reply. Can you tell me who host these Agents or Static server? you gave the example of Skype, which use supernodes for this purpose and anybody on the public IP could act as supernode. But in case of bittorrent are these static servers hosted by some well know ISP or something??<br /><br />And the technique you have explained for NATs is understandable and its very good for UDP traffic but I've experienced there are lots of issues with TCP when we use this technique. When both the clients are behind NAT and we try this technique, first we will have port binding issues for (PORT_REUSE). Also this technique will work fine with FULL CONE NATs but when it comes to commonly used Port Restricted NATs.... It will be messy with TCP.... Any comments?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p575" class="blockpost roweven">
+	<h2><span><span class="conr">#4&nbsp;</span><a href="viewtopic.php?pid=575#p575">2008-11-28 09:04:32</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90114">zhah</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Communication between Peers behind NATs</h3>
+				<div class="postmsg">
+					<p>My experience tells me that C is much better than any higher level language, like C# or Java ... Because despite you have to implement everything by yourself, it's easier to manage problems like you 've mentioned. I had also many problems with implementation of this on my private Agent server starting from binding TCP socket up to closing it... Eventually, it led to development of my own protocol described here: <a href="http://forum.bittorrent.org/viewtopic.php?id=77" rel="nofollow">http://forum.bittorrent.org/viewtopic.php?id=77</a><br /><br />So, now I just follow aforementioned logic on my private Agent server using my own protocol ...<br /><br />P.S. I'm very sorry but for now it's unavailable for public use.... maybe next year ...</p>
+					<p class="postedit"><em>Last edited by zhah (2008-11-28 09:12:54)</em></p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox">
+		<p class="postlink conr">&nbsp;</p>
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=27">General</a></li><li>&nbsp;&raquo;&nbsp;Communication between Peers behind NATs</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div class="inbox">
+
+			<div class="conl">
+				<form id="qjump" method="get" action="viewforum.php">
+					<div><label>Jump to
+					<br /><select name="id" onchange="window.location=('viewforum.php?id='+this.options[this.selectedIndex].value)">
+						<optgroup label="BitTorrent">
+							<option value="26">Announcements</option>
+							<option value="25">BEPs</option>
+							<option value="29">BEP process</option>
+							<option value="27" selected="selected">General</option>
+							<option value="33">Research Tools</option>
+							<option value="32">Cooperation between BitTorrent and ISPs</option>
+							<option value="30">Attacks against BitTorrent</option>
+							<option value="28">Feature Requests, Found Bugs &gt;&gt;&gt;</option>
+					</optgroup>
+					</select>
+					<input type="submit" value=" Go " accesskey="g" />
+					</label></div>
+				</form>
+			</div>
+			<p class="conr">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-116155-1";
+_udn = "utorrent.com";
+urchinTracker();
+</script>
+
+</body>
+</html>

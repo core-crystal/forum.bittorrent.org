@@ -1,0 +1,353 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>forum.bittorrent.org / Bittorrent via SSM</title>
+<link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
+</head>
+<body>
+
+<div id="punwrap">
+<div id="punviewtopic" class="pun">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><span>forum.bittorrent.org</span></h1>
+			<p><span>BitTorrent.org community</span></p>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p>You are not logged in.</p>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<h2><span>Announcement</span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div>Posting about any illegal sharing of copyrighted content is strictly forbidden.</div>
+		</div>
+	</div>
+</div>
+
+<div class="linkst">
+	<div class="inbox">
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<p class="postlink conr">&nbsp;</p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Bittorrent via SSM</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p323" class="blockpost rowodd firstpost">
+	<h2><span><span class="conr">#1&nbsp;</span><a href="viewtopic.php?pid=323#p323">2008-08-08 04:14:00</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3>Bittorrent via SSM</h3>
+				<div class="postmsg">
+					<p>I do consider Source Specific Multicast as the holy grail for bittorrent-like filesharing as it can massively reduce transit traffic, compensate for asymmetric connections and reduce the number of uploaders required to supply an arbitrary number of downloaders to a near-constant amount.<br /><br />To my knowledge not all (only a few?) end nodes (read: home networks) are fully IGMPv3 or IPv6-MLD capable and i know nearly nothing about SSM-support within ISPs or between them.<br /><br />Thus i'm assuming that support is limited, might be ISP-level only and will remain so within the next few years. Assuming(!) that at least some users have ISP-level SSM at their disposal it could still be beneficial to exploit its advantages on popular torrents (as multiple users within that ISP will be running the same torrent).<br /><br />So, under these assumptions i've been thinking about what we'd have to consider to get SSM-based P2P to work:<br /><br /><ul style="list-style-type: disc"><br /><li>First of all we have to detect if the host and his internet connection is SSM-capable and reachable by other peers within the swarm</li><br /><li>SSM is unidirectional thus most of the coordination between peers would still have to happen within a normal unicast-based swarm, via PEX-like gossiping and individual negotiations.</li><br /><li>Maybe we'd also want to use SSM for some swarm-wide gossiping (separation of control and transport, think of FTP)</li><br /><li>Connections mostly are asymmetric, thus a peer might need to join multiple groups to utilize their bandwidth.</li><br /><li>Multicast does not have congestion control and retransmission mechanism, thus it can't be used to automatically squeeze every byte from the downlink and we also need spare capacity to re-request missing blocks/packets</li><br /><li>How to determine how many groups we need? Congestion control by rapidly joining and leaving groups to emulate the TCP mechanism might put massive stress on routers (see below on engineering issues)</li><br /><li>While SSM significantly decreases the need for anyone to upload we still have to provide some incentive to provide SSM or conventional uploads</li><br /><li>As SSM has to coexist with normal bittorrent transfers, cannot really satisfy a request-based rarest-first policy and might upload pieces that the receivers do not need, we need a coordination mechanism that minimizes unneeded piece transfers and maximizes the efficiency for co-existing legacy bittorrent connections (i.e. still try to provide rarest-first). This might be implemented by having some/all of the SSM-group subscribers that are also connected to the SSM-source via an unicast link to give the source some feedback like &quot;hey, i'm listening to your group, and i need ...&quot; while also announcing the upcoming pieces to everyone else who isn't directly connected ahead of time to give them time to leave the group and switch to another one. This may need some multiparty-computation effort to determine the optimal piece sending order and group selection for individual peers. I.e. this might require some very smart algorithms or a way to reduce the complexity of this problem.</li><br /><li>Since a client often runs more than one torrent and maybe even segments his upload on a single torrent into multiple SSM-streams we may need some group address allocation scheme although simply using random allocation might be sufficient</li><br /><li>Further into the future when a singnificant proportion of the users are SSM-capable we could remove queuing and use a more global coordination instead, i.e. swarm-activation could be done on a need-driven basis instead of queues</li><br /></ul><br /><br /><br />Internet Engineering Issues:<br /><br />We need more information on<br /><ul style="list-style-type: disc"><br /><li>how widespread the adoption of/support for (or lack thereof) SSM is and how this will change in the future</li><br /><li>what the technical limitations such as number of groups announces by a host, frequency of join/leave operations etc. are</li><br /><li>which would be better: prefer local multicast (S,G) pairs (increasing the number of actively used pairs) or use few pairs and build larger trees (which might span more transit links)</li><br /><li>how significant packet loss will be if SSM becomes widely used and what effect it would have on congestion if multicast were to be used for bulk transmission</li><br /><li>whether it would cause routing issues if millions of P2P applications began to announce SSM-groups (even if many of them would go unused and simply serve as backup, similar to idle connections in bittorrent).</li><br /></ul><br /><br />Or more generally: The impact and feasibility of SSM being used by millions of endnodes&nbsp; as sources and as sinks, not just as sinks like that would be the case in traditional SSM-based media broadcasting.</p>
+					<p class="postedit"><em>Last edited by The 8472 (2008-08-08 04:52:50)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p348" class="blockpost roweven">
+	<h2><span><span class="conr">#2&nbsp;</span><a href="viewtopic.php?pid=348#p348">2008-08-15 13:05:19</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Bittorrent via SSM</h3>
+				<div class="postmsg">
+					<p>This looks like a great Master's thesis/project.&nbsp; <br /><br />At one point I worked my way through quite a few papers on multicast, but purist solutions are not likely to work: inserting routes in all intervening routers presents a scaling problem for Internet-wide multicast.&nbsp; Multicast has been deployed across islands connected by tunnels (see MBONE), but configuring tunnels also does not scale.&nbsp; I have seen hybrid approaches as well (see Scattercast), but not with BitTorrent.&nbsp; A hybrid like this might work. <br /><br />Anyone willing?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p351" class="blockpost rowodd">
+	<h2><span><span class="conr">#3&nbsp;</span><a href="viewtopic.php?pid=351#p351">2008-08-15 13:46:56</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Bittorrent via SSM</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>inserting routes in all intervening routers presents a scaling problem for Internet-wide multicast</p></div></blockquote><p>Actually... i don't think it might actually cause less load than running tracker software. Assuming internet-wide SSM you'd only need a few multicast groups per torrent, and even if you'd just SSM the top 1000 torrents with 5 SSM groups each (so, only 5k groups on the core routers, less the closer you get to the edge) you might already see a dramatic cut in bandwidth. I mean the peer count for the top 1000 torrents probably ranks in the millions.<br />Decentralized negotiation who uses which group and so on would be a tough nut to crack though.<br /><br />One of my <a href="http://forum.bittorrent.org/viewtopic.php?id=26" rel="nofollow">other goals</a><br />is coalescing different torrents sharing the same content, which might also help in the process.<br /><br />Maybe using global SSM above a certain threshold and otherwise use connected islands of ISP-local or multi-ISP-coop-local SSM could work too.<br /><br /><br /><br />Anyway... this topic is open-ended w/o information from people who know about the infrastructure.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p367" class="blockpost roweven">
+	<h2><span><span class="conr">#4&nbsp;</span><a href="viewtopic.php?pid=367#p367">2008-08-20 15:49:29</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=30435">bram</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Bittorrent via SSM</h3>
+				<div class="postmsg">
+					<p>The big problem with multicast in general is that it isn't widely deployed. In the areas where it is actually deployed, such as on the LAN, it might not save much because that traffic isn't going across the bandwidth bottleneck to the internet.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p390" class="blockpost rowodd">
+	<h2><span><span class="conr">#5&nbsp;</span><a href="viewtopic.php?pid=390#p390">2008-08-26 21:24:56</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Bittorrent via SSM</h3>
+				<div class="postmsg">
+					<p>Multicast will never be deployed if there is no smooth transition from unicast to multicast.&nbsp; It must gracefully handle the situation where routing tables are full and gracefully handle servers that explicitly choose to not implement multicast.<br /><br />Groups do not have to scale particularly large to get most of the gain possible from multicast.&nbsp; &nbsp;Too large and the overhead of sending unwanted pieces to peers may reduce BitTorrent efficiency.&nbsp; Small groups (10's maybe 100's of peers) make group management easier to scale, and eliminate the NAK implosion problem.<br /><br />I have some limited data about BitTorrent swarms.&nbsp; I should expand the size of these tests.&nbsp; I looked at 4 swarms from a public tracker.&nbsp; These were the four most popular swarms on the tracker.&nbsp; In each case about 50% of the peers were in 40 autonomous systems.&nbsp; 22 of the ASes were in the top 40 in all four swarms.&nbsp; Each of these swarms had more than 1000 and less than 10000 peers.&nbsp; &nbsp;If the 50% in 40 ASes is scale invariant then as swarms scale then for swarms somewhere around 8000 peers, the top 40 ASes average 100 peers each.&nbsp; Multicast constrained in any such AS could provide ideally a 100 fold gain in the effective uplink capacity.&nbsp; Uplink capacity is the single most constrained resource everywhere except places like Japan and South Korea which have fat symmetric pipes.<br /><br />However, these same ISPs could solve the uplink capacity problem by using caching.&nbsp; Caching avoids reconfiguring routers, and the number of caches necessary is far less than the number of routers in the network.<br /><br />I think caching makes multicast mostly an academic/research problem.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p393" class="blockpost roweven">
+	<h2><span><span class="conr">#6&nbsp;</span><a href="viewtopic.php?pid=393#p393">2008-08-27 12:46:44</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Bittorrent via SSM</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>Groups do not have to scale particularly large to get most of the gain possible from multicast.</p></div></blockquote><p>That's true, but smaller groups would also mean that there would be more groups, also increasing the load on the routers.<br /><br /></p><blockquote><div class="incqbox"><p>However, these same ISPs could solve the uplink capacity problem by using caching.&nbsp; Caching avoids reconfiguring routers, and the number of caches necessary is far less than the number of routers in the network.<br /><br />I think caching makes multicast mostly an academic/research problem.</p></div></blockquote><p>I do not think so, caching cannot deal with the long tail, it can't deal with transit traffic well without cooperation between individual caches, especially if the swarm is spread widely among several ASes, and there are also issues like these: <br /><br /><a href="http://torrentfreak.com/uncovering-the-dark-side-of-p4p-080824/" rel="nofollow">http://torrentfreak.com/uncovering-the- &hellip; 4p-080824/</a><br /><br />Even if it should out to be false trusting central ISP-controlled (where the ISP is also part of a &quot;big media&quot;-conglomerate) might make users wary of caches and have them disable the support for that. Multicast wouldn't suffer from such trust issues.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p395" class="blockpost rowodd">
+	<h2><span><span class="conr">#7&nbsp;</span><a href="viewtopic.php?pid=395#p395">2008-08-27 14:33:12</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Bittorrent via SSM</h3>
+				<div class="postmsg">
+					<p>When I refer to smaller groups, I mean topologically compact groups.&nbsp; Thus while the number of groups may be large, there would be few in any island.&nbsp; <br /><br /></p><blockquote><div class="incqbox"><p>I do not think so, caching cannot deal with the long tail,</p></div></blockquote><p>I don't believe multicast at least until late in any deployment would have much benefit for the long tail.&nbsp; For sparse groups and a heavy tail, spanning peers would require introducing routing table entries for many groups in many routers.&nbsp; Long paths are also more likely to encounter one or more routers that do not support multicast.<br /><br /></p><blockquote><div class="incqbox"><p>http://torrentfreak.com/uncovering-the- … 4p-080824/</p></div></blockquote><p>Thorny.&nbsp; No answer.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p399" class="blockpost roweven">
+	<h2><span><span class="conr">#8&nbsp;</span><a href="viewtopic.php?pid=399#p399">2008-08-28 06:17:38</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Bittorrent via SSM</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>Thorny.&nbsp; No answer.</p></div></blockquote><p>Wrong answer. The right answer would be a design that protects the users anonymity / pseudonymity and reduces the amount of data leaked to the cache, thus building confidence in the cache system.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p406" class="blockpost rowodd">
+	<h2><span><span class="conr">#9&nbsp;</span><a href="viewtopic.php?pid=406#p406">2008-08-29 18:11:42</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Bittorrent via SSM</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>The right answer would be a design that protects the users anonymity / pseudonymity</p></div></blockquote><p>like onion routing?&nbsp; errr.....&nbsp; Harder to provide anonymity than to obfuscate what is being downloaded.&nbsp; An URL to an encryption key or the key itself could be distributed in the .torrent file and not propagated between peers via the metadata extension.&nbsp; It's up to the client to decrypt the content before it is usable.&nbsp; It at least raises the bar by requiring the ISP to search the web to find the .torrent file before the ISP could see what is in its cache.&nbsp; Such an extension doesn't require modifying the BitTorrent protocols, nor does it require behavioral changes in caches.<br /><br />There doesn't exist a good means for supporting legacy peers.&nbsp; If there were then a cache could act as a legacy peer.&nbsp; &nbsp;The closest thing to legacy support I can think of is to release a separate user tool that reads the decryption key (or reference to the key) from the .torrent file and decrypts the file(s) post delivery.&nbsp; That way people could continue using whatever client they want.&nbsp; The extra step goes away when support is finally added to their client.<br /><br />I'm not so sure the legacy problem is prohibitive.&nbsp; There is no way of supporting legacy peers with private torrents either.&nbsp; If a client doesn't support private torrents then private trackers ban the client.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p414" class="blockpost roweven">
+	<h2><span><span class="conr">#10&nbsp;</span><a href="viewtopic.php?pid=414#p414">2008-08-30 07:16:14</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Bittorrent via SSM</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>like onion routing?&nbsp; errr.....&nbsp; Harder to provide anonymity than to obfuscate what is being downloaded.</p></div></blockquote><p>You are right, it was the wrong choice of words. Protecting the user's privacy in keeping knowledge of what he is downloading is important, not the fact that he is downloading something.<br /><br /></p><blockquote><div class="incqbox"><p>There is no way of supporting legacy peers with private torrents either.</p></div></blockquote><p>That's not really an issue as legacy clients usually do not have any features that cause concerns for private trackers (such as DHT, PEX, lan peer location)</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox">
+		<p class="postlink conr">&nbsp;</p>
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Bittorrent via SSM</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div class="inbox">
+
+			<div class="conl">
+				<form id="qjump" method="get" action="viewforum.php">
+					<div><label>Jump to
+					<br /><select name="id" onchange="window.location=('viewforum.php?id='+this.options[this.selectedIndex].value)">
+						<optgroup label="BitTorrent">
+							<option value="26">Announcements</option>
+							<option value="25" selected="selected">BEPs</option>
+							<option value="29">BEP process</option>
+							<option value="27">General</option>
+							<option value="33">Research Tools</option>
+							<option value="32">Cooperation between BitTorrent and ISPs</option>
+							<option value="30">Attacks against BitTorrent</option>
+							<option value="28">Feature Requests, Found Bugs &gt;&gt;&gt;</option>
+					</optgroup>
+					</select>
+					<input type="submit" value=" Go " accesskey="g" />
+					</label></div>
+				</form>
+			</div>
+			<p class="conr">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-116155-1";
+_udn = "utorrent.com";
+urchinTracker();
+</script>
+
+</body>
+</html>

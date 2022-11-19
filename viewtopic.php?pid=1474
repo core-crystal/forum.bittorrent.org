@@ -1,0 +1,307 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Useful things for the Mainline DHT (Page 1) / Research Tools / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
+<script type="text/javascript" src="captcha/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript">
+	$(function(){var f=$("#sliderCaptcha");var b=$("#cleCaptcha");var d=$(".boutonsCaptcha");var a=$("#javascriptCaptcha");var e=[32,27,13,33,32,49,29,39,31,19,18,1,22,17,48,12,29,32,25,14,33,1,31,3,48,35,0,18,14,6,30,46,33,44,29,16,44,8,6,25,27,24,26,0,42,25,12,21,7,38];var h=0;var g=5;var c=0;a.hide();f.slider({value:0,min:0,max:g,step:1,slide:function(i,j){if(j.value>c){c=j.value;h+=c}},stop:function(j,k){var i=false;if(k.value==g){if(h==((g+Math.pow(g,2))/2)){i=true;f.slider("option","disabled",true);if(b.val().length!=e.length){$.post("captcha.php",{tokenCaptcha:b.val()},function(m){var l="";$.each(e,function(){l+=m.charAt(this%m.length)});b.val(l);d.removeAttr("disabled")})}}}if(!i){h=c=0;f.slider("option","value",h)}}})});
+</script>
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="punviewtopic" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex" class="isactive"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=33">Research Tools</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=141"><strong>Useful things for the Mainline DHT</strong></a></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p870" class="blockpost rowodd firstpost blockpost1">
+	<h2><span><span class="conr">#1</span> <a href="viewtopic.php?pid=870#p870">2009-12-14 08:09:14</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Useful things for the Mainline DHT</h3>
+					<div class="postmsg">
+						<p>I&#039;m using this thread to document some useful things i&#039;ve found while implementing the mainline DHT as a plugin for Azureus.</p><br /><p><strong>How to calculate DHT size estimates</strong></p><br /><p>I&#039;ve run a few simulations for my DHT plugin and came up with a decent way to obtain size estimates. Over time it is far more accurate than estimates based on the local routing table, given enough samples i can achieve error rates &lt;1% in my simulations. To save others the work i&#039;ll explain it here.</p><p>(<em>K</em> = 8; the bucket size of the mainline dht)<br />(<em>N</em> = number of concurrent requests in a lookup; <em>N</em> = 10 in my implementation)<br />(<em>C</em> = 0.618; a exponent correction based on simulations with <em>K</em> = 8 over 4 orders of magnitude of the population size. It provides a permanent bias &lt;1% for <em>K</em> = 8+-3 and sufficiently large number of samples. Significantly different values of <em>K</em> will need a slightly different <em>C</em>.)</p><p>1. Keep track of the <em>K</em> closest nodes that have responded during a lookup procedure.</p><p>2. Only use closest-node-sets that have not changed for the last max(<em>N,K</em>) responses before the lookup terminated. This implies that you queried all the closest nodes and they haven&#039;t returned even-closer ones, i.e. they actually should be the closest ones. This restriction is important for GET_PEERS lookups which might terminate early or lookups terminating due to timeouts.</p><p>3. Calculate the common prefix of the closest nodes and maintain a bounded list of such recently queried prefixes. Only use closest-node-sets that haven&#039;t been recently queried. This is to avoid sampling the same portion of the keyspace over and over again. This will mostly filter out repeat lookups to the same torrent keys and to your own local bucket for routing table maintenance.<br />Closest-sets that have a prefix that covers a smaller prefix in the recently-seen set should be dropped too. A prefix that is smaller and covered by a larger prefix in the recently-seen set should displace the larger one.</p><p>4. If not already done so, sort the closest set either by XOR-distance to the target key of the lookup or by their natural ordering in the keyspace, both should work.</p><p>5. Calculate the XOR-<em>distance</em>s between neighbored nodes. You should have <em>K</em>-1 distances now.</p><p>6. Interpret each <em>distance</em> as unsigned BigNum and calculate the base-2 logarithm of it. In case base-2 logarithms are not available any log(<em>distance</em>)/log(2) will achieve the same. The values you get should be around 130 to 150 at the moment.</p><p>7. Sort the <em>distance</em>s based on their numerical value. Then take the <em>median</em> for odd-length or 2-element median for even-length lists. It should be the odd-length case since <em>K</em>-1 = 7.</p><p>8. Since we get 1 <em>median</em> per lookup it is important to keep an <em>average</em> of medians. I suggest using an exponential moving average to account for changes of the population size over time. The cumulative moving average would provide a higher accuracy but only under the assumption of a fixed population size.<br />I&#039;m using an EMA with a weight of 0.03, an initial value of 160 and persist it along with the routing table across sessions. Lower weights increase accuracy but require more lookups to converge.</p><p>9. <em>currently estimated population size</em> = 2 ^ (160 - <em>average</em> + <em>C</em>)</p><br /><br /><br /><p>The average is calculated over the median of logarithms to suppress the large amount of noise in the samples. Since the cumulative distances should be poisson-distributed the median introduces a slight bias, which is corrected for with <em>C</em>.</p><br /><br /><p>How to feed this algorithm:<br />Since repeat lookups get filtered it is best to perform FIND_NODE lookups to random target keys in regular intervals.</p><p>Caveats:<br />- This algorithm depends on other nodes correctly maintaining their routing tables, especially their list of closest neighbors must be exhaustive. If their routing table management is too lazy then it may return too low values.<br />- It also assumes purely random distribution of nodes over the keyspace, should nodes select their IDs in a non-uniform manner (e.g. to flock around popular keys) then it might report too-high values for lookups to portions of the keyspace where nodes cluster or too-low values for randomized lookups.<br />- It only estimates the number of reachable nodes</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1272" class="blockpost roweven">
+	<h2><span><span class="conr">#2</span> <a href="viewtopic.php?pid=1272#p1272">2010-04-03 06:09:53</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Useful things for the Mainline DHT</h3>
+					<div class="postmsg">
+						<p>If anyone wants to do some researchy things with the mainline DHT:</p><p>I have extended my DHT implementation to run as stand-alone node with the following features:<br />-full implementation of BEP 5 <br />-all kademlia optimizations that are compatible with the spec<br />-BEP 32 (ipv6) support<br />-BEP 33 (scrapes) support<br />-multihoming/virtual nodes; automatically binds to each available IP on a host and uses a unique node ID per IP<br />-custom instrumentation should be easy to implement</p><br /><p>Compiled version available under <a href="https://azsmrc.svn.sourceforge.net/svnroot/azsmrc/mldht/trunk/">https://azsmrc.svn.sourceforge.net/svnr … dht/trunk/</a></p><p>1. checkout the svn tree<br />2. execute the compiled version with the &quot;run.sh&quot; shell script</p><p>It&#039;s best used on a host with multiple public IPv4 and IPv6 addresses.</p><br /><p>Source code can be found in the same <a href="https://azsmrc.svn.sourceforge.net/svnroot/azsmrc/mldht/">SVN tree</a> in the form of an eclipse project.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1446" class="blockpost rowodd">
+	<h2><span><span class="conr">#3</span> <a href="viewtopic.php?pid=1446#p1446">2010-07-05 01:41:40</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=91074">jack.tatum</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Useful things for the Mainline DHT</h3>
+					<div class="postmsg">
+						<p>What sort of figures were you getting for the size of the Mainline DHT? And what&#039;s your estimate on what proportion of users manage a DHT connection?</p><p>Running the mlDHT plugin on azureus (which I believe is slightly different to what you&#039;re doing here but pls correct me if I&#039;m wrong), I get a figure of around 20,000 for IPv4 Mainline DHT users after about an hour or so of running Azureus with five well-connected torrents - which is obviously not the population of the Mainline DHT. I get about 1.4m for Azureus DHT users. Is there a way to go from the mainline figure in that plugin to the mainline DHT population or am I talking at cross-purposes?</p>
+						<p class="postedit"><em>Last edited by jack.tatum (2010-07-05 01:50:03)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1450" class="blockpost roweven">
+	<h2><span><span class="conr">#4</span> <a href="viewtopic.php?pid=1450#p1450">2010-07-12 11:50:24</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Useful things for the Mainline DHT</h3>
+					<div class="postmsg">
+						<p>I&#039;m getting around 5M reachable mainline DHT nodes atm. And yes that&#039;s the algorithm used in the mainline DHT plugin... maybe the DHT port is firewalled in your case? Either that or the actual implementation needs too long to converge, i usually test steady-state operation tbh ^^</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1452" class="blockpost rowodd">
+	<h2><span><span class="conr">#5</span> <a href="viewtopic.php?pid=1452#p1452">2010-07-12 12:46:56</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=91074">jack.tatum</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Useful things for the Mainline DHT</h3>
+					<div class="postmsg">
+						<p>I needed to keep it running for a good while - it seems to take a good while (six hours, maybe more?) for the Mainline DHT plugin to calculate the full population. From that point, it fluctuates between 3.8m and 4.7m peers or thereabouts, depending on time of day. </p><p>However, I&#039;ve had it running on two different computers based in two different countries. There is a consistent difference. There&#039;s no firewall issue I can detect. But there&#039;s a difference on the mainline DHT of up to half a million peers at times. [The Azureus dht fluctuates less and the difference between the two instances is also less (as you might expect, given that the figures are around 1.4m or so).]</p><p>Any idea why there might be such a difference and over a long period? </p><p>I&#039;ll update this with figures from both machines running this test tomorrow, but here are the figures for the last few hours from one of them. <br />[20:23:17] Estimator: new estimate:4336734<br />[20:33:14] Estimator: new estimate:4343156<br />[20:43:04] Estimator: new estimate:4336742<br />[20:53:14] Estimator: new estimate:4315300<br />[21:03:04] Estimator: new estimate:4460398<br />[21:12:54] Estimator: new estimate:4497402<br />[21:23:05] Estimator: new estimate:4509539<br />[21:33:04] Estimator: new estimate:4575189<br />[21:42:54] Estimator: new estimate:4589789<br />[21:53:06] Estimator: new estimate:4598213<br />[22:03:35] Estimator: new estimate:4584453<br />[22:13:15] Estimator: new estimate:4538407<br />[22:23:13] Estimator: new estimate:4560301<br />[22:33:25] Estimator: new estimate:4495222<br />[22:42:55] Estimator: new estimate:4548118</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1470" class="blockpost roweven">
+	<h2><span><span class="conr">#6</span> <a href="viewtopic.php?pid=1470#p1470">2010-07-17 06:57:41</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Useful things for the Mainline DHT</h3>
+					<div class="postmsg">
+						<p>well, if the variance is 1M for you within one node then a difference of 0.5M between 2 different instances would fall within that variance, i.e. is not due to difference between the two of them but just due to random fluctuations.</p><p>Daily fluctuations may be due to peak internet usage in the US and EU (less bittorrent users in asia i would guess), so maybe you should see if you can observe a trend over several days.</p><p>Of course there might be an issue with my algorithm, since i&#039;m making some simplifications (e.g. using XOR distance instead of the natural distance).</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1474" class="blockpost rowodd">
+	<h2><span><span class="conr">#7</span> <a href="viewtopic.php?pid=1474#p1474">2010-07-19 04:44:58</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=91110">Frank</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Useful things for the Mainline DHT</h3>
+					<div class="postmsg">
+						<p>Interesting algorithm. I&#039;m trying to estimate the DHT size too; but I have not got any useful result right now.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=33">Research Tools</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=141"><strong>Useful things for the Mainline DHT</strong></a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

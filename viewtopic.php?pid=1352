@@ -1,0 +1,355 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>forum.bittorrent.org / Minor extensions to the DHT</title>
+<link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
+</head>
+<body>
+
+<div id="punwrap">
+<div id="punviewtopic" class="pun">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><span>forum.bittorrent.org</span></h1>
+			<p><span>BitTorrent.org community</span></p>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p>You are not logged in.</p>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<h2><span>Announcement</span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div>Posting about any illegal sharing of copyrighted content is strictly forbidden.</div>
+		</div>
+	</div>
+</div>
+
+<div class="linkst">
+	<div class="inbox">
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<p class="postlink conr">&nbsp;</p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Minor extensions to the DHT</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p897" class="blockpost rowodd firstpost">
+	<h2><span><span class="conr">#1&nbsp;</span><a href="viewtopic.php?pid=897#p897">2010-01-01 12:56:45</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3>Minor extensions to the DHT</h3>
+				<div class="postmsg">
+					<p>I've started working on a new BEP, &quot;Minor extensions to the DHT&quot;.&nbsp; My current draft is on <a href="http://www.pps.jussieu.fr/~jch/software/bittorrent/bep-dht-minor-extensions.html" rel="nofollow">http://www.pps.jussieu.fr/~jch/software &hellip; sions.html</a> .<br /><br />Note that I'm not proposing this yet (hence it is premature to post it on bittorrent.org), just soliciting input on the basic principles.<br /><br />--Juliusz</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p898" class="blockpost roweven">
+	<h2><span><span class="conr">#2&nbsp;</span><a href="viewtopic.php?pid=898#p898">2010-01-01 13:08:00</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Minor extensions to the DHT</h3>
+				<div class="postmsg">
+					<p>on omitting the token:<br /><br /><ul style="list-style-type: disc"><br /><li>If we're going to do scrapes using bloom filters then we'll have to mandate a cap on how many values any node may store before it should start refusing the token. Depending on how they're parametrized this cap would probably range in the thousands.</li><br /><li>Perimeter widening (called &quot;caching along the path&quot; in the kademlia spec) should be explained.</li><br /><li>Perimeter widening should be a &quot;should&quot; instead of a &quot;may&quot;. If the closest K nodes refuse to store nobody could add new - and thus more likely to be alive - values into that particular key. Not to mention that perimeter widening is that what actually decreases load on the nodes, refusing to store new values doesn't decrease load, it only bounds memory usage</li><br /></ul><br /><br />on &quot;drop&quot;:<br /><br /><ul style="list-style-type: disc"><br /><li>Is there an actual case for the necessity?</li><br /><li>We should specify which dictionary this would belong to. i'd suggest the root dictionary as it would have to into every single message. Any message not including it would lead to immediate insertation into the routing table. Which could cause some kinds of unwanted fibrillation if it gets inserted and removed frequently (depending on implementation)</li><br /><li>could possibly be achieved by changing node IDs and/or selectively not answering requests based on the source ID</li><br /></ul><br /><br />on always sending nodes/nodes6:<br /><br />no practical issues here, but it makes find_peers and find_node very similar. If we ever do any major overhaul of the DHT format i'd suggest merging them.</p>
+					<p class="postedit"><em>Last edited by The 8472 (2010-01-01 13:13:19)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p899" class="blockpost rowodd">
+	<h2><span><span class="conr">#3&nbsp;</span><a href="viewtopic.php?pid=899#p899">2010-01-01 13:17:38</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Minor extensions to the DHT</h3>
+				<div class="postmsg">
+					<p>&gt; If we're going to do scrapes using bloom filters...<br /><br />Any additional restrictions will need to be documented, I agree.&nbsp; However, this certainly doesn't belong in this BEP.<br /><br />&gt; Perimeter widening (called &quot;caching along the path&quot; in the kademlia spec) should be explained.<br /><br />Yes.<br /><br />&gt; Perimeter widening should be a &quot;should&quot; instead of a &quot;may&quot;.<br /><br />I disagree.&nbsp; If all 8 nodes are overloaded, then any new peers will receive 400 peer addresses from the DHT, which is plenty.&nbsp; PEX will do its job after that.<br /><br />&gt; We should specify which dictionary this would belong to. i'd suggest the root dictionary<br /><br />Ok.<br /><br />&gt; If we ever do any major overhaul of the DHT format i'd suggest merging them.<br /><br />I agree.&nbsp; This BEP, however, is about <strong>minor</strong> extensions.<br /><br />--Juliusz</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p900" class="blockpost roweven">
+	<h2><span><span class="conr">#4&nbsp;</span><a href="viewtopic.php?pid=900#p900">2010-01-01 13:19:10</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Minor extensions to the DHT</h3>
+				<div class="postmsg">
+					<p>Another issue with &quot;drop&quot;:<br /><br />omitting the token + forcing perimeter widening should be preferred over the drop flag if the load is due to servicing a very popular key. Otherwise we'd be shifting the load to the new K closest nodes, which might trigger them to send drop messages too, fruther shifting the load and thus causing a cascade failure</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p901" class="blockpost rowodd">
+	<h2><span><span class="conr">#5&nbsp;</span><a href="viewtopic.php?pid=901#p901">2010-01-01 13:25:08</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Minor extensions to the DHT</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>jch wrote:</h4><blockquote><div class="incqbox"><h4>The 8472 wrote:</h4><p>Perimeter widening should be a &quot;should&quot; instead of a &quot;may&quot;.</p></div></blockquote><p>I disagree.&nbsp; If all 8 nodes are overloaded, then any new peers will receive 400 peer addresses from the DHT, which is plenty.&nbsp; PEX will do its job after that.</p></div></blockquote><p>- The DHT does not ensure liveness/correctness of the entries. Thus the values may age and become outdated without being replaced in a timely manner<br />- omitting tokens does not alleviate load, perimeter widening does<br />- it might also put an uneven load (connection spam!) on the peers that are represented in the DHT by newly arriving nodes trying to join the swarm.<br />- see previous post</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p902" class="blockpost roweven">
+	<h2><span><span class="conr">#6&nbsp;</span><a href="viewtopic.php?pid=902#p902">2010-01-01 13:33:10</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Minor extensions to the DHT</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>The 8472 wrote:</h4><p>which might trigger them to send drop messages too, further shifting the load and thus causing a cascade failure</p></div></blockquote><p>Thinking of it. It might not only cause cascade failure but something akin to BGP route oscillation. Which, again, leads me to the point of: <br /><br /></p><blockquote><div class="incqbox"><p>could possibly be achieved by changing node IDs and/or <em>selectively not answering requests based on the source ID</em></p></div></blockquote><p>So maybe drop should be done in a RED-like manner based on distance to gradually decrease load.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p919" class="blockpost rowodd">
+	<h2><span><span class="conr">#7&nbsp;</span><a href="viewtopic.php?pid=919#p919">2010-01-19 20:52:59</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Minor extensions to the DHT</h3>
+				<div class="postmsg">
+					<p>2 ideas: <br /><br />- sending port = 0 or any other invalid port number in the announce_peer request should be considered as a delete operation for all entries sharing the source IP<br />- the &lt;key,ip,port&gt; database that each node maintains should ensure uniqueness based on &lt;key,ip&gt;, ignoring the port and displacing older entries with newer ones (if clients change ports/get restarted).</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1290" class="blockpost roweven">
+	<h2><span><span class="conr">#8&nbsp;</span><a href="viewtopic.php?pid=1290#p1290">2010-04-05 16:59:44</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Minor extensions to the DHT</h3>
+				<div class="postmsg">
+					<p>Another idea: <br /><br />ping responses should contain a field like &quot;yourAddr&quot; which contains a 6 (ipv4) or 18 byte (ipv6) length string indicating under which source address the request was seen.<br /><br />While not directly useful for the DHT it provides another convenient way to discover the external IP address of a host.<br /><br />Including the port also helps detecting port mappings.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1350" class="blockpost rowodd">
+	<h2><span><span class="conr">#9&nbsp;</span><a href="viewtopic.php?pid=1350#p1350">2010-04-19 19:37:59</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Minor extensions to the DHT</h3>
+				<div class="postmsg">
+					<p>&gt; - sending port = 0 or any other invalid port number in the announce_peer request should be considered as a delete operation for all entries sharing the source IP<br />&gt; - the &lt;key,ip,port&gt; database that each node maintains should ensure uniqueness based on &lt;key,ip&gt;, ignoring the port and displacing older entries with newer ones (if clients change ports/get restarted).<br /><br />Both extensions assume that there's at most one instance of a given torrent behind each IP address, which is not the case in the presence of NAT, or simply when running multiple BitTorrent clients on a multi-user machine.<br /><br />&gt; ping responses should contain a field like &quot;yourAddr&quot; which contains a 6 (ipv4) or 18 byte (ipv6) length string indicating under which source address the request was seen.<br /><br />Isn't that particular issue already solved by LTEP?<br /><br />--Juliusz</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1352" class="blockpost roweven">
+	<h2><span><span class="conr">#10&nbsp;</span><a href="viewtopic.php?pid=1352#p1352">2010-04-19 19:45:02</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Minor extensions to the DHT</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>jch wrote:</h4><p>&gt; - sending port = 0 or any other invalid port number in the announce_peer request should be considered as a delete operation for all entries sharing the source IP<br />&gt; - the &lt;key,ip,port&gt; database that each node maintains should ensure uniqueness based on &lt;key,ip&gt;, ignoring the port and displacing older entries with newer ones (if clients change ports/get restarted).<br /><br />Both extensions assume that there's at most one instance of a given torrent behind each IP address, which is not the case in the presence of NAT, or simply when running multiple BitTorrent clients on a multi-user machine.</p></div></blockquote><p>a) In the presence of NAT it's possible that multiple bittorrents client run behind one IP, but the probability of them running the same torrent too is quite low<br />b) Bittorrent clients already only allow 1 connection per ip/torrent, thus running the torrent twice on the same machine/nat won't do much good<br />c) they have the ability to synchronize via NAT-internal connections (which are most likely faster too) and thus only one of them has to be connected anyway<br />d) the NAT argument does not apply to ipv6<br />e) it prevents a single IP from poisoning the pool by spamming ports (be it due to a bug or malicious activity)<br />f) NATed nodes can still obtain peers to connect to, they just can't announce their presence, PEX will do the rest. Since they're behind nat the chance that they're connectible is quite low anyway.<br /><br /><br /><br /></p><blockquote><div class="incqbox"><h4>jch wrote:</h4><p>&gt; ping responses should contain a field like &quot;yourAddr&quot; which contains a 6 (ipv4) or 18 byte (ipv6) length string indicating under which source address the request was seen.<br /><br />Isn't that particular issue already solved by LTEP?<br /><br />--Juliusz</p></div></blockquote><p>I guess that's correct. I wouldn't have any particular use for it right now anyway, it just seems like a &quot;might be useful for someone&quot; thingy.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox">
+		<p class="postlink conr">&nbsp;</p>
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Minor extensions to the DHT</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div class="inbox">
+
+			<div class="conl">
+				<form id="qjump" method="get" action="viewforum.php">
+					<div><label>Jump to
+					<br /><select name="id" onchange="window.location=('viewforum.php?id='+this.options[this.selectedIndex].value)">
+						<optgroup label="BitTorrent">
+							<option value="26">Announcements</option>
+							<option value="27">General</option>
+							<option value="25" selected="selected">BEPs</option>
+							<option value="29">BEP process</option>
+							<option value="33">Research Tools</option>
+							<option value="32">Cooperation between BitTorrent and ISPs</option>
+							<option value="30">Attacks against BitTorrent</option>
+							<option value="28">Feature Requests, Found Bugs &gt;&gt;&gt;</option>
+					</optgroup>
+					</select>
+					<input type="submit" value=" Go " accesskey="g" />
+					</label></div>
+				</form>
+			</div>
+			<p class="conr">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-116155-1";
+_udn = "utorrent.com";
+urchinTracker();
+</script>
+
+</body>
+</html>

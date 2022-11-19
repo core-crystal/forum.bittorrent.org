@@ -1,0 +1,552 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>DHT security feature (Page 1) / BEPs / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
+<script type="text/javascript" src="captcha/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript">
+	$(function(){var f=$("#sliderCaptcha");var b=$("#cleCaptcha");var d=$(".boutonsCaptcha");var a=$("#javascriptCaptcha");var e=[13,36,27,23,36,0,25,18,32,39,27,20,43,1,10,38,32,34,27,31,37,23,39,12,41,49,27,25,22,47,48,36,34,26,9,21,26,35,39,9,24,17,30,17,19,40,5,2,24,33];var h=0;var g=5;var c=0;a.hide();f.slider({value:0,min:0,max:g,step:1,slide:function(i,j){if(j.value>c){c=j.value;h+=c}},stop:function(j,k){var i=false;if(k.value==g){if(h==((g+Math.pow(g,2))/2)){i=true;f.slider("option","disabled",true);if(b.val().length!=e.length){$.post("captcha.php",{tokenCaptcha:b.val()},function(m){var l="";$.each(e,function(){l+=m.charAt(this%m.length)});b.val(l);d.removeAttr("disabled")})}}}if(!i){h=c=0;f.slider("option","value",h)}}})});
+</script>
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="punviewtopic" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex" class="isactive"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=308"><strong>DHT security feature</strong></a></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p1682" class="blockpost rowodd firstpost blockpost1">
+	<h2><span><span class="conr">#1</span> <a href="viewtopic.php?pid=1682#p1682">2010-12-11 00:33:02</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>DHT security feature</h3>
+					<div class="postmsg">
+						<p>Another proposal to make the DHT a bit harder to attack and snoop.</p><p><a href="http://www.libtorrent.org/dht_sec.html">http://www.libtorrent.org/dht_sec.html</a></p><p>I believe Vuze has a very similar feature in its DHT. Any thoughts?</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1694" class="blockpost roweven">
+	<h2><span><span class="conr">#2</span> <a href="viewtopic.php?pid=1694#p1694">2010-12-11 11:50:59</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: DHT security feature</h3>
+					<div class="postmsg">
+						<p>This approach is quite pointless because it will break down with IPv6 where every single home user will have a whole /64 block at their disposal or even a /48 with such things as 6to4.</p><p>It also complicates the logic of a node since its routing table will become invalid if it is forced to change its node ID when its external IP changes.</p><p>Another issue is that it does not prevent data harvesting at all, you just need a bunch of IP addresses (~30) to get enough data, i have demonstrated this with my DHT indexer. Right now it chooses an optimal distribution of node IDs to cover the entire keyspace, but a random distribution would work too.<br />The only attack that the restricted node ID scheme would prevent is a handful of nodes hijacking a small portion of the keyspace, e.g. to blackhole the traffic or to inject bogus results.<br />Data harvesting attacks would be unaffected.</p><br /><p>The only good part i can see there is filtering out private IPs, i do that myself already to keep routing tables clean.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1698" class="blockpost rowodd">
+	<h2><span><span class="conr">#3</span> <a href="viewtopic.php?pid=1698#p1698">2010-12-11 12:05:26</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: DHT security feature</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>This approach is quite pointless because it will break down with IPv6 where every single home user will have a whole /64 block at their disposal or even a /48 with such things as 6to4.</p></div></blockquote></div><p>That doesn&#039;t make the approach pointless. First of all, the vast majority of nodes in the wild today would not be affected. Secondly, it could be addressed by not hashing the full IPv6 address, but maybe the first 5-8 bytes.</p><div class="quotebox"><blockquote><div><p>It also complicates the logic of a node since its routing table will become invalid if it is forced to change its node ID when its external IP changes.</p></div></blockquote></div><p>Right. It&#039;s only marginally more complicated though. You essentially just need a way to restart, and a way to prevent being tricked into changing.</p><div class="quotebox"><blockquote><div><p>Another issue is that it does not prevent data harvesting at all, you just need a bunch of IP addresses (~30) to get enough data, i have demonstrated this with my DHT indexer. Right now it chooses an optimal distribution of node IDs to cover the entire keyspace, but a random distribution would work too.</p></div></blockquote></div><p>That&#039;s not really the main concern this change tries to prevent though.</p><p>With 30 nodes, I would imagine that you would cover the vast majority of info-hashes, but you wouldn&#039;t get the majority of peers for those info hashes, would you?</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1702" class="blockpost roweven">
+	<h2><span><span class="conr">#4</span> <a href="viewtopic.php?pid=1702#p1702">2010-12-11 13:18:05</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: DHT security feature</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>arvid wrote:</cite><blockquote><div><p>That doesn&#039;t make the approach pointless. First of all, the vast majority of nodes in the wild today would not be affected. Secondly, it could be addressed by not hashing the full IPv6 address, but maybe the first 5-8 bytes.</p></div></blockquote></div><p>Today, yes. But IPv6 usage will only go up, not down. According to current estimates the global ipv4 pool will be depleted in 1-2 months, the RIR pools in 7-15 months.</p><p>So this solution won&#039;t hold for long.</p><p>And your suggestion is not workable for ipv6. A determined attacker could easily get a /32 prefix from the IANA (you just need your own AS), while normal home users have a /64. If you filter by /32 then home users will be massively clustered. Everyone within an ISP will have the same node ID prefix, which would utterly break Kademlia. And if you filter by anything less than a /32 then an attacker with a /32 won&#039;t be deterred by this countermeasure.</p><p>So this strategy will be pointless in the near future.</p><br /><p>Another thing is that ÂµT does not support IPv6 DHT at the moment, so the size of the v6 DHT actually is fairly large considering the fact that most popular client doesn&#039;t support it.</p><br /><br /><p>IPv4 depletion will also mean incraesed deployment of carrier grade NAT. Which means many nodes will share the same public IP, again leading to clustering.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1736" class="blockpost rowodd">
+	<h2><span><span class="conr">#5</span> <a href="viewtopic.php?pid=1736#p1736">2010-12-31 18:42:14</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: DHT security feature</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>The 8472 wrote:</cite><blockquote><div><p>And your suggestion is not workable for ipv6. A determined attacker could easily get a /32 prefix from the IANA (you just need your own AS), while normal home users have a /64. If you filter by /32 then home users will be massively clustered. Everyone within an ISP will have the same node ID prefix, which would utterly break Kademlia. And if you filter by anything less than a /32 then an attacker with a /32 won&#039;t be deterred by this countermeasure.</p></div></blockquote></div><p>Even just ignoring the last 64 bits in the IPv6 address would make a big difference for certain attacks. The fact that you need to be determined to be able to launch an attack doesn&#039;t mean the counter-measure is pointless. If you can&#039;t do it from a single normal home connection, it is harder than it is today.</p><p>If you have access to a /32, and we assume normal IPv6 users have /64, that gives you 32 bits of entropy when picking a node ID, which is a lot more than the total number of nodes in the DHT, and effectively makes it possible to always pick a valid node ID that&#039;s the closest one to any given info-hash.</p><p>You could settle for something in between, say assuming /48 for home users, and hash the first 80 bits. Sure, there would be some clustering, but it wouldn&#039;t break the DHT, just make it slightly less efficient.</p><div class="quotebox"><blockquote><div><p>So this strategy will be pointless in the near future.</p></div></blockquote></div><p>I think you might be more optimistic about the rate at which IPv6 is being deployed, or define &quot;near future&quot; as farther out than I would.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1738" class="blockpost roweven">
+	<h2><span><span class="conr">#6</span> <a href="viewtopic.php?pid=1738#p1738">2011-01-01 09:20:38</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: DHT security feature</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>arvid wrote:</cite><blockquote><div><p>If you can&#039;t do it from a single normal home connection, it is harder than it is today.</p></div></blockquote></div><p>I did some research. A big german ISP is planning to roll out /56s to home users <em>by the end of the year</em>. Other ISPs are planning to use /64s for home users. We really cannot rely on prefix lengths.</p><div class="quotebox"><blockquote><div><p>You could settle for something in between, say assuming /48 for home users, and hash the first 80 bits. Sure, there would be some clustering, but it wouldn&#039;t break the DHT, just make it slightly less efficient.</p></div></blockquote></div><p>Let&#039;s say we operate on that assumption then a big ISP that decides to allocate /64s to home users could allocate 65536 home networks from a single /48. Which means up to 64k nodes could fall into a single node prefix.</p><p>If several big ISPs would do that it would mean a 2^16-fold decrease in the local keyspace density or a 2^16-fold increase in the number of keys that nodes would be responsible for (thx to inaccurate routing on the last few hops).</p><p>I would like to avoid codifying such fundamental flaws unless they&#039;re absolutely necessary.</p><br /><div class="quotebox"><blockquote><div><p>I think you might be more optimistic about the rate at which IPv6 is being deployed, or define &quot;near future&quot; as farther out than I would.</p></div></blockquote></div><p>Considering the time frame required to roll out the changes it is the near future, yes.</p><br /><br /><p>Instead of all this SHA1ing of the node IDs we could simply add some plausibility checks to returned values. E.g. ignoring all ports below 1024 (as suggested on the 27C3 talk to avoid ddosing specific IPs) or only accept the data from 1 node within a /48 <em>per lookup</em>.</p><p>And before we try to design defenses we actually need a threat model of things we want to defend against and things that are acceptable.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1754" class="blockpost rowodd">
+	<h2><span><span class="conr">#7</span> <a href="viewtopic.php?pid=1754#p1754">2011-01-01 20:50:53</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: DHT security feature</h3>
+					<div class="postmsg">
+						<p>The main threat I&#039;ve had in mind is someone blocking specific torrents (or DHT feeds), which is a subset of the DDoSing attack. It would require the plausibility checks to happen earlier, while bootstrapping the DHT and running find_nodes and get_peers which forwards you to new nodes.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1756" class="blockpost roweven">
+	<h2><span><span class="conr">#8</span> <a href="viewtopic.php?pid=1756#p1756">2011-01-02 05:29:32</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: DHT security feature</h3>
+					<div class="postmsg">
+						<p>I think burris mentioned that not defending against this threat was a conscious design decision when they made the DHT.</p><p>Nevertheless, let&#039;s consider ways an attacker might achieve this:</p><p>for just 1 target ID:<br />a) the super cheap way: simply have 1 host, run ~16 nodes on an port each and have each claim a node ID near to the target.<br />This is trivial to defend against</p><p>b) the colo way: have one host with multiple IPs from a subnet and have each claim a node ID close to the target.<br />This simply needs plausibility checks in a lookup&#039;s terminal phase</p><p>c) the hard way: scatter ~16 nodes throughout various IP ranges (on different ISPs for example) and have each claim a node ID close to the target.<br />I currently have no idea how to defend against that except fixed node IDs</p><br /><p>for many many target IDs:<br />a) the cheap way: have a single host, run a bunch of nodes on different ports scattered throughout the keyspace and forward all lookups that go to the desired target IDs to nodes that dynamically change their ID to be close to the target.<br />Again, trivial to defend against</p><p>b) datacenter way: you need a /16 for this to do the same thing as the previous attack but with IPs instead of ports<br />This, again, should only require plausibility checks during lookups</p><p>c) the hard way: again, run 16-100 nodes scattered throughout the entire IP space, run multiple nodes per IP (different ports) and carefully choose the node IDs per port to be far apart from each other. This should yield a high keyspace coverage and again allow the attacker to do the forwarding-attack with dynamic node IDs on the forwarding targets.</p><p>It&#039;s not easy to defend against this, but since the attacker now needs to dynamically change his node IDs instead of just picking ones that suit his needs and then stick with them it might be easier to detect. Alternatively restricting the number of ports the DHT can run on could work too.</p><br /><br /><p>So i think we can already achieve quite a bit by adding plausibility checks to lookups</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1762" class="blockpost rowodd">
+	<h2><span><span class="conr">#9</span> <a href="viewtopic.php?pid=1762#p1762">2011-01-02 13:20:11</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: DHT security feature</h3>
+					<div class="postmsg">
+						<p>Yeah, you&#039;re right. It might not make that much sense to tie node IDs to IPv6 addresses. It does seem to make sense for IPv4 though.</p><p>Actually, I think the DDoS attack might even be a bit simpler than blocking specific torrents. All you need to do is running many nodes on one machine (or having an implementation that pretends to have many many IDs). I believe you could even circumvent the plausibility check by distributing the node IDs you claim far enough apart, to make it unlikely for them to ever refer to each other in find_nodes responses, or any one node ever interacting with two of the nodes.</p><p>Really the only thing you need for the DDoS is to be popular enough, attract enough traffic and hi-jack every single get_peers request by injecting your victim. It&#039;s unclear how effective it would be, it would obviously be less effective than always spin up new (imaginary) nodes whenever you get an announce_peer or get_peers which happens to terminate that search (on the same machine).</p><p>That said, I still think blocking torrents is a more serious attack to protect against. There are so many other ways to mitigate the DDoS attack, and I&#039;m not entirely convinced that it even works that well today, since every peer you trick into adding your victims IP to, will only try to connect 3 times and then never again, so you need to constantly find new peers to use for the attack, or it will be very short-lived.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1768" class="blockpost roweven">
+	<h2><span><span class="conr">#10</span> <a href="viewtopic.php?pid=1768#p1768">2011-01-03 05:31:21</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: DHT security feature</h3>
+					<div class="postmsg">
+						<p>Ah, btw. I just remembered there is a defense against the &quot;single node returns set of very close dynamic-ID nodes and thus terminates the lookup very early&quot;. It consists of splitting the lookup result sets into generations and making sure that no generation is derived from a single ancestor at any level. It basically ensures that multiple paths lead to the node. For this to work efficiently it requires an <em>alpha</em> of 10 or so to have a meaningful generation size.</p><p>So the possible defenses without mandating hashed node IDs are the following:<br />-allow only one address per /24 (v4) or /64 (v6) per bucket in the routing table<br />-perform the same check for the final set within a lookup<br />-do generational lookup checks to prevent single-ancestor-funneling<br />-crosscheck the ID contained in nodes/nodes6 entries vs. the actual ID that a node claims to have during a lookup (this prevents a simpler changing-node-IDs attack without colluding nodes)</p><br /><p>That would only leave the option to use &quot;real&quot; nodes scattered across several IP ranges to attack a few infohashes. And idk if we really need to defend against that.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1774" class="blockpost rowodd">
+	<h2><span><span class="conr">#11</span> <a href="viewtopic.php?pid=1774#p1774">2011-01-07 15:10:47</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: DHT security feature</h3>
+					<div class="postmsg">
+						<p>&gt; Yeah, you&#039;re right. It might not make that much sense to tie node IDs to IPv6 addresses. It does seem to make sense for IPv4 though.</p><p>I&#039;m not sure how useful it is, then.&#160; It will take at least a few years until your extension can be safely deployed, and I expect ISP-side NAT to be widely deployed sometime in 2013.&#160; I&#039;d hope most peer-to-peer traffic to be IPv6 by that time.</p><p>(Note that this is different from ordinary client-server traffic, which will work just fine through multiple layers of NAT.)</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1894" class="blockpost roweven">
+	<h2><span><span class="conr">#12</span> <a href="viewtopic.php?pid=1894#p1894">2011-03-02 07:09:12</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=92540">rauljim</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: DHT security feature</h3>
+					<div class="postmsg">
+						<p>We have a student whose master thesis [1] is about the &quot;censorship&quot; of a given infohash in Mainline DHT.</p><p>He used nodes with different IPs (he used PlanetLab, so the IPs are distributed all over the world) and NodeIDs close enough to the target infohash. He was careful enough to have the closest nodes but have reasonable distances to the infohash (to seem less suspicious).</p><p>His main finding was that he was not able to completely censor any popular swarm. He found that popular infohashes are tracked by many nodes in the DHT.<br />One of the reasons of such spread of nodes tracking an infohash may be the fact that some &quot;misbehaving&quot; clients announce to many nodes (for instance, we see that KTorrent sends announces to every node it encounters in a lookup).</p><p>[1] <a href="http://tslab.ssvl.kth.se/thesis/files/Thesis%20report.pdf">http://tslab.ssvl.kth.se/thesis/files/T … report.pdf</a> (report, see section 7.4)<br /><a href="http://tslab.ssvl.kth.se/thesis/files/final_presentation.pdf">http://tslab.ssvl.kth.se/thesis/files/f … tation.pdf</a> (slides)</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1908" class="blockpost rowodd">
+	<h2><span><span class="conr">#13</span> <a href="viewtopic.php?pid=1908#p1908">2011-03-09 11:56:41</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: DHT security feature</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>rauljim wrote:</cite><blockquote><div><p>His main finding was that he was not able to completely censor any popular swarm.</p></div></blockquote></div><p>From what i can see he used a relatively low number of nodes though. Anti-P2P companies often have several /24 subnets at their disposal and he is not taking DHT routing-hijack attacks into account.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2120" class="blockpost roweven">
+	<h2><span><span class="conr">#14</span> <a href="viewtopic.php?pid=2120#p2120">2011-05-26 07:45:35</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: DHT security feature</h3>
+					<div class="postmsg">
+						<p>I updated my proposal to use a more clever way of restricting hte node IDs, by not mapping it 1-1 to an IP. it still lacks a couple of things, most notably test vectors and citation to the original paper proposing this technique.</p><p><a href="http://www.rasterbar.com/products/libtorrent/dht_sec.html">http://www.rasterbar.com/products/libto … t_sec.html</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2122" class="blockpost rowodd">
+	<h2><span><span class="conr">#15</span> <a href="viewtopic.php?pid=2122#p2122">2011-05-26 11:31:07</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: DHT security feature</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>and also to make it harder to snoop the network</p></div></blockquote></div><p>This part certainly is not true as you don&#039;t need fine-grained coverage of small regions of key-space for general info-harvesting. Instead wide-spread coverage of the keyspace is enough, which can be achieved with even a few hundred nodes.</p><p>Consider that a node can easily do 100 requests to unique IPs with every lookup, that it performs lookups repeatedly over time and that long-lived nodes are more likely to be visited during the lookup this significantly increases the probability that a snooping node is visited during a lookup.</p><div class="quotebox"><blockquote><div><p>Specifically the attack this extension intends to make harder is launching 8 or more DHT nodes which node-IDs selected close to a specific target info-hash</p></div></blockquote></div><p>Just to note, using a collusion attack it is possible to convince a node that a number of malicious nodes is the K-closest set without actually being closest to the target key. This can be achieved by triggering the look-up termination conditions (closest-set is not changing due to responses from the as-of-yet closest nodes) by significantly out-pacing the natural lookup convergence. This still requires a significant amount of node IDs, does not work on the portion of the keyspace that is close to the querying node and only works in a probabilistic manner, depending on the closeness of the initial responses returned from honest nodes, but it still should require less node IDs than strictly necessary to genuinely dominate the closest-set.</p><p>So, given the ipv6 case where i can get about 100k node IDs with a single /32 (which are relatively easy to get at the moment) it should be possible to fake almost any closest-set for several million real nodes. Note that due to the forced distribution distribution this is a all-or-nothing situation. If i can get enough nodes in one region that means i have enough nodes everywhere.</p><p>Depending on the eagerness of the lookup algorithm it might be even possible to do it with fewer nodes.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2164" class="blockpost roweven">
+	<h2><span><span class="conr">#16</span> <a href="viewtopic.php?pid=2164#p2164">2011-06-21 01:45:00</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=92540">rauljim</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: DHT security feature</h3>
+					<div class="postmsg">
+						<p>Arvid, I&#039;d be very interested to read the paper you mention. Is it available on-line?</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=308"><strong>DHT security feature</strong></a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

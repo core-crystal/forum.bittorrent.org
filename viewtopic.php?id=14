@@ -1,0 +1,720 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>forum.bittorrent.org / Discussion of BEP 7: IPv6 Tracker Extension</title>
+<link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
+</head>
+<body>
+
+<div id="punwrap">
+<div id="punviewtopic" class="pun">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><span>forum.bittorrent.org</span></h1>
+			<p><span>BitTorrent.org community</span></p>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p>You are not logged in.</p>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<h2><span>Announcement</span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div>Posting about any illegal sharing of copyrighted content is strictly forbidden.</div>
+		</div>
+	</div>
+</div>
+
+<div class="linkst">
+	<div class="inbox">
+		<p class="pagelink conl">Pages: <strong>1</strong>&nbsp;<a href="viewtopic.php?id=14&amp;p=2">2</a></p>
+		<p class="postlink conr">&nbsp;</p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Discussion of BEP 7: IPv6 Tracker Extension</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p33" class="blockpost rowodd firstpost">
+	<h2><span><span class="conr">#1&nbsp;</span><a href="viewtopic.php?pid=33#p33">2008-03-04 13:13:30</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3>Discussion of BEP 7: IPv6 Tracker Extension</h3>
+				<div class="postmsg">
+					<p>The IPv6 tracker extension is being tested in the BitTorrent, Inc. trackers.&nbsp; We call for other tracker implementers to prototype this extension in order to gain experience with it.&nbsp; If you find any deficiencies in the proposal then please point it out here.<br /><br />See <a href="http://www.bittorrent.org/beps/bep_0007.html" rel="nofollow">http://www.bittorrent.org/beps/bep_0007.html</a></p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p50" class="blockpost roweven">
+	<h2><span><span class="conr">#2&nbsp;</span><a href="viewtopic.php?pid=50#p50">2008-03-05 03:05:58</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89609">Olaf van der Spek</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 7: IPv6 Tracker Extension</h3>
+				<div class="postmsg">
+					<p>&gt; This proposal addresses the use case where peers are either on an IPv4 network running Teredo [1] or peers are on an IPv6 network with an IPv4 tunnel interface.<br /><br />What about peers connected to the IPv6 internet directly?<br /><br />&gt; announce response<br /><br />When should peers6 be returned? Always? Just on IPv6 announces?<br />Is there an option to not return peers(4)?<br />Should peers with both a v4 and a v6 address be returned once? Or twice?<br /><br />&gt; The tracker SHOULD perform a NAT check on the IPv6 endpoint.<br /><br />Like I've said before, I think this is infeasible, but should also be a MUST. This is a contradiction, so I think this design won't work.<br /><br />It's infeasible because it adds considerable overhead to an announce. Especially when that overhead was previously minimized by the UDP tracker protocol. Trackers that handle 1000+ announces per second will (probably) have trouble doing 1000+ NAT checks per second.<br />It should be a MUST to prevent address spoofing.<br />It also assumes the client knows it's own IPv6 (or IPv4) address, which might not be the case when NAT is used.<br /><br />An option would be to do two announces, one over IPv4 and one over IPv6.<br />It might be possible to partly merge those two announces when a UDP tracker protocol is used to reduce the overhead as far as possible.</p>
+					<p class="postedit"><em>Last edited by Olaf van der Spek (2008-03-05 03:31:21)</em></p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p66" class="blockpost rowodd">
+	<h2><span><span class="conr">#3&nbsp;</span><a href="viewtopic.php?pid=66#p66">2008-03-05 17:58:08</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89624">dak360</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"><img src="img/avatars/89624.jpg" width="64" height="64" alt="" /></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 7: IPv6 Tracker Extension</h3>
+				<div class="postmsg">
+					<p><a href="http://forums.degreez.net/viewtopic.php?p=28431#28431" rel="nofollow">This</a> may be helpful.</p>
+				</div>
+				<div class="postsignature"><hr />- dak180<br /><a href="http://dak180.dynalias.com:8080/PHP/tracker/" rel="nofollow">BaenCD Torrents</a></div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p73" class="blockpost roweven">
+	<h2><span><span class="conr">#4&nbsp;</span><a href="viewtopic.php?pid=73#p73">2008-03-06 12:10:41</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 7: IPv6 Tracker Extension</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>Olaf van der Spek wrote:</h4><p>&gt; This proposal addresses the use case where peers are either on an IPv4 network running Teredo [1] or peers are on an IPv6 network with an IPv4 tunnel interface.<br /><br />What about peers connected to the IPv6 internet directly?</p></div></blockquote><p>What about them? If they also have an IPv4 address they can specify it.<br /><br /></p><blockquote><div class="incqbox"><h4>Olaf van der Spek wrote:</h4><p>&gt; announce response<br /><br />When should peers6 be returned? Always? Just on IPv6 announces?</p></div></blockquote><p>When an IPv6 address is specified or when the announce arrived on an IPv6 interface.<br /><br /></p><blockquote><div class="incqbox"><h4>Olaf van der Spek wrote:</h4><p>Is there an option to not return peers(4)?</p></div></blockquote><p>Not in the current draft. Would there be a significant benefit?<br /><br /></p><blockquote><div class="incqbox"><h4>Olaf van der Spek wrote:</h4><p>Should peers with both a v4 and a v6 address be returned once? Or twice?</p></div></blockquote><p>Twice, once for each endpoint address.<br /><br /></p><blockquote><div class="incqbox"><h4>Olaf van der Spek wrote:</h4><p>&gt; The tracker SHOULD perform a NAT check on the IPv6 endpoint.<br /><br />Like I've said before, I think this is infeasible, but should also be a MUST. This is a contradiction, so I think this design won't work.<br /><br />It's infeasible because it adds considerable overhead to an announce. Especially when that overhead was previously minimized by the UDP tracker protocol. Trackers that handle 1000+ announces per second will (probably) have trouble doing 1000+ NAT checks per second.<br />It should be a MUST to prevent address spoofing.<br />It also assumes the client knows it's own IPv6 (or IPv4) address, which might not be the case when NAT is used.</p></div></blockquote><p>Trackers only perform a NAT check once per peer. Only if you have a 100% turnover of peers within the announce interval will your scenario be valid. In that scenario bittorrent won't work very well anyway.<br /><br /></p><blockquote><div class="incqbox"><h4>Olaf van der Spek wrote:</h4><p>An option would be to do two announces, one over IPv4 and one over IPv6.<br />It might be possible to partly merge those two announces when a UDP tracker protocol is used to reduce the overhead as far as possible.</p></div></blockquote><p>The main drawbacks I see with that are:<br /><br />1) You assume that every DNS server supports IPv6 (which is not the case currently)<br />2) There will be extra load on the tracker.<br /><br />I expect Teredo to become a significant share of the bittorrent traffic, given that it does hole punching. I think it makes sense to assume that the number of Teredo users will be much more significant than actual IPv6 users.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p75" class="blockpost rowodd">
+	<h2><span><span class="conr">#5&nbsp;</span><a href="viewtopic.php?pid=75#p75">2008-03-06 14:55:39</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=35956">ghazel</a></strong></dt>
+					<dd class="usertitle"><strong>BitTorrent Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 7: IPv6 Tracker Extension</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>Olaf van der Spek wrote:</h4><p>&gt; This proposal addresses the use case where peers are either on an IPv4 network running Teredo [1] or peers are on an IPv6 network with an IPv4 tunnel interface.<br /><br />What about peers connected to the IPv6 internet directly?</p></div></blockquote><p>This proposal should function for that case as well.<br /><br /></p><blockquote><div class="incqbox"><h4>Olaf van der Spek wrote:</h4><p>&gt; announce response<br /><br />When should peers6 be returned? Always? Just on IPv6 announces?<br />Is there an option to not return peers(4)?<br />Should peers with both a v4 and a v6 address be returned once? Or twice?</p></div></blockquote><p>The assumption was that v4 peers would be returned if ipv4= is present or the transport is over v4, and v6 peers would be returned if ipv6= is present or the transport is over v6. So, a v6 transport with no v4 parameter would be a case where the tracker can return just &quot;peers6&quot;.<br /><br /></p><blockquote><div class="incqbox"><h4>Olaf van der Spek wrote:</h4><p>&gt; The tracker SHOULD perform a NAT check on the IPv6 endpoint.<br /><br />Like I've said before, I think this is infeasible, but should also be a MUST. This is a contradiction, so I think this design won't work.<br /><br />It's infeasible because it adds considerable overhead to an announce. Trackers that handle 1000+ announces per second will (probably) have trouble doing 1000+ NAT checks per second.<br />It should be a MUST to prevent address spoofing.<br />It also assumes the client knows it's own IPv6 (or IPv4) address, which might not be the case when NAT is used.</p></div></blockquote><p>If the tracker does not NAT check the endpoint, it is welcome to place it in the peer list, with the knowledge that it could be fake. It's also welcome to drop the address if it does not NAT check it. Our custom tracker does not have significant trouble issueing NAT checks - they do not need to be performed for every request, only new peers.<br /><br /></p><blockquote><div class="incqbox"><h4>Olaf van der Spek wrote:</h4><p>An option would be to do two announces, one over IPv4 and one over IPv6.</p></div></blockquote><p>With uTorrent, the tracker could be placed in the torrent file twice, once at the v4 address and once at the v6 address, in different tiers.<br /><br /></p><blockquote><div class="incqbox"><h4>Olaf van der Spek wrote:</h4><p>Especially when that overhead was previously minimized by the UDP tracker protocol. <br />It might be possible to partly merge those two announces when a UDP tracker protocol is used to reduce the overhead as far as possible.</p></div></blockquote><p>UDP tracker extension is a topic for another BEP, and should not conflict with this BEP.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p77" class="blockpost roweven">
+	<h2><span><span class="conr">#6&nbsp;</span><a href="viewtopic.php?pid=77#p77">2008-03-07 04:51:06</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89609">Olaf van der Spek</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 7: IPv6 Tracker Extension</h3>
+				<div class="postmsg">
+					<p>&gt; What about them? If they also have an IPv4 address they can specify it.<br /><br />I know, but it's weird that your proposal doesn't claim to address that use case.<br /><br />&gt; Not in the current draft. Would there be a significant benefit?<br /><br />When the peer has no IPv4 at all.<br /><br />&gt; Twice, once for each endpoint address.<br /><br />Why is that? When both peers have IPv6, it seems like a waste to also return the IPv4 address.<br /><br />&gt; Only if you have a 100% turnover of peers within the announce interval will your scenario be valid.<br /><br />Or after tracker restart, but that could be fixed with queueing.<br /><br />&gt; In that scenario bittorrent won't work very well anyway.<br /><br />Why would it not work?<br /><br />&gt; 1) You assume that every DNS server supports IPv6 (which is not the case currently)<br /><br />Hmm, true.<br /><br />&gt; 2) There will be extra load on the tracker.<br /><br />Maybe true. <br /><br />&gt; I expect Teredo to become a significant share of the bittorrent traffic, given that it does hole punching. I think it makes sense to assume that the number of Teredo users will be much more significant than actual IPv6 users.<br /><br />Short-term, yes. I hope not long-term. Doesn't Teredo require the ISP to set up a relay server?<br /><br />&gt; If the tracker does not NAT check the endpoint, it is welcome to place it in the peer list, with the knowledge that it could be fake.<br /><br />I don't think it's a good idea to be happy with that kind of behaviour.<br /><br />&gt; It's also welcome to drop the address if it does not NAT check it. <br /><br />But that decreases the effectiveness (of using IPv6).<br /><br />How do you do the quoting BTW?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p92" class="blockpost rowodd">
+	<h2><span><span class="conr">#7&nbsp;</span><a href="viewtopic.php?pid=92#p92">2008-03-13 13:26:13</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 7: IPv6 Tracker Extension</h3>
+				<div class="postmsg">
+					<p>Teredo does not require the ISP to set up a relay server.&nbsp; Relays are only necessary if the tunnel endpoint does not sit on the destination end system, and they can be provided by customer networks to act as gateways between ipv6 islands and the ipv4 Internet.&nbsp; &nbsp;In the dominant case for home users, the tunnel endpoint is the customer's computer so there is no relay.<br /><br />That said, someone has to run a STUN-like server to set up the tunnel and do NAT hole punching.&nbsp; Thankfully Microsoft does this.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p96" class="blockpost roweven">
+	<h2><span><span class="conr">#8&nbsp;</span><a href="viewtopic.php?pid=96#p96">2008-03-13 23:15:04</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89609">Olaf van der Spek</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 7: IPv6 Tracker Extension</h3>
+				<div class="postmsg">
+					<p>&gt;&nbsp; In the dominant case for home users, the tunnel endpoint is the customer's computer so there is no relay.<br /><br />Who runs the other end of the tunnel?<br />A normal IPv6 host (on the IPv6 internet) doesn't accept IPv6 over UDP over IPv4 traffic I assume?</p>
+					<p class="postedit"><em>Last edited by Olaf van der Spek (2008-03-13 23:15:24)</em></p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p97" class="blockpost rowodd">
+	<h2><span><span class="conr">#9&nbsp;</span><a href="viewtopic.php?pid=97#p97">2008-03-18 17:54:45</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 7: IPv6 Tracker Extension</h3>
+				<div class="postmsg">
+					<p>If both ends implement Teredo then they are both tunnel end points.&nbsp; Otherwise a relay is necessary to strip the encapsulation and forward using IPv6.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p98" class="blockpost roweven">
+	<h2><span><span class="conr">#10&nbsp;</span><a href="viewtopic.php?pid=98#p98">2008-03-19 08:27:52</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89642">some1</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 7: IPv6 Tracker Extension</h3>
+				<div class="postmsg">
+					<p>What's with those proposals:<br /><a href="http://tinyurl.com/3dorca" rel="nofollow">http://tinyurl.com/3dorca</a><br /><a href="http://tinyurl.com/3bajew" rel="nofollow">http://tinyurl.com/3bajew</a><br /><br />They seem to change less, especially in cases where trackers or peers just talk one protocol, like its used at the moment.<br /><br />Another way would be to drop TCP and use SCTP, since in SCTP it's part of the transport layer to tell the peer every possible address, which could also be beneficial for multi-homed hosts.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p99" class="blockpost rowodd">
+	<h2><span><span class="conr">#11&nbsp;</span><a href="viewtopic.php?pid=99#p99">2008-03-19 13:25:11</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 7: IPv6 Tracker Extension</h3>
+				<div class="postmsg">
+					<p>fyi, &quot;peers6&quot;-compact is already a defacto standard more or less, as it is used by several of the most popular trackers and µT-PEX.</p>
+					<p class="postedit"><em>Last edited by The 8472 (2008-03-19 13:25:25)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p100" class="blockpost roweven">
+	<h2><span><span class="conr">#12&nbsp;</span><a href="viewtopic.php?pid=100#p100">2008-03-19 15:21:25</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89643">Himaatin</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 7: IPv6 Tracker Extension</h3>
+				<div class="postmsg">
+					<p>Which trackers are this supposed to be?<br />The only significant IPv6-supporting tracker I know of is the Sixxs' one and this is using a plain response without any extensions.<br /><br />I said it before: It doesn't make sense to limit the peers-key to contain only ipv4 adresses (which would be the consequence), since the original specification already allowed different entries.<br />BTW, there doesn't even seem to be a common name for the additional key, since <a href="http://wiki.theory.org.sixxs.org/BitTorrentTrackerProtocol" rel="nofollow">http://wiki.theory.org.sixxs.org/BitTor &hellip; erProtocol</a> calls it peers_ipv6 instead of peers6.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p101" class="blockpost rowodd">
+	<h2><span><span class="conr">#13&nbsp;</span><a href="viewtopic.php?pid=101#p101">2008-03-19 15:56:13</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 7: IPv6 Tracker Extension</h3>
+				<div class="postmsg">
+					<p>only some of the biggest trackers out there: the pirate bay, denis.stalker and anything else that runs on opentracker.<br /><br />See <a href="http://opentracker.blog.h3q.com/?p=38" rel="nofollow">http://opentracker.blog.h3q.com/?p=38</a><br />This is implemented by Azureus and i think also by µTorrent<br /><br /><br />Note that a tracker does not have to run on an ipv6 interface to be ipv6 capable.</p>
+					<p class="postedit"><em>Last edited by The 8472 (2008-03-19 15:57:09)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p102" class="blockpost roweven">
+	<h2><span><span class="conr">#14&nbsp;</span><a href="viewtopic.php?pid=102#p102">2008-03-19 16:23:45</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89643">Himaatin</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 7: IPv6 Tracker Extension</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>only some of the biggest trackers out there: the pirate bay, denis.stalker and anything else that runs on opentracker.</p></div></blockquote><p>It's not the best solution, just because a few popular sites are using it.<br /><br /><br /></p><blockquote><div class="incqbox"><p>Note that a tracker does not have to run on an ipv6 interface to be ipv6 capable.</p></div></blockquote><p>And that's where I beg to differ: How is an IPv4-only tracker supposed to serve IPv6-only clients, or to check IPv6-entries for connectivity?<br />IMHO a tracker shall not track a protocol it isn't able to use. In other words: IPv4-only trackers should only track IPv4 clients, as IPv6-only trackers shall only track IPv6-clients (which both is possible with the original concept, BTW). Only for trackers that speak both protocols themselves there is a need to think about how to proceed with the (dual) clients.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p103" class="blockpost rowodd">
+	<h2><span><span class="conr">#15&nbsp;</span><a href="viewtopic.php?pid=103#p103">2008-03-19 19:13:07</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 7: IPv6 Tracker Extension</h3>
+				<div class="postmsg">
+					<p>&gt; I said it before: It doesn't make sense to limit the peers-key to contain only ipv4 adresses<br /><br />Why not? What is the inherent benefit of using a single key with complicated semantics over two separate keys with very simple semantics?<br /><br />&gt; And that's where I beg to differ: How is an IPv4-only tracker supposed to serve IPv6-only clients, or to check IPv6-entries for connectivity?<br /><br />It uses Teredo for instance</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p104" class="blockpost roweven">
+	<h2><span><span class="conr">#16&nbsp;</span><a href="viewtopic.php?pid=104#p104">2008-03-20 01:27:07</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89643">Himaatin</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 7: IPv6 Tracker Extension</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>Why not? What is the inherent benefit of using a single key with complicated semantics over two separate keys with very simple semantics?</p></div></blockquote><p>The difference IS the semantics.<br />The term &quot;peers&quot; says nothing about a protocol, it just defines, that the content is a peer.<br />Limiting &quot;peers&quot; to IPv4 only, would be the same, as saying that the term &quot;vehicle&quot; from now on may only be used to denominate bicycles, but not for cars or any other kind of vehicle.<br /><br />Besides: It's much more intuitional. In a &quot;normal&quot; environment (with no compact-response), the &quot;peers&quot;-key already contains IPv6-peers (as well as IPv4-peers and DNS-names), so why should it be different for compact?<br />(It would be a completely different situation, if a compact-response wouldn't contain a &quot;peers&quot;-key in the first place and instead used &quot;peers_ipv4&quot; and &quot;peers_ipv6&quot;)<br /><br /></p><blockquote><div class="incqbox"><p>It uses Teredo for instance</p></div></blockquote><p>Teredo is just another way of using IPv6.<br />A tracker, that uses Teredo IS using IPv6 and therefore not an IPv4-only tracker anymore.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p105" class="blockpost rowodd">
+	<h2><span><span class="conr">#17&nbsp;</span><a href="viewtopic.php?pid=105#p105">2008-03-20 02:25:20</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89609">Olaf van der Spek</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 7: IPv6 Tracker Extension</h3>
+				<div class="postmsg">
+					<p>&gt; The term &quot;peers&quot; says nothing about a protocol, it just defines, that the content is a peer. Limiting &quot;peers&quot; to IPv4 only, <br /><br />In the compact response, you just can't fit IPv6 in there. In non-compact mode, you should think of updating your tracker. <img src="img/smilies/wink.png" width="15" height="15" alt="wink" /><br />It's a bit too late to rename peers to peers4.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p106" class="blockpost roweven">
+	<h2><span><span class="conr">#18&nbsp;</span><a href="viewtopic.php?pid=106#p106">2008-03-20 09:24:45</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 7: IPv6 Tracker Extension</h3>
+				<div class="postmsg">
+					<p>&gt;The term &quot;peers&quot; says nothing about a protocol, it just defines, that the content is a peer<br /><br />That argument carries extremely little weight to me. Why is that important? Does it make it easier to develop bittorrent clients?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p107" class="blockpost rowodd">
+	<h2><span><span class="conr">#19&nbsp;</span><a href="viewtopic.php?pid=107#p107">2008-03-20 13:28:05</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 7: IPv6 Tracker Extension</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><blockquote><div class="incqbox"><p>Note that a tracker does not have to run on an ipv6 interface to be ipv6 capable.</p></div></blockquote><p>And that's where I beg to differ: How is an IPv4-only tracker supposed to serve IPv6-only clients, or to check IPv6-entries for connectivity?</p></div></blockquote><p>Who said that ipv6-only was the only relevant scenario? It's also necessary to enable hybrid v4/v6 clients to find each other, even when another network component (the tracker in that case) is still v4.<br /><br />This will become an important scenario in the next few years, long before ipv6-only will be relevant.</p>
+					<p class="postedit"><em>Last edited by The 8472 (2008-03-20 13:29:28)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p108" class="blockpost roweven">
+	<h2><span><span class="conr">#20&nbsp;</span><a href="viewtopic.php?pid=108#p108">2008-03-21 03:48:17</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89609">Olaf van der Spek</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 7: IPv6 Tracker Extension</h3>
+				<div class="postmsg">
+					<p>&gt; even when another network component (the tracker in that case) is still v4.<br /><br />In that case the tracker can't do a 'NAT' check, so IMO it can't do anything with IPv6.<br />There's also PEX. IPv6 addresses could be exchanged via PEX.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p109" class="blockpost rowodd">
+	<h2><span><span class="conr">#21&nbsp;</span><a href="viewtopic.php?pid=109#p109">2008-03-21 06:02:22</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 7: IPv6 Tracker Extension</h3>
+				<div class="postmsg">
+					<p>there should be no NAT with ipv6... only firewalls. Anyway, the big ipv4 trackers don't do nat checks either. And yes, PEX mitigates the v6 source issue.<br /><br />Anyway, all i'm saying is that peers6 is already deployed and works w/o major issues.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p110" class="blockpost roweven">
+	<h2><span><span class="conr">#22&nbsp;</span><a href="viewtopic.php?pid=110#p110">2008-03-21 12:22:48</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89609">Olaf van der Spek</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 7: IPv6 Tracker Extension</h3>
+				<div class="postmsg">
+					<p>&gt; there should be no NAT with ipv6... only firewalls. <br /><br />What's the difference?<br /><br />&gt; Anyway, the big ipv4 trackers don't do nat checks either. And yes, PEX mitigates the v6 source issue.<br /><br />But they don't allow you to specify another IP address either.<br /><br />&gt; Anyway, all i'm saying is that peers6 is already deployed and works w/o major issues.<br /><br />Where?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p111" class="blockpost rowodd">
+	<h2><span><span class="conr">#23&nbsp;</span><a href="viewtopic.php?pid=111#p111">2008-03-21 13:42:48</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 7: IPv6 Tracker Extension</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>Where?</p></div></blockquote><p>read previous posts</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p113" class="blockpost roweven">
+	<h2><span><span class="conr">#24&nbsp;</span><a href="viewtopic.php?pid=113#p113">2008-03-22 02:02:14</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89643">Himaatin</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 7: IPv6 Tracker Extension</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>The 8472 wrote:</h4><p>Who said that ipv6-only was the only relevant scenario? It's also necessary to enable hybrid v4/v6 clients to find each other, even when another network component (the tracker in that case) is still v4.</p></div></blockquote><p>Why? If all clients are able to perfectly communicate via IPv4, why should they use IPv6?<br />But even if there is a reason: If they want to use IPv6, while the tracker can't use it, they should care about exchanging their addresses by themselves.<br />There is no need for an IPv4-tracker to track IPv6-clients (or the other way around).<br /><br /></p><blockquote><div class="incqbox"><p>This will become an important scenario in the next few years, long before ipv6-only will be relevant.</p></div></blockquote><p>What makes you think, that an IPv6-only scenario isn't relevant? What about&nbsp; the asians, that don't get IPv4 anymore?<br /><br /><br /></p><blockquote><div class="incqbox"><h4>Olaf van der Spek wrote:</h4><p>&gt; there should be no NAT with ipv6... only firewalls.<br /><br />What's the difference?</p></div></blockquote><p>Technically those are completely different things. But since usually NAT comes with some sort of firewall it doesn't make much difference from a tracker's point of view. I think the issue is, that the connectivity check shouldn't have been called &quot;NAT check&quot; in the first place... that's why semantics are important.</p>
+					<p class="postedit"><em>Last edited by Himaatin (2008-03-22 02:03:10)</em></p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p114" class="blockpost rowodd">
+	<h2><span><span class="conr">#25&nbsp;</span><a href="viewtopic.php?pid=114#p114">2008-03-22 09:25:35</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 7: IPv6 Tracker Extension</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>What about&nbsp; the asians, that don't get IPv4 anymore?</p></div></blockquote><p>Which, again, will not happen for several years. Earliest projected date of v4 depletion is 2011 to my knowledge. And btw, i did not say that ipv6-only is not relevant in general, i'm only saying that v4+v6 will be here much sooner than the latter.<br /><br /></p><blockquote><div class="incqbox"><p>Why? If all clients are able to perfectly communicate via IPv4, why should they use IPv6?</p></div></blockquote><p>Because the µTorrent guys for example are going to use teredo to connect nodes for NAT circumvention and to evade traffic shaping (although i think the latter won't work). This means the nodes will be v4 in reality but speak v6 via tunneling, so they'll contact the trackers via v4 for example.<br /><br />As i said, v4-trackers handing out v6-addresses is a real scenario and it already works... so why are we still discussing this?</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox">
+		<p class="postlink conr">&nbsp;</p>
+		<p class="pagelink conl">Pages: <strong>1</strong>&nbsp;<a href="viewtopic.php?id=14&amp;p=2">2</a></p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Discussion of BEP 7: IPv6 Tracker Extension</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div class="inbox">
+
+			<div class="conl">
+				<form id="qjump" method="get" action="viewforum.php">
+					<div><label>Jump to
+					<br /><select name="id" onchange="window.location=('viewforum.php?id='+this.options[this.selectedIndex].value)">
+						<optgroup label="BitTorrent">
+							<option value="26">Announcements</option>
+							<option value="25" selected="selected">BEPs</option>
+							<option value="29">BEP process</option>
+							<option value="27">General</option>
+							<option value="33">Research Tools</option>
+							<option value="32">Cooperation between BitTorrent and ISPs</option>
+							<option value="30">Attacks against BitTorrent</option>
+							<option value="28">Feature Requests, Found Bugs &gt;&gt;&gt;</option>
+					</optgroup>
+					</select>
+					<input type="submit" value=" Go " accesskey="g" />
+					</label></div>
+				</form>
+			</div>
+			<p class="conr">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-116155-1";
+_udn = "utorrent.com";
+urchinTracker();
+</script>
+
+</body>
+</html>

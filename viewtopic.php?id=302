@@ -1,0 +1,824 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>decentralized feeds (Page 1) / BEPs / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
+<script type="text/javascript" src="captcha/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript">
+	$(function(){var f=$("#sliderCaptcha");var b=$("#cleCaptcha");var d=$(".boutonsCaptcha");var a=$("#javascriptCaptcha");var e=[13,41,36,23,10,0,30,14,15,37,28,30,28,11,48,5,28,41,11,21,28,17,49,39,23,36,9,24,36,44,45,0,36,32,24,46,33,4,11,49,42,40,29,20,1,28,26,30,19,37];var h=0;var g=5;var c=0;a.hide();f.slider({value:0,min:0,max:g,step:1,slide:function(i,j){if(j.value>c){c=j.value;h+=c}},stop:function(j,k){var i=false;if(k.value==g){if(h==((g+Math.pow(g,2))/2)){i=true;f.slider("option","disabled",true);if(b.val().length!=e.length){$.post("captcha.php",{tokenCaptcha:b.val()},function(m){var l="";$.each(e,function(){l+=m.charAt(this%m.length)});b.val(l);d.removeAttr("disabled")})}}}if(!i){h=c=0;f.slider("option","value",h)}}})});
+</script>
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="punviewtopic" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex" class="isactive"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=302"><strong>decentralized feeds</strong></a></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong> <a href="viewtopic.php?id=302&amp;p=2">2</a> <a href="viewtopic.php?id=302&amp;p=2">Next</a></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p1658" class="blockpost rowodd firstpost blockpost1">
+	<h2><span><span class="conr">#1</span> <a href="viewtopic.php?pid=1658#p1658">2010-12-08 18:26:50</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>decentralized feeds</h3>
+					<div class="postmsg">
+						<p>I&#039;ve written a proposal for a feature that seems to cover at least a few of the proposals with dynamic torrents/torrents that can have files added.</p><p>This approach is different in that it doesn&#039;t touch the torrent structure or functionality. Instead of making torrents increasingly more complicated, this approach implements a mechanism on top of torrents. It works much like and RSS feed maintained by the DHT.</p><p>It&#039;s still in an early stage, any comments are appreciated.</p><p><a href="http://www.libtorrent.org/dht_rss.html">http://www.libtorrent.org/dht_rss.html</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1670" class="blockpost roweven">
+	<h2><span><span class="conr">#2</span> <a href="viewtopic.php?pid=1670#p1670">2010-12-10 07:53:23</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<p>as discussed on irc:<br />-Curve25519 should be used instead of RSA<br />-timestamps/sequence numbers as for pagination instead of bloom filters<br />-replacement-lists to replace old torrents with new ones (including batch-replacements. e.g. torrent D replaces torrent A, B, C)<br />-ID should be derived from hash(feedname+pubkey) to use one pubkey for multiple feeds<br />-timeouts should be defined and a republication-strategy recommended (check before republish)<br />-compactify data structure?</p><br /><p>new:<br />-needs a lookup procedure to obtain the write token and nodes that are actually resposible for the node... just use get-peers? or modify find_node to return a write token? Scrape already modifies the semantics of get_peers, so maybe we should simply modify them further. add a flag to indicate that we don&#039;t want any peers, just a write token, a counter range and entry-count for the feed.<br />-maybe we should design a handful of generic storage procedures instead:<br />a) signed, paginated lists that can be replicated by everyone (for feeds)<br />b) unique([list]) storage that could be written by everyone and random subitems are returned (peer lists could be re-implemented that way)<br />c) ?? other storage modes</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1708" class="blockpost rowodd">
+	<h2><span><span class="conr">#3</span> <a href="viewtopic.php?pid=1708#p1708">2010-12-12 16:08:29</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>Curve25519 should be used instead of RSA</p></div></blockquote></div><p>curve25519 makes a lot of sense.</p><div class="quotebox"><blockquote><div><p>timestamps/sequence numbers as for pagination instead of bloom filters</p></div></blockquote></div><p>sequence numbers makes sense (not sure they need to be defined as time stamps), this would mirror the order items have in RSS feeds. I&#039;m not sure sequence numbers necessarily replaces the bloom filters though. I suppose you can guide more specifically which items you&#039;re interested in receiving first, and it makes sense to prioritize the latest items.</p><p>The reasons I don&#039;t think the sequence number should be defined as a posix time stamp are:</p><p>&#160; 1. To make it a little bit harder to identify the source(s) of a feed. The only way to identify<br />&#160; &#160; &#160;a source is to be one of the nodes hosting it, and seeing the first announce. To make it<br />&#160; &#160; &#160;harder, the source could announce a new item to only one of the nodes, or maybe even<br />&#160; &#160; &#160;a node not entirely where it should be announced, to let some random subscriber pick it<br />&#160; &#160; &#160;up and be the first to announce it to the proper nodes. Having a times tamp might make it<br />&#160; &#160; &#160;easier to deduce if the announce you just saw was from the initial source (for instance if<br />&#160; &#160; &#160;the time stamp says it&#039;s just a few seconds old).</p><p>&#160; 2. There are a fairly large number of people that don&#039;t have clocks set to the actual time, and<br />&#160; &#160; &#160; relying on it without having a really good reason seems unnecessary.</p><p>Even if you can request items in a certain range (I would imagine you would say something like,<br />give me all items newer than sequence number x), each subscriber should still eventually have all<br />items, so they can be announced and kept alive in the DHT, so I still think the bloom filters makes<br />sense in order to allow the DHT node to send more items. However, the specification should contain<br />some recommendations on bloom filter sizes, and I&#039;m not sure using k=3 is the best option.</p><div class="quotebox"><blockquote><div><p>replacement-lists to replace old torrents with new ones (including batch-replacements. e.g. torrent D replaces torrent A, B, C)</p></div></blockquote></div><p>It seems strange to replace actual info hashes. Especially many info-hashes with one, that seems like it could easily break clients seeding those torrents.</p><p>I think it would be enough to allow batch signing of info-hashes. To make the feed less bulky when it grows passed tens of items.</p><div class="quotebox"><blockquote><div><p>ID should be derived from hash(feedname+pubkey) to use one pubkey for multiple feeds</p></div></blockquote></div><p>Introducing a feed name seems to make sense. However, I think we should also try to keep the protocol fairly slimmed down and simple.</p><div class="quotebox"><blockquote><div><p>timeouts should be defined and a republication-strategy recommended (check before republish)</p></div></blockquote></div><p>That&#039;s a good point. Items should have a TTL. I would imagine the publisher of the feed would simply announce the same items again with a reset TTL, if they should be kept alive longer.</p><div class="quotebox"><blockquote><div><p>compactify data structure?</p></div></blockquote></div><p>You mean multiple lists instead of list of dicts? Makes sense, probably shaves off 20-30 bytes or so.</p><div class="quotebox"><blockquote><div><p>needs a lookup procedure to obtain the write token and nodes that are actually resposible for the node... just use get-peers? or modify find_node to return a write token?</p></div></blockquote></div><p>I was imagining &quot;get_item&quot; would return a token, I realize I forgot to put that in the response message though. Using get_peers would work as well, there wouldn&#039;t be a torrent with the same info-hash anyway, so presumably you wouldn&#039;t get any peers.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1714" class="blockpost roweven">
+	<h2><span><span class="conr">#4</span> <a href="viewtopic.php?pid=1714#p1714">2010-12-13 05:20:16</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>Even if you can request items in a certain range (I would imagine you would say something like, give me all items newer than sequence number x), each subscriber should still eventually have all items, so they can be announced and kept alive in the DHT, so I still think the bloom filters makes sense in order to allow the DHT node to send more items. However, the specification should contain some recommendations on bloom filter sizes, and I&#039;m not sure using k=3 is the best option.</p></div></blockquote></div><p>I don&#039;t think bloom filters are necessary if we have two things</p><p>1. a response value indicating the range of sequence numbers <br />2. the ability to request a range.</p><p>Let&#039;s say the node indicates it has entries numbered from 100 to 150 (with possible gaps) and sends you as many of the newest items it has in its list by default (let&#039;s say 130 - 150). then you know that there are older entries. So you can simply request 100-130 as a 2nd request. If it then only sends 120-130 you can send another request for 100-120 etc.<br />That&#039;s pagination. No need for bloom filters. A client would know what they already downloaded, so they simply can request the ranges they don&#039;t already have.</p><br /><div class="quotebox"><blockquote><div><p>It seems strange to replace actual info hashes. Especially many info-hashes with one, that seems like it could easily break clients seeding those torrents.</p><p>I think it would be enough to allow batch signing of info-hashes. To make the feed less bulky when it grows passed tens of items.</p></div></blockquote></div><p>Nonono. The idea is to remove torrents from the client and replace them with new ones. The clients can try to reuse the existing data if the find matching file names.</p><p>This way one can do several things<br />a) replace outdated/incomplete data with a newer version<br />b) replace erroneous data with correct data<br />c) replace individual torrents with batch torrents</p><p>The ability to automatically replace/update torrents has been requested several times, and i think it would make sense to integrate that in a feed ability.<br />A user would have to opt-in to replacements and clients should only replace content from the same feed to prevent abuse.</p><div class="quotebox"><blockquote><div><p>Introducing a feed name seems to make sense. However, I think we should also try to keep the protocol fairly slimmed down and simple.</p></div></blockquote></div><p>Yeah, but it&#039;s just prepending one string to SHA1, so that shouldn&#039;t be all too difficult.</p><div class="quotebox"><blockquote><div><p>That&#039;s a good point. Items should have a TTL. I would imagine the publisher of the feed would simply announce the same items again with a reset TTL, if they should be kept alive longer.</p></div></blockquote></div><p>No, i didn&#039;t mean a TTL for items themselves, they can stay alive for as long as other clients are using them.<br />I meant a default time how long nodes should keep feed items before they must be refreshed by other clients.<br />My DHT implementation stores peer information&#160; (from announces) for 30 minutes for example, but this has never been specified...</p><div class="quotebox"><blockquote><div><div class="quotebox"><blockquote><div><p>needs a lookup procedure to obtain the write token and nodes that are actually resposible for the node... just use get-peers? or modify find_node to return a write token?</p></div></blockquote></div><p>I was imagining &quot;get_item&quot; would return a token, I realize I forgot to put that in the response message though. Using get_peers would work as well, there wouldn&#039;t be a torrent with the same info-hash anyway, so presumably you wouldn&#039;t get any peers.</p></div></blockquote></div><p>We still need a lookup procedure, i.e. things returning node/node6 lists. You need to find the responsible nodes and know that they have items before you can ask them for the items.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1728" class="blockpost rowodd">
+	<h2><span><span class="conr">#5</span> <a href="viewtopic.php?pid=1728#p1728">2010-12-20 07:10:04</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=91624">sidewinder58</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<p>Perhaps I&#039;m being a bit dumb here, but could someone explain briefly why you would want to update a torrent file. If it were allowed, then any idiot under the sun could start issuing updates to torrents that are already in circulation, which could if left uncontrolled cause massive collisions with different versions of torrent files. It really would need to be a controlled feature, and this would lead to users needing to be identified by some sort of global user id linked to a sort of community identity and/or username and password combo, different to the peer id which as we know can change quite frequently. But this would of course take away from the degree of anonymity enjoyed by torrent users in the sense that they would now need to be registered in some way at some sort of identity authority (i.e. a website) and this id information would be packaged at some point with their regular bittorrent communications so that other peers knew who they were dealing with. This would then lead to users giving preferential service to certain peers and snubbing certain others. Generally, I would say that only the original author should be able to update a torrent if anyone, for lack of a mechanism to control changes. At the same time, if we really wanted a dynamic content system, then we might as well decouple ourselves from torrent files with specific content altogether and start sharing content tagged media directly from our machines, that is to say if I have file x which is a numbered episode of a particular series then I would be able to share that file out to anyone who searched for that coded series and season/episode number. But this would then require massive effort to &quot;register&quot; shareable media with particular codes identifying said media.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1730" class="blockpost roweven">
+	<h2><span><span class="conr">#6</span> <a href="viewtopic.php?pid=1730#p1730">2010-12-21 23:58:57</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>sidewinder58 wrote:</cite><blockquote><div><p>Perhaps I&#039;m being a bit dumb here, but could someone explain briefly why you would want to update a torrent file. If it were allowed, then any idiot under the sun could start issuing updates to torrents that are already in circulation</p></div></blockquote></div><p>I suggest you have a look at this thread. This is about RSS-like feeds, signed with keys, thus only writeable by a single entity. Users would have to opt-in to use such feeds.</p><p>Therefore replacement/updates are not a problem.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1734" class="blockpost rowodd">
+	<h2><span><span class="conr">#7</span> <a href="viewtopic.php?pid=1734#p1734">2010-12-31 18:27:24</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>The 8472 wrote:</cite><blockquote><div><p>I don&#039;t think bloom filters are necessary if we have two things</p><p>1. a response value indicating the range of sequence numbers <br />2. the ability to request a range.</p><p>Let&#039;s say the node indicates it has entries numbered from 100 to 150 (with possible gaps) and sends you as many of the newest items it has in its list by default (let&#039;s say 130 - 150). then you know that there are older entries. So you can simply request 100-130 as a 2nd request. If it then only sends 120-130 you can send another request for 100-120 etc.<br />That&#039;s pagination. No need for bloom filters. A client would know what they already downloaded, so they simply can request the ranges they don&#039;t already have.</p></div></blockquote></div><p>There are mainly two reasons I&#039;m inclined to prefer something like bloom filters rather than sequence numbers:</p><p>1. There&#039;s nothing in the protocol enforcing any particular semantics for sequence numbers. You might argue that it&#039;s the poster&#039;s responsibility to use sane sequence numbers, but it&#039;s the subscribers that will suffer for bugs/odd uses of the sequence numbers. Keep in mind there&#039;s nothing stopping two items from having the same sequence number.</p><p>2. In order to keep items alive as reliably as possible, you want to distribute them with as little overlap as possible between different subscribers. If you&#039;re requesting a wide range of sequence numbers, you might have to make multiple requests, which means the node you&#039;re requesting from still needs to know which items you have and which it should send the subsequent requests. Describing which items you have by using ranges might be quite tricky, especially if you have a lot of extents. Also, since it&#039;s technically possible for items to have the same number, it&#039;s not necessarily an accurate description of which items you have.</p><div class="quotebox"><blockquote><div><p>The idea is to remove torrents from the client and replace them with new ones. The clients can try to reuse the existing data if the find matching file names.</p><p>This way one can do several things<br />a) replace outdated/incomplete data with a newer version<br />b) replace erroneous data with correct data<br />c) replace individual torrents with batch torrents</p><p>The ability to automatically replace/update torrents has been requested several times, and i think it would make sense to integrate that in a feed ability.<br />A user would have to opt-in to replacements and clients should only replace content from the same feed to prevent abuse.</p></div></blockquote></div><p>This seems like it would complicate things quite a lot. Especially since you start roping in things like where and how torrents are saved on disk and user interaction with the client (accepting or declining certain operations). It&#039;s also something that makes me a bit uneasy, there&#039;s a certain sense of reliability in knowing that a torrent doesn&#039;t change under your feet.</p><p>Regardless of whether this is a good idea or no, I&#039;m inclined to put it off and maybe we can come up with a more generic solution that can be applied to normal RSS feeds as well. It seems like a likely source of contention and potential blocker for implementing the DHT based feeds.</p><div class="quotebox"><blockquote><div><p>No, i didn&#039;t mean a TTL for items themselves, they can stay alive for as long as other clients are using them. I meant a default time how long nodes should keep feed items before they must be refreshed by other clients.<br />My DHT implementation stores peer information&#160; (from announces) for 30 minutes for example, but this has never been specified...</p></div></blockquote></div><p>Ah, I see. Yeah, that makes sense, I suppose re-announce time times 2 is reasonable.</p><div class="quotebox"><blockquote><div><div class="quotebox"><blockquote><div><p>I was imagining &quot;get_item&quot; would return a token, I realize I forgot to put that in the response message though. Using get_peers would work as well, there wouldn&#039;t be a torrent with the same info-hash anyway, so presumably you wouldn&#039;t get any peers.</p></div></blockquote></div><p>We still need a lookup procedure, i.e. things returning node/node6 lists. You need to find the responsible nodes and know that they have items before you can ask them for the items.</p></div></blockquote></div><p>Yeah, I&#039;m imagining get_item is similar to get_peers in all these regards. It should return nodes/nodes6 as well as a write token. I will update the spec to include this.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1740" class="blockpost roweven">
+	<h2><span><span class="conr">#8</span> <a href="viewtopic.php?pid=1740#p1740">2011-01-01 09:37:27</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>arvid wrote:</cite><blockquote><div><p>1. There&#039;s nothing in the protocol enforcing any particular semantics for sequence numbers.</p></div></blockquote></div><p>Then let&#039;s change that. Uniqueness and monotonic increase of sequence numbers can be mandated, nodes can send error messages if someone tries to store something nonsensical.<br />And if someone really does something stupid... well, their problem if their users miss out on a few torrents. If you want to reach your users better stick to the spec. It doesn&#039;t break anything but their own feeds.</p><div class="quotebox"><blockquote><div><p>2. In order to keep items alive as reliably as possible, you want to distribute them with as little overlap as possible between different subscribers. If you&#039;re requesting a wide range of sequence numbers, you might have to make multiple requests, which means the node you&#039;re requesting from still needs to know which items you have and which it should send the subsequent requests.</p></div></blockquote></div><p>This is really over-engineering the whole thing. Instead of putting the smartness into the storage node the requesting node already knows what it has and can request multiple ranges if it&#039;s really picky. Or just request all of it and filter out what it doesn&#039;t need later on.</p><p>Remember that feeds are mostly used to get NEW information, so numbering things in ascending order and providing pagination with the newest data as default this means the most important use-case is covered. Getting a whole archive of a feed will/should be a rare operation, efficiency is not really important in that case.</p><br /><div class="quotebox"><blockquote><div><p>This seems like it would complicate things quite a lot. Especially since you start roping in things like where and how torrents are saved on disk and user interaction with the client (accepting or declining certain operations). It&#039;s also something that makes me a bit uneasy, there&#039;s a certain sense of reliability in knowing that a torrent doesn&#039;t change under your feet.</p><p>Regardless of whether this is a good idea or no, I&#039;m inclined to put it off and maybe we can come up with a more generic solution that can be applied to normal RSS feeds as well. It seems like a likely source of contention and potential blocker for implementing the DHT based feeds.</p></div></blockquote></div><p>I agree, this is complicated.</p><p>But it&#039;s also an often-requested feature, so i&#039;d like to include it somewhere at some point. I considered adding it to .torrent files but the metadata exchange was designed in a way that only exchanges the info dictionary, not the whole torrent, thus losing metadata. And i dislike adding anything to the info dictionary itself.</p><p>So we probably have to add it to the feeds themselves, which means it has to be included in the RSS and the DHT feeds separately due to their design differences.</p><p>At the very least we could design the DHT feed format in an extensible manner so that additional entries can be added per info-hash later on.</p><br /><br /><div class="quotebox"><blockquote><div><p>Ah, I see. Yeah, that makes sense, I suppose re-announce time times 2 is reasonable.</p></div></blockquote></div><p>Do we have the re-announce time specified somewhere?</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1742" class="blockpost rowodd">
+	<h2><span><span class="conr">#9</span> <a href="viewtopic.php?pid=1742#p1742">2011-01-01 09:43:09</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<p>Ah, a completely different way to design DHT feeds: Introduce (signed) DHT forward pointer records.</p><p>Normal RSS XML files could be packed into a .torrent, the torrent could be seeded and you simply place a forward pointer to the infohash of the current version on the DHT under a fixed key. If the XML feed is updated you create a completely new torrent for the .XML file.</p><p>Clients could hide those torrents from the user since they would be very small and should create rather low load.</p><p>This would actually be a generic &quot;point me to newest version of dynamic content&quot; solution. PTR records could also be used as linked lists i guess... do a PTR request on a fixed starting address, get first entry, do a PTR lookup on the first entry to get the 2nd entry etc.</p><p>PTR records/linked lists would actually be a 3rd way to implement feeds, simply with the focus on the newest content and allowing for the possibility of letting old stuff die.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1744" class="blockpost roweven">
+	<h2><span><span class="conr">#10</span> <a href="viewtopic.php?pid=1744#p1744">2011-01-01 20:18:11</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>The 8472 wrote:</cite><blockquote><div><p>But it&#039;s also an often-requested feature, so i&#039;d like to include it somewhere at some point.</p></div></blockquote></div><p>I&#039;m not sure I&#039;m entirely convinced that all use-cases presented for this couldn&#039;t almost entirely be covered by RSS feeds, at least the most important aspects. Things like actually getting rid of files and replacing bad ones seems slightly less critical. If the main remaining use case is to let people fix their mistakes, it seems like the benefit per cost of implementation isn&#039;t very high.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1746" class="blockpost rowodd">
+	<h2><span><span class="conr">#11</span> <a href="viewtopic.php?pid=1746#p1746">2011-01-01 20:19:42</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>The 8472 wrote:</cite><blockquote><div><p>Do we have the re-announce time specified somewhere?</p></div></blockquote></div><p>I don&#039;t think so. I suppose it&#039;s implied to be something greater than the re-announce interval.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1748" class="blockpost roweven">
+	<h2><span><span class="conr">#12</span> <a href="viewtopic.php?pid=1748#p1748">2011-01-01 20:29:22</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>The 8472 wrote:</cite><blockquote><div><div class="quotebox"><blockquote><div><p>2. In order to keep items alive as reliably as possible, you want to distribute them with as little overlap as possible between different subscribers. If you&#039;re requesting a wide range of sequence numbers, you might have to make multiple requests, which means the node you&#039;re requesting from still needs to know which items you have and which it should send the subsequent requests.</p></div></blockquote></div><p>This is really over-engineering the whole thing. Instead of putting the smartness into the storage node the requesting node already knows what it has and can request multiple ranges if it&#039;s really picky. Or just request all of it and filter out what it doesn&#039;t need later on.</p></div></blockquote></div><p>By putting the smarts in the storing node, the response packet can actually be guaranteed to fit in an MTU. The requesting node doesn&#039;t necessarily know how many items will fit (at least not with my suggestion of being able to batch-sign info-hashes for compactness, see the updated document on libtorrent.org).</p><p>I was also envisioning that you would get the pagination for free. A requesting node would just keep sending normal requests, without caring about whether it has all the items in the feed or not, and gradually it would get all of them over time.</p><div class="quotebox"><blockquote><div><p>Remember that feeds are mostly used to get NEW information, so numbering things in ascending order and providing pagination with the newest data as default this means the most important use-case is covered. Getting a whole archive of a feed will/should be a rare operation, efficiency is not really important in that case.</p></div></blockquote></div><p>Right, getting the latest items first is a pretty important property. I believe implementing actual pagination, where the requester sends multiple requests for each &quot;page&quot; is a lot more complicated, with all the state and timeouts that needs to be kept.</p><p>I think downloading the entire archive of all items, even very old ones, is somewhat important. Even if you&#039;re not personally interested in those torrents, they need to be kept alive by someone, and not requiring (or relying on) the original publisher to be online and constantly announce them would improve robustness.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1750" class="blockpost rowodd">
+	<h2><span><span class="conr">#13</span> <a href="viewtopic.php?pid=1750#p1750">2011-01-01 20:33:02</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<p>Just to throw it out there; Another way of doing pagination and load balancing would be to announce page 1 to SHA1(&lt;feed-name&gt; + &lt;public-key&gt; + &quot;page1&quot;), the second page to SHA1(&lt;feed-name&gt; + &lt;public-key&gt; + &quot;page2&quot;) and so on.</p><p>It might add some extra traffic though, since everyone needs to look up one node past the last one.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1752" class="blockpost roweven">
+	<h2><span><span class="conr">#14</span> <a href="viewtopic.php?pid=1752#p1752">2011-01-01 20:45:24</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<p>How about having sequence numbers for each batch of info-hashes? The sequence number could be part of the portion that&#039;s signed as well, to lock it down. Something like this:</p><div class="codebox"><pre><code>   {
+      &quot;a&quot;:
+      {
+         &quot;ih&quot;:
+         [
+            &quot;7ea94c240691311dc0916a2a91eb7c3db2c6f3e4&quot;,
+            &quot;0d92ad53c052ac1f49cf4434afffafa4712dc062e4168d940a48e45a45a0b10808014dc267549624&quot;
+         ],
+         &quot;sig&quot;:
+         [
+            &quot;980774404e404941b81aa9da1da0101cab54e670cff4f0054aa563c3b5abcb0fe3c6df5dac1ea25266035f09040bf2a24ae5f614787f1fe7404bf12fee5e6101&quot;,
+            &quot;3fee52abea47e4d43e957c02873193fb9aec043756845946ec29cceb1f095f03d876a7884e38c53cd89a8041a2adfb2d9241b5ec5d70268714d168b9353a2c01&quot;
+         ],
+         &quot;i&quot;: [0, 1]
+         &quot;id&quot;: &quot;b46989156404e8e0acdb751ef553b210ef77822e&quot;,
+         &quot;key&quot;: &quot;6bc1de5443d1a7c536cdf69433ac4a7163d3c63e2f9c92d78f6011cf63dbcd5b638bbc2119cdad0c57e4c61bc69ba5e2c08b918c2db8d1848cf514bd9958d307&quot;,
+         &quot;n&quot;: &quot;my stuff&quot;
+         &quot;target&quot;: &quot;b4692ef0005639e86d7165bf378474107bf3a762&quot;
+         &quot;token&quot;: &quot;23ba&quot;
+      },
+      &quot;y&quot;: &quot;q&quot;,
+      &quot;q&quot;: &quot;announce_item&quot;,
+      &quot;t&quot;: &quot;a421&quot;
+   }</code></pre></div><p>&quot;ih&quot; is a list of strings, each string contains one or more info hashes (i.e. the length is divisible by 20). &quot;sig&quot; is a list with the same number of items, each item is a 64 byte signature of the corresponding info-hash string + the corresponding sequence number from &quot;i&quot;.</p><p>This way, the sequence number is ordering the batches of info-hashes, and the order the info-hashes are listed inside the string defines their order in the feed. The sequence numbers can only increment by one. If each &quot;batch&quot; has info-hashes appended to it until it fills some notion of an MTU before a new batch is created, the sequence numbers can be considered pages.</p><p>You could make it possible to request pages by specifying negative numbers to index from the end. Requesting page -1 would thus refer to the latest items.</p><p>This is quite compact, but it&#039;s not very generic. Turning each batch of info-hashes to a list of dicts would make it a lot more generic, since each item can be extended that way. The signatures could be signing the bencoded representation of those list items.</p><p>With an approach like this, the assumption is that all feed items are always lumped together until it fills one MTU, so it wouldn&#039;t<br />make that much sense to have a bloom filter representing individual feeds. The requesting node could (essentially) be guaranteed that requesting a single page will always fit in one MTU as well.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1758" class="blockpost rowodd">
+	<h2><span><span class="conr">#15</span> <a href="viewtopic.php?pid=1758#p1758">2011-01-02 06:07:27</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>arvid wrote:</cite><blockquote><div><div class="quotebox"><cite>The 8472 wrote:</cite><blockquote><div><p>Do we have the re-announce time specified somewhere?</p></div></blockquote></div><p>I don&#039;t think so. I suppose it&#039;s implied to be something greater than the re-announce interval.</p></div></blockquote></div><p>Another thing that needs to be specified <img src="http://forum.bittorrent.org/img/smilies/wink.png" width="15" height="15" alt="wink" /></p><div class="quotebox"><blockquote><div><p>This way, the sequence number is ordering the batches of info-hashes, and the order the info-hashes are listed inside the string defines their order in the feed. The sequence numbers can only increment by one. If each &quot;batch&quot; has info-hashes appended to it until it fills some notion of an MTU before a new batch is created, the sequence numbers can be considered pages.</p><p>You could make it possible to request pages by specifying negative numbers to index from the end. Requesting page -1 would thus refer to the latest items.</p><p>This is quite compact, but it&#039;s not very generic. Turning each batch of info-hashes to a list of dicts would make it a lot more generic, since each item can be extended that way. The signatures could be signing the bencoded representation of those list items.</p><p>With an approach like this, the assumption is that all feed items are always lumped together until it fills one MTU, so it wouldn&#039;t<br />make that much sense to have a bloom filter representing individual feeds. The requesting node could (essentially) be guaranteed that requesting a single page will always fit in one MTU as well.</p></div></blockquote></div><div class="quotebox"><blockquote><div><p>Just to throw it out there; Another way of doing pagination and load balancing would be to announce page 1 to SHA1(&lt;feed-name&gt; + &lt;public-key&gt; + &quot;page1&quot;), the second page to SHA1(&lt;feed-name&gt; + &lt;public-key&gt; + &quot;page2&quot;) and so on.</p></div></blockquote></div><p>All these paging and MTU considerations made me think about the general approach. I think it&#039;s wrong. Bloom filters have issues with false positives, so you might not get what you need and pagination is complex to get right for all use-cases.</p><br /><p>So, back to the roots. The DHT is a data-structure, a hash table as its name says. So instead of trying to cram everything into a single entry and then running into various issues... we should use the data structure to make things easy for the storage nodes and leave the logic on the client side.</p><p>I think something like a <a href="http://en.wikipedia.org/wiki/Skip_list">skip list</a> on top of the DHT would be a good approach. It would be somewhat slow for bulk-gets but the most important operation (getting the newest entries) would be fast and trivial.</p><p>It would work the following way:</p><p>1. Each feed entry is stored under its own exclusive DHT key, e.g. sha1(entry-signature)<br />2. Each feed entry contains backwards pointer to the next-older entry (linked list) and optionally to exponentially older entries (skip-list)<br />3. Each entry is signed and the pointers are signed separately<br />4. The feed root is stored under SHA1(feedname + pubkey) and returns <br />a) a pointer to the head entry<br />b) random pointers into the list<br />All pointers are signed</p><br /><p>This may seem to be a lot of DHT entries, but if you consider that each feed entry corresponds to a torrent then this doesn&#039;t significantly increase the load per torrent, especially since not everyone has to write feed entries to the DHT, you just have to randomly check if they&#039;re alive and republish them if they aren&#039;t.<br />Publishing would consist of 3 steps:<br />a) publish a new entry, with a forward-pointer to the now 2nd entry<br />b) put the pointer into the random list under the feed root<br />c) bump the head-pointer in the feed root<br />[b and c can be done in 1 call]</p><p>This is just a general idea which can be refined. E.g. we could have forward pointer in the list too, or the option to update pointers (timestamps) or whatever.</p><br /><p>But i generally think treating it as a question of finding the right data-structure instead of trying to implement complex RPC calls is a better approach than what we have discussed so far. It&#039;s relatively simple and yet provides a lot of extension points for future improvements.</p><p>As icing on the cake this is not specific to feeds: forwarding-pointers, generic signed storage and skiplists might be useful for other things too.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1760" class="blockpost roweven">
+	<h2><span><span class="conr">#16</span> <a href="viewtopic.php?pid=1760#p1760">2011-01-02 13:09:34</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>The 8472 wrote:</cite><blockquote><div><p>1. Each feed entry is stored under its own exclusive DHT key, e.g. sha1(entry-signature)<br />2. Each feed entry contains backwards pointer to the next-older entry (linked list) and optionally to exponentially older entries (skip-list)<br />3. Each entry is signed and the pointers are signed separately<br />4. The feed root is stored under SHA1(feedname + pubkey) and returns <br />a) a pointer to the head entry<br />b) random pointers into the list<br />All pointers are signed</p></div></blockquote></div><p>I like this general approach. One way to keep the number of lookups low, would be to still accumulate up to a certain number of items in each node (i.e. item in the linked list). Unless each node is the actual torrent, under the actual info-hash, in which case this wouldn&#039;t work.</p><p>Some concerns I have are:</p><p>1. Every participant should help keeping all items alive, so nodes should pick random items and announce them every now and then.</p><p>2. (this is the main one), if the list head doesn&#039;t move, it&#039;s important to not allowing to down-grade it to an older version, say with a list with a single node. This could be done with a sequence number (which is also signed), and making nodes ignore announces with a lower sequence number than what they already have.</p><div class="quotebox"><blockquote><div><p>This may seem to be a lot of DHT entries, but if you consider that each feed entry corresponds to a torrent then this doesn&#039;t significantly increase the load per torrent, especially since not everyone has to write feed entries to the DHT, you just have to randomly check if they&#039;re alive and republish them if they aren&#039;t.<br />Publishing would consist of 3 steps:<br />a) publish a new entry, with a forward-pointer to the now 2nd entry<br />b) put the pointer into the random list under the feed root<br />c) bump the head-pointer in the feed root<br />[b and c can be done in 1 call]</p></div></blockquote></div><p>Using the actual torrents in the DHT as the list nodes in the linked list would have the following problems:</p><p>1. Long lists would become very expensive. In general this is hard to avoid, but it might be mitigated and the cost could be lowered of a factor of 10 at least, by bunching items.</p><p>2. a given torrent would have a limit on how many feeds it could be part of. It would either be just a single one or multiple ones if we allow multiple forward pointers keyed by the feed key. In this case popular torrents might still run out of space to store forward pointers, and there might be a privacy issue, if you can deduce all feeds a given torrent belongs to.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1766" class="blockpost rowodd">
+	<h2><span><span class="conr">#17</span> <a href="viewtopic.php?pid=1766#p1766">2011-01-02 20:59:45</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>arvid wrote:</cite><blockquote><div><p>Using the actual torrents in the DHT as the list nodes in the linked list would have the following problems:</p><p>1. Long lists would become very expensive. In general this is hard to avoid, but it might be mitigated and the cost could be lowered of a factor of 10 at least, by bunching items.</p><p>2. a given torrent would have a limit on how many feeds it could be part of. It would either be just a single one or multiple ones if we allow multiple forward pointers keyed by the feed key. In this case popular torrents might still run out of space to store forward pointers, and there might be a privacy issue, if you can deduce all feeds a given torrent belongs to.</p></div></blockquote></div><p>Nono, i didn&#039;t mean that the feed entries should be stored on the same IDs as the torrent infohashes.</p><p>I simply meant that having 1 DHT key per feed entry is not that much additional load since 1 entry corresponds to 1 torrent. So assuming that a torrent only appears on one feed on average (popular torrents may be published on several feeds, unpopular ones on no feeds at all) then it doubles the number of keys that are occupied on the DHT. But the traffic for feed-keys is far lower since you mostly read the head of the skip list and only do occasional refreshes of the other parts of the list.</p><p>That&#039;s also why the size of the list doesn&#039;t really matter much. Unlike get_peers lookups the feeds will see far less traffic as most refreshes can be done by checking the head-pointer.</p><p>That&#039;s why we can completely avoid batching entries to keep it simple.</p><p>See<br /></p><div class="quotebox"><cite>The 8472 wrote:</cite><blockquote><div><p>1. Each feed entry is stored under its own exclusive DHT key, e.g. sha1(entry-signature)</p></div></blockquote></div><p>Separating each feed entry into its own DHT-key also provides us with a lot of space per entry. E.g. people could add a little descriptive text, future extensions (such as torrent-replacement lists) or whatever we haven&#039;t through of yet.<br />Cramming many entries into one DHT-key wouldn&#039;t leave the room and would also require some &quot;what should i use as MTU&quot; guesstimating which we should avoid.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1772" class="blockpost roweven">
+	<h2><span><span class="conr">#18</span> <a href="viewtopic.php?pid=1772#p1772">2011-01-04 10:51:45</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<p>I think it would make sense to split this into two BEPs:<br />1. for pointers and generic signed data storage<br />2. feeds implemented as skiplist using pointers and storage</p><br /><p>Edit: Hurr... after some researching i discovered that there is no ECDSA implementation for Curve25519. The basic curve math operations are available in libraries and ECDSA isn&#039;t that complex, but considering that there are no reference implementations this is icy ground to tread on.<br />So we&#039;ll have to implement our own (preferably 2 independent implementations) on top of a Curve25519 library, test it and provide test vectors.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1776" class="blockpost rowodd">
+	<h2><span><span class="conr">#19</span> <a href="viewtopic.php?pid=1776#p1776">2011-01-07 15:59:01</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<p>jch made a good point on IRC: Instead of transfering feed items over the DHT itself we could also use the extension protocol and run &quot;virtual torrents&quot; (infohashes/connections merely serving as a shell for messaging).</p><p>There are several issues to this<br />- clients would have to run these virtual torrents 24/7, in the background not visible to the user. manage connections, etc.<br />- we somehow would have to ensure that updates are pushed quickly to the entire swarm so that someone who subscribes to it doesn&#039;t see too-outdated information. Such as swarm can grow very large if the feed is popular while the points in the DHT that would need updating is fixed (mix of push and pull logic)<br />- alternatively we would have to limit the swarm size via exponential backoff (DHT scrapes?)</p><p>The advantages would be:<br />- no new RPC calls<br />- we can exchange bulk data via TCP instead of running into MTU limits with UDP<br />- no need to implement Curve25519-ECDSA</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1778" class="blockpost roweven">
+	<h2><span><span class="conr">#20</span> <a href="viewtopic.php?pid=1778#p1778">2011-01-08 02:58:30</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90572">mabsark</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<p>&quot;jch made a good point on IRC: Instead of transfering feed items over the DHT itself we could also use the extension protocol and run &quot;virtual torrents&quot; (infohashes/connections merely serving as a shell for messaging).&quot;</p><p>I posted that suggestion here last month but you guys didn&#039;t seem interested by it, <a href="http://forum.bittorrent.org/viewtopic.php?id=304">http://forum.bittorrent.org/viewtopic.php?id=304</a></p>
+						<p class="postedit"><em>Last edited by mabsark (2011-01-08 02:58:56)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1804" class="blockpost rowodd">
+	<h2><span><span class="conr">#21</span> <a href="viewtopic.php?pid=1804#p1804">2011-01-15 18:39:14</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<p>I updated the spec to use linked lists instead.</p><p>&#160; &#160;<a href="http://www.libtorrent.org/dht_rss.html">http://www.libtorrent.org/dht_rss.html</a></p><p>Using linked lists also lifts the requirement for small keys, we could use RSA. Although, Bram might be implementing an EDCSA for 25519 as part of his live project.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1806" class="blockpost roweven">
+	<h2><span><span class="conr">#22</span> <a href="viewtopic.php?pid=1806#p1806">2011-01-16 12:40:03</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>The sig field MUST be the signature of the bencoded structure of the whole item, except for the signature itself.</p></div></blockquote></div><p>I would say it should be the signature of the bencoded value of the <em>head</em> or <em>item</em> entry in the root dictionary.<br />I.e. sig = sign(bencode(bdecode(announce)[&quot;a&quot;][&quot;head&quot; or &quot;item&quot;]))</p><br /><div class="quotebox"><blockquote><div><p>Every participant SHOULD store items in long term storage, across sessions, in order to keep items alive for as long as possible, with as few sources as possible.</p></div></blockquote></div><p>I think that&#039;s what you meant... but just to verify:</p><p>The feed receivers should be the ones putting it into longterm storage for re-announcing, not those nodes that the info is stored on, correct?</p><div class="quotebox"><blockquote><div><p>Subscribers to a feed SHOULD also announce items that they know of, to the feed. In order to make the repository of torrents as reliable as possible, subscribers SHOULD re-announce as many items from their local repository of items as possible.</p></div></blockquote></div><p>A large feed could have thousands of subscribers and also thousands of entries, this would cause an excessive amount of lookup and put operations. A smarter refresh algorithm is necessary. I&#039;ll propose the following:</p><p>On every lookup to the HEAD node the requesting node should also pick an entry at random that it already has in local storage. Check if that item exists and republish it. If it did not exist prior to the republishing repeat the procedure for the remaining elements in local storage, otherwise abort.</p><br /><div class="quotebox"><blockquote><div><p>Any subscriber and publisher SHOULD re-announce items every 30 minutes. If a feed does not receive any announced items in 60 minutes, a peer MAY time it out and remove it.</p></div></blockquote></div><p>This paragraph is a bit confusing. Please explain.</p><div class="quotebox"><blockquote><div><p>When requesting a list-head the target MUST always be SHA-1(feed_name + public_key). Any list-head request where this condition is not met, MUST be dropped. target is the target node ID the item was written to.</p><p>The n field is the name of the list. If specified, It MUST be UTF-8 encoded string and it MUST match the name of the feed in the receiving node.</p></div></blockquote></div><p>These plausibility checks are redundant and too expensive for the storage node.</p><p>Storage nodes simply should check if the target IDs match the keys when they are announced. Requests should simply be based on the target ID (key and name don&#039;t have to be included), collisions are extremely unlikely and the entries already have been verified during the announce operation.<br />Requesting nodes should verify after they obtained the data.</p><p>I.o.w.:<br />1. Storage nodes check on announce.<br />2. Requesting nodes check when they get their response.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1808" class="blockpost rowodd">
+	<h2><span><span class="conr">#23</span> <a href="viewtopic.php?pid=1808#p1808">2011-01-16 13:08:14</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<p>Thinking of it, we should also suggest usage patterns for feeds. I.e. that someone shouldn&#039;t put ten-thousands of items into a single feed. Instead multiple feeds grouped by related content sharing the same public key should be used.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1842" class="blockpost roweven">
+	<h2><span><span class="conr">#24</span> <a href="viewtopic.php?pid=1842#p1842">2011-01-19 14:37:00</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=92006">hughw</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<p>I&#039;m working on a project that hasn&#039;t yet started development, but most of our needs could potentially be met with this. I would prefer contributing patches to an open-source project far above rolling our own solution, and I&#039;m working full time on this project, so I could be helpful if you like my patches and haven&#039;t already done all the work.</p><p>1. Does the signature need to be specified in advance? Because ECDSA over Curve25519 hasn&#039;t been implemented, much less time-tested, I&#039;m not comfortable with it. I don&#039;t mind using OpenSSL and FIPS 186-3 P-256; I assume you are worried about potential patent infringement? It seems that just specifying which signature type is being used satisfies everyone, and allows it to be extensible in the future.</p><p>2. I would really like to see individual feed items time out of the swarm. I&#039;m currently running a few simulations of different drop patterns against different algorithms for assigning skip-list pointers to see how they fare. It seems like a possibly viable solution, but if we time out items in an undetermined order, most skip list implementations don&#039;t act well.</p><p>3. It shouldn&#039;t matter too much what the actual document content is, but to the extent that this RFC targets a single document type, Atom is more flexible and extensible than RSS. Again, since you&#039;re not enforcing a single type in the spec, this is just a side note.</p><p>4. Keeping virtual torrents open, or using a gossip algorithm over DHT neighbors might introduce less load than clients periodically polling for new information on feedname+key. Using gossip over DHT is something we&#039;ve already tried, and might stick to for the sake of speed in getting information out.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1844" class="blockpost rowodd">
+	<h2><span><span class="conr">#25</span> <a href="viewtopic.php?pid=1844#p1844">2011-01-19 16:58:36</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: decentralized feeds</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>hughw wrote:</cite><blockquote><div><p>1. Does the signature need to be specified in advance? Because ECDSA over Curve25519 hasn&#039;t been implemented, much less time-tested, I&#039;m not comfortable with it. I don&#039;t mind using OpenSSL and FIPS 186-3 P-256; I assume you are worried about potential patent infringement? It seems that just specifying which signature type is being used satisfies everyone, and allows it to be extensible in the future.</p></div></blockquote></div><p>Patents are an issue with point compression which is needed to keep the signatures compact. If there are other schemes that only require the X-coordinates on the curves those would work too.</p><div class="quotebox"><blockquote><div><p>2. I would really like to see individual feed items time out of the swarm. I&#039;m currently running a few simulations of different drop patterns against different algorithms for assigning skip-list pointers to see how they fare. It seems like a possibly viable solution, but if we time out items in an undetermined order, most skip list implementations don&#039;t act well.</p></div></blockquote></div><p>Everyone using the feed entries would be refreshing them, so they wouldn&#039;t time out.<br />Dealing with missing entries would be a failure recovery mode atm, not an intended feature. If you actually want to remove entries we basically have to make them mutable to alter the skiplist after the first publication.</p><div class="quotebox"><blockquote><div><p>3. It shouldn&#039;t matter too much what the actual document content is, but to the extent that this RFC targets a single document type, Atom is more flexible and extensible than RSS. Again, since you&#039;re not enforcing a single type in the spec, this is just a side note.</p></div></blockquote></div><p>This is not really atom or rss. it&#039;s just a feed of torrents, it&#039;s not even encoded in xml. We just call it RSS because that&#039;s what it&#039;s inspired by.</p><div class="quotebox"><blockquote><div><p>4. Keeping virtual torrents open, or using a gossip algorithm over DHT neighbors might introduce less load than clients periodically polling for new information on feedname+key. Using gossip over DHT is something we&#039;ve already tried, and might stick to for the sake of speed in getting information out.</p></div></blockquote></div><p>DHT wide gossip certainly is not an option, since it would be too unspecific.</p><p>I have a highly optimized DHT implementation that can do the type of lookups required to refresh a feed very cheaply, so that&#039;s more a matter of optimizing the implementation.</p><p>A virtual torrent on the other hand would work too but would have to depart from the connection management used for normal torrents. I&#039;ve played it through in my head and it should work fairly well if implemented properly, so it&#039;s definitely an option.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong> <a href="viewtopic.php?id=302&amp;p=2">2</a> <a href="viewtopic.php?id=302&amp;p=2">Next</a></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=302"><strong>decentralized feeds</strong></a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

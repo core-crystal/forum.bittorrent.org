@@ -1,0 +1,586 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Being more ISP-friendly (Page 1) / Cooperation between BitTorrent and ISPs / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
+<script type="text/javascript" src="captcha/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript">
+	$(function(){var f=$("#sliderCaptcha");var b=$("#cleCaptcha");var d=$(".boutonsCaptcha");var a=$("#javascriptCaptcha");var e=[3,28,7,35,27,45,43,45,45,2,26,38,0,11,37,44,27,41,41,13,37,49,31,36,12,44,48,35,0,39,9,3,18,17,38,46,13,32,41,8,35,18,46,35,30,34,30,7,25,21];var h=0;var g=5;var c=0;a.hide();f.slider({value:0,min:0,max:g,step:1,slide:function(i,j){if(j.value>c){c=j.value;h+=c}},stop:function(j,k){var i=false;if(k.value==g){if(h==((g+Math.pow(g,2))/2)){i=true;f.slider("option","disabled",true);if(b.val().length!=e.length){$.post("captcha.php",{tokenCaptcha:b.val()},function(m){var l="";$.each(e,function(){l+=m.charAt(this%m.length)});b.val(l);d.removeAttr("disabled")})}}}if(!i){h=c=0;f.slider("option","value",h)}}})});
+</script>
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="punviewtopic" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex" class="isactive"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=32">Cooperation between BitTorrent and ISPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=23"><strong>Being more ISP-friendly</strong></a></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p117" class="blockpost rowodd firstpost blockpost1">
+	<h2><span><span class="conr">#1</span> <a href="viewtopic.php?pid=117#p117">2008-03-23 12:22:15</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Being more ISP-friendly</h3>
+					<div class="postmsg">
+						<p>Well, the issue of bittorrent not being very ISP-friendly comes up repeatedly, either in the form of people like the P4P consortium claiming that using local peers would result in speedups or - on the other end of the spectrum - traffic shaping ala sandvine.</p><p>I think this will be an important topic for the future of bittorrent in the long term but corporate interests, PR and politics usually surrounding these issues don&#039;t help the process. This is an engineering issue and should be treated as such. I would prefer if we could get a few ISP engineers (or anyone working on the internet infrastructure) to join, but as long as that&#039;s not the case we still can bounce around a few ideas.</p><br /><p>The main goal is to maintain performance for the enduser at least or even improve it while easing the load on various parts of the internet infrastructure. Simply easing the load regardless of user-side performance is not realistic, as users would not like it, they&#039;d stick to the faster clients.</p><p>I have already listed a few ideas here: <a href="http://www.azureuswiki.com/index.php/User:The8472/P2PvsISPs">http://www.azureuswiki.com/index.php/Us … /P2PvsISPs</a></p><p>So, if anyone has better/other ideas, approaches to simplify or optimize the ones listed or reasons why they&#039;re not practicable... speak.</p><p>Consider this thread as brainstorming.</p>
+						<p class="postedit"><em>Last edited by The 8472 (2008-03-23 13:15:28)</em></p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p118" class="blockpost roweven">
+	<h2><span><span class="conr">#2</span> <a href="viewtopic.php?pid=118#p118">2008-03-23 16:01:58</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd class="usertitle"><strong>Editor</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Being more ISP-friendly</h3>
+					<div class="postmsg">
+						<p>I suggest all client developers read the web page referenced and written by &quot;The 8472&quot;.</p><p>To this I would add two items:</p><p>- Careful allocation of upload slots.&#160; The number of upload slots should be based on long-run estimated access capacity, not on the number of active torrents and should not be arbitrarily large.&#160; There is no reason to squeeze upload slots to window sizes well below 1 packet per round-trip time since TCP behaves poorly in this regime.</p><p>- Local Service Discovery: uses administrative-local multicast to locate peers sharing an infohash.&#160; &#160;This only helps with finding peers very close on the network (usu the same LAN).&#160; This is already implemented in uTorrent and mainline but there currently is no BEP for it.</p><p>Azureus has or had support for caching.&#160; BitTorrent tried to work with CacheLogic to achieve the same.&#160; For reasons which I am not thoroughly acquainted, the relationship between BitTorrent and CacheLogic fell apart.&#160; However, I believe the argument behind caching is sound.&#160; </p><p>I call for draft standards-track BEPs for the following topics:</p><p>- P2P Caching Support<br />- Local Service Discovery</p><p>I also call for informational BEPs that draw on content developer experience regarding the effective use of the BitTorrent protocols beyond the protocol semantics described in Bram&#039;s specification.&#160; Much wisdom has undoubtedly accumulated over the years that is documented nowhere.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p121" class="blockpost rowodd">
+	<h2><span><span class="conr">#3</span> <a href="viewtopic.php?pid=121#p121">2008-03-24 04:07:06</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Being more ISP-friendly</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>uses administrative-local multicast to locate peers sharing an infohash.</p></div></blockquote></div><p>Btw, azureus has that too. But this generally only helps in some special cases, maybe college networks or when you&#039;re only using LAN-internal transfers anyway. I don&#039;t think this does affect the bulk of bittorrent traffic in any way.</p><p>About peer caching, we had it. It was scrapped due to the lack of ISP-side support, i think i only saw 2 ISPs using it, and those were rather small ones.</p>
+						<p class="postedit"><em>Last edited by The 8472 (2008-03-24 04:15:20)</em></p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p122" class="blockpost roweven">
+	<h2><span><span class="conr">#4</span> <a href="viewtopic.php?pid=122#p122">2008-03-24 04:20:00</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Being more ISP-friendly</h3>
+					<div class="postmsg">
+						<p>Since version 3.0.4.0 Azureus uses request limiting instead of read limiting by default, this allows it to minimize the number of peers used iff the global download limit is reached, and thus indirectly reduces the upload slots that are used by the other side. Request limiting also has the advantage that it keeps the network buffers empty / tcp windows open. The downside is that it can only be applied if a download speed limit is set manually.</p>
+						<p class="postedit"><em>Last edited by The 8472 (2008-03-24 05:34:25)</em></p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p123" class="blockpost rowodd">
+	<h2><span><span class="conr">#5</span> <a href="viewtopic.php?pid=123#p123">2008-03-24 14:32:37</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd class="usertitle"><strong>Editor</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Being more ISP-friendly</h3>
+					<div class="postmsg">
+						<p>Even the most recent version of uTorrent has too many upload slots.&#160; It allocates 4 per torrent when the number should be global across all torrents.&#160; This is being corrected.</p><p>uTorrent will increase the number if the upload limit is not fully utilized.&#160; However this assumes the upload limit is set or estimated correctly.&#160; To avoid large numbers of slots, the number should be upper bounded by some function of the bandwidth-delay product.&#160; Because delay will vary between links and the purpose of an upper bound is to prevent the system from becoming unreasonable, we can pick a canonical value for Internet RTT, e.g., 200 ms.&#160; </p><p>This will still tend to give you small number of slots with home DSL or Cable modem connections so you might want to include an additional safety factor.&#160; For most home users in the US, there doesn&#039;t need to be more than 8 global upload slots.&#160; For modem users, even 1 MTU in flight per RTT is likely to saturate the link so it makes sense to impose a lower bound based on the unchoke algorithm, e.g., 4 upload slots which is the current canonical value used by uTorrent.</p><p>I have no experience with request limiting (as opposed to rate limiting).</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p124" class="blockpost roweven">
+	<h2><span><span class="conr">#6</span> <a href="viewtopic.php?pid=124#p124">2008-03-24 14:40:39</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd class="usertitle"><strong>Editor</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Being more ISP-friendly</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>The 8472 wrote:</cite><blockquote><div><p>The downside is that it can only be applied if a download speed limit is set manually.</p></div></blockquote></div><p>Why doesn&#039;t Azureus estimate uplink capacity?</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p125" class="blockpost rowodd">
+	<h2><span><span class="conr">#7</span> <a href="viewtopic.php?pid=125#p125">2008-03-24 14:48:25</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Being more ISP-friendly</h3>
+					<div class="postmsg">
+						<p>errm... request limiting depends on the download speed, not upload speed. And yes, we do estimate both, but automatically limiting the download speed would lead to lots of user-side complaints if the estimate goes wrong.</p><p>Request limiting works by limiting the # of outstanding BT_REQUEST messages so that the download speed is capped to the set value by not requesting faster than speed / 16KiB/s chunks instead of simply limiting the socket reads. This strategy allows one to focus the requests on as few peers as necessary.</p><p>If you want to see that in action simply set a download speed limit and download a heavily overseeded torrent with Azureus, you&#039;ll see that (let&#039;s say) 50 peers unchoke you but Azureus only downloads from the fastest 3-4 peers to saturate the cap.</p><br /><p>Also, tweaking too many variables automatically at once (# of upload slots, # of active torrents, upload speed, download speed) can have a negative impact on the accuracy of the estimates.</p>
+						<p class="postedit"><em>Last edited by The 8472 (2008-03-24 15:03:37)</em></p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p127" class="blockpost roweven">
+	<h2><span><span class="conr">#8</span> <a href="viewtopic.php?pid=127#p127">2008-03-27 16:00:19</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd class="usertitle"><strong>Editor</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Being more ISP-friendly</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>The 8472 wrote:</cite><blockquote><div><p>errm... request limiting depends on the download speed, not upload speed.</p></div></blockquote></div><p>Uhhh.... why only download speed?&#160; I mean the local uplink is more likely congested.&#160; Not that downlink shouldn&#039;t be considered-- as you allude -- any well-seeded swarm might saturate end-user downlinks.</p><p>Also downloading chunks from many sources rather than a few limits information between TCP control loops.&#160; Doesn&#039;t this lead to more aggressive aggregate TCP behavior since exponential is no different from linear increase when around a window size of 1, and even more so when operating in the timeout regime since a single packet arrival resets the exponential backoff back to zero.&#160; Wouldn&#039;t it be better to try to maintain 1 packet in flight at all times for each control loop?&#160; For small bitrates this might be impossible but that can be handled by imposing a minimum bound on the number of slots so that other BitTorrent mechanisms can operate (e.g., optimistic unchoke).</p><div class="quotebox"><cite>The 8472 wrote:</cite><blockquote><div><p>And yes, we do estimate both,</p></div></blockquote></div><p>So does uTorrent/mainline/DNA.</p><div class="quotebox"><cite>The 8472 wrote:</cite><blockquote><div><p>Request limiting works by limiting the # of outstanding BT_REQUEST messages so that the download speed is capped to the set value by not requesting faster than speed / 16KiB/s chunks instead of simply limiting the socket reads. This strategy allows one to focus the requests on as few peers as necessary.</p></div></blockquote></div><p>Also tends to solve another problem that sometimes leads to wastage: downloading from so many peers that many do not finish transferring a single chunk within an unchoke interval.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p131" class="blockpost rowodd">
+	<h2><span><span class="conr">#9</span> <a href="viewtopic.php?pid=131#p131">2008-03-28 11:53:07</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Being more ISP-friendly</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>Uhhh.... why only download speed?</p></div></blockquote></div><p>Because only the downloading side sends requests <img src="http://forum.bittorrent.org/img/smilies/smile.png" width="15" height="15" alt="smile" /> Of course, an uploader could refuse to respond to more than N requests at any time, but that would make piece picking and request scheduling into a true nightmare.</p><p>Bittorrent is a pull-mechanism. So the uploader controls the number of his upload slots (unchokes) and his overall send rate limit, the downloader controls the requests. Hence request limiting is a measure at the downloader side. Properly distributing the upload slots and choosing the upload limit properly is a measure at the uploader side.</p><br /><div class="quotebox"><blockquote><div><p>Also downloading chunks from many sources rather than a few limits information between TCP control loops.</p></div></blockquote></div><p>yes, that&#039;s exactly where request limiting improves the situation <img src="http://forum.bittorrent.org/img/smilies/smile.png" width="15" height="15" alt="smile" /></p><br /><div class="quotebox"><blockquote><div><p>Also tends to solve another problem that sometimes leads to wastage: downloading from so many peers that many do not finish transferring a single chunk within an unchoke interval.</p></div></blockquote></div><p>This problem is only a real problem on slow torrents or torrents where all peers have a restricted set of pieces they can offer. Request limiting can only be performed when you hit the set download speed limit... which rarely happens under such conditions. So sadly, it won&#039;t improve that condition... at least not directly. It indirectly improves it by leaving upload slots of some users on some torrents unused, thus resulting in a better upload speed for the remaining slots.</p>
+						<p class="postedit"><em>Last edited by The 8472 (2008-03-28 11:54:45)</em></p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p134" class="blockpost roweven">
+	<h2><span><span class="conr">#10</span> <a href="viewtopic.php?pid=134#p134">2008-03-28 14:42:41</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd class="usertitle"><strong>Editor</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Being more ISP-friendly</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>The 8472 wrote:</cite><blockquote><div><div class="quotebox"><blockquote><div><p>Uhhh.... why only download speed?</p></div></blockquote></div><p>Because only the downloading side sends requests</p></div></blockquote></div><p>Ahhh... of course.</p><div class="quotebox"><cite>The 8472 wrote:</cite><blockquote><div><div class="quotebox"><blockquote><div><p>Also downloading chunks from many sources rather than a few limits information between TCP control loops.</p></div></blockquote></div><p>yes, that&#039;s exactly where request limiting improves the situation <img src="http://forum.bittorrent.org/img/smilies/smile.png" width="15" height="15" alt="smile" /></p></div></blockquote></div><p>Sort of.&#160; Do you focus the request limiting to a handful of seeds?&#160; If you are downloading from 100 seeds then request limiting makes sure that requests are completed in a timely manner but it might switch between control loops at the end of each request thereby losing congestion state information. </p><div class="quotebox"><blockquote><div><div class="quotebox"><blockquote><div><p>Also tends to solve another problem that sometimes leads to wastage: downloading from so many peers that many do not finish transferring a single chunk within an unchoke interval.</p></div></blockquote></div><p>This problem is only a real problem on slow torrents or torrents where all peers have a restricted set of pieces they can offer.</p></div></blockquote></div><p>The more likely problem is failure to complete a &quot;piece&quot; in a single unchoke interval, which occurs quite easily with a large file if the client doesn&#039;t download different chunks from the same piece from different sources.&#160; &#160;uTorrent does this, but the logic is quite complicated.</p><p>Having a large number of seeds also seems to happen more often with DNA than with BitTorrent in general because peers tend to hang around and seed for a long time.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p135" class="blockpost rowodd">
+	<h2><span><span class="conr">#11</span> <a href="viewtopic.php?pid=135#p135">2008-03-28 14:58:33</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd class="usertitle"><strong>Editor</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Being more ISP-friendly</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>The 8472 wrote:</cite><blockquote><div><div class="quotebox"><blockquote><div><p>Also downloading chunks from many sources rather than a few limits information between TCP control loops.</p></div></blockquote></div><p>yes, that&#039;s exactly where request limiting improves the situation <img src="http://forum.bittorrent.org/img/smilies/smile.png" width="15" height="15" alt="smile" /></p></div></blockquote></div><p>Of course! I think I understand your point.&#160; If you rate limit the number of requests but you greedily allocate them to the fastest peer below its pending limit then the mechanism will tend to focus on a small number of peers.&#160; Is this how the mechanism works?&#160; </p><p>It seems like that would be close (but not exactly) the minimum number of connections necessary to fully utilize the down rate limit.</p><p>That might perform similarly to setting the number of down slots but without requiring an explicit mechanism to adjust the number of down slots.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p137" class="blockpost roweven">
+	<h2><span><span class="conr">#12</span> <a href="viewtopic.php?pid=137#p137">2008-03-28 15:56:04</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Being more ISP-friendly</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>Is this how the mechanism works?</p></div></blockquote></div><p>correct. and you can do lots of smart things with the &quot;greedily allocate them to the fastest peer&quot;-part.</p><p>Oh, and i just remembered this also has a slight preference for fast peers with a lower latency as they&#039;ll be able to reach the same speed with less requests, which might ultimately prefer closer peers iff they&#039;re equally fast (or faster) as a further-away peer. But this probably only happens under ideal conditions.</p><p>----------------------------------------------</p><p>Edit:</p><p>Another thing we can consider: The optimistic unchoking behavior while seeding. Assuming that currently seeding simply rotates peers through optimistic unchoking and otherwise uploads to everyone at an equal speed (if possible, otherwise dropping the slowest one for the optimistics) then randomized locality-preference could be implemented in the while-seeding-optimistics. This would not hurt the user&#039;s experience and the impact on the swarm would depend on how aggressive this biasing would be.</p><p>But this would still require some locality-information.</p>
+						<p class="postedit"><em>Last edited by The 8472 (2008-04-02 10:27:48)</em></p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p148" class="blockpost rowodd">
+	<h2><span><span class="conr">#13</span> <a href="viewtopic.php?pid=148#p148">2008-04-09 15:55:41</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd class="usertitle"><strong>Editor</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Being more ISP-friendly</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>The 8472 wrote:</cite><blockquote><div><p>Another thing we can consider: The optimistic unchoking behavior while seeding. Assuming that currently seeding simply rotates peers through optimistic unchoking and otherwise uploads to everyone at an equal speed (if possible, otherwise dropping the slowest one for the optimistics) then randomized locality-preference could be implemented in the while-seeding-optimistics. This would not hurt the user&#039;s experience and the impact on the swarm would depend on how aggressive this biasing would be.</p><p>But this would still require some locality-information.</p></div></blockquote></div><p>We bounced this same idea around.&#160; We are building a simulator to test this out...along with initial connect order.&#160; &#160;With PEX you could relatively quickly (within minutes) learn every peer in the swarm even for swarms with 1000&#039;s of peers.&#160; We do not open connections to all of them due to protocol overhead and Win XP&#039;s half-open connection limit.&#160; For large swarms and especially for shorter files, each peer would never sample all other peers.&#160; In the absence of samples, start with peers that are closer.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p158" class="blockpost roweven">
+	<h2><span><span class="conr">#14</span> <a href="viewtopic.php?pid=158#p158">2008-04-22 23:05:18</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=35956">ghazel</a></strong></dt>
+						<dd class="usertitle"><strong>BitTorrent Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Being more ISP-friendly</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>The 8472 wrote:</cite><blockquote><div><p>But this would still require some locality-information.</p></div></blockquote></div><p>I&#039;ve had two ideas for gathering locality information. I&#039;m assuming ISPs are motivated to provide it, and BitTorrent will generally shift traffic around if it makes sense.</p><br /><p>First, and perhaps easiest for the ISP, using reverse DNS of the peer&#039;s IP to search for a service:<br />Say it&#039;s 11-12-13-14.vilage1.city2.dictrict3.isp.lt then it should test:<br />p2p-local-zones.vilage1.city2.dictrict3.isp.lt<br />p2p-local-zones.city2.dictrict3.isp.lt<br />p2p-local-zones.disctrict3.isp.lt<br />p2p-local-zones.isp.lt</p><p>The first one to respond with a list of CIDR ranges terminates the lookup. IPs in those ranges are preferred, for example attempting to fill say 90% of the peer list with them.</p><br /><p>Second, and far less latency prone, using anycast. The ISP routes a given IP to their local p2p-local-zone box, and the client only has to send a simple UDP query to that IP, and if it gets a response, obey it the same way.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p161" class="blockpost rowodd">
+	<h2><span><span class="conr">#15</span> <a href="viewtopic.php?pid=161#p161">2008-04-23 10:59:03</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Being more ISP-friendly</h3>
+					<div class="postmsg">
+						<p>The problem&#160; is that this does not work well with wholesale ISPs and small ones or hosts which do not have a reverse host entry which they could use to build the lookup. Well, i guess it&#039;s a matter of maintenance since every ISP, especially smaller ones, would have to maintain lists of near-by ISPs too, as it&#039;s unlikely to find someone using the same torrent within a small ISP.</p><br /><p>I agree that anycast would be great as it would even work if the local ISP doesn&#039;t support it but its upstream partner does for example - just like 6to4 or the decentralized DNS root servers. The problem here is that there is no anycast block, thus some AS would have to offer an address (and thus a whole /24 block since that&#039;s the smallest block most internet routers will accept) for public use by ISPs.</p><p>It would be great if one could obtain better topology information, maybe by probing along the (trace)route to various targets.</p><p>Take australia for example, they don&#039;t have a problem with last-mile bandwidth but with international traffic, so it would be important to prefer not only peers of the local ISP but also of near-by ISPs.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p162" class="blockpost roweven">
+	<h2><span><span class="conr">#16</span> <a href="viewtopic.php?pid=162#p162">2008-04-23 22:00:59</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89643">Himaatin</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Being more ISP-friendly</h3>
+					<div class="postmsg">
+						<p>With IPv6 this should be a lot easier.<br />You can generally assume, that a /64 is always in the same local net. A /48 belongs to the same organisation, and a /32 to the same provider. (Of course there are always exception to it)</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p181" class="blockpost rowodd">
+	<h2><span><span class="conr">#17</span> <a href="viewtopic.php?pid=181#p181">2008-05-01 01:22:13</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Being more ISP-friendly</h3>
+					<div class="postmsg">
+						<p>Heh, i just realized that one point i listed here: <a href="http://forum.bittorrent.org/viewtopic.php?id=26">http://forum.bittorrent.org/viewtopic.php?id=26</a> might also improve any measure that relies on locality. Namely the coalescing of swarms with identical content, this would make the long tail a bit less long and improve the chance that you&#039;ll find a near-by peer that&#039;s useful.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=32">Cooperation between BitTorrent and ISPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=23"><strong>Being more ISP-friendly</strong></a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>forum.bittorrent.org / Latency Prioritizer</title>
+<link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
+</head>
+<body>
+
+<div id="punwrap">
+<div id="punviewtopic" class="pun">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><span>forum.bittorrent.org</span></h1>
+			<p><span>BitTorrent.org community</span></p>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p>You are not logged in.</p>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<h2><span>Announcement</span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div>Posting about any illegal sharing of copyrighted content is strictly forbidden.</div>
+		</div>
+	</div>
+</div>
+
+<div class="linkst">
+	<div class="inbox">
+		<p class="pagelink conl">Pages: <a href="viewtopic.php?id=52&amp;p=1">1</a>&nbsp;<a href="viewtopic.php?id=52&amp;p=2">2</a>&nbsp;<strong>3</strong></p>
+		<p class="postlink conr">&nbsp;</p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Latency Prioritizer</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p394" class="blockpost rowodd">
+	<h2><span><span class="conr">#51&nbsp;</span><a href="viewtopic.php?pid=394#p394">2008-08-27 12:49:56</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>I don't know if 70/30 is the correct number.&nbsp; In&nbsp; Bindal et al, each peer connected to only 1 peer outside the ISP, which for a cooperating ISP MIGHT be enough to maintain piece diffusion, but probably isn't enough to work around bad policy.</p></div></blockquote><p>I highly doubt that this will even prevent piece distribution issues, as just having a connection doesn't mean it will get unchoked. So you'd have a very high degree of clustering, and i have seen piece hotspots / distribution skews arising from far lesser issues, such as 1-2 peers in the whole swarm using selective downloading.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p396" class="blockpost roweven">
+	<h2><span><span class="conr">#52&nbsp;</span><a href="viewtopic.php?pid=396#p396">2008-08-27 14:52:31</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<p>For other readers, Bindal et al refers to<br /><br />Ruchir Bindal, Pei Cao, William Chan, Jan Medval, George Suwala, Tony Bates, Amy Zhang, &quot;Improving Traffic Locality in BitTorrent via Biased<br />Neighbor Selection.&quot;<br /><br /><a href="http://crypto.stanford.edu/~cao/biased-bt.html" rel="nofollow">http://crypto.stanford.edu/~cao/biased-bt.html</a><br /><br />Paper could have better models (but good models are hard).&nbsp; Results show one intuitive thing, when peers have very similar views of the swarm as happens with ISP localization, then multiple peers tend to simultaneously pick the same &quot;rarest&quot; pieces and bring them into the ISP resulting in unnecessary transits.&nbsp; <br /><br />1 connection does well when the piece selection strategy is random.&nbsp; Not convinced that this result generalizes.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p515" class="blockpost rowodd">
+	<h2><span><span class="conr">#53&nbsp;</span><a href="viewtopic.php?pid=515#p515">2008-09-12 22:10:48</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90022">sren</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<p>Hi,<br /><br />I was referred here by Dave. Sorry for reposting something, but I think they are quite relevant to the topic. <br /><br />We are researchers at the Ohio State University. We have implemented and released a new BitTorrent client software written in Python, called Top-BT. Different from previously released BT client, Top-BT actively discovers Internet topology, and uses this intelligence to always choose close peers to download file pieces. We have extensively evaluated and tested our client. Our study shows that, compared to native BT clients, Top-BT can accelerate downloading up to twice, but save up to 40% induced Internet traffic.<br /><br />You all are very welcome to try out our Top-BT client, and give us some advice, suggestions, and comments. Currently the Top-BT client can be downloaded from two places:<br /><br /><a href="http://sourceforge.net/projects/top-bt/" rel="nofollow">http://sourceforge.net/projects/top-bt/</a><br /><a href="http://www.cse.ohio-state.edu/~sren/topbt/" rel="nofollow">http://www.cse.ohio-state.edu/~sren/topbt/</a><br /><br />We are writing a draft in which the difference between Top-BT and existing work such as P4P and Ono are discussed in detail. We will provide the draft once it is refined and ready.<br /><br />To be short, P4P is a framework through which ISPs can provide information to applications, so that applications can optimize their performance. P4P requires ISPs to widely deploy their frameworks. Another challenge for P4P is, what type of information ISPs should provide to satisfy different applications quality requirements.<br /><br />On the other hand, Ono utilizes existing CDN infrastructures to localize hosts, so that a host can choose close peers to connect to. Ono also has a few challenges: 1) when there are many native BT clients online, an Ono client is not able to accurately tell its distances to those native clients, because they do not localize themselves; 2) although a single Ono client sends only 32K DNS traffic per day, if there are 1 million Ono clients online simultaneously, it can cause 32G DNS trafic on CDN nameservers. This can trigger CDN to filter Ono DNS traffic.<br /><br />In comparison, our Top-BT client:&nbsp; 1) does not require modification to existing Internet infrastructure, and is a completely user-level tool; and 2) it runs well even when all the rest clients are native BT-clients; and 3) it directly measures distances to other peers, instead of using coordinates to calculate distances.<br /><br />After quickly reading above posts on &quot;Latency Prioritizer&quot;, very interestingly, I found the ideas of doing pings to measure latency to peers are part of what we have implemented.<br /><br />In our Top-BT code, we not only do &quot;ping&quot; to peers, but also do &quot;traceroute&quot;. In this way, we can measure how many AS-hops (Autonomous System Hops) and link-hops to those peers. To balance download time and induced cross-ISP traffic, we also consider connections download rates and upload rates when deciding which peers to unchoke.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p516" class="blockpost roweven">
+	<h2><span><span class="conr">#54&nbsp;</span><a href="viewtopic.php?pid=516#p516">2008-09-13 00:20:57</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89901">DeathfireD</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<p>Thats nice news sren! Just wondering, how do you manage to ping people that are behind firewalls/routers that block such things? As you can see in the above posts, that was one thing that kind of killed my initial idea.<br /><br />Also, any screenshots of the client?</p>
+					<p class="postedit"><em>Last edited by DeathfireD (2008-09-13 00:27:13)</em></p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p522" class="blockpost rowodd">
+	<h2><span><span class="conr">#55&nbsp;</span><a href="viewtopic.php?pid=522#p522">2008-09-13 13:12:40</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90022">sren</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<p>Same problem here, we were unable to get responses from some peers that are filtering ICMP packets. But we tried some way to bypass it. <br /><br />What we do is, we first calculate the link hops to those peers that have responded to our ping queries, given the typical initial TTLs of different operating systems, (255, 128, 64 etc). Then we use the average of these link hops we know to estimate those peers not responding.<br /><br />Definitely there are some errors when doing this estimation. But at least for those responding peers, we can choose peers with smaller link hops.<br /><br />We do the same things using &quot;traceroute&quot;. An extra step is that, for each intermediate routers on the route, we need to map them to the Autonomous Systems (ASes) they belong to. Then we translate the IP-level route to the AS-level route, and calculate the AS-hops. <br /><br />We have intensively evaluated our approaches using different torrent files, different upload capacity limits. We have found that in most cases, our approach has significant gains in both download time and induced traffic (AS-level and link-level).</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox">
+		<p class="postlink conr">&nbsp;</p>
+		<p class="pagelink conl">Pages: <a href="viewtopic.php?id=52&amp;p=1">1</a>&nbsp;<a href="viewtopic.php?id=52&amp;p=2">2</a>&nbsp;<strong>3</strong></p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Latency Prioritizer</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div class="inbox">
+
+			<div class="conl">
+				<form id="qjump" method="get" action="viewforum.php">
+					<div><label>Jump to
+					<br /><select name="id" onchange="window.location=('viewforum.php?id='+this.options[this.selectedIndex].value)">
+						<optgroup label="BitTorrent">
+							<option value="26">Announcements</option>
+							<option value="25" selected="selected">BEPs</option>
+							<option value="29">BEP process</option>
+							<option value="27">General</option>
+							<option value="33">Research Tools</option>
+							<option value="32">Cooperation between BitTorrent and ISPs</option>
+							<option value="30">Attacks against BitTorrent</option>
+							<option value="28">Feature Requests, Found Bugs &gt;&gt;&gt;</option>
+					</optgroup>
+					</select>
+					<input type="submit" value=" Go " accesskey="g" />
+					</label></div>
+				</form>
+			</div>
+			<p class="conr">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-116155-1";
+_udn = "utorrent.com";
+urchinTracker();
+</script>
+
+</body>
+</html>

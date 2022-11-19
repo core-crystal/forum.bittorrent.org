@@ -1,0 +1,353 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>forum.bittorrent.org / Sub-piece hashing</title>
+<link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
+</head>
+<body>
+
+<div id="punwrap">
+<div id="punviewtopic" class="pun">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><span>forum.bittorrent.org</span></h1>
+			<p><span>BitTorrent.org community</span></p>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p>You are not logged in.</p>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<h2><span>Announcement</span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div>Posting about any illegal sharing of copyrighted content is strictly forbidden.</div>
+		</div>
+	</div>
+</div>
+
+<div class="linkst">
+	<div class="inbox">
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<p class="postlink conr">&nbsp;</p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Sub-piece hashing</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p441" class="blockpost rowodd firstpost">
+	<h2><span><span class="conr">#1&nbsp;</span><a href="viewtopic.php?pid=441#p441">2008-09-03 17:56:20</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=30435">bram</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3>Sub-piece hashing</h3>
+				<div class="postmsg">
+					<p>When a peer is downloading, they typically do so in 16 kilobyte 'chunks', which are much smaller than full size 'pieces', which are what's referred to in have messages and what the peers have hashes of. This causes a few problems. Peers have no way of knowing which chunk was bad if a piece they download fails hash check, and if they're streaming data they can't display it until a full piece is downloaded for hash verification purposes. This problem can be helped by making the piece size 16k, but then the size of have messages and the size of the .torrent file can get out of hand.<br /><br />A simple extension could make this situation a lot better. In addition to the piece hashes, the .torrent file includes another set of hashes, which also includes one hash per piece, but instead of a hash of the piece as a whole it's the hash of all the 16k chunks of that piece. A peer protocol extension is that peers can request all the hashes of the 16k chunks from each other. This basically creates a cheap 2-layer merkle tree, and gets most of the benefits of that without any excessive complexity.<br /><br />A later extension could be to have sub-piece haves, for situations where a peer has very little to upload but still has upload capacity.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p445" class="blockpost roweven">
+	<h2><span><span class="conr">#2&nbsp;</span><a href="viewtopic.php?pid=445#p445">2008-09-04 05:40:11</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Sub-piece hashing</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>Peers have no way of knowing which chunk was bad if a piece they download fails hash check</p></div></blockquote><p>This problem has already been solved without subpiece hashing.<br /><br />And if we are going the merkle tree way i suggest we go all the way to solve the problem posted here: <a href="http://forum.bittorrent.org/viewtopic.php?pid=438#p438" rel="nofollow">http://forum.bittorrent.org/viewtopic.php?pid=438#p438</a><br /><br />With a tree there wouldn't be a need for different piece sizes. Putting the file names outside the infodict would be a trivial task after that. This way we could dramatically improve the uniqueness of torrents.<br />Though i guess we'd still have to impose some ordering on the files to do it properly.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p451" class="blockpost rowodd">
+	<h2><span><span class="conr">#3&nbsp;</span><a href="viewtopic.php?pid=451#p451">2008-09-05 00:44:51</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Sub-piece hashing</h3>
+				<div class="postmsg">
+					<p>Putting chunk hashes in the .torrent file allows for us to hand pieces to a player quickly when starting playback, which is somewhat countered by introducing a larger .torrent file size.<br /><br />Putting chunk hashes in the .torrent file also allows for reduction in HAVE message overhead, since we can use larger pieces, though this could also be achieved by batching have messages when talking to choked peers, and that wouldn't require extending the protocol.<br /><br />If we want to improve streaming startup times then why not go for a complete merkle tree implementation (two levels, three levels, whatever) but only put the root of the hash tree in the .torrent file and add a &quot;gethashes&quot; message to the protocol.<br /><br />To support legacy peers we can retain piece hashes in the infodict.&nbsp; &nbsp;The Merkle tree root hash adds negligible overhead to the .torrent file size.&nbsp; Because we separate piece size from the smallest hashable unit, we can use pieces that are sized properly even for very large files.&nbsp; As a result, the .torrent file shrinks from the sizes we use now for DNA to support streaming.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p454" class="blockpost roweven">
+	<h2><span><span class="conr">#4&nbsp;</span><a href="viewtopic.php?pid=454#p454">2008-09-05 10:26:32</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=30435">bram</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Sub-piece hashing</h3>
+				<div class="postmsg">
+					<p>The big problem with a merkle tree root is that there's no way to confirm data received from a web seed until you've gotten hashes from peers or downloaded the entire thing. This creates a massive bootstrap problem when a swarm first starts. Merkle tree roots per piece works, but that yields very little benefit over simply hashing a list of hash chunks.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p460" class="blockpost rowodd">
+	<h2><span><span class="conr">#5&nbsp;</span><a href="viewtopic.php?pid=460#p460">2008-09-05 13:35:01</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=30435">bram</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Sub-piece hashing</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>The 8472 wrote:</h4><blockquote><div class="incqbox"><p>Peers have no way of knowing which chunk was bad if a piece they download fails hash check</p></div></blockquote><p>This problem has already been solved without subpiece hashing.</p></div></blockquote><p>It's been 'solved' in a clumsy, hackish and unreliable way. It's definitely possible to do better.<br /><br /></p><blockquote><div class="incqbox"><h4>The 8472 wrote:</h4><p>With a tree there wouldn't be a need for different piece sizes.</p></div></blockquote><p>Without a fixed piece size, how are peers supposed to communicate to each other what they have? And how are they supposed to pick what to download next? The semantic mismatch of having different numbers of pieces is severe, even if pieces must all be powers of two in size.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p463" class="blockpost roweven">
+	<h2><span><span class="conr">#6&nbsp;</span><a href="viewtopic.php?pid=463#p463">2008-09-06 08:24:35</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Sub-piece hashing</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>It's been 'solved' in a clumsy, hackish and unreliable way.</p></div></blockquote><p>It's so reliable that mediadefender mentioned azureus peers as not poisonable and they used µT for their demonstrations instead (since that didn't implement the solution back then). It works quite fine.<br /><br /></p><blockquote><div class="incqbox"><p>Without a fixed piece size, how are peers supposed to communicate to each other what they have?</p></div></blockquote><p>offsets and lengths. the peer can locally pick any piece resolution to go on to do its calculations. Requests and haves could be changed to be piece-independent or to have some predefined resolution based on the file length or negotated during the handshake. With powers of two the translation of the protocol-level and the client-internal resolution would be trivial.<br /><br />Ranges of hash-tree-leafs, i.e. chunks could work too</p>
+					<p class="postedit"><em>Last edited by The 8472 (2008-09-06 08:27:19)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p464" class="blockpost rowodd">
+	<h2><span><span class="conr">#7&nbsp;</span><a href="viewtopic.php?pid=464#p464">2008-09-08 11:52:10</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=30435">bram</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Sub-piece hashing</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>The 8472 wrote:</h4><blockquote><div class="incqbox"><p>It's been 'solved' in a clumsy, hackish and unreliable way.</p></div></blockquote><p>It's so reliable that mediadefender mentioned azureus peers as not poisonable and they used µT for their demonstrations instead (since that didn't implement the solution back then). It works quite fine.</p></div></blockquote><p>Don't be childish. This isn't an advocacy forum.<br /><br />It's a simple statement of fact that detecting and responding to poisoning would be cleaner, simpler, and more reliable with chunk hashing than without it.<br /><br /></p><blockquote><div class="incqbox"><h4>The 8472 wrote:</h4><blockquote><div class="incqbox"><p>Without a fixed piece size, how are peers supposed to communicate to each other what they have?</p></div></blockquote><p>offsets and lengths. the peer can locally pick any piece resolution to go on to do its calculations. Requests and haves could be changed to be piece-independent or to have some predefined resolution based on the file length or negotated during the handshake. With powers of two the translation of the protocol-level and the client-internal resolution would be trivial.<br /><br />Ranges of hash-tree-leafs, i.e. chunks could work too</p></div></blockquote><p>If a site wishes to have a canonical formula for how big piece sizes should be based on the data size, they're free to do that, and it's a perfectly workable solution. The problems of completely general have declarations are nowhere near as simple as you're making them out to be - there's a problem of every peer getting stuck into least common denominator mode of doing haves for 16k chunks for the entire file, and how rarest first should be impacted by some pieces being close to others is very unclear. I'm honestly unsure of how best to go about all the details of doing that, and it all seems like a whole lot of work and forced implementation complexity to have a small improvement in an edge case for which there's already a perfectly reasonable thing to do.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p476" class="blockpost roweven">
+	<h2><span><span class="conr">#8&nbsp;</span><a href="viewtopic.php?pid=476#p476">2008-09-10 18:21:11</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Sub-piece hashing</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>It's a simple statement of fact that detecting and responding to poisoning would be cleaner, simpler, and more reliable with chunk hashing than without it.</p></div></blockquote><p>that it is indeed.<br /><br />but this isn't: </p><blockquote><div class="incqbox"><p>It's been 'solved' in a clumsy, hackish and unreliable way.</p></div></blockquote><blockquote><div class="incqbox"><p>If a site wishes to have a canonical formula for how big piece sizes should be based on the data size, they're free to do that</p></div></blockquote><p>that's not what this is about. It's about having a single infohash representing the content. i.e. not depending on piece sizes or whatever. Having a singular infohash for a specific content would coalesce swarms and thus improve their performance / extend their lifecycle. This certainly is no &quot;edge case&quot;.</p>
+					<p class="postedit"><em>Last edited by The 8472 (2008-09-10 18:22:04)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p478" class="blockpost rowodd">
+	<h2><span><span class="conr">#9&nbsp;</span><a href="viewtopic.php?pid=478#p478">2008-09-11 04:35:51</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Sub-piece hashing</h3>
+				<div class="postmsg">
+					<p>I have been thinking about the request/have problem. It's actually quite simple to solve. One just has to come up with a way to address each hash in a hashtree by an index number and use that as a piece number. E.g. &quot;piece&quot; 1 would be the entire file, 2 would be the left half, 3 would be the right half, 4 the 1st quarter, etc.<br />Bottom up would also be possible.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p481" class="blockpost roweven">
+	<h2><span><span class="conr">#10&nbsp;</span><a href="viewtopic.php?pid=481#p481">2008-09-11 10:47:36</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=30435">bram</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Sub-piece hashing</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>The 8472 wrote:</h4><p>It's about having a single infohash representing the content. i.e. not depending on piece sizes or whatever. Having a singular infohash for a specific content would coalesce swarms and thus improve their performance / extend their lifecycle. This certainly is no &quot;edge case&quot;.</p></div></blockquote><p>A simple utility could be created which would always give the same infohash for the same data, and I'm considering doing exactly that since you brought it up as a possible feature. But creating that doesn't require anything backwards incompatible at all, and only results in slightly funky file names for old peers which don't support file names outside the info dict.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox">
+		<p class="postlink conr">&nbsp;</p>
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Sub-piece hashing</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div class="inbox">
+
+			<div class="conl">
+				<form id="qjump" method="get" action="viewforum.php">
+					<div><label>Jump to
+					<br /><select name="id" onchange="window.location=('viewforum.php?id='+this.options[this.selectedIndex].value)">
+						<optgroup label="BitTorrent">
+							<option value="26">Announcements</option>
+							<option value="25" selected="selected">BEPs</option>
+							<option value="29">BEP process</option>
+							<option value="27">General</option>
+							<option value="33">Research Tools</option>
+							<option value="32">Cooperation between BitTorrent and ISPs</option>
+							<option value="30">Attacks against BitTorrent</option>
+							<option value="28">Feature Requests, Found Bugs &gt;&gt;&gt;</option>
+					</optgroup>
+					</select>
+					<input type="submit" value=" Go " accesskey="g" />
+					</label></div>
+				</form>
+			</div>
+			<p class="conr">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-116155-1";
+_udn = "utorrent.com";
+urchinTracker();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,725 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>forum.bittorrent.org / bep 27: private torrents</title>
+<link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
+</head>
+<body>
+
+<div id="punwrap">
+<div id="punviewtopic" class="pun">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><span>forum.bittorrent.org</span></h1>
+			<p><span>BitTorrent.org community</span></p>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p>You are not logged in.</p>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<h2><span>Announcement</span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div>Posting about any illegal sharing of copyrighted content is strictly forbidden.</div>
+		</div>
+	</div>
+</div>
+
+<div class="linkst">
+	<div class="inbox">
+		<p class="pagelink conl">Pages: <strong>1</strong>&nbsp;<a href="viewtopic.php?id=56&amp;p=2">2</a></p>
+		<p class="postlink conr">&nbsp;</p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;bep 27: private torrents</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p321" class="blockpost rowodd firstpost">
+	<h2><span><span class="conr">#1&nbsp;</span><a href="viewtopic.php?pid=321#p321">2008-08-07 20:16:13</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3>bep 27: private torrents</h3>
+				<div class="postmsg">
+					<p>I believe Azureus introduced private torrents, though please correct me on this.&nbsp; I would welcome someone on the Azureus team or who was involved in the creation of private torrents to please take over authorship of this BEP.<br /><br />This BEP simply codefies what is in many clients already and is previously described here<br /><br /><a href="http://www.azureuswiki.com/index.php/SecureTorrents" rel="nofollow">http://www.azureuswiki.com/index.php/SecureTorrents</a><br /><br />This BEP only addresses the &quot;private:1&quot; flag in the .torrent and not how private torrents are implemented in general, nor is the purpose of this BEP to discuss share ratios or other incentive mechanisms introduced by many private trackers.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p324" class="blockpost roweven">
+	<h2><span><span class="conr">#2&nbsp;</span><a href="viewtopic.php?pid=324#p324">2008-08-08 04:42:03</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: bep 27: private torrents</h3>
+				<div class="postmsg">
+					<p>I will have a look... did i mention that i don't like restructured text? <img src="img/smilies/hmm.png" width="15" height="15" alt="hmm" /></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p325" class="blockpost rowodd">
+	<h2><span><span class="conr">#3&nbsp;</span><a href="viewtopic.php?pid=325#p325">2008-08-08 22:46:08</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: bep 27: private torrents</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>did i mention that i don't like restructured text?</p></div></blockquote><p>I'm lazy. <br /><br />I copied everything including the restructured text tools from the python community.<br /><br />Don't want to support text and have to convert it into nice (good-enough?) HTML.&nbsp; <br /><br />Better idea?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p368" class="blockpost roweven">
+	<h2><span><span class="conr">#4&nbsp;</span><a href="viewtopic.php?pid=368#p368">2008-08-20 15:53:49</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=30435">bram</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: bep 27: private torrents</h3>
+				<div class="postmsg">
+					<p>The decision to put this flag inside the infohash section is a curious one. Presumably that is regarded as a feature, although there's little reason to not support the same flag in the non-infohashed section as well. I'd like thoughts and motivations from other people on this issue.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p370" class="blockpost rowodd">
+	<h2><span><span class="conr">#5&nbsp;</span><a href="viewtopic.php?pid=370#p370">2008-08-20 16:05:22</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: bep 27: private torrents</h3>
+				<div class="postmsg">
+					<p>Putting it inside the info-dict alters the torrent hash and thus enforces the private-flag as disabling it by editing the .torrent file would change the hash. And since the private flag only works if everyone obeys it it shouldn't be possible to remove it easily.<br /><br />It also allows you to create 2 distinct swarms (1 for the public tracker, 1 for the private one) with otherwise identical properties.</p>
+					<p class="postedit"><em>Last edited by The 8472 (2008-08-20 16:06:34)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p372" class="blockpost roweven">
+	<h2><span><span class="conr">#6&nbsp;</span><a href="viewtopic.php?pid=372#p372">2008-08-20 16:17:47</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=30435">bram</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: bep 27: private torrents</h3>
+				<div class="postmsg">
+					<p>Yes, it has that property, but it isn't clear what the threat model is which that's supposed to address. Is the concern that the .torrent file will be copied to another site? That another site with its own tracker will start handing out some of the local peers? I don't think it defends effectively against either of those 'attacks', and if you're concerned about that sort of stuff why not put a copy of the tracker url in the infohash section as well?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p376" class="blockpost rowodd">
+	<h2><span><span class="conr">#7&nbsp;</span><a href="viewtopic.php?pid=376#p376">2008-08-20 17:01:46</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: bep 27: private torrents</h3>
+				<div class="postmsg">
+					<p>no, that is not the concern. The private flag turns off all external peer sources, thus confining peer lists to individual trackers. This only works if all clients get a copy of the .torrent that has the private flag set otherwise they would announce it via DHT and other clients which also have a copy w/o the private flag could get it via DHT.<br /><br />So, a single client with a modified copy of the .torrent could compromise the entire private swarm with pex+dht. If it changes the infohash then this won't be the case anymore as it it'll be a new swarm.<br /><br />While the private flag does rely on conformance by all clients, putting the flag into the .torrent does not require conformance of all versions of the .torrent. And it makes user manipulation harder.</p>
+					<p class="postedit"><em>Last edited by The 8472 (2008-08-20 17:02:51)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p408" class="blockpost roweven">
+	<h2><span><span class="conr">#8&nbsp;</span><a href="viewtopic.php?pid=408#p408">2008-08-29 22:35:10</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: bep 27: private torrents</h3>
+				<div class="postmsg">
+					<p>An attacker Alice can thwart the &quot;private marking&quot; if Alice obtains the .torrent file and adds tracker URLs to non-private trackers.&nbsp; The tracker URLs are outside the info dict and thus can be modified without modifying the id of the torrent.&nbsp; Alice then posts the .torrent file to a public tracker web site.<br /><br />Unsuspecting Bob logs into the private tracker website.&nbsp; This login enables his IP to use the private tracker.&nbsp; Meandering Bob downloads Alice's modified .torrent file from the public website.&nbsp; Bob's client sees the private=1 key-value pair inside the info dict and adheres to its strictures.&nbsp; Bob's client anonunces to both the public and private tracker (his client thinks both are private trackers).&nbsp; However the public tracker employs no access control.&nbsp; Thus Bob now acts as a conduit between the public and private torrent thus allowing the bits to escape.<br /><br />If the private=1 key were outside the info dict then it could be remove entirely without modifying the infohash which would magnify the problem.&nbsp; Now not only would Bob act as a conduit for the bits of the file, but he would also hand out references to the private peers via PEX thus effectively allowing the private and public subswarms to completely merge into a single swarm.<br /><br />Either attack allows an attacker to subvert an unsuspecting person with access to the private tracker.&nbsp; The second attack however is worse by degree.&nbsp; We just have ask ourselves whether this is a signifcant threat.&nbsp; If it is not then we can allow the private=1 key to reside outside the info dict.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p412" class="blockpost rowodd">
+	<h2><span><span class="conr">#9&nbsp;</span><a href="viewtopic.php?pid=412#p412">2008-08-30 07:08:39</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: bep 27: private torrents</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>Thus Bob now acts as a conduit between the public and private torrent thus allowing the bits to escape.</p></div></blockquote><p>This is not the case if you disconnect all peers on changing trackers if the torrent is marked as private.<br /><br /></p><blockquote><div class="incqbox"><p>If it is not then we can allow the private=1 key to reside outside the info dict.</p></div></blockquote><p>It is a threat at least in the eyes of private tracker admins. And it is realistic as users often try to sidestep private tracker rules, so it would be easy for them to just set the private flag to 0 and try to obtain peers via PEX and ignore the tracker (and thus not affect their ratio)<br /><br /><br /><br />And another question, why <em>should</em> we put outside the info dict?</p>
+					<p class="postedit"><em>Last edited by The 8472 (2008-08-30 07:09:20)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p415" class="blockpost roweven">
+	<h2><span><span class="conr">#10&nbsp;</span><a href="viewtopic.php?pid=415#p415">2008-08-30 15:35:33</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: bep 27: private torrents</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>This is not the case if you disconnect all peers on changing trackers if the torrent is marked as private.</p></div></blockquote><p>That's not mentioned in the BEP.&nbsp; I'll add it.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p421" class="blockpost rowodd">
+	<h2><span><span class="conr">#11&nbsp;</span><a href="viewtopic.php?pid=421#p421">2008-08-31 17:51:29</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=30435">bram</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: bep 27: private torrents</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>The 8472 wrote:</h4><p>And another question, why <em>should</em> we put outside the info dict?</p></div></blockquote><p>For the same reason that the tracker url is put outside the info dict - because you might want to change it later. Of course, that raises the question of whether it should be possible to optionally put a tracker url inside the info dict so that it couldn't be changed later, a suggestion I'd be perfectly willing to entertain, especially since it has way more teeth than the private flag does.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p429" class="blockpost roweven">
+	<h2><span><span class="conr">#12&nbsp;</span><a href="viewtopic.php?pid=429#p429">2008-08-31 19:20:20</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: bep 27: private torrents</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>For the same reason that the tracker url is put outside the info dict - because you might want to change it later</p></div></blockquote><p>If you put it outside the info dict the user can manipulate it and thus override the torrent-publisher's intention. If the torrent-publisher wants to change it later he can just remove the private flag and publish a new torrent.<br /><br />The whole point of putting it inside the info dict is that it cannot be changed w/o changing the infohash to keep those who see the torrent as private separate from those who might gossip peer addresses via DHT/PEX.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p435" class="blockpost rowodd">
+	<h2><span><span class="conr">#13&nbsp;</span><a href="viewtopic.php?pid=435#p435">2008-09-02 17:24:11</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=30435">bram</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: bep 27: private torrents</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>The 8472 wrote:</h4><p>If you put it outside the info dict the user can manipulate it and thus override the torrent-publisher's intention. If the torrent-publisher wants to change it later he can just remove the private flag and publish a new torrent.</p></div></blockquote><p>The 'user' can do anything they want - it's their client.<br /><br />To speak of an attack there most be a threat model here. As I see it, the threat here isn't that a client machine leaks information (of course the client machine can leak information, to suggest otherwise is absurd) but that another site copies the .torrent file over, modifies the private flag, slurps some peers from the old tracker, and then proceeds to serve up the new .torrent. This can be done regardless of where the private flag is, but it will work somewhat better if the private flag is outside the info dict, because then peer exchange will happen between peers from the new site, so they won't be restricted to the set of peers which the new site's tracker slurped (although slurping a whole bunch of peers isn't exactly infeasible).<br /><br />If anyone has a different threat model, I'd like to hear it, because that's the only one I can see.<br /><br />The amount of defense here is pretty weak. There would be far more justification for putting the tracker url optionally inside the info dict, which would make it impossible for a new site to copy over the .torrent file and change the tracker, at least without client help or setting up a seed of their own. I'm perfectly happy to discuss an optional tracker url inside the info dict, to insist on the private flag being inside the info dict without even suggesting that the tracker url be is just ridiculous.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p437" class="blockpost roweven">
+	<h2><span><span class="conr">#14&nbsp;</span><a href="viewtopic.php?pid=437#p437">2008-09-02 18:34:09</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: bep 27: private torrents</h3>
+				<div class="postmsg">
+					<p>I suggest you talk to a private tracker admin. They don't want their users to un-private a torrent, hence it's in the info-dict. It's as simple as that.<br /><br /></p><blockquote><div class="incqbox"><p>The amount of defense here is pretty weak.</p></div></blockquote><p>It's what everyone is happy with. It's established, nobody who's actually using it has raised issues with it. Since we are not stakeholders in this i suggest we do not change it until someone demonstrates practical need for it.<br /><br /></p><blockquote><div class="incqbox"><p>to insist on the private flag being inside the info dict without even suggesting that the tracker url be is just ridiculous.</p></div></blockquote><p>No. The semantics are simple. The private flag simply confines the swarm to the currently used tracker as peer source. Multiple private trackers could host the same torrent, with the same infohash but the swarms won't intermix as PEX, DHT, lan peer discovery are all disabled. Thus the flag independent of the tracker URL and indicates &quot;this torrent should only use 1 tracker at a time and nothing else&quot;. That's it.</p>
+					<p class="postedit"><em>Last edited by The 8472 (2008-09-02 18:43:27)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p439" class="blockpost rowodd">
+	<h2><span><span class="conr">#15&nbsp;</span><a href="viewtopic.php?pid=439#p439">2008-09-03 11:55:30</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=30435">bram</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: bep 27: private torrents</h3>
+				<div class="postmsg">
+					<p>Good grief. I'm not exactly arguing with you, I'm just saying that if you actually believe what you're saying you should call for optional keys within the infodict which give the tracker urls. Please either acknowledge that as a logical extension of the argument for a private flag in the infodict, or give some reason why the logic which applies to the private flag shouldn't apply to the tracker urls, or drop the argument about the private flag.<br /><br />Putting the tracker urls within the infodict would have a clear immediate benefit in at least one case you mention - when the client switches between trackers, if all trackers were listed in the info dict there would be no reason to drop all connections when doing the tracker switchover.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p440" class="blockpost roweven">
+	<h2><span><span class="conr">#16&nbsp;</span><a href="viewtopic.php?pid=440#p440">2008-09-03 12:59:18</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: bep 27: private torrents</h3>
+				<div class="postmsg">
+					<p>weren't we talking about putting the private flag outside the info dict?<br /><br /></p><blockquote><div class="incqbox"><p>Please either acknowledge that as a logical extension of the argument for a private flag in the infodict, or give some reason why the logic which applies to the private flag shouldn't apply to the tracker urls</p></div></blockquote><p>A false dilemma? The answer is neither.<br />tracker-urls-in-infodict may have some use but they are not a necessity that arises from the private flag's purpose. Not to mention that user-specific information is usually encoded into private tracker URLs and it would be impossible to change ports, the server or anything in the torrent's lifecycle since it would also change its infohash.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p442" class="blockpost rowodd">
+	<h2><span><span class="conr">#17&nbsp;</span><a href="viewtopic.php?pid=442#p442">2008-09-03 18:00:48</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=30435">bram</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: bep 27: private torrents</h3>
+				<div class="postmsg">
+					<p>It would also be reasonable to have an extension where there's an identifier included outside the info dict which should be passed along to the tracker by the client, to avoid those annoying tracker url alteration hacks.<br /><br />I would really like to get away from the hack upon hack upon hack mentality. It's best to do everything right.<br /><br />And duh, of course there's a tradeoff with being able to change later info over the course of the torrent's lifecycle. That's the case with the private flag as well. That's the tradeoff between putting data in the info dict versus outside of it. The current situation of having to close all peer connections when switching trackers is hardly versatile.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p446" class="blockpost roweven">
+	<h2><span><span class="conr">#18&nbsp;</span><a href="viewtopic.php?pid=446#p446">2008-09-04 05:42:28</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: bep 27: private torrents</h3>
+				<div class="postmsg">
+					<p>It is not a real problem since private trackers don't really run a whole tracker network, it's only an issue if someone is sufficiently incompetent to post a torrent marked as private on a public tracker. Public torrents often get indexed by other trackers too.<br /><br />and you forgot this part:<br /></p><blockquote><div class="incqbox"><h4>The 8472 wrote:</h4><p>Not to mention that user-specific information is usually encoded into private tracker URLs</p></div></blockquote>
+					<p class="postedit"><em>Last edited by The 8472 (2008-09-04 05:43:14)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p447" class="blockpost rowodd">
+	<h2><span><span class="conr">#19&nbsp;</span><a href="viewtopic.php?pid=447#p447">2008-09-04 14:53:57</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: bep 27: private torrents</h3>
+				<div class="postmsg">
+					<p>If we want to make it possible to modify metadata like the &quot;private&quot; flag, then one way to do this is to optionally put the URL of the .torrent file inside the info dict.&nbsp; When a BitTorrent client is passed a .torrent the first time, the client redownloads the .torrent from the URL in the info dict.&nbsp; We can then move everything else outside the infodict except the piece hashes.&nbsp; <br /><br />This allows the private tracker site to change metainfo at will including announce-lists and the private flag.&nbsp; <br /><br />However, I won't go forward with formally proposing such an extension until a private tracker operator asks for it.&nbsp; I would prefer to make the semantics of private=1 match the semantics of existing implementations.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p449" class="blockpost roweven">
+	<h2><span><span class="conr">#20&nbsp;</span><a href="viewtopic.php?pid=449#p449">2008-09-04 16:40:46</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: bep 27: private torrents</h3>
+				<div class="postmsg">
+					<p>As per Aaron's &quot;The 8472&quot; comments about changing trackers, I added the following to the BEP:<br /><br /></p><blockquote><div class="incqbox"><p>When multiple trackers appear in the *announce-list* in the metainfo file of a private torrent (see multitracker extension in [4]), each peer MUST use only one tracker at a time and only switch between trackers when the current tracker fails. When switching between trackers, the peer MUST disconnect from all current peers and connect only to those provided from the new tracker.<br />...<br />When a peer switches between trackers, the peer drops connections so that it cannot become an ongoing bridge between peers granted access from a private tracker and peers announcing to a public tracker. This partially mitigates the effect of an attacker modifying a metainfo file's announce-list and redistributing the metainfo file, e.g., via a public tracker web site.</p></div></blockquote><p>Is that sufficient to clarify and motivate the semantics in existing implementations?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p458" class="blockpost rowodd">
+	<h2><span><span class="conr">#21&nbsp;</span><a href="viewtopic.php?pid=458#p458">2008-09-05 11:14:41</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: bep 27: private torrents</h3>
+				<div class="postmsg">
+					<p>yes. and it's not as much about functioning as a bridge between swarms than about ratio accounting, that's what most private trackers care about. Any peer that's not under control of the tracker screws with the ratio of the peers that are. So all the private flag really has to do is keeping the peers separated by source.</p>
+					<p class="postedit"><em>Last edited by The 8472 (2008-09-05 11:16:15)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p583" class="blockpost roweven">
+	<h2><span><span class="conr">#22&nbsp;</span><a href="viewtopic.php?pid=583#p583">2008-12-04 11:00:12</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90171">Aninhumer</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: bep 27: private torrents</h3>
+				<div class="postmsg">
+					<p>A possible solution to public trackers added to a torrent would be to only allow trackers listed within the infodict for torrents which have the private=1 flag? (If trackers are not usually listed in the infodict, perhaps this could be allowed for private torrents?)<br /><br />This seems like a better solution than limiting to one tracker, as it allows the torrent creators to specify exactly which trackers are allowed to be used, which seems like it would be what private trackers want?<br /><br />Perhaps it could be also allowed to fall back to trackers outside the infodict in the event that all the ones inside it failed, which would still allow public trackers to be used as a backup.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1072" class="blockpost rowodd">
+	<h2><span><span class="conr">#23&nbsp;</span><a href="viewtopic.php?pid=1072#p1072">2010-03-05 05:55:18</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: bep 27: private torrents</h3>
+				<div class="postmsg">
+					<p>The more i think about it the more i believe we need an opt-out scheme for BEP 27 compliance. The issue is with private flags added on public torrents by accident/lack of knowledge/whatever, they severely degrade swarm performance due to the absence of PEX/DHT, especially when the torrent is spread over multiple trackers.<br /><br />My suggestion would be a client-side option that would ignore the private flag and send the parameter nopriv=1 to the tracker to inform it of the fact that the client does not want to adhere to the private flag.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1074" class="blockpost roweven">
+	<h2><span><span class="conr">#24&nbsp;</span><a href="viewtopic.php?pid=1074#p1074">2010-03-05 07:17:00</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89609">Olaf van der Spek</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: bep 27: private torrents</h3>
+				<div class="postmsg">
+					<p>That's not a good idea, especially when it's not a per-torrent option.<br /><br />How does the private flag end up in torrents by mistake?<br />Because torrent clients provide that option to the user? Maybe that shouldn't be done?<br /><br />Why can't PEX be enabled for private torrents? I understand disabling DHT, but why PEX?</p>
+					<p class="postedit"><em>Last edited by Olaf van der Spek (2010-03-05 07:19:37)</em></p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1076" class="blockpost rowodd">
+	<h2><span><span class="conr">#25&nbsp;</span><a href="viewtopic.php?pid=1076#p1076">2010-03-05 14:17:48</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: bep 27: private torrents</h3>
+				<div class="postmsg">
+					<p>PEX + manually adding a known peer = you get access to the entire swarm. Think of people with static IPs, seedboxes etc.. It's something the private trackers don't want.<br /><br /><br />As for the private flag on public torrents... removing the option from clients still wouldn't make existing torrents work properly.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox">
+		<p class="postlink conr">&nbsp;</p>
+		<p class="pagelink conl">Pages: <strong>1</strong>&nbsp;<a href="viewtopic.php?id=56&amp;p=2">2</a></p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;bep 27: private torrents</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div class="inbox">
+
+			<div class="conl">
+				<form id="qjump" method="get" action="viewforum.php">
+					<div><label>Jump to
+					<br /><select name="id" onchange="window.location=('viewforum.php?id='+this.options[this.selectedIndex].value)">
+						<optgroup label="BitTorrent">
+							<option value="26">Announcements</option>
+							<option value="27">General</option>
+							<option value="25" selected="selected">BEPs</option>
+							<option value="29">BEP process</option>
+							<option value="33">Research Tools</option>
+							<option value="32">Cooperation between BitTorrent and ISPs</option>
+							<option value="30">Attacks against BitTorrent</option>
+							<option value="28">Feature Requests, Found Bugs &gt;&gt;&gt;</option>
+					</optgroup>
+					</select>
+					<input type="submit" value=" Go " accesskey="g" />
+					</label></div>
+				</form>
+			</div>
+			<p class="conr">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-116155-1";
+_udn = "utorrent.com";
+urchinTracker();
+</script>
+
+</body>
+</html>

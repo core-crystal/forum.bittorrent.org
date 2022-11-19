@@ -1,0 +1,371 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>forum.bittorrent.org / Discussion of BEP 5: DHT</title>
+<link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
+</head>
+<body>
+
+<div id="punwrap">
+<div id="punviewtopic" class="pun">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><span>forum.bittorrent.org</span></h1>
+			<p><span>BitTorrent.org community</span></p>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p>You are not logged in.</p>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<h2><span>Announcement</span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div>Posting about any illegal sharing of copyrighted content is strictly forbidden.</div>
+		</div>
+	</div>
+</div>
+
+<div class="linkst">
+	<div class="inbox">
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<p class="postlink conr">&nbsp;</p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Discussion of BEP 5: DHT</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p31" class="blockpost rowodd firstpost">
+	<h2><span><span class="conr">#1&nbsp;</span><a href="viewtopic.php?pid=31#p31">2008-03-04 13:00:43</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3>Discussion of BEP 5: DHT</h3>
+				<div class="postmsg">
+					<p>The DHT protocol has been implemented with some variation between BitComet, Azureus, BitTorrent Mainline, uTorrent, and others.&nbsp; <br /><br />See <a href="http://www.bittorrent.org/beps/bep_0005.html" rel="nofollow">http://www.bittorrent.org/beps/bep_0005.html</a><br /><br />In particular the Azureus DHT is different from the DHT introduced by mainline.&nbsp; Would anyone on the Azureus team care to document these differences or post a BEP for the Azureus DHT?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p37" class="blockpost roweven">
+	<h2><span><span class="conr">#2&nbsp;</span><a href="viewtopic.php?pid=37#p37">2008-03-04 15:39:29</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 5: DHT</h3>
+				<div class="postmsg">
+					<p>Listing differences would not be adequate as it is a completely different implementention form the ground up, but here we go:<br />-we use a messaging protocol similar to the UDP tracker protocol<br />-messages are binary format (not bencoded)<br />-we also have UDP-based, congstion-controled transports in the DHT for bulk-data-transfer from nodes that advertise such data (such as .torrents for magnet links), which also allows sharing the UDP port with other things, by using different initial connection IDs<br />-there is the vivaldi coordinate system as RTT distance estimating for nodes we haven't seen before<br />-there us UDP hole punching for nat traversal (especially for said bulk transports)<br />-the implementation is closer to the kademlia spec as enhanced features like value propagation and replication on node churn is used<br />-there are several measures in place to cope with the britney effect, i.e. hotspots due to popular keys<br />-various precautions to prevent routing table poisoning attacks and other malicious behavior<br /><br />and... those are just the things that come to mind right now. I recently helped optimizing an implementation of the mainline DHT as an azureus plugin, and i must say the complexity and featureset are vastly different.<br />Documenting it so sufficiently that others could implement properly would be a difficult task as many of the features build on each other.<br /><br /><br />Edit:<br /><br />The draft should include a currently non-standard feature used by µT to my knowledge that indicates vendor (and version) of the used client. This could be used to notify developers of faulty implementations to fix their problems. It's annoying to look at some implementations seriously misbehaving and not being able to do anything about it.</p>
+					<p class="postedit"><em>Last edited by The 8472 (2008-03-04 15:55:53)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p60" class="blockpost rowodd">
+	<h2><span><span class="conr">#3&nbsp;</span><a href="viewtopic.php?pid=60#p60">2008-03-05 15:25:25</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 5: DHT</h3>
+				<div class="postmsg">
+					<p>It sounds like a lot of effort has been put into the Azureus DHT.&nbsp; Admittedly much less effort has been put into the BitTorrent mainline DHT.&nbsp; Having a single DHT would benefit the community as it would not partition the users downloading the same file.&nbsp; However replicating all of the features in the Azureus DHT may be quite a hurdle for client developers.&nbsp; Does anyone on the Azureus team have a desire to formalize a subset of the features that would enable a functional single DHT without breaking your current implementation?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p157" class="blockpost roweven">
+	<h2><span><span class="conr">#4&nbsp;</span><a href="viewtopic.php?pid=157#p157">2008-04-21 13:17:36</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 5: DHT</h3>
+				<div class="postmsg">
+					<p>A few suggestions about the DHT spec:<br /><br />a) gets/announces<br /><br />The token on getPeers replies should be optional and an algorithm when to provide it should be specified. This algorithm should enforce a minimum announce-interval and closeness to the destination key. This will prevent announce-put-hammering and storing announces in the wrong place.<br /><br />In addition the <em>either</em> peers <em>or</em> nodes response policy (&quot;If the queried node has no peers for the infohash, a key &quot;nodes&quot; is returned containing the K nodes in the queried nodes routing table closest to the infohash supplied in the query.&quot;) should be changed to: always nodes, peers if available. This should improve routing performance, especially if the node cannot supply a sufficient amount of peers to satisfy the requesting peer, although the packet size might become problematic then... any opinions?<br />It might also be useful to completely withhold any peers information - even if available - if the specific node already sent a getPeers request within a certain min interval.<br /><br /><br />My rationale for those proposals is that I'm seeing inefficient implementations: after 13 hours of uptime my node sent the following requests:<br />16.4k find nodes, 1.8k get peers, 0.4k announces<br /><br />but i received<br />118k find nodes, 91k get peers, 43k announces<br /><br />I'm suspecting bitcomet and/or xunlei here.<br /><br /><br />Another issue i'd like second opinions about is this:<br /></p><div class="codebox"><div class="incqbox"><h4>Code:</h4><div class="scrollbox" style="height: 35em"><pre>[20:44:27] Node C40ED4C6 92F75BA6 D5C76174 05A4C0B5 6654777D changed address from /89.102.57.229:8488 to /91.145.65.181:22920
+[20:44:36] New node /218.170.53.140:24364 claims same Node ID (C41A5BBE 50D93143 EDC08374 230540D6 72F610BF) as /124.13.91.107:8552 ; node dropped as this might be an impersonation attack
+[20:45:10] New node /190.47.106.148:16138 claims same Node ID (C42CBC5E 756C404C 800E5657 B5AEFB1C 8AF8F8CD) as /61.15.174.158:25125 ; node dropped as this might be an impersonation attack
+[20:45:14] Node C42BC344 D8082284 3F98603B 03CD7A04 A5388C1A changed address from /62.195.43.197:53804 to /79.114.153.213:14050
+[20:45:47] Node C802C403 922FD99F 92FE2912 2867B8AA 4E8A0836 changed address from /89.77.104.146:55147 to /89.77.104.146:55170
+[20:45:53] New node /212.233.229.17:3203 claims same Node ID (C4EEEC34 8930B75F A44B61B0 FC9CA196 991E58FC) as /81.88.114.195:42804 ; node dropped as this might be an impersonation attack
+[20:46:02] New node /125.121.41.5:20639 claims same Node ID (C4EEEC34 8930B75F A44B61B0 FC9CA196 991E58FC) as /81.88.114.195:42804 ; node dropped as this might be an impersonation attack
+[20:47:23] New node /87.110.24.186:8815 claims same Node ID (C449ACE1 952A488A 64AA4A3D 59D9D0B4 1F4A7039) as /77.93.13.116:13918 ; node dropped as this might be an impersonation attack
+[20:48:41] New node /121.230.227.196:19181 claims same Node ID (C407FA1E 2B46223A 5A72B091 905D868F 5AF429B1) as /123.5.212.236:10796 ; node dropped as this might be an impersonation attack
+[20:48:41] New node /89.176.220.30:21473 claims same Node ID (C43A3790 49C294D7 94BC5BAD DBD297B7 B78ACD42) as /88.121.147.159:12865 ; node dropped as this might be an impersonation attack
+[20:48:48] New node /87.119.118.34:64469 claims same Node ID (C4173A27 5134D7BB 98916C39 A61513E9 ED7A7067) as /61.141.156.4:20884 ; node dropped as this might be an impersonation attack
+[20:48:53] Node C41A5BBE 50D93143 EDC08374 230540D6 72F610BF changed address from /124.13.91.107:8552 to /87.247.249.150:9983
+[20:49:20] New node /209.6.18.239:18003 claims same Node ID (C41D4812 04B2CDF9 2BEA5CE5 DDA9DE69 78A6B7A5) as /200.172.105.110:60013 ; node dropped as this might be an impersonation attack
+[20:50:52] Node C41A5BBE 50D93143 EDC08374 230540D6 72F610BF changed address from /87.247.249.150:9983 to /218.170.53.140:24364
+[20:51:23] Node C41A8EFB C2F7AEB5 8AFACD1E 3E50B5E8 9A53A763 changed address from /89.215.185.163:12836 to /201.235.141.142:19850
+[20:52:32] Node C8312C88 BDAFD659 18763B3E 7385EDC9 2A99D2AF changed address from /117.12.213.116:1108 to /117.12.213.116:1031
+[20:52:52] New node /156.34.90.179:9544 claims same Node ID (C407FA1E 2B46223A 5A72B091 905D868F 5AF429B1) as /123.5.212.236:10796 ; node dropped as this might be an impersonation attack
+[20:53:18] New node /87.126.91.56:24670 claims same Node ID (C4EEEC34 8930B75F A44B61B0 FC9CA196 991E58FC) as /81.88.114.195:42804 ; node dropped as this might be an impersonation attack
+[20:53:31] Node C414AE6E F9A99411 501B1257 7BEAFBDB 73B4C549 changed address from /80.7.244.102:1167 to /189.25.67.101:60531
+[20:55:42] Node BBFF56AA 114779F6 D175C678 3AA6B2A2 B9A8EEBD changed address from /218.82.81.121:1999 to /58.33.109.207:1219
+[20:55:49] Node C449ACE1 952A488A 64AA4A3D 59D9D0B4 1F4A7039 changed address from /77.93.13.116:13918 to /121.19.204.209:55382
+[20:55:53] New node /58.8.125.16:19746 claims same Node ID (C43A3790 49C294D7 94BC5BAD DBD297B7 B78ACD42) as /88.121.147.159:12865 ; node dropped as this might be an impersonation attack</pre></div></div></div><p>This is a trace we generate when a packet with a different source address than the currently stored node arrives. When that happens we send a ping-probe to the original node to see if it's still alive. If it is then it's assumed to be an impersonation attack (to prevent bucket poisoning), otherwise the address is adjusted.<br /><br />I'm not quite sure what's happening here, but i suspect that some clients are seriously misbehaving, as changing their IP to another continent (i did a few ipwhois lookups) while the old one is still available seems... let's say unlikely.<br />I'd like others to verify this issue (after all, my detection code could be faulty)... and any ideas why this is happening?<br /><br /><br />b) defining node timeouts<br /><br />Unless i missed it the spec does not contain any values when nodes should be considered stale or bad. At least default guidelines should be specified.<br />For the mainline DHT plugin we're currently using:<br />last seen &gt; 15 minutes = stale<br />failed requests &gt; 8 = bad<br />last seen &gt; 15 minutes &amp;&amp; failed requests &gt; 2 = bad<br /><br />[bad = eligible for immediate replacement, stale = must be pinged before it is replaced]<br /><br />c) things about kademlia that should be mentioned explicitly<br /><br />replacement buckets/passive routing table maintenance, especially the parts mentioned in chapter 4.1 in the <a href="http://infinite-source.de/az/whitepapers/kademlia_optimized.pdf" rel="nofollow">newer paper version</a> (the BEP links to the older one)</p>
+					<p class="postedit"><em>Last edited by The 8472 (2008-04-21 13:43:53)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p169" class="blockpost rowodd">
+	<h2><span><span class="conr">#5&nbsp;</span><a href="viewtopic.php?pid=169#p169">2008-04-29 13:55:24</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 5: DHT</h3>
+				<div class="postmsg">
+					<p>I have asked Drue Loewenstern, Greg Hazel and Arvid Norberg to review your comments about the DHT.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p179" class="blockpost roweven">
+	<h2><span><span class="conr">#6&nbsp;</span><a href="viewtopic.php?pid=179#p179">2008-04-30 15:24:54</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89666">camrdale</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 5: DHT</h3>
+				<div class="postmsg">
+					<p>The 8472 writes:<br />&gt; In addition the either peers or nodes response policy (&quot;If the queried node<br />&gt; has no peers for the infohash, a key &quot;nodes&quot; is returned containing the K<br />&gt; nodes in the queried nodes routing table closest to the infohash supplied in<br />&gt; the query.&quot;) should be changed to: always nodes, peers if available. This<br />&gt; should improve routing performance, especially if the node cannot supply a<br />&gt; sufficient amount of peers to satisfy the requesting peer, although the<br />&gt; packet size might become problematic then... any opinions?<br /><br />I had a similar idea for another Kademlia-based DHT I'm working on, and packet size did indeed become a problem. I solved it by breaking up the &quot;get_peers&quot; operation into two parts: &quot;find_peers&quot; would always return nodes as well as the number of peers it has for that key, and &quot;get_peers&quot; which would actually return the peers (could also add an optional parameter to &quot;get_peers&quot; specifying the maximum number of peers to return). The finding of peers is then a 2-step operation similar to the find_node/announce_peer operation, but it gives the client much more flexibility in which nodes to request peers from.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p194" class="blockpost rowodd">
+	<h2><span><span class="conr">#7&nbsp;</span><a href="viewtopic.php?pid=194#p194">2008-05-03 12:26:29</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 5: DHT</h3>
+				<div class="postmsg">
+					<p>I collected further evidence that we should guard more against crappy implementations, for example libtorrent seems to send announces multiple times (already notified arvid about this):<br /><br /></p><div class="codebox"><div class="incqbox"><h4>Code:</h4><div class="scrollbox" style="height: 34.5em"><pre>[20:10:42] RPC received message [123.15.0.165] Method:ANNOUNCE_PEER Type:REQ_MSG MessageID:C version:LT targetKey:C41A4833 825A4B8C 26090FBD 053628A0 D22F319C (17)
+[20:10:42] RPC send Message: [123.15.0.165] Method:ANNOUNCE_PEER Type:RSP_MSG MessageID:C
+[20:10:44] RPC received message [123.15.0.165] Method:ANNOUNCE_PEER Type:REQ_MSG MessageID:t version:LT targetKey:C41A4833 825A4B8C 26090FBD 053628A0 D22F319C (17)
+[20:10:44] RPC send Message: [123.15.0.165] Method:ANNOUNCE_PEER Type:RSP_MSG MessageID:t
+[20:10:46] RPC received message [124.117.146.157] Method:ANNOUNCE_PEER Type:REQ_MSG MessageID:� version:LT targetKey:C5366CF1 7DBC6933 193CD77C 7EFC732B 6532346A (8)
+[20:10:46] RPC send Message: [124.117.146.157] Method:ANNOUNCE_PEER Type:RSP_MSG MessageID:�
+[20:10:46] RPC received message [124.117.146.157] Method:ANNOUNCE_PEER Type:REQ_MSG MessageID:� version:LT targetKey:C5366CF1 7DBC6933 193CD77C 7EFC732B 6532346A (8)
+[20:10:46] RPC send Message: [124.117.146.157] Method:ANNOUNCE_PEER Type:RSP_MSG MessageID:�
+[20:10:47] RPC received message [67.186.193.13] Method:ANNOUNCE_PEER Type:REQ_MSG MessageID:�=�C��� targetKey:C46F4AA4 401C6240 93E588BA 015128D3 A94C963F (10)
+[20:10:48] RPC received message [203.218.188.174] Method:ANNOUNCE_PEER Type:REQ_MSG MessageID:�Fz�6�-# targetKey:C4EADE87 F515E739 9BD8E577 28BBE778 7039C268 (9)
+[20:10:48] RPC send Message: [203.218.188.174] Method:ANNOUNCE_PEER Type:RSP_MSG MessageID:�Fz�6�-#
+[20:10:48] RPC received message [211.92.142.104] Method:ANNOUNCE_PEER Type:REQ_MSG MessageID:U version:LT targetKey:C418A3CE DD8BEB33 5954293B B4A4B3C1 2BAF2991 (15)
+[20:10:48] RPC send Message: [211.92.142.104] Method:ANNOUNCE_PEER Type:RSP_MSG MessageID:U
+[20:10:48] RPC received message [124.117.146.157] Method:ANNOUNCE_PEER Type:REQ_MSG MessageID:= version:LT targetKey:C5366CF1 7DBC6933 193CD77C 7EFC732B 6532346A (8)
+[20:10:48] RPC send Message: [124.117.146.157] Method:ANNOUNCE_PEER Type:RSP_MSG MessageID:=
+[20:10:49] RPC received message [85.58.128.39] Method:ANNOUNCE_PEER Type:REQ_MSG MessageID:��r�� targetKey:C42A1205 6D0483D1 B635B95F C4B23B7B 70BFC017 (11)
+[20:10:49] RPC send Message: [85.58.128.39] Method:ANNOUNCE_PEER Type:RSP_MSG MessageID:��r��
+[20:10:49] RPC received message [61.173.33.127] Method:ANNOUNCE_PEER Type:REQ_MSG MessageID:� version:LT targetKey:C41A4833 825A4B8C 26090FBD 053628A0 D22F319C (17)
+[20:10:49] RPC send Message: [61.173.33.127] Method:ANNOUNCE_PEER Type:RSP_MSG MessageID:�
+[20:10:51] RPC received message [61.173.33.127] Method:ANNOUNCE_PEER Type:REQ_MSG MessageID:� version:LT targetKey:C41A4833 825A4B8C 26090FBD 053628A0 D22F319C (17)
+[20:10:51] RPC send Message: [61.173.33.127] Method:ANNOUNCE_PEER Type:RSP_MSG MessageID:�</pre></div></div></div><p>and some peers are just ultra-spammy:<br /><br /></p><div class="codebox"><div class="incqbox"><h4>Code:</h4><div class="scrollbox" style="height: 27em"><pre>[21:04:50.016] {plug} [Mainline DHT] RPC received message [84.30.213.161]  Method:GET_PEERS Type:REQ_MSG MessageID:  targetKey:C43CF44B D5042168 12C9186B 5266A585 45BFB619 (11)
+[21:04:50.063] {plug} [Mainline DHT] RPC received message [84.30.213.161]  Method:GET_PEERS Type:REQ_MSG MessageID:  targetKey:C43CF44B D5042168 12C9186B 5266A585 45BFB619 (11)
+[21:04:50.063] {plug} [Mainline DHT] RPC received message [84.30.213.161]  Method:GET_PEERS Type:REQ_MSG MessageID:  targetKey:C43CF44B D5042168 12C9186B 5266A585 45BFB619 (11)
+[21:04:50.125] {plug} [Mainline DHT] RPC received message [84.30.213.161]  Method:GET_PEERS Type:REQ_MSG MessageID:  targetKey:C43CF44B D5042168 12C9186B 5266A585 45BFB619 (11)
+[21:04:50.125] {plug} [Mainline DHT] RPC received message [84.30.213.161]  Method:GET_PEERS Type:REQ_MSG MessageID:  targetKey:C43CF44B D5042168 12C9186B 5266A585 45BFB619 (11)
+[21:04:50.250] {plug} [Mainline DHT] RPC received message [58.37.203.202]  Method:GET_PEERS Type:REQ_MSG MessageID:/�e��o�  targetKey:C437E3D6 1594DF78 BD955C49 860B4463 C4B46213 (11)
+[21:04:50.359] {plug} [Mainline DHT] RPC received message [84.30.213.161]  Method:GET_PEERS Type:REQ_MSG MessageID:  targetKey:C43CF44B D5042168 12C9186B 5266A585 45BFB619 (11)
+[21:04:50.375] {plug} [Mainline DHT] RPC received message [84.30.213.161]  Method:GET_PEERS Type:REQ_MSG MessageID:  targetKey:C43CF44B D5042168 12C9186B 5266A585 45BFB619 (11)
+[21:04:50.375] {plug} [Mainline DHT] RPC received message [84.30.213.161]  Method:GET_PEERS Type:REQ_MSG MessageID:  targetKey:C43CF44B D5042168 12C9186B 5266A585 45BFB619 (11)
+[21:04:50.391] {plug} [Mainline DHT] RPC received message [84.30.213.161]  Method:GET_PEERS Type:REQ_MSG MessageID:      targetKey:C43CF44B D5042168 12C9186B 5266A585 45BFB619 (11)
+[21:04:50.406] {plug} [Mainline DHT] RPC received message [84.30.213.161]  Method:GET_PEERS Type:REQ_MSG MessageID:
+  targetKey:C43CF44B D5042168 12C9186B 5266A585 45BFB619 (11)
+[21:04:50.422] {plug} [Mainline DHT] RPC received message [84.30.213.161]  Method:GET_PEERS Type:REQ_MSG MessageID:  targetKey:C43CF44B D5042168 12C9186B 5266A585 45BFB619 (11)
+[21:04:50.484] {plug} [Mainline DHT] RPC received message [84.30.213.161]  Method:GET_PEERS Type:REQ_MSG MessageID:  targetKey:C43CF44B D5042168 12C9186B 5266A585 45BFB619 (11)
+[21:04:50.484] {plug} [Mainline DHT] RPC received message [125.163.210.230]  Method:GET_PEERS Type:REQ_MSG MessageID:� version:LT  targetKey:C41A4833 825A4B8C 26090FBD 053628A0 D22F319C (17)
+[21:04:50.500] {plug} [Mainline DHT] RPC received message [98.165.149.123]  Method:GET_PEERS Type:REQ_MSG MessageID:J+</pre></div></div></div><p>I've also seen (at least once) a bunch of get peers coming from different source IPs within milliseconds that look for the same target keys and incrementing message IDs, which obviously means someone is using source address spoofing... for what reason soever.<br /><br />----<br /><br />Then i'm also seeing announces that seem too far from my local key. The number in brackets behind the target key indicates the bucket number where 0 is the root. I have buckets 0-19 filled and 20 partially filled. Since an announce should only happen on the closest 8 nodes that means announces in the buckets 18-20 would seem reasonable, especially considering that the keyspace covered roughly doubles with each bucket.<br /><br />But i regularly see announces for buckets as low as 9 and occasionally even further away ones from nodes that don't send a version. Peers sending a version are LT and UT. LT peers somehow often get to bucket 17 - although many of the samples repeated themselves, see above. But i saw at least one LT request going to bucket 7, meaning it probably could use a better route finding algorithm too.<br />UT peers hit the target bucket 20 with good accuracy.<br /><br /><br /></p><div class="codebox"><div class="incqbox"><h4>Code:</h4><div class="scrollbox" style="height: 16.5em"><pre>[21:13:56.922] {plug} [Mainline DHT] RPC received message [89.171.134.250]  Method:ANNOUNCE_PEER Type:REQ_MSG MessageID:'���G�0q  targetKey:C47B550A A73E8CEA B15438DD B2657910 FDC24F02 (10)
+[21:13:56.938] {plug} [Mainline DHT] RPC send Message: [89.171.134.250]  Method:ANNOUNCE_PEER Type:RSP_MSG MessageID:'���G�0q  
+[21:13:57.188] {plug} [Mainline DHT] RPC received message [220.140.115.7]  Method:ANNOUNCE_PEER Type:REQ_MSG MessageID:&quot;?8&amp;�ע9  targetKey:C417F9B9 F8C98B5B 2AEF4A30 557BE71B C4704980 (13)
+[21:13:57.188] {plug} [Mainline DHT] RPC send Message: [220.140.115.7]  Method:ANNOUNCE_PEER Type:RSP_MSG MessageID:&quot;?8&amp;�ע9  
+[21:13:57.359] {plug} [Mainline DHT] RPC received message [193.16.157.102]  Method:ANNOUNCE_PEER Type:REQ_MSG MessageID:�NX�w5�3  targetKey:C48D510D 320E3D90 A8583354 07EE3227 A4F5D32D (9)
+[21:13:57.359] {plug} [Mainline DHT] RPC send Message: [193.16.157.102]  Method:ANNOUNCE_PEER Type:RSP_MSG MessageID:�NX�w5�3  
+[21:13:58.641] {plug} [Mainline DHT] RPC received message [87.220.13.230]  Method:ANNOUNCE_PEER Type:REQ_MSG MessageID:����?t  targetKey:C4013D98 E75BB165 027BF9BC 057B29A6 0022A78E (12)
+[21:13:58.641] {plug} [Mainline DHT] RPC send Message: [87.220.13.230]  Method:ANNOUNCE_PEER Type:RSP_MSG MessageID:����?t  
+[21:13:58.797] {plug} [Mainline DHT] RPC received message [59.173.207.8]  Method:ANNOUNCE_PEER Type:REQ_MSG MessageID:h</pre></div></div></div>
+					<p class="postedit"><em>Last edited by The 8472 (2008-05-03 12:33:22)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p244" class="blockpost roweven">
+	<h2><span><span class="conr">#8&nbsp;</span><a href="viewtopic.php?pid=244#p244">2008-06-03 02:28:13</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 5: DHT</h3>
+				<div class="postmsg">
+					<p>Since things seem to move at glacial speeds.. here's the proposal:<br /><br /><br />-- enforcing target closeness<br /><br />To make sure that bad implementations do not store values in inappropriate keyspace locations (i.e. not close enough to the target) the store-token in a getPeers response should only provided when we feel responsible for the incoming getPeers request.<br /><br />This can be calculated the following way:<br />With k-sized buckets we take our k * 3 closest nodes and calculate the distance between us and the farthest of these nodes. For an incoming getPeers request we calculate the distance between us and the target. If the distance is smaller (i.e. sharing more prefix bits) we send the token, otherwise we don't.<br /><br />The rationale behind k*3 is that we cover our local bucket and one to the left and one to the right from the tree perspective.<br /><br />-- preventing announce hammering (get and put)<br /><br />this one is more complex, so it probably should be an optional feature if one wants to reduce unnecessary traffic even further. With an announce interval of 30 minutes a peer should not announce more often for a specific key every 15 minutes. Checking who announced within the last 15 minutes can be done either by a recently-seen list or 2 dynamically sized bloom filters that are swapped every 15 minutes.<br /><br />If a node already announced within the last 15 minutes we have two options:<br />1a) send an error packet<br />1b) only send a node list (no token, no peers)<br /><br />1a) is stricter and should make faulty implementations more obvious to their developers but might result in unexpected behavior due to aggressive error handling<br /><br />For announce frequency tracking we also have 2 options:<br />2a) track on a per-node basis<br />2b) track on a per-&lt;node,key&gt; basis<br /><br />2a) is cleaner, 2b) would also prevent generic hammering (not key-specific) but should only be combined with 1b) to prevent any potential routing problems. I'm not quite sure if 2b) would be necessary/useful.<br /><br /><br />---------<br /><br /><br />Edit: <br /><br />I've been considering this further: Since a node returns <em>either</em> a peer list <em>or</em> a node list it means that storing a single value in nodes which are not really responsible for that key that this node will only return 1 peer and no nodes. Which basically takes one node out of a getPeers lookup process.<br />If done correctly &quot;around&quot; the perimeter of the nodes that would actually be responsible this could be seen as a denial of service attack, cutting off routes towards destination keys.<br />While probably not very effective it would at least lower the overall efficiency of the DHT for that key in particular.</p>
+					<p class="postedit"><em>Last edited by The 8472 (2008-06-03 10:56:10)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox">
+		<p class="postlink conr">&nbsp;</p>
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Discussion of BEP 5: DHT</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div class="inbox">
+
+			<div class="conl">
+				<form id="qjump" method="get" action="viewforum.php">
+					<div><label>Jump to
+					<br /><select name="id" onchange="window.location=('viewforum.php?id='+this.options[this.selectedIndex].value)">
+						<optgroup label="BitTorrent">
+							<option value="26">Announcements</option>
+							<option value="25" selected="selected">BEPs</option>
+							<option value="29">BEP process</option>
+							<option value="27">General</option>
+							<option value="33">Research Tools</option>
+							<option value="32">Cooperation between BitTorrent and ISPs</option>
+							<option value="30">Attacks against BitTorrent</option>
+							<option value="28">Feature Requests, Found Bugs &gt;&gt;&gt;</option>
+					</optgroup>
+					</select>
+					<input type="submit" value=" Go " accesskey="g" />
+					</label></div>
+				</form>
+			</div>
+			<p class="conr">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-116155-1";
+_udn = "utorrent.com";
+urchinTracker();
+</script>
+
+</body>
+</html>

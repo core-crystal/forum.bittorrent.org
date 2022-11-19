@@ -1,0 +1,452 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>User list (Page 3) / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body onload="document.getElementById('userlist').elements['username'].focus()">
+
+<div id="punuserlist" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist" class="isactive"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="blockform">
+	<h2><span>User search</span></h2>
+	<div class="box">
+		<form id="userlist" method="get" action="userlist.php">
+			<div class="inform">
+				<fieldset>
+					<legend>Find and sort users</legend>
+					<div class="infldset">
+						<label class="conl">Username<br /><input type="text" name="username" value="" size="25" maxlength="25" /><br /></label>
+						<label class="conl">User group
+						<br /><select name="show_group">
+							<option value="-1" selected="selected">All</option>
+							<option value="1">Administrators</option>
+							<option value="2">Moderators</option>
+							<option value="4">Members</option>
+							<option value="6">BitTorrent Helper</option>
+							<option value="7">Developer</option>
+						</select>
+						<br /></label>
+						<label class="conl">Sort by
+						<br /><select name="sort_by">
+							<option value="username" selected="selected">Username</option>
+							<option value="registered">Registered</option>
+							<option value="num_posts">Number of posts</option>
+						</select>
+						<br /></label>
+						<label class="conl">Sort order
+						<br /><select name="sort_dir">
+							<option value="ASC" selected="selected">Ascending</option>
+							<option value="DESC">Descending</option>
+						</select>
+						<br /></label>
+						<p class="clearb">Enter a username to search for and/or a user group to filter by. The username field can be left blank. Use the wildcard character * for partial matches. Sort users by name, date registered or number of posts and in ascending/descending order.</p>
+					</div>
+				</fieldset>
+			</div>
+			<p class="buttons"><input type="submit" name="search" value="Submit" accesskey="s" /></p>
+		</form>
+	</div>
+</div>
+
+<div class="linkst">
+	<div class="inbox">
+		<p class="pagelink"><span class="pages-label">Pages: </span><a class="item1" href="userlist.php?username=&amp;show_group=-1&amp;sort_by=username&amp;sort_dir=ASC&amp;p=2">Previous</a> <a href="userlist.php?username=&amp;show_group=-1&amp;sort_by=username&amp;sort_dir=ASC&amp;p=1">1</a> <a href="userlist.php?username=&amp;show_group=-1&amp;sort_by=username&amp;sort_dir=ASC&amp;p=2">2</a> <strong>3</strong> <a href="userlist.php?username=&amp;show_group=-1&amp;sort_by=username&amp;sort_dir=ASC&amp;p=4">4</a> <a href="userlist.php?username=&amp;show_group=-1&amp;sort_by=username&amp;sort_dir=ASC&amp;p=5">5</a> <span class="spacer">…</span> <a href="userlist.php?username=&amp;show_group=-1&amp;sort_by=username&amp;sort_dir=ASC&amp;p=53">53</a> <a href="userlist.php?username=&amp;show_group=-1&amp;sort_by=username&amp;sort_dir=ASC&amp;p=4">Next</a></p>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="users1" class="blocktable">
+	<h2><span>User list</span></h2>
+	<div class="box">
+		<div class="inbox">
+			<table cellspacing="0">
+			<thead>
+				<tr>
+					<th class="tcl" scope="col">Username</th>
+					<th class="tc2" scope="col">Title</th>
+					<th class="tc3" scope="col">Posts</th>
+					<th class="tcr" scope="col">Registered</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=94288">alexa9keon</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2011-07-05</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=92416">Alexanderharris</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2011-02-21</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=90303">alexmyrum23</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2009-03-06</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=89731">alexpan</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2008-05-14</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=90507">alexsitunde</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2009-08-11</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=91196">Alexsoje</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2010-08-25</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=94206">alexus1roy</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2011-06-30</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=91316">Alfred</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2010-09-28</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=94006">alfredof18</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2011-06-17</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=90018">Algierd</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2008-09-10</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=94266">alia3josue</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2011-07-04</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=91606">AliAsa54</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2010-11-25</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=94568">alice5reed</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2011-07-24</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=94622">alina3chaz</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2011-07-27</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=94192">alina4kane</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2011-06-29</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=94404">alisa5jean</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2011-07-13</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=94522">alisa8noel</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2011-07-21</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=94500">alishasmith</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2011-07-20</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=94808">Aliza2</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2011-08-10</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=94020">alize6sean</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2011-06-17</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=95288">allan</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2012-10-26</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=93254">allAnaF</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2011-04-29</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=92600">AlleeeRaymond</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2011-03-07</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=92370">allencornett</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2011-02-17</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=91236">Allenhalvorson</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2010-09-09</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=94090">ally3quinn</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2011-06-22</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=90782">almohagr</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2010-03-01</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=90950">aln57752</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2010-05-05</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=89685">aloloaalo</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2008-04-13</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=94202">alonzoperino</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2011-06-30</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=92234">Alphaman</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2011-02-05</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=94488">alstonadrian</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2011-07-19</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=90564">alterego</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2009-09-25</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=92524">Alvinhunt</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2011-03-01</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=94412">alyson8jon</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2011-07-14</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=91102">AmandaSantos</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2010-07-14</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=92410">amazonbooks</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2011-02-20</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=91498">amber10384</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2010-11-10</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=91358">amberrocks</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2010-10-08</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=89791">ambotor1</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2008-06-06</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=89687">amc1</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">2</td>
+					<td class="tcr">2008-04-14</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=93786">Ameliab29</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2011-05-31</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=89627">aming</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2008-03-07</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=92876">amingmicrog</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2011-03-27</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=90206">ammarbhaisaheb</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2008-12-24</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=90502">Ammfil</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2009-08-10</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=92494">amoati</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">1</td>
+					<td class="tcr">2011-02-27</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=91944">Amor063</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2011-01-12</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=90613">Amrit</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2009-11-11</td>
+				</tr>
+				<tr>
+					<td class="tcl"><a href="profile.php?id=90033">amy20</a></td>
+					<td class="tc2">Member</td>
+					<td class="tc3">0</td>
+					<td class="tcr">2008-09-16</td>
+				</tr>
+			</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+<div class="linksb">
+	<div class="inbox">
+		<p class="pagelink"><span class="pages-label">Pages: </span><a class="item1" href="userlist.php?username=&amp;show_group=-1&amp;sort_by=username&amp;sort_dir=ASC&amp;p=2">Previous</a> <a href="userlist.php?username=&amp;show_group=-1&amp;sort_by=username&amp;sort_dir=ASC&amp;p=1">1</a> <a href="userlist.php?username=&amp;show_group=-1&amp;sort_by=username&amp;sort_dir=ASC&amp;p=2">2</a> <strong>3</strong> <a href="userlist.php?username=&amp;show_group=-1&amp;sort_by=username&amp;sort_dir=ASC&amp;p=4">4</a> <a href="userlist.php?username=&amp;show_group=-1&amp;sort_by=username&amp;sort_dir=ASC&amp;p=5">5</a> <span class="spacer">…</span> <a href="userlist.php?username=&amp;show_group=-1&amp;sort_by=username&amp;sort_dir=ASC&amp;p=53">53</a> <a href="userlist.php?username=&amp;show_group=-1&amp;sort_by=username&amp;sort_dir=ASC&amp;p=4">Next</a></p>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

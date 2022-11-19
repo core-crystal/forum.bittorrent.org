@@ -1,0 +1,793 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>A few comments about ÂµTP (BEP-29) (Page 1) / BEPs / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
+<script type="text/javascript" src="captcha/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript">
+	$(function(){var f=$("#sliderCaptcha");var b=$("#cleCaptcha");var d=$(".boutonsCaptcha");var a=$("#javascriptCaptcha");var e=[42,2,2,48,14,32,22,39,30,29,40,20,7,35,20,30,4,37,38,36,16,31,10,25,45,30,23,19,34,22,10,27,25,13,26,40,45,48,29,26,27,19,46,35,5,17,15,9,4,3];var h=0;var g=5;var c=0;a.hide();f.slider({value:0,min:0,max:g,step:1,slide:function(i,j){if(j.value>c){c=j.value;h+=c}},stop:function(j,k){var i=false;if(k.value==g){if(h==((g+Math.pow(g,2))/2)){i=true;f.slider("option","disabled",true);if(b.val().length!=e.length){$.post("captcha.php",{tokenCaptcha:b.val()},function(m){var l="";$.each(e,function(){l+=m.charAt(this%m.length)});b.val(l);d.removeAttr("disabled")})}}}if(!i){h=c=0;f.slider("option","value",h)}}})});
+</script>
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="punviewtopic" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex" class="isactive"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=131"><strong>A few comments about ÂµTP (BEP-29)</strong></a></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong> <a href="viewtopic.php?id=131&amp;p=2">2</a> <a href="viewtopic.php?id=131&amp;p=2">Next</a></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p750" class="blockpost rowodd firstpost blockpost1">
+	<h2><span><span class="conr">#1</span> <a href="viewtopic.php?pid=750#p750">2009-11-08 08:35:07</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<p>The ÂµTP work done by the employees of BitTorrent, Inc., is an attempt at layering the peer-to-peer part of the BitTorrent protocol above a homebrew transport protocol rather than TCP.</p><p>ÂµTP is meant to provide for background, or &quot;less than best-effort&quot; traffic, i.e. yield to competing TCP flows.&#160; It does so by detecting impending congestion through delay measurements, similarly to <a href="http://en.wikipedia.org/wiki/TCP_Vegas">TCP-Vegas</a> and <a href="http://www.ece.rice.edu/networks/TCP-LP/">TCP-LP</a>, and reducing its congestion window aggressively whenever delay increases.</p><p>Unfortunately, ÂµTP was designed in secret, with no input from either the congestion control or the BitTorrent communities -- only very recently has BEP-29 been published, at a time when 3 major versions of ÂµTP-enabled ÂµTorrent had already shipped.&#160; Because of that, it has not been subjected to any form of (informal) peer review, and, unsurprisingly enough, it has a number of flaws.</p><br /><p><strong>1.</strong> ÂµTP doesn&#039;t allow repacketisation</p><p>Unlike TCP, ÂµTP doesn&#039;t allow repacketisation of a resent segment.&#160; This breaks PMTU-discovery, and has a number of unpleasant performance consequences in the presence of packet loss.&#160; Please see <a href="http://forum.bittorrent.org/viewtopic.php?id=119">http://forum.bittorrent.org/viewtopic.php?id=119</a> for more information.</p><br /><p><strong>2.</strong> ÂµTP doesn&#039;t allow negotiation, not even in a weak form</p><p>It is not known how ÂµTorrent decides whether contact a peer over TCP or ÂµTP -- neither the tracker protocol nor the DHT nor the PEX protocol have been extended to provide information about the transport protocol being used.&#160; It is has been claimed that ÂµTorrent tries both protocols in parallel, which is wasteful both of network resources and peer memory.</p><p>Apparently, even the simple workaround of allowing a peer that does not implement ÂµTP to reply with a packet saying &quot;please try TCP instead&quot; has not been considered.</p><br /><p><strong>3.</strong> ÂµTP doesn&#039;t interoperate with legacy BitTorrent.</p><p>It is only possible to use ÂµTP to speak with a peer that speaks ÂµTP.&#160; Since the congestion control algorithm in ÂµTP is a sender-only modification of Van Jacobson, there is no fundamental reason for this limitation -- if the congestion control algorithm were used with TCP, one endpoint could be using VJ, and the other less than best-effort.</p><br /><p><strong>4.</strong> The congestion control algorithm used by ÂµTP hasn&#039;t been studied</p><p>Because ÂµTP was designed in secret, there are no publishes analyses of ÂµTP&#039;s behaviour.</p><p>For example, ÂµTP reacts to packet loss less conservatively than TCP -- it multiplies its congestion window by 0.78 rather than 0.5.&#160; While this is fine when the bottleneck router uses a tail-drop queue, since the delay-based congestion control will kick in, it might or might not lead to congestion collapse when the bottleneck router uses an aggressive, loss-based AQM such as <a href="http://en.wikipedia.org/wiki/Blue_%28queue_management_algorithm%29">BLUE</a>.</p><p>Please note that I am not claiming that ÂµTP will actually exhibit such mis-behaviours.&#160; I am merely claiming that in the absence of published data, there is no way to be confident that ÂµTP will not exhibit gross mis-behaviour.</p><br /><p><strong>5.</strong> There are no provisions for ECN.</p><p>ÂµTP, as currently defined, cannot make use of <a href="http://en.wikipedia.org/wiki/Explicit_Congestion_Notification">Explicit Congestion Notification</a>.</p><br /><p><strong>6.</strong> ÂµTP is an all-new transport protocol</p><p>All of the flaws above are due to ÂµTP being a new transport protocol, rather than simply a modification to TCP.&#160; Simply layering BitTorrent peer-to-peer traffic over <a href="http://www.ece.rice.edu/networks/TCP-LP/">TCP-LP</a> solves all of the issues outlines above, while apparently meeting all of the design goals of ÂµTP.</p><br /><br /><p>--Juliusz</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p751" class="blockpost roweven">
+	<h2><span><span class="conr">#2</span> <a href="viewtopic.php?pid=751#p751">2009-11-08 09:44:51</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>jch wrote:</cite><blockquote><div><p>The ÂµTP work done by the employees of BitTorrent, Inc., is an attempt at layering the peer-to-peer part of the BitTorrent protocol above a homebrew transport protocol rather than TCP.</p></div></blockquote></div><p>It doesn&#039;t replace TCP at the transport layer obviously.</p><div class="quotebox"><blockquote><div><p>ÂµTP is meant to provide for background, or &quot;less than best-effort&quot; traffic, i.e. yield to competing TCP flows.&#160; It does so by detecting impending congestion through delay measurements, similarly to <a href="http://en.wikipedia.org/wiki/TCP_Vegas">TCP-Vegas</a> and <a href="http://www.ece.rice.edu/networks/TCP-LP/">TCP-LP</a>, and reducing its congestion window aggressively whenever delay increases.</p></div></blockquote></div><p>There are some very important differences between the uTP congestion control mechanism and TCP vegas. The most important one being that uTP measures one-way delay, and not RTT. This makes it more accurate in measuring the up-stream congestion.</p><div class="quotebox"><blockquote><div><p>Unfortunately, ÂµTP was designed in secret, with no input from either the congestion control or the BitTorrent communities</p></div></blockquote></div><p>Why do you think there was no input from the congestion control community?</p><div class="quotebox"><blockquote><div><p>-- only very recently has BEP-29 been published, at a time when 3 major versions of ÂµTP-enabled ÂµTorrent had already shipped.&#160; Because of that, it has not been subjected to any form of (informal) peer review, and, unsurprisingly enough, it has a number of flaws.</p></div></blockquote></div><p>It hasn&#039;t been reviewed by people because it has been implemented in a released client? That seems like an unlikely causal relation.</p><div class="quotebox"><blockquote><div><p><strong>1.</strong> ÂµTP doesn&#039;t allow repacketisation</p><p>Unlike TCP, ÂµTP doesn&#039;t allow repacketisation of a resent segment.&#160; This breaks PMTU-discovery, and has a number of unpleasant performance consequences in the presence of packet loss.&#160; Please see <a href="http://forum.bittorrent.org/viewtopic.php?id=119">http://forum.bittorrent.org/viewtopic.php?id=119</a> for more information.</p></div></blockquote></div><p>As I pointed out in the thread you refer to, this is not a problem. There are plenty of widely deployed protocols that don&#039;t do repacketisation and that rely on routers to be able to fragment packets. Now, that said, this doesn&#039;t mean that uTP necessarily relies on IP fragmentation. There&#039;s nothing preventing an implementation from doing PMTU discovery.</p><div class="quotebox"><blockquote><div><p><strong>2.</strong> ÂµTP doesn&#039;t allow negotiation, not even in a weak form</p><p>It is not known how ÂµTorrent decides whether contact a peer over TCP or ÂµTP -- neither the tracker protocol nor the DHT nor the PEX protocol have been extended to provide information about the transport protocol being used.&#160; It is has been claimed that ÂµTorrent tries both protocols in parallel, which is wasteful both of network resources and peer memory.</p><p>Apparently, even the simple workaround of allowing a peer that does not implement ÂµTP to reply with a packet saying &quot;please try TCP instead&quot; has not been considered.</p></div></blockquote></div><p>This is obviously outside of the scope for any transport protocol. You wouldn&#039;t expect TCP to support this either.</p><div class="quotebox"><blockquote><div><p><strong>3.</strong> ÂµTP doesn&#039;t interoperate with legacy BitTorrent.</p><p>It is only possible to use ÂµTP to speak with a peer that speaks ÂµTP.&#160; Since the congestion control algorithm in ÂµTP is a sender-only modification of Van Jacobson, there is no fundamental reason for this limitation -- if the congestion control algorithm were used with TCP, one endpoint could be using VJ, and the other less than best-effort.</p></div></blockquote></div><p>Are you saying that it would be an actual realistic solution to use raw sockets, re-implement TCP, stick all our data that we need in an extension header, and go with that?</p><p>I don&#039;t think its reasonable to require end-users to run a client with root privileges.</p><p>If you&#039;re referring to some socket options to select transport protocol used with TCP, there are two problems. the LEDBAT congestion control algorithm isn&#039;t implemented in any operating system. The other less-than-ideal congestion control mechanisms are not implemented in the vast majority of operating systems.</p><div class="quotebox"><blockquote><div><p><strong>4.</strong> The congestion control algorithm used by ÂµTP hasn&#039;t been studied</p><p>Because ÂµTP was designed in secret, there are no publishes analyses of ÂµTP&#039;s behaviour.</p><p>For example, ÂµTP reacts to packet loss less conservatively than TCP -- it multiplies its congestion window by 0.78 rather than 0.5.&#160; While this is fine when the bottleneck router uses a tail-drop queue, since the delay-based congestion control will kick in, it might or might not lead to congestion collapse when the bottleneck router uses an aggressive, loss-based AQM such as <a href="http://en.wikipedia.org/wiki/Blue_%28queue_management_algorithm%29">BLUE</a>.</p><p>Please note that I am not claiming that ÂµTP will actually exhibit such mis-behaviours.&#160; I am merely claiming that in the absence of published data, there is no way to be confident that ÂµTP will not exhibit gross mis-behaviour.</p></div></blockquote></div><p>See the IETF ledbad paper. And just because there are no papers ready today doesn&#039;t mean that it hasn&#039;t been studied.</p><div class="quotebox"><blockquote><div><p><strong>5.</strong> There are no provisions for ECN.</p><p>ÂµTP, as currently defined, cannot make use of <a href="http://en.wikipedia.org/wiki/Explicit_Congestion_Notification">Explicit Congestion Notification</a>.</p></div></blockquote></div><p>Did you mean &quot;uTP, as currently defined, doesn&#039;t make use of ECN&quot;? Obviously there&#039;s nothing stopping an implementation from doing so. At some point it might even be defined in the BEP.</p><div class="quotebox"><blockquote><div><p><strong>6.</strong> ÂµTP is an all-new transport protocol</p><p>All of the flaws above are due to ÂµTP being a new transport protocol, rather than simply a modification to TCP.&#160; Simply layering BitTorrent peer-to-peer traffic over <a href="http://www.ece.rice.edu/networks/TCP-LP/">TCP-LP</a> solves all of the issues outlines above, while apparently meeting all of the design goals of ÂµTP.</p></div></blockquote></div><p>Please explain how it does so.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p752" class="blockpost rowodd">
+	<h2><span><span class="conr">#3</span> <a href="viewtopic.php?pid=752#p752">2009-11-08 10:09:16</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>The most important one being that uTP measures one-way delay, and not RTT.</p></div></blockquote></div><p>As does TCP-LP.&#160; And this still doesn&#039;t explain the need for a new transport encapsulation, rather than working within the framework of TCP.</p><div class="quotebox"><blockquote><div><p>There are plenty of widely deployed protocols that don&#039;t do repacketisation and that rely on routers to be able to fragment packets.</p></div></blockquote></div><p>It&#039;s certainly not a good idea for bulk transport, as explained in detail in Mogul et al., which I cited in the other thread.</p><div class="quotebox"><blockquote><div><p>There&#039;s nothing preventing an implementation from doing PMTU discovery.</p></div></blockquote></div><p>Please address the scenario that I outlined in the other thread.</p><div class="quotebox"><blockquote><div><p>the LEDBAT congestion control algorithm isn&#039;t implemented in any operating system.</p></div></blockquote></div><p>I&#039;m suggesting that you should implement a less than best-effort congestion control algorithm in your operating system of choice.&#160; (Windows does have the ability to switch congestion control algorithms, since they are able to switch between Reno and CTCP.)</p><p>This approach has the following advantages:</p><p>&#160; * it can be used by all applications, not only ÂµTorrent;</p><p>and the following flaws:</p><p>&#160; * it can be used by all applications, not only ÂµTorrent.</p><p>--Juliusz</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p753" class="blockpost roweven">
+	<h2><span><span class="conr">#4</span> <a href="viewtopic.php?pid=753#p753">2009-11-08 10:17:05</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>Why do you think there was no input from the congestion control community?<br />[...]<br />the LEDBAT congestion control algorithm...</p></div></blockquote></div><p>I find that I&#039;m increasingly confused.</p><p>Could you please clarify the relation between LEDBAT and BEP-29?&#160; For example, why does BEP-29 mandate multiplying by 0.78 on packet loss, while draft-shalunov-ledbat-congestion-00 clearly says</p><div class="quotebox"><blockquote><div><p>4.8. Halve on loss</p><p>&#160; &#160;Further, to deal with severe congestion when most packets are lost<br />&#160; &#160;and to provide a safety net against incorrect queuing delay<br />&#160; &#160;estimates, we&#039;ll halve the window when a loss event is detected.<br />&#160; &#160;We&#039;ll do so at most once per RTT.</p></div></blockquote></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p754" class="blockpost rowodd">
+	<h2><span><span class="conr">#5</span> <a href="viewtopic.php?pid=754#p754">2009-11-08 10:18:02</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>jch wrote:</cite><blockquote><div><div class="quotebox"><blockquote><div><p>The most important one being that uTP measures one-way delay, and not RTT.</p></div></blockquote></div><p>As does TCP-LP.&#160; And this still doesn&#039;t explain the need for a new transport encapsulation, rather than working within the framework of TCP.</p></div></blockquote></div><div class="quotebox"><blockquote><div><div class="quotebox"><blockquote><div><p>There&#039;s nothing preventing an implementation from doing PMTU discovery.</p></div></blockquote></div><p>Please address the scenario that I outlined in the other thread.</p></div></blockquote></div><p>I did in that thread. All uTP connections start off with 300 byte packets, the packet size is not increased more often than every 10 seconds (in current uTorrent). That leaves plenty of time to probe the MTU before having to send payload using larger packets. Another potential way to do MTU discovery is to rely on IP fragmentation to complete the over-sized packets when the first ICMP packet too big is received.</p><div class="quotebox"><blockquote><div><div class="quotebox"><blockquote><div><p>the LEDBAT congestion control algorithm isn&#039;t implemented in any operating system.</p></div></blockquote></div><p>I&#039;m suggesting that you should implement a less than best-effort congestion control algorithm in your operating system of choice.&#160; (Windows does have the ability to switch congestion control algorithms, since they are able to switch between Reno and CTCP.)</p></div></blockquote></div><p>How would you work around the problem that not all operating systems have raw sockets? and that not all operating systems lets any user use raw sockets?</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p755" class="blockpost roweven">
+	<h2><span><span class="conr">#6</span> <a href="viewtopic.php?pid=755#p755">2009-11-08 10:23:05</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>All uTP connections start off with 300 byte packets, the packet size is not increased more often than every 10 seconds (in current uTorrent). That leaves plenty of time to probe the MTU before having to send payload using larger packets.</p></div></blockquote></div><p>I&#039;m confused.&#160; Are you assuming that routing is static?</p><div class="quotebox"><blockquote><div><p>rely on IP fragmentation to complete the over-sized packets when the first ICMP packet too big is received.</p></div></blockquote></div><p>Yep, that&#039;s my solution number 4 in the other thread.&#160; However, according to one of your colleagues (on IRC), this is not what ÂµTorrent does.</p><p>--Juliusz</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p756" class="blockpost rowodd">
+	<h2><span><span class="conr">#7</span> <a href="viewtopic.php?pid=756#p756">2009-11-08 10:24:40</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>jch wrote:</cite><blockquote><div><p>I find that I&#039;m increasingly confused.</p><p>Could you please clarify the relation between LEDBAT and BEP-29?&#160; For example, why does BEP-29 mandate multiplying by 0.78 on packet loss, while draft-shalunov-ledbat-congestion-00 clearly says</p></div></blockquote></div><p>The algorithm is the same, the multiplier differs. We may decide to change it if it causes any problem. So far it is believed that the multiplier doesn&#039;t play a very significant role, since packet loss experienced by uTP is not likely due to congestion. The exception is if we&#039;re already experiencing long delays, in which case the multiplier won&#039;t make a difference anyway, just like in TCP when your congestion window is 0, the multiplier doesn&#039;t matter.</p><p>As for the relationship between uTP and LEDBAT, one of the LEDBAT authors was the designer of the congestion control that we use in uTP and has been closely involved in uTP development.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p757" class="blockpost roweven">
+	<h2><span><span class="conr">#8</span> <a href="viewtopic.php?pid=757#p757">2009-11-08 10:29:48</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>The exception is if we&#039;re already experiencing long delays, in which case the multiplier won&#039;t make a difference</p></div></blockquote></div><p>Not necessarily.&#160; If the bottleneck router is using an aggressively tuned low-delay AQM (say, very aggressive RED, or ordinary BLUE), then using a larger multiplier will starve Reno.</p><p>What I&#039;m concerned about is that you&#039;ll be discouraging the deployment of low-latency AQMs, which is ungood for everyone.</p><p>--Juliusz</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p758" class="blockpost rowodd">
+	<h2><span><span class="conr">#9</span> <a href="viewtopic.php?pid=758#p758">2009-11-08 17:18:25</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>arvid wrote:</cite><blockquote><div><p>If you&#039;re referring to some socket options to select transport protocol used with TCP, there are two problems. the LEDBAT congestion control algorithm isn&#039;t implemented in any operating system. The other less-than-ideal congestion control mechanisms are not implemented in the vast majority of operating systems.</p></div></blockquote></div><p>You don&#039;t need raw sockets or root/admin access for the application itself.</p><p>What is necessary is a kernel that allows you to add a congestion controller, under linux that&#039;s apparently possible. Windows has multiple congestion controllers too, but i&#039;m not sure if microsoft provides any APIs to let developers roll their own.</p><p>So a userspace application with regular permissions could use TCP with a custom congestion controller that has to be loaded into the kernel with root/admin permissions.</p><p>I&#039;m wondering why nobody even <em>investigated</em> that possibility.</p><br /><br /><p>The thing is that everyone would benefit from this solution. All applications interested in latency-preserving less-than-best-effort behavior could use it. Layer 4-awar Routers/other Network gear would still be able to rely on the known TCP properties and not everyone would have to re-implement the same thing over and over again.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p762" class="blockpost roweven">
+	<h2><span><span class="conr">#10</span> <a href="viewtopic.php?pid=762#p762">2009-11-08 19:49:49</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=35956">ghazel</a></strong></dt>
+						<dd class="usertitle"><strong>BitTorrent Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<p>When asked to compare/contrast TCP-LP with uTP, Stansilav Shalunov said:</p><p>&quot;<br />The uTP congestion control falls into the category of end-to-end<br />delay-based mechanisms.&#160; TCP-LP is in the same category, as are more<br />well-known FAST TCP, TCP Vegas, TCP Westwood, and others.&#160; Like uTP<br />and unlike many other delay-based congestion control mechanisms,<br />TCP-LP is designed to yield to standard TCP.&#160; The similarity more or<br />less ends there.</p><p>The most crucial difference is that the design goal of uTP is to<br />soak the network without the user noticing any extra delay, while the<br />design goal of TCP-LP is to yield to TCP without regard for minimizing<br />the delay experienced by the user.&#160; There are also many important<br />differences in implementation choices, but the fact the TCP-LP does<br />not set out to do what uTP tries to achieve is, of course, more<br />important.</p><br /><p>&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;uTP&#160; &#160; &#160; &#160; &#160;TCP-LP<br />Uses delay&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;Yes&#160; &#160; &#160; &#160; &#160;Yes<br />One-way delay&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;Yes&#160; &#160; &#160; &#160; &#160;Yes<br />Designed to yield&#160; &#160; &#160; &#160; &#160; &#160; &#160;Yes&#160; &#160; &#160; &#160; &#160;Yes<br />Minimizes delay&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;Yes&#160; &#160; &#160; &#160; &#160;No<br />TCP framing&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;No&#160; &#160; &#160; &#160; &#160; &#160;Yes<br />Kernel mods&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;No&#160; &#160; &#160; &#160; &#160; &#160;Yes<br />Robust estimators&#160; &#160; &#160; &#160; &#160; &#160;Yes&#160; &#160; &#160; &#160; &#160;No<br />Designed to converge&#160; &#160; &#160; Yes&#160; &#160; &#160; &#160; &#160;No<br />On-off congestion&#160; &#160; &#160; &#160; &#160; &#160;No&#160; &#160; &#160; &#160; &#160; &#160;Yes<br />Single-RTT reaction&#160; &#160; &#160; &#160; &#160;Yes&#160; &#160; &#160; &#160; &#160;?*<br />Bounded extra delay&#160; &#160; &#160; &#160; Yes&#160; &#160; &#160; &#160; &#160;No**<br />Minimizes serialization&#160; &#160; &#160; &#160;Yes&#160; &#160; &#160; &#160; &#160;No<br />Tested over wide range&#160; &#160; Yes***&#160; &#160; No</p><p>* TCP-LP&#039;s reaction time is tied to the setting of gamma.&#160; I don&#039;t<br />believe that any setting would produce desirable reactions, but TCP-LP<br />simply uses gamma that is independent of the congestion window<br />(gamma=1/8), thus defining reaction in terms of ACKs and not time.</p><p>** The extra delay implicitly targeted by TCP-LP, which does not have<br />an explicit target, is delta*(max-min).&#160; Again, delta is a fixed<br />parameter (0.15 in the paper).&#160; max-min is likely, for long flows, to<br />be the buffer size on the bottleneck device divided by the line rate.<br />For home connections, this is often a few seconds (I found 3-5 seconds<br />to be widespread).&#160; With these settings, TCP-LP would implicitly<br />target 600ms extra delay, not counting extra serialization delay,<br />which might add 50ms or so for 1500-B packets.&#160; Because of the gamma<br />smoothing, however, even this 650ms implicit target is not a bound on<br />the delay and may be exceeded.&#160; In particular, at low rates, such as<br />ones typically found on home connections, it may be exceeded for<br />several RTTs.</p><p>*** The uTP congestion control has been tested and used on real<br />wide-area networks with similar parameter settings on connections with<br />speeds ranging over five decimal orders of magnitude.&#160; The TCP-LP<br />paper describes simulations with a narrow range of bottleneck speeds<br />and no tests at all.<br />&quot;</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p763" class="blockpost rowodd">
+	<h2><span><span class="conr">#11</span> <a href="viewtopic.php?pid=763#p763">2009-11-08 20:15:42</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=35956">ghazel</a></strong></dt>
+						<dd class="usertitle"><strong>BitTorrent Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>jch wrote:</cite><blockquote><div><p><strong>2.</strong> ÂµTP doesn&#039;t allow negotiation, not even in a weak form</p><p>It is not known how ÂµTorrent decides whether contact a peer over TCP or ÂµTP -- neither the tracker protocol nor the DHT nor the PEX protocol have been extended to provide information about the transport protocol being used.&#160; It is has been claimed that ÂµTorrent tries both protocols in parallel, which is wasteful both of network resources and peer memory.</p><p>Apparently, even the simple workaround of allowing a peer that does not implement ÂµTP to reply with a packet saying &quot;please try TCP instead&quot; has not been considered.</p></div></blockquote></div><p>This sort of problem exists inside the same transport. When BitTorrent protocol encryption (<a href="http://en.wikipedia.org/wiki/BitTorrent_protocol_encryption">http://en.wikipedia.org/wiki/BitTorrent … encryption</a>) was added, no negotiation as you suggest was implemented either. Extended information was added to PEX, and likewise uTP has a similar extension in PEX to indicate that the peer supports uTP (bit 4). Since a large percentage of peers out there are uTorrent which does support uTP, we have found the memory and network waste of trying both simultaneously to be insignificant compared to the benefits of trying one at a time or waiting until trackers around the world add some sort of extension. Clients obviously can implement this however they like, and it&#039;s not related to uTP itself.</p><div class="quotebox"><cite>jch wrote:</cite><blockquote><div><p><strong>3.</strong> ÂµTP doesn&#039;t interoperate with legacy BitTorrent.</p><p>It is only possible to use ÂµTP to speak with a peer that speaks ÂµTP.&#160; Since the congestion control algorithm in ÂµTP is a sender-only modification of Van Jacobson, there is no fundamental reason for this limitation -- if the congestion control algorithm were used with TCP, one endpoint could be using VJ, and the other less than best-effort.</p></div></blockquote></div><p>Unfortunately implementing a modified congestion controller in Windows would require Administrator access to install, and could crash the entire OS instead of just uTorrent if there is a bug. This was not considered worth it. You&#039;re right that we&#039;re giving up some benefit by not using our congestion control with legacy TCP clients, but we are also gaining some benefit and not causing any significant problems -- peers can still connect to uTorrent over TCP. We actually go even farther to rate-limit our TCP sessions based of information from active uTP connections.</p><div class="quotebox"><cite>jch wrote:</cite><blockquote><div><p><strong>4.</strong> The congestion control algorithm used by ÂµTP hasn&#039;t been studied</p><p>Because ÂµTP was designed in secret, there are no publishes analyses of ÂµTP&#039;s behaviour.</p></div></blockquote></div><p>Yes. Also the congestion control of the Skype protocol (<a href="http://en.wikipedia.org/wiki/Skype_protocol">http://en.wikipedia.org/wiki/Skype_protocol</a>) has not been studied either, since it was designed in secret. This happens. However we did, unlink Skype, decided to publish the spec and bring it to the IETF.</p><div class="quotebox"><cite>jch wrote:</cite><blockquote><div><p><strong>6.</strong> ÂµTP is an all-new transport protocol</p><p>All of the flaws above are due to ÂµTP being a new transport protocol, rather than simply a modification to TCP.&#160; Simply layering BitTorrent peer-to-peer traffic over <a href="http://www.ece.rice.edu/networks/TCP-LP/">TCP-LP</a> solves all of the issues outlines above, while apparently meeting all of the design goals of ÂµTP.</p></div></blockquote></div><p>TCP-LP did not meet our design goals (see above post).</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p764" class="blockpost roweven">
+	<h2><span><span class="conr">#12</span> <a href="viewtopic.php?pid=764#p764">2009-11-09 05:37:28</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>ghazel wrote:</cite><blockquote><div><div class="quotebox"><cite>jch wrote:</cite><blockquote><div><p><strong>3.</strong> ÂµTP doesn&#039;t interoperate with legacy BitTorrent.</p><p>It is only possible to use ÂµTP to speak with a peer that speaks ÂµTP.&#160; Since the congestion control algorithm in ÂµTP is a sender-only modification of Van Jacobson, there is no fundamental reason for this limitation -- if the congestion control algorithm were used with TCP, one endpoint could be using VJ, and the other less than best-effort.</p></div></blockquote></div><p>Unfortunately implementing a modified congestion controller in Windows would require Administrator access to install, and could crash the entire OS instead of just uTorrent if there is a bug. This was not considered worth it. You&#039;re right that we&#039;re giving up some benefit by not using our congestion control with legacy TCP clients, but we are also gaining some benefit and not causing any significant problems -- peers can still connect to uTorrent over TCP. We actually go even farther to rate-limit our TCP sessions based of information from active uTP connections.</p></div></blockquote></div><p>Considering that installing anything into %programfiles% requires administrator permissions anyway i see the permissions issue as not really significant.</p><p>System stability of course is a concern, but given the low complexity of a congestion controller and the fact that it would only be used by applications specifically requesting it via socket options it would be trivial to not use it in case problems arise.</p><br /><p>LEDBAT plugged into TCP vs. ÂµTP<br />Disadvantages:<br />-potential stability issues with kernel drivers<br />Advantages:<br />-it only has to be implemented once (or thrice, if you consider win,linux,osx), making it available for all bittorrent apps and possible other interested parties, too. thus reducing the necesasry time to get it deployed by all bittorrent clients<br />-all network components that are TCP-aware can still work on that basis<br />-only congestion control behavior is changed, no new pitfalls due to a new transport protocol<br />-not reinventing the wheel</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p765" class="blockpost rowodd">
+	<h2><span><span class="conr">#13</span> <a href="viewtopic.php?pid=765#p765">2009-11-09 06:05:43</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=35956">ghazel</a></strong></dt>
+						<dd class="usertitle"><strong>BitTorrent Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>The 8472 wrote:</cite><blockquote><div><div class="quotebox"><cite>ghazel wrote:</cite><blockquote><div><p>Unfortunately implementing a modified congestion controller in Windows would require Administrator access to install, and could crash the entire OS instead of just uTorrent if there is a bug. This was not considered worth it.</p></div></blockquote></div><p>Considering that installing anything into %programfiles% requires administrator permissions anyway i see the permissions issue as not really significant.</p></div></blockquote></div><p>uTorrent can be installed to any directory, and does not require access to %programfiles%. Since some users do use it this way, especially users who are not administrators of the network they are affecting, it does not make sense to exclude them from the benefits of improved congestion control.</p><div class="quotebox"><cite>The 8472 wrote:</cite><blockquote><div><p>System stability of course is a concern, but given the low complexity of a congestion controller and the fact that it would only be used by applications specifically requesting it via socket options it would be trivial to not use it in case problems arise.</p></div></blockquote></div><p>Are you volunteering to implement it? We decided creating the protocol on an application layer was a quicker and easier way to get the transport up and running for uTorrent. Plus, we got the added benefit of UDP hole punching -- a benefit Azureus sees from its UDP based transport as well, no?</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p766" class="blockpost roweven">
+	<h2><span><span class="conr">#14</span> <a href="viewtopic.php?pid=766#p766">2009-11-09 09:39:21</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>The most crucial difference is that the design goal of uTP is to soak the network without the user noticing any extra delay, while the design goal of TCP-LP is to yield to TCP without regard for minimizing the delay experienced by the user.</p></div></blockquote></div><p>Thanks for all the info, ghaziel (and StaÅ›).&#160; I am convinced that performing less than best-effort congestion control is a good idea, and the intuitions you provide confirm that Ledbat is a good idea.</p><p>However, I&#039;d like to remind everyone that all but one of my objections are about the ÂµTP framing; the one the one that isn&#039;t is about the difference between ÂµTP&#039;s and Ledbat&#039;s reaction to loss.&#160; My claim here is that properly reacting to loss remains essential even when you react to delay, which appears to be confirmed by Figure 3 in [1].</p><p>--Juliusz</p><p>[1] Dario Rossi, Claudio Testa, Silvio Valenti, Paolo Veglia, Luca Muscariello.&#160; News from the Internet congestion control world.&#160; <a href="http://arxiv.org/pdf/0908.0812">http://arxiv.org/pdf/0908.0812</a></p>
+						<p class="postedit"><em>Last edited by jch (2009-11-09 09:41:30)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p767" class="blockpost rowodd">
+	<h2><span><span class="conr">#15</span> <a href="viewtopic.php?pid=767#p767">2009-11-09 09:45:20</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>Extended information was added to PEX, and likewise uTP has a similar extension in PEX to indicate that the peer supports uTP (bit 4).</p></div></blockquote></div><p>Thanks, that&#039;s interesting info.&#160; Where is it documented?</p><div class="quotebox"><blockquote><div><p>Also the congestion control of the Skype protocol has not been studied either, since it was designed in secret.</p></div></blockquote></div><p>Am I reading you right?&#160; Since other companies are behaving like thugs, we have no right to complain about BitTorrent, Inc., behaving badly?&#160; Oh, my.</p><p>--Juliusz</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p769" class="blockpost roweven">
+	<h2><span><span class="conr">#16</span> <a href="viewtopic.php?pid=769#p769">2009-11-09 09:54:54</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>ghazel wrote:</cite><blockquote><div><div class="quotebox"><cite>The 8472 wrote:</cite><blockquote><div><div class="quotebox"><cite>ghazel wrote:</cite><blockquote><div><p>Unfortunately implementing a modified congestion controller in Windows would require Administrator access to install, and could crash the entire OS instead of just uTorrent if there is a bug. This was not considered worth it.</p></div></blockquote></div><p>Considering that installing anything into %programfiles% requires administrator permissions anyway i see the permissions issue as not really significant.</p></div></blockquote></div><p>uTorrent can be installed to any directory, and does not require access to %programfiles%. Since some users do use it this way, especially users who are not administrators of the network they are affecting, it does not make sense to exclude them from the benefits of improved congestion control.</p></div></blockquote></div><p>But neither does it make sense to implement a congestion controller - which is clearly a transport layer issue, not application layer - over and over again for every single bittorrent application (or potentially anything else that wants to use LEDBAT), does it?</p><p>By deploying it on the application level you&#039;re making it less likely for OS developers (or anyone who could write a kernel module) to implement it into network stack... the temporary solution takes away the incentive to deliver a permanent one in a timely manner.</p><p>My concern is that while everyone would like to see it in TCP they (you) rush to a solution due to short-term cocerns and once it&#039;s achieved nobody will put any significant effort into the long-term aspects. And we will have to live with yet another hack that creates more and more work to maintain for years to come.</p><div class="quotebox"><cite>ghazel wrote:</cite><blockquote><div><div class="quotebox"><cite>The 8472 wrote:</cite><blockquote><div><p>System stability of course is a concern, but given the low complexity of a congestion controller and the fact that it would only be used by applications specifically requesting it via socket options it would be trivial to not use it in case problems arise.</p></div></blockquote></div><p>Are you volunteering to implement it? We decided creating the protocol on an application layer was a quicker and easier way to get the transport up and running for uTorrent. Plus, we got the added benefit of UDP hole punching -- a benefit Azureus sees from its UDP based transport as well, no?</p></div></blockquote></div><p>I would like to, but I have 0 knowledge about microsoft&#039;s kernel architecture or programming kernel modules.</p><p>I am assuming that there would be more qualified people to do that.</p><p>As far as hole punching goes... i see that - like ÂµTP - as a transitional measure at best since IPv6 will obviate the need for NAT traversal..</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p771" class="blockpost rowodd">
+	<h2><span><span class="conr">#17</span> <a href="viewtopic.php?pid=771#p771">2009-11-09 15:05:35</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>The 8472 wrote:</cite><blockquote><div><p>My concern is that while everyone would like to see it in TCP they (you) rush to a solution due to short-term cocerns and once it&#039;s achieved nobody will put any significant effort into the long-term aspects. And we will have to live with yet another hack that creates more and more work to maintain for years to come.</p></div></blockquote></div><p>I believe the opposite is true. I believe uTP and the IETF LEDBAT initiative helps pushing for this kind of congestion control being standardized and deployed. My understanding of the IETF is quite limited, but I would assume that actual deployment of a congestion control algorithm is considered slightly better than simulation results, which I think helps creating confidence in it.</p><div class="quotebox"><cite>The 8472 wrote:</cite><blockquote><div><p>As far as hole punching goes... i see that - like ÂµTP - as a transitional measure at best since IPv6 will obviate the need for NAT traversal..</p></div></blockquote></div><p>I don&#039;t think there&#039;s anything wrong with short-term solutions. We have an interest in making our software work today. I also think that different people may make different estimates on _how_ short-term these solutions are.</p><p>I think that it will be quite some time before we have delay based TCP CC standardized and deployed in a significant portion of the world&#039;s computers. Just the deployment part will probably take many many years.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1240" class="blockpost roweven">
+	<h2><span><span class="conr">#18</span> <a href="viewtopic.php?pid=1240#p1240">2010-03-30 17:54:49</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90864">User294</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<p>Yet another comment about uTP. According to some ISPs measurements, uTP usage has caused awful packets number growth in their networks. </p><p>This causes unpleasant issues:<br />1) Overhead is increased. So there is less useful data and more protocol headers travel over wires. <br />2) UTP uses small packets. That&#039;s a mistake for bulk file transfer protocol. This causes increased load on routers. Many kinds of routers are actually can&#039;t handle large numbers of packets well enough, especially software routers used by some ISPs and SOHO routers used by users. So, uTP actually jams some routers.<br />3) What worse: when network is congested due to huge packets numbers, uTP seems to decrease packet size, flooding network by dozens of even smaller packets in even larger quantity and making things even worse. Result? Some networks are collapsing due to this stupid property of uTP. </p><p>So what? Many ISPs in my country have already started filtering uTP at the moment due to inadequate numbers of packets flooding their networks. </p><p>So I can suggest some kind of MTU discovery and using large packets. As large as possible. Please, never use small packets for bulk data xfers. There is no need to minimize delays of torrent data. There is need to minimize impact on other kinds of data and on user&#039;s day to day activity, etc.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1252" class="blockpost rowodd">
+	<h2><span><span class="conr">#19</span> <a href="viewtopic.php?pid=1252#p1252">2010-03-31 21:32:50</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90868">rafi</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<p>Confirmed. Others on the uTorrent forum (and myself) have also reported high overhead&#160; with uTP. You can also see some measurements I did - <a href="http://forum.utorrent.com/viewtopic.php?id=69592">over</a> <a href="http://forum.utorrent.com/viewtopic.php?id=69416">here</a> .</p><div class="quotebox"><blockquote><div><p>So I can suggest some kind of MTU discovery and using large packets. As large as possible. Please, never use small packets for bulk data xfers. There is no need to minimize delays of torrent data. There is need to minimize impact on other kinds of data and on user&#039;s day to day activity, etc.</p></div></blockquote></div><p>You can comment on my suggestion for that, detailed over here: <br /><a href="http://forum.utorrent.com/viewtopic.php?id=72106">http://forum.utorrent.com/viewtopic.php?id=72106</a> </p><p>Pacing of large/MTU-sized&#160; packets will do good to both congestion and overhead !</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1254" class="blockpost roweven">
+	<h2><span><span class="conr">#20</span> <a href="viewtopic.php?pid=1254#p1254">2010-03-31 21:36:31</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=35956">ghazel</a></strong></dt>
+						<dd class="usertitle"><strong>BitTorrent Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>rafi wrote:</cite><blockquote><div><p>Pacing of large/MTU-sized&#160; packets will do good to both congestion and overhead !</p></div></blockquote></div><p>That&#039;s not true. Larger packets take longer to send, which results in a slower reaction to congestion. Smaller packets at lower speeds were chosen specifically after measuring the impact on congestion controller responsiveness.</p><p>Also, packet size and size-determining algorithms have been significantly improved since any of these measurements were performed. Please wait until 2.0.1 is released as a stable build before assuming that measurements in the wild will take these in to account. The BEP-29 document does not reflect the newest modifications, although I should note that BEP-29 does not define which packet sizes or techniques are required. An implementor may chose to use any size packet they like.</p><p>So, if you have comments about the way uTorrent behaves, please take that to the uTorrent forum.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1280" class="blockpost rowodd">
+	<h2><span><span class="conr">#21</span> <a href="viewtopic.php?pid=1280#p1280">2010-04-05 13:13:59</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<p>Rafi:</p><p>&gt; Pacing of large/MTU-sized&#160; packets will do good to both congestion and overhead !</p><p>Ghazel:</p><p>&gt; That&#039;s not true. Larger packets take longer to send, which results in a slower reaction to congestion.</p><p>...and higher latency due to link access times.&#160; Yes, we know.</p><p>The truth, of course, is that there is a tradeoff in choosing the optimal packet size, which depends on many factors.&#160; Established wisdom is that, at current network speeds, the optimal packet size is somewhere around a few kB, which would imply that sending maximum sized packets on Ethernet is a good idea.</p><p>Your claims would seem to contradict the above &quot;well-known&quot; folklore, which I find very interesting.&#160; Could we please see your measurements?</p><p>--Juliusz</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1310" class="blockpost roweven">
+	<h2><span><span class="conr">#22</span> <a href="viewtopic.php?pid=1310#p1310">2010-04-08 22:05:41</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90868">rafi</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p><strong>ghazel wrote:</strong><br />...before assuming that measurements in the wild will take these in to account</p></div></blockquote></div><p>Measuring on a LAN with &#039;brand new&#039; 2.01 instances (as described) can be hardly called &quot;in the wild&quot;. You should deduct (some) conclusions from such measurement before release and not in the wild, after it&#039;s released... <img src="http://forum.bittorrent.org/img/smilies/tongue.png" width="15" height="15" alt="tongue" /> </p><div class="quotebox"><blockquote><div><p>...The BEP-29 document does not reflect the newest modifications</p></div></blockquote></div><p>well than, it should. Why don&#039;t you just update it for us all to observe ?</p><div class="quotebox"><blockquote><div><p>if you have comments about the way uTorrent behaves, please take that to the uTorrent forum</p></div></blockquote></div><p><a href="http://forum.utorrent.com/viewtopic.php?id=72106">http://forum.utorrent.com/viewtopic.php?id=72106</a> (and others) -&gt; is still open for discussion, also for the devs ... <img src="http://forum.bittorrent.org/img/smilies/wink.png" width="15" height="15" alt="wink" /> </p><br /><div class="quotebox"><blockquote><div><p><strong>jch wrote:</strong><br />...and higher latency due to link access times.&#160; Yes, we know.</p></div></blockquote></div><p>In my checks,&#160; uT is showing completely different uTP &quot;implementation&quot;/behavior when&#160; seeding, in cases of self controlled/limited speed, and when speed is limited externally. In the first case (recommended in the uT setup guide) - packets sizes are significantly lower (and btw, also <a href="http://forum.utorrent.com/viewtopic.php?pid=473328#p473328">when forced to be large</a>).&#160; So, reasons are not always only congestion control related, but seem to be also general-speed-control related.</p>
+						<p class="postedit"><em>Last edited by rafi (2010-04-08 22:08:01)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1312" class="blockpost rowodd">
+	<h2><span><span class="conr">#23</span> <a href="viewtopic.php?pid=1312#p1312">2010-04-08 22:10:05</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=35956">ghazel</a></strong></dt>
+						<dd class="usertitle"><strong>BitTorrent Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>rafi wrote:</cite><blockquote><div><p>In my checks,&#160; uT is showing completely different uTP &quot;implementation&quot;/behavior when&#160; seeding, in cases of self controlled/limited speed, and when speed is limited externally. In the first case (recommended in the uT setup guide) - packets sizes are significantly lower (and btw, also <a href="http://forum.utorrent.com/viewtopic.php?pid=473328#p473328">when forced to be large</a>).&#160; So, reasons are not always only congestion control related, but seem to be also general-speed-control related.</p></div></blockquote></div><p>Your experiment here is determining nothing about uTP packet size algorithms during bulk transfer. You&#039;re observing small packets because you are rate limiting to a very low limit (internet speeds) on a very fast line (LAN speeds). This produces small packets because our Nagle implementation has a very short timeout and your window is always empty.</p><p>This is, as well, unrelated to BEP29.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1314" class="blockpost roweven">
+	<h2><span><span class="conr">#24</span> <a href="viewtopic.php?pid=1314#p1314">2010-04-08 22:32:27</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90868">rafi</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<p>Limited-speed seeding tests (being controlled by the 2.01 seeder itself) *were* demonstrated/conducted to the &quot;wild&quot;, using the new uTP header, and with similar results (like in test #2 <a href="http://forum.utorrent.com/viewtopic.php?id=72106">here</a>)</p><p>And the uT thread is still there to comment on ...</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1332" class="blockpost rowodd">
+	<h2><span><span class="conr">#25</span> <a href="viewtopic.php?pid=1332#p1332">2010-04-15 11:14:46</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<p>&gt; This produces small packets because our Nagle implementation has a very short timeout and your window is always empty.</p><p>I think you&#039;re confused.&#160; There&#039;s no timeouts in Nagle&#039;s algorithm.</p><p>--Juliusz</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong> <a href="viewtopic.php?id=131&amp;p=2">2</a> <a href="viewtopic.php?id=131&amp;p=2">Next</a></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=131"><strong>A few comments about ÂµTP (BEP-29)</strong></a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

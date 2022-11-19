@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>forum.bittorrent.org / BT Protocol Signalling</title>
+<link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
+</head>
+<body>
+
+<div id="punwrap">
+<div id="punviewtopic" class="pun">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><span>forum.bittorrent.org</span></h1>
+			<p><span>BitTorrent.org community</span></p>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p>You are not logged in.</p>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<h2><span>Announcement</span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div>Posting about any illegal sharing of copyrighted content is strictly forbidden.</div>
+		</div>
+	</div>
+</div>
+
+<div class="linkst">
+	<div class="inbox">
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<p class="postlink conr">&nbsp;</p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;BT Protocol Signalling</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p611" class="blockpost rowodd firstpost">
+	<h2><span><span class="conr">#1&nbsp;</span><a href="viewtopic.php?pid=611#p611">2009-04-08 17:40:23</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90334">PacketMan</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3>BT Protocol Signalling</h3>
+				<div class="postmsg">
+					<p>BT Protocol Signalling<br /><br />Acroynmns:<br />BTP -&nbsp; BitTorrent Protocol<br />SIP -&nbsp; Session Initiation Protocol<br />TTS -&nbsp; Torrent tracker server<br />TCA -&nbsp; Torrent client application<br />TS&nbsp; -&nbsp; Torrent swarm<br />TF&nbsp; -&nbsp; Torrent 'file'<br />TTCS - Torrent tracker-client signalling<br />TCCS - Torrent client-client signalling<br />BTS -&nbsp; BitTorrent Signalling <br /><br />Technology Scope: TTS and TCA's intercommunicate using active and efficient signalling.<br /><br />Purpose: To provide better and more efficient 'connecting' of uploaders with downloader’s by using active BTP signaling, or BTS for short.<br /><br />First some 'environment' comments about my BT setup:<br />•&nbsp; &nbsp; Current TCA = uTorrent 1.8.2<br />•&nbsp; &nbsp; Approx bandwidth: 500KBps down, 30KBps up typical, 45KBps up max<br />•&nbsp; &nbsp; Queue settings: Max active torrents (up or down):5, max active downloads: 4<br />•&nbsp; &nbsp; Number of torrents in TCA queues: 24 (approx/average)<br /><br /><br />Now some observations with BT and my current TCA:<br />•&nbsp; &nbsp; Some unfinished TF are in active state, upload and downloading simulteanously, usually approx 4.<br />•&nbsp; &nbsp; Remainder of unfinished TF’s are in queued state.<br />•&nbsp; &nbsp; Finished TF are seeding, with 1 usually active and rest in queued state.<br />•&nbsp; &nbsp; Some or all of download speeds are slow. Total combined download bandwidth usually less than 50KBps.<br />•&nbsp; &nbsp; Upload speed for some TS also very poor. Total combined upload bandwidth often less than 15KBps.<br />•&nbsp; &nbsp; TCA switching of TF’s from queued to active state (and vice versa) is controlled via local configured metrics.<br />•&nbsp; &nbsp; Manually stopping one active downloading TF and putting another TF from queued state into active state sometimes result in significantly higher download transfer speeds.<br />•&nbsp; &nbsp; Manually stopping one active uploading TF and putting another TF from queued state into active state sometimes result in significantly higher upload transfer speeds.<br />•&nbsp; &nbsp; ISP is not throttling downloads because well seeded swarms yields 500Kbps+.<br /><br /><br />Conclusion:<br /><br />•&nbsp; &nbsp; Often higher bandwidth users are being connected with lower bandwidth users.<br />•&nbsp; &nbsp; Active to queued (and vice versa) state change, which are based on locally defined metrics; result in 'luck of the draw' result.<br />•&nbsp; &nbsp; Better peer-to-peer connections (and bandwidth transfers) are being 'missed' due to lack of inter-swarm communications.<br />•&nbsp; &nbsp; Swarm health 'incorrectly' degraded due to good uploaders stuck in queued state, and other weak uploaders in active state.<br />•&nbsp; &nbsp; Swarm health 'inappropriately' upgraded due to uploaders stuck in active state, and other downloader’s stuck in queued state, or simply do not exist to use bandwidth.<br />•&nbsp; &nbsp; Better peer-to-peer connections (and bandwidth transfer rates) could occur which are being 'missed' due to lack of inter-swarm communications via active signalling.<br />•&nbsp; &nbsp; Signaling would help 'match-up' clients within swarms for a win-win benefit.<br /><br /><br />Proposal:<br /><br />I propose that a future release of the BTP use signalling (BTS) to provide for:<br /><br />•&nbsp; &nbsp; better matching of uploaders with downloaders<br />•&nbsp; &nbsp; more efficient bandwidth utilization (less overhead to get the communications job done)<br />•&nbsp; &nbsp; better bandwidth utilization (by having peers better matched with one another)<br />•&nbsp; &nbsp; better torrent swarm health communications (preferring a TS that is healthier than another TS)<br />•&nbsp; &nbsp; Two types of signalling: TTS-to-TCA (known as TTCS), and TCA-to-TCA (known as TCCS)<br />•&nbsp; &nbsp; Consider using SIP as the primary means of communications<br />•&nbsp; &nbsp; TTS would not totally control a TCA and its queues<br /><br /><br />Additional (more detailed, more 'conversational') text:<br /><br />•&nbsp; &nbsp; Through signalling (robust signalling obviously), the tracker and the clients would exchange information (in near real time) with one another. The health of the swarm is obviously the collective health of each peer in the swarm. Each peer would provide signalling to the tracker and to peers regarding its current metrics. So as a downloader my peer would learn which peers to avoid because their connections are maxed out. Other peers who have bandwidth remaining would become more favorable to my client. As an uploader the same would be true. If I have bandwidth available to provide better uploads then my peer becomes more favorable to other downloaders. Once my bandwidth is utilized then I become less favorable to other peers. As peers disconnect from me and my bandwidth becomes 'freed up', my peer become more favorable in the swarm again. From the point of multiple torrents, my peer would be able to use its intelligence through signalling to make decisions as to which torrents to use and which to avoid at given moments in time. If torrent/swarm session &quot;A&quot; is healthier while at the same time torrent/swarm &quot;B&quot; is a poor, then my client will establish (more) connections with peers in swarm &quot;A&quot; and avoid (or reduce) connections to peers in swarm &quot;B&quot;. If the torrent/swarm health is bad enough, my client torrent queue state switches to (or stays in) the queued state. If the torrent/swarm health is good enough, my client torrent queue state switches to (or stays in) the active state.<br />•&nbsp; &nbsp; At a given moment in time (once metrics have caused a trigger) BTS would cause my client to take an active sluggish download and place it in the queue state, and take another queued download and switch it to download (active) state, because the swarm for that torrent can now can provide better resources thus resulting in better transfers.&nbsp; As my client downloads more and more chunks, TTCS would also do the same thing, and switch my sessions to provide the best resources to the swarms that need it more. The same can be said for uploading.<br />•&nbsp; &nbsp; In a nutshell, I am trying to say that through robust signaling peers would intelligently learn about the availability of resources of other peers and thus 'luck of the draw' type logic would be greatly reduced or even eliminated. The tracker itself may not have to make decisions, or at least not solely. Maybe it could just be a signalling relayer. Maybe it does make some decisions, I don't know, but that would be a deeper dive protocol discussion...for BTP engineers.<br /><br />Two points to keep in mind:<br /><br />(1) Signalling is (assuming the protocol engineers do a great job of it) a very efficient way of communicating lots of information using very little actual information to Tx / Rx (transmit / receive). It can also be very quick and rapid.<br />(2) There are in production today computer and logic systems that are signalling and/or state-machine based. The overhead of the signalling technology is actually minor, and for the 'server at the center of it' state-machine technology today can also be very efficient.<br /><br />Possible caveats:<br /><br />•&nbsp; &nbsp; Stale (incorrect) information due to time lag. It is possible that by the time 'my' peer learns that another peer has available resources and my peer goes to connect to it, that other peer could already be 'in use'. Perhaps peer-to-peer signalling would help reduce this lag.<br />•&nbsp; &nbsp; Regarding trackers being already overloaded with their current levels of communications .....and I'm not saying this next comment is applicable, but it could be. H.323 protocol is a brutally poor protocol in how it sets up sessions and how much resources and time is required. It works, buts its an inefficient clunker. SIP on the other hand is a very well defined protocol, and has a very well defined message set, and as such it requires very little resources to maintain messaging between peers and/or proxy. (Note, while all forms of signalling is messaging / communications, not all forms of messaging / communications is signalling.)<br />•&nbsp; &nbsp; Obviously last but not least, the signalling bandwidth overhead would have to be very efficient so that torrent users get the most 'bang for their bit'. Robbing Peter to pay Paul makes little sense.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p612" class="blockpost roweven">
+	<h2><span><span class="conr">#2&nbsp;</span><a href="viewtopic.php?pid=612#p612">2009-04-12 05:55:00</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90334">PacketMan</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BT Protocol Signalling</h3>
+				<div class="postmsg">
+					<p>Would also like to add as a short note, that through BTS, BTP can evolve to include advanced swarm sQoS functionality. For example one user could prefer to maintain connections with more healthy swarms to take advantage of the downloads, while another user could desire to maintain more connections to less healthy swarms in an effort to help that swarm.<br /><br />Once a well thought out well designed and well coded BTS is in place, BTP can evolve to include many advanced features. The features can be controlled/adjusted by either the TTS and/or TCA.<br /><br />QoS - Qualtity of Service<br />Note: QoS in this discussion is not to be confused with data networking QoS.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox">
+		<p class="postlink conr">&nbsp;</p>
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;BT Protocol Signalling</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div class="inbox">
+
+			<div class="conl">
+				<form id="qjump" method="get" action="viewforum.php">
+					<div><label>Jump to
+					<br /><select name="id" onchange="window.location=('viewforum.php?id='+this.options[this.selectedIndex].value)">
+						<optgroup label="BitTorrent">
+							<option value="26">Announcements</option>
+							<option value="25" selected="selected">BEPs</option>
+							<option value="29">BEP process</option>
+							<option value="27">General</option>
+							<option value="33">Research Tools</option>
+							<option value="32">Cooperation between BitTorrent and ISPs</option>
+							<option value="30">Attacks against BitTorrent</option>
+							<option value="28">Feature Requests, Found Bugs &gt;&gt;&gt;</option>
+					</optgroup>
+					</select>
+					<input type="submit" value=" Go " accesskey="g" />
+					</label></div>
+				</form>
+			</div>
+			<p class="conr">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-116155-1";
+_udn = "utorrent.com";
+urchinTracker();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>forum.bittorrent.org / Extension protocol / Merkle extension clarification</title>
+<link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
+</head>
+<body>
+
+<div id="punwrap">
+<div id="punviewtopic" class="pun">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><span>forum.bittorrent.org</span></h1>
+			<p><span>BitTorrent.org community</span></p>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p>You are not logged in.</p>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<h2><span>Announcement</span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div>Posting about any illegal sharing of copyrighted content is strictly forbidden.</div>
+		</div>
+	</div>
+</div>
+
+<div class="linkst">
+	<div class="inbox">
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<p class="postlink conr">&nbsp;</p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Extension protocol / Merkle extension clarification</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p1078" class="blockpost rowodd firstpost">
+	<h2><span><span class="conr">#1&nbsp;</span><a href="viewtopic.php?pid=1078#p1078">2010-03-05 16:29:27</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90770">mjfrancis</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3>Extension protocol / Merkle extension clarification</h3>
+				<div class="postmsg">
+					<p>Looking at the extension protocol and Merkle BEPs;<br /><br /></p><blockquote><div class="incqbox"><p>BEP 0010: &quot;This message should be sent immediately after the standard bittorrent handshake [ ... ]&quot;<br />BEP 0030: &quot;A BitTorrent client that supports the Simple Merkle Hash extension must [ ... ] add a Tr_hashpiece&nbsp; message name in the m&nbsp; field of the Extension protocol's handshake message&quot;</p></div></blockquote><p>Given that BEP 0010 is written only as &quot;should&quot;, am I entitled to assume the following exact handshake sequence:<br /><br />1. Protocol header, base extension field, info hash, peer ID<br />2. Bitfield / Have All / Have None<br />3. Extension handshake including Tr_hashpiece<br />[ followed by initial &quot;Allowed Fast&quot;s, later extension handshakes, whatever else ]<br /><br />I want to be able to cleanly factor the initial handshake phase of the connection. In the case of the Merkle extension (or in any other case where a particular extension is intrinsically required for a given info hash), this means that both sides must have enabled Tr_hashpiece before handshaking can be declared complete.<br /><br />It would be enough to declare that this sequence is required when Merkle is to be used, but it could additionally be written into BEP 0010 that an initial extension handshake &quot;must&quot; be sent after Bitfield/HA/HN and before anything else. Whether existing clients obey this if of course another question.<br /><br /><br />(BEP editing aside: In BEP 0010, the example &quot;d1:md11:LT_metadatai1e6:µT_PEXi2ee1:pi6881e1:v13:\xc2\xb5Torrent&nbsp; 1.2e&quot; should probably read &quot;... uT_PEX ...&quot;? Unless it is supposed to be a 'mu', in which case it should probably be ASCII-encoded like the &quot;... \xc2\xb5Torrent ...&quot; in the version string)</p>
+					<p class="postedit"><em>Last edited by mjfrancis (2010-03-05 16:33:22)</em></p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1080" class="blockpost roweven">
+	<h2><span><span class="conr">#2&nbsp;</span><a href="viewtopic.php?pid=1080#p1080">2010-03-06 06:11:01</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Extension protocol / Merkle extension clarification</h3>
+				<div class="postmsg">
+					<p>Yes, it's &quot;ut_pex&quot; (lower-case). And we don't do ascii-encoding. If anything it's utf-8 for strings. Although the ascii-compatible subset of utf-8 is preferred for dictionary keys.<br /><br /></p><blockquote><div class="incqbox"><p>am I entitled to assume the following exact handshake sequence:</p></div></blockquote><p>No, you can't assume the exact sequence as have all/have none are messages of a separate extension, a client might simply not send any bitfield at all. It may also send interested/not-interested messages before the extension handshake.<br /><br />The bit field also might be sent after the extension handshake instead of before.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1084" class="blockpost rowodd">
+	<h2><span><span class="conr">#3&nbsp;</span><a href="viewtopic.php?pid=1084#p1084">2010-03-06 07:52:39</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90770">mjfrancis</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Extension protocol / Merkle extension clarification</h3>
+				<div class="postmsg">
+					<p>Thanks for your reply<br /><br />I think we are talking slightly at cross purposes. Let me backtrack a moment and say that I know how bencoding works, and indeed the theory behind most of the collection of BT standards, having written a small library that implements a selection of them. What I lack is mostly experience in the actual behaviour of clients in the wild.<br /><br />My point about BEP 0010 was mainly that, assuming that the example encoded string is supposed to be realistic, the text in the BEP could use an edit to avoid confusion.<br />The text in the table beneath &quot;An example of what the payload of a handshake message could look like:...&quot; is actually &quot;ut_pex&quot;, as you say, but the encoded string is:-<br /><br /></p><blockquote><div class="incqbox"><p>d1:md11:LT_metadatai1e6:µT_PEXi2ee1:pi6881e1:v13:\xc2\xb5Torrent&nbsp; 1.2e</p></div></blockquote><p>(letter mu, capital T, ...)<br /><br /><br />Secondly, with regard to the use of the extension protocol/Merkle extension, I'm also aware that Have All/Have None belong to the Fast extension - that wasn't quite the question I was reaching for. Let me try to set out my reasoning more clearly<br /><br />Given that:<br />1. Supporting Merkle without Fast enabled has a slight whiff of insanity to it, and seems unnecessary, even if nothing in the specs actually forbids it at the moment (I don't support it as a combination; it would seem to be fair to assume, and possibly even document, that they always occur together)<br />2. The number of clients/libraries other than mine that support Merkle is possibly 2? (Tribler, libtorrent - any more known?), and there is still discussion ongoing over the details of the standardised protocol, so the spec should be ripe for updates/clarification if those actual implementations are in agreement.<br />3. For extensions that do not affect the fundamental operation of the protocol, it's quite irrelevant exactly when they are turned on, so it's not of great importance in what order the first extension handshake occurs - at the beginning of the stream or even an arbitrary number of messages later.<br />4. In the case of the Merkle extension, however, the turning on of Tr_hashpiece is essentially part of the protocol handshake; until it's enabled on both ends the connection isn't usable. Additionally, trying to turn it off later in the stream should probably be considered a fatal error.<br /><br />Then, when:<br />5. The Fast extension already set one precedent by tightening the use of Bitfield (..., Have All, Have None) such that one must occur in the correct position<br />6. I am researching/developing a new extension, related to but separate from Merkle, that could benefit from a specific precedent for this case<br /><br />Would it be reasonable to:<br />7. For the specific case of a Merkle torrent only, make the spec also insist on a specific ordering for the extension message that enables Tr_hashpiece<br /><br /><br />Additionally, based on what you said:-<br /></p><blockquote><div class="incqbox"><p>The bit field also might be sent after the extension handshake instead of before.</p></div></blockquote><p>The Fast extension BEP (0006) has this to say<br /></p><blockquote><div class="incqbox"><p>Exactly one of Have All, Have None, or Have Bitfield MUST appear and only immediately after the handshake</p></div></blockquote><p>Are you then saying that there are Fast enabled clients a) in existence b) that I should care about, that do not conform to this. Interoperability is desirable, but I'm not so terribly interested in adding crufty exceptions for every vaguely BitTorrent-esque but non-standard sequence of bytes that some client somewhere may emit.<br /><br />Anything more you could tell me about that would be greatly appreciated.<br /><br />Thanks</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1088" class="blockpost roweven">
+	<h2><span><span class="conr">#4&nbsp;</span><a href="viewtopic.php?pid=1088#p1088">2010-03-06 10:34:04</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Extension protocol / Merkle extension clarification</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>mjfrancis wrote:</h4><blockquote><div class="incqbox"><p>d1:md11:LT_metadatai1e6:µT_PEXi2ee1:pi6881e1:v13:\xc2\xb5Torrent&nbsp; 1.2e</p></div></blockquote><p>(letter mu, capital T, ...)</p></div></blockquote><p>As i said, the example is incorrect.<br /><br /></p><blockquote><div class="incqbox"><p>Given that:<br />1. Supporting Merkle without Fast enabled has a slight whiff of insanity to it, and seems unnecessary, even if nothing in the specs actually forbids it at the moment (I don't support it as a combination; it would seem to be fair to assume, and possibly even document, that they always occur together)</p></div></blockquote><p>I don't see how this is insanity. They're unrelated extensions that should not require each other and thus you should not make any assumptions about their presence.<br /><br />Other bittorrent clients which do not support the fast extensions might implement merkle torrents some day for example.<br /><br /><br /><br /></p><blockquote><div class="incqbox"><p>2. The number of clients/libraries other than mine that support Merkle is possibly 2? (Tribler, libtorrent - any more known?), and there is still discussion ongoing over the details of the standardised protocol, so the spec should be ripe for updates/clarification if those actual implementations are in agreement.</p></div></blockquote><p>Doesn't tribler use something different? With their Sierpinski numbering and all...<br /><br /><br /></p><blockquote><div class="incqbox"><p>4. In the case of the Merkle extension, however, the turning on of Tr_hashpiece is essentially part of the protocol handshake; until it's enabled on both ends the connection isn't usable. Additionally, trying to turn it off later in the stream should probably be considered a fatal error.</p></div></blockquote><p>That doesn't matter, you should be flexible in the handling of the messaging order. There is nothing that should complicate your code by handling a bitfield before or after the LTEP handshake.<br /><br /></p><blockquote><div class="incqbox"><p>Would it be reasonable to:<br />7. For the specific case of a Merkle torrent only, make the spec also insist on a specific ordering for the extension message that enables Tr_hashpiece</p></div></blockquote><p>It might be reasonable if we wouldn't have to deal with a wide diversity of bittorrent clients out there. To maximize forward-compatibility we should impose only the essential restrictions whenever possible.<br /><br /><br /><br /></p><blockquote><div class="incqbox"><p>Additionally, based on what you said:-<br /></p><blockquote><div class="incqbox"><p>The bit field also might be sent after the extension handshake instead of before.</p></div></blockquote><p>The Fast extension BEP (0006) has this to say<br /></p><blockquote><div class="incqbox"><p>Exactly one of Have All, Have None, or Have Bitfield MUST appear and only immediately after the handshake</p></div></blockquote><p>Are you then saying that there are Fast enabled clients a) in existence b) that I should care about, that do not conform to this. Interoperability is desirable, but I'm not so terribly interested in adding crufty exceptions for every vaguely BitTorrent-esque but non-standard sequence of bytes that some client somewhere may emit.</p></div></blockquote><p>µTorrent does, Transmission does.<br /><br />And doing it makes sense since the bitfield can be very large, sending and processing the LTEP handshake first and checking the upload_only flag to identify (partial) seeds for example.<br /><br />As for the spec... you could consider the LTEP handshake part of the initial handshake. So at least one interpretation of the spec allows you to send them after the LTEP handshake.<br /><br />&quot;in adding crufty exceptions for every vaguely BitTorrent-esque but non-standard sequence of bytes that some client somewhere may emit.&quot;<br /><br />They're not byte-sequences that need special handling, all you need is proper message handling (all of them are bittorrent messages). In fact... checking for a particular order would add more &quot;crufty exceptions&quot; then just parsing the messages and updating the local state accordingly.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1090" class="blockpost rowodd">
+	<h2><span><span class="conr">#5&nbsp;</span><a href="viewtopic.php?pid=1090#p1090">2010-03-06 15:55:53</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90770">mjfrancis</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Extension protocol / Merkle extension clarification</h3>
+				<div class="postmsg">
+					<p>Thanks for the clarification. That was exactly the information I needed; those two are indeed clients that I should care about, and identifying partial seeds early at least is a persuasive reason to do it that way round.<br /><br />When implementing a protocol, the first tool I reach for is a state machine (in this instance, strict at least for the initial header and basic parsing of the protocol), and in the first instance allow only what seems to be required by the standard. In this case I read the two standards one way but actual implementations behave another - it would be good, then, if the wording of the standards could be made to reflect the majority implementation, so that the next person implementing them isn't confused like I was by the wording/ordering of those two requirements.<br /><br /><br />As for Tribler, I assumed that given that the extension identifier is Tr_... that it is their standard, and the BEP reflects their implementation - thanks though for the hint about 'Sierpinski numbering' (what my draft refers to as 'post order numbering'); their page on that relates partially to what I'm implementing, although it's not clear if they've actually used it in that form. Have to brush up on my Python and start reading some of their code in earnest.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1092" class="blockpost roweven">
+	<h2><span><span class="conr">#6&nbsp;</span><a href="viewtopic.php?pid=1092#p1092">2010-03-06 18:20:39</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Extension protocol / Merkle extension clarification</h3>
+				<div class="postmsg">
+					<p>I would advise against trying to model a complex state machine for bittorrent. Most of its states are trivial that they can be expressed as booleans and they're often only loosely related to each other.<br /><br />E.g. you could consider the HANDSHAKE state only to be over after the extension handshake has been sent the first time. But many other actions can possibly be performed (interested, bitfield, unchoke, haves) before that message is sent.<br /><br /><br />Most messages can be handled with a single routine that's mostly independent of the entire state e.g. request handling only depends on one or two booleans and a queue.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1094" class="blockpost rowodd">
+	<h2><span><span class="conr">#7&nbsp;</span><a href="viewtopic.php?pid=1094#p1094">2010-03-06 18:42:06</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90770">mjfrancis</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Extension protocol / Merkle extension clarification</h3>
+				<div class="postmsg">
+					<p>That is in fact what my current implementation does - I just need to relax, rather than tighten, a few constraints based upon what you said.<br /><br />Thanks again</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox">
+		<p class="postlink conr">&nbsp;</p>
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Extension protocol / Merkle extension clarification</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div class="inbox">
+
+			<div class="conl">
+				<form id="qjump" method="get" action="viewforum.php">
+					<div><label>Jump to
+					<br /><select name="id" onchange="window.location=('viewforum.php?id='+this.options[this.selectedIndex].value)">
+						<optgroup label="BitTorrent">
+							<option value="26">Announcements</option>
+							<option value="27">General</option>
+							<option value="25" selected="selected">BEPs</option>
+							<option value="29">BEP process</option>
+							<option value="33">Research Tools</option>
+							<option value="32">Cooperation between BitTorrent and ISPs</option>
+							<option value="30">Attacks against BitTorrent</option>
+							<option value="28">Feature Requests, Found Bugs &gt;&gt;&gt;</option>
+					</optgroup>
+					</select>
+					<input type="submit" value=" Go " accesskey="g" />
+					</label></div>
+				</form>
+			</div>
+			<p class="conr">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-116155-1";
+_udn = "utorrent.com";
+urchinTracker();
+</script>
+
+</body>
+</html>

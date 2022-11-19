@@ -1,0 +1,881 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="ROBOTS" content="NOINDEX, FOLLOW" />
+<title>Search results (Page 1) / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="punsearch" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch" class="isactive"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="search.php">Search</a></li>
+			<li><span>»&#160;</span><strong><a href="search.php?action=show_user_posts&amp;user_id=89601">Posts by dave</a></strong></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink"><span class="pages-label">Pages: </span><strong class="item1">1</strong> <a href="search.php?search_id=1820388465&amp;p=2">2</a> <a href="search.php?search_id=1820388465&amp;p=3">3</a> <span class="spacer">…</span> <a href="search.php?search_id=1820388465&amp;p=7">7</a> <a href="search.php?search_id=1820388465&amp;p=2">Next</a></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div class="blockpost rowodd blockpost1">
+	<h2><span><span class="conr">#1</span> <span>Re: <a href="viewforum.php?id=27">General</a></span> <span>»&#160;<a href="viewtopic.php?id=77">Why doesn&#039;t bittorrent use UDP?</a></span> <span>»&#160;<a href="viewtopic.php?pid=564#p564">2008-11-10 12:55:12</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>Anything patented is not likely to be accepted as part of standardized BitTorrent.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=77">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=564#p564">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost roweven">
+	<h2><span><span class="conr">#2</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=10">Discussion of BEPs 17 and 19: HTTP Seeding.</a></span> <span>»&#160;<a href="viewtopic.php?pid=563#p563">2008-11-10 12:47:53</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>BitTorrent DNA allows the web site to specify a qos parameter which is interpreted as: peer downloads from the web server whenever receiving below this rate.&#160; It specifies no upper bound on how quickly one can download from peers.&#160; Since it is implemented on the client-side, it can be used with any HTTP server that supports range requests.&#160; (It uses GET-right style)</p><p>This can of course be hacked by the client, which can only be protected against by setting up the server to rate limit.&#160; It is admittedly a compromise.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=10">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=563#p563">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost rowodd">
+	<h2><span><span class="conr">#3</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=10">Discussion of BEPs 17 and 19: HTTP Seeding.</a></span> <span>»&#160;<a href="viewtopic.php?pid=555#p555">2008-10-06 12:46:25</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>Herman, </p><p>Slight rewording of 1. GET requests SHOULD be greater than 16KB when possible.&#160; There is no advantage to introducing overhead by requesting small chunks.&#160; </p><p>I am less convinced about 2.&#160; A single TCP connection is quite fragile with respect to loss.&#160; Look at some of Thinh Nyugen&#039;s work on exploiting path diversity from six to seven years ago.&#160; If there are multiple servers with mostly disjoint paths between client and server, the client can increase robustness to transient loss and bad routing hiccups by opening connections to each server.&#160; &#160;I am not sure I want to recommend multiple connections on a single server-client path even though it is common for web browsers-- of course browsers typically operate in the regime of many, small transfers.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=10">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=555#p555">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost roweven">
+	<h2><span><span class="conr">#4</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=19">Discussion of BEP 16: Superseeding</a></span> <span>»&#160;<a href="viewtopic.php?pid=553#p553">2008-10-02 12:58:13</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>Actually arvid is referring to the &quot;suggest&quot; piece.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=19">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=553#p553">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost rowodd">
+	<h2><span><span class="conr">#5</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=13">Discussion of BEP 6: Fast Extension</a></span> <span>»&#160;<a href="viewtopic.php?pid=548#p548">2008-09-25 16:39:03</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>Stats can be sanitized: infohashes, ips, and peer ids remapped to unique ids.</p><p>In addition to the stats mentioned by Bram, I think we will also have to report piece size and number of pieces in the torrent.&#160; Even if infohashes were not sanitized, there is no guarantee we could obtain the info dicts for the infohashes in the log.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=13">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=548#p548">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost roweven">
+	<h2><span><span class="conr">#6</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=10">Discussion of BEPs 17 and 19: HTTP Seeding.</a></span> <span>»&#160;<a href="viewtopic.php?pid=546#p546">2008-09-25 14:04:02</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>From your <a href="http://forums.degreez.net/viewtopic.php?t=7456">explanation</a>, I believe the most important point is</p><div class="quotebox"><cite>TheSHAD0W wrote:</cite><blockquote><div><p>Regulating bandwidth usage in the script is straightforward and requires no access to the http daemon&#039;s configuration files.</p></div></blockquote></div><p>Good implementation solves inefficiency problems with range requests.&#160; With Hoffman-style (Shad0w), client implementation may be easier at the expense of implementation complexity on the server.&#160; The many small files problem is not the typical case.&#160; We can argue these points, but &quot;cheap hosting won&#039;t provide you with access to server configuration files while often still allowing PHP [or perl]&quot; is an inarguable advantage of the Hoffman-style approach.&#160; &#160;Just as &quot;doesn&#039;t require server-side scripts&quot; is an inarguable advantage of the GetRight-style approach.</p><p>I am not against accepting BOTH.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=10">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=546#p546">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost rowodd">
+	<h2><span><span class="conr">#7</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=37">Discussion of BEP 23: Tracker Returns Packed Peer Lists</a></span> <span>»&#160;<a href="viewtopic.php?pid=545#p545">2008-09-25 12:39:17</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>Updated the text in BEP 23</p><p>&#160; <a href="http://bittorrent.org/beps/bep_0023.html">http://bittorrent.org/beps/bep_0023.html</a> </p><p>so that compact is the suggested format and so the compact key-value becomes advisory.&#160; A tracker that implements only compact format is now in conformance with the BEP.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=37">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=545#p545">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost roweven">
+	<h2><span><span class="conr">#8</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=13">Discussion of BEP 6: Fast Extension</a></span> <span>»&#160;<a href="viewtopic.php?pid=538#p538">2008-09-19 17:26:51</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>Yes.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=13">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=538#p538">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost rowodd">
+	<h2><span><span class="conr">#9</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=18">Discussion of BEP 15: UDP Tracker Protocol</a></span> <span>»&#160;<a href="viewtopic.php?pid=533#p533">2008-09-16 12:17:29</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>What about my comment that this isn&#039;t backwards compatible?</p></div></blockquote></div><p>Ahhh... I&#039;m burning my credibility.</p><p>I see your point.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=18">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=533#p533">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost roweven">
+	<h2><span><span class="conr">#10</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=18">Discussion of BEP 15: UDP Tracker Protocol</a></span> <span>»&#160;<a href="viewtopic.php?pid=530#p530">2008-09-15 15:25:43</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<div class="quotebox"><cite>denis wrote:</cite><blockquote><div><p>6. in a future version the peer ID should be moved to the connect packet. it repeats unnecessary in the announce packet.</p></div></blockquote></div><p>To which Olaf replied:</p><div class="quotebox"><cite>olaf wrote:</cite><blockquote><div><p>If you move it to the connect request, either the peer ID isn&#039;t available when you process the announce request or you have to store the peer ID</p></div></blockquote></div><p>Why is the peer ID necessary to keep around?&#160; The nonce (connection id) can&#160; uniquely identify the requester. </p><p>Still as suggested by Denis, this issue should be punted to a future version.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=18">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=530#p530">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost rowodd">
+	<h2><span><span class="conr">#11</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=18">Discussion of BEP 15: UDP Tracker Protocol</a></span> <span>»&#160;<a href="viewtopic.php?pid=529#p529">2008-09-15 14:39:02</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>Re: Denis:</p><div class="quotebox"><blockquote><div><p>1. ... the connect has at least the magic id to detect protocol changes. next version could be 0x0001041727101980 instead of 0x0000041727101980.</p></div></blockquote></div><p>+1.&#160; This is better then relying on a datagram length change to signal an update to something with versioning and limited extension capability (reserved bits, etc.).</p><div class="quotebox"><cite>Denis wrote:</cite><blockquote><div><p>2. I think the client should NOT try again after three tries ... 3. add an error-id to the error packet</p></div></blockquote></div><p>+1. error codes --&gt; obviating three retries.</p><div class="quotebox"><cite>Olaf wrote:</cite><blockquote><div><p>The BEP advices exponential back-off to be used.</p></div></blockquote></div><p>+1 (already in BEP)</p><br /><div class="quotebox"><cite>denis wrote:</cite><blockquote><div><p>4...completed downloads also in the announce response...</p></div></blockquote></div><p>Not as clearly motivated as the other changes, and why only the completes?&#160; If you intend to allocate resources between swarms based on tracker scrapes then number of seeds and downloaders would be quite useful, and if you need these values to decide which swarm to join then you don&#039;t want to conflate the announce and the scrape.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=18">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=529#p529">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost roweven">
+	<h2><span><span class="conr">#12</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=18">Discussion of BEP 15: UDP Tracker Protocol</a></span> <span>»&#160;<a href="viewtopic.php?pid=511#p511">2008-09-12 16:35:49</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>So should clients use a connection ID forever until it fails and then &#039;reconnect&#039;?</p></div></blockquote></div><p>ummm.... yep.&#160; Client should be able reconnect at any time prior to being forced.</p><p>Let&#039;s wait a bit for others to comment.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=18">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=511#p511">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost rowodd">
+	<h2><span><span class="conr">#13</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=18">Discussion of BEP 15: UDP Tracker Protocol</a></span> <span>»&#160;<a href="viewtopic.php?pid=507#p507">2008-09-12 14:27:36</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>I&#039;m not sure it&#039;s necessary to have an error code as well.</p></div></blockquote></div><p>Hmmm... There is wide variation in how people write error messages.&#160; A standardized error code is more precise and less fragile: error messages might change from release to release and between implementations.&#160; Standardized error codes enable automated response.&#160; Standardized error codes also allow humans to recognize the same error across trackers, across clients, and across web searches for related information. </p><p>Those are broad generalizations, but usually correct.&#160; So we should start the conversation with &quot;there should be error codes&quot; and then convince us that there shouldn&#039;t be.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=18">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=507#p507">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost roweven">
+	<h2><span><span class="conr">#14</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=18">Discussion of BEP 15: UDP Tracker Protocol</a></span> <span>»&#160;<a href="viewtopic.php?pid=506#p506">2008-09-12 14:08:12</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<div class="quotebox"><cite>dave wrote:</cite><blockquote><div><p>2 minute time-to-live for the connection id</p></div></blockquote></div><p>That should read 1 minute.&#160; Excuse me.</p><div class="quotebox"><blockquote><div><p>If you hash the source IP address with a secret and keep that secret persistent, nothing happens.</p></div></blockquote></div><p>Ok.&#160; Salted hash (I also mentioned this).&#160; To which Olaf responded with motivation for changing the salt periodically.&#160; I have no doubt that salts will change for some reason or another.&#160; If salts change then client and tracker can be get &quot;out-of-sync.&quot;&#160; </p><p>The BEP currently specifies only the 1 minute TTL, which I would like to remove.&#160; &#160; Waiting for three failures works as long as connection ID&#039;s are typically reused &gt;&gt;3 times.&#160; Though waiting for 3 failures is needless if we use error codes.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=18">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=506#p506">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost rowodd">
+	<h2><span><span class="conr">#15</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=18">Discussion of BEP 15: UDP Tracker Protocol</a></span> <span>»&#160;<a href="viewtopic.php?pid=505#p505">2008-09-12 13:49:28</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>While it is possible to encrypt tracker traffic via https, and thepiratebay guys consider sniffing ISPs a huge problem for their U.S. users, the udp protocol provides no such protection at all.</p></div></blockquote></div><p>We covered this before in the context of lightweight encryption for TCP trackers.&#160; If someone identifies a real attack then we should probably start from here:</p><p><a href="http://bittorrent.org/beps/bep_0008.html">http://bittorrent.org/beps/bep_0008.html</a></p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=18">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=505#p505">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost roweven">
+	<h2><span><span class="conr">#16</span> <span>Re: <a href="viewforum.php?id=27">General</a></span> <span>»&#160;<a href="viewtopic.php?id=77">Why doesn&#039;t bittorrent use UDP?</a></span> <span>»&#160;<a href="viewtopic.php?pid=504#p504">2008-09-12 13:36:37</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>BitTorrent uses UDP for DHT, LSD, and UDP tracking.</p><p>I assume you refer to UDP for file transport.&#160; BitTorrent DNA uses UDP, and it is being introduced into uTorrent.&#160; It not only improves NAT traversal but allows us the freedom to change the congestion controller.... DNA uses a &quot;less than best-effort&quot; congestion controller so that BitTorrent acts as a background file transfer mechanism.</p><p>We are working out how to use UDP as a canary to backoff BitTorrent TCP connections when talking to legacy peers.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=77">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=504#p504">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost rowodd">
+	<h2><span><span class="conr">#17</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=78">Top-BT: a BT client to speed downloading twice with less traffic</a></span> <span>»&#160;<a href="viewtopic.php?pid=503#p503">2008-09-12 13:28:35</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>I&#039;m sorry.&#160; My writing about BEPs was far afield from what I should&#039;ve been saying.<br />Localization has been a hot topic in the IETF and in these forums.&#160; Please skim through this thread:</p><p><a href="http://forum.bittorrent.org/viewtopic.php?id=52">http://forum.bittorrent.org/viewtopic.php?id=52</a></p><p>We would like to include localization mechanisms in uTorrent, but mainly to minimize inter-ISP transits while retaining enough connections to outside the ISP to aid piece propagation and when possible work around bad ISP policy.&#160; Clearly localization would help performance for very large swarms, i.e., on the scale where multiple peers can be found on the same LAN or campus.&#160; Still wondering as to whether it makes a difference for the swarms we see today (usually less than 10000s of peers).&#160; </p><p>BTW do you have good research tools that you could contribute to the community?&#160; &#160;If so please please post about them in </p><p><a href="http://forum.bittorrent.org/viewforum.php?id=33">http://forum.bittorrent.org/viewforum.php?id=33</a></p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=78">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=503#p503">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost roweven">
+	<h2><span><span class="conr">#18</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=18">Discussion of BEP 15: UDP Tracker Protocol</a></span> <span>»&#160;<a href="viewtopic.php?pid=502#p502">2008-09-12 13:04:36</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<div class="quotebox"><cite>Olaf wrote:</cite><blockquote><div><p>Why not? You do have the peer IDs.</p></div></blockquote></div><p>After several reads, I only noticed no peer id in the connect. I missed the peer id in the announce.&#160; &#160;With no peer id in the connect, &gt;1 client behind a NAT creates potential ambiguity, but it doesn&#039;t happen enough to thwart identifying bad implementations.</p><p>I retract my request to add peer ids to the connect.&#160; Also ignore my comment about LTEP.&#160; That seems like too much of a change for too little advantage.&#160; If necessary, we can add an extension mechanism later and trigger it based on datagram length.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=18">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=502#p502">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost rowodd">
+	<h2><span><span class="conr">#19</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=78">Top-BT: a BT client to speed downloading twice with less traffic</a></span> <span>»&#160;<a href="viewtopic.php?pid=496#p496">2008-09-11 21:56:13</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>How does this differ from Ono and P4P?</p><p>Also could you please discuss this in the context of BEPs?&#160; Are there some features you wish to standardize?&#160; Or write an informational BEP?</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=78">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=496#p496">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost roweven">
+	<h2><span><span class="conr">#20</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=18">Discussion of BEP 15: UDP Tracker Protocol</a></span> <span>»&#160;<a href="viewtopic.php?pid=495#p495">2008-09-11 21:39:46</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>we can not identify mis-implementing clients in udp.</p></div></blockquote></div><p>This is important.&#160; We should have some client id in the connect.&#160; It could be &quot;SUGGESTED&quot; for the client but &quot;REQUIRED&quot; for the tracker.&#160; &#160;This would provide backward compatibility.</p><p>Unfortunately the existing BitTorrent protocol has no clean way to specify client id.&#160; Instead we have the mess that is the peer id.&#160; I am not sure the best way to do this. Maybe put an LTEP-style bencoded dict appended to the end of the connect message (see LTEP <a href="http://www.bittorrent.org/beps/bep_0010.html)">http://www.bittorrent.org/beps/bep_0010.html)</a>?&#160; </p><p>LTEP would solve extensibility and client id in one step.</p><div class="quotebox"><blockquote><div><p>I think adding protocol features would be cool</p></div></blockquote></div><p>Maybe necessary.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=18">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=495#p495">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost rowodd">
+	<h2><span><span class="conr">#21</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=18">Discussion of BEP 15: UDP Tracker Protocol</a></span> <span>»&#160;<a href="viewtopic.php?pid=494#p494">2008-09-11 21:39:02</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>If a UDP tracker reboots how does it handle loss of connection id state?&#160; </p><p>There is an error message in the protocol, but the message includes no response code.&#160; If connection id state is lost, we should have a standardized response code that tells the client that it needs to obtain a new connection id.&#160; Ummm... Is my interpretation correct?</p><p>I don&#039;t like the standardized 2 minute time-to-live for the connection id.&#160; If we allow longer term connection id&#039;s, the overhead would be small to just return an error when the connection id is no longer valid thus forcing the client to update its connection id.&#160; It wouldn&#039;t require changing any message in the protocol except the error message and it would work with existing clients that update more often.... although adding an error code to the error message would mess up error messages on old clients.&#160; Is that acceptable?</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=18">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=494#p494">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost roweven">
+	<h2><span><span class="conr">#22</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=18">Discussion of BEP 15: UDP Tracker Protocol</a></span> <span>»&#160;<a href="viewtopic.php?pid=493#p493">2008-09-11 21:20:05</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>The 3 second latency is a problem only for streaming, which is something we do in DNA, but is not yet in uTorrent.&#160; The byte overhead is negligible.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=18">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=493#p493">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost rowodd">
+	<h2><span><span class="conr">#23</span> <span>Re: <a href="viewforum.php?id=27">General</a></span> <span>»&#160;<a href="viewtopic.php?id=75">monthly download limit</a></span> <span>»&#160;<a href="viewtopic.php?pid=488#p488">2008-09-11 14:16:26</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>3 GB per month.&#160; You are likely to hit that limit if you just watch a few TV shows online per week.</p><p>I would bet that BitTorrent does count toward that limit.</p><p>I&#039;m curious.&#160; Who imposes such a low limit?&#160; Tell me it&#039;s not somewhere inflicted by monopoly control over broadband Internet access.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=75">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=488#p488">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost roweven">
+	<h2><span><span class="conr">#24</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=18">Discussion of BEP 15: UDP Tracker Protocol</a></span> <span>»&#160;<a href="viewtopic.php?pid=487#p487">2008-09-11 13:53:30</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>we (Az) are using autoudp in addition to udp:// support,</p></div></blockquote></div><p>The overhead and latency introduced by autoudp for non-udp trackers annoys me, but the overhead and latency are not large.&#160; &#160;I personally would do as jlouis suggests and try HTTP first, but there is an easy way to solve this impasse:&#160; leave the order up to the client implementor. </p><p>Auto-udp requires no new messages and thus could be specified as an implementation suggestion to ease adoption.</p><p>There should be some explicit way of specifying UDP support, udp:// + multitracker appears satisfactory.&#160; </p><p>Olaf, could you describe both in the BEP?</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=18">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=487#p487">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost rowodd">
+	<h2><span><span class="conr">#25</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=18">Discussion of BEP 15: UDP Tracker Protocol</a></span> <span>»&#160;<a href="viewtopic.php?pid=485#p485">2008-09-11 12:46:15</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>From the BEP:</p><div class="quotebox"><blockquote><div><p>Do not expect packets to be exactly of a certain size. Future extensions could increase the size of packets.</p></div></blockquote></div><p>If I understand the writing correctly (reading a bit between the lines), extensibility is supported by changing the size of the payload in the UDP datagram in the handshake.&#160; This may lead to packet changes elsewhere.</p><p>This is a bit odd.&#160; &#160;To disambiguate when multiple extensions are present, the first thing we would add is some other extension mechanism (e.g., bitfield, extension headers, bencoded key-value pairs).</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=18">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=485#p485">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink"><span class="pages-label">Pages: </span><strong class="item1">1</strong> <a href="search.php?search_id=1820388465&amp;p=2">2</a> <a href="search.php?search_id=1820388465&amp;p=3">3</a> <span class="spacer">…</span> <a href="search.php?search_id=1820388465&amp;p=7">7</a> <a href="search.php?search_id=1820388465&amp;p=2">Next</a></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="search.php">Search</a></li>
+			<li><span>»&#160;</span><strong><a href="search.php?action=show_user_posts&amp;user_id=89601">Posts by dave</a></strong></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

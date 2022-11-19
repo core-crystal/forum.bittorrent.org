@@ -1,0 +1,449 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>UDP+Compression (Page 1) / BEPs / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
+<script type="text/javascript" src="captcha/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript">
+	$(function(){var f=$("#sliderCaptcha");var b=$("#cleCaptcha");var d=$(".boutonsCaptcha");var a=$("#javascriptCaptcha");var e=[33,28,23,9,22,2,44,21,20,19,42,46,35,9,15,12,35,9,18,31,40,16,45,12,28,24,40,16,4,40,5,38,18,29,47,40,32,42,12,2,11,4,49,46,14,14,9,49,24,28];var h=0;var g=5;var c=0;a.hide();f.slider({value:0,min:0,max:g,step:1,slide:function(i,j){if(j.value>c){c=j.value;h+=c}},stop:function(j,k){var i=false;if(k.value==g){if(h==((g+Math.pow(g,2))/2)){i=true;f.slider("option","disabled",true);if(b.val().length!=e.length){$.post("captcha.php",{tokenCaptcha:b.val()},function(m){var l="";$.each(e,function(){l+=m.charAt(this%m.length)});b.val(l);d.removeAttr("disabled")})}}}if(!i){h=c=0;f.slider("option","value",h)}}})});
+</script>
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="punviewtopic" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex" class="isactive"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=398"><strong>UDP+Compression</strong></a></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p2010" class="blockpost rowodd firstpost blockpost1">
+	<h2><span><span class="conr">#1</span> <a href="viewtopic.php?pid=2010#p2010">2011-04-27 18:07:22</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=93230">TheRook</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>UDP+Compression</h3>
+					<div class="postmsg">
+						<p>HTTP has one major advantage over UDP,&#160; and that is compression.&#160; &#160;If UDP supported a gzip 9 like HTTP,&#160; then even more bandwidth could be saved.&#160; Gzip have a better compression rate the larger the file.&#160; This has the effect of reducing the max load per request on a tracker. </p><p>I took the raw bencoded announce that was 27,718 bytes in size (<strong>AND ONLY THE ANNOUNCE, LEAVING THE REST OF THE PROTOCOL BEHIND.</strong> ).&#160; &#160;I then did a gzip 9 and it became a 27,657 byte file.&#160; &#160;This was a savings of 61 bytes.&#160; Now think of savings with 15.444.146 seeders + 7.676.410 leechers.&#160; The total comes to 1.4 Gigabytes for each announce cycle!</p>
+						<p class="postedit"><em>Last edited by TheRook (2011-04-29 08:14:57)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2014" class="blockpost roweven">
+	<h2><span><span class="conr">#2</span> <a href="viewtopic.php?pid=2014#p2014">2011-04-28 10:06:07</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: UDP+Compression</h3>
+					<div class="postmsg">
+						<p>udp announces use fewer packets than establishing a tcp connection and they are in a binary-encoded format instead of bencoded which is less compressible.</p><p>There is nothing to be gained here.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2024" class="blockpost rowodd">
+	<h2><span><span class="conr">#3</span> <a href="viewtopic.php?pid=2024#p2024">2011-04-28 17:28:33</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=93230">TheRook</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: UDP+Compression</h3>
+					<div class="postmsg">
+						<p>@The 8472&#160; UDP and compression are not mutually exclusive.&#160; &#160;The benefit of this feature was proved in my post.</p>
+						<p class="postedit"><em>Last edited by TheRook (2011-04-28 17:29:39)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2034" class="blockpost roweven">
+	<h2><span><span class="conr">#4</span> <a href="viewtopic.php?pid=2034#p2034">2011-04-29 03:59:16</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90000">DreadWingKnight</a></strong></dt>
+						<dd class="usertitle"><strong>CBTT/BNBT Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: UDP+Compression</h3>
+					<div class="postmsg">
+						<p>You can&#039;t compare compressing an http request to compressing a udp one and expect the math to come out the same. The communication protocols are different.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Guy with a few torrent programs under his belt.</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2036" class="blockpost rowodd">
+	<h2><span><span class="conr">#5</span> <a href="viewtopic.php?pid=2036#p2036">2011-04-29 08:03:06</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=93230">TheRook</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: UDP+Compression</h3>
+					<div class="postmsg">
+						<p>DreadWingKnight You 100% correct,&#160; thats why i only compressed the announce response.&#160; &#160; Also in HTTP a gzip&#039;ed http response only compresses the body.&#160; But that&#039;s totally unrelated to UDP+gzip9.</p><br /><p>So as it stands I haven&#039;t gotten a single valid response to any of my posts on this form.&#160; I&#039;m disappointing to say the least.</p>
+						<p class="postedit"><em>Last edited by TheRook (2011-04-29 08:16:35)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2040" class="blockpost roweven">
+	<h2><span><span class="conr">#6</span> <a href="viewtopic.php?pid=2040#p2040">2011-04-29 08:39:16</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90000">DreadWingKnight</a></strong></dt>
+						<dd class="usertitle"><strong>CBTT/BNBT Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: UDP+Compression</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>DreadWingKnight You 100% correct,&#160; thats why i only compressed the announce response.&#160; &#160; Also in HTTP a gzip&#039;ed http response only compresses the body.&#160; But that&#039;s totally unrelated to UDP+gzip9.</p></div></blockquote></div><p>You completely ignore the fact that the responses and requests are BOTH formatted differently in HTTP vs UDP.</p><p>The response in HTTP may be compressible where the response in UDP is not.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Guy with a few torrent programs under his belt.</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2044" class="blockpost rowodd">
+	<h2><span><span class="conr">#7</span> <a href="viewtopic.php?pid=2044#p2044">2011-04-29 11:17:32</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=93230">TheRook</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: UDP+Compression</h3>
+					<div class="postmsg">
+						<p>UDP isn&#039;t magic and all data is compressible.&#160; Your right UDP doesn&#039;t use bencodeing,&#160; which makes me wonder why bencoding is still being used in HTTP...</p>
+						<p class="postedit"><em>Last edited by TheRook (2011-04-29 11:18:07)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2048" class="blockpost roweven">
+	<h2><span><span class="conr">#8</span> <a href="viewtopic.php?pid=2048#p2048">2011-04-29 11:58:36</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90000">DreadWingKnight</a></strong></dt>
+						<dd class="usertitle"><strong>CBTT/BNBT Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: UDP+Compression</h3>
+					<div class="postmsg">
+						<p>Because the HTTP announce protocol is designed to be highly extensible.<br />BEncoding allows that. UDP trackers don&#039;t.</p><p>Additionally, any tracker giving 27kbyte announce replies are giving out THOUSANDS of peers in a single reply. This is a misconfiguration.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Guy with a few torrent programs under his belt.</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2050" class="blockpost rowodd">
+	<h2><span><span class="conr">#9</span> <a href="viewtopic.php?pid=2050#p2050">2011-04-29 14:03:46</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=93230">TheRook</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: UDP+Compression</h3>
+					<div class="postmsg">
+						<p>Private trackers need to announce a full list of peers because a client in the private swarm won&#039;t connect to a peer not on the list as per specification (<a href="http://www.bittorrent.org/beps/bep_0027.html">http://www.bittorrent.org/beps/bep_0027.html</a>).&#160; Regardless of encoding this large list is perfect candidate for compression.</p>
+						<p class="postedit"><em>Last edited by TheRook (2011-04-29 14:06:34)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2052" class="blockpost roweven">
+	<h2><span><span class="conr">#10</span> <a href="viewtopic.php?pid=2052#p2052">2011-04-29 20:20:05</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90000">DreadWingKnight</a></strong></dt>
+						<dd class="usertitle"><strong>CBTT/BNBT Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: UDP+Compression</h3>
+					<div class="postmsg">
+						<p>Uhh.</p><p>No.</p><p>Incoming connections are still accepted.</p><p>So, misconfiguration.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Guy with a few torrent programs under his belt.</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2054" class="blockpost rowodd">
+	<h2><span><span class="conr">#11</span> <a href="viewtopic.php?pid=2054#p2054">2011-04-30 11:39:56</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=93230">TheRook</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: UDP+Compression</h3>
+					<div class="postmsg">
+						<p>There is absolutely no requirement that announce requests must be small.&#160; &#160;This does not promote the health of a swarm.&#160; Further more compressing UDP is great idea that will reduce bandwidth usage for BitTorrent trackers and that is a <strong>FACT</strong>.</p>
+						<p class="postedit"><em>Last edited by TheRook (2011-04-30 12:19:02)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2056" class="blockpost roweven">
+	<h2><span><span class="conr">#12</span> <a href="viewtopic.php?pid=2056#p2056">2011-04-30 13:53:31</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90000">DreadWingKnight</a></strong></dt>
+						<dd class="usertitle"><strong>CBTT/BNBT Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: UDP+Compression</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>There is absolutely no requirement that announce requests must be small.&#160; &#160;This does not promote the health of a swarm.</p></div></blockquote></div><p><a href="http://wiki.theory.org/BitTorrentSpecification#Tracker_Response">http://wiki.theory.org/BitTorrentSpecif … r_Response</a><br /></p><div class="quotebox"><blockquote><div><p>Implementer&#039;s Note: Even 30 peers is plenty, the official client version 3 in fact only actively forms new connections if it has less than 30 peers and will refuse connections if it has 55. This value is important to performance. When a new piece has completed download, HAVE messages (see below) will need to be sent to most active peers. As a result the cost of broadcast traffic grows in direct proportion to the number of peers. Above 25, new peers are highly unlikely to increase download speed. UI designers are strongly advised to make this obscure and hard to change as it is very rare to be useful to do so.</p></div></blockquote></div><p>Sorry, but more isn&#039;t better.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Guy with a few torrent programs under his belt.</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=398"><strong>UDP+Compression</strong></a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

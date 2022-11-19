@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Concern for sanctity of P2P systems... (Page 1) / Attacks against BitTorrent / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
+<script type="text/javascript" src="captcha/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript">
+	$(function(){var f=$("#sliderCaptcha");var b=$("#cleCaptcha");var d=$(".boutonsCaptcha");var a=$("#javascriptCaptcha");var e=[25,33,16,45,33,9,19,14,45,33,20,29,28,6,22,8,39,29,32,43,35,30,47,18,25,41,0,17,15,38,43,40,21,10,36,5,19,5,19,15,39,40,44,17,46,17,26,35,46,8];var h=0;var g=5;var c=0;a.hide();f.slider({value:0,min:0,max:g,step:1,slide:function(i,j){if(j.value>c){c=j.value;h+=c}},stop:function(j,k){var i=false;if(k.value==g){if(h==((g+Math.pow(g,2))/2)){i=true;f.slider("option","disabled",true);if(b.val().length!=e.length){$.post("captcha.php",{tokenCaptcha:b.val()},function(m){var l="";$.each(e,function(){l+=m.charAt(this%m.length)});b.val(l);d.removeAttr("disabled")})}}}if(!i){h=c=0;f.slider("option","value",h)}}})});
+</script>
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="punviewtopic" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex" class="isactive"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=30">Attacks against BitTorrent</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=87"><strong>Concern for sanctity of P2P systems...</strong></a></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p586" class="blockpost rowodd firstpost blockpost1">
+	<h2><span><span class="conr">#1</span> <a href="viewtopic.php?pid=586#p586">2008-12-23 08:35:53</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90199">ZWizard666</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+						<dd class="postavatar"><img src="http://forum.bittorrent.org/img/avatars/90199.jpg?m=1357751465" width="100" height="100" alt="" /></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Concern for sanctity of P2P systems...</h3>
+					<div class="postmsg">
+						<p>Greetings,</p><p>&#160; &#160;This message is primarily addressed to the developers and/or software engineers of p2p clients such as Bittorrent, uTorrent, Azureus, Bitlord, et al. My concern relates to the recent attempts of the &#039;&#039;music industry,&#039;&#039; for lack of a better word, to squelch and/or restrict the rights of p2p users from downloading and/or sharing distributable internet files. Such attempts of subversion center upon a quasi-contractual manoeuvre in collusion with such a p2p user&#039;s ISP which would, in effect, render penalties to such user upon detection of an &#039;&#039;illegal download.&#039;&#039; Such sanctions would include, but would not be limited to, a) a variable and/or relative &#039;&#039;fine&#039;&#039; or &#039;&#039;fee&#039;&#039; upon such &#039;&#039;violation&#039;&#039; in question or b) the termination of user&#039;s ISP service, or both. <br />&#160; &#160;This matter concerns myself immensely for reasons that are limited not only to a personal advocacy and/or adherence for individual autonomy and/or discretion, particularly in the internet domain, but also for reasons which include the vast proportion of content, especially personal content, which can only be obtained via large file transfers occurring on a p2p network.<br />&#160; &#160;I do not consent to the claim of any company to delimit an individual&#039;s right to either download and/or upload any file whatsoever, nor for such company to penalize any person for so doing at his or her discretion. Moreover, my concern lies with the integrity of the torrent (torrent referring to torrent-based p2p systems) user-base and their consequent willingness or unwillingness to oppose such tyrannical manoeuvres. Admittedly, I often find myself appalled by pseudo-aficionados of torrent that often &#039;&#039;defend&#039;&#039; the illegitimate claims of any industry to absolute sovereignty over any productive material. I suppose that I would consider myself to be a &#039;&#039;consumer advocate&#039;&#039; in this regard, and I do not consider price and satisfaction to be mutually exclusive concepts.<br />&#160; &#160;I would be very pleased if any torrent users and/or administrators would be good enough to respond to these concerns. Thank you.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=30">Attacks against BitTorrent</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=87"><strong>Concern for sanctity of P2P systems...</strong></a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

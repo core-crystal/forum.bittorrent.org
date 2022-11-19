@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tiger Tree Torrent (Page 1) / BEPs / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
+<script type="text/javascript" src="captcha/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript">
+	$(function(){var f=$("#sliderCaptcha");var b=$("#cleCaptcha");var d=$(".boutonsCaptcha");var a=$("#javascriptCaptcha");var e=[6,41,19,29,47,6,17,10,47,12,14,33,46,40,29,42,24,36,19,7,38,18,4,34,15,40,11,34,15,14,10,22,5,29,1,2,35,19,13,32,32,28,16,29,18,45,22,43,31,42];var h=0;var g=5;var c=0;a.hide();f.slider({value:0,min:0,max:g,step:1,slide:function(i,j){if(j.value>c){c=j.value;h+=c}},stop:function(j,k){var i=false;if(k.value==g){if(h==((g+Math.pow(g,2))/2)){i=true;f.slider("option","disabled",true);if(b.val().length!=e.length){$.post("captcha.php",{tokenCaptcha:b.val()},function(m){var l="";$.each(e,function(){l+=m.charAt(this%m.length)});b.val(l);d.removeAttr("disabled")})}}}if(!i){h=c=0;f.slider("option","value",h)}}})});
+</script>
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="punviewtopic" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex" class="isactive"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=360"><strong>Tiger Tree Torrent</strong></a></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p1948" class="blockpost rowodd firstpost blockpost1">
+	<h2><span><span class="conr">#1</span> <a href="viewtopic.php?pid=1948#p1948">2011-04-05 06:46:40</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90852">ivan386</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Tiger Tree Torrent</h3>
+					<div class="postmsg">
+						<p>Tiger Tree Torrent</p><p>In torrent field &#039;info&#039; adds &#039;tth pieces&#039; which replace &#039;pieces&#039; in the future.</p><p>&#039;tth pieces&#039; saves Tiger Tree Hash&#039;s (TTH) (<a href="http://sourceforge.net/projects/tigertree/">http://sourceforge.net/projects/tigertree/</a>) of parts of files whith size &#039;piece length&#039;<br />&#039;piece length&#039; (PL) can take values = 1024 * (2^Level)<br />One or more hashes for each file (each hash only for one file).<br /></p><div class="codebox"><pre><code>    Level           Tiger Tree Roots________________________________   
+    |                   /                       |              \    \
+    4:            --- 21 --                     36              45   46
+      tth pieces /         \                    |                 \    \
+    3:   |   __15__         20               ___36____             45   46
+          \ /      \          \             /         \            / \    \ 
+    2:     7--------14---------20----------28----------35---------43--44---46-&gt;
+          / \      /  \       /  \        /  \        /  \       /  \   \   \
+    1:   3   6    10   13    18  19     24    27    31    34    39   42  44  46
+        /\   /\   /\   / \   /\   \     /\    /\    /\    /\    /\    /\  \   \
+    0: 1  2 4  5 8  9 11 12 16 17  19  22 23 25 26 29 30 32 33 37 38 40 41 44  46 
+       |_______file 1_______________|  |______file 2_________| |___file 3___| |f4|
+       |         |          |             |           |           |           |
+       S1--------S2---------S3------------S4----------S5----------S6----------S7&gt;
+      /
+    pieces</code></pre></div><p>&#039;piece length&#039; = 1024*(2^2) = 4096</p><div class="codebox"><pre><code>    &#039;tth pieces&#039;: 7   14  20   28      35   43      44  46   (24*8 = 192 bytes)
+                  |_file 1_|   |_file 2_|   |_file 3_| |f4|
+                  |         \ /          \ /         | |
+    &#039;pieces&#039;:     S1  S2    S3    S4      S5        S6 S7   (20*7 = 140 bytes)</code></pre></div><p>The advantages of using Tiger Tree Hash:</p><p>1. When downloading individual files no longer necessary to load part of the other file to check first (each hash only for one file).</p><p>2. We can calculate TTH for each file according to our set of hash and use it to find sources for a file in other p2p networks (Gnutella, Gnutella2, Direct Connect).<br /></p><div class="codebox"><pre><code>    Tiger Tree Hashes___________________
+              |      \           \      \
+             21       \           \      \
+            /  \       \           \      \
+          15    20      36         45      \
+          / \    |     /  \        / \      \
+        7   14  20   28    35    43   44    46
+        |_file 1_|  |_file 2_|  |_file 3_| |f4|</code></pre></div><p>2. If an error occurred while loading a piece (file 1 (14)):<br />2.1. ask for a set of hashes for parts of a piece (file 1 (8, 9, 11, 12))<br />2.2. check this set&#160; (file 1 (8, 9, 11, 12)) by already available hash (file 1 (14))<br /></p><div class="codebox"><pre><code>            14
+           / \
+         10   13
+         /\   / \
+        8  9 11 12</code></pre></div><p>2.3. check a piece by the set of hashes(file 1 (8, 9, 11, 12))<br /></p><div class="codebox"><pre><code>       8    9   X   12
+       |_file 1 (14)_|</code></pre></div><p>2.4. inquire of a piece in which the hash is not the correct (file 1 (11)).</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1950" class="blockpost roweven">
+	<h2><span><span class="conr">#2</span> <a href="viewtopic.php?pid=1950#p1950">2011-04-05 10:27:47</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90000">DreadWingKnight</a></strong></dt>
+						<dd class="usertitle"><strong>CBTT/BNBT Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Tiger Tree Torrent</h3>
+					<div class="postmsg">
+						<p><a href="http://forum.bittorrent.org/viewtopic.php?id=160">http://forum.bittorrent.org/viewtopic.php?id=160</a><br />Simialr to</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Guy with a few torrent programs under his belt.</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1952" class="blockpost rowodd">
+	<h2><span><span class="conr">#3</span> <a href="viewtopic.php?pid=1952#p1952">2011-04-07 00:09:35</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90852">ivan386</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Tiger Tree Torrent</h3>
+					<div class="postmsg">
+						<p>My version is easy to implement and much better. And compatible with old clients. They can use &#039;pieces&#039;. When many clients starts use &#039;tth pieces&#039; &#039;pieces&#039; will be removed.</p>
+						<p class="postedit"><em>Last edited by ivan386 (2011-04-07 00:16:31)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=360"><strong>Tiger Tree Torrent</strong></a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>UTP Packet Analysis (Page 1) / Cooperation between BitTorrent and ISPs / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
+<script type="text/javascript" src="captcha/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript">
+	$(function(){var f=$("#sliderCaptcha");var b=$("#cleCaptcha");var d=$(".boutonsCaptcha");var a=$("#javascriptCaptcha");var e=[5,41,3,35,7,42,26,39,1,37,19,36,11,7,37,26,23,43,22,11,15,38,41,3,34,27,43,27,5,17,15,11,8,19,46,16,12,23,5,14,10,25,0,21,32,37,48,6,31,20];var h=0;var g=5;var c=0;a.hide();f.slider({value:0,min:0,max:g,step:1,slide:function(i,j){if(j.value>c){c=j.value;h+=c}},stop:function(j,k){var i=false;if(k.value==g){if(h==((g+Math.pow(g,2))/2)){i=true;f.slider("option","disabled",true);if(b.val().length!=e.length){$.post("captcha.php",{tokenCaptcha:b.val()},function(m){var l="";$.each(e,function(){l+=m.charAt(this%m.length)});b.val(l);d.removeAttr("disabled")})}}}if(!i){h=c=0;f.slider("option","value",h)}}})});
+</script>
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="punviewtopic" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex" class="isactive"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=32">Cooperation between BitTorrent and ISPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=138"><strong>UTP Packet Analysis</strong></a></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p824" class="blockpost rowodd firstpost blockpost1">
+	<h2><span><span class="conr">#1</span> <a href="viewtopic.php?pid=824#p824">2009-11-28 20:21:53</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90638">DarkD</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>UTP Packet Analysis</h3>
+					<div class="postmsg">
+						<p>I have a couple of UTP packets&#160; which I picked up using wireshark and I was wondering if you guys can tell me exactly how these packets correlate to the protocol.&#160; </p><p>This is what I found for the UTP header on the bittorrent.org web site</p><p>0&#160; &#160; &#160; &#160;4&#160; &#160; &#160; &#160; &#160; 8&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;16&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;24&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; 32<br />+-------+-------+---------------+---------------+---------------+<br />| ver&#160; &#160; &#160; | type&#160; | extension&#160; &#160; &#160; &#160; | connection_id&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;|<br />+-------+-------+---------------+---------------+---------------+<br />| timestamp_microseconds&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;|<br />+---------------+---------------+---------------+---------------+<br />| timestamp_difference_microseconds&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; |<br />+---------------+---------------+---------------+---------------+<br />| wnd_size&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;|<br />+---------------+---------------+---------------+---------------+<br />| seq_nr&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;| ack_nr&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; |<br />+---------------+---------------+---------------+---------------+</p><p>This is one of the UTP data packets.&#160; I thought that since it is an embedded protocol it would start in the data section, where it first says d1:rd2.&#160; This is confusing me because I thought there was only one version of UTP so the version number should be 1 and not 0xd which is hex for 13.</p><p>I also noticed that the end of the data section is always similar to other packets as well so is there some protocol at the end?</p><p>0000&#160; 00 19 d1 60 b4 77 00 0c&#160; f1 d0 c2 33 08 00 45 00&#160; &#160;...`.w.. ...3..E.<br />0010&#160; 01 42 00 00 40 00 2d 11&#160; 9c 0a 50 ca 9f 1e c0 a8&#160; &#160;.B..@.-. ..P.....<br />0020&#160; 00 10 c0 0e 5b 26 01 2e&#160; a3 89 64 31 3a 72 64 32&#160; &#160;....[&amp;.. ..d1:rd2<br />0030&#160; 3a 69 64 32 30 3a 00 9d&#160; 08 10 25 55 26 66 7b d9&#160; &#160;:id20:.. ..%U&amp;f{.<br />0040&#160; 74 65 20 71 41 c1 df 04&#160; db 03 35 3a 6e 6f 64 65&#160; &#160;te qA... ..5:node<br />0050&#160; 73 32 30 38 3a 3d c2 e5&#160; 59 91 a3 f0 6f ec f5 0b&#160; &#160;s208:=.. Y...o...<br />0060&#160; 26 f3 9d 1e 15 f0 8e d7&#160; 81 4f 6d 21 06 3e 0f 39&#160; &#160;&amp;....... .Om!.&gt;.9<br />0070&#160; 29 95 c8 39 7e d3 95 7e&#160; ea 1d 4a e4 67 d6 d1 7c&#160; &#160;)..9~..~ ..J.g..|<br />0080&#160; 56 2b ae 7c da cf 94 1d&#160; 9b 34 89 3e 37 71 00 90&#160; &#160;V+.|.... .4.&gt;7q..<br />0090&#160; 56 15 55 0a ba b1 67 60&#160; 59 36 f7 9d 1d 4d e3 24&#160; &#160;V.U...g` Y6...M.$<br />00a0&#160; 90 8d 30 2d 60 06 da ea&#160; b0 2a ef c1 b3 fc 9f 73&#160; &#160;..0-`... .*.....s<br />00b0&#160; af bb a9 61 e9 a9 7d c8&#160; 96 1c 21 ce 53 2e b6 20&#160; &#160;...a..}. ..!.S.. <br />00c0&#160; 0c 39 94 d4 4f 9b 2e 03&#160; 0c c8 be 50 69 1c bc a6&#160; &#160;.9..O... ...Pi...<br />00d0&#160; bd 50 b9 80 a6 21 99 29&#160; fd 69 9f fc 96 a4 19 4c&#160; &#160;.P...!.) .i.....L<br />00e0&#160; af 7f 50 8e 78 c0 05 4e&#160; d7 fb 85 3c 2d 50 e7 c6&#160; &#160;..P.x..N ...&lt;-P..<br />00f0&#160; bc 27 47 be 07 91 71 49&#160; 84 fc cb a7 67 9c 4c 41&#160; &#160;.&#039;G...qI ....g.LA<br />0100&#160; 84 cb 76 e2 87 ce 2d a9&#160; 09 6c 1e 1d e0 b0 73 ec&#160; &#160;..v...-. .l....s.<br />0110&#160; fd 14 5e 0b 3d 5e 8a 0e&#160; b9 fb a3 10 5d cc c7 4f&#160; &#160;..^.=^.. ....]..O<br />0120&#160; a5 b9 2e 64 7e 35 3a 74&#160; 6f 6b 65 6e 38 3a 23 ce&#160; &#160;...d~5:t oken8:#.<br />0130&#160; 2d 6f 8c b5 6f 73 65 31&#160; 3a 74 34 3a 39 01 00 00&#160; &#160;-o..ose1 :t4:9...<br />0140&#160; 31 3a 76 34 3a 54 52 24&#160; b3 31 3a 79 31 3a 72 65&#160; &#160;1:v4:TR$ .1:y1:re</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p825" class="blockpost roweven">
+	<h2><span><span class="conr">#2</span> <a href="viewtopic.php?pid=825#p825">2009-11-28 20:44:34</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: UTP Packet Analysis</h3>
+					<div class="postmsg">
+						<p>this is not ÂµTP, it&#039;s DHT traffic, which is bencoded and starts at the &quot;d1:rd2&quot; and ends with the last &quot;e&quot;. I would assume that you included the UDP headers?</p><br /><p>You can find the specification here: <a href="http://bittorrent.org/beps/bep_0005.html">http://bittorrent.org/beps/bep_0005.html</a></p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p826" class="blockpost rowodd">
+	<h2><span><span class="conr">#3</span> <a href="viewtopic.php?pid=826#p826">2009-11-28 21:11:34</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90638">DarkD</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: UTP Packet Analysis</h3>
+					<div class="postmsg">
+						<p>yea this is the whole packet with UDP header.&#160; </p><p>45 00<br />0010&#160; 00 86 49 61 00 00 80 11&#160; 07 d4 c0 a8 00 10 da 4b&#160; <br />0020&#160; 4e 2e </p><p>Thats the extracted IP protocol.</p><p>Anyways, hash tables aren&#039;t my specialty, but looking at wikipedia are you saying that the UTP packet is in there just scrambled through the hash table?&#160; What should I look for and how do I get my hands on a UTP packet?</p><p>EDIT</p><p>Just&#160; to clarify, </p><p>All I want really is some example packets of UTP, all I have to do really is put the packet side by side with the protocol description and say this does this, XX is the version number which means blah, XX is the ___ and does __________ .</p>
+						<p class="postedit"><em>Last edited by DarkD (2009-11-28 22:00:33)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p827" class="blockpost roweven">
+	<h2><span><span class="conr">#4</span> <a href="viewtopic.php?pid=827#p827">2009-11-29 05:13:49</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: UTP Packet Analysis</h3>
+					<div class="postmsg">
+						<p>*sigh* Again, this is <em>not</em> a ÂµTP packet. It&#039;s a packet which is part of the DHT network. Completely different purpose, completely different protocol. They only share the fact that they&#039;re running over UDP. That&#039;s all.</p><p>If you want some sample ÂµTP packets i suggest you just rune wireshark alongside ÂµTorrent and run a popular torrent to increase the likelyhood of such a connection being created. And maybe disabling DHT or putting it on another port will make things easier to distinguish for you.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p833" class="blockpost rowodd">
+	<h2><span><span class="conr">#5</span> <a href="viewtopic.php?pid=833#p833">2009-11-29 13:40:09</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90638">DarkD</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: UTP Packet Analysis</h3>
+					<div class="postmsg">
+						<p>When I narrowed the transfer down to just between two myself and one of the seeds I found a second type of packet.&#160; What is bugging me is there isn&#039;t really a data section on this one</p><p>00 0c f1 d0 c2 33 00 19&#160; d1 60 b4 77 08 00 45 00<br />00 33 4b b3 00 00 80 11&#160; a1 63 c0 a8 00 10 62 dc<br />2a 0f 5b 26 1a e1 00 1f&#160; 25 9c 17 d7 67 18 4b 10<br />80 9a 00 01 3a ba 01 0b&#160; 67 9b ab 00 01 00 06 6c<br />76&#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160; &#160;</p><p>What bugs me about this one is there isn&#039;t much of a data section...&#160; 3 bytes in this packet...&#160; The connection id is the only thing which really makes sense in it to me...</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p836" class="blockpost roweven">
+	<h2><span><span class="conr">#6</span> <a href="viewtopic.php?pid=836#p836">2009-11-29 17:21:41</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90638">DarkD</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: UTP Packet Analysis</h3>
+					<div class="postmsg">
+						<p>wait are you saying that I haven&#039;t been getting a uTP packet yet?&#160; They are unlikely to appear or something like that?</p>
+						<p class="postedit"><em>Last edited by DarkD (2009-11-29 17:26:42)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p838" class="blockpost rowodd">
+	<h2><span><span class="conr">#7</span> <a href="viewtopic.php?pid=838#p838">2009-11-29 18:58:53</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: UTP Packet Analysis</h3>
+					<div class="postmsg">
+						<p>I am saying that the packet which you provided in the initial post is not a ÂµTP packet. Some other packets you have captured may have been ÂµTP packets, but i obviously can&#039;t know that.</p><br /><p>ÂµTP is just a transport protocol, like TCP. So if you see regular bittorrent traffic (containing the &quot;\19bittorrent protocol&quot; header and everything) going over UDP then you possibly have a ÂµTP connection there.</p><br /><p>i think you can observe following encapsulation and protocol combinations: </p><p>network layer -&gt; IP -&gt; TCP -&gt; bittorrent<br />network layer -&gt; IP -&gt; TCP -&gt; encryption handshake -&gt; bittorrent (encrypted)<br />network layer -&gt; IP -&gt; UDP -&gt; ÂµTP -&gt; bittorrent<br />network layer -&gt; IP -&gt; UDP -&gt; ÂµTP -&gt; encryption handshake -&gt; bittorrent (encrypted)<br />network layer -&gt; IP -&gt; UDP -&gt; DHT</p><br /><p>The packet you posted was of the last kind. It&#039;s auxiliary to bittorrent and unrelated to ÂµTP.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p839" class="blockpost roweven">
+	<h2><span><span class="conr">#8</span> <a href="viewtopic.php?pid=839#p839">2009-11-29 21:57:56</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90638">DarkD</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: UTP Packet Analysis</h3>
+					<div class="postmsg">
+						<p>I get that, which is why I posted a different packet that had completely different characteristics.&#160; If I emailed you my pcap file, could you pull out a utp packet</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=32">Cooperation between BitTorrent and ISPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=138"><strong>UTP Packet Analysis</strong></a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

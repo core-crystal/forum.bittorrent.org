@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>forum.bittorrent.org / xor pieces</title>
+<link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
+</head>
+<body>
+
+<div id="punwrap">
+<div id="punviewtopic" class="pun">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><span>forum.bittorrent.org</span></h1>
+			<p><span>BitTorrent.org community</span></p>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p>You are not logged in.</p>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<h2><span>Announcement</span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div>Posting about any illegal sharing of copyrighted content is strictly forbidden.</div>
+		</div>
+	</div>
+</div>
+
+<div class="linkst">
+	<div class="inbox">
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<p class="postlink conr">&nbsp;</p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;xor pieces</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p420" class="blockpost rowodd firstpost">
+	<h2><span><span class="conr">#1&nbsp;</span><a href="viewtopic.php?pid=420#p420">2008-08-31 17:08:26</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=30435">bram</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3>xor pieces</h3>
+				<div class="postmsg">
+					<p>A major problem for BitTorrent swarms is that when they get old and don't have a permanent seed, they tend to become non-recoverable. The problem is that if even a single piece winds up not being on any current peers, then nobody can get a complete copy of the whole file. Rarest first does a fairly good job of making pieces be as evenly distributed as possible, and there's an obvious theoretical limit in that if the total amount of data all peers currently have is less than the complete size of the file then there's no way to do a complete recovery. But there's a difference between the theoretical limits of rarest first and the theoretical limits of any scheme. In this post I'll describe the theoretical limitations, propose simple extension which helps quite a bit, and give some quantitative analysis of how much improvement is created. The intention is to then get commentary on some of the details and gauge level of interest, and later on write a BEP which is much more fleshed out and incorporates feedback.<br /><br />Let's consider the case of three peers downloading a file, and they're all halfway done when one of them disappears. The remaining two have enough bits between them, but is it possible for them to be guaranteed the ability to reconstruct the file? With rarest first only it turns out the answer is no. Let's call the peers A, B, and C. For the file to be reconstructible after C goes away the two halves which A and B have must be completely non-overlapping. Likewise for the file to be reconstructible after A goes away the halves which B and C have must be completely nonoverlapping. But that implies that the halves which A and C have must be exactly the same, so when B goes away the file won't be reconstructible.<br /><br />Now lets say that we introduce some new 'virtual' pieces, for for every even position in the file (starting at index zero) the xor of that piece and the next piece. This increases the total number of pieces by 50%. Here's what it looks like, with the original pieces represented by Os, and the virtual pieces represented by Xs:<br /><br />OXO OXO OXO OXO OXO<br /><br />Now let's once again consider the case where three peers have half the file and the original seed goes away. Now the situation is much improved. Peer A gets the first half of each pair, peer B the second half, and peer C the xor piece, and the file is completely recoverable if any single peer goes away.<br /><br />The intended usage of xor pieces is that rarest first should be modified to calculate the number of extant peers which could go away and still have any given xor pair be recoverable, and download a piece from the pair which is closest to being lost. Those familiar with erasure codes and rarest first will notice that this is rarest first with a tiny bit of erasure codes, specifically the 2 of 3 scheme known as xor, while the academic literature tends to focus on much more sophisticated erasure schemes with complete elimination of rarest first. This approach is vastly simpler, is very straightforward to provide cryptographic security for, is backwards compatible, and only does minimal damage to implementing streaming.<br /><br />Using simple xors has some quantitative limits as well. Consider the case where one out of four peers goes away. With xor pieces, the four peers would need to download parts 1, 2, X, and nothing in order to be able to recover the file, so the amount of data to guarantee reconstructibility is 3/2 the file size, much better than 2 for simple rarest first. The theoretical limit is 4/3 the file size, so xor pieces require an excess of about 12.5%, while no xor pieces would require 50%. There isn't all that much to be gained here, and to perform optimally in both this case and the one of three case which xor nails would require a 12 of 18 erasure coding scheme, which is hardly simple.<br /><br />A more interesting case is one where there are four peers, and two drop out. Simple rarest first will waste 50% over the information theoretic limit, because three of the four peers need to have a piece to survive a while using xor blocks will waste 25%, because for any given pair the peers need to have pieces 1, 2, X, and both respectively, which is 5/4 of the theoretical limit. There's a little bit of gain to be had here, but it can be done by adding another set of pieces for each pair later on, using a simple error correction scheme which is much more complicated than xor but not all that bad. The logic for that error correction scheme is much more complicated though, as is the logic for doing rarest first on 2 of 4, but it's worth keeping in mind as a possible future extension should xor pieces prove to have a dramatic positive effect.<br /><br />For numbers of peers greater than 4 the benefits of erasure coding schemes drop dramatically, because the granularity of the peers goes down, and the practical benefit probably drops even more because above some number of peers there will most likely be a complete seed available.<br /><br />Xor pieces are fully compatible with peers which don't support them, but there's a slight weirdness in that peers which don't support xor pieces can't download the xor pieces from peers which do. It's always possible for the peer which doesn't support xor pieces to upload the vanilla piece they have to the one which does, then download the other vanilla piece in return, so the amount of problems which can be caused isn't all that bad, but there is some weirdness and I haven't done a complete analysis of it. Peers should probably prefer to download the vanilla pieces over xor pieces in a tiebreak.<br /><br />If a peer is doing a streaming download with xor pieces then the worst case scenario is that there are two peers available, one of which has all the second halves of pairs and the other of which has all the xor pieces, so even in the worst case it's basically equivalent to doubling the piece size, which isn't all that bad.<br /><br />Security for xor pieces can be done by putting the hashes of the xor pieces in the torrent file, under a new key. This bloats up the torrent file by 50%, which is reasonable under many circumstances. The annoying minor issue is what to do when the number of pieces is odd or the last one is a smaller size. My current thought is that trailing pieces simply shouldn't have associated xor pieces, because that's the simplest thing to do.<br /><br />Peers which both support xor pieces should simply send each other longer than usual have bitfields, and send haves of all relevant pieces when they get them. Maybe as an optimization they should skip the third have for each pair and figure that the other side can figure that out. I'm not sure if the xor pieces should be put at the end or put after all non-trailing pieces and put the one or two trailing pieces at the very end. Either way is workable.<br /><br />Support for xor pieces should probably be done using LTEP. I'm not sure of the best way to indicate it though, since no new messages are used.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p428" class="blockpost roweven">
+	<h2><span><span class="conr">#2&nbsp;</span><a href="viewtopic.php?pid=428#p428">2008-08-31 19:15:34</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: xor pieces</h3>
+				<div class="postmsg">
+					<p>While full network coding schemes (think avalanche) have serious issues with disk performance, hashing and management overhead the proposal here on the other hand would lessen the already marginal improvement that any type of piece recovery can provide.<br /><br />As everyone should know torrents do have a life cycle and the availability of the rarest piece will reach 0 no matter what. Using XORing would only extend the lifetime for an undetermined, possibly small amount. It might also smooth out the piece availability during swarm startup where some hotspots usually arise, but 50% more pieces are probably not enough to achieve that.<br /><br />The general problem is that in small swarms effects of NATed peers, asymmetric connections, odd choking cycles, availability skews due to previous selective downloading etc. dominate and peers often end up forming some kind of chain or other types of clustering which means even when rarest first is used peer A provides pieces to peer B and peer C merely replicates what peer B has.<br /><br />If peer C won't get any rarest pieces from A it won't get any xor-rarest either.<br /><br /><br />So the basic question is: how much would the actual gain be and is it worth it?</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p432" class="blockpost rowodd">
+	<h2><span><span class="conr">#3&nbsp;</span><a href="viewtopic.php?pid=432#p432">2008-09-02 15:00:36</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: xor pieces</h3>
+				<div class="postmsg">
+					<p>Ah, thinking of it... this only deals with one way how a torrent can reach 0 availability: the loss of a peer that has a significant fraction of the rarest pieces. But there are other ways a torrent can die, the total opposite for example is the death of a thousand cuts. i.e. losing peers gradually, but faster than rarest-first can compensate for the rarest pieces being lost with the peers that disappear.<br />And if the rate of rarest pieces being lost is higher than the downloading-rarest-pieces-rate then this would also be the same for xored pieces<br /><br />So, we should actually consider how common the &quot;3 peers, each has 50% randomly, 1 of them disappears&quot;-scenario or equal ones actually happen compared to other processes that can bring a torrent to 0 availability.</p>
+					<p class="postedit"><em>Last edited by The 8472 (2008-09-02 15:07:11)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p433" class="blockpost roweven">
+	<h2><span><span class="conr">#4&nbsp;</span><a href="viewtopic.php?pid=433#p433">2008-09-02 17:11:16</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=30435">bram</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: xor pieces</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>The 8472 wrote:</h4><p>Ah, thinking of it... this only deals with one way how a torrent can reach 0 availability: the loss of a peer that has a significant fraction of the rarest pieces. But there are other ways a torrent can die, the total opposite for example is the death of a thousand cuts. i.e. losing peers gradually, but faster than rarest-first can compensate for the rarest pieces being lost with the peers that disappear.<br />And if the rate of rarest pieces being lost is higher than the downloading-rarest-pieces-rate then this would also be the same for xored pieces<br /><br />So, we should actually consider how common the &quot;3 peers, each has 50% randomly, 1 of them disappears&quot;-scenario or equal ones actually happen compared to other processes that can bring a torrent to 0 availability.</p></div></blockquote><p>Yeah, the slow death process is much more realistic, especially if peers tend to drop off after completing downloads. Also, if there's a web seed and peers which are trying to maximize offload then xor pieces will tend to increase offload rates, for similar reasons. But both of those cases (and the noisy midway scenarios of peers joining and leaving over time) are much more difficult to analyze than the scenario I described, so I used that one to motivate, because it's good to have some kind of quantitative analysis to build an intuition on.<br /><br />Maybe some simulations would be helpful here. Perhaps one could take tracker logs and then re-run the reported amounts of transfer to see if xor pieces would keep swarms from dying.<br /><br />A significant real-world complicating factor is NAT traversal problems, which may be severe enough in practice that it only really makes sense to worry about xor pieces once those are under control.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p438" class="blockpost rowodd">
+	<h2><span><span class="conr">#5&nbsp;</span><a href="viewtopic.php?pid=438#p438">2008-09-02 18:38:35</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: xor pieces</h3>
+				<div class="postmsg">
+					<p>Another serious realworld issue is swarm fragmentation due to distinct infohashes for identical content, e.g. due to different piece sizes or filenames. Eleminating this and NAT could probably expand the torrent lifecycle much more than xor pieces ever could.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p443" class="blockpost roweven">
+	<h2><span><span class="conr">#6&nbsp;</span><a href="viewtopic.php?pid=443#p443">2008-09-03 18:06:34</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=30435">bram</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: xor pieces</h3>
+				<div class="postmsg">
+					<p>Isn't there some extension right now which includes a hash root of the whole file? That would be invariant across postings, and a site could simply reject new postings of a file in favor of the old ones. I suppose there could be some kind of extension where peers would be willing to handshake on the file contents, but not the whole info dict being the same, but that would have to be specified in the info dict as desired behavior, and I don't think it's practical to be flexible about piece sizes, and I'm not sure that there's much of any call for such a feature, especially with the opposite call for features which give very tight control to the tracker operator.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox">
+		<p class="postlink conr">&nbsp;</p>
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;xor pieces</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div class="inbox">
+
+			<div class="conl">
+				<form id="qjump" method="get" action="viewforum.php">
+					<div><label>Jump to
+					<br /><select name="id" onchange="window.location=('viewforum.php?id='+this.options[this.selectedIndex].value)">
+						<optgroup label="BitTorrent">
+							<option value="26">Announcements</option>
+							<option value="25" selected="selected">BEPs</option>
+							<option value="29">BEP process</option>
+							<option value="27">General</option>
+							<option value="33">Research Tools</option>
+							<option value="32">Cooperation between BitTorrent and ISPs</option>
+							<option value="30">Attacks against BitTorrent</option>
+							<option value="28">Feature Requests, Found Bugs &gt;&gt;&gt;</option>
+					</optgroup>
+					</select>
+					<input type="submit" value=" Go " accesskey="g" />
+					</label></div>
+				</form>
+			</div>
+			<p class="conr">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-116155-1";
+_udn = "utorrent.com";
+urchinTracker();
+</script>
+
+</body>
+</html>

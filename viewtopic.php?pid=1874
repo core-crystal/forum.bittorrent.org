@@ -1,0 +1,305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Discussion of BEP 5: DHT (Page 2) / BEPs / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
+<script type="text/javascript" src="captcha/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript">
+	$(function(){var f=$("#sliderCaptcha");var b=$("#cleCaptcha");var d=$(".boutonsCaptcha");var a=$("#javascriptCaptcha");var e=[5,43,44,19,36,43,9,40,22,15,32,22,3,24,9,38,28,29,31,13,24,11,16,22,36,0,10,0,31,38,16,37,32,11,6,18,4,16,9,26,31,41,48,35,16,8,24,44,38,5];var h=0;var g=5;var c=0;a.hide();f.slider({value:0,min:0,max:g,step:1,slide:function(i,j){if(j.value>c){c=j.value;h+=c}},stop:function(j,k){var i=false;if(k.value==g){if(h==((g+Math.pow(g,2))/2)){i=true;f.slider("option","disabled",true);if(b.val().length!=e.length){$.post("captcha.php",{tokenCaptcha:b.val()},function(m){var l="";$.each(e,function(){l+=m.charAt(this%m.length)});b.val(l);d.removeAttr("disabled")})}}}if(!i){h=c=0;f.slider("option","value",h)}}})});
+</script>
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="punviewtopic" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex" class="isactive"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=12"><strong>Discussion of BEP 5: DHT</strong></a></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><a class="item1" href="viewtopic.php?id=12&amp;p=1">Previous</a> <a href="viewtopic.php?id=12&amp;p=1">1</a> <strong>2</strong></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p677" class="blockpost rowodd blockpost1">
+	<h2><span><span class="conr">#26</span> <a href="viewtopic.php?pid=677#p677">2009-10-15 17:32:46</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Discussion of BEP 5: DHT</h3>
+					<div class="postmsg">
+						<p>good point</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p695" class="blockpost roweven">
+	<h2><span><span class="conr">#27</span> <a href="viewtopic.php?pid=695#p695">2009-10-18 07:54:20</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Discussion of BEP 5: DHT</h3>
+					<div class="postmsg">
+						<p>While we&#039;re modifying BEP 5, I&#039;d like to suggest adding an extension for the case when a node is overloaded.</p><p>Right now, the only way that a node has to reduce the load it is subjected to is to start dropping requests; this will eventually cause it to be dropped from other nodes&#039; routing tables, which will reduce load.</p><p>What I&#039;d like is a way to include a field in a reply that says &quot;I&#039;m overloaded, please drop me from your routing tables if you have enough other nodes.&quot;.&#160; The simplest way would to simply allow any request to contain a key &quot;10:overloadedi1e&quot;.</p><p>(Note, by the way, that this does not require inclusion of the BEP 32 want/flags key, it is enough to include the new key in the request itself, which is why I&#039;m opposed to renaming want to flags.)</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p696" class="blockpost rowodd">
+	<h2><span><span class="conr">#28</span> <a href="viewtopic.php?pid=696#p696">2009-10-18 09:28:59</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Discussion of BEP 5: DHT</h3>
+					<div class="postmsg">
+						<p>nonono, bad idea.</p><p>that won&#039;t work because the nodes sending you the bulk of the requests won&#039;t be the nodes which have the you in the routing table. The nodes that are most likely to have you in their routing table are your neighbors. And if overloading is really an issue then it is probably due to a very popular key (infohash), thus your neighbors would also be affected by that overload, removing yourself from their routing table means they&#039;ll have to bear even more load, which might motivate them to remove themselves from other routing tables too... basically tearing a hole into the keyspace.</p><p>If high load due to hotspots really is an issue then omitting the <em>token</em> as i have proposed already provides relief as it would mean that the key/value pairs will be stored on nodes further away from the target key, which means the number of nodes handling that key will increase and thus spread the load.</p><br /><p>Not to mention that i have never seen the DHT traffic exceed ~2kB/s in each direction... so what kind of overload are you talking about?</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p703" class="blockpost roweven">
+	<h2><span><span class="conr">#29</span> <a href="viewtopic.php?pid=703#p703">2009-10-19 09:46:46</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Discussion of BEP 5: DHT</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>that won&#039;t work because the nodes sending you the bulk of the requests won&#039;t be the nodes which have the you in the routing table.</p></div></blockquote></div><p>When implemented correctly, Kademlia favours nodes that have been stable for a long time.&#160; Traffic will normally increase with the time you&#039;re reachable, without any bound.</p><p>In Transmission, I use a token bucket for dropping requests.&#160; Initially, it was implemented as 1 request per second on average, with a bucket size of 40; it would usually start triggering after a few days of continuous operation.&#160; I&#039;ve now switched to more permissive parameters (4 requests per second on average, still with a bucket size of 40), and I haven&#039;t seen it trigger yet.</p><p>Right now, there&#039;s no way to drop out from other people&#039;s routing tables other than dropping requests, which is clearly not such a great idea.&#160; A better way would be to be able to answer ping/find_nodes requests normally, but with a flag that says &quot;please drop me from your routing table&quot;.</p><div class="quotebox"><blockquote><div><p>i have never seen the DHT traffic exceed ~2kB/s in each direction</p></div></blockquote></div><p>That&#039;s because you don&#039;t run your DHT for weeks without restarting it.&#160; <a href="http://www.pps.jussieu.fr/~jch/software/hekate/">I do</a>, and so do the rtorrent folks.</p><div class="quotebox"><blockquote><div><p>If high load due to hotspots...</p></div></blockquote></div><p>High load due to popular torrents is a completely different matter, and not something that worries me.&#160; (It&#039;s a temporary condition that will go away.)</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p706" class="blockpost rowodd">
+	<h2><span><span class="conr">#30</span> <a href="viewtopic.php?pid=706#p706">2009-10-19 12:22:30</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Discussion of BEP 5: DHT</h3>
+					<div class="postmsg">
+						<p>Ahh, i see your point.</p><div class="quotebox"><blockquote><div><p>That&#039;s because you don&#039;t run your DHT for weeks without restarting it.</p></div></blockquote></div><p>In fact, i do. It&#039;s just that my IP changes every 24h, so i can only test it up to that limit.</p><p>Which makes me think of something... you could just change your node ID everytime you exceed some limit, that&#039;ll remove you from routing tables within a few minutes since you won&#039;t fit their bucket entries anymore but you&#039;ll still be able to answer requests.</p><p>That should allow you to deal with the situation without any problematic changes to the spec.</p><br /><br /><p>Btw, considering that the software you&#039;re writing there is intended for seedboxes, which probably have 100Mbit connections you should consider not doing this and just taking the bandwidth hit. How much are we talking about if you disable the token bucket filter?</p><br /><p>Oh, another thing. If you&#039;d actually do the overloaded thing it would be smart not sending this to your neighbors (everyone within 3-4 buckets range). Integrity of the local buckets is crucial to kademlia performance.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p731" class="blockpost roweven">
+	<h2><span><span class="conr">#31</span> <a href="viewtopic.php?pid=731#p731">2009-11-06 11:31:47</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Discussion of BEP 5: DHT</h3>
+					<div class="postmsg">
+						<p>I applied my proposed changes to make &quot;token&quot; not mandatory and to encourage the inclusion of &quot;nodes&quot; in responses to &quot;get_peers&quot;</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1874" class="blockpost rowodd">
+	<h2><span><span class="conr">#32</span> <a href="viewtopic.php?pid=1874#p1874">2011-01-22 12:54:29</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Discussion of BEP 5: DHT</h3>
+					<div class="postmsg">
+						<p>I have found a flaw in the Spec. The message format requires transaction IDs to be included in all messages, including error messages. But it makes no provisions on how to send error messages when the message cannot be parsed for some reason (and thus no transaction ID to respond to can be obtained), if the transaction ID is plainly absent or if we&#039;re responding to a response (which probably means the transaction already was terminated on the other end).</p><p>It should also be explicitly stated that it is possible to respond to a respone-message with an error message if it is somehow malformed.</p><br /><br /><p>And while we&#039;re at it, BEP 5 also should be amended to specify the version (v) field.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><a class="item1" href="viewtopic.php?id=12&amp;p=1">Previous</a> <a href="viewtopic.php?id=12&amp;p=1">1</a> <strong>2</strong></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=12"><strong>Discussion of BEP 5: DHT</strong></a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,477 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>forum.bittorrent.org / Cache Behavior</title>
+<link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
+</head>
+<body>
+
+<div id="punwrap">
+<div id="punviewtopic" class="pun">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><span>forum.bittorrent.org</span></h1>
+			<p><span>BitTorrent.org community</span></p>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p>You are not logged in.</p>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<h2><span>Announcement</span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div>Posting about any illegal sharing of copyrighted content is strictly forbidden.</div>
+		</div>
+	</div>
+</div>
+
+<div class="linkst">
+	<div class="inbox">
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<p class="postlink conr">&nbsp;</p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Cache Behavior</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p312" class="blockpost rowodd firstpost">
+	<h2><span><span class="conr">#1&nbsp;</span><a href="viewtopic.php?pid=312#p312">2008-08-01 08:13:39</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3>Cache Behavior</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>For DOCSIS networks, it looks like the quickest and most effective solution is to introduce a few terabytes of cache upstream from the CMTS(es) in each metro area.</p></div></blockquote><p>I have thought about this further and with the current state of BEP22 this is not a solution as you'd either open yourself to be used as a CDN/cache by everyone (including ISP-external users) or you could only cache uploads that would occur within the same ISP, which reduce the cache's effectiveness.<br /><br />Maybe a cache should operate more like this:<br /><ol style="list-style-type: decimal"><br /><li>ISP-local peer connects to ISP-remote peer</li><br /><li>local peer requests token from cache</li><br /><li>local peer gives token to remote peer</li><br /><li>remote peer connects to cache</li><br /><li>cache substitutes download and upload bandwidth for the local peer</li><br /><li>local peer only downloads from the cache and only uploads stuff the cache doesn't already have</li><br /></ol><br /><br />This would allow the cache to keep control over the bandwidth, i.e. only substitute for real peer-peer connections and not cache for arbitrary external users. The problem here is that the solution is rather stateful, though that could be optimized with some clever design.<br /><br /><br />Anyway, the point is you can't just run a BEP22-cache and be done with it, that will just cause other problems.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p320" class="blockpost roweven">
+	<h2><span><span class="conr">#2&nbsp;</span><a href="viewtopic.php?pid=320#p320">2008-08-07 15:39:18</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Cache Behavior</h3>
+				<div class="postmsg">
+					<p>Moved &quot;The 8472&quot;'s comments on cache behavior to this new topic.<br /><br />A BEP for defining cache behavior does not yet exist.&nbsp; The purpose of this topic is to discuss how caches should interoperate with clients.&nbsp; In addition to those concerns raised by &quot;The 8472,&quot; what other issues regarding caching and peer-cache communication need to be addressed?<br /><br />BEP 22 addresses cache discovery.&nbsp; BEP 22 mentions delegation of seeding to a cache.&nbsp; How would that happen?&nbsp; How does a peer know that the cache is maintaining liveness or reasonable performance?&nbsp; What if a peer wants to make sure that a file it has delegated to a cache is available to all peers and not just those within the same ISP?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p326" class="blockpost rowodd">
+	<h2><span><span class="conr">#3&nbsp;</span><a href="viewtopic.php?pid=326#p326">2008-08-08 22:58:17</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Cache Behavior</h3>
+				<div class="postmsg">
+					<p>The 8472,<br /><br />I hope it's okay that I started a new topic.&nbsp; My thought was to try and separate cache behavior from cache discovery.&nbsp; However there are comments in BEP 22 about cache behavior, such as a &quot;cache is just another peer... blah blah.&quot;&nbsp; &nbsp;A cache COULD be nothing more than a fat peer, but then you're assessment of its abuse is absolutely correct.<br /><br />Perhaps I should add a line in BEP 22 that states exactly that &quot;a cache COULD...&quot; followed by a line that says that more specific cache behavior is outside the scope of BEP 22.<br /><br />I have been thinking about cache behavior, and I haven't decided whether it is necessary to extend the core protocols with new message types (via LTEP or whatever).&nbsp; <br /><br />What is wrong with policies like one that limits per infohash seeding a cache does outside the ISP to the equivalent of a peer for each peer within the ISP that periodically handshakes with the cache using that infohash?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p327" class="blockpost roweven">
+	<h2><span><span class="conr">#4&nbsp;</span><a href="viewtopic.php?pid=327#p327">2008-08-09 00:58:00</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Cache Behavior</h3>
+				<div class="postmsg">
+					<p>yeah, new topic is ok.<br /><br />regarding your question: how about that the handshaking peer cannot be sure that the cache really seeds in its place and it can thus cease to seed?</p>
+					<p class="postedit"><em>Last edited by The 8472 (2008-08-09 00:59:21)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p328" class="blockpost rowodd">
+	<h2><span><span class="conr">#5&nbsp;</span><a href="viewtopic.php?pid=328#p328">2008-08-10 23:18:25</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89879">herman</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Cache Behavior</h3>
+				<div class="postmsg">
+					<p>&gt; discuss how caches should interoperate with clients.<br /><br />I'd like to see webseeding involved in &quot;caching&quot;. Dynamically add new web seeds by adding a URL to the Web Seeds form field. A form of throttling would be useful where more leechers means the web/ftp server is accessed less frequently. This way, as the number of leechers increase, the server is not inundated with requests. Or measure how many gigabytes a server should handle in an hour and adjust requests accordingly? Its not a big deal when you have 100 leechers, but 10,000 leechers can cause server load issues.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p329" class="blockpost roweven">
+	<h2><span><span class="conr">#6&nbsp;</span><a href="viewtopic.php?pid=329#p329">2008-08-11 01:48:19</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Cache Behavior</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>I'd like to see webseeding involved in &quot;caching&quot;.</p></div></blockquote><p>Why? Webseeds are less flexible than real clients in many ways and not really well-suited for bidirectional caching.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p334" class="blockpost rowodd">
+	<h2><span><span class="conr">#7&nbsp;</span><a href="viewtopic.php?pid=334#p334">2008-08-11 16:17:39</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Cache Behavior</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>peer cannot be sure that the cache really seeds in its place and it can thus cease to seed?</p></div></blockquote><p>Client periodically joins delegated swarm but does not unchoke peers.&nbsp; Client monitors rate of HAVE messages from peers outside the ISP.&nbsp; If there are downloaders and aggregate estimated swarm rate substantially exceeds the rate the peer can contribute then the peer does nothing.&nbsp; Otherwise, peer begins to seed.<br /><br />Does not directly address your question, but perhaps close enough.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p336" class="blockpost roweven">
+	<h2><span><span class="conr">#8&nbsp;</span><a href="viewtopic.php?pid=336#p336">2008-08-11 16:29:27</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Cache Behavior</h3>
+				<div class="postmsg">
+					<p>too inaccurate imo. Have messages are not reliable, i even had to beat alus over the head because he stopped sending HAVEs to seeds. And when a swarm is large (where a cache is most likely to kick in) then you'll also have a high variance. And large piece sizes lead to a high jitter inthe HAVE messages. So it's not really a good estimate to see if the cache is doing its work.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p337" class="blockpost rowodd">
+	<h2><span><span class="conr">#9&nbsp;</span><a href="viewtopic.php?pid=337#p337">2008-08-11 16:30:43</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Cache Behavior</h3>
+				<div class="postmsg">
+					<p>In response to <a href="http://forum.bittorrent.org/viewtopic.php?pid=332#p332" rel="nofollow">http://forum.bittorrent.org/viewtopic.php?pid=332#p332</a><br /><br />Well, a cache basically has to do two things<br />a) substitute for one or two ends in a transfer<br />b) store content based on unique identifiers and do the usual LFU&amp;similar drop-from-cache policies.<br /><br />A generic cache shouldn't try to hook itself into the protocol of the day, the clients should speak the cache protocol instead. Well... i guess the question is if how protocol-agnostic we really want to be. If you want to include FTP and HTTP you have to come up with a way to uniquely identify those files.<br /><br />If it's just a generic p2p-cache then you can base it on some common principles, i.e. that you'll have piece- or at least file-hashes and that transfers are often bidirectional.<br /><br /><br />Anyway... regardless of caching protocol the most important part is how to keep all parties honest. The peers should stop transfering that part of the traffic that the cache can hand out. If the cache only operates in one direction the peers should take care of the other direction.<br />The cache might want to minimize bandwidth by pretending to be a cache and thus making both peers stopping transfers. One or both of the peers might also be malicious and try to exploit the cache by using the additional bandwidth w/o stopping to transfer.<br />Having the peers check on the cache is easy, having 1 peer and the cache identify the other, malicious peer is also easy. But i'm not sure how to identify a collusion attack between both peers against the cache.</p>
+					<p class="postedit"><em>Last edited by The 8472 (2008-08-11 16:31:56)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p362" class="blockpost roweven">
+	<h2><span><span class="conr">#10&nbsp;</span><a href="viewtopic.php?pid=362#p362">2008-08-15 20:12:27</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Cache Behavior</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>too inaccurate imo. Have messages are not reliable,</p></div></blockquote><p>Not reliable because Alus's fubar?&nbsp; Or in general?&nbsp; &nbsp;<br /><br />If each peer has 50 connections, the uplink capacity a peer can contribute is pretty small compared to the aggregrate rate of the peer's viewable portion of a healthy swarm .&nbsp; Even if an estimate of swarm progress is off, there would be quite a bit of distance between a healthy swarm's capacity and the threshold upon which a delegating peer begins to seed.<br /><br /></p><blockquote><div class="incqbox"><p>i even had to beat alus over the head because he stopped sending HAVEs to seeds.</p></div></blockquote><p>If clients do not send HAVE messages to seeds then we can fix that situation.<br /><br /></p><blockquote><div class="incqbox"><p>large piece sizes lead to a high jitter inthe HAVE messages.</p></div></blockquote><p>As long as such decisions are made on timescales that are intentionally at least 10 times larger than the time to download a piece at a reasonable peer transfer rate&nbsp; then jitter due to piece message sizes would be smoothed out.&nbsp; &nbsp; The system would be slow to react, but we can make it even more slow to retract seeding once a peer has decided that its ISP cache(s) are not cooperating.<br /><br />There is the added problem of this introducing incentives for peers to lie in order to trigger additional seeding capacity.&nbsp; However,&nbsp; the incentive to cheat becomes strong only when seeds are really needed.&nbsp; &nbsp;If we operate under the assumption that very few people are motivated enough to actually cheat then this system looks like it would work.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p363" class="blockpost rowodd">
+	<h2><span><span class="conr">#11&nbsp;</span><a href="viewtopic.php?pid=363#p363">2008-08-16 08:22:29</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Cache Behavior</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>Not reliable because Alus's fubar?&nbsp; Or in general?</p></div></blockquote><p>In general, for various reasons, one of which you already mentioned yourself:<br /><br /></p><blockquote><div class="incqbox"><p>There is the added problem of this introducing incentives for peers to lie in order to trigger additional seeding capacity.&nbsp; However,&nbsp; the incentive to cheat becomes strong only when seeds are really needed.</p></div></blockquote><p>Or when you want to freeload at top speeds.<br /><br /></p><blockquote><div class="incqbox"><p>A sample size of a 50 connections is quite large compared to the typical asymmetry ratio.&nbsp; &nbsp;The uplink capacity a peer can contribute is thus pretty small compared to the aggregrate rate of the peer's viewable portion of a healthy swarm.</p></div></blockquote><p>And the impact of the cache will be equally small assuming that the cache merely substitutes the specific peer's/seed's upload. Not to mention that you can't really tell what the aggregate download bandwidth should be on a large swarm since the upload speed of the individual users, seed:peer ratio, traffic shaping etc. etc. factor all into the swarm's performance.<br /><br />Another issue is that some other cache (not the one of your ISP) might not be doing its job.<br /><br /><br />Basically you can only measure whether the swarm could use an additional seed, not if the cache is doing its job. But those 2 things do not really correlate.<br /><br /><br />So, the point is... it's not enough to just run a fat bittorrent client on a server, announce it via BEP22 and do some guesstimating on swarm performance. If we want these things to work properly we have to remove incentives to cheat or do proper detection if everyone is playing by the rules.</p>
+					<p class="postedit"><em>Last edited by The 8472 (2008-08-16 08:24:37)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p452" class="blockpost roweven">
+	<h2><span><span class="conr">#12&nbsp;</span><a href="viewtopic.php?pid=452#p452">2008-09-05 01:19:33</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Cache Behavior</h3>
+				<div class="postmsg">
+					<p>I am less interested in making sure that a cache seeds than I am in maintaining the health the swarms I want to seed.&nbsp; When peers only seed when the swarm is unhealthy in the sense that each peer's contribution would be significant, caches are incentivized to keep swarms healthy. <br /><br />The health of the swarm is computed across all peers within each peer's view.&nbsp; If one peer lies then to increase seeding, at most it underreports its rate.&nbsp; The contribution of one lying peer to the underestimation of health is small.&nbsp; A sum or average is quite tolerant to collusion across multiple peers so long as the allowed range of values is bounded and the number of peers is large.<br /><br />Presumably most people won't bother to hack their clients, and client implementors that have a substantially large client base have little reason to hurt their user base by lying and causing resources to be allocated where they aren't needed.<br /><br />I think looking at HAVE message rates its a pretty good health metric even if it is noisy.<br /><br />The metric is made even better when most peers really want to download.&nbsp; When a downloader talks to a downloader (not a seed), a downloader hurts itself by lying.&nbsp; If I withhold HAVE messages then the other peers lose interest and I fall out of the unchoke set.&nbsp; If I overreport HAVE messages then I limit my options later on, because the other client can know I am cheating if I request a piece I already say I have.&nbsp; If the other side requests pieces I do not have then I either end up choking him, rejecting messages unnecessarily, or letting requests timeout and making him think he has been snubbed.&nbsp; Choking, rejecting and timeouts all affect send rates and could be used as indicators of bad behavior when they occur excessively.&nbsp; It seems complicated enough that few people would bother to lie via have messages.<br /><br />I'm not saying cheating won't happen, but come up with something more collusion resistant.<br /><br />--Dave</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p457" class="blockpost rowodd">
+	<h2><span><span class="conr">#13&nbsp;</span><a href="viewtopic.php?pid=457#p457">2008-09-05 11:13:02</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Cache Behavior</h3>
+				<div class="postmsg">
+					<p>Well, if i understand you correctly you just want a fast, fat peer join the entire swarm and improve its speed but providing bandwidth to the entire swarm randomly. That's not really a cache in the caching-proxy-sense. It's more like throwing enough bandwidth at the problem to silence everyone else (since everyone else's speed pales in comparison). You can probably cache downloads that way since ISP-local peers will happily take all they can get from the cache.<br />But how should it work with uploading to what would normally be an ISP-external peer?</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p467" class="blockpost roweven">
+	<h2><span><span class="conr">#14&nbsp;</span><a href="viewtopic.php?pid=467#p467">2008-09-08 15:08:58</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Cache Behavior</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>want a fast, fat peer join the entire swarm</p></div></blockquote><p>Yes.&nbsp; <br /><br /></p><blockquote><div class="incqbox"><p>That's not really a cache in the caching-proxy-sense.</p></div></blockquote><p>Right.&nbsp; <br /><br />If each peer has some way to distinguish inside from outside the ISP, has 25% connections to outside peers, and is connected to a relatively large number of peers then each peer can compute outside health and preferentially seed to outside peers as necessary.<br /><br />--Dave</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p470" class="blockpost rowodd">
+	<h2><span><span class="conr">#15&nbsp;</span><a href="viewtopic.php?pid=470#p470">2008-09-08 17:31:16</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89622">CodeRed</a></strong></dt>
+					<dd class="usertitle"><strong>BitTorrent Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Cache Behavior</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>This way, as the number of leechers increase, the server is not inundated with requests. Or measure how many gigabytes a server should handle in an hour and adjust requests accordingly?</p></div></blockquote><p>It seems like it would almost certainly be better to use a traffic shaper on the web server.&nbsp; You probably never want to do shaping like this on a per-swarm basis but globally, such as to stay within a given percentile (e.g. 95th).&nbsp; &nbsp;Healthier swarms should be quicker to abandon the web seeds.&nbsp; Or do you have a way to improve on this?&nbsp; You'd need to maintain global info across swarms and balance between them based on health.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox">
+		<p class="postlink conr">&nbsp;</p>
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Cache Behavior</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div class="inbox">
+
+			<div class="conl">
+				<form id="qjump" method="get" action="viewforum.php">
+					<div><label>Jump to
+					<br /><select name="id" onchange="window.location=('viewforum.php?id='+this.options[this.selectedIndex].value)">
+						<optgroup label="BitTorrent">
+							<option value="26">Announcements</option>
+							<option value="25" selected="selected">BEPs</option>
+							<option value="29">BEP process</option>
+							<option value="27">General</option>
+							<option value="33">Research Tools</option>
+							<option value="32">Cooperation between BitTorrent and ISPs</option>
+							<option value="30">Attacks against BitTorrent</option>
+							<option value="28">Feature Requests, Found Bugs &gt;&gt;&gt;</option>
+					</optgroup>
+					</select>
+					<input type="submit" value=" Go " accesskey="g" />
+					</label></div>
+				</form>
+			</div>
+			<p class="conr">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-116155-1";
+_udn = "utorrent.com";
+urchinTracker();
+</script>
+
+</body>
+</html>

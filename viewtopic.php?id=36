@@ -1,0 +1,720 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>forum.bittorrent.org / Discussion of BEP 22: BitTorrent Cache Discovery Protocol</title>
+<link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
+</head>
+<body>
+
+<div id="punwrap">
+<div id="punviewtopic" class="pun">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><span>forum.bittorrent.org</span></h1>
+			<p><span>BitTorrent.org community</span></p>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p>You are not logged in.</p>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<h2><span>Announcement</span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div>Posting about any illegal sharing of copyrighted content is strictly forbidden.</div>
+		</div>
+	</div>
+</div>
+
+<div class="linkst">
+	<div class="inbox">
+		<p class="pagelink conl">Pages: <strong>1</strong>&nbsp;<a href="viewtopic.php?id=36&amp;p=2">2</a></p>
+		<p class="postlink conr">&nbsp;</p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Discussion of BEP 22: BitTorrent Cache Discovery Protocol</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p211" class="blockpost rowodd firstpost">
+	<h2><span><span class="conr">#1&nbsp;</span><a href="viewtopic.php?pid=211#p211">2008-05-19 17:49:55</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3>Discussion of BEP 22: BitTorrent Cache Discovery Protocol</h3>
+				<div class="postmsg">
+					<p>BEP 22 is now posted at <a href="http://bittorrent.org/beps/bep_0022.html" rel="nofollow">http://bittorrent.org/beps/bep_0022.html</a><br /><br />This describes a potential method for discovering nearby caches using inverse DNS queries followed by an SRV resource record lookup on the host's domain name.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p220" class="blockpost roweven">
+	<h2><span><span class="conr">#2&nbsp;</span><a href="viewtopic.php?pid=220#p220">2008-05-21 11:41:30</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 22: BitTorrent Cache Discovery Protocol</h3>
+				<div class="postmsg">
+					<p>hrrmm..<br /><br />a) is this actually used by any ISP?<br />b) this obviously should be disabled when encryption (since the ISP is assumed to be hostile) and/or the private flag (no external peer sources) is being used.<br />c) why the SRV lookup? one could just run the tracker directly under that hostname.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p221" class="blockpost rowodd">
+	<h2><span><span class="conr">#3&nbsp;</span><a href="viewtopic.php?pid=221#p221">2008-05-21 13:34:39</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 22: BitTorrent Cache Discovery Protocol</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>c) why the SRV lookup?<br /><br />one could just run the tracker directly under that hostname.</p></div></blockquote><p>I'm not sure what you mean.&nbsp; We discussed the following alternative:<br /><br />Perform a reverse DNS query followed by a name resolution (retrieve A record for ipv4) on your hostname after prepending bittorrent.tracker?<br /><br />So for my current IP<br />&nbsp; 69.107.0.14 <br /><br />I perform a query on <br />&nbsp; 14.0.107.69.in-addr.arpa<br /><br />which returns<br /><br />&nbsp; adsl-69-107-0-14.dsl.pltn13.pacbell.net<br /><br />and then prepend tracker to do a name resolution on the A record<br /><br />&nbsp; bittorrent-tracker.adsl-69-107-0-14.dsl.pltn13.pacbell.net<br /><br />and if that fails then look up<br /><br />&nbsp; bittorrent-tracker.dsl.pltn13.pacbell.net<br /><br />then<br /><br />&nbsp; bittorrent-tracker.pltn13.pacbell.net<br /><br />then<br /><br />&nbsp; bittorrent-tracker.pacbell.net<br /><br />Advantages:<br />- doesn't require arcane calls like libresolv's res_query or WinDNS's DnsQuery.&nbsp; It can be done entirely with socket.gethostbyaddr and socket.gethostbyname.<br /><br />Drawbacks:<br />- no way to communicate port number, which in practice isn't a real problem since the service can run on a well-known port.<br /><br />The deciding factor here was our assessment of the IETF.&nbsp; SRV is well along to standardization, and it was designed to address the case of looking up a service for a domain.&nbsp; ISPs are used to deploying IETF standards.&nbsp; Network vendors are used to implementing IETF standards.<br /><br />I wrote a BEP that uses only A/AAAA records as described above, but I haven't posted it.&nbsp; Should I?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p222" class="blockpost roweven">
+	<h2><span><span class="conr">#4&nbsp;</span><a href="viewtopic.php?pid=222#p222">2008-05-21 13:57:08</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 22: BitTorrent Cache Discovery Protocol</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>The 8472 wrote:</h4><p>hrrmm..<br /><br />a) is this actually used by any ISP?</p></div></blockquote><p>No. But no/few ISPs implement any discovery mechanism for BitTorrent.<br /><br /></p><blockquote><div class="incqbox"><p>b) this obviously should be disabled when encryption (since the ISP is assumed to be hostile) and/or the private flag (no external peer sources) is being used.</p></div></blockquote><p>Right.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p224" class="blockpost rowodd">
+	<h2><span><span class="conr">#5&nbsp;</span><a href="viewtopic.php?pid=224#p224">2008-05-22 03:44:56</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 22: BitTorrent Cache Discovery Protocol</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>I'm not sure what you mean.&nbsp; We discussed the following alternative:<br />[...]<br />I wrote a BEP that uses only A/AAAA records as described above, but I haven't posted it.&nbsp; Should I?</p></div></blockquote><p>Yes, that's what i meant. I'm not sure which alternative is better, it's just that looking up A-records is more convenient.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p253" class="blockpost roweven">
+	<h2><span><span class="conr">#6&nbsp;</span><a href="viewtopic.php?pid=253#p253">2008-06-18 23:47:02</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 22: BitTorrent Cache Discovery Protocol</h3>
+				<div class="postmsg">
+					<p>After some commentary from as-yet-unrevealable partner, I decided to change the name of the cache discovery protocol to &quot;local tracker discovery protocol.&quot;&nbsp; This takes into account the possibility that the tracker returns nearby peers as well as caches.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p254" class="blockpost rowodd">
+	<h2><span><span class="conr">#7&nbsp;</span><a href="viewtopic.php?pid=254#p254">2008-06-20 10:20:06</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89609">Olaf van der Spek</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 22: BitTorrent Cache Discovery Protocol</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>b) this obviously should be disabled when encryption (since the ISP is assumed to be hostile)</p></div></blockquote><p>Why? Isn't (one of the) goals of encryption to avoid traffic shaping?<br />Why would that mean a local cache/peer can't be used without encryption?</p>
+					<p class="postedit"><em>Last edited by Olaf van der Spek (2008-06-20 10:20:29)</em></p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p255" class="blockpost roweven">
+	<h2><span><span class="conr">#8&nbsp;</span><a href="viewtopic.php?pid=255#p255">2008-06-20 10:38:12</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 22: BitTorrent Cache Discovery Protocol</h3>
+				<div class="postmsg">
+					<p>because you'd give all your data to the ISP's tracker for free, making traffic shaping easier for them.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p261" class="blockpost rowodd">
+	<h2><span><span class="conr">#9&nbsp;</span><a href="viewtopic.php?pid=261#p261">2008-07-09 11:45:37</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89879">herman</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 22: BitTorrent Cache Discovery Protocol</h3>
+				<div class="postmsg">
+					<p>Would I would get upload credit on private trackers?<br /><br />Does the ISP have to buy special hardware and/or software to utilize this Local Tracker Discovery Protocol?</p>
+					<p class="postedit"><em>Last edited by herman (2008-07-09 13:56:57)</em></p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p263" class="blockpost roweven">
+	<h2><span><span class="conr">#10&nbsp;</span><a href="viewtopic.php?pid=263#p263">2008-07-09 14:06:34</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 22: BitTorrent Cache Discovery Protocol</h3>
+				<div class="postmsg">
+					<p>... read: <a href="http://forum.bittorrent.org/viewtopic.php?pid=220#p220" rel="nofollow">http://forum.bittorrent.org/viewtopic.php?pid=220#p220</a><br /><br />and no, he could use a normal dns and tracker server if he wishes to do so.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p278" class="blockpost rowodd">
+	<h2><span><span class="conr">#11&nbsp;</span><a href="viewtopic.php?pid=278#p278">2008-07-21 14:23:17</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89898">rmontes</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 22: BitTorrent Cache Discovery Protocol</h3>
+				<div class="postmsg">
+					<p>Is this BEP to help the discovery of an external Cache within the ISP? Or it is for discovering of others peer inside the ISP?<br />Obviously if an ISP implements a kind of P2P cache, I would prefer that my customers pick it instead of low uplink customers.<br /><br />It seems that this BEP does not make any difference on cache and local peers.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p283" class="blockpost roweven">
+	<h2><span><span class="conr">#12&nbsp;</span><a href="viewtopic.php?pid=283#p283">2008-07-24 12:27:23</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 22: BitTorrent Cache Discovery Protocol</h3>
+				<div class="postmsg">
+					<p>because it can do both, depending on how the serverside component is configured.</p>
+					<p class="postedit"><em>Last edited by The 8472 (2008-07-24 12:27:42)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p303" class="blockpost rowodd">
+	<h2><span><span class="conr">#13&nbsp;</span><a href="viewtopic.php?pid=303#p303">2008-07-30 17:09:45</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 22: BitTorrent Cache Discovery Protocol</h3>
+				<div class="postmsg">
+					<p>I added the following text to BEP-22 in response to some emails:<br /><br /></p><blockquote><div class="incqbox"><p>Client implementation of local tracker discovery is OPTIONAL.&nbsp; It is<br />RECOMMENDED that clients provide a user option for turning off local<br />tracker discovery.&nbsp; Local tracker discovery MAY be off by default.<br />Clients MAY automatically turn off caching if the performance benefit<br />is not obvious.&nbsp; How to determine whether the performance benefit is<br />obvious is beyond the scope of this BEP.</p></div></blockquote><p>The client SHOULD trade with peers both inside and outside the set returned from any local tracker.&nbsp; If the local peers/caches perform worse, BitTorrent as designed will trade more with remote peers.&nbsp; &nbsp;<br /><br />Talking to a local tracker could trigger ISP policy against the user.&nbsp; A user would feel strict rate limiting of all of his or her traffic, and similar applies for other heavy-handed policies.&nbsp; Providing a switch to turn off local tracker discovery solves such problems.&nbsp; &nbsp;Leave it up to the client implementors to decide whether this switch defaults to on, off, or in between, e.g., the client could query DNS to see if a local tracker is defined and if so ask the user what to do.<br /><br />ISPs could use local tracker discovery to conveniently collect statistics about users.&nbsp; I invite people who are well versed in the US and EU safe harbor principles with respect to personal information, privacy law, and copyright law to take this up in the appropriate forum.&nbsp; If a user is more afraid of potential privacy violations than performance then the off switch solves that problem as well. <br /><br />If ISPs use local tracker discovery to degrade performance but not so much as to be noticeable by the user then this might not be a problem at all.&nbsp; To the extent that it is, we can discuss technical solutions.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p304" class="blockpost roweven">
+	<h2><span><span class="conr">#14&nbsp;</span><a href="viewtopic.php?pid=304#p304">2008-07-30 17:14:04</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 22: BitTorrent Cache Discovery Protocol</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>Would I would get upload credit on private trackers?</p></div></blockquote><p>That is independent of the local tracker discovery process, and the answer is &quot;No.&quot;&nbsp; At least for now we are not considering caching private torrents.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p305" class="blockpost rowodd">
+	<h2><span><span class="conr">#15&nbsp;</span><a href="viewtopic.php?pid=305#p305">2008-07-30 17:41:10</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 22: BitTorrent Cache Discovery Protocol</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>Does the ISP have to buy special hardware and/or software to utilize this Local Tracker Discovery Protocol?</p></div></blockquote><p>Yes.&nbsp; But a few caches appear less $$ than installing deep packet inspection devices throughout the ISP.&nbsp; &nbsp;Both theoretically keep the last mile uncongested in the up direction, but one pisses off users.&nbsp; Ok.&nbsp; Caches scare some parties, so maybe some ISPs install caches and some don't.<br /><br />Some ISPs were willing to spend $10's M (and in one case reportedly north of $100M) to install deep packet inspection devices.&nbsp; That is the problem BitTorrent represents to some ISPs.&nbsp; That would buy a LOT of caches, and caches wouldn't land you in front of a congressional panel for blocking user applications.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p311" class="blockpost roweven">
+	<h2><span><span class="conr">#16&nbsp;</span><a href="viewtopic.php?pid=311#p311">2008-08-01 06:15:43</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 22: BitTorrent Cache Discovery Protocol</h3>
+				<div class="postmsg">
+					<p>caches might draw the ire of the MAFIAA though since caches would also improve the performance of pirated content. Although proxies (and thus probably caches too) are protected under the safe harbor clause in the US that wouldn't prevent them from putting pressure on ISPs as they are already doing.<br />They even submitted comments to the FCC process that traffic shaping would be necessary to prevent piracy and ISPs should use them as such.<br /><br />And since many ISPs or their mother companies also act as content distributors or are otherwise active in the &quot;big media&quot; sector they might even have internal issues with adopting caches.<br /><br />So we might need - as i stated in another thread - a caching system that's more content-agnostic than a bittorrent-specific cache that freely submits the infohash to the cache server.<br /><br />But this is outside the scope of this BEP of course.</p>
+					<p class="postedit"><em>Last edited by The 8472 (2008-08-01 06:16:12)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p317" class="blockpost rowodd">
+	<h2><span><span class="conr">#17&nbsp;</span><a href="viewtopic.php?pid=317#p317">2008-08-05 19:11:14</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 22: BitTorrent Cache Discovery Protocol</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>The 8472 wrote:</h4><p>b) this obviously should be disabled when encryption (since the ISP is assumed to be hostile) and/or the private flag (no external peer sources) is being used.</p></div></blockquote><blockquote><div class="incqbox"><h4>Herman wrote:</h4><p>Would I would get upload credit on private trackers?</p></div></blockquote><p>I made some modifications to the text to the effect:<br /><br />&nbsp; Don't announce private torrents to local trackers.<br /><br />I didn't say anything about encryption.&nbsp; &nbsp;Arvid pointed out that it is possible that a user turns on encryption because many of the OTHER users are on ISPs that are throttling unencrypted traffic.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p318" class="blockpost roweven">
+	<h2><span><span class="conr">#18&nbsp;</span><a href="viewtopic.php?pid=318#p318">2008-08-06 04:30:24</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 22: BitTorrent Cache Discovery Protocol</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>Arvid pointed out that it is possible that a user turns on encryption because many of the OTHER users are on ISPs that are throttling unencrypted traffic.</p></div></blockquote><p>Such behavior should be discouraged as we propagate the encryption status via pex and handshakes and using encryption by default causes some inefficiencies in the handshaking phase (though they're probably not important) and makes cases like this one ambiguous.<br /><br />Or in other words, the BEP should state that the CDP may conflict with the goal of protocol obfuscation and it's at the discretion of the developer to resolve that conflict.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p341" class="blockpost rowodd">
+	<h2><span><span class="conr">#19&nbsp;</span><a href="viewtopic.php?pid=341#p341">2008-08-13 15:50:47</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 22: BitTorrent Cache Discovery Protocol</h3>
+				<div class="postmsg">
+					<p>Added some more text to BEP 22 regarding the scope of the BEP:&nbsp; don't address client behavior.&nbsp; Any extensions to client behavior should be handled in separate BEPs.<br /><br />Also weakened the statement that a cache is just a peer.&nbsp; Instead a cache MAY just be a peer.&nbsp; &nbsp;This allows for the possibility of extending cache and client behavior to improve performance, to implement policy, and to maintain accountability.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p352" class="blockpost roweven">
+	<h2><span><span class="conr">#20&nbsp;</span><a href="viewtopic.php?pid=352#p352">2008-08-15 13:52:06</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 22: BitTorrent Cache Discovery Protocol</h3>
+				<div class="postmsg">
+					<p>You wrote <a href="http://forum.bittorrent.org/viewtopic.php?pid=349#p349" rel="nofollow">here</a> that BEP22 might become an RFC. I don't think we have patted it down for usefulness sufficiently.<br /><br />E.g. how anyone could actually benefit from this protocol in a realworld scenario or what should be done if the ISP's users don't have reverse lookup entries.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p354" class="blockpost rowodd">
+	<h2><span><span class="conr">#21&nbsp;</span><a href="viewtopic.php?pid=354#p354">2008-08-15 14:21:46</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 22: BitTorrent Cache Discovery Protocol</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>what should be done if the ISP's users don't have reverse lookup entries.</p></div></blockquote><p>When I first started writing BEP 22, I ran inverse DNS lookups for all the IP addresses in a BitTorrent.com tracker log that was only a few hours old (the closest to a live log that had been copied from the trackers onto our SAN).<br /><br />The inverse DNS lookups resolved more than 80% of the time.&nbsp; <br /><br />Arvid Norberg ran a test where he pulled peer lists from the top 4 swarms on a popular public tracker site using an instrumented client so he had access to peers obtained via all of the BitTorrent mechanisms.&nbsp; After obtaining the peer lists he left the swarms.&nbsp; No pieces were requested or uploaded. <br /><br />Arvid gave me his dataset.&nbsp; I then pulled an AS map GeoIPASNum.dat.gz from <br /> <br /><a href="http://www.maxmind.com/app/asnum" rel="nofollow">http://www.maxmind.com/app/asnum</a><br /><br />I ran Arvid's dataset against the AS map, and I found that over 50% of the peers were in 40 ASes in all four swarms.&nbsp; 22 ASes appeared in the top 40 in all 4 swarms.&nbsp; I assume that our prime targets for deploying caches are likely these 22 ASes.<br /><br />Because I am lazy and the public tracker dataset was not fresh enough to avoid most of the churn effects, I started from a fresh tracker log and performed the inverse DNS lookups on just those IP addresses that according to my AS map were in the top 22 ASes.&nbsp; About 90% had defined inverse DNS mappings.<br /><br />Stas Shalunov (IETF TANA BOF chair) is of the opinion that any large ISP would consider it broken to not provide inverse DNS mappings.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p355" class="blockpost roweven">
+	<h2><span><span class="conr">#22&nbsp;</span><a href="viewtopic.php?pid=355#p355">2008-08-15 14:27:35</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 22: BitTorrent Cache Discovery Protocol</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>how anyone could actually benefit from this protocol in a realworld scenario</p></div></blockquote><p>Hmmm... care to expand on this?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p356" class="blockpost rowodd">
+	<h2><span><span class="conr">#23&nbsp;</span><a href="viewtopic.php?pid=356#p356">2008-08-15 14:34:25</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 22: BitTorrent Cache Discovery Protocol</h3>
+				<div class="postmsg">
+					<p>Greg Hazel (alus) also ran tests using the same popular tracker site to estimate the function of cache size vs hit rate.&nbsp; A large hardware vendor performed a similar study.&nbsp; I'll ask Greg Hazel to post his results.&nbsp; In short, most of the gain is obtained with a cache in size somewhere between 10 and 100 TBs.&nbsp; Greg says 10 TB.&nbsp; The hardware vendor says 100 TB.<br /><br />100 TBs is not expensive on a metro-area scale.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p357" class="blockpost roweven">
+	<h2><span><span class="conr">#24&nbsp;</span><a href="viewtopic.php?pid=357#p357">2008-08-15 14:51:53</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 22: BitTorrent Cache Discovery Protocol</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><blockquote><div class="incqbox"><p>how anyone could actually benefit from this protocol in a realworld scenario</p></div></blockquote><p>Hmmm... care to expand on this?</p></div></blockquote><p>Well, BEP22 alone does not specify how this should be deployed. If it just acts as a normal tracker then anyone could use it at as an open tracker. So you'd need access restrictions.<br /><br />If it acts as source for caches we'd have to define how caches should operate, if they should be normal bittorrent peers etc. etc. If they are normal BT peers then they couldn't reduce upload transit for the ISP, only download.<br /><br />I.e. we should consider how BEP22 would fit into the bigger picture.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p358" class="blockpost rowodd">
+	<h2><span><span class="conr">#25&nbsp;</span><a href="viewtopic.php?pid=358#p358">2008-08-15 15:11:05</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 22: BitTorrent Cache Discovery Protocol</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>BEP22 alone does not specify how this should be deployed. If it just acts as a normal tracker then anyone could use it at as an open tracker. So you'd need access restrictions.</p></div></blockquote><p>Access control is after the local tracker discovery process.&nbsp; Shouldn't it be orthogonal to BEP 22?<br /><br />Local trackers could ignore requests from hosts with IP addresses outside their ISP's IP prefixes.<br /><br /></p><blockquote><div class="incqbox"><p>If it acts as source for caches we'd have to define how caches should operate</p></div></blockquote><p>Do we need a BEP for cache behavior before going ahead with an Internet draft for ISP-level service discovery?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox">
+		<p class="postlink conr">&nbsp;</p>
+		<p class="pagelink conl">Pages: <strong>1</strong>&nbsp;<a href="viewtopic.php?id=36&amp;p=2">2</a></p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Discussion of BEP 22: BitTorrent Cache Discovery Protocol</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div class="inbox">
+
+			<div class="conl">
+				<form id="qjump" method="get" action="viewforum.php">
+					<div><label>Jump to
+					<br /><select name="id" onchange="window.location=('viewforum.php?id='+this.options[this.selectedIndex].value)">
+						<optgroup label="BitTorrent">
+							<option value="26">Announcements</option>
+							<option value="25" selected="selected">BEPs</option>
+							<option value="29">BEP process</option>
+							<option value="27">General</option>
+							<option value="33">Research Tools</option>
+							<option value="32">Cooperation between BitTorrent and ISPs</option>
+							<option value="30">Attacks against BitTorrent</option>
+							<option value="28">Feature Requests, Found Bugs &gt;&gt;&gt;</option>
+					</optgroup>
+					</select>
+					<input type="submit" value=" Go " accesskey="g" />
+					</label></div>
+				</form>
+			</div>
+			<p class="conr">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-116155-1";
+_udn = "utorrent.com";
+urchinTracker();
+</script>
+
+</body>
+</html>

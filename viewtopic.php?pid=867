@@ -1,0 +1,713 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>forum.bittorrent.org / BEP 32 IPv6 support for the DHT</title>
+<link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
+</head>
+<body>
+
+<div id="punwrap">
+<div id="punviewtopic" class="pun">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><span>forum.bittorrent.org</span></h1>
+			<p><span>BitTorrent.org community</span></p>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p>You are not logged in.</p>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<h2><span>Announcement</span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div>Posting about any illegal sharing of copyrighted content is strictly forbidden.</div>
+		</div>
+	</div>
+</div>
+
+<div class="linkst">
+	<div class="inbox">
+		<p class="pagelink conl">Pages: <a href="viewtopic.php?id=114&amp;p=1">1</a>&nbsp;<strong>2</strong></p>
+		<p class="postlink conr">&nbsp;</p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;BEP 32 IPv6 support for the DHT</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p716" class="blockpost rowodd">
+	<h2><span><span class="conr">#26&nbsp;</span><a href="viewtopic.php?pid=716#p716">2009-10-30 07:05:09</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 32 IPv6 support for the DHT</h3>
+				<div class="postmsg">
+					<p>Another thing. Although it's not part of the spec the bootstrap nodes router.utorrent.com and router.bittorrent.com should get an AAAA record and support this spec.<br />Although we can bootstrap of .torrents and other peers it would be good if those entry points would support the IPv6-DHT too.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p727" class="blockpost roweven">
+	<h2><span><span class="conr">#27&nbsp;</span><a href="viewtopic.php?pid=727#p727">2009-11-06 04:28:25</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 32 IPv6 support for the DHT</h3>
+				<div class="postmsg">
+					<p>New version:<br /><br />&nbsp; <a href="http://www.pps.jussieu.fr/~jch/software/bittorrent/bep-dht-ipv6.html" rel="nofollow">http://www.pps.jussieu.fr/~jch/software &hellip; -ipv6.html</a><br />&nbsp; <a href="http://www.pps.jussieu.fr/~jch/software/bittorrent/bep-dht-ipv6.rst" rel="nofollow">http://www.pps.jussieu.fr/~jch/software &hellip; t-ipv6.rst</a><br /><br />Fixes the bug pointed out by The8475, and adds a comment about PORT and multihoming.&nbsp; Unifies terminology with BEP-5.&nbsp; Some minor editorial changes.<br /><br />--Juliusz</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p732" class="blockpost rowodd">
+	<h2><span><span class="conr">#28&nbsp;</span><a href="viewtopic.php?pid=732#p732">2009-11-06 11:38:42</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 32 IPv6 support for the DHT</h3>
+				<div class="postmsg">
+					<p>updated</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p749" class="blockpost roweven">
+	<h2><span><span class="conr">#29&nbsp;</span><a href="viewtopic.php?pid=749#p749">2009-11-08 07:58:09</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 32 IPv6 support for the DHT</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>updated</p></div></blockquote><p>No, it isn't.&nbsp; <a href="http://www.bittorrent.org/beps/bep_0032.html" rel="nofollow">http://www.bittorrent.org/beps/bep_0032.html</a> is still the old version.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p761" class="blockpost rowodd">
+	<h2><span><span class="conr">#30&nbsp;</span><a href="viewtopic.php?pid=761#p761">2009-11-08 18:55:21</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 32 IPv6 support for the DHT</h3>
+				<div class="postmsg">
+					<p>I have written an implementation based on the latest revision from jch as update for the Mainline DHT plugin for Azureus.<br />Due to the lack of an appropriate bootstrap node and/or other nodes i can't test it though beyond the already existing ipv4 functionality.<br /><br />I haven't run into any problems implementing it.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p772" class="blockpost roweven">
+	<h2><span><span class="conr">#31&nbsp;</span><a href="viewtopic.php?pid=772#p772">2009-11-09 17:36:05</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 32 IPv6 support for the DHT</h3>
+				<div class="postmsg">
+					<p>Something i have just realized while contemplating how get the IPv6 routing table off the ground:<br /><br />When responding to a want-6 on the ipv4 DHT... a node should include itself (its v6 component) into the nodes6 list and vice versa.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p781" class="blockpost rowodd">
+	<h2><span><span class="conr">#32&nbsp;</span><a href="viewtopic.php?pid=781#p781">2009-11-11 09:05:38</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 32 IPv6 support for the DHT</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>When responding to a want-6 on the ipv4 DHT... a route should include itself (its v6 component) into the nodes6 list and vice versa.</p></div></blockquote><p>More precisely: a node should include its own IPv6 address if it has less than 8 good nodes in its routing table.<br /><br />(If it has at least 8, then using the normal procedures simplifies the code and spreads the DHT faster.)<br /><br />You're right.<br /><br />--Juliusz</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p782" class="blockpost roweven">
+	<h2><span><span class="conr">#33&nbsp;</span><a href="viewtopic.php?pid=782#p782">2009-11-11 09:06:40</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 32 IPv6 support for the DHT</h3>
+				<div class="postmsg">
+					<p>Arvid, sorry to insist again.<br /><br />Could you please update BEP-32 on <a href="http://www.bittorrent.org" rel="nofollow">www.bittorrent.org</a>?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p785" class="blockpost rowodd">
+	<h2><span><span class="conr">#34&nbsp;</span><a href="viewtopic.php?pid=785#p785">2009-11-11 12:08:04</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 32 IPv6 support for the DHT</h3>
+				<div class="postmsg">
+					<p>Could you provide me a patch against:<br /><br />&nbsp; <a href="http://www.bittorrent.org/beps/bep_0032.rst" rel="nofollow">http://www.bittorrent.org/beps/bep_0032.rst</a><br /><br />I thought that this was the latest version. Also, please add a sentence or two describing your change in the document history.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p786" class="blockpost roweven">
+	<h2><span><span class="conr">#35&nbsp;</span><a href="viewtopic.php?pid=786#p786">2009-11-11 13:32:33</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 32 IPv6 support for the DHT</h3>
+				<div class="postmsg">
+					<p><a href="http://www.pps.jussieu.fr/~jch/software/bittorrent/bep-dht-ipv6-20091111.patch" rel="nofollow">http://www.pps.jussieu.fr/~jch/software &hellip; 1111.patch</a><br /><br /></p><blockquote><div class="incqbox"><p>please add a sentence or two describing your change in the document history.</p></div></blockquote><p>Done.<br /><br />--Juliusz</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p788" class="blockpost rowodd">
+	<h2><span><span class="conr">#36&nbsp;</span><a href="viewtopic.php?pid=788#p788">2009-11-13 07:20:08</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 32 IPv6 support for the DHT</h3>
+				<div class="postmsg">
+					<p>I've just finished implementing that for Hekate and Transmission, and just like The8475, didn't find any particular flaws in the spec.<br /><br />If there's anything you disagree with in this document (the latest version, not the obsolete one on bittorrent.org), speak now, or forever hold your chunk.<br /><br />--Juliusz</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p799" class="blockpost roweven">
+	<h2><span><span class="conr">#37&nbsp;</span><a href="viewtopic.php?pid=799#p799">2009-11-18 00:48:29</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90623">adrian</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 32 IPv6 support for the DHT</h3>
+				<div class="postmsg">
+					<p>Sorry for dropping in late: I've missed this discussion and just got pinged by jch (thanks btw :-) )<br /><br />I am the author of Bitflu and some months ago (~7) i've started a discussion about IPv6-Kademlia on the bittorrent-mailinglist. After receiving few feedback i've implemented experimental IPv6-Kademlia support in Bitflu (this has been included since version 0.81).<br /><br />First: I'm very happy with the current state of BEP-32, especially with the fact that it does not mix-up IPv4/6 'values' replies.<br /><br />That said i do not really see any advantage to include the want/node6 keys: BEP-32 states that a node should only request both keys (via want) if it is a dualstack-node in bootstrap mode.<br />Bootstrapping is usually very fast (after 20 seconds you'll have a pretty good routing table) and does, IMO, not need any acceleration. (..or are there other cases where 'want' would be used?)<br /><br />I think dropping want/node6 would simplify implementations and won't do any harm, wouldn't it?<br /><br /><br />Regards,<br /> Adrian</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p801" class="blockpost rowodd">
+	<h2><span><span class="conr">#38&nbsp;</span><a href="viewtopic.php?pid=801#p801">2009-11-18 07:09:29</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 32 IPv6 support for the DHT</h3>
+				<div class="postmsg">
+					<p>this is not meant for acceleration but to allow cross-seeding of the DHT in the absense of compatible bootstrap nodes or if nodes are bootstrapped from node lists in .torrents (which might be IPv4-only).<br /><br />It's a transition mechanism. And dropping nodes6 would make parsing hazardous because they're not bencoded lists but compact ones. Some legacy nodes answer to IPv6 DHT traffic with &quot;nodes&quot; but send ipv4 entries. Since the lists are compact we cannot realiably distinguish what they encode.<br /><br />Thus &quot;nodes&quot; for ipv4 node lists, &quot;nodes6&quot; for ipv6 node lists.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p802" class="blockpost roweven">
+	<h2><span><span class="conr">#39&nbsp;</span><a href="viewtopic.php?pid=802#p802">2009-11-18 11:40:59</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90623">adrian</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 32 IPv6 support for the DHT</h3>
+				<div class="postmsg">
+					<p>&gt; [...] in the absense of compatible bootstrap nodes or if nodes are bootstrapped from node<br />&gt; lists in .torrents (which might be IPv4-only).<br /><br />But booting into IPv6-Kademlia would still be possible without leaking/sharing DHT-Data:<br /><br /> -&gt; A dualstack peer will learn about IPv6 nodes from IPv4 peers via Eproto (PEX or/and the<br />&nbsp; &nbsp; &nbsp;Handshake itself (at least uTorrent sends 'ipv6' and 'p'))<br /> -&gt; An IPv6-only peer will have to use a tracker to get any IPv6-nodes.<br /><br />After receiving some IPv6 peers the node could just use the IP+Port to start bootstrapping<br /><br />This method works for dualstack and IPv6-only peers while leaking data would only help dualstack nodes.<br /><br />&gt; Thus &quot;nodes&quot; for ipv4 node lists, &quot;nodes6&quot; for ipv6 node lists.<br /><br />The value of 'nodes' sent via IPv6 would always be a concated string of 18 octets. Sorry for not pointing that out in my previous post.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p804" class="blockpost rowodd">
+	<h2><span><span class="conr">#40&nbsp;</span><a href="viewtopic.php?pid=804#p804">2009-11-18 17:18:07</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 32 IPv6 support for the DHT</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>adrian wrote:</h4><p>-&gt; A dualstack peer will learn about IPv6 nodes from IPv4 peers via Eproto (PEX or/and the<br />&nbsp; &nbsp; &nbsp;Handshake itself (at least uTorrent sends 'ipv6' and 'p'))<br /> -&gt; An IPv6-only peer will have to use a tracker to get any IPv6-nodes.</p></div></blockquote><p>Please read BEP 32, we explicitly stated the reason why you cannot rely on the DHT-port message in the absense of IPv6 peers.<br /><br />If IPv6 peers are present then yes, you can bootstrap off them, we're just providing alternatives.<br /><br />Anyway, you're not required to send want flags, you only need to parse them and respond to them properly.<br /><br /></p><blockquote><div class="incqbox"><h4>adrian wrote:</h4><p>&gt; Thus &quot;nodes&quot; for ipv4 node lists, &quot;nodes6&quot; for ipv6 node lists.<br /><br />The value of 'nodes' sent via IPv6 would always be a concated string of 18 octets. Sorry for not pointing that out in my previous post.</p></div></blockquote><p>They're compact lists. Thus the string length is multiples of 38 or 26 bytes. which breaks down at 494 bytes... which is the least common multiple of 38 and 26. Soo... just parsing based of length is not safe.<br /><br />Nodes6 provides a clear distinction for minimal parsing effort and allows you to filter out stray/legacy packets.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p805" class="blockpost roweven">
+	<h2><span><span class="conr">#41&nbsp;</span><a href="viewtopic.php?pid=805#p805">2009-11-18 17:30:15</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 32 IPv6 support for the DHT</h3>
+				<div class="postmsg">
+					<p>Hi Adrian,<br /><br />Before writing up BEP 32, I have carefully read the discussion you are referring to.&nbsp; I believe that the current version of BEP 32 agrees with everything you say except one minor point.&nbsp; See below.<br /><br />You raise two distinct points:<br /><br /><strong>1. Leaking information between the two DHTs: the need for want</strong><br /><br />We believe that in the short term, want will be needed.&nbsp; We believe that in the longer term, we'll want to get rid of want.<br /><br />For that reason, want is an optional feature: you should implement want, but you are welcome to ignore it.&nbsp; You should send want during bootstrap, but you are welcome not to do so.<br /><br />This is a reasonable comprosmise between the two positions.&nbsp; Implementations are welcome to use want or not, and they will still interoperate.<br /><br /><strong>2. Nodes vs. nodes6</strong><br /><br />We want to be able to parse a DHT message independently of the protocol it was sent over.&nbsp; For that reason, nodes and nodes6 have deterministic semantics: nodes only carries IPv4 addresses, and nodes6 carries only IPv6 addresses.<br /><br />This is a minor difference with what you argue for, namely that nodes carry IPv6 addresses when carried over IPv6.&nbsp; I believe that this is a minor point, that does not complicate implementation much, while it does make a number of things simpler.<br /><br /><br />In short, I believe that BEP 32 does strike the right compromise between a fully dual-stack BEP (which is what 8472 and Arvid argue for) and two completely distinct BEPs (which is what you argue for).&nbsp; It gives you enough latitude to implement the DHT you dream of while still being able to interoperate with our implementations.<br /><br />--Juliusz</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p811" class="blockpost rowodd">
+	<h2><span><span class="conr">#42&nbsp;</span><a href="viewtopic.php?pid=811#p811">2009-11-18 23:30:46</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90623">adrian</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 32 IPv6 support for the DHT</h3>
+				<div class="postmsg">
+					<p><strong> @ The 8472</strong><br />&gt; Soo... just parsing based of length is not safe.<br /><br />You wouldn't have to guess based on the length. See jch's post (#2)<br /><br /><br /><strong> @jch </strong><br /><br />&gt; 1. Leaking information between the two DHTs: the need for want [...]<br /><br />Ok. I still believe that it won't give IPv6-Nodes any benefit but i'll implement. We will see how well it works and if it doesn't (or isn't needed anymore due to an ipv6-only world) we can just drop it.<br /><br /><br />&gt; I believe that this is a minor point, that does not <br />&gt; complicate implementation much, while it does make a number of things simpler.<br /><br />Yes, it is a minor point and doesn't affect the end result at all.<br />In my opinion it would be cleaner to have the same keys for both implementations: If Pigeon-UDP gets deployed we would end up with 'nodesP'.<br /><br />Anyway: as i said in my first post: i can life with the current BEP-32 wording and i'll implement it as-it-is this weekend. <br /><br />Thanks for taking the time to discuss my suggestions.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p812" class="blockpost roweven">
+	<h2><span><span class="conr">#43&nbsp;</span><a href="viewtopic.php?pid=812#p812">2009-11-19 03:39:17</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 32 IPv6 support for the DHT</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>adrian wrote:</h4><p><strong> @ The 8472</strong><br />&gt; Soo... just parsing based of length is not safe.<br /><br />You wouldn't have to guess based on the length. See jch's post (#2)</p></div></blockquote><p>*sigh* No, you cannot rely on IPv6-sourced DHT packets to send IPv6 node addresses encoded in the nodes field.<br /><br />In fact i'm receiving &quot;nodes&quot; lists containing IPv4-addresses with IPv6 source addresses <em>right now</em> from µTorrent peers. Since µT does not implement BEP32 atm that means i might get such packets in the future too.<br /><br />In other words: Legacy clients do and will send ipv4-&quot;nodes&quot;-lists over IPv6. Thus the field is not type-safe and you'd have to determine the type of the contained addresses in some other way, and its length is not safe either.<br /><br />Thus - to make parsing easier and less fault-prone - nodes6 <em>is</em> necessary.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p813" class="blockpost rowodd">
+	<h2><span><span class="conr">#44&nbsp;</span><a href="viewtopic.php?pid=813#p813">2009-11-19 05:30:31</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90623">adrian</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 32 IPv6 support for the DHT</h3>
+				<div class="postmsg">
+					<p>&gt; *sigh* <br /><br />?<br /><br /><br />&gt; In fact i'm receiving &quot;nodes&quot; lists containing IPv4-addresses with IPv6 source addresses right<br />&gt; now from µTorrent peers. <br /><br />So far i didn't receive any Kademlia traffic from uTorrent via IPv6 (while being connected to IPv6 nodes with advertised DHT support).<br /><br />But you convinced me: Calling the key 'peer6' makes sense because it reduces the 'damage' done by bad/faulty implementations.<br /><br />Regards,<br /> Adrian</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p814" class="blockpost roweven">
+	<h2><span><span class="conr">#45&nbsp;</span><a href="viewtopic.php?pid=814#p814">2009-11-20 12:12:33</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 32 IPv6 support for the DHT</h3>
+				<div class="postmsg">
+					<p>we had some subversion issues moving bittorrent.org to a new machine. The BEP should be updated now.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p853" class="blockpost rowodd">
+	<h2><span><span class="conr">#46&nbsp;</span><a href="viewtopic.php?pid=853#p853">2009-12-05 10:58:42</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90606">Louif</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 32 IPv6 support for the DHT</h3>
+				<div class="postmsg">
+					<p>I do not find the following passage to be accurate:<br />&quot;<br />In principle, IPv4 nodes might be unable to reassemble packets larger than 576 octets [4]; in practice, however, due to the predominance of Ethernet networks, all IPv4 nodes are able to reassemble packets up to 1500 octets.<br />&quot;<br /><br />The maximum size of an IP packet is not related to the MTU of a particular interface. Most IP implementation can now reassemble packet up to the maximum size of 65,535 octets.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p854" class="blockpost roweven">
+	<h2><span><span class="conr">#47&nbsp;</span><a href="viewtopic.php?pid=854#p854">2009-12-06 14:26:15</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 32 IPv6 support for the DHT</h3>
+				<div class="postmsg">
+					<p>&gt; The maximum size of an IP packet is not related to the MTU of a particular interface. Most IP implementation can now reassemble packet up to the maximum size of 65,535 octets.<br /><br />That's not the point.<br /><br />The point is: what is a reasonable datagram size that we can send and be guaranteed that any IP implementation will be able to reassemble it.&nbsp; We claim that 1024 of payload is fine, since anyone should be able to reassemble 1280 bytes.<br /><br />In other words, this is speaking of the *minimum* maximum segment size, not the actual maximum segment size.<br /><br />I agree with you that the last proposition is somewhat unclear.<br /><br />--Juliusz</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p865" class="blockpost rowodd">
+	<h2><span><span class="conr">#48&nbsp;</span><a href="viewtopic.php?pid=865#p865">2009-12-10 18:10:20</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90606">Louif</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 32 IPv6 support for the DHT</h3>
+				<div class="postmsg">
+					<p>So, this is to avoid fragmenting any datagram. Right?<br /><br />IP fragmentation is not *that* bad. Let's let the network layer do its job.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p866" class="blockpost roweven">
+	<h2><span><span class="conr">#49&nbsp;</span><a href="viewtopic.php?pid=866#p866">2009-12-10 23:06:05</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90653">philippe</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 32 IPv6 support for the DHT</h3>
+				<div class="postmsg">
+					<p>Avoiding packet fragmentation is rather nice, especially in our current IPv6 ecosystem, where tunnels abound.&nbsp; &nbsp; More precisely, there's often (relatively!) problems with tunnels that have different MTUs set on both ends.&nbsp; Obviously packets are silently dropped when one end finds itself with packets over the MTU.&nbsp; These are tunnels used in default-free transit, so it's extremely hard to diagnose, and requires contacting a regiment of difficult-to-reach people in order to fix it.<br /><br />So I'm just saying that keeping packets under the conventional MTU is something nice to have.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p867" class="blockpost rowodd">
+	<h2><span><span class="conr">#50&nbsp;</span><a href="viewtopic.php?pid=867#p867">2009-12-11 08:27:43</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 32 IPv6 support for the DHT</h3>
+				<div class="postmsg">
+					<p>Just to let all of you know that the IPv6 DHT is bootstrapping quite nicely.&nbsp; I estimate it as having roughly 1000 nodes right now.<br /><br />--Juliusz</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox">
+		<p class="postlink conr">&nbsp;</p>
+		<p class="pagelink conl">Pages: <a href="viewtopic.php?id=114&amp;p=1">1</a>&nbsp;<strong>2</strong></p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;BEP 32 IPv6 support for the DHT</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div class="inbox">
+
+			<div class="conl">
+				<form id="qjump" method="get" action="viewforum.php">
+					<div><label>Jump to
+					<br /><select name="id" onchange="window.location=('viewforum.php?id='+this.options[this.selectedIndex].value)">
+						<optgroup label="BitTorrent">
+							<option value="26">Announcements</option>
+							<option value="25" selected="selected">BEPs</option>
+							<option value="29">BEP process</option>
+							<option value="27">General</option>
+							<option value="33">Research Tools</option>
+							<option value="32">Cooperation between BitTorrent and ISPs</option>
+							<option value="30">Attacks against BitTorrent</option>
+							<option value="28">Feature Requests, Found Bugs &gt;&gt;&gt;</option>
+					</optgroup>
+					</select>
+					<input type="submit" value=" Go " accesskey="g" />
+					</label></div>
+				</form>
+			</div>
+			<p class="conr">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-116155-1";
+_udn = "utorrent.com";
+urchinTracker();
+</script>
+
+</body>
+</html>

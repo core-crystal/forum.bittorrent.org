@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Multi-files improvements (Page 1) / BEPs / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
+<script type="text/javascript" src="captcha/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript">
+	$(function(){var f=$("#sliderCaptcha");var b=$("#cleCaptcha");var d=$(".boutonsCaptcha");var a=$("#javascriptCaptcha");var e=[45,26,19,5,33,0,12,28,30,25,48,6,11,10,17,48,47,40,38,0,3,40,12,12,43,31,9,9,18,14,31,13,41,0,19,24,1,31,2,31,7,1,37,18,11,5,17,9,45,6];var h=0;var g=5;var c=0;a.hide();f.slider({value:0,min:0,max:g,step:1,slide:function(i,j){if(j.value>c){c=j.value;h+=c}},stop:function(j,k){var i=false;if(k.value==g){if(h==((g+Math.pow(g,2))/2)){i=true;f.slider("option","disabled",true);if(b.val().length!=e.length){$.post("captcha.php",{tokenCaptcha:b.val()},function(m){var l="";$.each(e,function(){l+=m.charAt(this%m.length)});b.val(l);d.removeAttr("disabled")})}}}if(!i){h=c=0;f.slider("option","value",h)}}})});
+</script>
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="punviewtopic" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex" class="isactive"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=556"><strong>Multi-files improvements</strong></a></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p2364" class="blockpost rowodd firstpost blockpost1">
+	<h2><span><span class="conr">#1</span> <a href="viewtopic.php?pid=2364#p2364">2012-08-26 07:19:14</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=95204">rakoo</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Multi-files improvements</h3>
+					<div class="postmsg">
+						<p>Hello everyone,</p><p>I very much like bittorrent, so I&#039;d like to thank everyone for this system. I have used it numerous times, and I think that although they work well, the multi-file torrents are a major issue of the system :</p><ul><li><p>Files are concatenated for pieces calculation; change one file and the rest of the torrent will have to be downloaded again. </p></li><li><p>Blocks are related to the torrent only. If the same file exists in multiple torrents, the two swarms will be disjoint, although they could collaborate efficiently. </p></li><li><p>If I want to add a file to the torrent, I have to redownload every other file, because of the previous points </p></li></ul><p>I am new to the forum, and don&#039;t know everything about bittorrent. But I don&#039;t think I have seen something addressing the issue. So here comes my proposal.<br />Instead of using a virtual multi-file organization for a big blob of concatenated files, we could effectively separate the files by<br /></p><ol class="decimal"><li><p>Creating single-file torrents for each of the files</p></li><li><p>Referring to the torrents in the multi-file torrents, via the infohashes</p></li></ol><p>The final result of a multi-file torrent would look like this :</p><div class="codebox"><pre><code>{
+    &#039;announce&#039;: &#039;http://tracker.site1.com/announce&#039;,
+    &#039;info&#039;:
+    {
+        &#039;name&#039;: &#039;directoryName&#039;,
+        &#039;piece length&#039;: 0,
+        &#039;files&#039;:
+        [
+            {&#039;path&#039;: &#039;/path/to/111.txt&#039;, &#039;infohash&#039;: &lt;infohash of the single-file torrent for 111.txt&gt;},
+            {&#039;path&#039;: &#039;/other/path/to/222.txt&#039;, &#039;infohash&#039;: &lt;infohash of the single-file torrent for 222.txt&gt;}
+        ]
+    }
+}</code></pre></div><p>Notice that :<br /></p><ul><li><p>the piece length of 0. This is to ensure that the client knows it isn&#039;t dealing with a blob to download, but has no data to download </p></li><li><p>there are no <em>pieces</em> array, because there are no data to download </p></li></ul><p>When dealing with such a torrent, the client would fetch the files torrents to get the real data, and organize them according to the multi-file torrent.</p><p>There are some limitations, of course :<br /></p><ul><li><p>the overall torrents to exchange before acquiring data will be greater.</p></li><li><p>the numerous torrents will clutter the clients&#039; UI. This could be &quot;solved&quot; by only displaying the manually added torrents and not the other ones</p></li><li><p>the trackers will have to manage the multi-file torrent and all the single-file torrents, or we would have to add some structure to say which torrent is managed by which tracker. To be fair, I only thought about DHT/PEX to manage this. </p></li></ul><p>But I think the improvements are at least worth the consideration :<br /></p><ul><li><p>Consider a scenario of distributing photos of a trip. Participant A starts by adding her photos to the archive and seeding it to interested people (friends, ...). Participant B, having photos that she has, could improve the torrent by adding these photos. Same friends would now download from the second torrent, and be able to reuse the pics downloaded through the first torrent. Friend 1 would add the trip photos to her overall photos, and could distribute the overall photos to other people, and so on. Same scenario could be ported to anything, like a movie with subtitles/audio tracks, ...</p></li><li><p>We would reuse the working single-file torrents, as-is.</p></li><li><p>Each file could have its own block-size</p></li></ul><p>The scenarios I envisioned are like the one described : a list of static files that will get modified to add other files (or, recursively, other multi-file torrents, which could be seen as folder torrents). This could really help for synchronizing directories between any number of computers, for instance. All with versioning and hash check.</p><p>I have put together a script to generate this kind of folder torrent. It&#039;s in ruby, it&#039;s just to show how (easy) it would be done : <a href="https://github.com/rakoo/meta-torrent/blob/master/multitorrent_simple.rb"> over here</a>. The multi-file torrent for my <em>/usr/include/linux</em> would look <a href="https://gist.github.com/3480849">like this</a>. The other script in my repo allows you to build recursive torrents, one for each folder; I thought this would be too large and unneeded for the simple use case of exchanging files. However, it could be use to implement some kind of Merkle tree, but adapted to bittorrent.</p><p>I will try to work on some torrent libraries to implement the change and make some client work.</p><p>I&#039;d love to hear some feedback from the community. What do you think about it ?</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2426" class="blockpost roweven">
+	<h2><span><span class="conr">#2</span> <a href="viewtopic.php?pid=2426#p2426">2012-10-09 16:29:24</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Multi-files improvements</h3>
+					<div class="postmsg">
+						<p>I think there are simpler ways of achieving the same goals. For instance, if backwards compatibility is not an issue, each file should simply just have its own set of piece hashes, or its own hash tree root.</p><p>What you&#039;re proposing is essentially identical to an RSS feed. You can already create these kinds of &quot;torrents&quot;, if you&#039;re not too concerned about whether it&#039;s bencoded or XML. You can simply express this as an RSS feed with all the single file torrents in it.</p><p>The problem of adding files can be solved separately. In fact, one of the thing we&#039;ve been working on lately is to have a feature where a new torrent can pull in files/pieces from a previous one, to avoid downloading them.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=556"><strong>Multi-files improvements</strong></a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

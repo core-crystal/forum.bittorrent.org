@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>forum.bittorrent.org / Staging Subsets of Content to Support VOD</title>
+<link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
+</head>
+<body>
+
+<div id="punwrap">
+<div id="punviewtopic" class="pun">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><span>forum.bittorrent.org</span></h1>
+			<p><span>BitTorrent.org community</span></p>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p>You are not logged in.</p>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<h2><span>Announcement</span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div>Posting about any illegal sharing of copyrighted content is strictly forbidden.</div>
+		</div>
+	</div>
+</div>
+
+<div class="linkst">
+	<div class="inbox">
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<p class="postlink conr">&nbsp;</p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Staging Subsets of Content to Support VOD</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p411" class="blockpost rowodd firstpost">
+	<h2><span><span class="conr">#1&nbsp;</span><a href="viewtopic.php?pid=411#p411">2008-08-30 01:10:18</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3>Staging Subsets of Content to Support VOD</h3>
+				<div class="postmsg">
+					<p>With set-top boxes or any device with limited disk space, content available for the user to watch may far exceed what can be stored.&nbsp; However, not all of each file is necessary to facilitate rapid ramp-up of download rates or to facilitate on-demand streaming.&nbsp; &nbsp;The BitTorrent client only needs enough pieces that are desired by other clients to effectively tit-for-tat when first optimistically unchoked.&nbsp; To facilitate trading and maintain availability of all pieces, peers should download sufficiently different subsets.<br /><br />However, attempting to download a different subset of pieces is very different from the traditional objective of BitTorrent.&nbsp; If my client defines the subset of pieces randomly beforehand, then joins a swarm to download just those pieces, then it is quite possible that the peers in the random subset returned from the tracker will have little or no common interest with my peer.&nbsp; This problem is exacerbated the smaller the fraction of the file each peer downloads.&nbsp; &nbsp;Within a minute or so of joining the swarm, a peer could learn of all/most peers in the swarm using PEX but would have to hunt opening and closing connections to learn of those interested in the same/overlapping subset.&nbsp; Without extending the peer-to-peer protocol, the peers could not even learn the subset of interests of another peer.&nbsp; As designed each BitTorrent peer X tells each other client Y what X has and tells each other peer Y when X is interested in something Y has.&nbsp; The interest is a boolean... it does not identify an individual piece.&nbsp; X only identifies a desired piece by requesting it.<br /><br />An alternate method is to partition the file's pieces.&nbsp; For each subset in the partition, we create a subswarm that trades just the pieces in that subset.&nbsp; Since all of the peers in each subswarm are interested in the same pieces, BitTorrent can operate efficiently on each subset provided there are enough peers in each subset.&nbsp; For small swarms, peers download to the extent they can from other peers but most likely obtain the desired subset from seeds.&nbsp; We set the coarseness of the partition to the desired distinctness between peers.&nbsp; Peers control how much they download by how many subsets they join.&nbsp; <br /><br />One simple mechanism for constructing such a partition is an interleave where subset i contains every kth piece starting from piece i resulting in k interleaves.&nbsp; Peers that trade pieces within an interleave constitute an <em>interleave subswarm</em>.&nbsp; <br /><br /><br /><span class="bbu"> Introducing peers in a subswarm </span><br /><br />Peer can compute a unique id for each interleave analogous to the infohash by performing SHA-1 across just the piece hashes of the desired interleave.&nbsp; All piece hashes are present in the info dict in the .torrent file.<br /><br />Peers can find other peers interested in the same interleave by announcing to the tracker using the interleave subswarm's unique id.&nbsp; <br /><br /><br /><span class="bbu">Trading with peers that want everything</span><br /><br />In addition to joining the subswarm(s) for the desired interleave(s), the peer also joins the swarm identified by the infohash (i.e., id computed across the entire info dict).&nbsp; &nbsp;We shall call this the <em> infohash swarm </em>.&nbsp; <br /><br />A peer that has downloaded all of the interleaves for which it is currently interested becomes a &quot;partial seed&quot; in the infohash swarm.<br /><br />A peer may delay joining the infohash swarm until has obtained its interleave(s) in order to avoid littering the infohash swarm with peers that have little to offer.<br /><br /><br /><span class="bbu"> On-demand Playback </span><br /><br />So that peers may start playing immediately, they may stage the first portion of a file.&nbsp; If&nbsp; clients download the beginning of many files and most of these files are not watched, then <em> infohash swarms </em> could become dominated by peers that only have the beginning of a file.&nbsp; We saw this exact problem with DNA, but due to a different problem.&nbsp; Users browsing would watch only the first few minutes of a video.&nbsp; Sometimes &gt;90% of the peers in the swarm would only have the beginning.<br /><br />To avoid such unbalanced swarms, all staging peers would join the <em> beginning subswarm</em> but would not join the <em> infohash swarm </em> unless/until they have at least one other subset from the partition.<br /><br />Further support for on-demand streaming with BitTorrent is beyond the scope of this proposal. <br /><br /><br /><span class="bbu"> Extension to Metainfo File </span><br /><br />We propose two optional key-value pairs for the .torrent (metainfo) file:<br /><br />&nbsp; interleaves=k<br />&nbsp; beginning=m<br /><br />There is a beginning subswarm which trades the first <em> m </em> pieces of the file, and there are <em> k </em> interleaves with interleave <em> i </em> starting at piece with index <em>m + i</em> and containing every <em>kth</em> piece thereafter.&nbsp; If &quot;beginning&quot; is omitted then there is no beginning subswarm and <em>m = 0.</em>&nbsp; If &quot;interleaves&quot; is omitted then there are no interleaves.<br /><br /><br /><span class="bbu"> No Protocol Extensions </span><br /><br />Although this proposal requires extension to the behavior of BitTorrent clients, it does not require any changes to the BitTorrent peer-to-peer or peer-to-tracker protocols:&nbsp; no new messages are necessary.&nbsp; This proposal however synergizes with the &quot;partial seed&quot; extension proposed in BEP-21<br /><br />&nbsp; <a href="http://bittorrent.org/beps/bep_0021.html" rel="nofollow">http://bittorrent.org/beps/bep_0021.html</a><br /><br />No behavior change is necessary for the tracker.&nbsp; Even if an *infohash swarm* is constituted of almost all partial seeds, there is no evidence that handing only a random set of partial seeds to a downloader is a problem.&nbsp; It is highly unlikely that a significant number of peers returned from the tracker belong to the same interleaves.&nbsp; If there are more interleaves then peers returned from the tracker then the partial seeds cannot cover all pieces in the file.&nbsp; However, even this is not a problem because long before the new peer has downloaded everything of interest from the partial seeds, the client will with high probability have learned of seeds and other downloaders via PEX.&nbsp; <br /><br />This could constitute a problem for private torrents where PEX is disallowed.&nbsp; In which case either fewer interleaves should be used or the tracker could intentionally hand out a good mix of seeds, downloaders, and partial seeds taking care to ensure a minimum number of seeds and downloaders when they are available.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p422" class="blockpost roweven">
+	<h2><span><span class="conr">#2&nbsp;</span><a href="viewtopic.php?pid=422#p422">2008-08-31 17:53:27</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=30435">bram</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Staging Subsets of Content to Support VOD</h3>
+				<div class="postmsg">
+					<p>Why is it better to have an interleave file than to simply have each peer download x% of the file using rarest first?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p431" class="blockpost rowodd">
+	<h2><span><span class="conr">#3&nbsp;</span><a href="viewtopic.php?pid=431#p431">2008-09-02 13:35:18</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Staging Subsets of Content to Support VOD</h3>
+				<div class="postmsg">
+					<p>Peers don't download rarest first.&nbsp; Peers download &quot;rarest first from what my neighbor has.&quot;&nbsp; Fast partial seeds unbalance the piece distribution: they push the &quot;rarest of what they have&quot; to the new peers and don't obtain new rarest pieces themselves. <br /><br />When partial seeds &gt;&gt; seeds, the random subset returned from the tracker is unlikely to even include a full seed---&gt; only talk to partial seeds with already unbalanced piece distributions.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p434" class="blockpost roweven">
+	<h2><span><span class="conr">#4&nbsp;</span><a href="viewtopic.php?pid=434#p434">2008-09-02 17:13:40</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=30435">bram</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Staging Subsets of Content to Support VOD</h3>
+				<div class="postmsg">
+					<p>Ah, that makes sense.<br /><br />Are you leading up to a suggestion of a .torrent file extension to specify interleaves (seven of nine outside of the info dict) and a tracker protocol extension to report to the tracker what interleave you're in?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p448" class="blockpost rowodd">
+	<h2><span><span class="conr">#5&nbsp;</span><a href="viewtopic.php?pid=448#p448">2008-09-04 14:58:20</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Staging Subsets of Content to Support VOD</h3>
+				<div class="postmsg">
+					<p>In&nbsp; .torrent,<br /><br />&nbsp; interleaves=k<br />&nbsp; beginning=m<br /><br />Peer joins the swarm for the hash computed over just the pieces in that interleave. No need to extend tracker.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox">
+		<p class="postlink conr">&nbsp;</p>
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Staging Subsets of Content to Support VOD</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div class="inbox">
+
+			<div class="conl">
+				<form id="qjump" method="get" action="viewforum.php">
+					<div><label>Jump to
+					<br /><select name="id" onchange="window.location=('viewforum.php?id='+this.options[this.selectedIndex].value)">
+						<optgroup label="BitTorrent">
+							<option value="26">Announcements</option>
+							<option value="25" selected="selected">BEPs</option>
+							<option value="29">BEP process</option>
+							<option value="27">General</option>
+							<option value="33">Research Tools</option>
+							<option value="32">Cooperation between BitTorrent and ISPs</option>
+							<option value="30">Attacks against BitTorrent</option>
+							<option value="28">Feature Requests, Found Bugs &gt;&gt;&gt;</option>
+					</optgroup>
+					</select>
+					<input type="submit" value=" Go " accesskey="g" />
+					</label></div>
+				</form>
+			</div>
+			<p class="conr">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-116155-1";
+_udn = "utorrent.com";
+urchinTracker();
+</script>
+
+</body>
+</html>

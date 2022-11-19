@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>forum.bittorrent.org / RFC: Elastic extension</title>
+<link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
+</head>
+<body>
+
+<div id="punwrap">
+<div id="punviewtopic" class="pun">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><span>forum.bittorrent.org</span></h1>
+			<p><span>BitTorrent.org community</span></p>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p>You are not logged in.</p>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<h2><span>Announcement</span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div>Posting about any illegal sharing of copyrighted content is strictly forbidden.</div>
+		</div>
+	</div>
+</div>
+
+<div class="linkst">
+	<div class="inbox">
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<p class="postlink conr">&nbsp;</p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;RFC: Elastic extension</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p1004" class="blockpost rowodd firstpost">
+	<h2><span><span class="conr">#1&nbsp;</span><a href="viewtopic.php?pid=1004#p1004">2010-02-25 13:26:22</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90770">mjfrancis</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3>RFC: Elastic extension</h3>
+				<div class="postmsg">
+					<p>The Elastic extension<br /><br />This extension allows a torrent's data to be securely extended through the use of digital signatures and an efficiently growable hash tree (it does not yet allow the file set to be added to, but as a proof of concept extends the last file in the torrent). Further development could allow this to be used to make torrents that periodically grow new files, and/or to support near-live streaming of video or other data.<br /><br />Bobbin, a pure Java BitTorrent library, contains a working test implementation. Details can be found here:<br /><br /><a href="http://code.google.com/p/bobbin/wiki/ElasticExtension" rel="nofollow">http://code.google.com/p/bobbin/wiki/ElasticExtension</a><br /><br />At this point in the development of the extension, I would be grateful for:-<br /><br /> * Feedback on whether, with sufficient refinement, this concept could be elevated to a BEP<br /> * Input on the protocol and data structure design. I am not a professional mathematician, so a competent second opinion on the design of the elastic hash tree would be especially welcome<br /> * Questions and comments to help refine the documentation and explanation of the extension. I've been working with the idea for some time, so I'm sure I know how it is supposed to work, but there are parts that are probably much less obvious to new eyes</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1030" class="blockpost roweven">
+	<h2><span><span class="conr">#2&nbsp;</span><a href="viewtopic.php?pid=1030#p1030">2010-03-01 14:40:37</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: RFC: Elastic extension</h3>
+				<div class="postmsg">
+					<p>Could you explain why this (rather complicated) solution would be preferred over a simpler RSS feed based one? (see previous topics)</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1048" class="blockpost rowodd">
+	<h2><span><span class="conr">#3&nbsp;</span><a href="viewtopic.php?pid=1048#p1048">2010-03-02 06:16:23</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90770">mjfrancis</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: RFC: Elastic extension</h3>
+				<div class="postmsg">
+					<p>It's a good question and I will try to address it.<br /><br />Firstly as to the complexity of the solution, it's not as bad as all that; most of the complexity is in the explaining of how (and why) it works, rather than the implementation itself. From my own experience of implementing it, a BT library that has already made the relevant abstractions to support Merkle torrents should not find it too challenging to support, and indeed most of the hash tree management can be shared between the two - Merkle essentially as a special case of Elastic.<br /><br />The major pieces needed to make an implementation are really:<br /> - A file storage layer that can be expanded. More challenging than what the base protocol requires, but not rocket science.<br /> - An elastic hash tree implementation. Even if the principle is unfamiliar, the code is short and quite simple, and the reference implementation's MIT license allows it to be copied or translated freely.<br /> - A DSA implementation. Any sane language should have one available, so no need to implement it yourself.<br />The rest is just glue and nothing much that requires hard thinking.<br /><br /><br />Secondly, as to why this and not an RSS based solution; I don't see this as an either-or proposition, but that both may have their place and uses.<br /><br />I'll expand a bit on where I'm going with this and what I plan to do with it. The parts that are not yet implemented are coming; implementation is after all usually more persuasive than just reasoning.<br /><br />If I imagine what the parts of the finished proposal actually look like as BEPs, there are possibly three.<br /><br /><strong>Signature metadata extension</strong><br />Allows torrents to be signed with a digital signature. The Elastic extension uses this to verify the origin of data extensions, but it could just as easily be applied to &quot;classic&quot; and plain Merkle torrents. The addition of a simple keychain inside implementing clients should help to kill off or at least reduce the problem of fake / actively malicious torrents, compatibly with existing clients and with a low cost of implementation.<br /><br /><strong>Elastic extension</strong><br />Protocol extension to allow torrent data and fileset to be extended as previously described.<br />In contrast/addition to an RSS based solution, this allows:<br /> - (Nearly) live streaming of data - video, audio, program data updates, or anything else<br /> - Seeding quick start. Even for files of initially known size and content, seeding of the data can start immediately, without waiting for the data to be digested completely (even with fast disks, this can take a good amount of time for a multi-gigabyte torrent)<br /> - Infrastructure-less operation. All other aspects of a torrent now require no hosting (thanks to DHT and metadata exchange), but an RSS feed has to be physically provisioned and maintained somewhere externally to the management of the torrent.<br /><br /><strong>Resource extension</strong><br />Conceptually an expanded BEP 0009 protocol extension that allows peers to exchange multiple metadata streams per torrent<br /> - The torrent's Info, as with BEP 0009<br /> - Signature metadata, to allow the signature metadata extension to function torrentless<br /> - Fileset deltas, allowing additional files as well as additional data for Elastic torrents<br /> - Hash tree hashes, which would square the circle to allow both Merkle and Elastic to operate with a protocol efficiency close to that of classic torrents. Clients would then have the choice of requesting either hashlist pieces, for a quick start, or regular pieces for efficiency when they have received the relevant hash data to validate a piece through the metadata sideband (obviously this introduces a scheduling requirement, but not an overly challenging one)<br /><br /><br />The use to which I eventually plan to put this involves the streaming of near real time program data updates to clients for a particular application without any fixed infrastructure. The application itself is more of a long term research project that may, or may not come to fruition, but having done the fundamental research on this part of the problem it would be good to see as much of it as possible turned into standards (for some value of &quot;standard&quot; involving a specification and at least two independent implementations). I could of course have made a completely application-specific protocol, but it seemed silly to when BitTorrent already offered 90% of what I was looking for and worked in a generally simple and well understood fashion.<br /><br />Finally, I'm not wed to any particular detail of the extension as it is currently implemented. I have read all the previous comments and suggestions relating to what an extension like this would involve, and I believe that any implementation of the basic concept would look something like the sample implementation I posted for discussion. If any part of it could be simpler while meeting the same basic requirements, or implemented in a way that is better aligned in some sense with the rest of the BitTorrent standard(s), then I would love to discuss how. I'll still need the functionality either way, so one way or the other a specification of some sort will exist, but making it into the best standard it can be will allow more general use of the above features, at least some of which I think have potentially wider appeal.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox">
+		<p class="postlink conr">&nbsp;</p>
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;RFC: Elastic extension</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div class="inbox">
+
+			<div class="conl">
+				<form id="qjump" method="get" action="viewforum.php">
+					<div><label>Jump to
+					<br /><select name="id" onchange="window.location=('viewforum.php?id='+this.options[this.selectedIndex].value)">
+						<optgroup label="BitTorrent">
+							<option value="26">Announcements</option>
+							<option value="27">General</option>
+							<option value="25" selected="selected">BEPs</option>
+							<option value="29">BEP process</option>
+							<option value="33">Research Tools</option>
+							<option value="32">Cooperation between BitTorrent and ISPs</option>
+							<option value="30">Attacks against BitTorrent</option>
+							<option value="28">Feature Requests, Found Bugs &gt;&gt;&gt;</option>
+					</optgroup>
+					</select>
+					<input type="submit" value=" Go " accesskey="g" />
+					</label></div>
+				</form>
+			</div>
+			<p class="conr">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-116155-1";
+_udn = "utorrent.com";
+urchinTracker();
+</script>
+
+</body>
+</html>

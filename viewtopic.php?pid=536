@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>forum.bittorrent.org / .torrent file extensions generally</title>
+<link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
+</head>
+<body>
+
+<div id="punwrap">
+<div id="punviewtopic" class="pun">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><span>forum.bittorrent.org</span></h1>
+			<p><span>BitTorrent.org community</span></p>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p>You are not logged in.</p>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<h2><span>Announcement</span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div>Posting about any illegal sharing of copyrighted content is strictly forbidden.</div>
+		</div>
+	</div>
+</div>
+
+<div class="linkst">
+	<div class="inbox">
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<p class="postlink conr">&nbsp;</p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;.torrent file extensions generally</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p459" class="blockpost rowodd firstpost">
+	<h2><span><span class="conr">#1&nbsp;</span><a href="viewtopic.php?pid=459#p459">2008-09-05 13:31:48</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=30435">bram</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3>.torrent file extensions generally</h3>
+				<div class="postmsg">
+					<p>A few possibilities for .torrent file extension have come up in recent discussions, so I'll now put them and generalizations of them in this separate thread, in the hopes of having somewhat more coherent discussion.<br /><br />A quick first aside: there should be a key in the .torrent file outside the info dict which gives an opaque string for the client to pass along verbatim to the tracker. That eliminates the need for hacks which append stuff to the end of the tracker url to pass along such information, and helps with some functionality I'm going to get to later. Of course, it might take some time before this extension is added to all the popular clients, but it's so trivial to implement that I'm not terribly worried about that.<br /><br />For data in .torrent files generally there's a question as to whether it should or should not be in the info dict. Currently there isn't a particularly coherent policy, with some stuff inside and some stuff outside. The stuff which clearly has to be inside is file length, hashing information, and piece size. Everything else could in principle be either place.<br /><br />The tradeoff with inside versus outside the info dict is one of security versus flexibility. Putting stuff inside keeps everything locked down and disallows change later, putting stuff outside allows change later. The new policy I'd like to have is that where things are put is completely at the discretion of the .torrent creator. That is, every key can exist either inside or outside the info dict, with the general policy that if it's inside then you ignore any version which may be outside. This includes tracker url, private flag, metadata, etc. The main funny one is file name(s). Currently those are required in the info dict, so they must continue to be in the future. That can be dealt with by having another key inside the info dict which declares whether file names are overridable outside the info dict, but I'm not sure whether the default value should be overridable.<br /><br />That creates a whole bunch of new potential keys both inside and outside of the info dict, which I'm not going to give a full accounting of right now, because I don't have it immediately and because doing so is rather tedious, although of course if this approach is adopted then that work will have to be done.<br /><br />The info dict could also potentially contain a public key which needs to be used to sign any overrides which are done outside the info dict. That's a logical extension, and there isn't much harm in supporting it, although it shouldn't be required due to the implementation and CPU effort involved in signing. It's also unclear what a client should do if a key is specified but there's no signature - maybe ignore all overrides?<br /><br />Another approach would be to include the .torrent file url inside the info dict, but that doesn't allow for custumization of the .torrent file per user. In particular, the identifier string I mentioned at the top of this post wouldn't be possible.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p462" class="blockpost roweven">
+	<h2><span><span class="conr">#2&nbsp;</span><a href="viewtopic.php?pid=462#p462">2008-09-06 08:20:08</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: .torrent file extensions generally</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>The new policy I'd like to have is that where things are put is completely at the discretion of the .torrent creator.</p></div></blockquote><p>Uh. No. This is a horrible idea.<br /><br />We should actually aim to minimize everything that is in the info dict to make the infohash as unique to the content as possible. Having 1 infohash representing all variations (piece size, filenames, file order) of the content would coalesce many duplicate swarms and improve bittorrent performance.<br /><br />What we really need is a 2nd info-dictionary for auxilary, immutable information important to the client side usage but not to the content.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p465" class="blockpost rowodd">
+	<h2><span><span class="conr">#3&nbsp;</span><a href="viewtopic.php?pid=465#p465">2008-09-08 11:55:01</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=30435">bram</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: .torrent file extensions generally</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>The 8472 wrote:</h4><p>We should actually aim to minimize everything that is in the info dict to make the infohash as unique to the content as possible. Having 1 infohash representing all variations (piece size, filenames, file order) of the content would coalesce many duplicate swarms and improve bittorrent performance.</p></div></blockquote><p>This proposal would in fact allow the .torrent creator to minimize the amount of data in the .torrent file if they so chose. Filenames and file order in particular are simple to canonicalize, the only thing which is left variable is piece size, and that can be fixed by picking a formula for what the piece size should be based on the data size. It would be a simple matter to make a 'canonical .torrent creation utility' which made the invariant parts of the file as consistent as possible.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p477" class="blockpost roweven">
+	<h2><span><span class="conr">#4&nbsp;</span><a href="viewtopic.php?pid=477#p477">2008-09-11 04:31:50</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: .torrent file extensions generally</h3>
+				<div class="postmsg">
+					<p>No, this wouldn't solve the differing directory-/filename problem.</p>
+					<p class="postedit"><em>Last edited by The 8472 (2008-09-11 04:32:41)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p482" class="blockpost rowodd">
+	<h2><span><span class="conr">#5&nbsp;</span><a href="viewtopic.php?pid=482#p482">2008-09-11 10:49:53</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=30435">bram</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: .torrent file extensions generally</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>The 8472 wrote:</h4><p>No, this wouldn't solve the differing directory-/filename problem.</p></div></blockquote><p>Files can simply be given their hash as their name (probably with their extension tacked on for backwards compatibility purposes) and that completely removes all file name dependent information from the info dict.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p517" class="blockpost roweven">
+	<h2><span><span class="conr">#6&nbsp;</span><a href="viewtopic.php?pid=517#p517">2008-09-13 08:03:11</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: .torrent file extensions generally</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>Files can simply be given their hash as their name</p></div></blockquote><p>File names are not dictionary keys, only lists, thus the bencoding standard does not impose any ordering. Another point where the standard introduces ambiguity that creates a multitude of infohashes for the same content.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p521" class="blockpost rowodd">
+	<h2><span><span class="conr">#7&nbsp;</span><a href="viewtopic.php?pid=521#p521">2008-09-13 10:33:59</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=30435">bram</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: .torrent file extensions generally</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>The 8472 wrote:</h4><p>File names are not dictionary keys, only lists, thus the bencoding standard does not impose any ordering. Another point where the standard introduces ambiguity that creates a multitude of infohashes for the same content.</p></div></blockquote><p>They could be given names based on their hashes and then sorted by name to canonicalize the order. These sorts of details are fairly easy to take care of.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p536" class="blockpost roweven">
+	<h2><span><span class="conr">#8&nbsp;</span><a href="viewtopic.php?pid=536#p536">2008-09-18 14:58:17</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=30435">bram</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: .torrent file extensions generally</h3>
+				<div class="postmsg">
+					<p>Looking over what keys are used in practice, there appears to be little reason to not simply allow all the same keys both inside and outside the info dict, with the obvious exception that info can't be inside info (well it could, but it should be ignored) and length and pieces shouldn't ever be paid attention to outside the info dict. Since files and name are required, there needs to be some kind of a flag indicating whether they should be overridable outside the info dict. I think 'overfiles' and 'overname' would be reasonable, with the default of true (overridable), since everybody I've asked thus far seems to think that that should be the default. 'files' has the restriction that if there's a files key outside the info dict it must have the same file lengths as the one inside the info dict, otherwise it's just nonsensical.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox">
+		<p class="postlink conr">&nbsp;</p>
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;.torrent file extensions generally</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div class="inbox">
+
+			<div class="conl">
+				<form id="qjump" method="get" action="viewforum.php">
+					<div><label>Jump to
+					<br /><select name="id" onchange="window.location=('viewforum.php?id='+this.options[this.selectedIndex].value)">
+						<optgroup label="BitTorrent">
+							<option value="26">Announcements</option>
+							<option value="25" selected="selected">BEPs</option>
+							<option value="29">BEP process</option>
+							<option value="27">General</option>
+							<option value="33">Research Tools</option>
+							<option value="32">Cooperation between BitTorrent and ISPs</option>
+							<option value="30">Attacks against BitTorrent</option>
+							<option value="28">Feature Requests, Found Bugs &gt;&gt;&gt;</option>
+					</optgroup>
+					</select>
+					<input type="submit" value=" Go " accesskey="g" />
+					</label></div>
+				</form>
+			</div>
+			<p class="conr">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-116155-1";
+_udn = "utorrent.com";
+urchinTracker();
+</script>
+
+</body>
+</html>

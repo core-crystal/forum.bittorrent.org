@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title type="html"><![CDATA[forum.bittorrent.org / Discussion of BEP 12: Multitracker Metadata Extension]]></title>
+	<link rel="self" href="http://forum.bittorrent.org/extern.php?action=feed&amp;tid=17&amp;type=atom"/>
+	<link href="http://forum.bittorrent.org/viewtopic.php?id=17"/>
+	<updated>2008-09-02T00:02:11Z</updated>
+	<generator>FluxBB</generator>
+	<id>http://forum.bittorrent.org/viewtopic.php?id=17</id>
+	<entry>
+		<title type="html"><![CDATA[Re: Discussion of BEP 12: Multitracker Metadata Extension]]></title>
+		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=430#p430"/>
+		<content type="html"><![CDATA[<div class="quotebox"><blockquote><div><p>Rewording an already posted question:&#160; Does any&#160; tracker operator use the state-sharing semantics in BEP 12?</p></div></blockquote></div><p>I do, and have for at least 4 years. State-sharing trackers WILL have swarm data that has over 90% overlap within the tier (it takes lab conditions to get 100% overlap)</p><p>I provide one of the trackers used in OpenOffice.org&#039;s bittorrent system, and I also run my own independent tier of trackers.</p><p>The way the original specification was written, if a multitracker torrent does have multiple trackers in a single tier, it is to be assumed that there is state sharing. A tracker in a given tier that responds is to be &quot;locked on to&quot; for the duration of the session (or until it fails to respond on an announce cycle, then it goes to the next one).</p>]]></content>
+		<author>
+			<name><![CDATA[DreadWingKnight]]></name>
+			<uri>http://forum.bittorrent.org/profile.php?id=90000</uri>
+		</author>
+		<updated>2008-09-02T00:02:11Z</updated>
+		<id>http://forum.bittorrent.org/viewtopic.php?pid=430#p430</id>
+	</entry>
+	<entry>
+		<title type="html"><![CDATA[Re: Discussion of BEP 12: Multitracker Metadata Extension]]></title>
+		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=297#p297"/>
+		<content type="html"><![CDATA[<p>I would like this BEP to have a section on tracker state semantics. It is clear, when you begin implementing the tracker part of the bitorrent protocol, that there is a stateful semantics in the &#039;event&#039; field of tracker GET requests.</p><p>It is pretty obvious what should happen if there is only a single tracker, as you can only prod the state of that single tracker. In the case of multiple trackers, however, it is far from obvious what the correct semantics are: it is highly dependent on how state sharing is done, if it is done at all.</p><p>In any case, even if there is only one plausible way, I think it should be stated explicitly what a client should do. Or we may end up having slightly different interpretations.</p>]]></content>
+		<author>
+			<name><![CDATA[jlouis]]></name>
+			<uri>http://forum.bittorrent.org/profile.php?id=89918</uri>
+		</author>
+		<updated>2008-07-27T18:19:09Z</updated>
+		<id>http://forum.bittorrent.org/viewtopic.php?pid=297#p297</id>
+	</entry>
+	<entry>
+		<title type="html"><![CDATA[Re: Discussion of BEP 12: Multitracker Metadata Extension]]></title>
+		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=95#p95"/>
+		<content type="html"><![CDATA[<p>Rewording an already posted question:&#160; Does any <em> tracker operator</em> use the state-sharing semantics in BEP 12?</p>]]></content>
+		<author>
+			<name><![CDATA[dave]]></name>
+			<uri>http://forum.bittorrent.org/profile.php?id=89601</uri>
+		</author>
+		<updated>2008-03-13T20:44:40Z</updated>
+		<id>http://forum.bittorrent.org/viewtopic.php?pid=95#p95</id>
+	</entry>
+	<entry>
+		<title type="html"><![CDATA[Re: Discussion of BEP 12: Multitracker Metadata Extension]]></title>
+		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=76#p76"/>
+		<content type="html"><![CDATA[<p>&gt; I agree that DHTs will bridge a partition... except when the users are partitioned across two DHTs (mainline vs. Azureus). </p><p>And this partition exactly matches the partition by trackers. Isn&#039;t that quite unlikely?</p><p>&gt; should we rely on it when the use case in this context is fixing user confusion over semantics?&#160; Why not fix the confusion? (If it is really a problem)</p><p>If it&#039;s really a problem then a fix would be good.</p>]]></content>
+		<author>
+			<name><![CDATA[Olaf van der Spek]]></name>
+			<uri>http://forum.bittorrent.org/profile.php?id=89609</uri>
+		</author>
+		<updated>2008-03-07T12:02:37Z</updated>
+		<id>http://forum.bittorrent.org/viewtopic.php?pid=76#p76</id>
+	</entry>
+	<entry>
+		<title type="html"><![CDATA[Re: Discussion of BEP 12: Multitracker Metadata Extension]]></title>
+		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=74#p74"/>
+		<content type="html"><![CDATA[<div class="quotebox"><cite>dave wrote:</cite><blockquote><div><p>I should be chastised.&#160; I looked through the uTorrent tracker code, and my initial interpretation of its behavior is incorrect.&#160; uTorrent does not &quot;broadcast&quot; to all trackers.&#160; It tries each round-robin regardless of tiers.</p></div></blockquote></div><p>More specifically, uTorrent rotates through tiers until enough peers are obtained. Inside a tier, it rotates urls on failure, but otherwise stays with the same url for a given tier.</p>]]></content>
+		<author>
+			<name><![CDATA[ghazel]]></name>
+			<uri>http://forum.bittorrent.org/profile.php?id=35956</uri>
+		</author>
+		<updated>2008-03-06T22:35:20Z</updated>
+		<id>http://forum.bittorrent.org/viewtopic.php?pid=74#p74</id>
+	</entry>
+	<entry>
+		<title type="html"><![CDATA[Re: Discussion of BEP 12: Multitracker Metadata Extension]]></title>
+		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=72#p72"/>
+		<content type="html"><![CDATA[<p>I agree that DHTs will bridge a partition... except when the users are partitioned across two DHTs (mainline vs. Azureus).&#160; The fact that there are two DHTs is only likely to matter when swarm sizes are small, which is the dominant case.</p><p>Even though we use DHTs, should we rely on it when the use case in this context is fixing user confusion over semantics?&#160; Why not fix the confusion?<br />(If it is really a problem)</p><p>BTW BitTorrent&#039;s tracker is distributed and uses state-sharing, but it uses a single virtual IP and load balances between trackers.</p>]]></content>
+		<author>
+			<name><![CDATA[dave]]></name>
+			<uri>http://forum.bittorrent.org/profile.php?id=89601</uri>
+		</author>
+		<updated>2008-03-06T19:12:00Z</updated>
+		<id>http://forum.bittorrent.org/viewtopic.php?pid=72#p72</id>
+	</entry>
+	<entry>
+		<title type="html"><![CDATA[Re: Discussion of BEP 12: Multitracker Metadata Extension]]></title>
+		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=71#p71"/>
+		<content type="html"><![CDATA[<p>last year i think</p>]]></content>
+		<author>
+			<name><![CDATA[The 8472]]></name>
+			<uri>http://forum.bittorrent.org/profile.php?id=89618</uri>
+		</author>
+		<updated>2008-03-06T16:30:50Z</updated>
+		<id>http://forum.bittorrent.org/viewtopic.php?pid=71#p71</id>
+	</entry>
+	<entry>
+		<title type="html"><![CDATA[Re: Discussion of BEP 12: Multitracker Metadata Extension]]></title>
+		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=70#p70"/>
+		<content type="html"><![CDATA[<p>&gt; Oh... just everything that runs on opentracker, which includes TPB, denis.stalker and various special-interest trackers.</p><p>Ah, I didn&#039;t notice before. Has that been implemented recently?</p>]]></content>
+		<author>
+			<name><![CDATA[Olaf van der Spek]]></name>
+			<uri>http://forum.bittorrent.org/profile.php?id=89609</uri>
+		</author>
+		<updated>2008-03-06T14:01:35Z</updated>
+		<id>http://forum.bittorrent.org/viewtopic.php?pid=70#p70</id>
+	</entry>
+	<entry>
+		<title type="html"><![CDATA[Re: Discussion of BEP 12: Multitracker Metadata Extension]]></title>
+		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=69#p69"/>
+		<content type="html"><![CDATA[<div class="quotebox"><blockquote><div><p>It would be useful if other developers would confirm this observation made by Greg Hazel.</p></div></blockquote></div><p>Most multitracker torrents i have seen use different trackers as &quot;backup trackers&quot;, not as state-sharing-trackers. Especially those from isohunt, which specializes in combining torrents from multiple sources.</p><div class="quotebox"><blockquote><div><p>If a graph really is partitioned then PEX will only tell peers within their subgraph about peers in the same subgraph.</p></div></blockquote></div><p>Only if there is not even a single articulation point. If there is and PEX is properly implemented the swarms will merge pretty fast. low-profile DHT tracking for multifiletorrents, with a DHT-announce probability based on the swarm size reported by the tracker should be sufficient to create such merging.</p><div class="quotebox"><blockquote><div><p>I&#039;m not aware of any other state-sharing trackers.</p></div></blockquote></div><p>Oh... just everything that runs on opentracker, which includes TPB, denis.stalker and various special-interest trackers.</p><div class="quotebox"><blockquote><div><p>Regardless of how we document url-list semantics in a BEP, it is unlikely to change user behavior.</p></div></blockquote></div><p>Well, ÂµTs multitracker editor is particularly inviting for that. Adding tiered trackers should be more &quot;complicated&quot; (regarding the # of clicks/keystrokes involved) than adding backup/non-sharing trackers.</p>]]></content>
+		<author>
+			<name><![CDATA[The 8472]]></name>
+			<uri>http://forum.bittorrent.org/profile.php?id=89618</uri>
+		</author>
+		<updated>2008-03-06T12:31:44Z</updated>
+		<id>http://forum.bittorrent.org/viewtopic.php?pid=69#p69</id>
+	</entry>
+	<entry>
+		<title type="html"><![CDATA[Re: Discussion of BEP 12: Multitracker Metadata Extension]]></title>
+		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=68#p68"/>
+		<content type="html"><![CDATA[<p>&gt; Does any distributed state-sharing tracker operator not have access DNS?</p><p>How many state-sharing trackers are there anyway? BNBT might be able to do it, but AFAIK it&#039;s not very popular. I&#039;m not aware of any other state-sharing trackers.</p><p>&gt; Also it is dangerous to rely on PEX to bridge partitioned subgraphs because it doesn&#039;t do that.&#160; </p><p>That&#039;s why I also said: &quot;If you do want to join each swarm, you could pick another tracker after 30 minutes or so.&quot;</p><p>And what about DHT? Shouldn&#039;t DHT combined with PEX merge the swarms?</p>]]></content>
+		<author>
+			<name><![CDATA[Olaf van der Spek]]></name>
+			<uri>http://forum.bittorrent.org/profile.php?id=89609</uri>
+		</author>
+		<updated>2008-03-06T11:11:14Z</updated>
+		<id>http://forum.bittorrent.org/viewtopic.php?pid=68#p68</id>
+	</entry>
+	<entry>
+		<title type="html"><![CDATA[Re: Discussion of BEP 12: Multitracker Metadata Extension]]></title>
+		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=64#p64"/>
+		<content type="html"><![CDATA[<p>Also it is dangerous to rely on PEX to bridge partitioned subgraphs because it doesn&#039;t do that.&#160; If a graph really is partitioned then PEX will only tell peers within their subgraph about peers in the same subgraph.</p>]]></content>
+		<author>
+			<name><![CDATA[dave]]></name>
+			<uri>http://forum.bittorrent.org/profile.php?id=89601</uri>
+		</author>
+		<updated>2008-03-06T00:49:10Z</updated>
+		<id>http://forum.bittorrent.org/viewtopic.php?pid=64#p64</id>
+	</entry>
+	<entry>
+		<title type="html"><![CDATA[Re: Discussion of BEP 12: Multitracker Metadata Extension]]></title>
+		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=63#p63"/>
+		<content type="html"><![CDATA[<p>If Greg&#039;s observation is in fact correct then tiering is detrimental because it results in unintentional partitioning.</p><p>How valuable is it to support load balancing within the url list?&#160; </p><p>If you are tracker operator, do you use announce-lists to provide load balancing?&#160; Or do you use DNS load balancing or a virtual IP?&#160; Does any distributed state-sharing tracker operator not have access DNS?<br />Is there a good reason why users should be aware of state-sharing?</p><p>uTorrent&#039;s solution works well if the user behavior observation is correct, but the solution is not optimal.&#160; I would prefer the semantics match user expectations. </p><p>Does anyone disagree that if the users expect failover then the semantics should be failover?</p>]]></content>
+		<author>
+			<name><![CDATA[dave]]></name>
+			<uri>http://forum.bittorrent.org/profile.php?id=89601</uri>
+		</author>
+		<updated>2008-03-06T00:44:55Z</updated>
+		<id>http://forum.bittorrent.org/viewtopic.php?pid=63#p63</id>
+	</entry>
+	<entry>
+		<title type="html"><![CDATA[Re: Discussion of BEP 12: Multitracker Metadata Extension]]></title>
+		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=62#p62"/>
+		<content type="html"><![CDATA[<p>I hunted down Greg Hazel (ghazel/alus) to find out why he thought swarms partitioned across trackers is the dominant case.&#160; </p><p>Greg stated that he obtained this belief by looking at .torrent files and looking at peer lists returned from trackers.</p><p>uTorrent gets substantially different peer lists by rotating between trackers and this is not simply due to different random subsets being returned from trackers, because this occurs even when swarms are small enough that each tracker within the tier should return all peers in the swarm if the trackers were in fact sharing state.</p><p>The hypothesis is that users do not understand or are not aware of the tiering semantics and simply put a list of trackers in the announce-list.&#160; As a result, the trackers within a tier are highly unlikely to share state. </p><p>Regardless of how we document announce-list semantics in a BEP, it is unlikely to change user behavior.&#160; &#160;</p><p>It would be useful if other developers would confirm this observation made by Greg Hazel.&#160; If it really occurs as often he suggests then we should take it into account.</p>]]></content>
+		<author>
+			<name><![CDATA[dave]]></name>
+			<uri>http://forum.bittorrent.org/profile.php?id=89601</uri>
+		</author>
+		<updated>2008-03-05T23:59:33Z</updated>
+		<id>http://forum.bittorrent.org/viewtopic.php?pid=62#p62</id>
+	</entry>
+	<entry>
+		<title type="html"><![CDATA[Re: Discussion of BEP 12: Multitracker Metadata Extension]]></title>
+		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=61#p61"/>
+		<content type="html"><![CDATA[<p>I should be chastised.&#160; I looked through the uTorrent tracker code, and my initial interpretation of its behavior is incorrect.&#160; uTorrent does not &quot;broadcast&quot; to all trackers.&#160; It tries each round-robin regardless of tiers.</p>]]></content>
+		<author>
+			<name><![CDATA[dave]]></name>
+			<uri>http://forum.bittorrent.org/profile.php?id=89601</uri>
+		</author>
+		<updated>2008-03-05T23:27:25Z</updated>
+		<id>http://forum.bittorrent.org/viewtopic.php?pid=61#p61</id>
+	</entry>
+	<entry>
+		<title type="html"><![CDATA[Re: Discussion of BEP 12: Multitracker Metadata Extension]]></title>
+		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=59#p59"/>
+		<content type="html"><![CDATA[<p>right, if you throw &quot;DHT tracking when the seed+peer count is low&quot;-behavior into the mix then PEX should be able to merge swarms from various trackers and announcing to multiple trackers at once is just unnecessary load.</p><p>One might argue that announcing to seperate trackers does not add extra load to the individual trackers. But if everyone does that it means that every user announces to more trackers and thus that there are more announces per tracker.</p>]]></content>
+		<author>
+			<name><![CDATA[The 8472]]></name>
+			<uri>http://forum.bittorrent.org/profile.php?id=89618</uri>
+		</author>
+		<updated>2008-03-05T19:48:30Z</updated>
+		<id>http://forum.bittorrent.org/viewtopic.php?pid=59#p59</id>
+	</entry>
+</feed>

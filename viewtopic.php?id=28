@@ -1,0 +1,533 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Improve BitTorrent to prevent economically motivated freeloading (Page 1) / Attacks against BitTorrent / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
+<script type="text/javascript" src="captcha/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript">
+	$(function(){var f=$("#sliderCaptcha");var b=$("#cleCaptcha");var d=$(".boutonsCaptcha");var a=$("#javascriptCaptcha");var e=[45,14,44,24,34,46,47,2,39,41,11,41,19,33,10,33,1,26,22,9,29,15,47,44,34,14,4,30,7,23,15,3,38,10,27,23,6,25,26,45,17,38,37,36,21,48,20,22,24,42];var h=0;var g=5;var c=0;a.hide();f.slider({value:0,min:0,max:g,step:1,slide:function(i,j){if(j.value>c){c=j.value;h+=c}},stop:function(j,k){var i=false;if(k.value==g){if(h==((g+Math.pow(g,2))/2)){i=true;f.slider("option","disabled",true);if(b.val().length!=e.length){$.post("captcha.php",{tokenCaptcha:b.val()},function(m){var l="";$.each(e,function(){l+=m.charAt(this%m.length)});b.val(l);d.removeAttr("disabled")})}}}if(!i){h=c=0;f.slider("option","value",h)}}})});
+</script>
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="punviewtopic" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex" class="isactive"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=30">Attacks against BitTorrent</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=28"><strong>Improve BitTorrent to prevent economically motivated freeloading</strong></a></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p166" class="blockpost rowodd firstpost blockpost1">
+	<h2><span><span class="conr">#1</span> <a href="viewtopic.php?pid=166#p166">2008-04-29 11:43:25</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89705">shelby</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Improve BitTorrent to prevent economically motivated freeloading</h3>
+					<div class="postmsg">
+						<p>Apologies if I just drop in here, no one here knows who I am, and might seem rude if I jump straight in, but in the interests of expediancy I will just copy+paste something I wrote at another forum.&#160; Hope this is helpful in some way.&#160; I realize that freeloading may be more conceptual than a current attack, but I hope the following is useful to this forum and P2P overall.</p><p>Some background on me (not relevant, share to get familiar with me):</p><p><a href="http://www.coolpagehelp.com/developer.html#2">http://www.coolpagehelp.com/developer.html#2</a><br /><a href="http://www.w3.org/TR/CSS21/about.html#acknowledgements">http://www.w3.org/TR/CSS21/about.html#acknowledgements</a> (&quot;Shelby Moore&quot;)<br /><a href="http://www.google.com/search?hl=en&amp;q=mysql.com+shelby&amp;btnG=Search">http://www.google.com/search?hl=en&amp;q=my … tnG=Search</a><br /><a href="http://bugs.activestate.com/buglist.cgi?query_format=advanced&amp;short_desc_type=allwordssubstr&amp;short_desc=&amp;product=Komodo&amp;long_desc_type=substring&amp;long_desc=&amp;bug_file_loc_type=allwordssubstr&amp;bug_file_loc=&amp;status_whiteboard_type=allwordssubstr&amp;status_whiteboard=&amp;keywords_type=allwords&amp;keywords=&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;emailreporter1=1&amp;emailtype1=substring&amp;email1=shelby%40coolpage.com&amp;emailassigned_to2=1&amp;emailreporter2=1&amp;emailqa_contact2=1&amp;emailcc2=1&amp;emailtype2=substring&amp;email2=&amp;bugidtype=include&amp;bug_id=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;cmdtype=doit&amp;order=Reuse+same+sort+as+last+time&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=">http://bugs.activestate.com/buglist.cgi … alue0-0-0=</a><br /><a href="http://www.coolpage.com/commentary/economic/shelby/Urgent_Warning.html">http://www.coolpage.com/commentary/econ … rning.html</a> (an email that was never sent)<br /><a href="http://www.coolpage.com/commentary/economic/shelby/Inflating%20Deflation.html">http://www.coolpage.com/commentary/econ … ation.html</a><br /><a href="http://financialsense.com/fsu/contributors.html#shelbymoore">http://financialsense.com/fsu/contribut … helbymoore</a></p><br /><div class="quotebox"><cite>shelby at jasonhommelforums.com/forums in &quot;How to beat Google?&quot; wrote:</cite><blockquote><div><p>Okay this hack of BitTorrent:</p><p><a href="http://dcg.ethz.ch/publications/hotnets06.pdf">http://dcg.ethz.ch/publications/hotnets06.pdf</a></p><p>demonstrates what Jason Hommel and I had decided in 2006, which is that P2P can only work if there are micro-payments system using a real money...</p></div></blockquote></div><p>1) I have an idea for an improvement for BitTorrent&#039;s protocol, which I think will block the above &quot;freeloading&quot; vulnerability.</p><p>Freeloading is possible in BitTorrent because fundamentally all P2P (peer-to-peer) involves a trade (share) of data.&#160; As each chunk of a file is traded, one peer has to go first and trust that the other peer will reciprocate. </p><p>There is nothing in the fundamental protocol of the internet (TCP/IP or UDP) that enables two peers to guarantee both peers will send and assure mutual receipt.&#160; In fact, it would not be possible, because the routers implementing the internet protocols are themselves peers, and thus could void any such guarantee.&#160; The internet is robust precisely because the fundamental protocols can handle high rates of failure (packet loss).</p><p>Peers may fail to reciprocate due to network issues, but this is not a vulnerability, rather just a normal requirement for robust load balancing.&#160; Also peers might contain programming errors, but the motivation would be to fix these over time (one would assume the most popular clients would fit the motivation of the market).&#160; Thus, other than an intent to be malicious, the only possible reason a peer would not reciprocate, is the economic cost of reciprocating (of uploading it&#039;s chunk of the file).</p><p>My idea is peers then trade an encrypted file chunk, then acknowledge receipt by trading the decryption strings.&#160; Thus, no peer has a bandwidth economic motivation to not trade the file chunks, as before they can use the chunk they received, they must send an equal size chunk.&#160; The decryption strings are so small relative to the file chunks, that the peers have no bandwidth economic motivation to not trade them.</p><p>I do not know if this has already been proposed else where?</p><br /><p>2) So the above idea, removes the need for money (micro-payments) in the case where like-files are being traded (i.e. in the BitTorrent type of swarm P2P).</p><br /><p>3) The above idea does not stop malicious vulnerabilities, motivated by external economics.&#160; I will be addressing this in a future post.</p><br /><br /><br /><br /><br /><br /><br /><p>=========================================<br />Why BitTorrent is important &amp; implications of &quot;malicious&quot;<br />=========================================</p><p>Many people probably associate P2P with illegal activities, e.g. sharing copyrighted data.</p><p>However, P2P (peer-to-peer) will be incredibly economically important for the internet to grow at it&#039;s maximum possible exponential growth rate.</p><p>The current C/S (client-server) method of internet publishing, places the upload cost on the publisher, not on the consumer.&#160; This has proliferated the advertising business model (i.e. in one word &quot;Google&quot;), in order for the publisher to recapture the upload cost.&#160; This places economy-of-scale hurdles (granularity limits) on publishing.&#160; This is a centralization creep paradigm due to the motivation of economy-of-scale, which conflicts with the paradigm of exponential disordered growth via the 0 cost hyperlink, which forms the basis of the WWW (world wide web).</p><p>In short, the Entropy of the universe is trending to maximum, the 0 cost hyperlink is a radical mass-busting (Entropy accelerating) paradigm, but the economy-of-scale economic paradigm of C/S will work against diffusion of mass (free market).&#160; Realize that I have shown else where that knowledge is gained by the free market as the number of actors and interactions increases (i.e. as the Entropy increases):</p><p><a href="http://www.coolpage.com/commentary/economic/shelby/Mass-Entropy_Equivalence.html">http://www.coolpage.com/commentary/econ … lence.html</a></p><p>The problem of upload cost applies when a file is popular.&#160; BitTorrent is a form of P2P that focuses on sharing like-files, where since there are many downloaders of the same file, then the downloaders can also be the uploaders.&#160; Thus the upload cost is shared by the downloaders, and not a cost of the publisher.</p><p>Afaik, up to now no one had solved the problem of potential freeloading vulnerabilities on P2P.&#160; I had reached the theoretical conclusion after deep study in 2006 that no open P2P network could prevent bandwidth economically motivated freeloading, unless it used some form of real money micro-payments.&#160; And I do not think users would ever agree to be prompted for micro-payment confirmation every time they click a download link.&#160; However, when trading chunks of the same file, the data itself is common money, but the problem remained how to guarantee the escrow, so trade is completed by both peers.&#160; I think I have now solved that issue as detailed above.</p><p>However, I can see no way for the P2P protocol to prevent malicious intent.&#160; Fortunately, I do not think malicious intent is a viable threat, because clients are motivated to defend their network.&#160; Usually in society, this means that most people choose to use an &quot;obedient&quot; client, because absent a selfish economic benefit, then Pareto Efficiency applies:</p><p><a href="http://www.bittorrent.org/bittorrentecon.pdf">http://www.bittorrent.org/bittorrentecon.pdf</a><br />(see section 3.1 on page 4)</p><p>Pareto Efficiency explains why only about 2.5% of the population is criminal.</p><p>Even if the entire society became criminal, then a sub-society could form it&#039;s own private P2P network using the same protocols, such as by using a secure username and password with a credit card for identification on signup.&#160; However, I do not think such private networks will be required, because society as a whole is Pareto Efficient.</p>
+						<p class="postedit"><em>Last edited by shelby (2008-04-29 11:46:23)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p167" class="blockpost roweven">
+	<h2><span><span class="conr">#2</span> <a href="viewtopic.php?pid=167#p167">2008-04-29 12:13:58</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Improve BitTorrent to prevent economically motivated freeloading</h3>
+					<div class="postmsg">
+						<p>I&#039;d appreciate if you&#039;d be more concise and less philosophical. I&#039;m also not quite sure if you understand how bittorrent works. Bittorrent already does enforce reciprocity where it is necessary, i.e. when there is no surplus of bandwidth. In a swarm w/o seeds (i.e. only peers) the unchoking alogrithms will punish freeriding significantly and fast uploaders will download faster. Freeriding is only possible when there&#039;s a surplus of bandwidth, which means it&#039;s less of an issue (although still an annoyance).</p><p>You also used a rather old implementation (the python mainline client), more advanced clients are more sophisticated when it comes to their swarm behavior, so i suggest you retest with Azureus or ÂµTorrent. And if you compare uploading vs. not-uploading you also have to consider that uncapped upload will lead to worse TCP performance, that&#039;s why the general advise is to upload at ~80% of the line&#039;s upload capacity.</p><p>And assuming you have a fast line then clients also need tweaking of various settings, including upload slots. So i&#039;d say your comparison is not entirely practical.</p><p>Oh, and you also said that TCP overhead would be significant for 500 connections or so... nobody claims that. the HAVE messages combined with TCP overhead are the issue.</p><br /><p>Ah, i finally found the point of your post, and yes... this has been proposed before:<br /></p><div class="quotebox"><blockquote><div><p>My idea is peers then trade an encrypted file chunk, then acknowledge receipt by trading the decryption strings.&#160; Thus, no peer has a bandwidth economic motivation to not trade the file chunks, as before they can use the chunk they received, they must send an equal size chunk.&#160; The decryption strings are so small relative to the file chunks, that the peers have no bandwidth economic motivation to not trade them.</p></div></blockquote></div><p>This comes down to a block based tit-for-tat instead of rate based tit-for-tat, something that has been tried in the past (one of the earliest python bittorrent clients) but worked horribly and thus was dropped. And i don&#039;t see how it would solve the seed/optimistic unchoke freeriding.</p>
+						<p class="postedit"><em>Last edited by The 8472 (2008-04-29 12:34:59)</em></p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p168" class="blockpost rowodd">
+	<h2><span><span class="conr">#3</span> <a href="viewtopic.php?pid=168#p168">2008-04-29 12:42:39</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89705">shelby</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Improve BitTorrent to prevent economically motivated freeloading</h3>
+					<div class="postmsg">
+						<p>Thanks for reading.</p><p>Rather than use only a systemic goal of upload bandwidth as a limit, noting that I&#039;ve read in your forums that in general unbalanced upload usage is causing throttling by ISPs such as Comcast, I am proposing that you can specifically incentivize reciprocity on each exchange of data with a fairly straightforward change to the protocol as follows.&#160; I realize this would require all clients to change, or maybe this idea can be used for a new competitor to BitTorrent&#039;s protocol:</p><div class="quotebox"><blockquote><div><p>My idea is peers then trade an encrypted file chunk, then acknowledge receipt by trading the decryption strings.&#160; Thus, no peer has a bandwidth economic motivation to not trade the file chunks, as before they can use the chunk they received, they must send an equal size chunk.&#160; The decryption strings are so small relative to the file chunks, that the peers have no bandwidth economic motivation to not trade them.</p></div></blockquote></div><p>Also note that I view that systemic choking as vulnerable as long as there is an economic incentive to not upload on each exchange of a file chunk.&#160; You really won&#039;t know how vulnerable it is until you get mainstream commercial usage and there is enough incentive for rogue clients to emerge in popularity.&#160; If there is no economic incentive, then Pareto Efficiency concludes that rogue clients won&#039;t achieve popularity.</p><p>Apologies if I am missed something important, and I will note your clarification if I so agree.</p><p>Btw, my interest in this is because I would like to see BitTorrent-like protocol eventually enabled for all links on the WWW, via a browser plugin.&#160; This is something I would like to see for a highly disordered project I am developing to compete with OpenSocial, MySpace, FaceBook, etc..&#160; This will hopefully be my encore to my CoolPage.com.</p><br /><p>Oh I see you were editing your post while I was replying:</p><div class="quotebox"><blockquote><div><p>This comes down to a block based tit-for-tat instead of rate based tit-for-tat, something that has been tried in the past (one of the earliest python bittorrent clients) but worked horribly and thus was dropped. And i don&#039;t see how it would solve the seed/optimistic unchoke freeriding.</p></div></blockquote></div><p>Could you point me to a resource which discusses this in more detail.&#160; What was the context, what didn&#039;t work, why didn&#039;t it work, etc?&#160; I mean I am not proposing to do any choking based on a failure of the block based.&#160; Maybe that is why it gave horrible performance in the past, because you made larger rate decisions based on the block.&#160; The block tit-for-tat needs to be a local outcome and not extrapolated out beyond local.</p><p>It meres closes the economic motivation loophole.</p><p>Think of the block tit-for-tat as analgous to packet loss.</p>
+						<p class="postedit"><em>Last edited by shelby (2008-04-29 12:48:25)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p170" class="blockpost roweven">
+	<h2><span><span class="conr">#4</span> <a href="viewtopic.php?pid=170#p170">2008-04-29 13:01:50</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Improve BitTorrent to prevent economically motivated freeloading</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>I am proposing that you can specifically incentivize reciprocity</p></div></blockquote></div><p>I don&#039;t see how rate based TfT doesn&#039;t do that.</p><div class="quotebox"><blockquote><div><p>Also note that I view that systemic choking as vulnerable as long as there is an economic incentive to not upload on each exchange of a file chunk.</p></div></blockquote></div><p>Please explain why you think so. All freeriding on bittorrent happens due to optimistic unchokes and seeds and not due to the non-optimistic chokes. If you&#039;re saying we should remove optimistic unchokes then this is not practical since we have to randomly try peers to see if the reciprocate. block based reciprocation would also leave bandwidth unused in case a peer with a fast upload could not find his equals. Optimistic unchokes are also necessary to randomize the global set of active connections and provide initial data to peers w/o explicitly providing data to peers that appear to be new, pieceless peers, otherwise one could exploit generosity towards new peers by not signaling any pieces. </p><div class="quotebox"><blockquote><div><p>Could you point me to a resource which discusses this in more detail.&#160; What was the context, what didn&#039;t work, why didn&#039;t it work, etc?</p></div></blockquote></div><p>No, this was discussed on IRC a while ago and i barely remember it, ofc nobody writes whitepapers based on IRC discussions. And as i said, this was done in the earliest versions, so it&#039;s basically ancient history now.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p171" class="blockpost rowodd">
+	<h2><span><span class="conr">#5</span> <a href="viewtopic.php?pid=171#p171">2008-04-29 13:46:15</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89705">shelby</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Improve BitTorrent to prevent economically motivated freeloading</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>block based reciprocation would also leave bandwidth unused in case a peer with a fast upload could not find his equals</p></div></blockquote></div><p>Afaics, block based reciprocation should be (is) orthogonal to systemic bandwidth optimization (i.e. choking algorithms).&#160; You should not make any choking decisions based on block based reciprocation.&#160; The block based reciprocation can operate entirely orthogonal to your existing algorithms.&#160; So I do not see how it can interfere with optimistic unchoking?</p><p>I proposed that both peers receive an encrypted copy of the chunk, then they both acknowledge receipt by sending the decryption keys.&#160; This simply removes the incentive to not upload.&#160; By not uploading, the peer can not decrypt the chunk it stole.</p><p>I am guessing that the reason you saw horrible results with block based reciprocation in the &quot;ancient history&quot; was because you did not have the systemic choking.&#160; You need both.&#160; They are orthogonal and serve different purposes.&#160; I suspect that in &quot;ancient history&quot; you were trying to do some form of (even simplistic) systemic bandwidth optimization based on the block reciprocation results, and imho that would be horrible.&#160; The block reciprocation is simply a local motivation (a carrot), and not statistical metric to feed into a systemic algorithm.</p><p>You seem to pondering what is the advantage.&#160; The advantage is it removes the upload bandwidth cost motivation to not upload.&#160; Because peers can not get any chunk if they do not upload.&#160; But this does not block optimistic unchoking at all.&#160; Optimistic unchoking is about selecting a peer to try.&#160; Block reciprocation has nothing to do with selecting a peer, it only has to do with how the escrow between chosen peers is performed.&#160; Choking algorithms sit at a higher systemic level than block escrow.</p><p>I am not ignoring the other points in your post, but let me first reply with this line of logic, to see if we are on the same page or where we differ, before we dig into other points made.</p><p>---Add---<br />This improvement I think would become even more important if a BitTorrent-like protocol was used on extremely popular, smaller files.&#160; Imagine something like Google Gadgets could be stored any where, not just on Google&#039;s servers.&#160; Small publishers are forced to use Google&#039;s API, because they don&#039;t want to host their own 1 million times downloaded gadget file.</p><p>With small files, I think the block reciprocation will be critical, as the systemic choking algorithms will not get enough samples (file chunks) per peer to be statistically effective.&#160; One might be able to extend the systemic to cross file data, yet the block reciprocation is straightforward and deterministic.</p><p>Even on large files, I think the block reciprocation closes the bandwidth economic motivation to not upload, otherwise this may eventually open the network to some sort of bandwidth economically motivated attack.&#160; We could dig deeper into these hypothetical vulnerabilities, or lack thereof.</p>
+						<p class="postedit"><em>Last edited by shelby (2008-04-29 14:17:54)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p172" class="blockpost roweven">
+	<h2><span><span class="conr">#6</span> <a href="viewtopic.php?pid=172#p172">2008-04-29 16:57:51</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd class="usertitle"><strong>Editor</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Improve BitTorrent to prevent economically motivated freeloading</h3>
+					<div class="postmsg">
+						<p>Are you talking about the motivation to cheat in a game of repeated tit-for-tat?&#160; &#160;Assuming I don&#039;t know when the repeated game will end, I gain an indefinite long term benefit from continuing the game.&#160; &#160;Theory says reciprocation should occur, and in this case theory matches practice.</p><p>Block-based tit-for-tat was the first thing Bram Cohen tried.&#160; It had the problem that it didn&#039;t make use of all available capacity when there is even a slight rate mismatch.&#160; Rate-based tit-for-tat makes use of all available capacity and is thus more efficient at the expense of allowing some asymmetry in the amount traded.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p176" class="blockpost rowodd">
+	<h2><span><span class="conr">#7</span> <a href="viewtopic.php?pid=176#p176">2008-04-29 18:31:21</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89705">shelby</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Improve BitTorrent to prevent economically motivated freeloading</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>Block-based tit-for-tat was the first thing Bram Cohen tried.&#160; It had the problem that it didn&#039;t make use of all available capacity when there is even a slight rate mismatch.&#160; Rate-based tit-for-tat makes use of all available capacity and is thus more efficient at the expense of allowing some asymmetry in the amount traded.</p></div></blockquote></div><p>Afacis, block reciprocation has nothing to do with capacity utilization optimization.&#160; You need your existing (choking) systemic rate optimization to do capacity utilization optimization.&#160; So that explains why block reciprocation didn&#039;t do what it isn&#039;t supposed to do.</p><p>Afaics, the specific block reciprocation algorithm that I have proposed, can co-exist with the current choking rate optimization.&#160; The benefit should be that freeloaders will entirely cease to exist (even in all potential future conceptual attacks).&#160; The only remaining attacks will be programming errors or those maliciously motivated.</p><div class="quotebox"><blockquote><div><p>Are you talking about the motivation to cheat in a game of repeated tit-for-tat?&#160; &#160;Assuming I don&#039;t know when the repeated game will end, I gain an indefinite long term benefit from continuing the game.&#160; &#160;Theory says reciprocation should occur, and in this case theory matches practice.</p></div></blockquote></div><p>I may be missing your point.&#160; I am saying that a freeloader can wait for optimistic unchokes and never reciprocate. If there are enough peers to choose from, the freeloader can get the entire file without reciprocating, because the peers will not be able to detect and ban the freeloader with the current choking algorithms.&#160; And it is counterproductive to worry with banning or detecting this case, when one can simply eliminate it by implementing my proposal which can co-exist with choking.&#160; Afaics, my proposal will have no adverse effect on the existing choking algorithms.</p><p>So how did you benefit from continuing the game, if the plurality of rogue clients freeloaded and rendered your down/up bandwidth asymmetric?&#160; Is your &quot;practice&quot; so far in a fairly sterile testbed?&#160; What is wrong with my proposal for attaining both rate optimization and symmetry of reciprocation?</p><p>Tangentially, I am also saying that for a very small file (imagine a file that is 1 chunk in size), my proposal is even more critically needed.&#160; I realize that is not the main intent of BitTorrent now, and it is not my main point herein.&#160; It will be important if I succeed in applying a BitTorrent-like protocol to small files in future.</p>
+						<p class="postedit"><em>Last edited by shelby (2008-04-29 18:37:50)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p177" class="blockpost roweven">
+	<h2><span><span class="conr">#8</span> <a href="viewtopic.php?pid=177#p177">2008-04-30 10:55:33</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Improve BitTorrent to prevent economically motivated freeloading</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>You seem to pondering what is the advantage.&#160; The advantage is it removes the upload bandwidth cost motivation to not upload.&#160; Because peers can not get any chunk if they do not upload.&#160; But this does not block optimistic unchoking at all.&#160; Optimistic unchoking is about selecting a peer to try.&#160; Block reciprocation has nothing to do with selecting a peer, it only has to do with how the escrow between chosen peers is performed.&#160; Choking algorithms sit at a higher systemic level than block escrow.</p></div></blockquote></div><p>If that&#039;s your goal it basically comes down to the optimistic unchokes as normal unchokes are per definition already reciprocated. And that means that we&#039;d not give the key for the encrypted block to a user whenever he does not reciprocate on an optimistic unchoke. This in turn means we waste upload bandwidth, with a 3+1 upload slot rule we might waste up to 25% of our upload bandwidth as the other peers will not reciprocate since you&#039;re uploading slower than all current unchokes they get.</p><p>Please remember that it&#039;s always the current N-M fastest peers out of N upload slots (where M = 1 or M = a constant fraction of N, depending on implementation) will get unchoked. Thus optimistic unchokes that go to peers we know nothing about might never be reciprocated since we are uploading slower than their N-M fastest peers.</p><p>Another problem is the distribution of pieces, in a low-availability state it&#039;s more important to get pieces you have out there than ensuring 100% fairness. As long as a peer does not freeride completely but merely is somewhat slow when it comes to uploading (and thus won&#039;t reciprocate to you immediately) it&#039;ll be better to let him have the piece than refusing the key and thus lowering the swarm-wide availability.</p><br /><p>Then there also are implementation-issues... like timing out key-messages since we&#039;d stall pieces otherwise if a peer sends encrypted blocks but not the key.</p><br /><p>So to repeat my question: Where exactly in bittorrent do you see the benefit of this behavior.</p>
+						<p class="postedit"><em>Last edited by The 8472 (2008-04-30 10:56:34)</em></p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p178" class="blockpost rowodd">
+	<h2><span><span class="conr">#9</span> <a href="viewtopic.php?pid=178#p178">2008-04-30 13:09:04</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89705">shelby</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Improve BitTorrent to prevent economically motivated freeloading</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>normal unchokes are per definition already reciprocated</p></div></blockquote></div><p>Neither word &quot;encrypt&quot; nor &quot;decrypt&quot; appears in the specification:</p><p><a href="http://www.bittorrent.org/beps/bep_0003.html">http://www.bittorrent.org/beps/bep_0003.html</a></p><p>Thus, I conclude the specification contains no block-level reciprocation, using decryption keys, as I have proposed.</p><p>I await your clarification before delving into your other points.&#160; Thank you.</p><br /><p>---Add---</p><p> I still need a clarification on the above regarding normal unchokes.&#160; Decided to address this point now:</p><div class="quotebox"><blockquote><div><p>...means that we&#039;d not give the key for the encrypted block to a user whenever he does not reciprocate on an optimistic unchoke. This in turn means we waste upload bandwidth...as the other peers will not reciprocate since you&#039;re uploading slower than all current unchokes they get...</p><p>...problem is the distribution of pieces, in a low-availability state it&#039;s more important to get pieces you have out there than ensuring 100% fairness. As long as a peer does not freeride completely but merely is somewhat slow when it comes to uploading (and thus won&#039;t reciprocate to you immediately) it&#039;ll be better to let him have the piece than refusing the key and thus lowering the swarm-wide availability.</p></div></blockquote></div><p>You&#039;ve made a design decision to sacrifice symmetric up/download bandwidth, to enable saturation of the upload bandwidth of each peer.&#160; No wonder the ISPs are throttling BitTorrent protocol.</p><p>Peers should back off their upload bandwidth to leave some margin for reciprocating to optimistic unchokes, as it is in their (and the network&#039;s, i.e. Pareto Efficiency) interest to discover new peers.&#160; To say we need to saturate the upload bandwidth, and thus we need to create dishonest (unfair) money, will drive the BitTorrent protocol to failure as it becomes more popular.&#160; Let me explain why.</p><p>&lt;start philosophical teaching&gt;<br /><a href="http://silverstockreport.com/ssrarchive.htm">Jason Hommel</a> taught me a universal economic principle, &quot;you can&#039;t give away something free which is not free&quot;.&#160; Thus, sacrificing &quot;100% fairness&quot; is equivalent to transferring the economic cost of unfairness to the ISP&#039;s bottom line.&#160; The ISP then has to either make all non-BitTorrent users pay (socialism), or try to throttle the offending BitTorrent users.&#160; In effect, the &quot;generosity&quot; of asymmetry is analogous to the theft of dishonest weights &amp; measures, with a dilution of the real value of the money (the data) being traded.&#160; It is analogous to using debt (fiat money) to pump up an economy to saturation.&#160; The side effect is mis-allocation of capital (the capital is the upload bandwidth of all users on the ISP, not just the BitTorrent users).</p><p>It is dangerous (to the future of society and the internet) when programmers play the role of economists, and do not have a good understanding of non-keynesian fundamental truths.&#160; Guys I am 42, been a personal computer programmer for 26+ years (since Atari 800, Commodore 64, 8088 &amp; 6800 assembler code, etc), as programmers of key paradigm shifts on the internet, the economic ramifications of our work is much more important than the &quot;coolness&quot;.&#160; And I am still very much into &quot;coolness&quot;, as I own the domain CoolPage.com.&#160; Let me help you guys on the economics, you are obviously talented on the &quot;coolness&quot;.&#160; Socialism fails and causes misery.&#160; Open source is not necessarily socialism.&#160; Let&#039;s stay focused on the absolute power of the free market and thus the critical element of integrity of honest weights &amp; measures.&#160; Without economic integrity, networks (societies) devolve into morass.</p><p>This boils down to choice between socialism (keynesian &quot;capitalism&quot;) or libertarianism (free market/mises capitalism).&#160; The latter choice always wins in the long-run.<br />&lt;/end teaching&gt;</p><p>If BitTorrent isn&#039;t fixed, then someone else (me?) will create a protocol with 100% fairness.&#160; The free market and integrity can not be denied in the long-run.</p>
+						<p class="postedit"><em>Last edited by shelby (2008-05-01 00:37:26)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p180" class="blockpost roweven">
+	<h2><span><span class="conr">#10</span> <a href="viewtopic.php?pid=180#p180">2008-05-01 00:48:51</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Improve BitTorrent to prevent economically motivated freeloading</h3>
+					<div class="postmsg">
+						<p>i will only say this once again: Make more concise posts and leave the philosophical stuff out, we do not care. And i neither claimed that there would be any block-encryption nor did i say that there would be block-level reciprocation. I only said that unchokes are by definition reciprocated. Since you did not understand that i have to assume an insufficient understanding on how bittorrent works on your end, thus i&#039;ll wait until you understood it before continuing the argument.</p><div class="quotebox"><blockquote><div><p>You&#039;ve made a design decision to sacrifice symmetric up/download bandwidth, to enable saturation of the upload bandwidth of each peer.&#160; No wonder the ISPs are throttling BitTorrent protocol.</p></div></blockquote></div><p>This argument is also bogus, as the global sum of uploaded = downloaded. Thus ISPs would throttle anyway, as adjusting fairness would just shift the required upload bandwidth somewhere else.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p183" class="blockpost rowodd">
+	<h2><span><span class="conr">#11</span> <a href="viewtopic.php?pid=183#p183">2008-05-01 04:42:38</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89705">shelby</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Improve BitTorrent to prevent economically motivated freeloading</h3>
+					<div class="postmsg">
+						<p>Now we cut straight to the end-game of this discussion.</p><div class="quotebox"><blockquote><div><p>...leave the philosophical stuff out, we do not care...</p></div></blockquote></div><p>I can not leave out the economics.&#160; Any engineer who ignores economics, will fail.</p><p>I am designing a superior economic protocol based on this exchange.&#160; I won&#039;t need you, but I am willing to work with you, to achieve maximum specialization of labor.&#160; I am friendly, to those who reciprocate in kind.</p><div class="quotebox"><blockquote><div><p>...Since you did not understand that i have to assume...</p></div></blockquote></div><p>Ad hominem attacks are a pattern of failure.&#160; I understood that you were making the following critical error in your assumptions.</p><div class="quotebox"><blockquote><div><p>This argument is also bogus, as the global sum of uploaded = downloaded. Thus ISPs would throttle anyway, as adjusting fairness would just shift the required upload bandwidth somewhere else</p></div></blockquote></div><p>False.</p><p>ISP&#039;s bottom line results from their users, not the global sum that involves other ISPs.&#160; Your economic design flaw penalizes ISPs (and all their non-BitTorrent users) who offer a higher upload-to-download bandwidth ratio than other ISPs.</p><p>In short, your line of logic is socialistic economics, which is a failure oriented economic system.&#160; &quot;To each according to his need, from those according to their abilities&quot;.&#160; How much obvious I can be?</p><div class="quotebox"><blockquote><div><p>...This in turn means we waste upload bandwidth...</p></div></blockquote></div><p>&quot;waste&quot; is an economic oxymoron in that context.&#160; The current protocol&#039;s design goal is to maximize global upload = download bandwidth, but this sacrifices individual fairness for the &quot;good&quot; of the entire group.&#160; This creates socialist mis-allocation of capital, which is economic &quot;waste&quot;.&#160; Thus &quot;good&quot; ends up as failure (e.g. throttling, and parasitic freeloading attacks that will come in future).&#160; Socialism economically motivates failure, because it encourages those who do less.&#160; In case of current protocol, it will be motivating the use of ISPs which give a lower upload-to-download bandwidth ratio, in order to parasite on ISPs who give a higher ratio.</p><div class="quotebox"><blockquote><div><p>...i neither claimed that there would be any block-encryption nor did i say that there would be block-level reciprocation...</p></div></blockquote></div><p>I know you didn&#039;t specify &quot;block&quot;, which is why I pointed it out in my reply.&#160; You see the fundamental concept of non-socialist economic paradigms, is no futures contracts.&#160; The economic exchange must be as granular and immediate as possible.</p><p>Again I extend my offer to help you &quot;guys&quot;.&#160; Or I can go around you.&#160; Makes no difference to me.&#160; It is an offer only, not a demand or a force.&#160; The free market is the force you have to contend with.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p184" class="blockpost roweven">
+	<h2><span><span class="conr">#12</span> <a href="viewtopic.php?pid=184#p184">2008-05-01 05:25:00</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Improve BitTorrent to prevent economically motivated freeloading</h3>
+					<div class="postmsg">
+						<p>So you say it&#039;s economical to waste resources that could be utilized otherwise? And people wonder why we have pollution and global warming.... See, we as engineers/programmers think about efficiency, and the current approach is more efficient than what you&#039;re proposing.</p><p>And i won&#039;t get into the &quot;free market vs. socialism&quot;-debate, as this would only downspiral further.</p><p>And btw, it was not a ad hominem attack, i simply pointed out what you said yourself, you wanted clarification for something which i already said is defined by the protocol itself. Thus you did and do not understand the protocol or interpreted my words instead of taking them literal as they were meant.</p><br /><p>Just to make this clear again: Bittorrent already ensures fairness <span class="bbu">when it is necessary</span>.</p><br /><p>Oh, and something to read for you: <a href="http://en.wikipedia.org/wiki/Prisoners_dilemma#The_iterated_prisoner.27s_dilemma">the iterated prisoners dilemma</a>.</p>
+						<p class="postedit"><em>Last edited by The 8472 (2008-05-01 05:35:04)</em></p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p185" class="blockpost rowodd">
+	<h2><span><span class="conr">#13</span> <a href="viewtopic.php?pid=185#p185">2008-05-01 06:30:09</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89705">shelby</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Improve BitTorrent to prevent economically motivated freeloading</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>So you say it&#039;s economical to waste resources that could be utilized otherwise?</p></div></blockquote></div><p>The resources are not free.&#160; Someone has to pay.&#160; The question is who pays?&#160; It should be the user who is using the resources that pays, but BT&#039;s design defeats that correct economic paradigm.&#160; Asymmetrically giving upload bandwidth from one ISP to another ISP is theft.&#160; The ISP which is being stolen from, will throttle, so their non-BT users do not have to pay more $ to subsidize the BT users who are giving away the asymmetric upload bandwidth.</p><p>The solution is to make sure that tit-for-tat is enforced at the user level (each P2P block reciprocation), not on the global scale.&#160; Each peer should optimize the network in his best interest, according to Pareto Efficiency.</p><div class="quotebox"><blockquote><div><p>Oh, and something to read for you: the <a href="http://en.wikipedia.org/wiki/Prisoners_dilemma#The_iterated_prisoner.27s_dilemma">iterated prisoners dilemma</a>.</p></div></blockquote></div><p>BT&#039;s protocol is not following the best case:</p><p>&quot;best deterministic strategy was found to be Tit for Tat&#039;,...is simply to cooperate on the first iteration of the game; after that, the player does what his opponent did on the previous move...a slightly better strategy can be &#039;Tit for Tat with forgiveness&#039;. When the opponent defects, on the next move, the player sometimes cooperates anyway, with a small probability (around 1%-5%)...&quot;.</p><p>My proposed block-level encrytion &#039;tit-for-tat&#039;, coupled with a better systemic optimization algorithm, would better implement the best case, including the &#039;forgiveness&#039; without going asymmetric.</p><p>Afaics, the best systemic optimization would be random selection of peers into a queue, with block-reciprocated peers re-placed into queue after each reciprocation.&#160; First come, first serve, with the queue dominated by cooperating peers, but just enough new random ones to offer &#039;forgiveness&#039;.&#160; The queue would solve the problem of locking out random peers when upload channel is saturated.&#160; The latency issue (BT queues up multiple sends also) would be inherently a non-problem due to queuing up many peers, with replies arriving on a first-come, first-serve basis.&#160; If a peer does not have enough upload capacity, then it is inherently scaled down in the network because that peer takes longer to reply.&#160; This would be a much simpler protocol as well.&#160; I think it would need to run on UDP, not TCP, and I am studying that now.</p><div class="quotebox"><blockquote><div><p>...people wonder why we have pollution and global warming...i won&#039;t get into the &quot;free market vs. socialism&quot;-debate, as this would only downspiral further...</p></div></blockquote></div><p>If one zooms in on Gore&#039;s charts, C02 lags temperature rise by 800 years.&#160; Temperature rise causes C02 rise, not vice-versa.&#160; The oceans release million times more C02 when warmed than people do.&#160; But it takes 800 years for the miles deep (not surface) ocean temperature to warm up.&#160; Temperature rises are caused by the sun.&#160; We are actually entered a cooling phase.</p><p><a href="http://www.global-warming-myths.com/images/Sunspot_Activity.jpg">http://www.global-warming-myths.com/ima … tivity.jpg</a><br /><a href="http://www.john-daly.com/press/lag-time.gif">http://www.john-daly.com/press/lag-time.gif</a><br /><a href="http://www.google.com/search?hl=en&amp;q=C02+lags+temperature+800+years&amp;btnG=Google+Search">http://www.google.com/search?hl=en&amp;q=C0 … gle+Search</a></p><p>You could learn a lot from me.&#160; And I bet I could learn a few new tricks from you also.&#160; Friends or competitors we will be?&#160; The free market needs both, so makes no difference to me.</p><br /><p>---Add---</p><p>Also thank you very much for the discussion.&#160; You have helped me confirm my understanding of BT&#039;s weakness.&#160; And helped confirm my understanding of direction forward.&#160; I do sincerely appreciate your time.&#160; I hope in some small way, down the line, this discussion will be proven to have been a help to you.</p><br /><p>---Add #2---</p><p>Note that my proposal means that each peer will not be able to download faster than the peer&#039;s upload bandwidth.&#160; This respects the economic reality that ISPs operate within.&#160; Peers who want to download faster, thus need to pay their ISP for more symmetric upload-to-download bandwidth ratio.&#160; The cost is paid by each peer according to that peer&#039;s needs and useage.</p>
+						<p class="postedit"><em>Last edited by shelby (2008-05-01 14:20:23)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p190" class="blockpost roweven">
+	<h2><span><span class="conr">#14</span> <a href="viewtopic.php?pid=190#p190">2008-05-02 20:04:18</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd class="usertitle"><strong>Editor</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Improve BitTorrent to prevent economically motivated freeloading</h3>
+					<div class="postmsg">
+						<p>Shelby,</p><p>If I understand correctly you are trying to limit the damage of peers that download only by exploiting optimistic unchokes.&#160; Encryption is used to guarantee that a peer uploads a block&#039;s worth of &quot;something&quot; before the user can make use of a block&#039;s worth of something he or she has downloaded.&#160; 1) A malicious user could make use of optimistic unchoke to simply consume bandwidth from the swarm.&#160; 2) Or a malicious user could wait until provided the key and not return a valid key.&#160; However, in the first case, the malicious user derives no benefit from what has been downloaded.&#160; In the second case, the user derives benefit from what has been downloaded but must consume uplink capacity to get the key and thus the second form of cheating is not free.&#160; In either case, a non-malicious user (i.e., motivated only to maximize his or her utility) would upload.&#160; This is your proposal.&#160; No?</p><p>This is indeed orthogonal to rate-based tit-for-tat.&#160; All of the existing mechanisms could be retained.&#160; Every so often each pair of players could exchange keys up to the number of blocks that have been reciprocated.&#160; For example, if A has sent 20 blocks to B while B has sent 10 blocks to A then both exchange 10 keys.&#160; &#160;Is this what you are proposing?</p><p><strong> My Comments </strong></p><p>Assumption: user utility is an increasing function of download rate.</p><p>Without your proposed mechanism, each non-malicious user is still motivated to send as fast as possible (at least in the absence of knowledge of how fast other peers are sending*), since sending faster increases the probability of staying within the neighboring peer&#039;s unchoked set.</p><p>What you are proposing does provide a strict improvement in the case for users that derive maximal utility from not sending, and this would be the case for anyone forced into usage-based billing for uplink capacity where the usage price is higher than the value derived from downloading faster.&#160; &#160;</p><p>If my assessment of your proposal is correct then this has little value in the United States.&#160; It however might be valuable in other countries.&#160; Despite the belief of many Americans, the Internet does span the entire globe and so I defer to the assessment of those outside the United States. </p><br /><p>* Aside: The qualification of &quot;absence of knowledge&quot; is necessary because if a peer knows how fast other peers are sending then he or she need only send fast enough to stay within the unchoked set.&#160; Knowledge of this kind is exploited by BitTyrant, but that is a different problem.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p196" class="blockpost rowodd">
+	<h2><span><span class="conr">#15</span> <a href="viewtopic.php?pid=196#p196">2008-05-04 03:40:39</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89705">shelby</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Improve BitTorrent to prevent economically motivated freeloading</h3>
+					<div class="postmsg">
+						<p>Your astute restatement of my proposed algorithm appears to accurate and easy-to-understand, with one exception.&#160; I did not propose the bulk exchange of keys, but that may not be (for future contemplation) a central issue to the algorithm.&#160; You also astutely stated that non-malicious users would lose economic incentive to not upload.&#160; Also note that my proposal is &quot;economically complete&quot; in simplicity, meaning there are no economically motivated loopholes, such as the BitTyrant exploit of the &quot;unchoking&quot; which you mentioned.</p><p>Thus BitTorrent&#039;s systemic &quot;unchoking&quot; algorithm becomes unnecessary, unless one assumes there is a beneficial optimization from asymmetric down/upload bandwidth per peer and/or per ISP.</p><div class="quotebox"><blockquote><div><p>What you are proposing does provide a strict improvement in the case for users that derive maximal utility from not sending, and this would be the case for anyone forced into usage-based billing for uplink capacity where the usage price is higher than the value derived from downloading faster.&#160; &#160;</p><p>If my assessment of your proposal is correct then this has little value in the United States.&#160; It however might be valuable in other countries.</p></div></blockquote></div><p>My understanding is the &quot;unchoking&quot; algorithm attempts to maximize global bandwidth, with download = upload globally, but this comes at the cost of asymmetric down/upload bandwidth per peer and/or per ISP.</p><p>It appears your assumption is that flat rate billing implies that upload and download costs are symmetric.&#160; Let me explain how my logic is derived from &quot;usage price is higher than the value derived from downloading faster&quot;.</p><p>With flat rate billing, the user is motivated to download up to his download bandwidth limit.&#160; The user pays nothing extra for the upload bandwidth.&#160; If the ISP has priced their flat rate service based on the predominant C/S (non-P2P) model of the internet, then the ISP may be assuming a global say 10% upload-to-download bandwidth ratio.&#160; If the network does not behave according to the pricing model of the ISP, then the ISP will either have to absorb the economic losses, modify the pricing, or throttle the offending network traffic.</p><p>Thus, I think my proposal applies in the United States and every where, irregardless if the user is currently billed for upload bandwidth.&#160; Just because a cost is hidden behind flat rate pricing, does not mean the cost does not exist.</p><p>Asymmetric down/upload bandwidth per peer means that ISPs which offer more flat rate upload bandwidth, will be subsidizing those ISPs which offer less flat rate upload bandwidth.&#160; So &quot;unchoking&quot; will economically force the upload cost to be priced out to the user over time, and thus in the end you will either get symmetric networks or you will get severe throttling.&#160; Over the long-term, there is no way to avoid the free market effect that everyone must ultimately pay for the costs they use.</p><p>My understanding is the underlying cost of full-duplex communications, means that the upload uses a portion of the frequency band of the wire, and thus upload is not free:</p><p><a href="http://en.wikipedia.org/wiki/Duplex_(telecommunications)#Frequency_division_duplex">http://en.wikipedia.org/wiki/Duplex_(te … ion_duplex</a></p><br /><p>---Add---</p><div class="quotebox"><blockquote><div><p>Assumption: user utility is an increasing function of download rate.</p><p>Without your proposed mechanism, each non-malicious user is still motivated to send as fast as possible (at least in the absence of knowledge of how fast other peers are sending*), since sending faster increases the probability of staying within the neighboring peer&#039;s unchoked set</p></div></blockquote></div><p>I implied the following, but let me make it explicit.</p><p>Although the user is motivated to download at his maximum download speed, the ISP has an economic motivation to limit the peer&#039;s upload capacity to the predominant pricing model, thus the peer has no choice but to leech on &quot;optimistic unchokes&quot; and the network ends up asymmetric.&#160; This economic motivation is a form of socialism, where everyone loses over the long-term, as more ISPs will be motivated to throttle to their pricing model, because of the &quot;unchoking&quot; which desires to maximize global leeching to &quot;share costs&quot; and not have the costs paid by those who need the extra speed.</p><br /><p>---Add #2---</p><p>Clients could do &quot;optimistic unchoking&quot; in my proposed protocol, by simply sending the key even if they did not receive the reciprocated data.&#160; So the free market could decide which type of client is the winner.&#160; The protocol should be agnostic and maximally generalized.</p><p>---Add #3---</p><p>ISPs beginning to monetize excessive bandwidth useage that deviates significantly from their per-user average bandwidth cost business model:</p><p><a href="http://bits.blogs.nytimes.com/2008/05/07/comcasts-near-unlimited-bandwidth-limits/">http://bits.blogs.nytimes.com/2008/05/0 … th-limits/</a></p>
+						<p class="postedit"><em>Last edited by shelby (2008-05-10 08:26:02)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=30">Attacks against BitTorrent</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=28"><strong>Improve BitTorrent to prevent economically motivated freeloading</strong></a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>The Solution Is More Than Technical (Page 1) / Cooperation between BitTorrent and ISPs / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
+<script type="text/javascript" src="captcha/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript">
+	$(function(){var f=$("#sliderCaptcha");var b=$("#cleCaptcha");var d=$(".boutonsCaptcha");var a=$("#javascriptCaptcha");var e=[0,40,23,37,16,42,34,21,11,11,36,33,13,43,26,32,23,40,12,10,43,9,39,45,28,24,9,25,37,12,16,38,3,39,25,19,32,9,41,43,21,28,26,34,22,3,17,45,43,29];var h=0;var g=5;var c=0;a.hide();f.slider({value:0,min:0,max:g,step:1,slide:function(i,j){if(j.value>c){c=j.value;h+=c}},stop:function(j,k){var i=false;if(k.value==g){if(h==((g+Math.pow(g,2))/2)){i=true;f.slider("option","disabled",true);if(b.val().length!=e.length){$.post("captcha.php",{tokenCaptcha:b.val()},function(m){var l="";$.each(e,function(){l+=m.charAt(this%m.length)});b.val(l);d.removeAttr("disabled")})}}}if(!i){h=c=0;f.slider("option","value",h)}}})});
+</script>
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="punviewtopic" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex" class="isactive"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=32">Cooperation between BitTorrent and ISPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=24"><strong>The Solution Is More Than Technical</strong></a></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p119" class="blockpost rowodd firstpost blockpost1">
+	<h2><span><span class="conr">#1</span> <a href="viewtopic.php?pid=119#p119">2008-03-23 20:34:53</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd class="usertitle"><strong>Editor</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>The Solution Is More Than Technical</h3>
+					<div class="postmsg">
+						<p>Resolving the conflict between peer-to-peer application users and ISPs involves more than technical solutions.</p><p>In some cases, peer-to-peer application developers can unilaterally incorporate mechanisms that improve performance for end-users while secondarily benefiting ISP networks.&#160; For example, any BitTorrent developer benefits his users by properly setting the number of upload slots.&#160; Older BitTorrent (including Python mainline, and older versions of Azureus and uTorrent) tend to allocate too many upload slots.&#160; Reducing the number of slots should also reduce the aggressiveness of aggregate BitTorrent traffic seen by ISP networks.</p><p>Other technical solutions require ISP cooperation.&#160; Both the Azureus developers and BitTorrent, Inc. attempted to work with ISPs to provide peer-to-peer protocol caching, but caching solutions will not succeed without wider spread ISP and BitTorrent developer cooperation.</p><p>The work done by P4P is a step in the right direction.&#160; P4P brings together a number of ISPs, academics, and a small subset of BitTorrent developers.&#160; Though I believe the P4P technical solutions presented so far only partially address the problems: absent are mechanisms for reducing congestion in networks that are difficult to upgrade (last mile).&#160; Absent also is study of how mechanisms that optimize at the PoP-level might benefit the vast majority of swarms that have less than 1 user per PoP.&#160; Though I agree that hooks that allow applications to exploit ISP-specific knowledge is a very good step: &quot;The 8472&quot; suggests a number of hooks that might be provided by ISPs.&#160; To his suggestions, I add consideration of the QBone&#039;s Scavenger Service. </p><p><a href="http://www.azureuswiki.com/index.php/User:The8472/P2PvsISPs">http://www.azureuswiki.com/index.php/Us … /P2PvsISPs</a></p><p>I invite contribution from ISPs and BitTorrent community members willing to<br />cooperate.&#160; In particular I invite proposals for a framework in which such cooperation might be furthered.&#160; One possible approach is to create a binding community-level agreement between participating ISPs and organizations with a stake in the success of P2P protocols.&#160; An agreement that prescribes reasonable behavior for both ISPs and P2P implementations.&#160; An agreement designed to be used by consumers when deciding between service providers.</p>
+						<p class="postedit"><em>Last edited by Firon (2008-03-27 00:43:13)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p128" class="blockpost roweven">
+	<h2><span><span class="conr">#2</span> <a href="viewtopic.php?pid=128#p128">2008-03-28 05:38:00</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89609">Olaf van der Spek</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: The Solution Is More Than Technical</h3>
+					<div class="postmsg">
+						<p>&gt; Older BitTorrent (including Python mainline, and older versions of Azureus and uTorrent) tend to allocate too many upload slots.</p><p>It would be helpful to have a recommended way to set the number of slots.<br />It&#039;d be even nicer in the longterm to update the protocol to have this done properly automatically.</p><p>&gt; Absent also is study of how mechanisms that optimize at the PoP-level might benefit the vast majority of swarms that have less than 1 user per PoP. </p><p>0 users? <img src="http://forum.bittorrent.org/img/smilies/wink.png" width="15" height="15" alt="wink" /></p>
+						<p class="postedit"><em>Last edited by Olaf van der Spek (2008-03-28 05:43:55)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p132" class="blockpost rowodd">
+	<h2><span><span class="conr">#3</span> <a href="viewtopic.php?pid=132#p132">2008-03-28 13:29:47</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd class="usertitle"><strong>Editor</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: The Solution Is More Than Technical</h3>
+					<div class="postmsg">
+						<p>A deal was struck between BitTorrent, Inc. and Comcast to cooperate in modifying BitTorrent behavior and network management practices to improve performance, avoid unnecessary costs to ISPs, and improve network manageability.&#160; </p><p>The agreement does not mandate any particular behavior from the network although Comcast has stated that they will move away from targetting the BitTorrent protocol.<br />Please remain cautiously optimistic.&#160; There are potential avenues for advancement.&#160; For example two topics frequently come up with ISPs:</p><p>- congestion in parts of the network that cannot cost effectively or quickly&#160; <br />&#160; be upgraded to fiber (ripping up streets, obtaining rights of way).<br />- minimizing transit traffic.</p><p>Work from <a href="http://www.dcia.info/documents/P4P_Overview.pdf">P4P</a><br />and <a href="http://portal.acm.org/citation.cfm?id=1154077&amp;dl=&amp;coll=">Bindal et al</a> (also <a href="http://crypto.stanford.edu/~cao/biased-bt.html">here</a>)<br />suggest possible routes.&#160; Bindal directly addresses transit traffic.<br />The P4P work minimizes maximum utilization on a pop-level approximate topology.&#160; Aaron Grunthal (a.k.a., &quot;The 8472&quot;) has suggested more generic hooks such as a network distance service.&#160; Congestion could be addressed with AQM or CoS approaches like the QBone&#039;s <a href="http://shlang.com/talks/20020507-QBSS-Internet2-Spring-Member-Meeting.pdf">scavenger service</a>.&#160; End-systems might also aid in alleviating congestion by adopting different end-to-end congestion control.</p><p>BitTorrent, Inc. recognizes that nothing will work if it isn&#039;t acceptable to the BitTorrent community.&#160; &#160;We want .org input, and we are accepting proposals.</p><p>Results will be shared with bittorrent.org.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p133" class="blockpost roweven">
+	<h2><span><span class="conr">#4</span> <a href="viewtopic.php?pid=133#p133">2008-03-28 13:57:45</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd class="usertitle"><strong>Editor</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: The Solution Is More Than Technical</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>Olaf van der Spek wrote:</cite><blockquote><div><p>It would be helpful to have a recommended way to set the number of slots.<br />It&#039;d be even nicer in the longterm to update the protocol to have this done properly automatically.</p></div></blockquote></div><p>Minimum of 4 with one optimistic unchoke as per Bram&#039;s original proposal.&#160; This number should be global to all torrents.&#160; With uTorrent 1.7 and earlier, this number is per torrent.&#160; uTorrent will increase upload slots when the uplink is underutilized.&#160; To use the same method as uTorrent requires some uplink capacity estimator.</p><p>To avoid overcontrol, the number of upload slots should be adjusted slowly over many RTTs and preferably only once every several unchoke intervals, e.g., once every&#160; minute.</p><p>Uplink capacity estimation is its own can of worms, and I think even uTorrent needs some improvement here.&#160; &#160;</p><p>--Dave</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p138" class="blockpost rowodd">
+	<h2><span><span class="conr">#5</span> <a href="viewtopic.php?pid=138#p138">2008-03-28 16:09:07</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: The Solution Is More Than Technical</h3>
+					<div class="postmsg">
+						<p>There are some tactical issues with defaulting to 3+1 as someone with e.g. 10Mbit/s up could push 2.5Mbit per upload slot. Many domestic connection are capable of absorbing that kind of upload (and thus the &#039;increase # of upload slots&#039;-rule won&#039;t kick in), but they are not able to reciprocate properly. In a swarm full of peers with 1Mbit upload (which results in 250kbit/s per slot according to the 3+1 rule) a single 10Mbit peer is better off by splitting his bandwidth to 250kbit/s too, since a single peer would not be able to match a slot bandwidth of 2.5Mbit, but 10 times the amount of slots means that he&#039;ll get tons of peers that can match his bandwidth and thus result in better download performance.</p><p>This is scenario is very real in swarms with only a few 100 peers / seeds or less where it&#039;s hard to find good matches. On a swarm with 10k peers a 10Mbit/s up peer will eventually find his equal.</p><br /><p>In short: it&#039;s not in the user&#039;s interest to stick to very low amount of upload slots as long as there are many slower peers around.<br />This is one of the reasons why i added symmetric connections to the home to my list.</p><br /><p>-------------</p><br /><p>About P4P and biased neighbor selection. I don&#039;t consider the P4P simulation/tests as realistic, testing bittorrent and locality on the Abilene network is like testing carriages with rockets...<br />Locality-awareness generally is not worth much (from the user-perspective) mostly because bittorrent is not latency-sensitive, thus it comes down to throughput. Since all local peers will have similar throughputs <em>any</em> remote peer that&#039;s faster will beat them... and be it a lone, co-located seedbox in australia.</p><br /><p>If the PoP or a shared network resources to the PoP is congested (which is often the case with cable providers, due to an infrastructure that wasn&#039;t designed for bidirectional, unshared usage) then there&#039;s almost nothing we can do about it, at least nothing that would preserve performance. Unless we consider things like multicast</p><p>If the backbone or peering infrastructure is so heavily congested that it even degrades P2P performance then seeking out local peers might ease the load and improve user-perceived performance.</p><p>If one of N peering points are congested and rerouting P2P traffic through the other N-1 peering links would be too expensive then somethink like P4P signaling the clients that a specific set of IP ranges should be avoided <em>if possible</em> then clients might be able to bias their selections away from those ranges, especially if they already are at their configured upload / download speed limits.</p><br /><p>The problem in general is that most measures that reduce the load on the ISP do not translate into better speeds for the enduser, as all current mechanisms in bittorrent already are rigged toward best throughput, deviating from those significantly has a high chance of degrading that performance, unless measures are taken to make deviating from current practice more attractive.</p><br /><br /><p>QBone&#039;s scavenger service basically sounds like what a <em>proper</em> traffic shaping solution should have done all along. Lumping all p2p traffic together, allocate it to a &quot;bulkier&quot; category and let the p2p connections compete internally for the bandwidth that&#039;s left over from the &quot;bulk&quot; traffic. The problem here is that home routers potentially mess with the TOS (diffserv) fields, IP stacks don&#039;t allow manipulation and all this could have been implemented by traffic shaping hardware all along (they could just tag all TCP streams and alter the IP header), but this was not the case. I don&#039;t know much how many routers actually honor diffserv and to what extent, so more background information on this topic would be necessary.</p><br /><div class="quotebox"><blockquote><div><p>For example two topics frequently come up with ISPs:</p><p>- congestion in parts of the network that cannot cost effectively or quickly <br />&#160; be upgraded to fiber (ripping up streets, obtaining rights of way).<br />- minimizing transit traffic.</p></div></blockquote></div><p>Well, as explained above it all depends on where exactly the problems are. I guess a small ISP serving via DSL has other issues than a large cable provider. And european ISPs probably don&#039;t have to fear transit traffic due to very extensive peering agreements (just look at the <a href="https://www.ams-ix.net/connected/?expanded=1&amp;showip=1">AMS-IX</a>, <a href="http://www.de-cix.net/content/clients.html">DE-CIX</a> and <a href="https://www.linx.net/about/member_ipasn.html">LINX</a> member listings and their throughput [<a href="http://www.ams-ix.net/technical/stats/">1</a>,<a href="http://www.de-cix.net/content/network/Traffic-Statistics.html">2</a> and <a href="https://www.linx.net/pubtools/trafficstats.html?stats=day">3</a>]).</p><p>The point is, we need more information to base decisions on, and from more than just 1 ISP.</p>
+						<p class="postedit"><em>Last edited by The 8472 (2008-03-29 07:35:21)</em></p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p145" class="blockpost roweven">
+	<h2><span><span class="conr">#6</span> <a href="viewtopic.php?pid=145#p145">2008-03-31 19:41:25</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd class="usertitle"><strong>Editor</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: The Solution Is More Than Technical</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>The 8472 wrote:</cite><blockquote><div><p>In a swarm full of peers with 1Mbit upload (which results in 250kbit/s per slot according to the 3+1 rule) a single 10Mbit peer is better off by splitting his bandwidth to 250kbit/s too, since a single peer would not be able to match a slot bandwidth of 2.5Mbit, but 10 times the amount of slots means that he&#039;ll get tons of peers that can match his bandwidth and thus result in better download performance.</p></div></blockquote></div><p>The typical case I was concerned about is the home user with too many upload slots for his capacity.&#160; 4 per torrent with 8 active torrents (defaults) is too many for 250kbits/s uplink.&#160; It corresponds to an average of less than 1Kbyte/s per connection.&#160; At those rates, downloading a single chunk is larger than the unchoke interval.</p><p>Maximizing throughput for BitTorrent is not the only criteria that should be considered.&#160; If the user wants to use any other application than BitTorrent at the same time then it is in his interest that BitTorrent remain responsive to network congestion.&#160; Unfortunately its pretty hard to be responsive when your DSL modem has a 30 second buffer. </p><p>uTorrent&#039;s method is weak at obtaining good reciprocation for fast peers, but it is reasonably responsive to congestion except when capacity is underestimated in which case the number of upload slots can run away until it hits a bound that is unrelated to network properties.</p><p>However, uTorrent does not explicitly take into account responsiveness.&#160; For larger capacity links, we could potentially open more connections without significantly affecting responsiveness.&#160; Any congestion controller will become less responsive when it has less than 1 packet in flight per RTT.&#160; uTorrent could hover around this limit when it improves reciprocation.</p><div class="quotebox"><blockquote><div><p>This is one of the reasons why i added symmetric connections to the home to my list.</p></div></blockquote></div><p>Symmetric connections is one of the things we are also pushing.&#160; </p><div class="quotebox"><blockquote><div><p>About P4P and biased neighbor selection. I don&#039;t consider the P4P simulation/tests as realistic, testing bittorrent and locality on the Abilene network is like testing carriages with rockets...</p></div></blockquote></div><p>I have misgivings about P4P:</p><p>- More generic building blocks (like network distance or CoS) could be leveraged by a wide-array of applications.</p><p>- It doesn&#039;t seem that optimization at PoP-level granularity makes sense when I have rarily seen swarms with more than 10,000 peers.&#160; There are about 20K autonomous systems in the Internet.&#160; In the future this could change, but under workloads based on today&#039;s traffic, P4P would probably do little more than simpler solutions.</p><p>- It makes the ISP the arbiter of capacity allocation.&#160; This can either be a complicated solution that requires detailed signaling from the application or it can fail to take into account application/user/content requirements. </p><div class="quotebox"><blockquote><div><p>Locality-awareness generally is not worth much (from the user-perspective) mostly because bittorrent is not latency-sensitive.</p></div></blockquote></div><p>This is why BitTorrent has historically paid little attention to delay.&#160; If an ISP strictly rate limits p2p upload then this will drive the connections across transit links.&#160; &#160;To the extent locality does not negatively correlate to performance, it could be exploited to reduce ISP cost.</p><p>As with P4P, Bindal et al makes little attempt at devising a realistic model.&#160; Bindal <br />assumes 14 ISPs forming a clique with infinite capacity within and between ISPs and puts 50 peers in each ISP where all the peers have homogeneous upload/download capacities.&#160; In these conditions, if the tracker hands out 1 peer outside the ISP and the remainder are within the ISP then BitTorrent substantially reduces transit traffic below that of traditional BitTorrent or the server-client model.&#160; However, 50 peers in each ISP is very high for today&#039;s swarms, they do not realistically account for churn, access capacities are not homogeneous, and each peer knows an unrealistically small number of other peers, e.g., with PEX and the DHT, each peer could realistically learn of all 700 peers within a couple minutes.&#160; I am not denigrating Bindal&#039;s work.&#160; I think it&#039;s a reasonable first step at studying whether localization is worth doing.&#160; </p><div class="quotebox"><blockquote><div><p>european ISPs probably don&#039;t have to fear transit traffic due to very extensive peering agreements</p></div></blockquote></div><p>At least from what I have learned from various ISPs, it&#039;s not congestion on transit links that is usually the problem.&#160; In much of the world there is a cabal of tier 1 ISPs.&#160; Between tier 1 ISPs, there is typically no charge for traffic going either direction.&#160; Smaller ISPs typically pay the tier 1 ISPs for transit traffic.&#160; I would like to here from ISPs regarding this point.&#160; </p><p>Is this not the case in Europe?</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p146" class="blockpost rowodd">
+	<h2><span><span class="conr">#7</span> <a href="viewtopic.php?pid=146#p146">2008-04-01 02:33:14</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: The Solution Is More Than Technical</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>The typical case I was concerned about is the home user with too many upload slots for his capacity.&#160; 4 per torrent with 8 active torrents (defaults)</p></div></blockquote></div><p>well, those are particularly bad defaults imo. with a 10 second unchoke interval - potential ramp-up times due to congestion i&#039;d say at least 4KiB/s per slot should be a minimum and the speed per slot should be increased when more bandwidth is available before you start to add more torrents or more slots.</p><p>All i&#039;m saying is that a 3+1 rule in general makes little sense due to the wide array of internet connection speeds out there. With azureus we take a different approach, we ramp up the # of active torrents if a minimum per torrent speed is not achieved, but only until a maximum speed is met. If configured properly this works quite well, although the default settings could need some tweaking too.</p><div class="quotebox"><blockquote><div><p>If the user wants to use any other application than BitTorrent at the same time then it is in his interest that BitTorrent remain responsive to network congestion.</p></div></blockquote></div><p>I&#039;d say it&#039;s an established rule of thumb that only 80% of the upload capacity should be used, this also found its way into various settings-calculators.</p><div class="quotebox"><blockquote><div><p>More generic building blocks (like network distance or CoS) could be leveraged by a wide-array of applications.</p></div></blockquote></div><p>I agree, a generic way to query various destination-dependent network stats would be useful to make decisions, but i&#039;m not sure if ISPs would like those stats to be available, as they might reveal constantly overburdened network infrastructure or their cost structure (if one could somehow derive prefered routes).</p><div class="quotebox"><blockquote><div><p>To the extent locality does not negatively correlate to performance, it could be exploited to reduce ISP cost.</p></div></blockquote></div><p>yes, of course. but if one does not want any negative correlation with performance one can only apply randomized optimizations or optimize when a defined download speed limit is reached. At least under current conditions.</p><div class="quotebox"><blockquote><div><p>Between tier 1 ISPs, there is typically no charge for traffic going either direction.</p></div></blockquote></div><p>That&#039;s the definition of a tier 1 isp. But there are only ~9 of them in the world. All other big ISPs are tier 2, i.e. they peer with other ISPs but also buy transit. It&#039;s the extent ot peering that varies. And i&#039;d say we have a pretty good peering infrastructure here. But this is only an observation from publicly available statistics. But yeah, it would be best to hear it from various ISPs.</p>
+						<p class="postedit"><em>Last edited by The 8472 (2008-04-01 02:36:42)</em></p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p147" class="blockpost roweven">
+	<h2><span><span class="conr">#8</span> <a href="viewtopic.php?pid=147#p147">2008-04-09 15:39:49</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd class="usertitle"><strong>Editor</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: The Solution Is More Than Technical</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>The 8472 wrote:</cite><blockquote><div><div class="quotebox"><blockquote><div><p>The typical case I was concerned about is the home user with too many upload slots for his capacity.&#160; 4 per torrent with 8 active torrents (defaults)</p></div></blockquote></div><p>well, those are particularly bad defaults imo. with a 10 second unchoke interval - potential ramp-up times due to congestion i&#039;d say at least 4KiB/s per slot should be a minimum and the speed per slot should be increased when more bandwidth is available before you start to add more torrents or more slots.</p></div></blockquote></div><p>Agreed.&#160; Bad defaults.&#160; It is being changed to something more reasonable.</p><p>The number of upload slots is adapted to a reasonable average bitrate per slot.&#160; &#160;</p><div class="quotebox"><blockquote><div><p>if one does not want any negative correlation with performance one can only apply randomized optimizations or optimize when a defined download speed limit is reached. At least under current conditions.</p></div></blockquote></div><p>Or connect first to peers with small network distance and/or unchoke in order of increasing distance.&#160; When choking, if two peers are similar (less than measurement error difference in rate) then choke the one with larger network distance.&#160; Otherwise use same BT mechanisms.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p151" class="blockpost rowodd">
+	<h2><span><span class="conr">#9</span> <a href="viewtopic.php?pid=151#p151">2008-04-11 12:43:50</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: The Solution Is More Than Technical</h3>
+					<div class="postmsg">
+						<p>i would be careful with connecting locally, as this might lead to significant clustering, especially on larger torrents. a correct choice of peers to connect to is an important part of the way PEX should operate, the worst case would be a disjoint subgraph when the tracker is down.<br />That&#039;s why i said you can only apply randomized optimizations.</p><p>And it still requires a way to estimate the distance in advance of connecting to them.</p>
+						<p class="postedit"><em>Last edited by The 8472 (2008-04-12 07:15:57)</em></p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p155" class="blockpost roweven">
+	<h2><span><span class="conr">#10</span> <a href="viewtopic.php?pid=155#p155">2008-04-14 16:19:54</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd class="usertitle"><strong>Editor</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: The Solution Is More Than Technical</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>The 8472 wrote:</cite><blockquote><div><p>i would be careful with connecting locally, as this might lead to significant clustering,</p></div></blockquote></div><p>Right.&#160; For example, Bindal et al&#039;s client connects to one peer outside the ISP for large swarms.&#160; If every peer does this then it is unlikely that the graph gets severed.&#160; &#160;Whether 1 is the correct number should be determined empirically.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p156" class="blockpost rowodd">
+	<h2><span><span class="conr">#11</span> <a href="viewtopic.php?pid=156#p156">2008-04-15 00:12:54</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: The Solution Is More Than Technical</h3>
+					<div class="postmsg">
+						<p>Clustering causes issues beyond swarm fragmentation. It also influences the distribution of newly available pieces between the subgraphs and thus can be detrimal to piece picking, especially if the local availability value is rather low, which is even the case on big swarms if the peer churn is high (hit-and-running, many new nodes arriving due to the popularity of the content).</p><p>I&#039;ve seen significant availability hotspots building even in randomly connected swarms, I&#039;d say this would get worse with clustering.</p><p>I have written a view for empirical analysis of the piece distribution, which might be useful for testing this kind of stuff: <a href="http://infinite-source.de/az/pieceDist.jpeg"><span class="postimg"><img src="http://infinite-source.de/az/pieceDist.jpeg" alt="pieceDist.jpeg" /></span></a><br />In my experience a near-optimal piece-distribution looks like an Erlang-distribution with a mean close to the middle of the blue area, i.e. mean = (availability - seedcount) / 2</p>
+						<p class="postedit"><em>Last edited by The 8472 (2008-04-15 00:13:21)</em></p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=32">Cooperation between BitTorrent and ISPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=24"><strong>The Solution Is More Than Technical</strong></a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

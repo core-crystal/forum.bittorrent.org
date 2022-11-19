@@ -1,0 +1,475 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>forum.bittorrent.org / Torrent Collections - the Torrtion extension</title>
+<link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
+</head>
+<body>
+
+<div id="punwrap">
+<div id="punviewtopic" class="pun">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><span>forum.bittorrent.org</span></h1>
+			<p><span>BitTorrent.org community</span></p>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p>You are not logged in.</p>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<h2><span>Announcement</span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div>Posting about any illegal sharing of copyrighted content is strictly forbidden.</div>
+		</div>
+	</div>
+</div>
+
+<div class="linkst">
+	<div class="inbox">
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<p class="postlink conr">&nbsp;</p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Torrent Collections - the Torrtion extension</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p1054" class="blockpost rowodd firstpost">
+	<h2><span><span class="conr">#1&nbsp;</span><a href="viewtopic.php?pid=1054#p1054">2010-03-03 11:40:13</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90572">mabsark</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3>Torrent Collections - the Torrtion extension</h3>
+				<div class="postmsg">
+					<p>The torrtion extension allows for collections of torrent files to be created and shared.<br /><br />Example<br />A musician could create torrent files as usual for each of their songs, and torrtion files for albums containing those songs. Peers who are downloading a song, would also be able to download from peers with the album, and peers downloading the album would also be able to download from peers with individual songs.<br /><br />This would have the effect of reducing the consumed bandwidth and increasing the efficiency and speed of the protocol because less duplicate data would be transferred and there would be an increased number of peers for certain torrents.<br /><br />The Collection dictionary<br />A torttion file is similar to a torrent file but instead of an &quot;info&quot; dictionary it contains a &quot;collection&quot; dictionary. All other keys are the same. The collection dictionary contains the following structure:<br /><br />name: the filename of the directory in which to store all the files. This is purely advisory. (string)<br />private: if set to &quot;1&quot;, the client MUST ONLY use the trackers explicitly described in the metainfo file. (optional) (integer)<br />torrents: a list of 20 byte info_hash values, one for each torrent in the collection. (list of strings)</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1056" class="blockpost roweven">
+	<h2><span><span class="conr">#2&nbsp;</span><a href="viewtopic.php?pid=1056#p1056">2010-03-03 16:36:38</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90572">mabsark</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Torrent Collections - the Torrtion extension</h3>
+				<div class="postmsg">
+					<p>Revised version<br /><br />name: the filename of the directory in which to store all the files. This is purely advisory.<br />private: if set to &quot;1&quot;, the client MUST ONLY use the trackers explicitly described in the metainfo file (optional integer).<br />torrents: a list of dictionaries, one for each torrent in the collection.<br /><br />The torrent dictionary<br />display: the display name that may be used by the client to display while waiting for metadata (optional string).<br />info hash: the 20 byte info_hash value of a torrent.<br /><br />Example of collection dictionary<br />d4:name4:test8:torrentsld7:display6:test 19:info hash20:0123456789ABCDEF0000ed7:display6:test 29:info hash20:0123456789ABCDEF0001ed7:display6:test 39:info hash20:0123456789ABCDEF0002eee<br /><br />This change basically makes the collection dictionary into a list of magnet links in bencoded format, so with regards to implementation, it would only require the client to determine if metadata was &quot;torrtion&quot; data and then loop through the specified torrents, treating them in the same manner as magnet links.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1058" class="blockpost rowodd">
+	<h2><span><span class="conr">#3&nbsp;</span><a href="viewtopic.php?pid=1058#p1058">2010-03-03 18:48:22</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Torrent Collections - the Torrtion extension</h3>
+				<div class="postmsg">
+					<p>Just using a multifile torrent + selective downloading can achieve the same.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1060" class="blockpost roweven">
+	<h2><span><span class="conr">#4&nbsp;</span><a href="viewtopic.php?pid=1060#p1060">2010-03-04 00:59:29</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90572">mabsark</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Torrent Collections - the Torrtion extension</h3>
+				<div class="postmsg">
+					<p>No, it can't, at least not with any client I've used, and not according to the protocol's specification.<br /><br />As far as I'm aware, selective downloading from a multifile torrent does not allow sharing of data between different torrents. For example, if we have a torrent of Song A and a torrent of Album 1 which contains Song A, then users selectively downloading Song A from the Album 1 multifile torrent can not share data with peers from the Song A single file torrent.<br /><br />Under the extension I have proposed users downloading the Song A torrent can download from peers of the Album 1 torrtion.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1068" class="blockpost rowodd">
+	<h2><span><span class="conr">#5&nbsp;</span><a href="viewtopic.php?pid=1068#p1068">2010-03-05 05:43:47</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Torrent Collections - the Torrtion extension</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>mabsark wrote:</h4><p>For example, if we have a torrent of Song A and a torrent of Album 1 which contains Song A, then users selectively downloading Song A from the Album 1 multifile torrent can not share data with peers from the Song A single file torrent.</p></div></blockquote><p>That is possible as long as you have both torrents.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1096" class="blockpost roweven">
+	<h2><span><span class="conr">#6&nbsp;</span><a href="viewtopic.php?pid=1096#p1096">2010-03-08 01:06:12</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90572">mabsark</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Torrent Collections - the Torrtion extension</h3>
+				<div class="postmsg">
+					<p>How is that possible?<br /><br />The torrent of song A and the torrent of Album 1 have different info hash values, so the client does not know that they are related in any way.<br /><br />The only way I can think of would be to get the hash values for the pieces from Song A in the Album 1 torrent and compare them to the hash values for the pieces from the Song A torrent.<br /><br />In order for this system to work, the client would have to check the hash values for the pieces of every file and compare them to those of every other file, for evey torrent file loaded by the client. This seems incredibly inefficient to me and a waste of resources.<br /><br />Is such a procedure what you had in mind?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1102" class="blockpost rowodd">
+	<h2><span><span class="conr">#7&nbsp;</span><a href="viewtopic.php?pid=1102#p1102">2010-03-08 11:29:38</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Torrent Collections - the Torrtion extension</h3>
+				<div class="postmsg">
+					<p>i didn't say it would be 100% automated. human intervention would be one option. hints in RSS feeds which torrents are related would be another option, making it easier for clients to crosscheck them.<br /><br />Those are features external to the .torrent infrastructure.<br /><br /></p><blockquote><div class="incqbox"><h4>mabsark wrote:</h4><p>In order for this system to work, the client would have to check the hash values for the pieces of every file and compare them to those of every other file, for evey torrent file loaded by the client. This seems incredibly inefficient to me and a waste of resources.</p></div></blockquote><p>only for files of identical size btw</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1106" class="blockpost roweven">
+	<h2><span><span class="conr">#8&nbsp;</span><a href="viewtopic.php?pid=1106#p1106">2010-03-10 14:55:28</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90572">mabsark</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Torrent Collections - the Torrtion extension</h3>
+				<div class="postmsg">
+					<p>&quot;i didn't say it would be 100% automated. human intervention would be one option. hints in RSS feeds which torrents are related would be another option, making it easier for clients to crosscheck them.&quot;<br /><br />This is what the torrtion extension does. It is a bencoded dictionary that defines the relational structure of a collection of bencoded dictionaries.<br /><br />Let us assume we have the following torrent files, which are all well seeded:<br /><br />Show.1.Series.1.Episode.1.avi.torrent<br />Show.1.Series.1.Episode.2.avi.torrent<br />Show.1.Series.1.Episode.3.avi.torrent<br /><br />Instead of creating a new torrent file for the entire series which would have to be seeded all over again, you could simply create a torrtion file, which would instruct the client to download and start the specified pre-existing torrent files.<br /><br />Let us assume we have a second series of the show. We can create a torrtion file just as we did for the first series, and we can also create a torrtion file for the complete show, each of which uses the well-established torrent files instead of needing to be seeded again.<br /><br />The torrtion extension would make the bittorrent protocol more efficient with minimal effort in implementation. The same cannot be said about comparing the hashes for pieces of files with equal sizes. You suggested using RSS hints to overcome this problem. How would this be any different than using a torrtion file (which is basically a collection of magnet urls)?</p>
+					<p class="postedit"><em>Last edited by mabsark (2010-03-10 14:56:41)</em></p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1108" class="blockpost rowodd">
+	<h2><span><span class="conr">#9&nbsp;</span><a href="viewtopic.php?pid=1108#p1108">2010-03-10 15:05:27</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Torrent Collections - the Torrtion extension</h3>
+				<div class="postmsg">
+					<p>RSS feeds already exist and are used to download episodic content. And your extension would reasonably allow grouping of single-file torrents, it wouldn't cover the case of upgrading a bunch of singlefile torrents to a multifile torrent which usually has a longer lifecycle since it evolves slower.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1124" class="blockpost roweven">
+	<h2><span><span class="conr">#10&nbsp;</span><a href="viewtopic.php?pid=1124#p1124">2010-03-15 23:36:18</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Torrent Collections - the Torrtion extension</h3>
+				<div class="postmsg">
+					<p>@mabsark: If you write a bep I can put it up. If the private flag is set, how would you receive the peers to get the metadata from?<br /><br />It seems like the only way to do that would be to include a tracker in the info-hash list as well.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1130" class="blockpost rowodd">
+	<h2><span><span class="conr">#11&nbsp;</span><a href="viewtopic.php?pid=1130#p1130">2010-03-18 09:21:55</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90572">mabsark</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Torrent Collections - the Torrtion extension</h3>
+				<div class="postmsg">
+					<p>@The 8472<br /><br />&quot;it wouldn't cover the case of upgrading a bunch of singlefile torrents to a multifile torrent which usually has a longer lifecycle since it evolves slower.&quot;<br /><br />If you created a torrtion file instead of a muti-file torrent for a series, then those peers who would've been sharing the multi-file torrent will be sharing the individual torrents instead, giving them a longer life due to less fragmentation of peers.<br /><br />The torrents are still being shared by the same number of peers, the current method splits those peers between the single file torrent of an episode and the multi-file torrent of a series. Using a torrtion file would allow all those peers to be concentrated on the single file torrent, therefore providing faster speeds and a longer lifecycle.<br /><br />Perhaps I've misunderstood your argument?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1132" class="blockpost roweven">
+	<h2><span><span class="conr">#12&nbsp;</span><a href="viewtopic.php?pid=1132#p1132">2010-03-18 09:38:53</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Torrent Collections - the Torrtion extension</h3>
+				<div class="postmsg">
+					<p>Yes, you did. The in your case you would be running N torrents in a client, each with a unique infohash. This means that you have separate swarms for each file. Due to the way torrents work it would be better to download them sequentially and not all at the same time. Which means the individual files will see less participation time then they would in a multifile torrent.<br /><br />Having all files bound into a single swarm means that the swarm lives longer since individual peers will have to cycle through less torrents, stay on a torrent longer etc.<br /><br />=&gt; bigger torrent = better<br /><br /><br />Thus your torrention extension would be harmful especially for very large compilations since they would be decomposed into many many many tiny swarms, each of which could die (due to hitting 0 availability on some piece).<br /><br />In fact, i have a test torrent here consisting of about 30000 relatively small image files, replacing this multifile torrent with a torrention would make it practically impossible to download it.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1134" class="blockpost rowodd">
+	<h2><span><span class="conr">#13&nbsp;</span><a href="viewtopic.php?pid=1134#p1134">2010-03-18 09:40:58</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90572">mabsark</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Torrent Collections - the Torrtion extension</h3>
+				<div class="postmsg">
+					<p>@arvid<br /><br />The torrtion file uses the same keys as a torrent file, except it replaces the info dictionary with the collection dictionary. It uses the specified tracker(s) as stated in BEP 27 in conjuction with BEP 9 to obtain the data for private collections.<br /><br />I'll write up a BEP and send it to you later.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1136" class="blockpost roweven">
+	<h2><span><span class="conr">#14&nbsp;</span><a href="viewtopic.php?pid=1136#p1136">2010-03-18 10:59:56</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90572">mabsark</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Torrent Collections - the Torrtion extension</h3>
+				<div class="postmsg">
+					<p>&quot;Yes, you did.&quot;<br />I thought I must've been.<br /><br />&quot;Due to the way torrents work it would be better to download them sequentially and not all at the same time.&quot;<br /><br />I've got to disagree with this, because that's not what I've experienced. A lot of torrent files wont download at your max speed, but if you are downloading a couple, it is easier to max out your connection. From the user's perspective, this translates into a faster download of the collection.<br /><br />&quot;Which means the individual files will see less participation time then they would in a multifile torrent.&quot;<br />Not necessarily. You're failing to take into account that a client seeding a single episode of a series would be a legitimate peer for someone downloading a collection. <br /><br />&quot;Thus your torrention[sic] extension would be harmful especially for very large compilations since they would be decomposed into many many many tiny swarms, each of which could die (due to hitting 0 availability on some piece).&quot;<br /><br />No, you've misunderstood the extension. There does not need to be a correlation between the number of files and the number of swarms. For collections such as TV series or music albums, such a method makes sense, as that is the logical grouping, but that's not true for all collections as explained below.<br /><br />&quot;In fact, i have a test torrent here consisting of about 30000 relatively small image files, replacing this multifile torrent with a torrention[sic] would make it practically impossible to download it.&quot;<br /><br />Again, not necessarily. It's just a matter of organization. It's not about replacing multi-file torrents, but augmenting them. Using your example, I could create 36 multi-file torrents, one for each alpha-numeric digit, which would then form the collection. I could create categories such as 'People', 'Animals' and 'Objects', with each category being a multi-file torrent, and the collection consisting of those categories. You can also have collections of collections of collections, ad infinitum.<br /><br />You seem to be looking at this extension as a replacement to multi-file torrents, which it isn't. It is simply a way of grouping torrents (both single-file and multi-file, or a combination of both), and has a few extra benefits as well.</p>
+					<p class="postedit"><em>Last edited by mabsark (2010-03-18 11:03:42)</em></p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1150" class="blockpost rowodd">
+	<h2><span><span class="conr">#15&nbsp;</span><a href="viewtopic.php?pid=1150#p1150">2010-03-19 14:59:40</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Torrent Collections - the Torrtion extension</h3>
+				<div class="postmsg">
+					<p>*sigh*<br /><br />Let's review the facts:<br /><br />- larger torrents are generally more stable and last longer<br />- in practice content is only added, almost never removed<br />- clients support selective downloading<br />- in case of episodic content the single-file torrents generally tend to die fast once a batch torrent has been published<br /><br /><br />To me the logical solution would be an automated upgrade path from a singlefile torrent to a multifile torrent if a client has multiple files that belong together. The multifile torrents are often created anyway and outlive the singlefile torrents.<br /><br /><br />In your initial example (the song vs. album) just an album torrent should have been created or if the individual songs are released over time a batch torrent should be created once the album is complete.<br /><br /><br />Generally i don't see a common usage scenario where a torrention would actually provide an improvement over a multifile torrent.<br /><br />What we really need is a better transition mechanism.<br /><br /></p><blockquote><div class="incqbox"><p>I've got to disagree with this, because that's not what I've experienced. A lot of torrent files wont download at your max speed, but if you are downloading a couple, it is easier to max out your connection. From the user's perspective, this translates into a faster download of the collection.</p></div></blockquote><p>This is a serious misunderstanding of how bittorrent works.<br /><br />The more torrents you download the thinner you spread your bandwidth and the more connections you create. It comes closer to leeching off optimistic unchokes from other peers than actually contributing to the swarm. In general downloading too many torrents is harmful.<br /><br />In the specific case of downloading a bunch of single file torrents that are related it would have been healthier for bittorrent if those files had been composed into a one multifile torrent and you'd download this one instead of running several torrents at once.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox">
+		<p class="postlink conr">&nbsp;</p>
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Torrent Collections - the Torrtion extension</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div class="inbox">
+
+			<div class="conl">
+				<form id="qjump" method="get" action="viewforum.php">
+					<div><label>Jump to
+					<br /><select name="id" onchange="window.location=('viewforum.php?id='+this.options[this.selectedIndex].value)">
+						<optgroup label="BitTorrent">
+							<option value="26">Announcements</option>
+							<option value="27">General</option>
+							<option value="25" selected="selected">BEPs</option>
+							<option value="29">BEP process</option>
+							<option value="33">Research Tools</option>
+							<option value="32">Cooperation between BitTorrent and ISPs</option>
+							<option value="30">Attacks against BitTorrent</option>
+							<option value="28">Feature Requests, Found Bugs &gt;&gt;&gt;</option>
+					</optgroup>
+					</select>
+					<input type="submit" value=" Go " accesskey="g" />
+					</label></div>
+				</form>
+			</div>
+			<p class="conr">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-116155-1";
+_udn = "utorrent.com";
+urchinTracker();
+</script>
+
+</body>
+</html>

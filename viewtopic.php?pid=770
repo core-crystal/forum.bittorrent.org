@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>forum.bittorrent.org / About µTP: PMTU discovery and repacketisation</title>
+<link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
+</head>
+<body>
+
+<div id="punwrap">
+<div id="punviewtopic" class="pun">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><span>forum.bittorrent.org</span></h1>
+			<p><span>BitTorrent.org community</span></p>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p>You are not logged in.</p>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<h2><span>Announcement</span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div>Posting about any illegal sharing of copyrighted content is strictly forbidden.</div>
+		</div>
+	</div>
+</div>
+
+<div class="linkst">
+	<div class="inbox">
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<p class="postlink conr">&nbsp;</p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;About µTP: PMTU discovery and repacketisation</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p724" class="blockpost rowodd firstpost">
+	<h2><span><span class="conr">#1&nbsp;</span><a href="viewtopic.php?pid=724#p724">2009-11-05 17:01:26</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3>About µTP: PMTU discovery and repacketisation</h3>
+				<div class="postmsg">
+					<p>I believe that I may have found a serious issue with µTP.<br /><br />As it currently stands, µTP does not allow repacketization.&nbsp; Once you've sent a packet, you've committed to either sending it unchanged to the other end, or dropping the connection.&nbsp; This is unlike TCP, which allows you to either split a packet when resending it, or to merge an already-sent packet with new data.<br /><br />The main issue is with PMTU discovery (RFC 1191).&nbsp; When doing PMTU discovery, a node occasionally sends packets that are too big for the path being used; a router will then reply with a &quot;packet too big&quot; ICMP message, requesting that the sender send smaller packets.&nbsp; Reacting to the packet too big message requires repacketising.<br /><br />Consider for example that your local MTU is 1500 octets (you're on Ethernet), but your PMTU to the Internet is 1480 (there's an ADSL line in the way).&nbsp; You send one 1500 octet packet, followed with a 500 octet one.&nbsp; The ADSL router sends you a &quot;packet too big&quot; message for the 1500 octet packet, but the 500 octet packet gets through, and is SACK-ed by the other endpoint.&nbsp; At this point you're stuck: you need to send a 1500 octet packet to fill the hole, but the router won't allow you to do that.<br /><br />Assuming that I am right, we'll need to think about a solution.&nbsp; Here are a few ideas.<br /><br /><strong>1.</strong> Forcibly disable PMTU on µTP sockets.<br /><br />This can be done by using the IP_MTU_DISCOVER setsockopt.<br /><br />This is not a good idea, even in IPv4.&nbsp; See <em>Fragmentation considered harmful</em>, by Kent and Mogul, 1995.<br /><br /><strong>2.</strong> Limit UDP datagram payload to 1024 octets.<br /><br />This fits in 1280-octet packets, which is the minimum MTU in IPv6.&nbsp; Note that anything more than that will fail in a very common case -- Teredo uses 1280.<br /><br />This is not a good idea.&nbsp; We definitely want BitTorrent to be able to use the full MTU on high-speed links.<br /><br /><strong>3.</strong> Extend the µTP protocol to allow for application-layer fragmentation.<br /><br />Add a new <em>fragment</em> message to µTP that allows sending a single µTP message in multiple UDP datagrams, and thus perform application-layer fragmentation.<br /><br />This might be a good idea, but it complicates the protocol, and makes an incompatible change.<br /><br /><strong>4.</strong> Don't perform PMTU discovery on resent packets<br /><br />Send each packet initially with PMTU discovery set, and resend with PMTU disabled.<br /><br />This has the same cost as (1) above, but only on resent packets.&nbsp; It complicates the code.&nbsp; Additionally, toggling PMTU discovery on and off repeatedly might have some unpleasant effects on the performance of the system (it might, for example, flush the system's PMTU cache).<br /><br /><strong>5.</strong> Use (3) with new implementations, and (4) with old ones.<br /><br />Negotiate the use of a protocol extension at connection establishment, then use either (3) or (4).&nbsp; Complicates the code enormously, has all the flaws of (3) and (4), except for the lack of compatibility with deployed implementations.<br /><br />--Juliusz</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p725" class="blockpost roweven">
+	<h2><span><span class="conr">#2&nbsp;</span><a href="viewtopic.php?pid=725#p725">2009-11-05 17:32:36</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: About µTP: PMTU discovery and repacketisation</h3>
+				<div class="postmsg">
+					<p>Thinking about it some more, I'm coming to the conclusion that my favourite is<br /><br /><strong>6.</strong> Redesign µTP incompatibly.<br /><br />µTP is a new protocol.&nbsp; We might as well get it right (with byte-range ACKs).<br /><br />--Juliusz</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p730" class="blockpost rowodd">
+	<h2><span><span class="conr">#3&nbsp;</span><a href="viewtopic.php?pid=730#p730">2009-11-06 09:57:32</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: About µTP: PMTU discovery and repacketisation</h3>
+				<div class="postmsg">
+					<p>you only get the ICMP packet too big if you set the don't-fragment bit, right? Which is not set by default.<br /><br />The main advantage of acking packets instead of bytes is that the EACK message can be very very tiny and ack many more packets than a TCP SACK can (within reasonable space). It also keeps certain things simple, no need to worry about overlapping ranges for instance. Before allowing packets with arbitrary byte ranges, I would explore all alternatives to solving the PMTU discovery problem.<br /><br />Even though IP fragmentation should be avoided because of performance reasons, it seems like it could be a reasonable solution to the scenario you talk about, while the PMTU is still being figured out.<br /><br />Also, keep in mind that uTP starts off using 300 byte packets, and increases it gradually if the serialization delay appears to be below a certain threshold. In uTorrent, the connection does not increase its packet size more often than every 10 seconds. This allows plenty of time to first probe the new packet size before switching to it.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p746" class="blockpost roweven">
+	<h2><span><span class="conr">#4&nbsp;</span><a href="viewtopic.php?pid=746#p746">2009-11-06 19:16:09</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: About µTP: PMTU discovery and repacketisation</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>you only get the ICMP packet too big if you set the don't-fragment bit, right? Which is not set by default.</p></div></blockquote><p>It is set by default on all modern systems.&nbsp; In the case of Windows, it is set in XP, 2003, 2008 and Vista.<br /><br />--Juliusz</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p759" class="blockpost rowodd">
+	<h2><span><span class="conr">#5&nbsp;</span><a href="viewtopic.php?pid=759#p759">2009-11-08 18:01:00</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89998">TheSHAD0W</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: About µTP: PMTU discovery and repacketisation</h3>
+				<div class="postmsg">
+					<p>Solution:<br /><br />(1) When the client gets a &quot;packet too big&quot; message, reduce the packet size.<br /><br />(2) If a connection becomes dysfunctional due to a skipped packet, just let it drop and re-establish.<br /><br />Done.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p768" class="blockpost roweven">
+	<h2><span><span class="conr">#6&nbsp;</span><a href="viewtopic.php?pid=768#p768">2009-11-09 09:48:16</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: About µTP: PMTU discovery and repacketisation</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>If a connection becomes dysfunctional due to a skipped packet, just let it drop and re-establish.</p></div></blockquote><p>This is the sort of workaround that is commonly used with a deficient legacy protocol before it is fixed.&nbsp; It wouldn't expect such a hack to be needed with a new protocol.<br /><br />--Juliusz</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p770" class="blockpost rowodd">
+	<h2><span><span class="conr">#7&nbsp;</span><a href="viewtopic.php?pid=770#p770">2009-11-09 14:41:01</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: About µTP: PMTU discovery and repacketisation</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>jch wrote:</h4><blockquote><div class="incqbox"><p>If a connection becomes dysfunctional due to a skipped packet, just let it drop and re-establish.</p></div></blockquote><p>This is the sort of workaround that is commonly used with a deficient legacy protocol before it is fixed.&nbsp; It wouldn't expect such a hack to be needed with a new protocol.</p></div></blockquote><p>It isn't. Because the IP protocol can do fragmentation.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox">
+		<p class="postlink conr">&nbsp;</p>
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;About µTP: PMTU discovery and repacketisation</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div class="inbox">
+
+			<div class="conl">
+				<form id="qjump" method="get" action="viewforum.php">
+					<div><label>Jump to
+					<br /><select name="id" onchange="window.location=('viewforum.php?id='+this.options[this.selectedIndex].value)">
+						<optgroup label="BitTorrent">
+							<option value="26">Announcements</option>
+							<option value="25" selected="selected">BEPs</option>
+							<option value="29">BEP process</option>
+							<option value="27">General</option>
+							<option value="33">Research Tools</option>
+							<option value="32">Cooperation between BitTorrent and ISPs</option>
+							<option value="30">Attacks against BitTorrent</option>
+							<option value="28">Feature Requests, Found Bugs &gt;&gt;&gt;</option>
+					</optgroup>
+					</select>
+					<input type="submit" value=" Go " accesskey="g" />
+					</label></div>
+				</form>
+			</div>
+			<p class="conr">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-116155-1";
+_udn = "utorrent.com";
+urchinTracker();
+</script>
+
+</body>
+</html>

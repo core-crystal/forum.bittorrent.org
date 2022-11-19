@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>forum.bittorrent.org / Question about tracker-less torrent file</title>
+<link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
+</head>
+<body>
+
+<div id="punwrap">
+<div id="punviewtopic" class="pun">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><span>forum.bittorrent.org</span></h1>
+			<p><span>BitTorrent.org community</span></p>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p>You are not logged in.</p>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<h2><span>Announcement</span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div>Posting about any illegal sharing of copyrighted content is strictly forbidden.</div>
+		</div>
+	</div>
+</div>
+
+<div class="linkst">
+	<div class="inbox">
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<p class="postlink conr">&nbsp;</p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=27">General</a></li><li>&nbsp;&raquo;&nbsp;Question about tracker-less torrent file</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p201" class="blockpost rowodd firstpost">
+	<h2><span><span class="conr">#1&nbsp;</span><a href="viewtopic.php?pid=201#p201">2008-05-15 08:10:37</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89735">Adele</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3>Question about tracker-less torrent file</h3>
+				<div class="postmsg">
+					<p>This question is about using DHT in BT.<br /><br />We know that if we want to use DHT in BT, we need the tracker-less torrent file. But I would like to ask, where the could users find his tracker-less torrent files? I have the following two ideas which really confused me a lot:<br /><br />1 Maybe the tracker-less torrent file can be downloaded from the web, just like the normal torrent file. If it is so, then I would like to argue that some people say 'With DHT, you can still download even when the tracker is down.' For the reason that, if an user 'A' download a normal torrent first and then find the tracker included in it does not work, then user A need to download the tracker-less torrent file from the web manually, right? In this condition, we can not say that DHT is a back support for this tracker, right?<br /><br /><br />2 Maybe the tracker-less torrent file is downloaded via DHT. But actually before the users get the tracker-less torrent file, they can not know its info_hash which works as an ID for it, right? Without the info_hash, how could users find the torrent in DHT? since if we want to find something in DHT, we should give the ID first, just like how we find a node via DHT.<br /><br />I am totally confused about this. Really thanks for your help:)</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p202" class="blockpost roweven">
+	<h2><span><span class="conr">#2&nbsp;</span><a href="viewtopic.php?pid=202#p202">2008-05-15 10:41:37</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Question about tracker-less torrent file</h3>
+				<div class="postmsg">
+					<p>you don't need a special torrent file, these days all dht-supporting clients either use the DHT as fallback when the normal tracker goes down or use it permanently as a secondary tracker.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p206" class="blockpost rowodd">
+	<h2><span><span class="conr">#3&nbsp;</span><a href="viewtopic.php?pid=206#p206">2008-05-19 00:08:28</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89735">Adele</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Question about tracker-less torrent file</h3>
+				<div class="postmsg">
+					<p>Hey really thank u for reply. May I summrize your idea in the following process for nowaday BitTorrent users' downloading?<br /><br />1st. Users need to find a .torrent file(with tracker's URL) on website.<br />2nd. Users contact the tracker, as well as the DHT network(backup or permanent), to get the information(IP adrress, port number .etc) about other peers who also download the same file.<br />3rd, Peers exchange chunks and complete the download.<br /><br />Then I have the following question<br /><br />1. For lookup a file in DHT network, we need a 'key' for this file. Where could the users get this key, maybe from the normal .torrent file?<br />2. Actually in BEP5, 'DHT protocol', the author mentioned that there is a special 'tracker-less torrent file'. So this file is not a real file?<br /><br />I could understand the main process but I am really confused about the details.<br />Need your help:)</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p208" class="blockpost roweven">
+	<h2><span><span class="conr">#4&nbsp;</span><a href="viewtopic.php?pid=208#p208">2008-05-19 03:47:39</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Question about tracker-less torrent file</h3>
+				<div class="postmsg">
+					<p>1. yes, the key is derived from the .torrent<br />2. it's just a torrent w/o normal trackers and (i think) some flag set to use DHT, but it's nothing special, no.</p>
+					<p class="postedit"><em>Last edited by The 8472 (2008-05-19 03:49:25)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p331" class="blockpost rowodd">
+	<h2><span><span class="conr">#5&nbsp;</span><a href="viewtopic.php?pid=331#p331">2008-08-11 04:48:01</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89963">redondo</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Question about tracker-less torrent file</h3>
+				<div class="postmsg">
+					<p>es que qq1 peut m'expliquer le fonctionnement du protocole sur 2 points: <br />*un client1 transmet son port d'ecoute X au tracker dans un paquet GET&nbsp; <br />question1.1: <br />quelle @ ip est enrgistrer chez le tracker (local,externe) ?&nbsp; <br />question1.2: <br />si le client1 et deriere un nat comment un client2 peut se connecter au client1 sacchant que le nat n'accepte pa les connexion entrante et le nat ne sais pa que le client1 est a l'ecoute sur le port x? <br />------------------------------------------------------------------------------------ <br />&quot;pas de nat&quot; client1 ecoute sur port X qui est transmis au tracker <br />client 2 interroge le tracker et lui dis de se connecter sur le port x du client1 <br />client3 a besoin de la meme ressource ,il interroge le tracker et lui di de se connecter dur le port Z du client2 ,et? le port X est pri !connexion tcp(client1,client2) <br />question2: <br />quel port est transmit et comment le tracker la su?<br /><br /><br />&nbsp; &nbsp; &nbsp; RE: NAT et port bittorrent (New)<br />&nbsp; &nbsp; &nbsp; By: redondo redondo (rredondo) - 2008-08-08 08:45<br />&nbsp; &nbsp; &nbsp; i am studing bittorrent protocol and i didn't understand 2 ppoint: <br />&nbsp; &nbsp; &nbsp; client1 give his port listening&quot;x&quot; to the tracker in HTTP paquet &quot;GET&quot; <br />&nbsp; &nbsp; &nbsp; QUESTION1: <br />&nbsp; &nbsp; &nbsp; client after NAT ,which port is given to the tracker (local one or the external) <br />&nbsp; &nbsp; &nbsp; question2: <br />&nbsp; &nbsp; &nbsp; if client1 is after NAT ,how do client2 to connecte to client1( nat doesn't know that client1 is listening in port X)? <br />&nbsp; &nbsp; &nbsp; ------------------------------------------------------------------------------------- <br />&nbsp; &nbsp; &nbsp; &quot;without nat&quot; client1 listen on port &quot;X&quot; which is transmited to the tracker&nbsp; <br />&nbsp; &nbsp; &nbsp; client2 ask the tracker and the tracker answer with port X of client1 <br />&nbsp; &nbsp; &nbsp; client3 need the same resource ,ask the the tracker and th tracker answer with port &quot;Z&quot; for client2 and port ? client1(port x is used in tcp connexion between client1 and client2) <br />&nbsp; &nbsp; &nbsp; question: <br />&nbsp; &nbsp; &nbsp; which port is transmited and how the tracker know it?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox">
+		<p class="postlink conr">&nbsp;</p>
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=27">General</a></li><li>&nbsp;&raquo;&nbsp;Question about tracker-less torrent file</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div class="inbox">
+
+			<div class="conl">
+				<form id="qjump" method="get" action="viewforum.php">
+					<div><label>Jump to
+					<br /><select name="id" onchange="window.location=('viewforum.php?id='+this.options[this.selectedIndex].value)">
+						<optgroup label="BitTorrent">
+							<option value="26">Announcements</option>
+							<option value="25">BEPs</option>
+							<option value="29">BEP process</option>
+							<option value="27" selected="selected">General</option>
+							<option value="33">Research Tools</option>
+							<option value="32">Cooperation between BitTorrent and ISPs</option>
+							<option value="30">Attacks against BitTorrent</option>
+							<option value="28">Feature Requests, Found Bugs &gt;&gt;&gt;</option>
+					</optgroup>
+					</select>
+					<input type="submit" value=" Go " accesskey="g" />
+					</label></div>
+				</form>
+			</div>
+			<p class="conr">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-116155-1";
+_udn = "utorrent.com";
+urchinTracker();
+</script>
+
+</body>
+</html>

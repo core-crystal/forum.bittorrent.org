@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>one 256 kb piece is missing in the download. how can I find it? (Page 1) / General / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
+<script type="text/javascript" src="captcha/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript">
+	$(function(){var f=$("#sliderCaptcha");var b=$("#cleCaptcha");var d=$(".boutonsCaptcha");var a=$("#javascriptCaptcha");var e=[10,13,31,31,5,4,27,26,36,26,19,21,19,23,12,41,7,45,47,3,12,23,26,26,40,32,45,48,43,6,10,4,20,41,35,26,46,13,2,33,40,21,4,9,45,16,0,2,12,48];var h=0;var g=5;var c=0;a.hide();f.slider({value:0,min:0,max:g,step:1,slide:function(i,j){if(j.value>c){c=j.value;h+=c}},stop:function(j,k){var i=false;if(k.value==g){if(h==((g+Math.pow(g,2))/2)){i=true;f.slider("option","disabled",true);if(b.val().length!=e.length){$.post("captcha.php",{tokenCaptcha:b.val()},function(m){var l="";$.each(e,function(){l+=m.charAt(this%m.length)});b.val(l);d.removeAttr("disabled")})}}}if(!i){h=c=0;f.slider("option","value",h)}}})});
+</script>
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="punviewtopic" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex" class="isactive"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=27">General</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=296"><strong>one 256 kb piece is missing in the download. how can I find it?</strong></a></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p1636" class="blockpost rowodd firstpost blockpost1">
+	<h2><span><span class="conr">#1</span> <a href="viewtopic.php?pid=1636#p1636">2010-11-22 13:59:39</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=91584">yabi</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>one 256 kb piece is missing in the download. how can I find it?</h3>
+					<div class="postmsg">
+						<p>This is my first post.<br />I am a newbe and hope I am postin in the proper forum. <br />I have downloaded 99.9% of following movie:<br />Megastructures Icelandic Super Dam WS PDTV XviD-NOsegmenT<br />Only one 256 b piece is missing. Windows media player doesn&#039;t show it and it is weeks that I can&#039;t download thaat one piece. Is there any solution to download this piece?<br />Other data which might be helpful is as follows:</p><p>Trackers are:<br /><a href="http://vip.tracker.thepiratebay.org/announce">http://vip.tracker.thepiratebay.org/announce</a></p><p><a href="http://tracker.torrent.to:2710/announce.php">http://tracker.torrent.to:2710/announce.php</a></p><p><a href="http://astalavistatorrent.com/announce.php">http://astalavistatorrent.com/announce.php</a></p><p><a href="http://track.sextorrent.to:2710/announce">http://track.sextorrent.to:2710/announce</a></p><p><a href="http://open.tracker.thepiratebay.org/announce">http://open.tracker.thepiratebay.org/announce</a></p><p><a href="http://www.torrent-downloads.to:2710/announce">http://www.torrent-downloads.to:2710/announce</a></p><p><a href="http://denis.stalker.h3q.com:6969/announce">http://denis.stalker.h3q.com:6969/announce</a></p><p><a href="http://www.torrentsnipe.info:2701/announce">http://www.torrentsnipe.info:2701/announce</a></p><p><a href="http://tracker.torrentbox.com:2710/announce">http://tracker.torrentbox.com:2710/announce</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1638" class="blockpost roweven">
+	<h2><span><span class="conr">#2</span> <a href="viewtopic.php?pid=1638#p1638">2010-11-22 17:23:15</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90000">DreadWingKnight</a></strong></dt>
+						<dd class="usertitle"><strong>CBTT/BNBT Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: one 256 kb piece is missing in the download. how can I find it?</h3>
+					<div class="postmsg">
+						<p>Find the discussion forum for where you got the .torrent file and ask them.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Guy with a few torrent programs under his belt.</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1640" class="blockpost rowodd">
+	<h2><span><span class="conr">#3</span> <a href="viewtopic.php?pid=1640#p1640">2010-11-22 20:10:25</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=91584">yabi</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: one 256 kb piece is missing in the download. how can I find it?</h3>
+					<div class="postmsg">
+						<p>Thanks. Does it mean that every torrent site like &#039;torrentz&#039;, &#039;alivetorrents&#039;, &#039;utorrent&#039;, &#039;torrentreactor&#039;, has its own forum?<br />I thought this forum is a general one for all.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1642" class="blockpost roweven">
+	<h2><span><span class="conr">#4</span> <a href="viewtopic.php?pid=1642#p1642">2010-11-23 02:45:05</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90000">DreadWingKnight</a></strong></dt>
+						<dd class="usertitle"><strong>CBTT/BNBT Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: one 256 kb piece is missing in the download. how can I find it?</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>Thanks. Does it mean that every torrent site like &#039;torrentz&#039;, &#039;alivetorrents&#039;, &#039;utorrent&#039;, &#039;torrentreactor&#039;, has its own forum?</p></div></blockquote></div><p>Not every site, but many do.</p><div class="quotebox"><blockquote><div><p>I thought this forum is a general one for all.</p></div></blockquote></div><p>Not even close.</p><p>And it won&#039;t be the uTorrent forums either. Neither this bittorrent forum, nor the uTorrent forums deals with that issue.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Guy with a few torrent programs under his belt.</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1644" class="blockpost rowodd">
+	<h2><span><span class="conr">#5</span> <a href="viewtopic.php?pid=1644#p1644">2010-11-23 03:35:05</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=91584">yabi</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: one 256 kb piece is missing in the download. how can I find it?</h3>
+					<div class="postmsg">
+						<p>thanks a lot.where do you recommend to look for such info?</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=27">General</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=296"><strong>one 256 kb piece is missing in the download. how can I find it?</strong></a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

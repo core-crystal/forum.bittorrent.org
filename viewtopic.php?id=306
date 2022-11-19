@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>request information from torrent tracker (Page 1) / General / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
+<script type="text/javascript" src="captcha/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript">
+	$(function(){var f=$("#sliderCaptcha");var b=$("#cleCaptcha");var d=$(".boutonsCaptcha");var a=$("#javascriptCaptcha");var e=[34,45,17,49,29,35,25,40,14,48,34,12,48,16,34,29,35,27,9,6,19,16,29,39,0,48,37,4,20,37,7,5,32,25,4,11,11,30,2,25,28,37,38,27,3,22,6,39,49,16];var h=0;var g=5;var c=0;a.hide();f.slider({value:0,min:0,max:g,step:1,slide:function(i,j){if(j.value>c){c=j.value;h+=c}},stop:function(j,k){var i=false;if(k.value==g){if(h==((g+Math.pow(g,2))/2)){i=true;f.slider("option","disabled",true);if(b.val().length!=e.length){$.post("captcha.php",{tokenCaptcha:b.val()},function(m){var l="";$.each(e,function(){l+=m.charAt(this%m.length)});b.val(l);d.removeAttr("disabled")})}}}if(!i){h=c=0;f.slider("option","value",h)}}})});
+</script>
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="punviewtopic" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex" class="isactive"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=27">General</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=306"><strong>request information from torrent tracker</strong></a></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p1668" class="blockpost rowodd firstpost blockpost1">
+	<h2><span><span class="conr">#1</span> <a href="viewtopic.php?pid=1668#p1668">2010-12-10 05:43:01</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=91708">luisg</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>request information from torrent tracker</h3>
+					<div class="postmsg">
+						<p>Hello people.</p><p>I&#039;m struggling with something here, and maybe any of you can help me.</p><p>I&#039;m trying to build a Ruby script that request information from torrent<br />trackers. For example, the list of torrents that a tracker have (I&#039;m not<br />sure if this is possible). Or the number of seeds and and peers a<br />torrent have &#039;in that&#039; tracker (this one is possible for sure).</p><p>I was reading the information about BitTorrent Tracker Protocol<br />(available here: <a href="http://wiki.theory.org/BitTorrent_Tracker_Protocol)">http://wiki.theory.org/BitTorrent_Tracker_Protocol)</a> and<br />there they say that we can request the information for torrent X like<br />this:</p><p><a href="http://some.tracker.com:999/announce?info_hash=X_hashcode">http://some.tracker.com:999/announce?in … X_hashcode</a></p><p>I know that most of the times not all the trackers, that a torrent have,<br />work because they might be down.<br />So I downloaded a torrent file and I went to this page:</p><p><a href="http://torrenteditor.com">http://torrenteditor.com</a>/</p><p>And I check the hashcode and trackers that were working, so I can try to<br />get the information from a working tracker for the torrent I downloaded.</p><p>so, after I get the list of working trackers, I just build a url like<br />this:</p><p><a href="http://tracker.publicbt.com/announce?info_hash=260">http://tracker.publicbt.com/announce?info_hash=260</a>...<br />B303A61F664F0BBD</p><p>and I pasted in my web browser and try to reach it. But I always have a<br />&#039;Invalid request&#039;. I tried to all of the working trackers and I always<br />have the same result.</p><p>Any of you have any idea of what I&#039;m doing wrong? I can use the browser<br />to test that, since is just a simple http request, right?<br />Is it possible to get the list of torrent in a tracker (hashcodes)?</p><p>Thanks,</p><p>Luis</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1672" class="blockpost roweven">
+	<h2><span><span class="conr">#2</span> <a href="viewtopic.php?pid=1672#p1672">2010-12-10 08:13:25</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: request information from torrent tracker</h3>
+					<div class="postmsg">
+						<p>tracker requests require you to use the url-encoded binary representation of the infohash, not the hex-encoded one.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1710" class="blockpost rowodd">
+	<h2><span><span class="conr">#3</span> <a href="viewtopic.php?pid=1710#p1710">2010-12-13 01:22:58</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=91708">luisg</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: request information from torrent tracker</h3>
+					<div class="postmsg">
+						<p>hey, hello, and thanks for you help.</p><p>Ok, I can see that I&#039;m doing something wrong. My problem now is to know how to get that url-encoded binary representation of the infohash that you talk about.</p><p>What&#039;s the size of the resultant string?</p><p>To get the hashcode I do:<br />hashcode =&#160; Digest::SHA1.hexdigest((torrent[&quot;info&quot;]).bencode)</p><p>to get the url-encoded binary of the infohash shouldn&#039;t be something like:<br />str = CGI.escape(Base64.encode64(torrent[&quot;info&quot;].bencode))</p><p>with that I get something like:</p><p>ZDU6ZmlsZXNsZDY6bGVuZ3RoaTE1MzM2NzQ3NzBlNDpwYXRobDY0OkluY2Vw%0AdGlvbiAoMjAxMCkgRFZEUmlwIFh2aUQtTUFYU1BFRUQgd3d3LnRvcmVudHou%0AM3hmb3J1bS5yby5hdmllZWQ2Omxlbmd0aGk3MDA1NzkyZTQ6cGF0aGwxMDpz%0AYW1wbGUuYXZpZWVkNjpsZW5ndGhpMTkwODYzZTQ6cGF0aGwxNDpzY3JlZW5j%0AYXBzLmpwZ2VlZDY6bGVuZ3RoaTI2OTdlNDpwYXRobDQxOkluY2VwdGlvbiAo%0AMjAxMCkgRFZEUmlwIFh2aUQtTUFYU1BFRUQubmZvZWVkNjpsZW5ndGhpNDdl%0ANDpwYXRobDQwOlRvcnJlbnQgZG93bmxvYWRlZCBmcm9tIERlbW9ub2lkLmNv%0AbS50eHRlZWQ2Omxlbmd0aGk0MGU0OnBhdGhsNDQ6VG9ycmVu...</p><p>And than I try to get the information from the tracker like this:</p><p><a href="http://tracker.publicbt.com/announce?info_hash=ZDU6ZmlsZXNsZDY6bGVuZ3RoaTE1MzM2NzQ3NzBlNDpwYXRobDY0OkluY2Vw%0AdGlvbiAoMjAxMCkgRFZEUmlwIFh2aUQtTUFYU1BFRUQgd3d3LnRvcmVudHou%0AM3hmb3J1bS5yby5hdmllZWQ2Omxlbmd0aGk3MDA1NzkyZTQ6cGF0aGwxMDpz%0AYW1wbGUuYXZpZWVkNjpsZW5ndGhpMTkwODYzZTQ6cGF0aGwxNDpzY3JlZW5j%0AYXBzLmpwZ2VlZDY6bGVuZ3RoaTI2OTdlNDpwYXRobDQxOkluY2VwdGlvbiAo%0AMjAxMCkgRFZEUmlwIFh2aUQtTUFYU1BFRUQubmZvZWVkNjpsZW5ndGhpNDdl%0ANDpwYXRobDQwOlRvcnJlbnQgZG93bmxvYWRlZCBmcm9tIERlbW9ub2lkLmNv%0AbS50eHRlZWQ2Omxlbmd0aGk0MGU0OnBhdGhsNDQ6VG9ycmVu">http://tracker.publicbt.com/announce?in … Q6VG9ycmVu</a>...</p><p>but I get a 404.</p><p>Any clues? Sorry for this lame question...</p><p>Luis</p>
+						<p class="postedit"><em>Last edited by luisg (2010-12-13 02:31:00)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1712" class="blockpost roweven">
+	<h2><span><span class="conr">#4</span> <a href="viewtopic.php?pid=1712#p1712">2010-12-13 01:39:15</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90000">DreadWingKnight</a></strong></dt>
+						<dd class="usertitle"><strong>CBTT/BNBT Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: request information from torrent tracker</h3>
+					<div class="postmsg">
+						<p>No and no for what you&#039;ve done.</p><p>To get the urlencoded binary of the torrent infohash you should be using:<br />str = CGI.excape(Digest::SHA1.digest((torrent[&quot;info&quot;]).bencode)</p><p>I don&#039;t know what you&#039;re trying to do, but you were going about it completely wrong.</p><p>The info_hash announce paramater is the urlencoded representation of the 20-byte version of the sha1 value for the info dictionary. I don&#039;t know what motivated you to even look at base64.</p><p>(Disclaimer: perl isn&#039;t one of the languages I normally deal with)</p>
+						<p class="postedit"><em>Last edited by DreadWingKnight (2010-12-13 01:39:43)</em></p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Guy with a few torrent programs under his belt.</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1724" class="blockpost rowodd">
+	<h2><span><span class="conr">#5</span> <a href="viewtopic.php?pid=1724#p1724">2010-12-15 02:20:17</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=91708">luisg</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: request information from torrent tracker</h3>
+					<div class="postmsg">
+						<p>Just forget it, I&#039;m just stupid.<br />I figured it out some minutes after I post the message here.</p><p>Thanks a lot</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=27">General</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=306"><strong>request information from torrent tracker</strong></a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

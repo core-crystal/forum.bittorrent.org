@@ -1,0 +1,548 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>A few comments about ÂµTP (BEP-29) (Page 2) / BEPs / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
+<script type="text/javascript" src="captcha/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript">
+	$(function(){var f=$("#sliderCaptcha");var b=$("#cleCaptcha");var d=$(".boutonsCaptcha");var a=$("#javascriptCaptcha");var e=[31,14,44,27,27,22,1,17,38,6,7,44,44,25,24,41,15,6,33,28,8,45,32,8,42,47,22,2,46,47,30,28,12,24,5,39,47,6,6,35,12,13,30,7,39,4,49,5,10,32];var h=0;var g=5;var c=0;a.hide();f.slider({value:0,min:0,max:g,step:1,slide:function(i,j){if(j.value>c){c=j.value;h+=c}},stop:function(j,k){var i=false;if(k.value==g){if(h==((g+Math.pow(g,2))/2)){i=true;f.slider("option","disabled",true);if(b.val().length!=e.length){$.post("captcha.php",{tokenCaptcha:b.val()},function(m){var l="";$.each(e,function(){l+=m.charAt(this%m.length)});b.val(l);d.removeAttr("disabled")})}}}if(!i){h=c=0;f.slider("option","value",h)}}})});
+</script>
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="punviewtopic" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex" class="isactive"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=131"><strong>A few comments about ÂµTP (BEP-29)</strong></a></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><a class="item1" href="viewtopic.php?id=131&amp;p=1">Previous</a> <a href="viewtopic.php?id=131&amp;p=1">1</a> <strong>2</strong></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p1336" class="blockpost rowodd blockpost1">
+	<h2><span><span class="conr">#26</span> <a href="viewtopic.php?pid=1336#p1336">2010-04-15 15:39:26</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=35956">ghazel</a></strong></dt>
+						<dd class="usertitle"><strong>BitTorrent Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>jch wrote:</cite><blockquote><div><p>&gt; This produces small packets because our Nagle implementation has a very short timeout and your window is always empty.</p><p>I think you&#039;re confused.&#160; There&#039;s no timeouts in Nagle&#039;s algorithm.</p></div></blockquote></div><p>Er, sorry. I was thinking of Delayed ACK.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1342" class="blockpost roweven">
+	<h2><span><span class="conr">#27</span> <a href="viewtopic.php?pid=1342#p1342">2010-04-16 14:02:53</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<p>&gt;&gt; I think you&#039;re confused.&#160; There&#039;s no timeouts in Nagle&#039;s algorithm.</p><p>&gt; Er, sorry. I was thinking of Delayed ACK.</p><p>I&#039;m not sure I understand how delacks can have an effect on packet size.</p><p>--Juliusz</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1344" class="blockpost rowodd">
+	<h2><span><span class="conr">#28</span> <a href="viewtopic.php?pid=1344#p1344">2010-04-16 15:04:37</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=35956">ghazel</a></strong></dt>
+						<dd class="usertitle"><strong>BitTorrent Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>jch wrote:</cite><blockquote><div><p>&gt;&gt; I think you&#039;re confused.&#160; There&#039;s no timeouts in Nagle&#039;s algorithm.</p><p>&gt; Er, sorry. I was thinking of Delayed ACK.</p><p>I&#039;m not sure I understand how delacks can have an effect on packet size.</p></div></blockquote></div><p>They can&#039;t, I was misremembering.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1356" class="blockpost roweven">
+	<h2><span><span class="conr">#29</span> <a href="viewtopic.php?pid=1356#p1356">2010-04-21 23:25:02</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90868">rafi</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>ghazel wrote:<br />...This produces small packets because our Nagle implementation has a very short timeout and your window is always empty.<br />...<br />Er, sorry. I was thinking of Delayed ACK.</p></div></blockquote></div><p>Well, I did look @ Wikipedia for timeouts,&#160; and thought I could not find those cause of my poor English skills...&#160; <img src="http://forum.bittorrent.org/img/smilies/smile.png" width="15" height="15" alt="smile" /> </p><p>I guess, that since Nagle is ruled out, that leaves us with a possible&#160; reason for using very small packets (over loop-back, and even when the user specifies non-dynamic mode and use of&#160; &#160;large ones initially) - the way your speed-limiter works (or maybe inappropriate <a href="http://forum.utorrent.com/viewtopic.php?pid=471254#p471254">packets&#039; pacing logic</a> ?) ,&#160; false detection of congested conditions, or possibly - also a simple bug ?</p><div class="quotebox"><blockquote><div><p>jch wrote:<br />...the optimal packet size is somewhere around a few kB, which would imply that sending maximum sized packets on Ethernet is a good idea.</p><p>Your claims would seem to contradict the above &quot;well-known&quot; folklore, which I find very interesting.&#160; Could we please see your measurements?</p></div></blockquote></div><div class="quotebox"><blockquote><div><p>ghazel wrote:<br />...Please wait until 2.0.1 is released as a stable build ...</p></div></blockquote></div><p>This is released, and&#160; I guess a fix-release is probably on it&#039;s way next, why not try and fix/improve the size handling as well, and maybe get more efficient traffic too ?</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1358" class="blockpost rowodd">
+	<h2><span><span class="conr">#30</span> <a href="viewtopic.php?pid=1358#p1358">2010-04-22 07:01:47</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=35956">ghazel</a></strong></dt>
+						<dd class="usertitle"><strong>BitTorrent Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>rafi wrote:</cite><blockquote><div><p>I guess, that since Nagle is ruled out, that leaves us with a possible&#160; reason for using very small packets (over loop-back, and even when the user specifies non-dynamic mode and use of&#160; &#160;large ones initially) - the way your speed-limiter works (or maybe inappropriate <a href="http://forum.utorrent.com/viewtopic.php?pid=471254#p471254">packets&#039; pacing logic</a> ?) ,&#160; false detection of congested conditions, or possibly - also a simple bug ?</p><p>This is released, and&#160; I guess a fix-release is probably on it&#039;s way next, why not try and fix/improve the size handling as well, and maybe get more efficient traffic too ?</p></div></blockquote></div><p>Please take these questions to the uTorrent forums.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1360" class="blockpost roweven">
+	<h2><span><span class="conr">#31</span> <a href="viewtopic.php?pid=1360#p1360">2010-04-22 08:10:31</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90868">rafi</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<p>As I&#039;ve <a href="http://forum.bittorrent.org/viewtopic.php?pid=1310#p1310">already mentioned</a>,&#160; this has&#160; <a href="http://forum.utorrent.com/viewtopic.php?pid=470070#p470070">already been done</a> long ago, and any dev is (still) welcome to respond, also to the proposed speed-limiter algorithm. <br />But, nevertheless, I&#039;ll be glad to post one more time: <a href="http://forum.utorrent.com/viewtopic.php?id=74094">http://forum.utorrent.com/viewtopic.php?id=74094</a></p><p>followup thread on uTP performance @ uTorrent.com &quot;Protocol Design Discussion&quot;: <br /><a href="http://forum.utorrent.com/viewtopic.php?pid=478028#p478028">http://forum.utorrent.com/viewtopic.php … 28#p478028</a></p>
+						<p class="postedit"><em>Last edited by rafi (2010-04-23 08:52:01)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1390" class="blockpost rowodd">
+	<h2><span><span class="conr">#32</span> <a href="viewtopic.php?pid=1390#p1390">2010-05-22 05:01:28</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=35956">ghazel</a></strong></dt>
+						<dd class="usertitle"><strong>BitTorrent Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<p>Continuing the discussion from <a href="http://trac.transmissionbt.com/ticket/2338#comment:38">http://trac.transmissionbt.com/ticket/2338#comment:38</a><br /></p><div class="quotebox"><cite>jch wrote:</cite><blockquote><div><p>which can be avoided simply by layering LEDBAT over TCP</p></div></blockquote></div><p>This is the basic issue. I think you are misjudging how &quot;simple&quot; this task is. I would love to see Linux, Windows (don&#039;t forget XP, the most popular version), and OS X support LEDBAT on TCP, but the truth is we probably have years before they even think about it, and years after that before they all get it right and compatible and stable. That is assuming they want to, and I believe the hinges strongly on adoption of LEDBAT by a very large application which is in strong need of it, i.e. BitTorrent. You could go down the road of trying to implement the TCP extension yourself on each platform as some sort of filter, if that is even possible on each major OS, but you risk users not installing it due to privileges, breaking existing TCP traffic unrelated to a BitTorrent client, and generally blue screening / kernel panicing the machine.</p><p>Investing time in an albeit simplified framing layer on UDP has served us quite well for the past several years already and is available to every user on every platform. Please have a look at the source for our implementation: <a href="http://github.com/bittorrent/libutp">http://github.com/bittorrent/libutp</a> . If you can find edge cases where it performs poorly today, please point them out and/or submit patches.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1392" class="blockpost roweven">
+	<h2><span><span class="conr">#33</span> <a href="viewtopic.php?pid=1392#p1392">2010-05-22 05:27:21</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<p>&gt; I think you are misjudging how &quot;simple&quot; [including LEDBAT congestion control in TCP] task is.</p><p>It&#039;s certainly not difficult under Linux.&#160; It&#039;s certainly possible under Windows 2000 and later (which allows switching between CTCP and NewReno congestion control).&#160; I cannot fathom why it should be difficult under Mac OS X.</p><p>Obviously, this would make LEDBAT available to all applications running on the system, not only ÂµTorrent, and I can understand why you might not want that.</p><p>&gt; Investing time in an albeit simplified framing layer on UDP has served us quite well for the past several years already</p><p>That would be fine if you were advertising ÂµTP as Â« a short-term hack to work around our unwillingness to do things properly Â».&#160; But that&#039;s not what you are doing -- you are actively promoting ÂµTP as though it were a good thing.</p><p>&gt; please [...] submit patches.</p><p>Sure.&#160; Where shall we discuss my consulting fees?</p><p>--jch</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1394" class="blockpost rowodd">
+	<h2><span><span class="conr">#34</span> <a href="viewtopic.php?pid=1394#p1394">2010-05-22 14:07:29</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=35956">ghazel</a></strong></dt>
+						<dd class="usertitle"><strong>BitTorrent Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>jch wrote:</cite><blockquote><div><p>&gt; I think you are misjudging how &quot;simple&quot; [including LEDBAT congestion control in TCP] task is.</p><p>It&#039;s certainly not difficult under Linux.&#160; It&#039;s certainly possible under Windows 2000 and later (which allows switching between CTCP and NewReno congestion control).&#160; I cannot fathom why it should be difficult under Mac OS X.</p></div></blockquote></div><p>&quot;certainly possible&quot; and &quot;cannot fathom&quot; are not exactly confidence builders. To my knowledge this has never been done before by a third party.</p><div class="quotebox"><cite>jch wrote:</cite><blockquote><div><p>Obviously, this would make LEDBAT available to all applications running on the system, not only ÂµTorrent, and I can understand why you might not want that.</p></div></blockquote></div><p>This is fine with me. Preferred, actually. I would love applications like autoupdate, online backup, and other bulk and non-realtime applications to use LEDBAT instead.</p><div class="quotebox"><cite>jch wrote:</cite><blockquote><div><p>&gt; Investing time in an albeit simplified framing layer on UDP has served us quite well for the past several years already</p><p>That would be fine if you were advertising ÂµTP as Â« a short-term hack to work around our unwillingness to do things properly Â».&#160; But that&#039;s not what you are doing -- you are actively promoting ÂµTP as though it were a good thing.</p></div></blockquote></div><p>It has proved to be a good thing. I am unable to say exactly how short term it is - although my estimaton of years + years earlier is probably a good one. Again, you&#039;re misjudging our specific choice to implement uTP in a more widely usable and more easily installable way as &quot;unwillingness to do things properly&quot;. You&#039;re advocating at least three pieces of software you&#039;re not even sure are possible, because it seems like &quot;the right way&quot; -- I would gladly pay your consulting fees if you had any experience implementing them. We have yet to find such a person.</p><p>Projects like libswift ( <a href="http://libswift.org">http://libswift.org</a> ) have used LEDBAT over UDP without TCP-like in-order delivery at all. That is entirely valid, and does not require modifying the operating system&#039;s functionality with regard to TCP. Did they do things properly? I think so.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1396" class="blockpost roweven">
+	<h2><span><span class="conr">#35</span> <a href="viewtopic.php?pid=1396#p1396">2010-05-24 06:01:57</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<p>&gt; [Making LEDBAT available to all apps by implementing it within TCP] is fine with me. Preferred, actually.</p><p>Then why don&#039;t you do it?&#160; For goodness&#039; sake, ghazel, you&#039;re BitTorrent, Inc., the one company directly responsible for more traffic on the Public Internet than all others put together.&#160; If there&#039;s one entity that has the clout needed to negotiate including LEDBAT within the congestion controller in Microsoft Windows, it&#039;s you.</p><p>Have you at least asked Microsoft what it would take to implement LEDBAT within their TCP code?</p><p>--jch</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1398" class="blockpost rowodd">
+	<h2><span><span class="conr">#36</span> <a href="viewtopic.php?pid=1398#p1398">2010-05-24 11:35:35</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<p>While i strongly agree with the point that LEDBAT should be used as TCP congestion controller instead over yet-another-UDP-transport i want to remind people that we should cooperate here to improve things.</p><p>Having heated arguments over each others&#039; policies will unlikely lead to any improvement.</p><br /><p>To be realistic here... it is a lengthy process...</p><p>If we want to push LEDBAT to microsoft/linux/osx it first has to be standardized, i.e. the RFC needs to be finalized. Once that has happened we&#039;d need someone to write a linux kernel module (since getting the kernel devs to accept it is probably the easiest way) including TCP socket parameters for controlling it... which BT Inc probably has little interest in since they mostly write for windows at the moment.</p><p>Once that has happend we could knock on apple&#039;s and microsoft&#039;s doors.</p><br /><p>Of course some of these steps could be started prepared of time, if anyone is willing to do so.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1400" class="blockpost roweven">
+	<h2><span><span class="conr">#37</span> <a href="viewtopic.php?pid=1400#p1400">2010-05-24 13:53:24</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=35956">ghazel</a></strong></dt>
+						<dd class="usertitle"><strong>BitTorrent Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>jch wrote:</cite><blockquote><div><p>&gt; [Making LEDBAT available to all apps by implementing it within TCP] is fine with me. Preferred, actually.</p><p>Then why don&#039;t you do it?&#160; For goodness&#039; sake, ghazel, you&#039;re BitTorrent, Inc., the one company directly responsible for more traffic on the Public Internet than all others put together.&#160; If there&#039;s one entity that has the clout needed to negotiate including LEDBAT within the congestion controller in Microsoft Windows, it&#039;s you.</p></div></blockquote></div><p>As I already said, Administrator privileges and potential for crashing the entire machine or disrupting other TCP traffic have discouraged us from taking this route. We chose UDP instead, and that worked great.</p><div class="quotebox"><cite>jch wrote:</cite><blockquote><div><p>Have you at least asked Microsoft what it would take to implement LEDBAT within their TCP code?</p></div></blockquote></div><p>I am aware of Microsoft developers monitoring the LEDBAT work at the IETF closely. Again, this whole process takes a very significant amount of time.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1796" class="blockpost rowodd">
+	<h2><span><span class="conr">#38</span> <a href="viewtopic.php?pid=1796#p1796">2011-01-13 10:26:28</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90864">User294</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<p>ghazel&gt; That&#039;s not true. Larger packets take longer to send, which results <br />ghazel&gt; in a slower reaction to congestion. Smaller packets at lower speeds were chosen <br />ghazel&gt; specifically after measuring the impact on congestion controller responsiveness.<br />In &quot;link-local&quot; scale that&#039;s somewhat correct. So, you solved one particular congestion problem: slow DSL user with poor uplink speed could have a bad ping times when upload channel saturated by torrent (so everything getting horribly slow). The &quot;only&quot; problem is that it looks like if you has failed to evaluate what happens if network congestion point happens to be anywhere else and/or due to another reasons. Or that there are also other link types with other properties and issues, etc. And that except local link there are more global issues could happen. </p><p>Many routers (firewalls, IDSes, etc), especially &quot;software&quot; ones are sensitive to packets per second amount (PPS). If router&#039;s CPU is relatively weak compared to link speed, rouer could limit link&#039;s speed because router&#039;s CPU could fail to route too many packets per second. In such scenario, router performance depends on packet size. Usually, router&#039;s CPU can handle roughly some N packets per second at most and not more than that. Attempt to exceed this would lead to CPU use = 100% and dropped packets. In this case, greater packets lead to a better overall speed. Only few high-profile (and hence expensive) routers are capable of maintaining &quot;wire&quot; link speeds while dealing with small packets. So what? Simple: uTP seems to detect such scenarios as &quot;congestion&quot; as well (router starts to drop packets if there are too many of them so CPU fails to handle them in real time). And then lools like uTP reduces packets size further. This action is not smart because it does not necessarily leads to a reduced load on router&#039;s CPU (it not looks like uTP really cares about reducing PPS as well). Result? Worse up and down speeds due to router hammering with a small packets. So certain link types are known to be in trouble with uTP. Many users on torrent forums have reported that disabling uTP leads to a much better UL/DL speeds. I guess uTP should not resort to very short packets at all and rather attempt to reduce it&#039;s overall speed (actually, limiting speed of TCP-based torrent to some 80% of channel capablities is enough to get ping times and overall network behavior much better on slow DSL link). </p><p>What worse: similar effects could happen in a global scale. It looks like if some part of network as whole happens to be congested, uTP will also reduce packet sizes. First of all, this action could further degrade performance of routers/firewalls/IDSes on the way, making things even worse. Since users would start hammering them with a small packets, increasing load and further reducing achievable performance. Then, users usually still want to xfer same amount of data, but there will be more headers sent for same amount of data. So more data have to be transferred in total over network for same result. Result? Some networks were seriously jammed and some ISPs have even filtered out uTP negotiation as &quot;emergency&quot; countermeasure to keep their networks from collapsing due to huge PPSes. The primary problem is that uTP can increase PPS by 2-3 times and not each and every network equipment can easily handle this &quot;gift&quot;. And many such&#160; troubles would lead to collapse scenario when uTP would reduce packet size even further so more load so packet size goes even smaller, etc. The result Networks could run in suboptimal conditions, filled by unreasonably small packets for no reason. </p><p>IMHO, these effects should be taken into account.</p><p>jch&gt; sending maximum sized packets on Ethernet is a good idea.<br />Not exactly. Some PPTP/PPPoE or other similar links may run over Ethernet but result will have have MTU slightly less than 1500 bytes. Say, MTU of 1492 or 1488 bytes is not uncommon. Care should be taken here to avoid fragmentation on most link types and flavors.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1798" class="blockpost roweven">
+	<h2><span><span class="conr">#39</span> <a href="viewtopic.php?pid=1798#p1798">2011-01-13 10:40:14</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90868">rafi</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<p>&gt; MTU slightly less than 1500 bytes ...<br />PMTUD should do the job and&#160; take care of the proper MTU ...</p>
+						<p class="postedit"><em>Last edited by rafi (2011-01-13 10:40:49)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1800" class="blockpost rowodd">
+	<h2><span><span class="conr">#40</span> <a href="viewtopic.php?pid=1800#p1800">2011-01-14 12:31:39</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<p>&gt; PMTUD should do the job</p><p>There&#039;s no PMTUD in libutp.</p><p>--jch</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1802" class="blockpost roweven">
+	<h2><span><span class="conr">#41</span> <a href="viewtopic.php?pid=1802#p1802">2011-01-14 22:41:00</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90868">rafi</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: A few comments about ÂµTP (BEP-29)</h3>
+					<div class="postmsg">
+						<p>&gt; There&#039;s no PMTUD in libutp.</p><p><img src="http://forum.bittorrent.org/img/smilies/sad.png" width="15" height="15" alt="sad" /> So, why don&#039;t you just ask Arvid to put his code (now running successfully in v2.2.1) in there ? ... </p><p>-Rafi</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><a class="item1" href="viewtopic.php?id=131&amp;p=1">Previous</a> <a href="viewtopic.php?id=131&amp;p=1">1</a> <strong>2</strong></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=131"><strong>A few comments about ÂµTP (BEP-29)</strong></a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

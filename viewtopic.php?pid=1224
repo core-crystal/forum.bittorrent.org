@@ -1,0 +1,730 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>forum.bittorrent.org / BEP 30: Merkle hash torrent extension</title>
+<link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
+</head>
+<body>
+
+<div id="punwrap">
+<div id="punviewtopic" class="pun">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><span>forum.bittorrent.org</span></h1>
+			<p><span>BitTorrent.org community</span></p>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p>You are not logged in.</p>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<h2><span>Announcement</span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div>Posting about any illegal sharing of copyrighted content is strictly forbidden.</div>
+		</div>
+	</div>
+</div>
+
+<div class="linkst">
+	<div class="inbox">
+		<p class="pagelink conl">Pages: <strong>1</strong>&nbsp;<a href="viewtopic.php?id=160&amp;p=2">2</a></p>
+		<p class="postlink conr">&nbsp;</p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;BEP 30: Merkle hash torrent extension</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p976" class="blockpost rowodd firstpost">
+	<h2><span><span class="conr">#1&nbsp;</span><a href="viewtopic.php?pid=976#p976">2010-02-15 05:14:13</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89609">Olaf van der Spek</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3>BEP 30: Merkle hash torrent extension</h3>
+				<div class="postmsg">
+					<p><a href="http://bittorrent.org/beps/bep_0030.html" rel="nofollow">http://bittorrent.org/beps/bep_0030.html</a><br /><br />It's nice to see a BEP for this!<br />Some comments:<br /><br />The root hash depends on the piece size, this is undesirable and shouldn't be done.<br />The total size shouldn't be needed, the root hash should be enough.<br /><br />Has there been any thought about using per-file hashes? This would be a good opportunity to make this change as well.<br /><br />&gt; The first element denotes the node offset in the tree, the second element is the hash value. <br /><br />Why is the offset needed? Can't it be computed?</p>
+					<p class="postedit"><em>Last edited by Olaf van der Spek (2010-02-15 05:23:22)</em></p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p978" class="blockpost roweven">
+	<h2><span><span class="conr">#2&nbsp;</span><a href="viewtopic.php?pid=978#p978">2010-02-15 11:00:45</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89620">roee88</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 30: Merkle hash torrent extension</h3>
+				<div class="postmsg">
+					<p>What are the benefits of Merkle Hash Torrents in the presence of ut_metadata extension?<br />Can't you achive the same goals by using torrent files that simply lack the info part of the metadata and use ut_metadata extension to complete the missing info?<br />This way you (1) Actually send less data (2) Keep compatibility with the HTTP extensions (3) Already have &quot;BitTorrent URLs&quot; (i.e. magnet links).<br /><br /><strong>Olaf van der Spek</strong><br /></p><blockquote><div class="incqbox"><p>The root hash depends on the piece size, this is undesirable and shouldn't be done.<br />The total size shouldn't be needed, the root hash should be enough.</p></div></blockquote><p>How would you know what pieces to ask for? How would you validate a received piece?<br /><br /></p><blockquote><div class="incqbox"><p>Has there been any thought about using per-file hashes? This would be a good opportunity to make this change as well.</p></div></blockquote><p>I'm not sure the problems you have in mind are related to the problems BEP30 tries to solve. If I understand you correctly you want to use the idea of merkle hash torrents for the issues discussed here <a href="http://forum.bittorrent.org/viewtopic.php?id=140" rel="nofollow">http://forum.bittorrent.org/viewtopic.php?id=140</a> . Please correct me if I'm wrong.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p980" class="blockpost rowodd">
+	<h2><span><span class="conr">#3&nbsp;</span><a href="viewtopic.php?pid=980#p980">2010-02-15 12:32:10</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90000">DreadWingKnight</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 30: Merkle hash torrent extension</h3>
+				<div class="postmsg">
+					<p>Tree hashing is an attempt to get the metadata down to as small as possible by replacing the pieces entry with a single 20-byte hash that is defined by the merkle tree algorithm.</p>
+				</div>
+				<div class="postsignature"><hr />Guy with a few torrent programs under his belt.</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p982" class="blockpost roweven">
+	<h2><span><span class="conr">#4&nbsp;</span><a href="viewtopic.php?pid=982#p982">2010-02-15 13:47:18</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89620">roee88</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 30: Merkle hash torrent extension</h3>
+				<div class="postmsg">
+					<p>I know what tree hashing is... I asked for the benefits not the differences.<br /><br />So the metadata lacks per piece hash, so what? <br />You still need the piece hash (<strong>and</strong> parent nodes hashes) to recompute the root hash if you want to validate the piece data, but you get it later with the piece itself.<br />The load moves from the server that hosts torrents to the peers. <br /><br />You can get the same result by using the metadata exchange extension.<br />Replace 'info' with 'infohash' and use metadata exchange - you can get even smaller torrent files.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p984" class="blockpost rowodd">
+	<h2><span><span class="conr">#5&nbsp;</span><a href="viewtopic.php?pid=984#p984">2010-02-16 04:46:48</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89609">Olaf van der Spek</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 30: Merkle hash torrent extension</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>What are the benefits of Merkle Hash Torrents in the presence of ut_metadata extension?</p></div></blockquote><p>In that case the metadata can only be verified (and used) after all metadata has been received. In the case of verification failure, one can't tell which blocks are invalid.<br />When smaller pieces are used, this metadata is also quite large.<br /><br />The advantage of trees is smaller pieces, faster startup and simpler handling when a piece verification fails.<br /><br /></p><blockquote><div class="incqbox"><p>I'm not sure the problems you have in mind are related to the problems BEP30 tries to solve.</p></div></blockquote><p>BEP 30 kinda causes an incompatible change. Combining this with other incompatible changes is a good idea to minimize the number of times this happens.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p986" class="blockpost roweven">
+	<h2><span><span class="conr">#6&nbsp;</span><a href="viewtopic.php?pid=986#p986">2010-02-16 10:22:31</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89620">roee88</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 30: Merkle hash torrent extension</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>In that case the metadata can only be verified (and used) after all metadata has been received.</p></div></blockquote><p>Is that really an issue? Shouldn't take so long even if you use an exaggerated number of pieces (50000 pieces&nbsp; = ~1M).<br /><br /></p><blockquote><div class="incqbox"><p>and simpler handling when a piece verification fails.</p></div></blockquote><p>Can you explain? Are you refering to one of the results of having smaller pieces?<br /><br /></p><blockquote><div class="incqbox"><p>The advantage of trees is smaller pieces, faster startup and simpler handling when a piece verification fails.</p></div></blockquote><p>The only unique advantage I see is the ability to start trading pieces without having the full metadata in the start phase.<br />This is nice but IMHO the drawbacks of the current proposal are worst than the alternative of just waiting a few seconds for the metadata to complete.<br />Consider the following issues:<br />1. The incompatibility with the HTTP/Web seeding extensions.<br />2. People may start creating both merkle and regular torrents when distributing content, creating two (somewhat) separate swarms for the same content. Note that peers from the &quot;merkle swarm&quot; can't benefit from peers in the other swarm securely.<br />3. The idea of BitTorrent URLs isn't trivial for multi file torrents.<br />4. The overhead of the hashlist and have messages might be high when the torrent has too many pieces.<br />5. Further changes to BEP30 should keep in mind that merkle torrents are already implemented (e.g. Tribler, libtorrent) and are (widely?) used for several years now.<br /><br />Don't get me wrong, I think BEP30 is a good idea. But if you make a significant incompatible change, make it perfect. <br />Before addressing the above issues I don't think it can be accepted.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p988" class="blockpost rowodd">
+	<h2><span><span class="conr">#7&nbsp;</span><a href="viewtopic.php?pid=988#p988">2010-02-16 11:01:15</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89609">Olaf van der Spek</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 30: Merkle hash torrent extension</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>Is that really an issue? Shouldn't take so long even if you use an exaggerated number of pieces (50000 pieces&nbsp; = ~1M).</p></div></blockquote><p>It means a peer has to download 1 mb without being able to upload anything in return. I think that might be a problem.<br /></p><blockquote><div class="incqbox"><p>Is that really an issue? Shouldn't take so long even if you use an exaggerated number of pieces (50000 pieces&nbsp; = ~1M).</p></div></blockquote><p>If a piece check fails, a peer has to redownload the entire piece even if only a single chunk is invalid.<br /></p><blockquote><div class="incqbox"><p>4. The overhead of the hashlist and have messages might be high when the torrent has too many pieces.</p></div></blockquote><p>True, but that can be fixed.<br /></p><blockquote><div class="incqbox"><p>5. Further changes to BEP30 should keep in mind that merkle torrents are already implemented (e.g. Tribler, libtorrent) and are (widely?) used for several years now.</p></div></blockquote><p>Are they indeed widely used?<br /></p><blockquote><div class="incqbox"><p>Before addressing the above issues I don't think it can be accepted.</p></div></blockquote><p>You mean BEP 30 can't be accepted as-is?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p990" class="blockpost roweven">
+	<h2><span><span class="conr">#8&nbsp;</span><a href="viewtopic.php?pid=990#p990">2010-02-16 12:57:25</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89620">roee88</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 30: Merkle hash torrent extension</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>Are they indeed widely used?</p></div></blockquote><p>I think Arno Bakker can answer that.<br /><br /></p><blockquote><div class="incqbox"><p>You mean BEP 30 can't be accepted as-is?</p></div></blockquote><p>Your initial post says that it shouldn't.<br />I've only mentioned other considerations that should be taken in the process of updating this proposal. I tried to show that BEP 09 can fulfill similar goals, thus questioning the importance of BEP 30 in its current state.</p>
+					<p class="postedit"><em>Last edited by roee88 (2010-02-16 13:00:45)</em></p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1028" class="blockpost rowodd">
+	<h2><span><span class="conr">#9&nbsp;</span><a href="viewtopic.php?pid=1028#p1028">2010-03-01 14:32:23</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 30: Merkle hash torrent extension</h3>
+				<div class="postmsg">
+					<p>My understanding is that the merkle torrents are not widely deployed. Mostly because of the incompatibility. I had a hard time finding a single one to test my implementation in libtorrent on.<br /><br />I agree with Olaf that the tree should be terminated at the chunk level rather than the piece level. It still makes sense to keep the concept of piece size, since that determines the overhead of HAVE and BITFIELD messages.<br /><br />This is something I would like to see changed in the BEP. Olaf, you want to volunteer for a patch? <img src="img/smilies/smile.png" width="15" height="15" alt="smile" /></p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1032" class="blockpost roweven">
+	<h2><span><span class="conr">#10&nbsp;</span><a href="viewtopic.php?pid=1032#p1032">2010-03-01 14:43:36</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89609">Olaf van der Spek</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 30: Merkle hash torrent extension</h3>
+				<div class="postmsg">
+					<p>Chunk size is still BT specific. It'd be better to use a standard like 1 kb. Aren't there any standards for merkle trees?<br />The hashes at the 1 kb level shouldn't be stored, they can immediately be used to calculate higher level hashes. However, this way the tree root doesn't depend on chunk size.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1036" class="blockpost rowodd">
+	<h2><span><span class="conr">#11&nbsp;</span><a href="viewtopic.php?pid=1036#p1036">2010-03-01 14:51:28</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 30: Merkle hash torrent extension</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>Olaf van der Spek wrote:</h4><p>Chunk size is still BT specific.</p></div></blockquote><p>So are .torrent files. Why is that a bad thing?<br /><br /></p><blockquote><div class="incqbox"><p>It'd be better to use a standard like 1 kb. Aren't there any standards for merkle trees?<br />The hashes at the 1 kb level shouldn't be stored, they can immediately be used to calculate higher level hashes. However, this way the tree root doesn't depend on chunk size.</p></div></blockquote><p>Why is 1 kiB better than 16 kiB? In BitTorrent you would never need any finer granularity than one chunk anyway, would you?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1040" class="blockpost roweven">
+	<h2><span><span class="conr">#12&nbsp;</span><a href="viewtopic.php?pid=1040#p1040">2010-03-01 15:07:01</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89609">Olaf van der Spek</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 30: Merkle hash torrent extension</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>Why is that a bad thing?</p></div></blockquote><p>There's no reason for that dependency.<br />Suppose for whatever reason chunk size changes some time. Why should the tree root change?<br /><br />By using a default, it's also more likely other protocols might use the same hashing scheme.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1044" class="blockpost rowodd">
+	<h2><span><span class="conr">#13&nbsp;</span><a href="viewtopic.php?pid=1044#p1044">2010-03-01 17:57:45</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 30: Merkle hash torrent extension</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>Suppose for whatever reason chunk size changes some time. Why should the tree root change?</p></div></blockquote><p>Fine, let's define it to 16 kiB, and not the &quot;chunk-size&quot;, because the chunk-size might change.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1046" class="blockpost roweven">
+	<h2><span><span class="conr">#14&nbsp;</span><a href="viewtopic.php?pid=1046#p1046">2010-03-02 04:36:51</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89609">Olaf van der Spek</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 30: Merkle hash torrent extension</h3>
+				<div class="postmsg">
+					<p>I prefer 1 kb.<br /><br /><a href="http://en.wikipedia.org/wiki/Hash_tree" rel="nofollow">http://en.wikipedia.org/wiki/Hash_tree</a></p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1196" class="blockpost rowodd">
+	<h2><span><span class="conr">#15&nbsp;</span><a href="viewtopic.php?pid=1196#p1196">2010-03-25 13:53:05</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 30: Merkle hash torrent extension</h3>
+				<div class="postmsg">
+					<p>The hash trees have an issue: they don't align to file boundaries. It would be better to have 1 tree per file, sort the root hashes by their binary values and then build a 2nd tree of all root hashes.<br /><br />This way a multi-file torrent can be decomposed into individual files and sub-swarms can be discovered. I.e. it makes transitioning and upgrading between individual file and batch torrents a straight-forward operation.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1198" class="blockpost roweven">
+	<h2><span><span class="conr">#16&nbsp;</span><a href="viewtopic.php?pid=1198#p1198">2010-03-25 14:04:39</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89609">Olaf van der Spek</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 30: Merkle hash torrent extension</h3>
+				<div class="postmsg">
+					<p>Good point, I agree!</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1224" class="blockpost rowodd">
+	<h2><span><span class="conr">#17&nbsp;</span><a href="viewtopic.php?pid=1224#p1224">2010-03-26 12:28:36</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 30: Merkle hash torrent extension</h3>
+				<div class="postmsg">
+					<p>Another thing: Merkle torrents should use the root hash for tracker announces, primary DHT lookups and peer-peer connections instead of the infohash. The infohash should only be used to uniquely identify the filename + root hash combination and thus only be used for magnet links and on torrent sites.<br /><br />To allow magnet links to operate even when the DHT announces are performed to the root hash instead of the infohash either a secondary announce to the infohash would be necessary or an additional parameter in the magnet links.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1230" class="blockpost roweven">
+	<h2><span><span class="conr">#18&nbsp;</span><a href="viewtopic.php?pid=1230#p1230">2010-03-27 12:43:44</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90852">ivan386</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 30: Merkle hash torrent extension</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>Merkle torrents should use the root hash for tracker announces, primary DHT lookups and peer-peer connections instead of the infohash.</p></div></blockquote><p>If do it in that whay &quot;<a href="http://forum.bittorrent.org/viewtopic.php?id=190" rel="nofollow">Extesion for BitTorrent client to search file by URN in BitTorrent DHT</a>&quot; by use &quot;urn_hash&quot; (sha1 hash of bencoded dictionary whith urn) it don't break anything and may be used now.<br /><br />Nothing need to chenge for DHT nodes and trackers.<br /><br />But in magnet must be original urn insted urn_hash.<br /><br /><br /><strong>Tiger Tree</strong> <br />for each chunk of data (1024 bytes) add byte 0 at begin of it and then get tiger hash<br />tiger hash((byte) 0 + data_chunk)<br /><br />for each pair of hashes add byte 1 at begin of it and then get tiger hash (repeat untill get one root hash for each file)<br />tiger hash( (byte) 1 + hash1 + hash2 )<br /><br /></p><blockquote><div class="incqbox"><p>sort the root hashes by their binary values</p></div></blockquote><p>for each pair root hash (file tiger tree hash) add byte 2 at begin of it and then get tiger hash<br />tiger hash( (byte) 2 + root_hash1 + root_hash2 )<br /><br />for each pair of hashes add byte 4 at begin of it and then get tiger hash. (repeat untill get one file list hash)<br />tiger hash( (byte) 4 + hash1 + hash2 )</p>
+					<p class="postedit"><em>Last edited by ivan386 (2010-03-27 13:49:19)</em></p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1236" class="blockpost rowodd">
+	<h2><span><span class="conr">#19&nbsp;</span><a href="viewtopic.php?pid=1236#p1236">2010-03-27 21:01:27</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 30: Merkle hash torrent extension</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>Olaf van der Spek wrote:</h4><p>I prefer 1 kb.<br /><br /><a href="http://en.wikipedia.org/wiki/Hash_tree" rel="nofollow">http://en.wikipedia.org/wiki/Hash_tree</a></p></div></blockquote><p>Assuming 20 byte hashes and 1GiB of data that's 40MiB worth of hashes (20 * 1GiB/1KiB * 2).<br /><br />This is state we have to keep around somewhere while downloading the torrent, either on a disk or in memory.<br /><br />If you want to keep things fast (hash checking) and still keep a low memory footprint you'd have to do fancy things like accessing your hashes through memory-mapped IO from files or things like that.<br /><br />It's not a game-breaker, but something with should consider.<br /><br /><br />With 16KiB resolution for the hashes it would only take 2.5MiB, with 256KiB pieces (which currently are the norm on sub-GB torrents) you'd get away with 160KiB in hashes.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1238" class="blockpost roweven">
+	<h2><span><span class="conr">#20&nbsp;</span><a href="viewtopic.php?pid=1238#p1238">2010-03-28 01:48:32</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90852">ivan386</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 30: Merkle hash torrent extension</h3>
+				<div class="postmsg">
+					<div class="codebox"><div class="incqbox"><h4>Code:</h4><div class="scrollbox" style="height: 19.5em"><pre>Level        Tiger Tree Root
+|                   /
+0:            --- 21 -- ------                 
+             /         \      \
+1:       - 20 -         19 ------
+        /      \         \        \
+2:    17        18        19 ------ Internal Tiger Hashes
+     /  \      /  \      /  \      /   
+3:  12   13   14   15   16  11 ----
+    /\   /\   /\   /\   /\   \
+4: 1  2 3  4 5  6 7  8 9 10  11 ---  Leaf Tiger Hashes</pre></div></div></div><p>Dont need to store and exchange all tree. Need only one level.<br /><br /><br />level : pice size (that we can check)<br />4 : 1024<br />3 : 2048<br />2 : 4096<br />1 : 8192<br /><br />Tiger tree already used by Gnutella (1, 2) and DirectConnect.<br /><br />Example:<br />We chose level(!) with 1 MiB pice size (that we can check) for 1GiB file. 1 GiB / 1 MiB = 1024 hashes need to store and send to downloader (or save in torrent).<br />If downloader found error in some piece it can request lower level (1 KiB pice size) for it and other side can easy reconstruct it and send. 1 MiB / 1 KiB = 1024 hashes.<br /><br />We can use any level and root hash for it will be same.</p>
+					<p class="postedit"><em>Last edited by ivan386 (2010-03-28 02:08:55)</em></p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1264" class="blockpost rowodd">
+	<h2><span><span class="conr">#21&nbsp;</span><a href="viewtopic.php?pid=1264#p1264">2010-04-01 13:43:42</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90572">mabsark</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 30: Merkle hash torrent extension</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>The 8472 wrote:</h4><p>Assuming 20 byte hashes and 1GiB of data that's 40MiB worth of hashes (20 * 1GiB/1KiB * 2).</p></div></blockquote><blockquote><div class="incqbox"><h4>The 8472 wrote:</h4><p>With 16KiB resolution for the hashes it would only take 2.5MiB, with 256KiB pieces (which currently are the norm on sub-GB torrents) you'd get away with 160KiB in hashes.</p></div></blockquote><p>I'm looking at a torrent file now with a size of 117 KB and a piece size of 256 KB, whose data consists of 100 zipped files with a size of 1.4 GB.<br /><br /></p><blockquote><div class="incqbox"><h4>Olaf van der Spek wrote:</h4><p>In the case of verification failure, one can't tell which blocks are invalid. When smaller pieces are used, this metadata is also quite large.<br /><br />The advantage of trees is smaller pieces, faster startup and simpler handling when a piece verification fails.</p></div></blockquote><p>As was just shown above, using equal sized pieces, the trees have more metadata.<br /><br />I'll have to side with roe on this one in not seeing the point of this extension. It's supposed to cut down on metadata, but actually increases it, and if you just want to decrease the size of the torrent file, either replace the info key with an info hash key, include the info hash in the announce key and remove the info key, or just use a magnet link.</p>
+					<p class="postedit"><em>Last edited by mabsark (2010-04-01 15:24:48)</em></p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1270" class="blockpost roweven">
+	<h2><span><span class="conr">#22&nbsp;</span><a href="viewtopic.php?pid=1270#p1270">2010-04-02 07:02:09</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 30: Merkle hash torrent extension</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>mabsark wrote:</h4><blockquote><div class="incqbox"><h4>The 8472 wrote:</h4><p>Assuming 20 byte hashes and 1GiB of data that's 40MiB worth of hashes (20 * 1GiB/1KiB * 2).</p></div></blockquote><blockquote><div class="incqbox"><h4>The 8472 wrote:</h4><p>With 16KiB resolution for the hashes it would only take 2.5MiB, with 256KiB pieces (which currently are the norm on sub-GB torrents) you'd get away with 160KiB in hashes.</p></div></blockquote><p>I'm looking at a torrent file now with a size of 117 KB and a piece size of 256 KB, whose data consists of 100 zipped files with a size of 1.4 GB.</p></div></blockquote><p>I don't see how this contradicts what i said.<br /><br /></p><blockquote><div class="incqbox"><p>I'll have to side with roe on this one in not seeing the point of this extension.</p></div></blockquote><p>The Merkle extension as it is right now is pretty useless, i agree. But with a well-chosen block size AND the extensions i have outlined above it would provide significant advantages over current torrents.<br /><br />Namely:<br />-simpler block checking<br />-the ability to decompose batch torrents into individual torrents locally without additional information<br />-1 set of files = 1 and only 1 infohash = longer lifecycle<br /><br /><br />This could also be achieved with piece lists really. But since merkle torrents already are incompatible we could simply stuff some more incompatible changes into them that yield actual improvements.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1294" class="blockpost rowodd">
+	<h2><span><span class="conr">#23&nbsp;</span><a href="viewtopic.php?pid=1294#p1294">2010-04-07 13:50:50</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89609">Olaf van der Spek</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 30: Merkle hash torrent extension</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>Assuming 20 byte hashes and 1GiB of data that's 40MiB worth of hashes (20 * 1GiB/1KiB * 2).<br /><br />This is state we have to keep around somewhere while downloading the torrent,</p></div></blockquote><p>That's not necessary. You can immediately calculate the hash of the tree level where you have 16 kb blocks while still using a base size of 1 kb. This is true for any block size that's a power of two and &gt;= 1 kb. That way you have a standard hashing method that does not depend on block size.<br /></p><blockquote><div class="incqbox"><p>and if you just want to decrease the size of the torrent file, either replace the info key with an info hash key, include the info hash in the announce key and remove the info key, or just use a magnet link.</p></div></blockquote><p>Then you can't verify anything until you've got the entire info block, which might be pretty large. If the info block check fails, you'll have to download the entire block again.<br />Trees also solve the problem of not knowing which block is wrong if a piece check fails.</p>
+					<p class="postedit"><em>Last edited by Olaf van der Spek (2010-04-07 13:53:27)</em></p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1296" class="blockpost roweven">
+	<h2><span><span class="conr">#24&nbsp;</span><a href="viewtopic.php?pid=1296#p1296">2010-04-08 11:20:02</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 30: Merkle hash torrent extension</h3>
+				<div class="postmsg">
+					<p>In that case you would have to define piece sizes for the swarm. Which leads to different torrents (hashes) describing the same content with different piece sizes, exactly what i want to a void.<br /><br />If the hash leafs span 1KiB then the piece size of 1KiB would follow naturally too, which means tons of state.... unless you want to define the leaf size of 1KiB and a fixed piece size of 16KiB or something like that.<br /><br />Anyway, what's the advantage of 1KiB leafs?</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p1298" class="blockpost rowodd">
+	<h2><span><span class="conr">#25&nbsp;</span><a href="viewtopic.php?pid=1298#p1298">2010-04-08 11:24:48</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89609">Olaf van der Spek</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP 30: Merkle hash torrent extension</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>In that case you would have to define piece sizes for the swarm. Which leads to different torrents (hashes) describing the same content with different piece sizes, exactly what i want to a void.</p></div></blockquote><p>The root hash doesn't depend on the piece size.<br /><br /></p><blockquote><div class="incqbox"><p>If the hash leafs span 1KiB then the piece size of 1KiB would follow naturally too, which means tons of state.... unless you want to define the leaf size of 1KiB and a fixed piece size of 16KiB or something like that.<br /><br />Anyway, what's the advantage of 1KiB leafs?</p></div></blockquote><p>Why would the piece size have to be fixed?<br />1 kb seems like a good greatest common divisor. If another protocol/project requires 4 or 8 kb blocks and we use 16 kb leafs, they can't use the same scheme as us. By picking 1 kb, there's no such trouble. Unless &lt; 1 kb leafs are needed, but that sounds highly unlikely.</p>
+					<p class="postedit"><em>Last edited by Olaf van der Spek (2010-04-08 11:25:46)</em></p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox">
+		<p class="postlink conr">&nbsp;</p>
+		<p class="pagelink conl">Pages: <strong>1</strong>&nbsp;<a href="viewtopic.php?id=160&amp;p=2">2</a></p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;BEP 30: Merkle hash torrent extension</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div class="inbox">
+
+			<div class="conl">
+				<form id="qjump" method="get" action="viewforum.php">
+					<div><label>Jump to
+					<br /><select name="id" onchange="window.location=('viewforum.php?id='+this.options[this.selectedIndex].value)">
+						<optgroup label="BitTorrent">
+							<option value="26">Announcements</option>
+							<option value="27">General</option>
+							<option value="25" selected="selected">BEPs</option>
+							<option value="29">BEP process</option>
+							<option value="33">Research Tools</option>
+							<option value="32">Cooperation between BitTorrent and ISPs</option>
+							<option value="30">Attacks against BitTorrent</option>
+							<option value="28">Feature Requests, Found Bugs &gt;&gt;&gt;</option>
+					</optgroup>
+					</select>
+					<input type="submit" value=" Go " accesskey="g" />
+					</label></div>
+				</form>
+			</div>
+			<p class="conr">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-116155-1";
+_udn = "utorrent.com";
+urchinTracker();
+</script>
+
+</body>
+</html>

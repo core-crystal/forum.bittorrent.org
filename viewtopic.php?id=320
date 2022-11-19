@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>BT-radio, DHT extension (Page 1) / BEPs / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
+<script type="text/javascript" src="captcha/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript">
+	$(function(){var f=$("#sliderCaptcha");var b=$("#cleCaptcha");var d=$(".boutonsCaptcha");var a=$("#javascriptCaptcha");var e=[15,38,2,6,2,12,3,28,29,13,8,3,17,49,33,37,10,32,46,14,38,41,24,43,39,27,32,34,26,32,37,41,20,40,48,23,2,1,2,32,14,11,35,32,10,19,19,21,2,16];var h=0;var g=5;var c=0;a.hide();f.slider({value:0,min:0,max:g,step:1,slide:function(i,j){if(j.value>c){c=j.value;h+=c}},stop:function(j,k){var i=false;if(k.value==g){if(h==((g+Math.pow(g,2))/2)){i=true;f.slider("option","disabled",true);if(b.val().length!=e.length){$.post("captcha.php",{tokenCaptcha:b.val()},function(m){var l="";$.each(e,function(){l+=m.charAt(this%m.length)});b.val(l);d.removeAttr("disabled")})}}}if(!i){h=c=0;f.slider("option","value",h)}}})});
+</script>
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="punviewtopic" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex" class="isactive"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=320"><strong>BT-radio, DHT extension</strong></a></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p1866" class="blockpost rowodd firstpost blockpost1">
+	<h2><span><span class="conr">#1</span> <a href="viewtopic.php?pid=1866#p1866">2011-01-22 05:10:06</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=92074">brugeman</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>BT-radio, DHT extension</h3>
+					<div class="postmsg">
+						<p>Hi. </p><p>I&#039;d like to propose a way to notify BT network about a new shared file. I&#039;ve seen 2 other topics (http://forum.bittorrent.org/viewtopic.php?id=139 , <a href="http://forum.bittorrent.org/viewtopic.php?id=110)">http://forum.bittorrent.org/viewtopic.php?id=110)</a> on content discovery, but proposed approach is quite different.</p><p>Not to waste you time, new BEP proposal: <a href="http://sourceforge.net/projects/torrent-radio/files/bep_34.txt/download">http://sourceforge.net/projects/torrent … t/download</a><br />Sample implementation based on DHT code by jch (from transmission 2.13): <a href="http://sourceforge.net/projects/torrent-radio/files/">http://sourceforge.net/projects/torrent-radio/files/</a></p><p>I&#039;d be happy to get any feedback. I&#039;m very new to BT internals, just starting to get involved, so please don&#039;t judge too hard. At least I hope you&#039;ll like the core idea.</p><p>Also, my implementation wasn&#039;t given any testing, so it&#039;s rather a starting point than a working thing.<br />And sorry for my english, just in case.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1868" class="blockpost roweven">
+	<h2><span><span class="conr">#2</span> <a href="viewtopic.php?pid=1868#p1868">2011-01-22 06:59:23</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: BT-radio, DHT extension</h3>
+					<div class="postmsg">
+						<p>This seems to broadcast new torrents to the entire DHT (or at least portions of it supporting the extension) with little additional information and regardless of interest. That seems... highly inefficient.</p><p>If a node is not online while the new content has been broadcasted they will need another, external means of discovery anyway. Not to mention that this wastes a lot of traffic on notifying nodes that have no need for the content. Additionally it lacks semantic information that might make it useful for a node to select which content they would actually want.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1870" class="blockpost rowodd">
+	<h2><span><span class="conr">#3</span> <a href="viewtopic.php?pid=1870#p1870">2011-01-22 11:24:53</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: BT-radio, DHT extension</h3>
+					<div class="postmsg">
+						<p>brugeman,</p><p>The proper place to grab my dht code are the tarballs at</p><p>&#160; <a href="http://www.pps.jussieu.fr/~jch/software/files/">http://www.pps.jussieu.fr/~jch/software/files/</a></p><p>or the Darcs repository on</p><p>&#160; <a href="http://www.pps.jussieu.fr/~jch/software/repos/dht/">http://www.pps.jussieu.fr/~jch/software/repos/dht/</a></p><p>--jch</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1872" class="blockpost roweven">
+	<h2><span><span class="conr">#4</span> <a href="viewtopic.php?pid=1872#p1872">2011-01-22 11:36:15</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: BT-radio, DHT extension</h3>
+					<div class="postmsg">
+						<p>What you appear to be doing is naive flooding (with duplicate detection) of magnet links in a subset of the DHT.&#160; The only reason why you&#039;re using the DHT is that it gives you liveness information for free -- other than that, your protocol is completely distinct from the DHT.</p><p>Why not use TCP?&#160; You&#039;re presumably only flooding to a small set of neighbours, and your flooding traffic will end up being pretty high, so using a congestion-controlled, reliable protocol might be a good idea.</p><p>I would suggest that you have a look at Gnutella and other gossip protocols before you continue.</p><p>--jch</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1876" class="blockpost rowodd">
+	<h2><span><span class="conr">#5</span> <a href="viewtopic.php?pid=1876#p1876">2011-01-22 14:22:04</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89620">roee88</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: BT-radio, DHT extension</h3>
+					<div class="postmsg">
+						<p>It seems like content discovery is a hot topic lately.</p><p>If I understand correctly, the target is discovering new content related to anything the user has showed interest in.<br />Assuming user interest could be decided by latest downloads, Has anyone considered a torrent-exchange LTEP extension?<br />I&#039;m not getting into details but in short: Allow peers in the same swarm to exchange info hashes of their currently loaded torrents (add some of the discovered torrents to keep some level of privacy). Rank items by the number of peers that sent them. Reflect any item with rank above TBD to the user as &quot;Related downloads&quot;.</p><p>I personally don&#039;t like the idea of the DHT responsible for anything other than discovery of swarm peers. (As a side note, I would love to see <a href="http://forum.bittorrent.org/viewtopic.php?pid=1776#p1776">decentralized feeds over virtual torrents</a>. &#039;related feeds&#039; discovery, if necessary, could use the same extension described above).</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1878" class="blockpost roweven">
+	<h2><span><span class="conr">#6</span> <a href="viewtopic.php?pid=1878#p1878">2011-01-23 06:58:59</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=92074">brugeman</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: BT-radio, DHT extension</h3>
+					<div class="postmsg">
+						<p>Thanks for your replies and suggestions. </p><p>The 8472, you made a very good point that there is too much traffic overhead to broadcast unneeded content. The more I think of it, the more I understand that the whole approach is kinda silly.</p><p>Going to have to think it all over again. I was probably pushing the wrong buttons of my calculator when estimating the traffic to handle all that ) </p><p>jch, I just couldn&#039;t find your repository with google, so took the code from where it was available. Thanks for your proposals, I&#039;ll study those.</p><p>Thank you all once again, going to try thinking more carefully next time.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=320"><strong>BT-radio, DHT extension</strong></a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

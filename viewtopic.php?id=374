@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>UDP tracker, with TCP bootstrapping for source validation (Page 1) / BEPs / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
+<script type="text/javascript" src="captcha/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript">
+	$(function(){var f=$("#sliderCaptcha");var b=$("#cleCaptcha");var d=$(".boutonsCaptcha");var a=$("#javascriptCaptcha");var e=[33,36,49,17,2,25,23,36,22,35,30,29,49,41,3,21,31,39,28,26,20,17,24,25,8,9,42,25,0,36,44,34,22,43,1,25,19,24,11,41,10,42,21,10,33,25,32,15,15,10];var h=0;var g=5;var c=0;a.hide();f.slider({value:0,min:0,max:g,step:1,slide:function(i,j){if(j.value>c){c=j.value;h+=c}},stop:function(j,k){var i=false;if(k.value==g){if(h==((g+Math.pow(g,2))/2)){i=true;f.slider("option","disabled",true);if(b.val().length!=e.length){$.post("captcha.php",{tokenCaptcha:b.val()},function(m){var l="";$.each(e,function(){l+=m.charAt(this%m.length)});b.val(l);d.removeAttr("disabled")})}}}if(!i){h=c=0;f.slider("option","value",h)}}})});
+</script>
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="punviewtopic" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex" class="isactive"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=374"><strong>UDP tracker, with TCP bootstrapping for source validation</strong></a></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p1976" class="blockpost rowodd firstpost blockpost1">
+	<h2><span><span class="conr">#1</span> <a href="viewtopic.php?pid=1976#p1976">2011-04-20 19:30:34</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=93146">Harry</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>UDP tracker, with TCP bootstrapping for source validation</h3>
+					<div class="postmsg">
+						<p>Edit: cjdelisle has explained to me that this BEP is somewhat useless, as udp trackers using connection_id are much harder to spoof, but I would still like any other input people have on this.</p><p>TCP is too heavy for continuous connections on large public trackers, but UDP can be insecure in terms of verifying the IP announcing is not spoofed. What to do?: TCP bootstrapping if tracker requests via UDP.</p><p><strong>Suggested method/steps of handling</strong>:<br />1) User downloads some-linux-distro.torrent</p><p>2) BT Client announces to udp://somelinuxtracker.tld:6969/announce</p><p>2a) If ~/.torrentclient/mykeys [example] file does not contain any hash for somelinuxtracker.tld:6969 tracker, the tracker will reply &quot;plzconTCP&quot;, and client will proceed onto #3.</p><p>2b) If ~/.torrentclient/mykeys file contains a hash for somelinuxtracker.tld:6969, it will announce with it, and proceed onto #4 (skipping #3 and #3a).</p><p>3) BT Client will announce to the tracker with s/udp/http/ (TCP - simply swapping udp with http - a better method could be done, etc; this is just an example), and send &quot;hashreq&quot;. Via TCP, the tracker will reply some hash. The BT Client will save this hash in ~/.torrentclient/mykeys along with somelinuxtracker.tld:6969 (so multi-tracker support won&#039;t get broken).</p><p>3a) Announce via UDP to udp://blah, using the newly produced hash (that was received over TCP).</p><p>4) Tracker now should now reply with the peer list, etc., IF the hash (announced via UDP, but produced via TCP) matched up with the requeser&#039;s IP.</p><br /><p><strong>Pros and Cons</strong>:<br /><strong>Pros</strong>:<br />1) Vastly improve the validity of UDP connections to trackers.<br />2) Remove tracker DoSes easier - if an IP is requesting a hash more than once every few minutes, they are obvious a broken client or DoS bot and could be banned without as much guesswork.</p><p><strong>Cons</strong>:<br />1) Also adds the possible to DoS a tracker with fake requests if the tracker does not manage the &quot;active hashes&quot; properly.<br />2) People on large NATs or very-dynamic (changing more than once every few hours) IPs may have to request a new IP-hash more often.</p><br /><br /><p>Does anyone know of any such system that exists for BT (other than using non-public trackers)? I looked around this forum and could not find that much about verifying IPs that connect via UDP.</p><p>Any ideas or suggestions would be nice. I hope to have some simple examples in a a bit (maybe a few days, a few weeks, or more) of it in action.</p>
+						<p class="postedit"><em>Last edited by Harry (2011-04-20 20:07:42)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1984" class="blockpost roweven">
+	<h2><span><span class="conr">#2</span> <a href="viewtopic.php?pid=1984#p1984">2011-04-25 08:32:40</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: UDP tracker, with TCP bootstrapping for source validation</h3>
+					<div class="postmsg">
+						<p>How about just sticking the trackers public key in the .torrent itself. The client can send a challenge to the tracker on the first connect and verify the response using the key. It would be a very simple extension on top of the existing UDP tracker protocol.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=374"><strong>UDP tracker, with TCP bootstrapping for source validation</strong></a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

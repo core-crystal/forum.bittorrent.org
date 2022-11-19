@@ -1,0 +1,516 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>forum.bittorrent.org / Discussion of BEP 15: UDP Tracker Protocol</title>
+<link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
+</head>
+<body>
+
+<div id="punwrap">
+<div id="punviewtopic" class="pun">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><span>forum.bittorrent.org</span></h1>
+			<p><span>BitTorrent.org community</span></p>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p>You are not logged in.</p>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<h2><span>Announcement</span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div>Posting about any illegal sharing of copyrighted content is strictly forbidden.</div>
+		</div>
+	</div>
+</div>
+
+<div class="linkst">
+	<div class="inbox">
+		<p class="pagelink conl">Pages: <a href="viewtopic.php?id=18&amp;p=1">1</a>&nbsp;<strong>2</strong></p>
+		<p class="postlink conr">&nbsp;</p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Discussion of BEP 15: UDP Tracker Protocol</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p498" class="blockpost rowodd">
+	<h2><span><span class="conr">#26&nbsp;</span><a href="viewtopic.php?pid=498#p498">2008-09-12 09:45:52</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90021">erdgeist</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 15: UDP Tracker Protocol</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>dave wrote:</h4><p>If a UDP tracker reboots how does it handle loss of connection id state?</p></div></blockquote><p>If you hash the source IP address with a secret and keep that secret persistent, nothing happens.<br /><br />However, opentracker doesn't do any connection id checks at all due to the huge amount of obvious miss-implementations that would fail. I know that you shouldn't reward non-standard behaviour, but udp has too many performance advantages to just send away clients supporting it.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p499" class="blockpost roweven">
+	<h2><span><span class="conr">#27&nbsp;</span><a href="viewtopic.php?pid=499#p499">2008-09-12 12:20:34</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89609">Olaf van der Spek</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 15: UDP Tracker Protocol</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>The bad news is, that we can not identify mis-implementing clients in udp.</p></div></blockquote><p>Why not? You do have the peer IDs.<br /></p><blockquote><div class="incqbox"><p>It is also possible that udp packets are manipulated by filtering ISPs.</p></div></blockquote><p>Modified? I doubt that.<br /></p><blockquote><div class="incqbox"><p>Another thing I forgot to mention: While it is possible to encrypt tracker traffic via https, and thepiratebay guys consider sniffing ISPs a huge problem for their U.S. users, the udp protocol provides no such protection at all.</p></div></blockquote><p>HTTPS for a tracker announce? I doubt that's feasible, the overhead would be huge.<br />But no, something like that isn't available yet.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p500" class="blockpost rowodd">
+	<h2><span><span class="conr">#28&nbsp;</span><a href="viewtopic.php?pid=500#p500">2008-09-12 12:31:13</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89609">Olaf van der Spek</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 15: UDP Tracker Protocol</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>If a UDP tracker reboots how does it handle loss of connection id state?</p></div></blockquote><p>XBT Tracker doesn't maintain state at the moment.<br /></p><blockquote><div class="incqbox"><p>There is an error message in the protocol, but the message includes no response code.&nbsp; If connection id state is lost, we should have a standardized response code that tells the client that it needs to obtain a new connection id.&nbsp; Ummm... Is my interpretation correct?</p></div></blockquote><p>The spec says the client has to get a new connection ID after 1 minute. No error message necessary. XBT Tracker also doesn't return an error message if you send a wrong connection ID.<br /></p><blockquote><div class="incqbox"><p>I don't like the standardized 2 minute time-to-live for the connection id.&nbsp; If we allow longer term connection id's, the overhead would be small to just return an error when the connection id is no longer valid thus forcing the client to update its connection id.&nbsp; It wouldn't require changing any message in the protocol except the error message and it would work with existing clients that update more often.... although adding an error code to the error message would mess up error messages on old clients.&nbsp; Is that acceptable?</p></div></blockquote><p>I'm not sure it's necessary to have an error code as well. Just getting a new connection ID if for example the previous 3 tries failed would work.<br />Having an ID that's valid for longer would be good though.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p502" class="blockpost roweven">
+	<h2><span><span class="conr">#29&nbsp;</span><a href="viewtopic.php?pid=502#p502">2008-09-12 14:04:36</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 15: UDP Tracker Protocol</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>Olaf wrote:</h4><p>Why not? You do have the peer IDs.</p></div></blockquote><p>After several reads, I only noticed no peer id in the connect. I missed the peer id in the announce.&nbsp; &nbsp;With no peer id in the connect, &gt;1 client behind a NAT creates potential ambiguity, but it doesn't happen enough to thwart identifying bad implementations.<br /><br />I retract my request to add peer ids to the connect.&nbsp; Also ignore my comment about LTEP.&nbsp; That seems like too much of a change for too little advantage.&nbsp; If necessary, we can add an extension mechanism later and trigger it based on datagram length.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p505" class="blockpost rowodd">
+	<h2><span><span class="conr">#30&nbsp;</span><a href="viewtopic.php?pid=505#p505">2008-09-12 14:49:28</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 15: UDP Tracker Protocol</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>While it is possible to encrypt tracker traffic via https, and thepiratebay guys consider sniffing ISPs a huge problem for their U.S. users, the udp protocol provides no such protection at all.</p></div></blockquote><p>We covered this before in the context of lightweight encryption for TCP trackers.&nbsp; If someone identifies a real attack then we should probably start from here:<br /><br /><a href="http://bittorrent.org/beps/bep_0008.html" rel="nofollow">http://bittorrent.org/beps/bep_0008.html</a></p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p506" class="blockpost roweven">
+	<h2><span><span class="conr">#31&nbsp;</span><a href="viewtopic.php?pid=506#p506">2008-09-12 15:08:12</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 15: UDP Tracker Protocol</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>dave wrote:</h4><p>2 minute time-to-live for the connection id</p></div></blockquote><p>That should read 1 minute.&nbsp; Excuse me.<br /><br /></p><blockquote><div class="incqbox"><p>If you hash the source IP address with a secret and keep that secret persistent, nothing happens.</p></div></blockquote><p>Ok.&nbsp; Salted hash (I also mentioned this).&nbsp; To which Olaf responded with motivation for changing the salt periodically.&nbsp; I have no doubt that salts will change for some reason or another.&nbsp; If salts change then client and tracker can be get &quot;out-of-sync.&quot;&nbsp; <br /><br />The BEP currently specifies only the 1 minute TTL, which I would like to remove.&nbsp; &nbsp; Waiting for three failures works as long as connection ID's are typically reused &gt;&gt;3 times.&nbsp; Though waiting for 3 failures is needless if we use error codes.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p507" class="blockpost rowodd">
+	<h2><span><span class="conr">#32&nbsp;</span><a href="viewtopic.php?pid=507#p507">2008-09-12 15:27:36</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 15: UDP Tracker Protocol</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>I'm not sure it's necessary to have an error code as well.</p></div></blockquote><p>Hmmm... There is wide variation in how people write error messages.&nbsp; A standardized error code is more precise and less fragile: error messages might change from release to release and between implementations.&nbsp; Standardized error codes enable automated response.&nbsp; Standardized error codes also allow humans to recognize the same error across trackers, across clients, and across web searches for related information. <br /><br />Those are broad generalizations, but usually correct.&nbsp; So we should start the conversation with &quot;there should be error codes&quot; and then convince us that there shouldn't be.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p509" class="blockpost roweven">
+	<h2><span><span class="conr">#33&nbsp;</span><a href="viewtopic.php?pid=509#p509">2008-09-12 16:09:30</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89609">Olaf van der Spek</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 15: UDP Tracker Protocol</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>The BEP currently specifies only the 1 minute TTL, which I would like to remove.&nbsp; &nbsp; Waiting for three failures works as long as connection ID's are typically reused &gt;&gt;3 times.&nbsp; Though waiting for 3 failures is needless if we use error codes.</p></div></blockquote><p>The tracker doesn't send any packet when the connection ID is invalid.<br />So should clients use a connection ID forever until it fails and then 'reconnect'?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p511" class="blockpost rowodd">
+	<h2><span><span class="conr">#34&nbsp;</span><a href="viewtopic.php?pid=511#p511">2008-09-12 17:35:49</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 15: UDP Tracker Protocol</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>So should clients use a connection ID forever until it fails and then 'reconnect'?</p></div></blockquote><p>ummm.... yep.&nbsp; Client should be able reconnect at any time prior to being forced.<br /><br />Let's wait a bit for others to comment.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p523" class="blockpost roweven">
+	<h2><span><span class="conr">#35&nbsp;</span><a href="viewtopic.php?pid=523#p523">2008-09-13 13:37:41</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90025">Denis</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 15: UDP Tracker Protocol</h3>
+				<div class="postmsg">
+					<p>Hi<br /><br />I put a cleaned up version of the udp spec here: <a href="http://denisy.dyndns.org/bep_0015.html" rel="nofollow">http://denisy.dyndns.org/bep_0015.html</a><br />I changed nothing of technical aspect, only made it alot more foolproof.<br /><br />but some things I want to mention:<br /><br />1. subsequent packets like the client announce,scrape and error packets have no versioning. the connect has at least the magic id to detect protocol changes. next version could be 0x0001041727101980 instead of 0x0000041727101980. When we don't do this fast it will get even harder in the future.<br /><br />2. I think the client should NOT try again after three tries (unless restarted) if there is an error response or even no response at all. most clients seem to try again and again with no success. the big trackers are overloaded already and the client can still use http requests then.<br /><br />3. add an error-id to the error packet. a string is good for the user and can be in any language. but an error-id could be handled by the client. like don't come back or try again in 10 minutes or your request is blacklistet.<br /><br />4. I would like to have the number of completed downloads also in the announce response. this would safe a scrape request maybe and does not cost much (4 bytes).<br /> I know this is not possible right now without a version change.<br /><br />5. -1 (minus one) could be used as a sign that the client/tracker does not want to disclose that information or that the default should be used like it is already used in the numwant field.<br /><br />6. in a future version the peer ID should be moved to the connect packet. it repeats unnecessary in the announce packet.<br /><br />Denis Stalker Guy</p>
+					<p class="postedit"><em>Last edited by Denis (2008-09-13 15:44:15)</em></p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p524" class="blockpost rowodd">
+	<h2><span><span class="conr">#36&nbsp;</span><a href="viewtopic.php?pid=524#p524">2008-09-13 18:06:30</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=35956">ghazel</a></strong></dt>
+					<dd class="usertitle"><strong>BitTorrent Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 15: UDP Tracker Protocol</h3>
+				<div class="postmsg">
+					<p>+1 to Denis' comments above.<br /><br />Additionally, I'd like to see IPv6 support, similar to BEP7.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p525" class="blockpost roweven">
+	<h2><span><span class="conr">#37&nbsp;</span><a href="viewtopic.php?pid=525#p525">2008-09-14 02:23:36</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89609">Olaf van der Spek</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 15: UDP Tracker Protocol</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>1. subsequent packets like the client announce,scrape and error packets have no versioning. the connect has at least the magic id to detect protocol changes. next version could be 0x0001041727101980 instead of 0x0000041727101980. When we don't do this fast it will get even harder in the future.</p></div></blockquote><p>That's not backwards compatible. My plan is to append a version field to the connect, announce and/or scrape fields when necessary. That way, existing implementations continue to work.<br /></p><blockquote><div class="incqbox"><p>2. I think the client should NOT try again after three tries (unless restarted) if there is an error response or even no response at all. most clients seem to try again and again with no success. the big trackers are overloaded already and the client can still use http requests then.</p></div></blockquote><p>The BEP advices exponential back-off to be used.<br /></p><blockquote><div class="incqbox"><p>3. add an error-id to the error packet. a string is good for the user and can be in any language. but an error-id could be handled by the client. like don't come back or try again in 10 minutes or your request is blacklistet.</p></div></blockquote><p>Might be useful indeed.<br /></p><blockquote><div class="incqbox"><p>4. I would like to have the number of completed downloads also in the announce response. this would safe a scrape request maybe and does not cost much (4 bytes).<br />I know this is not possible right now without a version change.</p></div></blockquote><p>Are there any clients that actually use this info?<br /></p><blockquote><div class="incqbox"><p>5. -1 (minus one) could be used as a sign that the client/tracker does not want to disclose that information or that the default should be used like it is already used in the numwant field.</p></div></blockquote><p>To what fields would this apply?<br /></p><blockquote><div class="incqbox"><p>6. in a future version the peer ID should be moved to the connect packet. it repeats unnecessary in the announce packet.</p></div></blockquote><p>Why? If you move it to the connect request, either the peer ID isn't available when you process the announce request or you have to store the peer ID, which is what we'd like to avoid.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p529" class="blockpost rowodd">
+	<h2><span><span class="conr">#38&nbsp;</span><a href="viewtopic.php?pid=529#p529">Yesterday 15:39:02</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 15: UDP Tracker Protocol</h3>
+				<div class="postmsg">
+					<p>Re: Denis:<br /><br /></p><blockquote><div class="incqbox"><p>1. ... the connect has at least the magic id to detect protocol changes. next version could be 0x0001041727101980 instead of 0x0000041727101980.</p></div></blockquote><p>+1.&nbsp; This is better then relying on a datagram length change to signal an update to something with versioning and limited extension capability (reserved bits, etc.).<br /><br /></p><blockquote><div class="incqbox"><h4>Denis wrote:</h4><p>2. I think the client should NOT try again after three tries ... 3. add an error-id to the error packet</p></div></blockquote><p>+1. error codes --&gt; obviating three retries.<br /><br /></p><blockquote><div class="incqbox"><h4>Olaf wrote:</h4><p>The BEP advices exponential back-off to be used.</p></div></blockquote><p>+1 (already in BEP)<br /><br /><br /></p><blockquote><div class="incqbox"><h4>denis wrote:</h4><p>4...completed downloads also in the announce response...</p></div></blockquote><p>Not as clearly motivated as the other changes, and why only the completes?&nbsp; If you intend to allocate resources between swarms based on tracker scrapes then number of seeds and downloaders would be quite useful, and if you need these values to decide which swarm to join then you don't want to conflate the announce and the scrape.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p530" class="blockpost roweven">
+	<h2><span><span class="conr">#39&nbsp;</span><a href="viewtopic.php?pid=530#p530">Yesterday 16:25:43</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 15: UDP Tracker Protocol</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>denis wrote:</h4><p>6. in a future version the peer ID should be moved to the connect packet. it repeats unnecessary in the announce packet.</p></div></blockquote><p>To which Olaf replied:<br /><br /></p><blockquote><div class="incqbox"><h4>olaf wrote:</h4><p>If you move it to the connect request, either the peer ID isn't available when you process the announce request or you have to store the peer ID</p></div></blockquote><p>Why is the peer ID necessary to keep around?&nbsp; The nonce (connection id) can&nbsp; uniquely identify the requester. <br /><br />Still as suggested by Denis, this issue should be punted to a future version.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p531" class="blockpost rowodd">
+	<h2><span><span class="conr">#40&nbsp;</span><a href="viewtopic.php?pid=531#p531">Yesterday 17:00:34</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90025">Denis</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 15: UDP Tracker Protocol</h3>
+				<div class="postmsg">
+					<p>I would like to have the completed number additionally to seeders and downloaders. because this is the info for which the peers make a scrape request. by adding these four bytes maybe I can spare some scrape requests.<br /><br />btw. the tracker running on denis.stalker.h3q.com is already giving this info out with the http announce response and is already supported by the Transmission client since revision r6743. Until now it runs well.<br /><br />the -1 entry would apply to all fields which are not necessary to actually get peers from the tracker like stats fields. in case a tracker wants that data it could tell with an udp error packet. also the tracker may be paranoid and could fill out some fields with -1 if it don't want to disclose some stats on that torrenthash.<br /><br />Denis</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p532" class="blockpost roweven">
+	<h2><span><span class="conr">#41&nbsp;</span><a href="viewtopic.php?pid=532#p532">Today 00:14:25</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89609">Olaf van der Spek</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 15: UDP Tracker Protocol</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>+1.&nbsp; This is better then relying on a datagram length change to signal an update to something with versioning and limited extension capability (reserved bits, etc.).</p></div></blockquote><p>What about my comment that this isn't backwards compatible?<br /></p><blockquote><div class="incqbox"><p>and why only the completes?</p></div></blockquote><p>The others are already there.<br /></p><blockquote><div class="incqbox"><p>because this is the info for which the peers make a scrape request.</p></div></blockquote><p>Most clients use scrape requests for the seeders/leechers counts, not for the downloaded count.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p533" class="blockpost rowodd">
+	<h2><span><span class="conr">#42&nbsp;</span><a href="viewtopic.php?pid=533#p533">Today 13:17:29</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 15: UDP Tracker Protocol</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>What about my comment that this isn't backwards compatible?</p></div></blockquote><p>Ahhh... I'm burning my credibility.<br /><br />I see your point.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox">
+		<p class="postlink conr">&nbsp;</p>
+		<p class="pagelink conl">Pages: <a href="viewtopic.php?id=18&amp;p=1">1</a>&nbsp;<strong>2</strong></p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Discussion of BEP 15: UDP Tracker Protocol</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div class="inbox">
+
+			<div class="conl">
+				<form id="qjump" method="get" action="viewforum.php">
+					<div><label>Jump to
+					<br /><select name="id" onchange="window.location=('viewforum.php?id='+this.options[this.selectedIndex].value)">
+						<optgroup label="BitTorrent">
+							<option value="26">Announcements</option>
+							<option value="25" selected="selected">BEPs</option>
+							<option value="29">BEP process</option>
+							<option value="27">General</option>
+							<option value="33">Research Tools</option>
+							<option value="32">Cooperation between BitTorrent and ISPs</option>
+							<option value="30">Attacks against BitTorrent</option>
+							<option value="28">Feature Requests, Found Bugs &gt;&gt;&gt;</option>
+					</optgroup>
+					</select>
+					<input type="submit" value=" Go " accesskey="g" />
+					</label></div>
+				</form>
+			</div>
+			<p class="conr">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-116155-1";
+_udn = "utorrent.com";
+urchinTracker();
+</script>
+
+</body>
+</html>

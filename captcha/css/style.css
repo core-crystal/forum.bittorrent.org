@@ -1,0 +1,9 @@
+#sliderCaptcha {
+	margin: 10px 0;
+	width: 100px;
+}
+
+#javascriptCaptcha {
+	font-weight: bold;
+	color: red;
+}

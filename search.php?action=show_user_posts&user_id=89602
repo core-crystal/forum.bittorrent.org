@@ -1,0 +1,905 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="ROBOTS" content="NOINDEX, FOLLOW" />
+<title>Search results (Page 1) / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="punsearch" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch" class="isactive"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="search.php">Search</a></li>
+			<li><span>»&#160;</span><strong><a href="search.php?action=show_user_posts&amp;user_id=89602">Posts by arvid</a></strong></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink"><span class="pages-label">Pages: </span><strong class="item1">1</strong> <a href="search.php?search_id=2000863420&amp;p=2">2</a> <a href="search.php?search_id=2000863420&amp;p=3">3</a> <a href="search.php?search_id=2000863420&amp;p=4">4</a> <a href="search.php?search_id=2000863420&amp;p=2">Next</a></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div class="blockpost rowodd firstpost blockpost1">
+	<h2><span><span class="conr">#1</span> <span><a href="viewforum.php?id=26">Announcements</a></span> <span>»&#160;<a href="viewtopic.php?id=594">forum is being replaced by mailing list</a></span> <span>»&#160;<a href="viewtopic.php?pid=2434#p2434">2012-10-09 16:56:29</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd><span>Replies: 0</span></dd>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>We&#039;re hoping to replace this web forum with a mailing list (hosted by google groups).<br />Sign up for it here:</p><p>&#160; &#160;<a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">https://groups.google.com/a/bittorrent. … developers</a></p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=594">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=2434#p2434">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost roweven">
+	<h2><span><span class="conr">#2</span> <span>Re: <a href="viewforum.php?id=27">General</a></span> <span>»&#160;<a href="viewtopic.php?id=592">Referential and differential torrent functionality</a></span> <span>»&#160;<a href="viewtopic.php?pid=2430#p2430">2012-10-09 16:52:26</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>How about kicking it off on our brand new mailing list (which is meant to replace this web forum).</p><p>Check it out at:</p><p>&#160; &#160;<a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">https://groups.google.com/a/bittorrent. … developers</a></p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=592">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=2430#p2430">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost rowodd">
+	<h2><span><span class="conr">#3</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=550">Extension for exchanging webseed urls</a></span> <span>»&#160;<a href="viewtopic.php?pid=2428#p2428">2012-10-09 16:39:23</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>tracker exchange is not widely implemented in uTorrent mostly for the reasons dwk mentions. It&#039;s also of questionable value to add a lot of trackers.</p><p>I don&#039;t doubt that it&#039;s possible to have a conservative specification to avoid&#160; DDoS attacks. It might be tricky though.</p><p>However, I also don&#039;t doubt that it&#039;s possible to bittorrent-seed a million torrents (especially not in the future).</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=550">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=2428#p2428">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost roweven">
+	<h2><span><span class="conr">#4</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=556">Multi-files improvements</a></span> <span>»&#160;<a href="viewtopic.php?pid=2426#p2426">2012-10-09 16:29:24</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>I think there are simpler ways of achieving the same goals. For instance, if backwards compatibility is not an issue, each file should simply just have its own set of piece hashes, or its own hash tree root.</p><p>What you&#039;re proposing is essentially identical to an RSS feed. You can already create these kinds of &quot;torrents&quot;, if you&#039;re not too concerned about whether it&#039;s bencoded or XML. You can simply express this as an RSS feed with all the single file torrents in it.</p><p>The problem of adding files can be solved separately. In fact, one of the thing we&#039;ve been working on lately is to have a feature where a new torrent can pull in files/pieces from a previous one, to avoid downloading them.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=556">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=2426#p2426">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost rowodd">
+	<h2><span><span class="conr">#5</span> <span>Re: <a href="viewforum.php?id=27">General</a></span> <span>»&#160;<a href="viewtopic.php?id=542">Anyone know how to get newest BEPS 29?</a></span> <span>»&#160;<a href="viewtopic.php?pid=2330#p2330">2012-08-13 16:28:21</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>When uTP was first released, years ago, the packet header looked different. In the first few releases of uTorrent the connection ID was the first 16 bits (iirc). No uTorrent client in the last few years has used this old protocol though, and the old protocol was never published. So, trust the protocol cbrown posted, and not the wireshark dissector. (it would be really nice with a wireshark dissector for uTP though).</p><p>However, the bigger problem here is that wireshark incorrectly classifies that packet as uTP. If you look in the hexdump of the packet you can see that you&#039;re looking at a DHT packet. It&#039;s bencoded and has the DHT fields.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=542">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=2330#p2330">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost roweven">
+	<h2><span><span class="conr">#6</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=540">BEP 35: Signed Torrents</a></span> <span>»&#160;<a href="viewtopic.php?pid=2314#p2314">2012-08-08 11:42:28</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>currently there&#039;s a folder under %appdata%/uTorrent where a user can put trusted certificates. Any torrent signed by a cert in this folder is considered trusted. uTorrent ships with BitTorrent Inc.&#039;s cert by default, to always be trusted.</p><p>Currently being trusted isn&#039;t very interesting. I can imagine that we might want to add some graphical treatment to trusted torrents, and possibly other features as well.</p><p>In order to integrate well with the web, we might want to create a file name extension like .btcert that we handle by installing when invoked. That way web sites could distribute their cert easily.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=540">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=2314#p2314">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost rowodd">
+	<h2><span><span class="conr">#7</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=376">Decentralized search</a></span> <span>»&#160;<a href="viewtopic.php?pid=2126#p2126">2011-05-26 14:23:33</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<div class="quotebox"><cite>harold wrote:</cite><blockquote><div><p>I did, and I have. I haven&#039;t found any techniques that would actually work - not on top of the current DHT anyway. In other words, they might be interesting and all, but they would only work if a major client implements it and that&#039;s a different way of saying &quot;it&#039;s not gonna happen&quot;.</p></div></blockquote></div><p>My understanding of your proposal is that it also would not work unless a significant portion of the DHT nodes would implement it. It doesn&#039;t seem like a very useful (or fruitful) criteria of a distributed search algorithm to work on the current BitTorrent DHT, without client support.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=376">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=2126#p2126">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost roweven">
+	<h2><span><span class="conr">#8</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=308">DHT security feature</a></span> <span>»&#160;<a href="viewtopic.php?pid=2120#p2120">2011-05-26 07:45:35</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>I updated my proposal to use a more clever way of restricting hte node IDs, by not mapping it 1-1 to an IP. it still lacks a couple of things, most notably test vectors and citation to the original paper proposing this technique.</p><p><a href="http://www.rasterbar.com/products/libtorrent/dht_sec.html">http://www.rasterbar.com/products/libto … t_sec.html</a></p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=308">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=2120#p2120">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost rowodd">
+	<h2><span><span class="conr">#9</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=302">decentralized feeds</a></span> <span>»&#160;<a href="viewtopic.php?pid=2112#p2112">2011-05-24 18:48:22</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>Trying to capture the spirit of caleb&#039;s proposal, I wrote this up (and implemented it in libtorrent):</p><p><a href="http://www.rasterbar.com/products/libtorrent/dht_store.html">http://www.rasterbar.com/products/libto … store.html</a></p><p>It&#039;s simpler by only using SHA-1 as hash function and only use RSA-2048 for signatures and by just adding &quot;put&quot; and &quot;get&quot;. I also fixed up some of the things I mentioned in earlier posts, like sticking &quot;token&quot; inside the &quot;a&quot; dict and allowing &quot;v&quot; to be of other types than strings.</p><p>The thing I haven&#039;t done (yet) is having a separate ID to hash the public key with. This has another side effect of simplifying the protocol since the public key doesn&#039;t have to be sliced (as in &quot;target&quot; + &quot;k&quot; in get messages).</p><p>Comments?</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=302">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=2112#p2112">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost roweven">
+	<h2><span><span class="conr">#10</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=302">decentralized feeds</a></span> <span>»&#160;<a href="viewtopic.php?pid=2106#p2106">2011-05-23 16:50:03</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>@Caleb: we should probably not assume that MTU is 1500 bytes, 1280 seems like more reasonable, to avoid fragmentation on teredo.</p><p>Also, in a previous proposal, The 8472 suggested (iirc) having the target for mutable keys be the hash of the public key + name, where name was the name of the feed. The benefit would be that you could use a single key pair for multiple key-value pairs. Now, name of a channel doesn&#039;t make sense for the generic case, but maybe we could add some other key that can be combined with the public key.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=302">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=2106#p2106">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost rowodd">
+	<h2><span><span class="conr">#11</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=302">decentralized feeds</a></span> <span>»&#160;<a href="viewtopic.php?pid=2102#p2102">2011-05-21 11:01:33</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>regarding using separate RPCs for mutable/non-mutable; I mostly like the idea of differentiating the concepts. I agree that it is nicer to just add two new RPCs.</p><p>In particular, I think mutable and immutable should be different *types*, by which I mean they should be stored in separate containers in the local node, and have separate limits on how many are allowed to be stored, and be evicted separately.</p><p>I haven&#039;t thought it all out yet, but it feels like a good idea to not have one able to overrun the other, just like these generic items should not be able to push out torrents.</p><p>Speaking of eviction, maybe the BEP should mention some ideas of how to determine what to evict when adding new items. The way I have implemented this in libtorrent is by keeping a bloom filter and a counter for each item, containing all IPs that have announced it. When evicting, items with more nodes announcing are prioritized. It seems like a reasonable general concept. Maybe it can be improved in some way.</p><p>I suppose there could be limits on how many items any single IP is allowed to announce as well.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=302">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=2102#p2102">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost roweven">
+	<h2><span><span class="conr">#12</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=149">BEP 33: DHT Scrapes</a></span> <span>»&#160;<a href="viewtopic.php?pid=2096#p2096">2011-05-20 23:06:50</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>@The 8472: The use of the terms &quot;seed&quot; and &quot;peer&quot; is a bit confusing in this BEP. I would imagine that both downloaders and seeds would be considered peers, but it sounds like in the BEP, &quot;peers&quot; are limited to just downloaders. I think it would be clearer if you would use the term &quot;downloader&quot; instead.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=149">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=2096#p2096">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost rowodd">
+	<h2><span><span class="conr">#13</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=302">decentralized feeds</a></span> <span>»&#160;<a href="viewtopic.php?pid=2094#p2094">2011-05-20 09:23:56</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>@The 8472: Personally I would prefer option (a).<br />@Caleb: Is there a good reason to require implementations to support all of sha-1, sha-256, dsap and rsa? It would simplify implementations a lot by picking one of each and stick to it.</p><p>I like the idea of separating get/put and getm/putm. I would imagine they would be separate types. i.e. you can&#039;t store something with &quot;putm&quot; and get it with &quot;get&quot;.</p><p>would it make sense to allow &quot;v&quot; to be any bencoded type (not just a string), and the hash is the hash of the encoded form.<br />That way, uses of this extension would blend in nicely with the encoding of the message.</p><p>I also think the &quot;token&quot; argument should be passed inside the &quot;a&quot; dict, to be consistent with &quot;announce_peer&quot;.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=302">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=2094#p2094">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost roweven">
+	<h2><span><span class="conr">#14</span> <span>Re: <a href="viewforum.php?id=30">Attacks against BitTorrent</a></span> <span>»&#160;<a href="viewtopic.php?id=6">Sandvine: How it Works, and Defeating It</a></span> <span>»&#160;<a href="viewtopic.php?pid=2092#p2092">2011-05-20 09:11:40</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>I think that you hand wave away the performance problems of openssl a bit too lightly.</p><p>In my experience, the diffie hellman handshake is currently my far the most expensive operations in bittorrent. Even more expensive than sha-1 and rc4. Obviously it depends on peer churn. Using ssl would be pouring gas onto the fire.</p><p>Another possible conclusion from the fact that people can identify and throttle MSE is to stop using it all together.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=6">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=2092#p2092">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost rowodd">
+	<h2><span><span class="conr">#15</span> <span>Re: <a href="viewforum.php?id=30">Attacks against BitTorrent</a></span> <span>»&#160;<a href="viewtopic.php?id=394">Download from private networks without affecting your ratio.</a></span> <span>»&#160;<a href="viewtopic.php?pid=2090#p2090">2011-05-20 09:04:08</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>Even with extended accounting, you would still have the problem of resolving who&#039;s responsible for discrepancies. Which is the same problem as you started out with. Many private trackers that do ratio tracking have already solved this. The only reasonable further development in this area, in my opinion, is to actually make it possible to tell for sure who&#039;s lying in their stats. This is a less trivial patch and includes the tracker issuing certificates and digital coins, which peers exchange for data.</p><p>As a suggestion, if you want any traction, it&#039;s probably a good idea to at least implement your idea in one client and release the source.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=394">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=2090#p2090">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost roweven">
+	<h2><span><span class="conr">#16</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=376">Decentralized search</a></span> <span>»&#160;<a href="viewtopic.php?pid=1986#p1986">2011-04-25 08:47:41</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>You would probably still have problems with hot-spots in the DHT. You might have to come up with a hard coded list of stop-words, which might be hard to build.</p><p>How about doing search in a bit more decentralized way, with less complete search results. Like this:</p><p>every client sniffs the DHT for get_peers, and announce_peer sent to it. For each of those messages, it pulls out the info-hash and downloads the .torrent file for that hash (either straight from torcache.com or by simply joining the swarm and slurping it down over the metadata extension). Ones it has the .torrent file, it indexes it in a local database (or a simple index). This means every client is slowly building a set of random torrents that it knows about.</p><p>Now, add a peer-wire extension message to let you ask your peers to search their indices. When the user searches for a specific word, look through the local index as well as query all peers for the same search.</p><p>In order to distribute the popular torrents into more peers&#039; indices, each response could contain a set of torrents that peer has seen a lot of searches for (maybe the top results from the last other peer that made a search).</p><p>If you&#039;re talking about rating of torrents, uTorrent 3.0 beta has a DHT based rating system. The general format is described here:</p><p><a href="http://comments.gmane.org/gmane.network.bit-torrent.devel/1009">http://comments.gmane.org/gmane.network … devel/1009</a></p><p>The hash votes are announced to is sha1(info-hash + &quot;rating&quot;)</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=376">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=1986#p1986">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost rowodd">
+	<h2><span><span class="conr">#17</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=374">UDP tracker, with TCP bootstrapping for source validation</a></span> <span>»&#160;<a href="viewtopic.php?pid=1984#p1984">2011-04-25 08:32:40</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>How about just sticking the trackers public key in the .torrent itself. The client can send a challenge to the tracker on the first connect and verify the response using the key. It would be a very simple extension on top of the existing UDP tracker protocol.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=374">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=1984#p1984">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost roweven">
+	<h2><span><span class="conr">#18</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=302">decentralized feeds</a></span> <span>»&#160;<a href="viewtopic.php?pid=1982#p1982">2011-04-25 08:29:07</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>Caleb, those pastes have expired now. Would you mind posting them directly in the forum or somewhere more persistent?</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=302">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=1982#p1982">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost rowodd">
+	<h2><span><span class="conr">#19</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=302">decentralized feeds</a></span> <span>»&#160;<a href="viewtopic.php?pid=1846#p1846">2011-01-19 17:10:20</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>I&#039;ve updated this document with your feedback: <a href="http://www.rasterbar.com/products/libtorrent/dht_rss.html">http://www.rasterbar.com/products/libto … t_rss.html</a></p><div class="quotebox"><cite>hughw wrote:</cite><blockquote><div><p>1. Does the signature need to be specified in advance? Because ECDSA over Curve25519 hasn&#039;t been implemented, much less time-tested, I&#039;m not comfortable with it. I don&#039;t mind using OpenSSL and FIPS 186-3 P-256; I assume you are worried about potential patent infringement? It seems that just specifying which signature type is being used satisfies everyone, and allows it to be extensible in the future.</p></div></blockquote></div><p>I think RSA would be reasonable.</p><div class="quotebox"><blockquote><div><p>2. I would really like to see individual feed items time out of the swarm. I&#039;m currently running a few simulations of different drop patterns against different algorithms for assigning skip-list pointers to see how they fare. It seems like a possibly viable solution, but if we time out items in an undetermined order, most skip list implementations don&#039;t act well.</p></div></blockquote></div><p>I would imagine that a pretty common use case would be to keep items alive for as long as possible, i.e. until the interest in them has entirely died out. I would imagine you could specify timeouts in the items though, say, as posix time, at which time the item is dropped and no longer accepted by nodes.</p><div class="quotebox"><blockquote><div><p>3. It shouldn&#039;t matter too much what the actual document content is, but to the extent that this RFC targets a single document type, Atom is more flexible and extensible than RSS. Again, since you&#039;re not enforcing a single type in the spec, this is just a side note.</p></div></blockquote></div><p>Right, I think it makes sense to specify the fundamental &quot;tags&quot; for torrents, and then it&#039;s possible to pull in names of tags from Atom or RSS to extend the metadata for each item. Though, a 1-1 mapping of names may not be practical.</p><div class="quotebox"><blockquote><div><p>4. Keeping virtual torrents open, or using a gossip algorithm over DHT neighbors might introduce less load than clients periodically polling for new information on feedname+key. Using gossip over DHT is something we&#039;ve already tried, and might stick to for the sake of speed in getting information out.</p></div></blockquote></div><p>In order to store keys in the DHT, you need a write token from the node you&#039;re writing to, which means you need to do a get_item at some point.</p><p>You mean using gossip over the DHT to find out whether or not a key needs to be re-announced?</p><p>Btw. I checked in my implementation (and the source document I linked to in this post) to libtorrent trunk. It doesn&#039;t verify any signature yet, and it&#039;s only the storing end of the DHT node, not the announcing (yet).</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=302">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=1846#p1846">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost roweven">
+	<h2><span><span class="conr">#20</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=302">decentralized feeds</a></span> <span>»&#160;<a href="viewtopic.php?pid=1804#p1804">2011-01-15 18:39:14</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>I updated the spec to use linked lists instead.</p><p>&#160; &#160;<a href="http://www.libtorrent.org/dht_rss.html">http://www.libtorrent.org/dht_rss.html</a></p><p>Using linked lists also lifts the requirement for small keys, we could use RSA. Although, Bram might be implementing an EDCSA for 25519 as part of his live project.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=302">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=1804#p1804">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost rowodd">
+	<h2><span><span class="conr">#21</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=308">DHT security feature</a></span> <span>»&#160;<a href="viewtopic.php?pid=1762#p1762">2011-01-02 13:20:11</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>Yeah, you&#039;re right. It might not make that much sense to tie node IDs to IPv6 addresses. It does seem to make sense for IPv4 though.</p><p>Actually, I think the DDoS attack might even be a bit simpler than blocking specific torrents. All you need to do is running many nodes on one machine (or having an implementation that pretends to have many many IDs). I believe you could even circumvent the plausibility check by distributing the node IDs you claim far enough apart, to make it unlikely for them to ever refer to each other in find_nodes responses, or any one node ever interacting with two of the nodes.</p><p>Really the only thing you need for the DDoS is to be popular enough, attract enough traffic and hi-jack every single get_peers request by injecting your victim. It&#039;s unclear how effective it would be, it would obviously be less effective than always spin up new (imaginary) nodes whenever you get an announce_peer or get_peers which happens to terminate that search (on the same machine).</p><p>That said, I still think blocking torrents is a more serious attack to protect against. There are so many other ways to mitigate the DDoS attack, and I&#039;m not entirely convinced that it even works that well today, since every peer you trick into adding your victims IP to, will only try to connect 3 times and then never again, so you need to constantly find new peers to use for the attack, or it will be very short-lived.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=308">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=1762#p1762">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost roweven">
+	<h2><span><span class="conr">#22</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=302">decentralized feeds</a></span> <span>»&#160;<a href="viewtopic.php?pid=1760#p1760">2011-01-02 13:09:34</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<div class="quotebox"><cite>The 8472 wrote:</cite><blockquote><div><p>1. Each feed entry is stored under its own exclusive DHT key, e.g. sha1(entry-signature)<br />2. Each feed entry contains backwards pointer to the next-older entry (linked list) and optionally to exponentially older entries (skip-list)<br />3. Each entry is signed and the pointers are signed separately<br />4. The feed root is stored under SHA1(feedname + pubkey) and returns <br />a) a pointer to the head entry<br />b) random pointers into the list<br />All pointers are signed</p></div></blockquote></div><p>I like this general approach. One way to keep the number of lookups low, would be to still accumulate up to a certain number of items in each node (i.e. item in the linked list). Unless each node is the actual torrent, under the actual info-hash, in which case this wouldn&#039;t work.</p><p>Some concerns I have are:</p><p>1. Every participant should help keeping all items alive, so nodes should pick random items and announce them every now and then.</p><p>2. (this is the main one), if the list head doesn&#039;t move, it&#039;s important to not allowing to down-grade it to an older version, say with a list with a single node. This could be done with a sequence number (which is also signed), and making nodes ignore announces with a lower sequence number than what they already have.</p><div class="quotebox"><blockquote><div><p>This may seem to be a lot of DHT entries, but if you consider that each feed entry corresponds to a torrent then this doesn&#039;t significantly increase the load per torrent, especially since not everyone has to write feed entries to the DHT, you just have to randomly check if they&#039;re alive and republish them if they aren&#039;t.<br />Publishing would consist of 3 steps:<br />a) publish a new entry, with a forward-pointer to the now 2nd entry<br />b) put the pointer into the random list under the feed root<br />c) bump the head-pointer in the feed root<br />[b and c can be done in 1 call]</p></div></blockquote></div><p>Using the actual torrents in the DHT as the list nodes in the linked list would have the following problems:</p><p>1. Long lists would become very expensive. In general this is hard to avoid, but it might be mitigated and the cost could be lowered of a factor of 10 at least, by bunching items.</p><p>2. a given torrent would have a limit on how many feeds it could be part of. It would either be just a single one or multiple ones if we allow multiple forward pointers keyed by the feed key. In this case popular torrents might still run out of space to store forward pointers, and there might be a privacy issue, if you can deduce all feeds a given torrent belongs to.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=302">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=1760#p1760">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost rowodd">
+	<h2><span><span class="conr">#23</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=308">DHT security feature</a></span> <span>»&#160;<a href="viewtopic.php?pid=1754#p1754">2011-01-01 20:50:53</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>The main threat I&#039;ve had in mind is someone blocking specific torrents (or DHT feeds), which is a subset of the DDoSing attack. It would require the plausibility checks to happen earlier, while bootstrapping the DHT and running find_nodes and get_peers which forwards you to new nodes.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=308">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=1754#p1754">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost roweven">
+	<h2><span><span class="conr">#24</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=302">decentralized feeds</a></span> <span>»&#160;<a href="viewtopic.php?pid=1752#p1752">2011-01-01 20:45:24</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>How about having sequence numbers for each batch of info-hashes? The sequence number could be part of the portion that&#039;s signed as well, to lock it down. Something like this:</p><div class="codebox"><pre><code>   {
+      &quot;a&quot;:
+      {
+         &quot;ih&quot;:
+         [
+            &quot;7ea94c240691311dc0916a2a91eb7c3db2c6f3e4&quot;,
+            &quot;0d92ad53c052ac1f49cf4434afffafa4712dc062e4168d940a48e45a45a0b10808014dc267549624&quot;
+         ],
+         &quot;sig&quot;:
+         [
+            &quot;980774404e404941b81aa9da1da0101cab54e670cff4f0054aa563c3b5abcb0fe3c6df5dac1ea25266035f09040bf2a24ae5f614787f1fe7404bf12fee5e6101&quot;,
+            &quot;3fee52abea47e4d43e957c02873193fb9aec043756845946ec29cceb1f095f03d876a7884e38c53cd89a8041a2adfb2d9241b5ec5d70268714d168b9353a2c01&quot;
+         ],
+         &quot;i&quot;: [0, 1]
+         &quot;id&quot;: &quot;b46989156404e8e0acdb751ef553b210ef77822e&quot;,
+         &quot;key&quot;: &quot;6bc1de5443d1a7c536cdf69433ac4a7163d3c63e2f9c92d78f6011cf63dbcd5b638bbc2119cdad0c57e4c61bc69ba5e2c08b918c2db8d1848cf514bd9958d307&quot;,
+         &quot;n&quot;: &quot;my stuff&quot;
+         &quot;target&quot;: &quot;b4692ef0005639e86d7165bf378474107bf3a762&quot;
+         &quot;token&quot;: &quot;23ba&quot;
+      },
+      &quot;y&quot;: &quot;q&quot;,
+      &quot;q&quot;: &quot;announce_item&quot;,
+      &quot;t&quot;: &quot;a421&quot;
+   }</code></pre></div><p>&quot;ih&quot; is a list of strings, each string contains one or more info hashes (i.e. the length is divisible by 20). &quot;sig&quot; is a list with the same number of items, each item is a 64 byte signature of the corresponding info-hash string + the corresponding sequence number from &quot;i&quot;.</p><p>This way, the sequence number is ordering the batches of info-hashes, and the order the info-hashes are listed inside the string defines their order in the feed. The sequence numbers can only increment by one. If each &quot;batch&quot; has info-hashes appended to it until it fills some notion of an MTU before a new batch is created, the sequence numbers can be considered pages.</p><p>You could make it possible to request pages by specifying negative numbers to index from the end. Requesting page -1 would thus refer to the latest items.</p><p>This is quite compact, but it&#039;s not very generic. Turning each batch of info-hashes to a list of dicts would make it a lot more generic, since each item can be extended that way. The signatures could be signing the bencoded representation of those list items.</p><p>With an approach like this, the assumption is that all feed items are always lumped together until it fills one MTU, so it wouldn&#039;t<br />make that much sense to have a bloom filter representing individual feeds. The requesting node could (essentially) be guaranteed that requesting a single page will always fit in one MTU as well.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=302">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=1752#p1752">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="blockpost rowodd">
+	<h2><span><span class="conr">#25</span> <span>Re: <a href="viewforum.php?id=25">BEPs</a></span> <span>»&#160;<a href="viewtopic.php?id=302">decentralized feeds</a></span> <span>»&#160;<a href="viewtopic.php?pid=1750#p1750">2011-01-01 20:33:02</a></span></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd><div class="icon"><div class="nosize"><!-- --></div></div></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<div class="postmsg">
+						<p>Just to throw it out there; Another way of doing pagination and load balancing would be to announce page 1 to SHA1(&lt;feed-name&gt; + &lt;public-key&gt; + &quot;page1&quot;), the second page to SHA1(&lt;feed-name&gt; + &lt;public-key&gt; + &quot;page2&quot;) and so on.</p><p>It might add some extra traffic though, since everyone needs to look up one node past the last one.</p>
+					</div>
+				</div>
+				<div class="clearer"></div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootright">
+					<ul>
+						<li><span><a href="viewtopic.php?id=302">Go to topic</a></span></li>
+						<li><span><a href="viewtopic.php?pid=1750#p1750">Go to post</a></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink"><span class="pages-label">Pages: </span><strong class="item1">1</strong> <a href="search.php?search_id=2000863420&amp;p=2">2</a> <a href="search.php?search_id=2000863420&amp;p=3">3</a> <a href="search.php?search_id=2000863420&amp;p=4">4</a> <a href="search.php?search_id=2000863420&amp;p=2">Next</a></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="search.php">Search</a></li>
+			<li><span>»&#160;</span><strong><a href="search.php?action=show_user_posts&amp;user_id=89602">Posts by arvid</a></strong></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

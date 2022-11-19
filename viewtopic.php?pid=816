@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>forum.bittorrent.org / BEP-32: IPv6 bootstrap nodes available</title>
+<link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
+</head>
+<body>
+
+<div id="punwrap">
+<div id="punviewtopic" class="pun">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><span>forum.bittorrent.org</span></h1>
+			<p><span>BitTorrent.org community</span></p>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p>You are not logged in.</p>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<h2><span>Announcement</span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div>Posting about any illegal sharing of copyrighted content is strictly forbidden.</div>
+		</div>
+	</div>
+</div>
+
+<div class="linkst">
+	<div class="inbox">
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<p class="postlink conr">&nbsp;</p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;BEP-32: IPv6 bootstrap nodes available</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p797" class="blockpost rowodd firstpost">
+	<h2><span><span class="conr">#1&nbsp;</span><a href="viewtopic.php?pid=797#p797">2009-11-16 08:34:33</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3>BEP-32: IPv6 bootstrap nodes available</h3>
+				<div class="postmsg">
+					<p>Thanks to <em>titer</em> and the <a href="http://www.transmissionbt.com" rel="nofollow">the Transmission project</a>, there is now a pool of <a href="http://www.pps.jussieu.fr/~jch/software/bittorrent/bep-dht-ipv6.html" rel="nofollow">IPv6 DHT</a> bootstrap nodes available on<br /></p><div class="codebox"><div class="incqbox"><h4>Code:</h4><div class="scrollbox" style="height: 4.5em"><pre>dht.wifi.pps.jussieu.fr port 6881</pre></div></div></div><p>You are welcome to use those nodes for testing your implementation of BEP-32.<br /><br />Under no circumstances should you hard-wire the IPs in your client -- the DNS entry has a low TTL for good reason, I want to be able to add and remove nodes from the pool easily.<br /><br />It is also not a good idea to hard-wire the name in your client; you really do not want to rely on a name you don't personally control.&nbsp; Instead, you should set up your own bootstrap node that peers with dht.wifi.pps.jussieu.fr, and use its name in your client instead.&nbsp; See below on how to do this.<br /><br /><strong>Implementations</strong><br /><br />There are currently two implementations of BEP-32 available; they are listed on <a href="http://www.pps.jussieu.fr/~jch/software/bittorrent/" rel="nofollow">my BitTorrent page</a>.&nbsp; Please let me know when you implement BEP-32, so I can add yours.<br /><br /><strong>Setting up your own bootstrap node</strong><br /><br />If you don't yet have an implementation of BEP-32, feel free to grab by DHT code by doing<br /></p><div class="codebox"><div class="incqbox"><h4>Code:</h4><div class="scrollbox" style="height: 4.5em"><pre>  darcs get http://www.pps.jussieu.fr/~jch/software/repos/dht/</pre></div></div></div><p>Compiling this will give you a small executable called dht-example.&nbsp; (While this code has only been tested on GNU/Linux, I believe that it should be portable to most recent Unices.)<br /><br />On a machine with a stable IPv6 address, arrange to run<br /></p><div class="codebox"><div class="incqbox"><h4>Code:</h4><div class="scrollbox" style="height: 4.5em"><pre>dht-example -q -6 -b your:ipv6:addr:ess 6881 dht.wifi.pps.jussieu.fr 6881</pre></div></div></div><p>Omit -q if you want to see the debugging messages.&nbsp; Omit -6 if you want to participate in both the IPv4 and IPv6 DHTs.<br /><br />You may monitor your node by sending it the USR1 signal.<br /><br />You may then do one of the following:<br /><br />&nbsp; 1. set up your own name in the DNS, with an AAAA pointing at your node;<br /><br />(that's a nice thing to do, it will give you your own bootstrap node to use in your client)<br /><br />&nbsp; 2. drop me an e-mail to add an AAAA to dht.wifi.pps.jussieu.fr;<br /><br />(that's a nice thing to do, it will put one more node in the dht.wifi.pps.jussieu.fr pool)<br /><br />&nbsp; 3. do both (1) and (2);<br /><br />(that's a nice thing to do, it will give you your own bootstrap node that simultaneously belongs to the dht.wifi.pps.jussieu.fr pool)<br /><br />&nbsp; 4. do neither.<br /><br />(that's a nice thing to do, it will give the IPv6 DHT a stable node that will be discovered by any nodes that do an IPv6 find_nodes on a node in the dht.wifi.pps.jussieu.fr pool; it's also the only thing you can do if your IPv6 address is dynamic.)<br /><br />Happy testing,<br /><br />--Juliusz</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p810" class="blockpost roweven">
+	<h2><span><span class="conr">#2&nbsp;</span><a href="viewtopic.php?pid=810#p810">2009-11-18 20:12:55</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP-32: IPv6 bootstrap nodes available</h3>
+				<div class="postmsg">
+					<p>It looks good. 32 nodes in the routing table, the size estimator reports anything between 48 and 160 nodes, i see lookups and announces... it seems to be working. And more 6to4 nodes than i hoped for (the preference stuff is working).</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p815" class="blockpost rowodd">
+	<h2><span><span class="conr">#3&nbsp;</span><a href="viewtopic.php?pid=815#p815">2009-11-22 10:53:51</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90623">adrian</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP-32: IPv6 bootstrap nodes available</h3>
+				<div class="postmsg">
+					<p>Same here:<br />Everything fine so far: tested with a few magnet-links on my ipv6 only hosts: no problems so far :-)<br /><br />jch: Feel free to add 2002:d503:5ed::1 to dht.wifi.pps.jussieu.fr. The node should be up 7x24.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p816" class="blockpost roweven">
+	<h2><span><span class="conr">#4&nbsp;</span><a href="viewtopic.php?pid=816#p816">2009-11-22 11:27:08</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: BEP-32: IPv6 bootstrap nodes available</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>jch: Feel free to add 2002:d503:5ed::1 to dht.wifi.pps.jussieu.fr.</p></div></blockquote><p>Done.&nbsp; Thanks.<br /><br />--Juliusz</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox">
+		<p class="postlink conr">&nbsp;</p>
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;BEP-32: IPv6 bootstrap nodes available</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div class="inbox">
+
+			<div class="conl">
+				<form id="qjump" method="get" action="viewforum.php">
+					<div><label>Jump to
+					<br /><select name="id" onchange="window.location=('viewforum.php?id='+this.options[this.selectedIndex].value)">
+						<optgroup label="BitTorrent">
+							<option value="26">Announcements</option>
+							<option value="25" selected="selected">BEPs</option>
+							<option value="29">BEP process</option>
+							<option value="27">General</option>
+							<option value="33">Research Tools</option>
+							<option value="32">Cooperation between BitTorrent and ISPs</option>
+							<option value="30">Attacks against BitTorrent</option>
+							<option value="28">Feature Requests, Found Bugs &gt;&gt;&gt;</option>
+					</optgroup>
+					</select>
+					<input type="submit" value=" Go " accesskey="g" />
+					</label></div>
+				</form>
+			</div>
+			<p class="conr">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-116155-1";
+_udn = "utorrent.com";
+urchinTracker();
+</script>
+
+</body>
+</html>

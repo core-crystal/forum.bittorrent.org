@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="ROBOTS" content="NOINDEX, FOLLOW" />
+<title>forum.bittorrent.org / Search results</title>
+<link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
+</head>
+<body>
+
+<div id="punwrap">
+<div id="punsearch" class="pun">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><span>forum.bittorrent.org</span></h1>
+			<p><span>BitTorrent.org community</span></p>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p>You are not logged in.</p>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<h2><span>Announcement</span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div>Posting about any illegal sharing of copyrighted content is strictly forbidden.</div>
+		</div>
+	</div>
+</div>
+
+<div class="linkst">
+	<div class="inbox">
+		<p class="pagelink">Pages: <strong>1</strong></p>
+	</div>
+</div>
+
+<div id="vf" class="blocktable">
+	<h2><span>Search results</span></h2>
+	<div class="box">
+		<div class="inbox">
+			<table cellspacing="0">
+			<thead>
+				<tr>
+					<th class="tcl" scope="col">Topic</th>
+					<th class="tc2" scope="col">Forum</th>
+					<th class="tc3" scope="col">Replies</th>
+					<th class="tcr" scope="col">Last post</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="tcl">
+						<div class="intd">
+							<div class="icon"><div class="nosize"><!-- --></div></div>
+							<div class="tclcon">
+								<a href="viewtopic.php?id=48">Webseeding - GET request is 16kB (Deluge) instead of 1MB.</a> <span class="byuser">by&nbsp;herman</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2"><a href="viewforum.php?id=27">General</a></td>
+					<td class="tc3">0</td>
+					<td class="tcr"><a href="viewtopic.php?pid=259#p259">2008-07-09 09:52:30</a> by&nbsp;herman</td>
+				</tr>
+				<tr>
+					<td class="tcl">
+						<div class="intd">
+							<div class="icon"><div class="nosize"><!-- --></div></div>
+							<div class="tclcon">
+								<a href="viewtopic.php?id=47">commandline private tracker</a> <span class="byuser">by&nbsp;juliojj14</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2"><a href="viewforum.php?id=27">General</a></td>
+					<td class="tc3">0</td>
+					<td class="tcr"><a href="viewtopic.php?pid=250#p250">2008-06-17 14:43:54</a> by&nbsp;juliojj14</td>
+				</tr>
+				<tr>
+					<td class="tcl">
+						<div class="intd">
+							<div class="icon"><div class="nosize"><!-- --></div></div>
+							<div class="tclcon">
+								<a href="viewtopic.php?id=41">please have mercy</a> <span class="byuser">by&nbsp;chameleon</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2"><a href="viewforum.php?id=27">General</a></td>
+					<td class="tc3">0</td>
+					<td class="tcr"><a href="viewtopic.php?pid=228#p228">2008-05-22 06:32:36</a> by&nbsp;chameleon</td>
+				</tr>
+				<tr>
+					<td class="tcl">
+						<div class="intd">
+							<div class="icon"><div class="nosize"><!-- --></div></div>
+							<div class="tclcon">
+								<a href="viewtopic.php?id=35">Why BitTorrent adopts Kademlia as DHT protocol?</a> <span class="byuser">by&nbsp;Adele</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2"><a href="viewforum.php?id=27">General</a></td>
+					<td class="tc3">0</td>
+					<td class="tcr"><a href="viewtopic.php?pid=207#p207">2008-05-19 00:40:43</a> by&nbsp;Adele</td>
+				</tr>
+				<tr class="iclosed">
+					<td class="tcl">
+						<div class="intd">
+							<div class="icon"><div class="nosize">This topic is closed</div></div>
+							<div class="tclcon">
+								<a href="viewtopic.php?id=2">BEPs need public review.</a> <span class="byuser">by&nbsp;dave</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2"><a href="viewforum.php?id=25">BEPs</a></td>
+					<td class="tc3">0</td>
+					<td class="tcr"><a href="viewtopic.php?pid=2#p2">2008-05-02 20:18:05</a> by&nbsp;dave</td>
+				</tr>
+				<tr>
+					<td class="tcl">
+						<div class="intd">
+							<div class="icon"><div class="nosize"><!-- --></div></div>
+							<div class="tclcon">
+								<a href="viewtopic.php?id=26">Bittorrent 2.0</a> <span class="byuser">by&nbsp;The 8472</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2"><a href="viewforum.php?id=27">General</a></td>
+					<td class="tc3">0</td>
+					<td class="tcr"><a href="viewtopic.php?pid=144#p144">2008-03-30 14:39:55</a> by&nbsp;The 8472</td>
+				</tr>
+				<tr>
+					<td class="tcl">
+						<div class="intd">
+							<div class="icon"><div class="nosize"><!-- --></div></div>
+							<div class="tclcon">
+								<a href="viewtopic.php?id=20">Discussion of BEP 18: Search Engine Specification</a> <span class="byuser">by&nbsp;dave</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2"><a href="viewforum.php?id=25">BEPs</a></td>
+					<td class="tc3">0</td>
+					<td class="tcr"><a href="viewtopic.php?pid=47#p47">2008-03-04 21:08:33</a> by&nbsp;dave</td>
+				</tr>
+				<tr>
+					<td class="tcl">
+						<div class="intd">
+							<div class="icon"><div class="nosize"><!-- --></div></div>
+							<div class="tclcon">
+								<a href="viewtopic.php?id=3">BEP process is a proposal.</a> <span class="byuser">by&nbsp;dave</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2"><a href="viewforum.php?id=29">BEP process</a></td>
+					<td class="tc3">0</td>
+					<td class="tcr"><a href="viewtopic.php?pid=3#p3">2008-02-25 19:49:04</a> by&nbsp;dave</td>
+				</tr>
+				<tr>
+					<td class="tcl">
+						<div class="intd">
+							<div class="icon"><div class="nosize"><!-- --></div></div>
+							<div class="tclcon">
+								<a href="viewtopic.php?id=1">BitTorrent.org now provides forums.</a> <span class="byuser">by&nbsp;dave</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2"><a href="viewforum.php?id=26">Announcements</a></td>
+					<td class="tc3">0</td>
+					<td class="tcr"><a href="viewtopic.php?pid=1#p1">2008-02-25 15:06:07</a> by&nbsp;dave</td>
+				</tr>
+			</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+<div class="linksb">
+	<div class="inbox">
+		<p class="pagelink">Pages: <strong>1</strong></p>
+	</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div class="inbox">
+
+			<dl id="searchlinks" class="conl">
+				<dt><strong>Search links</strong></dt><dd><a href="search.php?action=show_24h">Show recent posts</a></dd>
+				<dd><a href="search.php?action=show_unanswered">Show unanswered posts</a></dd>
+			</dl>
+			<p class="conr">Powered by <a href="http://www.punbb.org/">PunBB</a><br />&copy; Copyright 2002&#8211;2005 Rickard Andersson</p>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-116155-1";
+_udn = "utorrent.com";
+urchinTracker();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>forum.bittorrent.org / Discussion of BEP 26: Zerconf for BitTorrent</title>
+<link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
+</head>
+<body>
+
+<div id="punwrap">
+<div id="punviewtopic" class="pun">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><span>forum.bittorrent.org</span></h1>
+			<p><span>BitTorrent.org community</span></p>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p>You are not logged in.</p>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<h2><span>Announcement</span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div>Posting about any illegal sharing of copyrighted content is strictly forbidden.</div>
+		</div>
+	</div>
+</div>
+
+<div class="linkst">
+	<div class="inbox">
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<p class="postlink conr">&nbsp;</p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Discussion of BEP 26: Zerconf for BitTorrent</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p236" class="blockpost rowodd firstpost">
+	<h2><span><span class="conr">#1&nbsp;</span><a href="viewtopic.php?pid=236#p236">2008-05-27 21:20:26</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3>Discussion of BEP 26: Zerconf for BitTorrent</h3>
+				<div class="postmsg">
+					<p>This BEP discusses adding Zeroconf support to BitTorrent.<br /><br />&nbsp; <a href="http://www.bittorrent.org/beps/bep_0026.html" rel="nofollow">http://www.bittorrent.org/beps/bep_0026.html</a><br /><br />uTorrent already implements a method for finding peers in the same network called Local Service Discovery (LSD).&nbsp; As of yet no BEP has been written for it.&nbsp; &nbsp;I believe there are other implementations of LSD.&nbsp; Anyone care to write a BEP for it?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p237" class="blockpost roweven">
+	<h2><span><span class="conr">#2&nbsp;</span><a href="viewtopic.php?pid=237#p237">2008-05-30 09:41:58</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89642">some1</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 26: Zerconf for BitTorrent</h3>
+				<div class="postmsg">
+					<p>My opinion: Against it.<br /><br />My reasons:<br /><br />- The text begins with &quot;Zeroconf [1] is a collection of protocols including ipv4 link local networking&quot;... well, IPv4 is on the verge of dieing. There shouldn't be a need to implement new mechanisms for this.<br /><br />- Peers shouldn't search for each other. It's the work of a tracker to convey a peer to another. <br /><br />- The way it is explained, it seems as if it pollutes the DNS-tree, creating entries for every torrent file and every peer.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p238" class="blockpost rowodd">
+	<h2><span><span class="conr">#3&nbsp;</span><a href="viewtopic.php?pid=238#p238">2008-05-30 12:27:55</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 26: Zerconf for BitTorrent</h3>
+				<div class="postmsg">
+					<p>well, i'm also against it but for different reasons. My main point is that it's excessively complex and simple multicast-based announces do the job just fine (and they're already implemented).<br /><br />I also strongly disagree with point 2 of <em>some1</em>, trackers are a single point of failure and bottleneck (that's why we got DHT and PEX in the first place). And they cannot provide lan-local IPs as they only route provide public IPs, to use lan-local peers it's important to have a local discovery services to exploit the LAN-bandwidth and thus save WAN bandwidth.<br /><br />Point 3 is also wrong as it's based on mDNS, thus it would not influence any &quot;real&quot; dns trees if i understand correctly.</p>
+					<p class="postedit"><em>Last edited by The 8472 (2008-05-30 12:28:50)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p240" class="blockpost roweven">
+	<h2><span><span class="conr">#4&nbsp;</span><a href="viewtopic.php?pid=240#p240">2008-06-02 07:18:08</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89718">rockinrobstar</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 26: Zerconf for BitTorrent</h3>
+				<div class="postmsg">
+					<p>As to <em>some1's</em> first point: local link addressing is the ability for hosts to automatically obtain an IP address without a DHCP server (Usually of the form 169.254.x.x). Zeroconf only does this for IPv4 because it is already built into the design of IPv6! Otherwise, Zeroconf and this BEP comes ready for IPv6.<br /><br />The aim of my extension is for you to get two computers, connect them together ether by cable or wirelessly and for you to immediately start peering. No configuration, IP addresses, anything - it just works. It is that simple and perhaps I haven't given its simplicity justice in my proposal. I will revisit it.<br /><br />The 8472 does offer a compelling argument as to why not use simple multicast-based announces. Let me start by saying that there is no reason why the two local discovery protocols are mutually exclusive. <br /><br />Secondly, using multicast-based announces brings about its own questions: what address do we use? what else could be using that address (and how much bandwidth does it use)? how do we know the found peers are local? how do you deal with a misbehaving host ?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p242" class="blockpost rowodd">
+	<h2><span><span class="conr">#5&nbsp;</span><a href="viewtopic.php?pid=242#p242">2008-06-02 15:56:03</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 26: Zerconf for BitTorrent</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>The 8472 does offer a compelling argument as to why not use simple multicast-based announces. Let me start by saying that there is no reason why the two local discovery protocols are mutually exclusive.</p></div></blockquote><p>I do?<br /><br />My argument is that we should use simple multicast as it's easy to implement and does not rely on a daemon which is not available by default on many systems... which would hamper interoperability between bittorrent clients. And lan peer location is only useful if many systems and many clients support it. Adding the requirement for a daemon which does not ship with windows or linux as default/always-on service is a showstopper imo.</p>
+					<p class="postedit"><em>Last edited by The 8472 (2008-06-02 15:59:07)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox">
+		<p class="postlink conr">&nbsp;</p>
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Discussion of BEP 26: Zerconf for BitTorrent</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div class="inbox">
+
+			<div class="conl">
+				<form id="qjump" method="get" action="viewforum.php">
+					<div><label>Jump to
+					<br /><select name="id" onchange="window.location=('viewforum.php?id='+this.options[this.selectedIndex].value)">
+						<optgroup label="BitTorrent">
+							<option value="26">Announcements</option>
+							<option value="25" selected="selected">BEPs</option>
+							<option value="29">BEP process</option>
+							<option value="27">General</option>
+							<option value="33">Research Tools</option>
+							<option value="32">Cooperation between BitTorrent and ISPs</option>
+							<option value="30">Attacks against BitTorrent</option>
+							<option value="28">Feature Requests, Found Bugs &gt;&gt;&gt;</option>
+					</optgroup>
+					</select>
+					<input type="submit" value=" Go " accesskey="g" />
+					</label></div>
+				</form>
+			</div>
+			<p class="conr">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-116155-1";
+_udn = "utorrent.com";
+urchinTracker();
+</script>
+
+</body>
+</html>

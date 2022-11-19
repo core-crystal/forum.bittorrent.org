@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Sandvine: Is It Legal? (Page 1) / Attacks against BitTorrent / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
+<script type="text/javascript" src="captcha/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript">
+	$(function(){var f=$("#sliderCaptcha");var b=$("#cleCaptcha");var d=$(".boutonsCaptcha");var a=$("#javascriptCaptcha");var e=[6,1,2,0,33,28,27,32,13,18,32,3,3,42,38,15,25,45,24,46,4,17,30,33,4,7,48,11,6,8,46,12,9,49,13,43,27,41,25,41,9,8,45,12,0,33,27,25,29,2];var h=0;var g=5;var c=0;a.hide();f.slider({value:0,min:0,max:g,step:1,slide:function(i,j){if(j.value>c){c=j.value;h+=c}},stop:function(j,k){var i=false;if(k.value==g){if(h==((g+Math.pow(g,2))/2)){i=true;f.slider("option","disabled",true);if(b.val().length!=e.length){$.post("captcha.php",{tokenCaptcha:b.val()},function(m){var l="";$.each(e,function(){l+=m.charAt(this%m.length)});b.val(l);d.removeAttr("disabled")})}}}if(!i){h=c=0;f.slider("option","value",h)}}})});
+</script>
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="punviewtopic" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex" class="isactive"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=30">Attacks against BitTorrent</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=7"><strong>Sandvine: Is It Legal?</strong></a></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p13" class="blockpost rowodd firstpost blockpost1">
+	<h2><span><span class="conr">#1</span> <a href="viewtopic.php?pid=13#p13">2008-02-29 16:52:24</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89614">aciani1</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Sandvine: Is It Legal?</h3>
+					<div class="postmsg">
+						<p>The Sandvine attack, outlined in another thread, is one of the first &quot;hacking&quot; type attacks implemented by ISPs.&#160; What Sandvine does is something one would expect from a malicious attack performed by an intruder who has tapped into your network, not the traditional (and effective) throttling which your ISP would normally use.&#160; Comcast, the largest ISP first observed using the Sandvine appliance, had denied using Sandvine, but has recently defended its use of Sandvine to the FCC.</p><p><a href="http://arstechnica.com/news.ars/post/20080213-comcast-discloses-network-management-practices.html">http://arstechnica.com/news.ars/post/20 … tices.html</a></p><p><a href="http://blogs.zdnet.com/Ou/?p=1001">http://blogs.zdnet.com/Ou/?p=1001</a></p><br /><p><strong>The Why</strong></p><p>The primary reason that Comcast claims it needs to &quot;throttle&quot; BT traffic (and only BT traffic) is that BT users tend to leave BT running at their full upstream rate.&#160; Cable modem networks only have about 10 mbps of upstream rate divided amongst (up-to) 450 customers.&#160; When people run their torrents at the maximum upload rate of 345 kbps (384*0.9 for overhead -&gt; 42 KBps), the local node will be swamped with only 25 peers (6 %) uploading.&#160; Of course, other people are using upstream bandwidth too.&#160; George Ou estimates the breakdown of Comcast&#039;s network traffic.</p><p><a href="http://blogs.zdnet.com/Ou/?p=1031">http://blogs.zdnet.com/Ou/?p=1031</a></p><p><strong>The Law</strong></p><p>The law in the United States does not allow anyone to eavesdrop on private communications (18 U.S.C. Â§ 2511), whether they are voice or data.&#160; Communications companies are allowed to &quot;intercept&quot; only what they need in order to properly route and bill the call or data communication, and nothing more.&#160; Obviously, the Sandvine box is &quot;listening&quot; in on a private communication in an attempt to determine who is communicating, and to determine if it will interfere in that communication.&#160; Even under a loose interpretation of the law, the manufacture and use of a Sandvine box violates Title 18.&#160; The law makes no exclusions for &quot;traffic shaping&quot;.</p><p><strong>The Analogy</strong></p><p>To use an analogy where Comcast&#039;s network is a toll road and the data traffic is the vehicular traffic:</p><p>Comcast advertises the use of its road by showing a nearly empty highway with the occasional race car zipping by.&#160; Comcast says that it will let anyone use its ultra-fast tollway.&#160; Trucking companies start making heavy use of the tollway, and send lots of &quot;wide loads&quot; down it.&#160; This slows the tollway down, so Comcast places a 40 ton limit on the road.&#160; Traffic improves and is no longer congested, but Comcast estimates that its road will need repairs sooner than expected (due to the heavy traffic), which will reduce its profits.&#160; Comcast identifies the major users of its tollway, and singles-out trucks carrying iron bars.&#160; Comcast still claims to allow anyone (under 40 tons) to use its tollway, but whenever a truck gets on it, Comcast secretly X-rays the inside of the vehicle, and then sends out a special crew to hijack the trucks carrying iron bars and make them disappear.&#160; Comcast claims that it&#039;s not hijacking trucks, but that it&#039;s OK to hijack trucks because it needs to keep the traffic flowing, and it&#039;s Comcast&#039;s tollway anyway.&#160; But hijacking is still hijacking.</p><p><strong>The Alternative</strong></p><p>What makes Comcast&#039;s use of the Sandvine appliance even worse, is that there are readily available, non-eavesdropping means to invisibly shape network traffic.&#160; I particularly refer to bit bucket based queuing.&#160; A TCP stream will only run at the rate of its slowest point.&#160; Comcast and some of it supporters have claimed that these solutions aren&#039;t available, but more-than-likely, Comcast&#039;s routers already have highly configurable, bit bucket based queues inside them.&#160; For over 7 years it has been possible to configure a Linux PC to act as a &quot;fair queuing&quot; router, and routing appliances haven&#039;t been far behind.&#160; Comcast has also claimed that these queues won&#039;t help traffic on the node-side of the cable loop (where it matters), but &quot;a TCP stream will only run at the rate of its slowest point&quot;, and BT is TCP based.</p><p>Other systems also exist, but bit buckets are by far the most adaptable and fastest reacting of any of them, including Sandvine boxes.&#160; A more slowly reacting system would be to decrease the throttles of heavy users at the cable modem, and increase it as their usage calms down.&#160; When their Vonage doesn&#039;t work because they&#039;ve been throttled to 96 kbps and their BT is taking it all, they might figure it out.</p><p><strong>The Terms of Service</strong></p><p>Comcast&#039;s Terms of Service (ToS) stipulate that people are not allowed to run servers.&#160; So far, Comcast has only targeted BT seeds (unidirectional uploaders), not peers.&#160; This is because Comcast has determined that a seeder constitutes a &quot;server&quot;.&#160; Of course, this is a rather valid view.&#160; So Comcast has also argued that two wrongs make a right.&#160; The proper action against someone who is serving in violation of the ToS would be to cut them off, or severely throttle their connection.&#160; Servers can be readily identified by observing for listening ports on extreme uploaders.&#160; No need to eavesdrop here either.</p><p><strong>The Point is Moot</strong></p><p>Well, mostly moot.&#160; If BEP 0008,</p><p><a href="http://www.bittorrent.org/beps/bep_0008.html">http://www.bittorrent.org/beps/bep_0008.html</a></p><p>is adopted, the Sandvine boxes will stop working, and Comcast will need to do much deeper packet inspection to target BT.&#160; The result is that they will probably turn to &quot;fair queuing&quot;, which is what they should have been doing all along.&#160; Of course, if Comcast still insists on trying to target BT, I suspect that SSL will be used for all BT peer communications, and some type of SSL-light will be used for tracker communications.</p><p><strong>But We Can All Get Along</strong></p><p>As I stated earlier, the real problem is people using up all of their upstream bandwidth on BT.&#160; Yes, BT is designed to take advantage of unused bandwidth, but not ALL of it!&#160; If Comcast wanted to be &quot;ultra fair&quot;, to the point of being ludicrous, they would throttle every user at 96 kbps down, and 24 kbps up (that&#039;s 12 KBps down, 3 KBps up).&#160; Of course, BT would still work fine at those speeds, but Comcast doesn&#039;t do this because:<br />1) People are not using the network all-at-once.<br />2) When someone occasionally wants to upload something large, they can do it fast.</p><p>The basic lesson is: <strong>Don&#039;t be a bandwidth hog!</strong></p><p><strong>And developers</strong>, most of the people using BT won&#039;t understand a lick of this.&#160; You might want to hard code a &quot;Cable Modem&quot; rate of 30 KBps down: 5 KBps up.&#160; Or even include an &quot;Even Share&quot; rate of 8:8, or a &quot;Re-seed&quot; rate of 5:10.&#160; You might also want to check how many other clients are running, and what their rates are, and then pop-up a warning if it&#039;s too many.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p20" class="blockpost roweven">
+	<h2><span><span class="conr">#2</span> <a href="viewtopic.php?pid=20#p20">2008-03-02 09:28:26</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Sandvine: Is It Legal?</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>Well, mostly moot.&#160; If BEP 0008, <a href="http://www.bittorrent.org/beps/bep_0008.html">http://www.bittorrent.org/beps/bep_0008.html</a> is adopted, the Sandvine boxes will stop working</p></div></blockquote></div><p>This hasn&#039;t be proven. And anecdotal evidence using https trackers or DHT-only suggests otherwise.</p><br /><div class="quotebox"><blockquote><div><p>The basic lesson is: Don&#039;t be a bandwidth hog!</p></div></blockquote></div><p>Far from it. Look at sweden, bittorrent is highly popular, 10M/10M internet is commonly available at low prices (40â‚¬ or so) and no significant traffic shaping is applied. This alone proves that infrastructure capable of dealing with bittorrent is feasible and economical. Users shouldn&#039;t be forced to not use certain applications because their ISP was to lazy or greedy to expand their infrastructure like others have.</p><p>Another thing is that bittorrent is a zero-sum game. If someone uploads less then someone else has to upload more to sustain the same overall throughput, so you&#039;re merely shiftingt the problem to other ISPs, which is hardly a fair solution and would fail if everyone does it.</p><div class="quotebox"><blockquote><div><p>What makes Comcast&#039;s use of the Sandvine appliance even worse, is that there are readily available, non-eavesdropping means to invisibly shape network traffic.</p></div></blockquote></div><p>which are already in use by several ISPs to various degrees, some british ISPs throttle(!) bittorrent traffic during peak hours, several canadian ISPs throttle it 24/7, some of them also to an unreasonable degree (down to 10KB/s).</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p21" class="blockpost rowodd">
+	<h2><span><span class="conr">#3</span> <a href="viewtopic.php?pid=21#p21">2008-03-02 19:39:30</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd class="usertitle"><strong>Editor</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Sandvine: Is It Legal?</h3>
+					<div class="postmsg">
+						<p>If anyone has more intimate knowledge of how Sandvine detects BitTorrent connections, it would be highly useful to the discussion.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p41" class="blockpost roweven">
+	<h2><span><span class="conr">#4</span> <a href="viewtopic.php?pid=41#p41">2008-03-04 18:22:03</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89614">aciani1</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Sandvine: Is It Legal?</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><div class="quotebox"><blockquote><div><p>The basic lesson is: Don&#039;t be a bandwidth hog!</p></div></blockquote></div><p>Far from it. Look at sweden, bittorrent is highly popular, 10M/10M internet is commonly available at low prices (40â‚¬ or so) and no significant traffic shaping is applied. This alone proves that infrastructure capable of dealing with bittorrent is feasible and economical. Users shouldn&#039;t be forced to not use certain applications because their ISP was to lazy or greedy to expand their infrastructure like others have.</p></div></blockquote></div><p>I would have to totally disagree here.&#160; If we&#039;re going to talk about apples, we shouldn&#039;t bring up oranges.&#160; The Comcast service is stuck in DOCSIS 2.0 until they do massive upgrades.&#160; Now, my service usually runs OK during the day.&#160; I can get about 3 mbps down / 300 kbps up. Sometimes, my upstream rate drops to around ~180 kbps during the day.&#160; At night, I see crappy upload rates and lots of dropped pings.&#160; Now, people aren&#039;t using BT 24/7, and I&#039;m not even sure if the night-time slowdown is BT, but there is definitely slowdown.&#160; For all I know, it&#039;s due to poor line quality (heaven knows I haven&#039;t suffered through 3 different episodes of poor line quality, each lasting 1 to 3 weeks).</p><p>I do know one thing.&#160; Some days, I can run a couple seeds doing 3 KBps each (about 53 kbps), and see no TCP_RSTs.&#160; Other days, I barely see 1 KBps, lots of TCP_RSTs, and my terminal program lags its echoes severely.</p><br /><p>Now, to talk about oranges.&#160; I can get 1.5/384 kbps DSL service with dedicated bandwidth for only $55/mo, and no filtering.&#160; This is about $2 more than Comcast charges for 3.0/384.&#160; But I can run that link 24/7 at 384 upstream.&#160; No traffic shaping, no packet loss, no congestion.&#160; And within a year, there&#039;s going to be a fiber-optic node on my block, so a 10mbps/1mbps plan may be available... but AT&amp;T wants to charge usage based fees, or maybe just different rate groups.&#160; The residential 1.5/384 is only $15/mo, but that can get filtered or limited, as it has a no-server clause.&#160; The $55 doesn&#039;t, it&#039;s take-all-you-can.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p54" class="blockpost rowodd">
+	<h2><span><span class="conr">#5</span> <a href="viewtopic.php?pid=54#p54">2008-03-05 03:43:38</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Sandvine: Is It Legal?</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>The Comcast service is stuck in DOCSIS 2.0 until they do massive upgrades.</p></div></blockquote></div><p>Which is the result of shortsighted investments or whatever. The customers pay about the same amount of money as customers for other broadband services, thus it&#039;s a fault of the company and the user shouldn&#039;t pay for it by restricting his usage.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p153" class="blockpost roweven">
+	<h2><span><span class="conr">#6</span> <a href="viewtopic.php?pid=153#p153">2008-04-14 15:36:57</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89687">amc1</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Sandvine: Is It Legal?</h3>
+					<div class="postmsg">
+						<p>dave - I had a proposal for a way to circumvent it which did appear to work, though it&#039;s somewhat wasteful (and a bit of a last resort).... Greg should (hopefully) know what I&#039;m referring to.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Azureus Developer</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=30">Attacks against BitTorrent</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=7"><strong>Sandvine: Is It Legal?</strong></a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

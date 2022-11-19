@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>BitTorrent + untraceable digital cash? (Page 1) / General / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
+<script type="text/javascript" src="captcha/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript">
+	$(function(){var f=$("#sliderCaptcha");var b=$("#cleCaptcha");var d=$(".boutonsCaptcha");var a=$("#javascriptCaptcha");var e=[30,34,1,36,35,21,38,31,5,24,30,48,5,42,18,22,29,4,39,47,5,39,27,26,9,2,8,34,40,33,20,21,17,21,7,3,42,45,34,48,20,14,46,26,7,15,49,36,19,38];var h=0;var g=5;var c=0;a.hide();f.slider({value:0,min:0,max:g,step:1,slide:function(i,j){if(j.value>c){c=j.value;h+=c}},stop:function(j,k){var i=false;if(k.value==g){if(h==((g+Math.pow(g,2))/2)){i=true;f.slider("option","disabled",true);if(b.val().length!=e.length){$.post("captcha.php",{tokenCaptcha:b.val()},function(m){var l="";$.each(e,function(){l+=m.charAt(this%m.length)});b.val(l);d.removeAttr("disabled")})}}}if(!i){h=c=0;f.slider("option","value",h)}}})});
+</script>
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="punviewtopic" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex" class="isactive"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=27">General</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=292"><strong>BitTorrent + untraceable digital cash?</strong></a></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p1628" class="blockpost rowodd firstpost blockpost1">
+	<h2><span><span class="conr">#1</span> <a href="viewtopic.php?pid=1628#p1628">2010-11-14 01:01:27</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=91522">FellowTraveler</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>BitTorrent + untraceable digital cash?</h3>
+					<div class="postmsg">
+						<p>Hello, I am Fellow Traveler.</p><p>I have recently written a &quot;Financial Crypto and Digital Cash&quot; library called Open Transactions, which includes Chaumian blinding functionality. </p><p>I believe that digital cash has the potential to solve issues of resource allocation that may arise on anonymous and filesharing networks.</p><p>I hope that my library may be of some use to the future development of your software, and I am also actively searching for any integrations that may be possible, since I believe a lot of synergy is possible between filesharing and digital cash.</p><p>I hope that you find value in my open-source library.</p><p>-Fellow Traveler.<br />PS Notes below. <br />(Please move this post if inappropriate for this board, thank you.)</p><p>-----------------------------</p><p>WHAT IS &#039;Open Transactions&#039; ?</p><p>It&#039;s a solid, easy-to-use, FINANCIAL CRYPTO and DIGITAL CASH LIBRARY.<br />Including an operational API, SERVER and CLIENT.</p><p>Featuring: <br />&#160; &#160; -- Untraceable Digital Cash (real blinded tokens). <br />&#160; &#160; -- Pseudonymous User Accounts (&#039;account&#039; == PGP key). <br />&#160; &#160; -- Many Financial Instruments (cheques, cash, vouchers, invoices...)<br />&#160; &#160; -- Anyone An Issuer (Ricardian-style Contracts) <br />&#160; &#160; -- Triple-Signed Receipts <br />&#160; &#160; -- Basket Currencies<br />&#160; &#160; -- NEW! Markets with Trades<br />&#160; &#160; -- NEW! Payment Plans <br />&#160; &#160; -- NEW! Native API for Java, Ruby, Python, PHP, Perl, C, <br />&#160; &#160; &#160; &#160;C++, Objective-C, C#, Tcl, and LISP<br />&#160; &#160; -- NEW! XmlRpc/HTTP transport layer (build option)<br />&#160; &#160; -- Soon: Stocks that pay dividends, Bonds that pay interest,<br />&#160; &#160; &#160; &#160;and even Collateralized Debt Obligations.<br />&#160; &#160; -- Soon: 2-D Barcodes to make possible &#039;Any screen a cash<br />&#160; &#160; &#160; &#160;register&#039; and &#039;Any camera phone a customer.&#039;</p><p>Please see the Project page:<br /><a href="http://github.com/FellowTraveler/Open-Transactions/wiki">http://github.com/FellowTraveler/Open-Transactions/wiki</a></p><p>FAQ:<br /><a href="http://github.com/FellowTraveler/Open-Transactions/wiki/FAQ">http://github.com/FellowTraveler/Open-T … s/wiki/FAQ</a></p><p>Business Cases:<br /><a href="http://github.com/FellowTraveler/Open-Transactions/wiki/Business-Cases">http://github.com/FellowTraveler/Open-T … ness-Cases</a></p><p>Release Notes:<br /><a href="http://github.com/FellowTraveler/Open-Transactions/wiki/Release-Notes">http://github.com/FellowTraveler/Open-T … ease-Notes</a></p><br /><p>&quot;Seeking developers to contribute by writing client software and<br />doing other integrations!&#160; I will support you on the OT API. Let&#039;s<br />make this happen!&quot; -Fellow Traveler</p><p>--------------------------------------------------------------------</p><br /><p>The server itself is a transaction processor in the cypherpunk<br />tradition. In more detail:</p><p>-- Many financial instruments are supported: Users can write<br />cheques, purchase cashier&#039;s cheques (&#039;vouchers&#039;), and withdraw in<br />untraceable digital cash. The software uses Chaumian-style, blinded<br />tokens courtesy of the Lucre library by Ben Laurie.</p><p>-- It&#039;s like PGP FOR MONEY. The idea is to have many cash<br />algorithms, not just Lucre. I&#039;d like to add Chaum&#039;s version, Brands&#039;<br />version, etc. So that, just like PGP, the software should support as<br />many of the top algorithms as possible, and make it easy to swap<br />them out when necessary.</p><p>-- User accounts are pseudonymous. A user account is a public key.<br />(This is like PKTP.) You can open as many user accounts as you want.<br />Full anonymity is possible only for &#039;cash-only&#039; transactions (where<br />users only perform token exchanges), whereas pseudonymity means that<br />transactions can be linked to the key that signed them. (While the<br />real life identity of the owner is hidden, continuity of reputation<br />becomes possible.)</p><p>-- ANY USER CAN ISSUE new digital currencies and digital asset<br />types, by uploading the new currency contract to the server. (This<br />functionality is comparable to Ricardo, the transaction server by<br />IanG.)</p><p>-- Triple-Signed Receipts. Client and server are able to agree on<br />balances while simultaneously not storing any transaction history.<br />No digital assets can ever be transferred or withdrawn without an<br />authorizing signature from the account owner. (Account transfers are<br />received via inbox. See Bill St. Clair&#039;s excellent Trubanc for an<br />example of this.)</p><p>-- Open Transactions also features MARKETS. Any two asset types can<br />be traded against each other. The markets are full-featured and<br />include LIMIT ORDERS, STOP ORDERS, FILL-OR-KILL orders, DAY orders<br />(date ranges), and stop limits.</p><p>-- Open Transactions also supports BASKET CURRENCIES. Users can<br />define their own, and the server handles the process of exchanging<br />in and out of basket accounts. Baskets are treated by the software<br />like any other asset type, (you can open accounts, transfer funds,<br />withdraw cash, write cheques, and even trade basket currencies on<br />markets.)</p><p>-- Open Transactions also supports PAYMENT PLANS. Users can sign<br />contracts with each other, and the server will carry out the terms<br />and implement the payment plan. (A future goal is to issue new asset<br />types based on revenue from payment plans--so they can also be<br />traded on markets.)</p><p>-- CONTRACTS, in general, are very important to Open Transactions;<br />they are the building block of the entire library. Open Transactions<br />uses a Ricardian-style contract, and all the various instruments,<br />data files, and messages resemble PGP-signed XML files. All objects<br />serialize to a string.</p><p>-- The philosophy of the software is based around the SEPARATION OF<br />POWERS (issuers and transaction servers being separate entities --<br />See Loom for another example of this.) as well as the DISTRIBUTION<br />OF RISK. For example, Asset accounts can be distributed across<br />multiple servers, and asset types can be distributed across multiple<br />issuers (via baskets.)</p><p>-- Future (possible or planned) instruments include:<br />interest-bearing bonds, dividend-paying stocks, and Collateralized<br />Debt Obligations. The CDOs work by grouping a tranch of payment<br />plans together so that the payments flow into an internal server<br />backing account (for a new issuer account, to issue the shares in<br />the CDO.) This is similar to how basket currencies are implemented.<br />The shares can then be traded on markets like any other asset type.<br />Stocks and Bonds will also do their payouts via a similar mechanism.<br />These features aren&#039;t available yet, but they are easy to add given<br />the existing OT infrastructure.</p><p>-- All communications are secured with OpenSSL. All messages are<br />also signed and encrypted. All transactions require signatures from<br />relevant parties including the server.</p><p>-- Open Transactions is open-source, written in C++,<br />object-oriented, and includes a high-level API in Java, Ruby,<br />Python, C, C++, Obj-C, C#, Lisp, Perl, PHP, and Tcl. (Also<br />supporting JRuby, Jython, and any other language available on the<br />JVM.)</p><p>-- The software is fully cross-platform: Linux, Mac OS X, FreeBSD,<br />Android, and Windows are supported with makefiles, project files,<br />and instructions.</p><p>-- The library is transfer-protocol neutral as well as storage<br />neutral, and could be utilized across a variety of different<br />transfer protocols and storage systems. (The current test server and<br />client use SSL for transfer in addition to XmlRpc/HTTP, and they use<br />the filesystem for storage.)</p><p>The intention is for this software to be integrated as many places<br />as possible... Games, digital cash wallets, distributed data stores,<br />secure voip apps, anonymous bit torrent networks, mixnets,<br />remailers, nym servers, etc. There are many other potential uses.</p><p>This product includes software developed by Ben Laurie for use in<br />the Lucre project.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=27">General</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=292"><strong>BitTorrent + untraceable digital cash?</strong></a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

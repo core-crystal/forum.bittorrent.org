@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ÂµTP negotiation (Page 1) / BEPs / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
+<script type="text/javascript" src="captcha/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript">
+	$(function(){var f=$("#sliderCaptcha");var b=$("#cleCaptcha");var d=$(".boutonsCaptcha");var a=$("#javascriptCaptcha");var e=[45,16,8,47,36,6,43,14,46,15,31,27,10,30,43,40,48,12,8,10,20,22,19,10,0,1,41,8,11,25,43,7,41,1,4,28,8,48,43,4,14,24,31,25,5,25,15,3,38,24];var h=0;var g=5;var c=0;a.hide();f.slider({value:0,min:0,max:g,step:1,slide:function(i,j){if(j.value>c){c=j.value;h+=c}},stop:function(j,k){var i=false;if(k.value==g){if(h==((g+Math.pow(g,2))/2)){i=true;f.slider("option","disabled",true);if(b.val().length!=e.length){$.post("captcha.php",{tokenCaptcha:b.val()},function(m){var l="";$.each(e,function(){l+=m.charAt(this%m.length)});b.val(l);d.removeAttr("disabled")})}}}if(!i){h=c=0;f.slider("option","value",h)}}})});
+</script>
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="punviewtopic" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex" class="isactive"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=314"><strong>ÂµTP negotiation</strong></a></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p1814" class="blockpost rowodd firstpost blockpost1">
+	<h2><span><span class="conr">#1</span> <a href="viewtopic.php?pid=1814#p1814">2011-01-16 16:34:00</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>ÂµTP negotiation</h3>
+					<div class="postmsg">
+						<p>As some of you already know, I&#039;ve spent much of the last few weeks working on ÂµTP support in Tramsmission -- see <a href="https://forum.transmissionbt.com/viewtopic.php?f=1&amp;t=11130">this posting</a> for more information.&#160; I&#039;m now struggling with deciding when to use ÂµTP for outgoing connections, which is what some will remember as item (2) of <a href="http://forum.bittorrent.org/viewtopic.php?id=131">my original critique of ÂµTP</a>.</p><p>I believe that what ÂµTorrent does is to alway try ÂµTP first, and only fallback to TCP on timeout (can anyone confirm that?).&#160; If done naively, this has the effect of strongly favouring ÂµTP-supporting peers over TCP-only ones, as TCP is only attempted after a timeout, at which point all of our connection slots may be used up by ÂµTP connections.&#160; A simple mitigation for that is to keep a slot reserved during the timeout -- if a peer got a connection slot, it cannot lose it to a ÂµTP-supporting peer during the timeout/fallback sequence.</p><p>I&#039;m trying to implement some further mitigations to prevent advantaging ÂµTP peers too much.&#160; The first is to skip the ÂµTP phase when a peer was obtained over PEX without the ÂµTP PEX flag, and connect directly over TCP in this case.&#160; Pretty obvious, I guess, and it only helps with PEX peers.</p><p>The other mitigation is to associate with every peer a &quot;utp_failed&quot; flag which is set when we fallback to TCP.&#160; This way the ÂµTP advantage exists the first time we connect to a peer; when reconnecting to a previously connected peer, we know how to contact this peer straight away.</p><p>Trouble is -- this flag sometimes gets set spuriously.&#160; What happens is that ÂµTP only sends 4 SYNs before giving up, so in times of congestion we might be spuriously falling back to TCP, and setting the utp_failed flag.&#160; So, paradoxically, ÂµTP which is supposed to help with congestion is not used when there is congestion.</p><p>So do people have any ideas on when to reset the utp_failed flag?&#160; Right now, I&#039;m resetting it when a peer announces the &quot;ut_holepunch&quot; extension, since it implies support for ÂµTP, but that leaves Transmission, libtorrent and KTorrent peers with no way to signal support for ÂµTP.&#160; Shall I define a new &quot;tr_utp&quot; extension, which signals that a peer speaks ÂµTP, or shall I define a more general &quot;tr_transport&quot; extension that can signal the transport protocols that a peer speaks (including &quot;look, you&#039;ve contacted me over ÂµTP, but in the future please know I really prefer TCP&quot;).</p><p>I&#039;m looking at you, Arvid, since none of this is useful unless implemented by libtorrent.</p><p>--jch</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1816" class="blockpost roweven">
+	<h2><span><span class="conr">#2</span> <a href="viewtopic.php?pid=1816#p1816">2011-01-16 16:50:12</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: ÂµTP negotiation</h3>
+					<div class="postmsg">
+						<p>I&#039;m not sure about the importance of resetting such a flag, since it is only set after connecting to a peer at least once. So it would depend on likely it is that we connect to a peer more at once AND keep state information about that peer in memory/on disk.</p><p>Assuming reconnects happen frequently then we can just use an exponential backoff (based on the # of connection attempts) to determine the interval at which we&#039;ll probe the utp capability.<br />And if we assume reconnects don&#039;t happen often then it&#039;s not really all that important and we can still leave exponential backoff as placebo.</p><br /><p>Adding flags to the LTEP handshake is relatively cheap when it comes to compatibilty, so i have no objection to that approach. I think a simple &quot;supports utp&quot; flag will be sufficient, expressing preferred protocols rarely works if preferences are conflicting.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1818" class="blockpost rowodd">
+	<h2><span><span class="conr">#3</span> <a href="viewtopic.php?pid=1818#p1818">2011-01-16 17:35:57</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=306">Ultima</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: ÂµTP negotiation</h3>
+					<div class="postmsg">
+						<p>Just a note regarding ÂµTorrent always attempting ÂµTP first: I&#039;m pretty sure I already answered your suspicions <a href="http://forum.utorrent.com/viewtopic.php?id=63408">a while ago</a>.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1836" class="blockpost roweven">
+	<h2><span><span class="conr">#4</span> <a href="viewtopic.php?pid=1836#p1836">2011-01-18 09:53:14</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: ÂµTP negotiation</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>I already answered your suspicions a while ago</p></div></blockquote></div><p>I don&#039;t believe ÂµTorrent is doing what you describe.&#160; Opening both ÂµTP and TCP at the same time would be a waste of resources, and would leave hundreds of sockets in TIME_WAIT.</p><p>Please check the code, Ultima.</p><p>--Juliusz</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1838" class="blockpost rowodd">
+	<h2><span><span class="conr">#5</span> <a href="viewtopic.php?pid=1838#p1838">2011-01-18 11:04:58</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=725">Firon</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: ÂµTP negotiation</h3>
+					<div class="postmsg">
+						<p>ÂµTorrent does in fact try TCP and ÂµTP at the same time. Sometimes ÂµTP happens first because of the half-open limit, but ÂµT generally tries to do both. It will keep waiting for a response to ÂµTP SYNs for I think about 60 seconds and drop an established TCP connection if it gets a response.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Please read the <a href="http://forum.utorrent.com/viewtopic.php?id=458">rules</a> before posting.</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1840" class="blockpost roweven">
+	<h2><span><span class="conr">#6</span> <a href="viewtopic.php?pid=1840#p1840">2011-01-18 15:44:08</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: ÂµTP negotiation</h3>
+					<div class="postmsg">
+						<p>Oh my... I&#039;m at a loss for words.</p><p>--jch</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1862" class="blockpost rowodd">
+	<h2><span><span class="conr">#7</span> <a href="viewtopic.php?pid=1862#p1862">2011-01-20 13:44:56</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: ÂµTP negotiation</h3>
+					<div class="postmsg">
+						<p>Okay, so here&#039;s my proposal.</p><p>A peer that supports this extension includes an entry &quot;tr_transport&quot; in the top-level dictionary of the LTEP handshake.&#160; This entry&#039;s value is a list of the following strings:</p><p>* &quot;tcp&quot; if the peer accepts incoming TCP connections;<br />* &quot;utp&quot; if the peer accepts incoming ÂµTP connections.</p><p>Any other values in the list are reserved for future extensions, and should be silently ignored.</p><p>Note that the &quot;tcp&quot; and &quot;utp&quot; strings are for *incoming* connections.&#160; Hence, a peer that knows that it is behind a firewall and hence cannot accept incoming TCP connections may choose to omit the string &quot;tcp&quot;.</p><p>--jch</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1864" class="blockpost roweven">
+	<h2><span><span class="conr">#8</span> <a href="viewtopic.php?pid=1864#p1864">2011-01-20 14:54:21</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: ÂµTP negotiation</h3>
+					<div class="postmsg">
+						<p>Here&#039;s a quick summary of the explanations on IRC.</p><p>Greg has confirmed that ÂµTorrent tries ÂµTP and TCP in parallel; he said that he hasn&#039;t noticed any issues from TIME_WAIT sockets.&#160; (I&#039;m seeing anywhere between 5 and 70 TIME_WAIT sockets per torrent, btw.&#160; Filling the TIME_WAIT table would be pretty bad, since it would give an huge advantage to ÂµTP peers.)</p><p>The strategy I&#039;m using in Transmission is the following.&#160; On initial connect, we try ÂµTP first, and then fall back to TCP if we time-out (after 30 seconds).&#160; In order to avoid giving too much of an advantage to ÂµTP peers, the connection slot is reserved, and cannot be stolen by a ÂµTP peer while we wait for the time-out.</p><p>In order to avoid the 30-second time-out on a subsequent reconnect, we maintain a utp_failed boolean flag associated with the address.&#160; When we fall back to TCP, utp_failed is set, after which the given peer will only ever be contacted over TCP.</p><p>I&#039;ve found that utp_failed gets set spuriously fairly often.&#160; That&#039;s no big deal, it simply means that some peers will only be contacted over TCP (we&#039;ll still accept incoming ÂµTP from them, and reset the flag if that ever happens), but it&#039;d be good to have some way to reset a spuriously-set utp_failed flag.&#160; For ÂµTorrent peers, there&#039;s the ut_holepunch extension, which I&#039;m assuming indicates support for ÂµTP; but what about Transmission, libtorrent and KTorrent?</p><p>--jch</p>
+						<p class="postedit"><em>Last edited by jch (2011-01-20 15:02:54)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=314"><strong>ÂµTP negotiation</strong></a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

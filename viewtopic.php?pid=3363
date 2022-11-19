@@ -1,0 +1,506 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Announcing tracker preferences (Page 1) / BEPs / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
+<script type="text/javascript" src="captcha/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript">
+	$(function(){var f=$("#sliderCaptcha");var b=$("#cleCaptcha");var d=$(".boutonsCaptcha");var a=$("#javascriptCaptcha");var e=[13,45,33,37,3,41,34,33,46,16,30,36,42,40,29,22,37,38,35,20,11,26,30,9,35,20,25,6,40,15,7,4,10,40,41,14,31,26,48,27,42,28,13,35,18,43,7,6,31,43];var h=0;var g=5;var c=0;a.hide();f.slider({value:0,min:0,max:g,step:1,slide:function(i,j){if(j.value>c){c=j.value;h+=c}},stop:function(j,k){var i=false;if(k.value==g){if(h==((g+Math.pow(g,2))/2)){i=true;f.slider("option","disabled",true);if(b.val().length!=e.length){$.post("captcha.php",{tokenCaptcha:b.val()},function(m){var l="";$.each(e,function(){l+=m.charAt(this%m.length)});b.val(l);d.removeAttr("disabled")})}}}if(!i){h=c=0;f.slider("option","value",h)}}})});
+</script>
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+<link rel="alternate" type="application/atom+xml" href="extern.php?action=feed&amp;tid=987&amp;type=atom" title="Atom topic feed" />
+</head>
+
+<body>
+
+<div id="punviewtopic" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex" class="isactive"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=987"><strong>Announcing tracker preferences</strong></a></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p3241" class="blockpost rowodd firstpost blockpost1">
+	<h2><span><span class="conr">#1</span> <a href="viewtopic.php?pid=3241#p3241">2012-05-15 21:25:12</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90545">Fredrik Neij</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Announcing tracker preferences</h3>
+					<div class="postmsg">
+						<p>A problem with torrent clients are that when users create torrents and add trackers, some don&#039;t know what they are doing and are adding website URLs as trackers, this results in websites getting flooded with unwanted traffic from Bittorrent clients.</p><p>To prevent this flooding of unwanted traffic, I suggest creating a sort of accesslist in DNS, letting Bittorrent clients know of the preferred connection policy of a hostname.</p><p>This will also be helpful for example when a tracker switches from HTTP to UDP service, to prevent the tracker from being flooded with obsolete and/or unanswered HTTP requests. This could also serve as a hint for the client to use UDP instead of HTTP in a old torrent where only the previous service are listed.</p><p>By adding a TXT record in DNS announcing the preferences of the hostname, a site operator could let a Bittorrent client know it&#039;s connection preferences or completely prevent Bittorrent clients trying to access the host as a tracker.</p><p><a href="http://tfr.org/bep.html">http://tfr.org/bep.html</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p3331" class="blockpost roweven">
+	<h2><span><span class="conr">#2</span> <a href="viewtopic.php?pid=3331#p3331">2012-07-16 10:41:19</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Announcing tracker preferences</h3>
+					<div class="postmsg">
+						<p>This seems like a reasonable extension. However, it is somewhat complicated since there are no cross platform ways (that I know of) of querying such DNS records.</p><p>A less robust solution might be to respond with a &quot;min interval&quot; and a very large number. That would at least make people never try again (until restart).</p><p>Would that be too expensive?</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p3333" class="blockpost rowodd">
+	<h2><span><span class="conr">#3</span> <a href="viewtopic.php?pid=3333#p3333">2012-07-16 11:33:27</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Announcing tracker preferences</h3>
+					<div class="postmsg">
+						<p>In the short term, we could add a filter in uTorrent that turns certain hostname into udp:// if they aren&#039;t already. I take it this is for openbittorrent and publicbt. Do you know of any other trackers that suffer from this problem?</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p3335" class="blockpost roweven">
+	<h2><span><span class="conr">#4</span> <a href="viewtopic.php?pid=3335#p3335">2012-07-16 14:23:18</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=97057">gubatron</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Announcing tracker preferences</h3>
+					<div class="postmsg">
+						<p>As soon as a final solution has been decided we&#039;ll go ahead and implement it for the Azureus Core (unless the Azureus guys beat us to it)</p><p>FrostWire Team</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p3337" class="blockpost rowodd">
+	<h2><span><span class="conr">#5</span> <a href="viewtopic.php?pid=3337#p3337">2012-07-17 14:46:48</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Announcing tracker preferences</h3>
+					<div class="postmsg">
+						<p>I wonder if it&#039;s possible to simplify the rules specified in the TXT record. For instance, how is this supposed to be interpreted:</p><p>&quot;BTTRACKER ALLOW TCP:80&quot;</p><p>Does it mean I&#039;m not allowed to connect to any other port than 80? Am I allowed to connect to any port over UDP? Or is this just a non-sensical statement?</p><p>Personally I&#039;m a fan of allowing concise statements. This could be possible by having a well defined default. Say, anything that isn&#039;t specified as allowed, should be considered denied. Obviously with the exception that if there&#039;s no BTTRACKER TXT record, everything should be considered allowed.</p><p>I&#039;m guessing that the most common use case would be to disallow everything except for the few services that are running. In which case denying all by default would make sense.</p><p>Another case that isn&#039;t well defined is when evaluation is terminated. From the examples, it looks like evaluation of expressions are evaluated in order of their apparence, from left to right. And evaluation is terminated when the current connection attempt is either allowed or denied, or there are no more rules (in which case I guess it&#039;s allowed?). The PREFER statement is an exception here though. It&#039;s not entirely clear what a client should do with that. Say UDP is preferred, but doesn&#039;t work. A client that rewrites any http:// to udp:// would break in that case, i.e. you would need much more complicated logic to deal with that.</p><p>Also, keep in mind that there needs to be a convenient internal representation of this rule-set as well. There should be a clear mapping to something like a port-filter. I&#039;m envisioning an internal representation of two port-filter lists (i.e. non-overlapping port-ranges defining allowed and disallowed ports). One for TCP and one for UDP.</p><p>This representation would be simplified if the DENY keyword was removed and everything was assumed to be denied unless explicitly allowed. The PREFER keyword could also be replaced by a mark-up of the rules that&#039;s preferred, say by prefixing it with a &#039;+&#039; for instance. If the PREFER and DENY kewords are both removed, there&#039;s no need to say &quot;ALLOW&quot; either. We would get more well-defined semantics and shorter rules.</p><p>For instance, one of examples; &quot;BTTRACKER ALLOW UDP:80 DENY TCP&quot; is unclear whether it allows UDP packets on ports other than 80.</p><p>One more thing, how about saying &quot;BITTORRENT&quot; instead of &quot;BTTRACKER&quot;? It creates a nice symmetry with the peer-protocol which also uses BitTorrent in the hand-shake, and it suggests that this belongs to the bittorrent protocol, and it doesn&#039;t contain an acronym.</p><p>Here are the examples from the BEP with the syntax I&#039;m suggesting:</p><div class="codebox"><pre><code>www.website.com. IN TXT &quot;BITTORRENT&quot;
+tracker.somedomain.com. IN TXT &quot;BITTORRENT +UDP:80 TCP:80&quot;
+udponlytracker.somedomain.com. IN TXT &quot;BITTORRENT UDP:80&quot;
+httpstracker.adomain.com. IN TXT &quot;BITTORRENT TCP:80 TCP:443&quot;</code></pre></div><p>The first one is unfortunately not very intuitive. I wonder how common it would be though.</p><p>This is sort of a brain dump of my impression reading and thinking about this BEP proposal. I&#039;m interested in what others think.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p3339" class="blockpost roweven">
+	<h2><span><span class="conr">#6</span> <a href="viewtopic.php?pid=3339#p3339">2012-07-17 14:54:33</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Announcing tracker preferences</h3>
+					<div class="postmsg">
+						<p>Another simplification would be to, instead of marking up the preferred connection, just try them in the order they are defined. i.e. the first transport-port pair is the most preferred one.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p3341" class="blockpost rowodd">
+	<h2><span><span class="conr">#7</span> <a href="viewtopic.php?pid=3341#p3341">2012-07-17 16:48:04</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90633">parg</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Announcing tracker preferences</h3>
+					<div class="postmsg">
+						<p>OK FrostWire Team, you&#039;re on!</p><p>Azureus Guys</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p3343" class="blockpost roweven">
+	<h2><span><span class="conr">#8</span> <a href="viewtopic.php?pid=3343#p3343">2012-07-17 17:06:42</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=97065">TuxPaper</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Announcing tracker preferences</h3>
+					<div class="postmsg">
+						<p>parg: I believe we already beat ourselves by 4 1/2 years with the UDP probing feature that checks for UDP before http.&#160; Jan 31, 2008, to be exact.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p3345" class="blockpost rowodd">
+	<h2><span><span class="conr">#9</span> <a href="viewtopic.php?pid=3345#p3345">2012-07-17 17:39:30</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Announcing tracker preferences</h3>
+					<div class="postmsg">
+						<p>actually, I like probing for UDP tracker supports a lot better than the DNS idea. It seems simpler, more secure and more platform independent support.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p3347" class="blockpost roweven">
+	<h2><span><span class="conr">#10</span> <a href="viewtopic.php?pid=3347#p3347">2012-07-17 18:45:44</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=725">Firon</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Announcing tracker preferences</h3>
+					<div class="postmsg">
+						<p>+1 for the UDP tracker probing. It requires no additional changes on the tracker admin&#039;s side too, which is a nice plus.<br />DNS is generally quite user unfriendly, and using TXT records to define services is ugly, IMO. And without DNSSEC, there&#039;s really no security in it.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Please read the <a href="http://forum.utorrent.com/viewtopic.php?id=458">rules</a> before posting.</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p3353" class="blockpost rowodd">
+	<h2><span><span class="conr">#11</span> <a href="viewtopic.php?pid=3353#p3353">2012-07-18 06:38:17</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=97051">Encombe</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Announcing tracker preferences</h3>
+					<div class="postmsg">
+						<p>UDP tracker probing seems like good thing to do and is a fast and simple solution for openbittorrent and publicbts problem. However it doesn&#039;t fix the problem when a server unintentionally or maliciously gets added to a tracker list and hammered with requests.</p><p>cannonball #bittorrent irc.freenode.net November 11, 2011<br /><a href="http://echelog.com/logs/browse/bittorrent/1320966000">http://echelog.com/logs/browse/bittorrent/1320966000</a></p><div class="quotebox"><blockquote><div><p>...<br />[18:12:19] &lt;cannonball&gt; Hi all.&#160; I have a weird issue.&#160; I have some webservers (load balanced apache reverse proxies# that are getting hammered with requests for /tracker/announce.php.<br />[18:12:57] &lt;cannonball&gt; I&#039;ve verified that the proxy is not being abused #i.e. not an open proxy# to anonymize torrent access.<br />[18:14:15] &lt;cannonball&gt; The result generated is a 404.&#160; I&#039;m trying to figure out what could be happening that would cuase hundreds or thousands of hosts to be hitting my webservers for this /tracker/announce.php #our webservers are mod_perl, they don&#039;t do php at all, so it couldn&#039;t even be hosted there).<br />...</p></div></blockquote></div><p>The problem has been addressed before in BEP 31 &quot;Failure Retry Extension&quot; <a href="http://bittorrent.org/beps/bep_0031.html">http://bittorrent.org/beps/bep_0031.html</a> but I don&#039;t know if any client has implemented it.<br />A good thing with DNS is that it stops the request even before it reaches the server.</p><br /><p>If someone hasn&#039;t already read it: <a href="http://torrentfreak.com/largest-bittorrent-trackers-go-offline-in-protest-120716/">http://torrentfreak.com/largest-bittorr … st-120716/</a></p>
+						<p class="postedit"><em>Last edited by Encombe (2012-07-18 06:40:27)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p3355" class="blockpost roweven">
+	<h2><span><span class="conr">#12</span> <a href="viewtopic.php?pid=3355#p3355">2012-07-18 08:29:12</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Announcing tracker preferences</h3>
+					<div class="postmsg">
+						<p>one things clients could do is to treat 404 as &quot;never try this again&quot;.. Unfortunately, I think it&#039;s quite common that actual trackers to frequently 404 as well, so it may not be a good indicator. It would be nice to find some reliable indicator of a server just being a plain web server, not intended for running a tracker. If a sysadmin needs to take action when this happens you&#039;ve already bumped the hassle up, and I can&#039;t imagine it&#039;s makes that much difference *what* the sysadmin has to do. Running a small UDP responder that says &quot;interval: &lt;INT_MAX&gt;&quot; may not be that different from having to set up a TXT record for the domain (assuming that whoever abused the server used a hostname).</p><p>I&#039;ve seen trackers fail with an HTML response body, which is especially bad, since it makes it look like it&#039;s not intended to run a tracker.</p><p>As for bep31, a more reliable solution is to send a very large &quot;min interval&quot; response, and it already works with essentially every client.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p3357" class="blockpost rowodd">
+	<h2><span><span class="conr">#13</span> <a href="viewtopic.php?pid=3357#p3357">2012-07-18 18:56:12</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=97059">Kitsoran</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Announcing tracker preferences</h3>
+					<div class="postmsg">
+						<p>Users inputting bad addresses and way too many addresses (dozens!) can be mitigated by only announcing to x number of tiers at a time. I like three, though I&#039;d prefer the multitracker spec be obeyed.</p><p>I like the idea of taking a 404 as a fatal error. I don&#039;t see why a proper tracker SHOULDN&#039;T give a good ol tracker error message instead of a 404, let the tracker respond properly instead of trying to compensate for bad behavior. It would certainly help a lot if a tracker failure on one torrent backed off attempts across all jobs as well.</p>
+						<p class="postedit"><em>Last edited by Kitsoran (2012-07-18 19:06:13)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p3363" class="blockpost roweven">
+	<h2><span><span class="conr">#14</span> <a href="viewtopic.php?pid=3363#p3363">2012-07-18 23:53:33</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90545">Fredrik Neij</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Announcing tracker preferences</h3>
+					<div class="postmsg">
+						<p>UDP probing, cached globally per IP, only retry HTTP if UDP have failed for X attempts. Only connect to a IP once per torrent, even if multiple trackers in a torrents ultimately resolves to the same IP. This would be a good start at redirecting and minimizing real trafficload to trackers.</p><p>&quot;This representation would be simplified if the DENY keyword was removed and everything was assumed to be denied unless explicitly allowed. The PREFER keyword could also be replaced by a mark-up of the rules that&#039;s preferred, say by prefixing it with a &#039;+&#039; for instance. If the PREFER and DENY keywords are both removed, there&#039;s no need to say &quot;ALLOW&quot; either. We would get more well-defined semantics and shorter rules.&quot;</p><p>This is a very nice simplification of the syntax, the PREFER (+) markup can be left out if one would use the first PROTO:PORT group in the list as the preferred service. I am also for using &quot;BITTORRENT&quot; instead of &quot;BTTRACKER&quot;.</p><p>As for 404, it can be generated in all sorts of places along the way, like ISP based proxies or local missconfigured firewalls and antivirus software, so it&#039;s not to be trusted. Maybe to have a bencoded response saying that &quot;not a tracker HOSTNAME:PORT&quot;, that can be easily served as static files to allow sites to permanently store a DENY for (HTTP) tracker connections to it.</p><p>&quot;It would certainly help a lot if a tracker failure on one torrent backed off attempts across all jobs as well.&quot; - Yes!</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=987"><strong>Announcing tracker preferences</strong></a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+				<form id="qjump" method="get" action="viewforum.php">
+					<div><label><span>Jump to<br /></span>
+					<select name="id" onchange="window.location=('viewforum.php?id='+this.options[this.selectedIndex].value)">
+						<optgroup label="BitTorrent">
+							<option value="26">Announcements</option>
+							<option value="27">General</option>
+							<option value="25" selected="selected">BEPs</option>
+							<option value="29">BEP process</option>
+							<option value="33">Research Tools</option>
+							<option value="32">Cooperation between BitTorrent and ISPs</option>
+							<option value="30">Attacks against BitTorrent</option>
+							<option value="28">Feature Requests, Found Bugs &gt;&gt;&gt;</option>
+						</optgroup>
+					</select>
+					<input type="submit" value=" Go " accesskey="g" />
+					</label></div>
+				</form>
+			</div>
+			<div class="conr">
+				<p id="feedlinks"><span class="atom"><a href="extern.php?action=feed&amp;tid=987&amp;type=atom">Atom topic feed</a></span></p>
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

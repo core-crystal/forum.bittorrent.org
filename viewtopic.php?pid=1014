@@ -1,0 +1,612 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ÂµTorrent sending weird ÂµTP packets (Page 1) / BEPs / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+<link rel="alternate" type="application/atom+xml" href="extern.php?action=feed&amp;tid=162&amp;type=atom" title="Atom topic feed" />
+</head>
+
+<body>
+
+<div id="punviewtopic" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex" class="isactive"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Sorry about the extended downtime for the forums. They were brought down for security reasons, and it took a while to get things up to par.
+
+New registrations are disabled until spam blocking measures are installed.</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=162"><strong>ÂµTorrent sending weird ÂµTP packets</strong></a></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p992" class="blockpost rowodd firstpost blockpost1">
+	<h2><span><span class="conr">#1</span> <a href="viewtopic.php?pid=992#p992">2010-02-23 10:58:47</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89612">George</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>ÂµTorrent sending weird ÂµTP packets</h3>
+					<div class="postmsg">
+						<p>Is BEP 29 incomplete ? Because ÂµTorrent seems to be sending ÂµTP which does not confirm to the standard. Take a look at these packets (which should be SYN packets) :</p><p>f2 ee 95 50 <br />4b 81 94 af <br />00 05 19 a3 <br />7f ff ff ff <br />ab 02 04 00 <br />01 00 00 00 <br />08 00 00 00 <br />00 00 00 00 <br />00 </p><p>e2 6f ea 8f <br />4b 82 c1 f8 <br />00 0b 85 13 <br />7f ff ff ff <br />ab 02 04 00 <br />01 00 00 00 <br />08 00 00 00 <br />00 00 00 00<br />00 </p><p>e2 6f ea 8f <br />4b 82 c1 ee <br />00 03 83 6e <br />7f ff ff ff <br />ab 02 04 00 <br />01 00 00 00 <br />08 00 00 00 <br />00 00 00 00 <br />00</p><p>ff 3e 6a b3 <br />4b 82 c5 15 <br />00 0b 9e 58 <br />7f ff ff ff <br />ab 02 04 00 <br />01 00 00 00 <br />08 00 00 00 <br />00 00 00 00 <br />00 </p><p>95 e6 73 8e <br />4b 84 1f 35 <br />00 06 75 18 <br />7f ff ff ff <br />ab 02 04 00 <br />01 00 00 00 <br />08 00 00 00 <br />00 00 00 00 <br />00 </p><p>These are dumps of packets sent by ÂµTorrent, trying to connect to my client. The first 4 bytes appear to be totally random. Does not look like BEP 29 at all.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p994" class="blockpost roweven">
+	<h2><span><span class="conr">#2</span> <a href="viewtopic.php?pid=994#p994">2010-02-23 12:20:27</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90000">DreadWingKnight</a></strong></dt>
+						<dd class="usertitle"><strong>CBTT/BNBT Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: ÂµTorrent sending weird ÂµTP packets</h3>
+					<div class="postmsg">
+						<p>How totally random?<br />What are you using to packet capture?</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Guy with a few torrent programs under his belt.</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p998" class="blockpost rowodd">
+	<h2><span><span class="conr">#3</span> <a href="viewtopic.php?pid=998#p998">2010-02-24 08:59:44</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89612">George</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: ÂµTorrent sending weird ÂµTP packets</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>How totally random?</p></div></blockquote></div><p>I don&#039;t see a pattern. The first 2 bytes should be the same for all of these packets.</p><div class="quotebox"><blockquote><div><p>What are you using to packet capture?</p></div></blockquote></div><p>I&#039;m just dumping the packets to a file. I have also used wireshark to confirm that what I dump is actually in the UDP packet.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1000" class="blockpost roweven">
+	<h2><span><span class="conr">#4</span> <a href="viewtopic.php?pid=1000#p1000">2010-02-24 09:35:09</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90000">DreadWingKnight</a></strong></dt>
+						<dd class="usertitle"><strong>CBTT/BNBT Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: ÂµTorrent sending weird ÂµTP packets</h3>
+					<div class="postmsg">
+						<p>Could you post a copy of the wireshark capture of the traffic?</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Guy with a few torrent programs under his belt.</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1002" class="blockpost rowodd">
+	<h2><span><span class="conr">#5</span> <a href="viewtopic.php?pid=1002#p1002">2010-02-25 08:59:36</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89612">George</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: ÂµTorrent sending weird ÂµTP packets</h3>
+					<div class="postmsg">
+						<p>This is a trace of 3 uTP packets sent by ÂµTorrent, when it is trying to setup a connection to ktorrent:</p><p><a href="http://ktorrent.org/downloads/utorrent_utp.trace">http://ktorrent.org/downloads/utorrent_utp.trace</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1008" class="blockpost roweven">
+	<h2><span><span class="conr">#6</span> <a href="viewtopic.php?pid=1008#p1008">2010-02-28 02:30:51</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89612">George</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: ÂµTorrent sending weird ÂµTP packets</h3>
+					<div class="postmsg">
+						<p>Here is a trace of two ÂµTorrent clients talking to each other over ÂµTP:</p><p><a href="http://ktorrent.org/downloads/utp_trace.cap">http://ktorrent.org/downloads/utp_trace.cap</a></p><p>Looking at the packets I&#039;m beginning to think that:</p><p>- The last 10 bytes of the first packets is the extension bits extension<br />- byte 19 is the type<br />- bytes 20 and 21 are the seq_nr<br />- bytes 22 and 23 are the ack_nr</p><p>Looks like the 23 byte long packets are state packets</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1010" class="blockpost rowodd">
+	<h2><span><span class="conr">#7</span> <a href="viewtopic.php?pid=1010#p1010">2010-02-28 03:05:20</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89612">George</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: ÂµTorrent sending weird ÂµTP packets</h3>
+					<div class="postmsg">
+						<p>Also bytes 3 and 4 or the first 4 bytes are the connection id</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1012" class="blockpost roweven">
+	<h2><span><span class="conr">#8</span> <a href="viewtopic.php?pid=1012#p1012">2010-02-28 09:40:20</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89612">George</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: ÂµTorrent sending weird ÂµTP packets</h3>
+					<div class="postmsg">
+						<p>Bytes 5 to 8 look like the number of seconds since the epoch (so tv_sec in a struct timeval)<br />And bytes 9 to 12 appear to be the number of microseconds (tv_usec in a struct timeval), it is always smaller then a million.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1014" class="blockpost rowodd">
+	<h2><span><span class="conr">#9</span> <a href="viewtopic.php?pid=1014#p1014">2010-02-28 09:46:16</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89612">George</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: ÂµTorrent sending weird ÂµTP packets</h3>
+					<div class="postmsg">
+						<p>So in short, there is a standard, and ÂµTorrent doesn&#039;t follow it, and I&#039;m left reverse engineering the protocol. How nice.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1016" class="blockpost roweven">
+	<h2><span><span class="conr">#10</span> <a href="viewtopic.php?pid=1016#p1016">2010-02-28 22:34:31</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: ÂµTorrent sending weird ÂµTP packets</h3>
+					<div class="postmsg">
+						<p>set bit 16 in bt.trans_disposition on uT and it will use the header specified in BEP29.</p><p>This is supported by all 2.0+ clients, but not by previous versions, that&#039;s why the default is still the old version of the header. We&#039;ll change this in 2.0.1.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1018" class="blockpost rowodd">
+	<h2><span><span class="conr">#11</span> <a href="viewtopic.php?pid=1018#p1018">2010-02-28 22:36:52</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: ÂµTorrent sending weird ÂµTP packets</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>George wrote:</cite><blockquote><div><p>So in short, there is a standard, and ÂµTorrent doesn&#039;t follow it, and I&#039;m left reverse engineering the protocol. How nice.</p></div></blockquote></div><p>Did you try to connect to a uT client with the specified protocol? That should work (and it has in all my tests so far).</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1026" class="blockpost roweven">
+	<h2><span><span class="conr">#12</span> <a href="viewtopic.php?pid=1026#p1026">2010-03-01 11:27:51</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89612">George</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: ÂµTorrent sending weird ÂµTP packets</h3>
+					<div class="postmsg">
+						<p>With bit 16 set, I get different packets, but still packets with 23 byte headers. The first byte seems to be OK though (version and type look OK, though the nibbles are not in the expected order)</p><p>Here is the trace:</p><p><a href="http://ktorrent.org/downloads/utp_new_header.trace">http://ktorrent.org/downloads/utp_new_header.trace</a></p><p>Looking closely, I&#039;m beginning to suspect that ÂµTorrent is not fully following BEP29, what should be the first byte (type and version) appear to be the first 4 bytes.</p><p>It is almost like they put the type and version in a 32 bit unsigned int and write that to the header. The rest of the header appears to be OK. Could be struct alignment, or something like that.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1034" class="blockpost rowodd">
+	<h2><span><span class="conr">#13</span> <a href="viewtopic.php?pid=1034#p1034">2010-03-01 14:45:05</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: ÂµTorrent sending weird ÂµTP packets</h3>
+					<div class="postmsg">
+						<p>This is the header used in uTorrent:</p><p>#pragma pack(push,1)<br />struct PacketFormatV1 {<br />&#160; &#160;uint version:4;<br />&#160; &#160;uint type:4;<br />&#160; &#160;byte ext;<br />&#160; &#160;uint16_big connid;<br />&#160; &#160;uint32_big tv_usec;<br />&#160; &#160;uint32_big reply_micro;<br />&#160; &#160;uint32_big windowsize;<br />&#160; &#160;uint16_big seq_nr;<br />&#160; &#160;uint16_big ack_nr;<br />};<br />#pragma pack(pop)</p><p>which seems to match the header in BEP 29.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1038" class="blockpost roweven">
+	<h2><span><span class="conr">#14</span> <a href="viewtopic.php?pid=1038#p1038">2010-03-01 14:53:14</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: ÂµTorrent sending weird ÂµTP packets</h3>
+					<div class="postmsg">
+						<p>At a closer inspection, it seems like this struct was in fact not packed. That&#039;s bad. I will fix this for the 2.0.1 release.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1050" class="blockpost rowodd">
+	<h2><span><span class="conr">#15</span> <a href="viewtopic.php?pid=1050#p1050">2010-03-02 08:41:56</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89612">George</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: ÂµTorrent sending weird ÂµTP packets</h3>
+					<div class="postmsg">
+						<p>When are you planning to release 2.0.1 ?</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1052" class="blockpost roweven">
+	<h2><span><span class="conr">#16</span> <a href="viewtopic.php?pid=1052#p1052">2010-03-03 05:03:50</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89609">Olaf van der Spek</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: ÂµTorrent sending weird ÂµTP packets</h3>
+					<div class="postmsg">
+						<p>Is the first byte a bitfield? Isn&#039;t the layout of it implementation dependend?</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1120" class="blockpost rowodd">
+	<h2><span><span class="conr">#17</span> <a href="viewtopic.php?pid=1120#p1120">2010-03-15 13:18:48</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=725">Firon</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: ÂµTorrent sending weird ÂµTP packets</h3>
+					<div class="postmsg">
+						<p>George: within the next two weeks.<br />We also hotfixed 2.0 with the correct header (and autoupdated everyone).</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Please read the <a href="http://forum.utorrent.com/viewtopic.php?id=458">rules</a> before posting.</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1634" class="blockpost roweven">
+	<h2><span><span class="conr">#18</span> <a href="viewtopic.php?pid=1634#p1634">2010-11-15 16:06:54</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=91540">Hobywan</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: ÂµTorrent sending weird ÂµTP packets</h3>
+					<div class="postmsg">
+						<p>Do you intend to release the new UTP protocol to the community in the for of BEPXXX or BEP29 updated ?</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=162"><strong>ÂµTorrent sending weird ÂµTP packets</strong></a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+				<form id="qjump" method="get" action="viewforum.php">
+					<div><label><span>Jump to<br /></span>
+					<select name="id" onchange="window.location=('viewforum.php?id='+this.options[this.selectedIndex].value)">
+						<optgroup label="BitTorrent">
+							<option value="26">Announcements</option>
+							<option value="27">General</option>
+							<option value="25" selected="selected">BEPs</option>
+							<option value="29">BEP process</option>
+							<option value="33">Research Tools</option>
+							<option value="32">Cooperation between BitTorrent and ISPs</option>
+							<option value="30">Attacks against BitTorrent</option>
+							<option value="28">Feature Requests, Found Bugs &gt;&gt;&gt;</option>
+						</optgroup>
+					</select>
+					<input type="submit" value=" Go " accesskey="g" />
+					</label></div>
+				</form>
+			</div>
+			<div class="conr">
+				<p id="feedlinks"><span class="atom"><a href="extern.php?action=feed&amp;tid=162&amp;type=atom">Atom topic feed</a></span></p>
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

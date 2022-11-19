@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>BEP-32: IPv6 bootstrap nodes available (Page 1) / BEPs / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
+<script type="text/javascript" src="captcha/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript">
+	$(function(){var f=$("#sliderCaptcha");var b=$("#cleCaptcha");var d=$(".boutonsCaptcha");var a=$("#javascriptCaptcha");var e=[37,11,37,46,23,11,10,42,13,2,48,5,7,25,41,9,39,31,41,34,31,15,21,37,49,19,40,35,40,14,48,27,25,35,23,49,47,34,42,11,36,40,17,44,16,8,3,5,40,45];var h=0;var g=5;var c=0;a.hide();f.slider({value:0,min:0,max:g,step:1,slide:function(i,j){if(j.value>c){c=j.value;h+=c}},stop:function(j,k){var i=false;if(k.value==g){if(h==((g+Math.pow(g,2))/2)){i=true;f.slider("option","disabled",true);if(b.val().length!=e.length){$.post("captcha.php",{tokenCaptcha:b.val()},function(m){var l="";$.each(e,function(){l+=m.charAt(this%m.length)});b.val(l);d.removeAttr("disabled")})}}}if(!i){h=c=0;f.slider("option","value",h)}}})});
+</script>
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="punviewtopic" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex" class="isactive"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=134"><strong>BEP-32: IPv6 bootstrap nodes available</strong></a></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p797" class="blockpost rowodd firstpost blockpost1">
+	<h2><span><span class="conr">#1</span> <a href="viewtopic.php?pid=797#p797">2009-11-16 08:34:33</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>BEP-32: IPv6 bootstrap nodes available</h3>
+					<div class="postmsg">
+						<p>Thanks to <em>titer</em> and the <a href="http://www.transmissionbt.com">the Transmission project</a>, there is now a pool of <a href="http://www.pps.jussieu.fr/~jch/software/bittorrent/bep-dht-ipv6.html">IPv6 DHT</a> bootstrap nodes available on<br /></p><div class="codebox"><pre><code>dht.wifi.pps.jussieu.fr port 6881</code></pre></div><p>You are welcome to use those nodes for testing your implementation of BEP-32.</p><p>Under no circumstances should you hard-wire the IPs in your client -- the DNS entry has a low TTL for good reason, I want to be able to add and remove nodes from the pool easily.</p><p>It is also not a good idea to hard-wire the name in your client; you really do not want to rely on a name you don&#039;t personally control.&#160; Instead, you should set up your own bootstrap node that peers with dht.wifi.pps.jussieu.fr, and use its name in your client instead.&#160; See below on how to do this.</p><p><strong>Implementations</strong></p><p>There are currently two implementations of BEP-32 available; they are listed on <a href="http://www.pps.jussieu.fr/~jch/software/bittorrent/">my BitTorrent page</a>.&#160; Please let me know when you implement BEP-32, so I can add yours.</p><p><strong>Setting up your own bootstrap node</strong></p><p>If you don&#039;t yet have an implementation of BEP-32, feel free to grab by DHT code by doing<br /></p><div class="codebox"><pre><code>  darcs get http://www.pps.jussieu.fr/~jch/software/repos/dht/</code></pre></div><p>Compiling this will give you a small executable called dht-example.&#160; (While this code has only been tested on GNU/Linux, I believe that it should be portable to most recent Unices.)</p><p>On a machine with a stable IPv6 address, arrange to run<br /></p><div class="codebox"><pre><code>dht-example -q -6 -b your:ipv6:addr:ess 6881 dht.wifi.pps.jussieu.fr 6881</code></pre></div><p>Omit -q if you want to see the debugging messages.&#160; Omit -6 if you want to participate in both the IPv4 and IPv6 DHTs.</p><p>You may monitor your node by sending it the USR1 signal.</p><p>You may then do one of the following:</p><p>&#160; 1. set up your own name in the DNS, with an AAAA pointing at your node;</p><p>(that&#039;s a nice thing to do, it will give you your own bootstrap node to use in your client)</p><p>&#160; 2. drop me an e-mail to add an AAAA to dht.wifi.pps.jussieu.fr;</p><p>(that&#039;s a nice thing to do, it will put one more node in the dht.wifi.pps.jussieu.fr pool)</p><p>&#160; 3. do both (1) and (2);</p><p>(that&#039;s a nice thing to do, it will give you your own bootstrap node that simultaneously belongs to the dht.wifi.pps.jussieu.fr pool)</p><p>&#160; 4. do neither.</p><p>(that&#039;s a nice thing to do, it will give the IPv6 DHT a stable node that will be discovered by any nodes that do an IPv6 find_nodes on a node in the dht.wifi.pps.jussieu.fr pool; it&#039;s also the only thing you can do if your IPv6 address is dynamic.)</p><p>Happy testing,</p><p>--Juliusz</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p810" class="blockpost roweven">
+	<h2><span><span class="conr">#2</span> <a href="viewtopic.php?pid=810#p810">2009-11-18 20:12:55</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: BEP-32: IPv6 bootstrap nodes available</h3>
+					<div class="postmsg">
+						<p>It looks good. 32 nodes in the routing table, the size estimator reports anything between 48 and 160 nodes, i see lookups and announces... it seems to be working. And more 6to4 nodes than i hoped for (the preference stuff is working).</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p815" class="blockpost rowodd">
+	<h2><span><span class="conr">#3</span> <a href="viewtopic.php?pid=815#p815">2009-11-22 10:53:51</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90623">adrian</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: BEP-32: IPv6 bootstrap nodes available</h3>
+					<div class="postmsg">
+						<p>Same here:<br />Everything fine so far: tested with a few magnet-links on my ipv6 only hosts: no problems so far :-)</p><p>jch: Feel free to add 2002:d503:5ed::1 to dht.wifi.pps.jussieu.fr. The node should be up 7x24.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p816" class="blockpost roweven">
+	<h2><span><span class="conr">#4</span> <a href="viewtopic.php?pid=816#p816">2009-11-22 11:27:08</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90580">jch</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: BEP-32: IPv6 bootstrap nodes available</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>jch: Feel free to add 2002:d503:5ed::1 to dht.wifi.pps.jussieu.fr.</p></div></blockquote></div><p>Done.&#160; Thanks.</p><p>--Juliusz</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1920" class="blockpost rowodd">
+	<h2><span><span class="conr">#5</span> <a href="viewtopic.php?pid=1920#p1920">2011-03-22 14:15:10</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=92806">Oliverk48</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: BEP-32: IPv6 bootstrap nodes available</h3>
+					<div class="postmsg">
+						<p>Well I guess it&#039;s not working anymore (old thread) but thank you for that mini tutorial on how to set up your own bootstrap node. Was looking for that everywhere and found your post through google. I guess I&#039;ll be coming to this forum more often <img src="http://forum.bittorrent.org/img/smilies/smile.png" width="15" height="15" alt="smile" /></p>
+						<p class="postedit"><em>Last edited by Oliverk48 (2011-04-02 02:14:20)</em></p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Oliver @ <a href="http://www.hemorrhoidtreatmentx.org/">hemorrhoid treatment</a> X dot Org.</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=134"><strong>BEP-32: IPv6 bootstrap nodes available</strong></a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

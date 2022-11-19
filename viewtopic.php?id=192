@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Extesion for Peer to get BTIH by URN (Page 1) / BEPs / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
+<script type="text/javascript" src="captcha/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript">
+	$(function(){var f=$("#sliderCaptcha");var b=$("#cleCaptcha");var d=$(".boutonsCaptcha");var a=$("#javascriptCaptcha");var e=[25,12,38,18,17,18,30,1,19,49,30,48,9,16,31,25,21,24,28,8,42,4,9,44,16,39,8,11,18,34,32,43,47,21,12,14,39,42,15,8,41,45,6,0,12,37,26,34,12,4];var h=0;var g=5;var c=0;a.hide();f.slider({value:0,min:0,max:g,step:1,slide:function(i,j){if(j.value>c){c=j.value;h+=c}},stop:function(j,k){var i=false;if(k.value==g){if(h==((g+Math.pow(g,2))/2)){i=true;f.slider("option","disabled",true);if(b.val().length!=e.length){$.post("captcha.php",{tokenCaptcha:b.val()},function(m){var l="";$.each(e,function(){l+=m.charAt(this%m.length)});b.val(l);d.removeAttr("disabled")})}}}if(!i){h=c=0;f.slider("option","value",h)}}})});
+</script>
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="punviewtopic" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex" class="isactive"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=192"><strong>Extesion for Peer to get BTIH by URN</strong></a></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p1190" class="blockpost rowodd firstpost blockpost1">
+	<h2><span><span class="conr">#1</span> <a href="viewtopic.php?pid=1190#p1190">2010-03-25 04:05:33</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90852">ivan386</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Extesion for Peer to get BTIH by URN</h3>
+					<div class="postmsg">
+						<p>It use:<br /><a href="http://www.bittorrent.org/beps/bep_0010.html">Extension Protocol</a></p><p>It need for:<br /><a href="http://forum.bittorrent.org/viewtopic.php?id=190">Extesion for BitTorrent client to search file by URN in BitTorrent DHT</a></p><p>Handshake:</p><p>{<br />&#039;m&#039;:<br />{<br />&#039;rz_urn_to_btih&#039;:id<br />}<br />}</p><p>Ð•ÑÐ»Ð¸ ÐºÐ»Ð¸ÐµÐ½Ñ‚ ÑÐ¾ÐµÐ´Ð¸Ð½Ð¸Ð»ÑÑ Ð¿Ð¾ urn_hash Ñ‚Ð¾ ÑÐµÑ€Ð²ÐµÑ€ ÑÑ€Ð°Ð·Ñƒ Ð¿Ð¾ÑÐ»Ðµ Ñ€ÑƒÐºÐ¾Ð¿Ð¾Ð¶Ð°Ñ‚Ð¸Ñ Ð´Ð¾Ð»Ð¶ÐµÐ½ Ð²ÐµÑ€Ð½ÑƒÑ‚ÑŒ Ñ€ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚ Ð¸Ð»Ð¸ Ð¾ÑˆÐ¸Ð±ÐºÑƒ.</p><p>If client connect by urn_hash then server after handshake must return result or error.</p><p>{<br />&#039;urn&#039;: (ansver only)<br />{<br />[urn name|Ð¸Ð¼Ñ urn]:[binary hash or value of urn| Ð±Ð¸Ð½Ð°Ñ€Ð½Ñ‹Ð¹ Ñ…ÐµÑˆ Ð¸Ð»Ð¸ Ð´Ñ€ÑƒÐ³Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ urn]<br />},<br />&#039;btih&#039;: (ansver only)<br />{<br />[RAW BTIH],<br />[RAW BTIH],<br />...<br />},<br />&#039;peers&#039;: (optional for ansver)<br />{<br />[compact peer list for first BTIH]<br />[compact peer list for second BTIH]<br />...<br />}<br />&#039;request&#039;: (request and optional for ansver)<br />{<br />[urn name|Ð¸Ð¼Ñ urn]:[binary hash or value of urn| Ð±Ð¸Ð½Ð°Ñ€Ð½Ñ‹Ð¹ Ñ…ÐµÑˆ Ð¸Ð»Ð¸ Ð´Ñ€ÑƒÐ³Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ urn]<br />}<br />&#039;error&#039;: (on error)<br />{<br />&#039;id&#039;:error_id,<br />&#039;msg&#039;:msg_to_user<br />}<br />}</p><p>Ð•ÑÐ»Ð¸ Ð¿Ð¸Ñ€ ÑÐ¾ÐµÐ´Ð¸Ð½Ð¸Ð»ÑÑ Ð¿Ð¾ urn_hash Ð¾Ð½ Ð´Ð¾Ð»Ð¶ÐµÐ½ ÑÐ±Ñ€Ð¾ÑÐ¸Ñ‚ÑŒ ÑÐ¾ÐµÐ´Ð¸Ð½ÐµÐ½Ð¸Ðµ Ð¿Ð¾ÑÐ»Ðµ Ð¾ÐºÐ¾Ð½Ñ‡Ð°Ð½Ð¸Ñ Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ñ/Ð¿ÐµÑ€ÐµÐ´Ð°Ñ‡Ð¸ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ð¸. Ð¡Ð¾ÐµÐ´Ð¸Ð½Ð¸Ñ‚ÑÑ ÑƒÐ¶Ðµ ÐºÐ°Ðº ÑÑ‚Ð°Ð½Ð´Ð°Ñ€Ñ‚Ð½Ñ‹Ð¹ Ð¿Ð¸Ñ€ Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·ÑƒÑ Ð¾Ð´Ð¸Ð½ Ð¸Ð· Ð¿ÐµÑ€ÐµÑ‡Ð¸ÑÐ»ÐµÐ½Ð½Ñ‹Ñ… Ñ…ÐµÑˆÐµÐ¹.</p><p>If client connect by urn_hash then it must drop connection after end recive/send information. Then it reconect as normal peer by one of btih in btih list.</p><br /><p>urn_hash:<br />sha1 hash of urn dictionary.<br />sha1 Ñ…ÐµÑˆ Ð¾Ñ‚ urn ÑÐ»Ð¾Ð²Ð°Ñ€Ñ.<br />peer use urn_hash to serch and announce in DHT or other places.<br />peer Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·ÑƒÐµÑ‚ urn_hash Ð´Ð»Ñ Ð¿Ð¾Ð¸ÑÐºÐ° Ð¸ Ð¾Ð±ÑŒÑÐ²Ð»ÐµÐ½Ð¸Ñ Ð¸ÑÑ‚Ð¾Ñ‡Ð½Ð¸ÐºÐ¾Ð² Ð² DHT Ð¸ Ð´Ñ€ÑƒÐ³Ð¸Ñ… Ð¼ÐµÑÑ‚Ð°Ñ….</p><p>btih:<br />btih list of info dictionary that contain this urn.<br />ÑÐ¿Ð¸ÑÐ¾Ðº btih Ð¾Ñ‚ info Ð¿Ð¾Ð»Ñ ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ðµ ÑÐ¾Ð´ÐµÑ€Ð¶Ð°Ñ‚ Ð² ÑÐµÐ±Ðµ ÑÑ‚Ð¾Ñ‚ urn.</p><p>urn names = analog in info dictionary| Ð¸Ð¼ÐµÐ½Ð° urn = Ð°Ð½Ð°Ð»Ð¾Ð³ Ð² info ÑÐ»Ð¾Ð²Ð°Ñ€Ðµ:</p><p>urn:tree:tiger: = tiger (preferred | Ð¿Ñ€ÐµÐ´Ð¿Ð¾Ñ‡Ð¸Ñ‚Ð°ÐµÐ¼Ñ‹Ð¹)<br />urn:sha1: = sha1<br />urn:ed2k: = ed2k<br />urn:md5: = md5sum<br />urn:btih:</p>
+						<p class="postedit"><em>Last edited by ivan386 (2010-03-25 04:17:06)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=192"><strong>Extesion for Peer to get BTIH by URN</strong></a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

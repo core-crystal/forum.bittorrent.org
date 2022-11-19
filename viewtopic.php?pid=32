@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>forum.bittorrent.org / Discussion of BEP 6: Fast Extension</title>
+<link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
+</head>
+<body>
+
+<div id="punwrap">
+<div id="punviewtopic" class="pun">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><span>forum.bittorrent.org</span></h1>
+			<p><span>BitTorrent.org community</span></p>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p>You are not logged in.</p>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<h2><span>Announcement</span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div>Posting about any illegal sharing of copyrighted content is strictly forbidden.</div>
+		</div>
+	</div>
+</div>
+
+<div class="linkst">
+	<div class="inbox">
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<p class="postlink conr">&nbsp;</p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Discussion of BEP 6: Fast Extension</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p32" class="blockpost rowodd firstpost">
+	<h2><span><span class="conr">#1&nbsp;</span><a href="viewtopic.php?pid=32#p32">2008-03-04 13:10:49</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3>Discussion of BEP 6: Fast Extension</h3>
+				<div class="postmsg">
+					<p>The Fast Extension is implemented in later python versions of BitTorrent Mainline and partially in uTorrent.&nbsp; uTorrent implements all messages in the Fast Extension but only half of the semantics of the Allowed Fast part of the Fast Extension.&nbsp; uTorrent requests fast pieces, but it will not offer them.<br /><br />See <a href="http://www.bittorrent.org/beps/bep_0006.html" rel="nofollow">http://www.bittorrent.org/beps/bep_0006.html</a><br /><br />The purpose of the Allowed Fast part of the Fast Extension is to reduce the time it takes for peers to ramp up download rates in the swarm by having existing peers send a few pieces &quot;free&quot; without requiring the peer to be unchoked.<br /><br />Among developers at BitTorrent, Inc., it is believed that Allowed Fast might significantly improve the speed peers ramp up, but little has been done to characterize the effects of Allowed Fast either in the wild or in large scale simulation.&nbsp; <br /><br />We call for academics to study this problem or propose modifications that might improve BitTorrent's ramp-up times.&nbsp; This is of particular importance for smaller files that currently gain little advantage from BitTorrent distribution.&nbsp; Until some experience is gained into the benefits or drawbacks of the Allowed Fast Extension, it will not progress beyond Draft status.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p><strong>Online</strong></p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p38" class="blockpost roweven">
+	<h2><span><span class="conr">#2&nbsp;</span><a href="viewtopic.php?pid=38#p38">2008-03-04 15:43:32</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 6: Fast Extension</h3>
+				<div class="postmsg">
+					<p>Note: as suggested by theshad0w, this could also be used to implement superseeding more dynamically.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p67" class="blockpost rowodd">
+	<h2><span><span class="conr">#3&nbsp;</span><a href="viewtopic.php?pid=67#p67">2008-03-05 18:04:11</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89624">dak360</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"><img src="img/avatars/89624.jpg" width="64" height="64" alt="" /></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 6: Fast Extension</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>The 8472 wrote:</h4><p>Note: as suggested by theshad0w, this could also be used to implement superseeding more dynamically.</p></div></blockquote><p>You can see his <a href="http://forums.degreez.net/viewtopic.php?p=28161#28161" rel="nofollow">implementation notes</a> for details.</p>
+				</div>
+				<div class="postsignature"><hr />- dak180<br /><a href="http://dak180.dynalias.com:8080/PHP/tracker/" rel="nofollow">BaenCD Torrents</a></div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p93" class="blockpost roweven">
+	<h2><span><span class="conr">#4&nbsp;</span><a href="viewtopic.php?pid=93#p93">2008-03-13 13:32:00</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 6: Fast Extension</h3>
+				<div class="postmsg">
+					<p>I asked John Hoffman (shad0w) to put the suggest-based superseeding in a BEP. <br /><br /><a href="http://forums.degreez.net/viewtopic.php?p=28161#28161" rel="nofollow">http://forums.degreez.net/viewtopic.php?p=28161#28161</a></p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p><strong>Online</strong></p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p384" class="blockpost rowodd">
+	<h2><span><span class="conr">#5&nbsp;</span><a href="viewtopic.php?pid=384#p384">2008-08-24 22:11:56</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=30435">bram</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 6: Fast Extension</h3>
+				<div class="postmsg">
+					<p>This is one of the more important and least commented on BEPs, so I'll give my thoughts on it.<br /><br />This is really a combination of four different extensions, so before going over the extensions themselves I'll go over the philosophy of extension generally, then go over the individual extensions.<br /><br />Support for fast extensions is specified with a single reserved bit. Other developers have overwhelmingly indicated that they prefer declarations of support to be based on strings rather than reserved bits, so I will reluctantly say that the preferred style for adding extensions in the future should be via those mechanisms, and that maybe an alternative way of declaring support for the fast extensions via such a mechanism should be added as well. However, I would like to emphasize that such string-based methods don't lessen the burden of maintaining semantic compatibility between implementations, which is particularly tricky in BitTorrent because it has more subtle semantics than most networking protocols, nor does it help with the problem of maintaining a reasonably consistent set of supported extensions across different implementations, which can only be achieved by sticking with extensions which are clearly a good idea and which are made as simple to implement as possible. The benefit of string-based declarations in practice is very narrowly limited to avoiding namespace collisions in experimental extensions, something it does very well, but it's important to realize that that's the only thing it really helps with.<br /><br />The four extensions are: state machine reworking, have all, suggest piece, and allowed fast. All of these are clearly improvements to the protocol which can be trivially supported (or at least null supported, which I'll explain later), making there be little reason to not do them except for implementation difficulty. To that end, it could be that support for have all and suggest piece are being held back by being lumped in with the implementation difficulty of the state machine reworking, which could be an argument for allowing support for them to be declared separately, but it seems dubious to add a complex set of logic for the declaration of support for what should eventually be a ubiquitous set of functionality, much like how non-support for the 'compact' extension is considered outright malbehavior today. The allowed fast extension requires the state machine reworking to even make sense, so supporting it separately would be nonsensical.<br /><br />Okay, that's enough philosophy.<br /><br />The state machine reworking is the most fundamental of the changes, so I'll start with that.<br /><br />Classic BitTorrent protocol is, to put it simply, buggy. Perhaps 'buggy' is a bit strong of a word, because the issue was understood and accepted since inception, but the fact remains that the fast extension state machine is unambiguously better than the classic one. Given that it's fairly trivial to write a backwards compatibility layer to allow a client which is written for the fast extension state machine to talk to one which doesn't (you basically emulate the bug, which I'll explain in a bit) any new codebase written today should clearly be written with the new state machine from the ground up, and existing codebases should be rejiggered to work the same way. Perhaps the protocol specification should be modified to specify using compact and the fast extensions as normal behavior, and support for not using them as a backwards compatibility feature (or in the case of compact, simply something not to be done).<br /><br />The bug in the classic state machine has to do with what happens when a choke message arrives. As you may recall, at that time any pending requests are assumed to have failed. The problem is that they may not have. If data transfers are happening bidirectionally then it's easy for chokes and requests to be so backlogged behind data that a choke and a later unchoke arrive while a request is still in transit. It's also surprisingly easy to have implementation quirks in choking logic which cause a choke to be sent followed almost instantly by an unchoke. Whatever the cause, the result is that data is sent which isn't expected, and compounding the problem is that the downloading side will generally re-request the exact same data which is already in transit, causing an outright waste of bandwidth. Similar problems plague usage of cancels, because it's hard to guess whether a cancel actually worked. There are tricks for mitigating these problems, but they're hackish, complicated, and unreliable. The new state machine fixes these problems the 'right' way, and results in much cleaner, more reliable code.<br /><br />So, how is the bug fixed? With the fast extensions, the choke message loses its semantic meaning, and becomes largely advisory. Instead of an implicit rejection of pending requests, there is an explicit rejection of pending requests, implemented with the new reject message. Every request message must now get exactly one response, either a payload carrying message or a reject. A simple way to implement this on the uploading side is after sending a choke to immediately send rejects for all requests you've gotten but haven't responded to so far, although a nice heuristic is to wait a few seconds before actually doing the rejecting, in case you decide to unchoke and don't wish to incur the latency (and potential throughput) issues of requiring re-requests. Likewise any requests while choking can be immediately responded to with rejects, but if you're being clever you can wait a few seconds before sending the rejects. Note that sending the rejects before the choke is clearly broken behavior. Although choke and unchoke are technically advisory, choke meaning 'if you send a request now I'll probably reject it' and unchoke the opposite, they're semantically weighty enough that they need to be taken seriously. For example, having logic to send requests while choked can easily result in a short circuit of re-requesting, and likewise for sending rejects while unchoking. There may be situations in which those behaviors are reasonable (for example requesting pieces from the allowed fast set, described below) but such things should only be done very carefully, with great consideration of their possible consequences.<br /><br />Please be aware that the fast extensions can help expose bugs in your codebase. If you implement fast extensions and it causes exposure of some bad bugs in your code, don't blame fast extensions, fix your damn code. For example, bugs which cause requests to simply be ignored forever tend to be sort of covered up with the classic state machine because there's almost always a choke eventually, and that caused the request to be implicitly dropped, thus accidentally synching up the two sides. I know of at least one case of a BitTorrent implementation which intentionally ignored requests if there were 'too many' of them. That's extremely broken behavior, don't do it. If the other side really does send so many requests that you think they could only possibly be doing that as a result of malbehavior (like, in the thousands or tens of thousands, less than that and it uses up so little memory that worrying about it is stupid) then you should close the entire connection.<br /><br />The best way to implement backwards compatibility support for the fast extensions is with a bug emulation layer. Basically, write your higher level code so that it speaks the fast extensions natively, then for connections which go to non-fast peers, have lower level code which keeps track of the state of that connection and sends rejects for all outstanding requests after chokes and throws out piece messages which don't have outstanding requests. Technically speaking, this may harm some extant hackish workaround code which can make use of piece messages for unexpected pieces, so it may be not unreasonable to maintain support for those by not throwing unexpected messages in the bit-bucket but rather by sending back the message with an indication that it came from a classic peer so there's no need to close the connection as a result of the unexpected data, but really the goal here should be to make all peers speak the fast extensions and trying to maintain baroque code to deal with that edge case sounds like more trouble than it's worth.<br /><br />Phew. Okay, now on to the easier extensions.<br /><br />Have all/none is a straightforward and unambiguously good extension. It can improve startup times a lot, it turns out that all those bitfields can really add to the time it takes to start some real data transfers, and under some circumstances the bitfields make up a significant fraction of all data sent in a swarm, especially when there are a lot of seeds. I expect this to be uncontroversial, with the most likely complaint being that it's lumped in with the state machine reworking.<br /><br />Allowed fast is a clearly good extension, with the very tangible benefit that it can speed up time to begin transfers for new peers, especially for underseeded torrents. It may sound like there's some potential implementation difficulty, but that's really a non-issue. A 'proper' implementation isn't all that hard, and if you're at all intimidated by it then a perfectly reasonable stepping stone is to 'implement' allowed fast by never sending any allowed fast messages and ignoring any allowed fast messages which you get. That won't cause any problems.<br /><br />Suggest pieces is actually the most semantically ambiguous of the extensions. The problem is that it's unclear how strong a suggestion suggest is, and it's also unclear whether it should persist indefinitely. Rather than trying to come up with a more complicated set of semantics to support such functionality, such as a retract suggestion message, we instead decided to simply roll out a least common denominator suggest pieces message, on the assumption that reasonable conventional semantics for it would get settled on over time. I believe that uTorrent's behavior is to go with rarest first for piece selection, but if there's a tie to pick one in the suggested set first as a tiebreak. I believe that this is a reasonable behavior, but am curious to hear others's thoughts on the matter.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p385" class="blockpost roweven">
+	<h2><span><span class="conr">#6&nbsp;</span><a href="viewtopic.php?pid=385#p385">2008-08-25 14:49:49</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 6: Fast Extension</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>but it seems dubious to add a complex set of logic for the declaration of support</p></div></blockquote><p>actually, the &quot;complex set of logic&quot; is already there in clients that speak LTEP/AZMP. For us it's actually more of a hassle to do bitfield magic than just adding another message via the extension protocols.<br /><br />And i must say you're overestimating the impact of the fast extenions. Yes, they do work. Yes, they are a cleaner design. But the workarounds accumulated over the years basically make &quot;classic&quot; bittorrent perform just as well except in edge cases. This lowers the incentive to open the can of worms that is implementing the fast extensions while maintaining legacy support.<br /><br /><br />What i do like about the new state machine is that introduces fail-fast behavior, which forces devs to be more strict about their implementation.</p>
+					<p class="postedit"><em>Last edited by The 8472 (2008-08-25 14:57:22)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p404" class="blockpost rowodd">
+	<h2><span><span class="conr">#7&nbsp;</span><a href="viewtopic.php?pid=404#p404">2008-08-29 13:29:47</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=30435">bram</a></strong></dt>
+					<dd class="usertitle"><strong>Administrator</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 6: Fast Extension</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>The 8472 wrote:</h4><p>actually, the &quot;complex set of logic&quot; is already there in clients that speak LTEP/AZMP. For us it's actually more of a hassle to do bitfield magic than just adding another message via the extension protocols.</p></div></blockquote><p>I'm okay with these being introduced via an extended extension mechanism, the complex logic *I* was referring to was mix and matching different new features, a more general concern I just posted about on the LTEP thread.<br /><br /></p><blockquote><div class="incqbox"><h4>The 8472 wrote:</h4><p>And i must say you're overestimating the impact of the fast extenions. Yes, they do work. Yes, they are a cleaner design. But the workarounds accumulated over the years basically make &quot;classic&quot; bittorrent perform just as well except in edge cases. This lowers the incentive to open the can of worms that is implementing the fast extensions while maintaining legacy support.</p></div></blockquote><p>Those edge cases really do happen. Some heavily seeded swarms spend 15% of their bandwidth on have bitfields. And bandwidth wastage from resends really does happen. When we went and applied the fast extensios to utorrent, we were surprised how much they cleaned up and how much easier everything was to deal with afterwards. Those work-arounds you refer to are quite clunky and difficult to maintain as new features are added.<br /><br />Allowed fast in particular is a very new feature, not just a cleanup. In principle one could do a hack-around to the classic state machine to make it support allowed fast, but it's just plain easier to implement by doing it right.<br /><br /></p><blockquote><div class="incqbox"><h4>The 8472 wrote:</h4><p>What i do like about the new state machine is that introduces fail-fast behavior, which forces devs to be more strict about their implementation.</p></div></blockquote><p>Yes, some of the biggest benefits are to developer time.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p461" class="blockpost roweven">
+	<h2><span><span class="conr">#8&nbsp;</span><a href="viewtopic.php?pid=461#p461">2008-09-05 14:01:27</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90009">niallo</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Discussion of BEP 6: Fast Extension</h3>
+				<div class="postmsg">
+					<p>A minor point of clarification - in BEP 6 the signature of REJECT is given as<br /><br />*Reject Request*: &lt;len=0x000D&gt;&lt;op=0x10&gt;&lt;index&gt;&lt;begin&gt;&lt;offset&gt;<br /><br />should &lt;offset&gt; not read &lt;length&gt; ?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox">
+		<p class="postlink conr">&nbsp;</p>
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Discussion of BEP 6: Fast Extension</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div class="inbox">
+
+			<div class="conl">
+				<form id="qjump" method="get" action="viewforum.php">
+					<div><label>Jump to
+					<br /><select name="id" onchange="window.location=('viewforum.php?id='+this.options[this.selectedIndex].value)">
+						<optgroup label="BitTorrent">
+							<option value="26">Announcements</option>
+							<option value="25" selected="selected">BEPs</option>
+							<option value="29">BEP process</option>
+							<option value="27">General</option>
+							<option value="33">Research Tools</option>
+							<option value="32">Cooperation between BitTorrent and ISPs</option>
+							<option value="30">Attacks against BitTorrent</option>
+							<option value="28">Feature Requests, Found Bugs &gt;&gt;&gt;</option>
+					</optgroup>
+					</select>
+					<input type="submit" value=" Go " accesskey="g" />
+					</label></div>
+				</form>
+			</div>
+			<p class="conr">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-116155-1";
+_udn = "utorrent.com";
+urchinTracker();
+</script>
+
+</body>
+</html>

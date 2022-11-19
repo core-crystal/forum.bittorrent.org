@@ -1,0 +1,500 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Sandvine: How it Works, and Defeating It (Page 1) / Attacks against BitTorrent / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
+<script type="text/javascript" src="captcha/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript">
+	$(function(){var f=$("#sliderCaptcha");var b=$("#cleCaptcha");var d=$(".boutonsCaptcha");var a=$("#javascriptCaptcha");var e=[19,44,48,13,4,17,43,26,21,28,5,18,4,23,28,24,22,12,37,2,21,49,47,12,15,8,12,3,14,27,25,34,21,23,48,25,41,41,2,12,20,8,31,25,31,9,49,4,22,37];var h=0;var g=5;var c=0;a.hide();f.slider({value:0,min:0,max:g,step:1,slide:function(i,j){if(j.value>c){c=j.value;h+=c}},stop:function(j,k){var i=false;if(k.value==g){if(h==((g+Math.pow(g,2))/2)){i=true;f.slider("option","disabled",true);if(b.val().length!=e.length){$.post("captcha.php",{tokenCaptcha:b.val()},function(m){var l="";$.each(e,function(){l+=m.charAt(this%m.length)});b.val(l);d.removeAttr("disabled")})}}}if(!i){h=c=0;f.slider("option","value",h)}}})});
+</script>
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="punviewtopic" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex" class="isactive"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=30">Attacks against BitTorrent</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=6"><strong>Sandvine: How it Works, and Defeating It</strong></a></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p12" class="blockpost rowodd firstpost blockpost1">
+	<h2><span><span class="conr">#1</span> <a href="viewtopic.php?pid=12#p12">2008-02-29 13:51:43</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89614">aciani1</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Sandvine: How it Works, and Defeating It</h3>
+					<div class="postmsg">
+						<p><strong>The Sandvine Attack</strong></p><p>About 6 months ago BitTorrent (BT) users (particularly on Comcast) started noticing their upload ratios plummet.&#160; Torrents which the trackers indicated should have a dozen peers and seeds were showing very little activity.&#160; The culprit: forged TCP packets with the RESET flag set (TCP_RST, or RST).&#160; The perpetrator: a Sandvine box.</p><p>The Sandvine attack works by eavesdropping on communications between two BT clients, and inserting forged TCP packets to disrupt those communications.&#160; In implementation, Comcast is not using them to completely block BT, but is using them to disrupt BT upload traffic as an out-of-network rate limiting device.&#160; The more BT upload traffic there is on the local Comcast network, the more often BT streams get hit with a TCP_RST.&#160; According to Comcast, this limiting is done on a total upload volume basis for the local network segment.</p><p><a href="http://arstechnica.com/news.ars/post/20080213-comcast-discloses-network-management-practices.html">http://arstechnica.com/news.ars/post/20 … tices.html</a></p><p>Sandvine has 3 modes of operation, TCP_RST is the most well known, because it is the easiest to recognize.&#160; The Sandvine box may also attack a TCP connection by sending fake acknowledgments (TCP_ACK, or ACK).&#160; In TCP, there is no &quot;retransmit&quot; control.&#160; Instead, a missing ACK is an indication that the segment failed to make it to the receiver.&#160; Fake ACKs will cause the sender to accelerate the disbursement of packets onto the network, even though the receiver may actually have missed a segment of the stream.&#160; The result is that the sender &quot;thinks&quot; it has successfully sent its data, while the receiver is waiting for the re-transmit of the missing segment.&#160; This attack puts the TCP stream into an unknown state, because TCP has been designed to handle missing or duplicate packets, not forged ones.&#160; Sending forged TCP_RST packets to both ends of the stream is an effective means of terminating a communication, because if either end obeys the reset, the connection will be half-open, and eventually closed with a real TCP_RST from the other end.</p><p>Simply dropping TCP_RST packets is possible on POSIX systems (Linux &amp; Mac PC&#039;s, and Linux-based firewalls that allow telnet access) using iptables or ipfw.&#160; Windows based users are S.O.L. on this one.&#160; However, simply dropping TCP_RST can produce serious problems, especially when the RSTs are legit.&#160; In the case of an ACK attack (or the not-yet implemented TCP window attack), legit RSTs will be especially important.&#160; </p><p><strong>Defeating It</strong></p><p><strong>Protocol Obfuscation</strong></p><p>The key is to prevent the Sandvine box from identifying BT traffic.&#160; A full encryption of all the BT communications using SSL is the most &quot;obvious&quot; and &quot;final&quot; of all solutions; however, SSL uses a lot of bandwidth and processor overhead, especially for streams which transmit a small amount of data, such as tracker traffic.&#160; This is not really a concern for client traffic, but for large trackers (or moderate trackers on slow connections) the use of a full SSL solution would considerably increase their bandwidth and processor demands.</p><p>The best solution is one that defeats the Sandvine box, but does not increase bandwidth requirements or significantly increase processor requirements.&#160; Fortunately, it is not possible for a Sandvine box to monitor ALL communications, so it needs to pick-and-choose which connections it listens to.&#160; This is apparently done by intercepting the tracker responses and extracting the list of peer IPs.&#160; All current BT implementations are vulnerable to this, even the so-called &quot;trackerless&quot; clients (which still contact the tracker).&#160; The Sandvine box can then make a match table to inspect all connections between the target IP and the list of peers.&#160; This presents an &quot;easy&quot; solution where we encrypt the list of peers, using the info hash as a shared secret.&#160; It is outlined in BEP 0008:</p><p><a href="http://www.bittorrent.org/beps/bep_0008.html">http://www.bittorrent.org/beps/bep_0008.html</a></p><p><strong>Datagram Protocol</strong></p><p>Another option has also been suggested which uses transmission control implemented atop of a datagram method (UDP), called UTP.&#160; Datagrams do not have a &quot;state&quot; which can be attacked.&#160; They are sent, and either make it or don&#039;t.&#160; Essentially, they are as close to the IP layer as one can get without actually bypassing the IP stack.&#160; While using UTP would defeat the Sandvine box for now, it still maintains a &quot;state&quot; implemented in the clients.&#160; A Sandvine v2 box could still attack the client-based state by sending forged datagrams.&#160; Even a full datagram based protocol could be abused and attacked by manipulating client-based behaviors.&#160; This returns us to protocol obfuscation/encryption.</p><p><strong>Voluntary Rate Limiting Work-around</strong></p><p>Because Comcast has set the Sandvine boxes to kick-in at a certain total upload congestion, the easiest solution is for the individual users to throttle their upload speeds.&#160; Comcast has not stated what this total rate is, and it&#039;s problematic to determine because cable modem networks are a shared circuit.&#160; Generally, about 450 users share 40 mbps down, and 10 mbps up.&#160; If everyone is talking, that&#039;s 90 kbps down, and 24 kbps up.&#160; As a general rule, not everyone will be talking at the same time, so a proper download:upload throttle on a cable modem connection would be about 21:6 KBps for all torrent traffic.&#160; This would achieve a 1:1 sharing rate on 300 MB of data in about 15 hours.&#160; Comcast only blocks unilateral uploads, so setting your download and upload throttles to 10 KBps <strong>total</strong> should get you a 1:1 ratio without ever seeing that TCP_RST.&#160; If you want to help seed a file, while downloading it, then set an upload throttle higher than your download (e.g. 6:12), but knock it down once the download is complete.</p><p>Unfortunately, many people run their torrents at the maximum upload rate of 345 kbps (384*0.9 for overhead -&gt; 42 KBps), which will swamp the local nodes with only 25 peers (6 %) uploading.&#160; Of course, other people are using upstream bandwidth too.&#160; Keep in mind that VOIP uses about 64 kbps upstream, so a few phone calls takes out 1 BT uploader.</p><p>George Ou presents a projected breakdown of Comcast&#039;s network traffic here (note, this is George&#039;s own work, not real Comcast data):</p><p><a href="http://blogs.zdnet.com/Ou/?p=1031">http://blogs.zdnet.com/Ou/?p=1031</a></p>
+						<p class="postedit"><em>Last edited by aciani1 (2008-02-29 14:55:12)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p18" class="blockpost roweven">
+	<h2><span><span class="conr">#2</span> <a href="viewtopic.php?pid=18#p18">2008-03-02 08:06:29</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Sandvine: How it Works, and Defeating It</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>Because Comcast has set the Sandvine boxes to kick-in at a certain total upload congestion</p></div></blockquote></div><p>No, that&#039;s what they claim, but not what is actually happening. Various user reports and long-term sampling by Robert M. Topolski (the initial reporter of the issue, see <a href="http://fjallfoss.fcc.gov/prod/ecfs/retrieve.cgi?native_or_pdf=pdf&amp;id_document=6519843340">http://fjallfoss.fcc.gov/prod/ecfs/retr … 6519843340</a> ) show that the RST-injecting happens 24/7.</p><p>Most public comcast statements have been identified full of... crafty wordings or even blantant lies, so i would not base countermeasures on their claims.</p><br /><p>Custom UDP-transports do work btw, as you can also encrypt the flow control header fields, this way they cannot inject termination-packets, they&#039;d be forced to do &quot;normal&quot; traffic shaping by droping packets occasionally.</p><p>When i investigated their shaping it appeared that any connection that was identified as bittorrent by their heuristics gets severed when it achieves a 10:1 upload:download speed ratio for, let&#039;s say 50 seconds.</p><p>See <a href="http://www.azureuswiki.com/index.php/User:The8472/Comcast">http://www.azureuswiki.com/index.php/Us … 72/Comcast</a> for my results. Note that they were done with a user whom i wouldn&#039;t describe as a networking expert, so they have to be taken with a grain of salt, i&#039;m especially not sure about the tracker part, as users have reported that HTTPS-trackers do not make a difference.</p><br /><div class="quotebox"><blockquote><div><p>A full encryption of all the BT communications using SSL is the most &quot;obvious&quot; and &quot;final&quot; of all solutions</p></div></blockquote></div><p>Far from it, bittorrent still has many characteristics that stand out, such as DHT, Tracker announces a high number of connections and packetsize/timing patterns.</p><p>To be truly stealthy we&#039;d have to be more creative. encrypted TCP-transports for control-data bounced over only few repeater nodes to coalesce control flows (as long as no data flows occur) would reduce the number of connections, data flows could be established only when need arises and be done over fully encrypted UDP transports.</p><p>Then there also is the nuclear option: Carefully design everything to look like VoIP when it comes to headers, packet sizes and timing... they probably wouldn&#039;t dare to touch that.</p>
+						<p class="postedit"><em>Last edited by The 8472 (2008-03-02 08:12:17)</em></p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p23" class="blockpost rowodd">
+	<h2><span><span class="conr">#3</span> <a href="viewtopic.php?pid=23#p23">2008-03-02 20:59:32</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+						<dd class="usertitle"><strong>Editor</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Sandvine: How it Works, and Defeating It</h3>
+					<div class="postmsg">
+						<p>UDP-based transports will work against RST-based attacks, but it requires upgrading both ends of every connection to support it.&#160; I am not saying that it cannot be done (or that it hasn&#039;t already been done). :-)</p><p>But we are ALSO looking for a solution that solves the problem for TCP and does not require dipping below the application layer.</p><p>--Dave</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1354" class="blockpost roweven">
+	<h2><span><span class="conr">#4</span> <a href="viewtopic.php?pid=1354#p1354">2010-04-21 17:04:35</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=90922">daemonfox</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Sandvine: How it Works, and Defeating It</h3>
+					<div class="postmsg">
+						<p>Hmm... noone has commented on this in 2 years, and it is the same everywhere else I look... hardly anyone is still talking about how to thwart Sandvine even now that it is being used at it&#039;s worst.</p><p>I just recently became victim of Comcasts return to throttling and felt a wave of deja vu come over me... Not Again!!!</p><p>Sadly, it is true and two nights of countless efforts to find a work around have lead me to one conclusion... Sandvine must die and we must kill it at it&#039;s source... the networks it is designed to forge packets for.</p><p>Here is the concept:</p><p>Sandvine uses Deep Packet Inspection to scan data flowing over the network and determine if the connecting IPs and their bandwidth consumption require throttling. The offending IPs get RST or ACK packets sent and the connection get left half open. What most places don&#039;t tell you is that the IP is TIED to the port the transmission is traveling on when Sandvine inspects it and that is how it sends the forged packets.</p><p>Some sites have posted mediocre work arounds involving setting the port to be random upon client startup and scheduled tasks to stop and restart the client.This is faulty as each restart requires the DHT buckets to refill and the Trackers to update wasting precious time. Others mention ways to insert scripting to randomize the ports via WebUIs... but no solid process has been found from what I have read and the whole idea seems faulty and not easy for the masses to use.</p><p>My recent test show that for 120 to 240 seconds after the port is randomized and applied in uTorrent, speeds for both upload and download reach peak efficiencies while using the recommended settings for your connection speed via the uTorrent best settings thread.</p><p>Once Sandvine catches on though, I get throttled again until I randomize the port.</p><p>Now I know what everyone is thinking right off the bat... What about port forwarding? Grow up... we live in a time where DHT, UPnP and other port mapping technologies exist and I have better results not using a forwarded port than i do with one. That said, my tests did not require any port mappings to be set to see speed benefits.</p><p>So, running with this premise, I have hypothesized that implementing a randomizing layer for each and every transmission of packets would be the best solution.</p><p>The idea is that using the recommended settings, the average user should never have more than 2000 concurring connections up and downstream. Using&#160; that data based on your settings, a set number of random, not known assigned, ports could be generated and cycled through randomly as you connect to peers to download and upload the packets and pieces. By doing this we actually achieve two key goals in this battle... one being an automatic at the IP level fix for bandwidth shaping technologies, and the other being the Sandvine killer itself.</p><p>How do you ask... some of you may see it already... by randomizing the port attached to each piece being downloaded, Sandvine will be expecting packets and making decisions on what port to block on your IP while you have already finished that stream and begun many more on alternate ports... the idea being each stream/port pairing finishes downloading before Sandvine can understand that the port is no longer transmitting. The only way to deal with this would be for Sandvine to inspect every packet completely as well as log and store for database reference each port/IP pairing as well as start sending RST and ACK packets across multiple IP/port pairings. This means EXPONENTIAL increases in resource usage, bandwidth consumption by the ISP itself and over all a nsty down turn in the ROI of bandwidth shaping.</p><p>In short, this implementation would be like opening the flood gates onto the Sandvine camp and showing them just how weak there flawed bandwidth shaping policies are.</p><br /><br /><p>So if you made it this far without hating me for rambling, please tell me what you think? I did not know where I should post this but I guess the source was a good first choice.</p><p>Thank you for reading and seeding</p><p>DaemonFox</p>
+						<p class="postedit"><em>Last edited by daemonfox (2010-04-21 17:18:56)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1512" class="blockpost rowodd">
+	<h2><span><span class="conr">#5</span> <a href="viewtopic.php?pid=1512#p1512">2010-08-17 09:18:42</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=91170">Malt</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Sandvine: How it Works, and Defeating It</h3>
+					<div class="postmsg">
+						<div class="quotebox"><blockquote><div><p>Then there also is the nuclear option: Carefully design everything to look like VoIP when it comes to headers, packet sizes and timing... they probably wouldn&#039;t dare to touch that.</p></div></blockquote></div><p>That&#039;s a bad idea.<br />Many broadband providers and network owners also provide telephony (and sometimes VoIP) services to clients in their areas. That means that they won&#039;t be too happy about &quot;foreign&quot; VoIP traffic and might throttle or delay it.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1538" class="blockpost roweven">
+	<h2><span><span class="conr">#6</span> <a href="viewtopic.php?pid=1538#p1538">2010-08-25 04:26:19</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=91164">huberaron</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Sandvine: How it Works, and Defeating It</h3>
+					<div class="postmsg">
+						<p>I think I&#039;m affected by some kind of throttling since days there is no download or upload (or just marginal) happening. What can I do.</p><p>Greetings Aron</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1974" class="blockpost rowodd">
+	<h2><span><span class="conr">#7</span> <a href="viewtopic.php?pid=1974#p1974">2011-04-19 22:16:18</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=93136">manfredo</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Sandvine: How it Works, and Defeating It</h3>
+					<div class="postmsg">
+						<p>ok thanks for that info</p><p>greets</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2062" class="blockpost roweven">
+	<h2><span><span class="conr">#8</span> <a href="viewtopic.php?pid=2062#p2062">2011-05-02 11:48:49</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=93230">TheRook</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Sandvine: How it Works, and Defeating It</h3>
+					<div class="postmsg">
+						<p>I fully support moving to SSL because it is a permanent solution to traffic shaping.&#160; Further more the MSE protocol has problems (<a href="http://forum.bittorrent.org/viewtopic.php?id=396">http://forum.bittorrent.org/viewtopic.php?id=396</a>). </p><p>CPU overhead of SSL is now quite small. Use the &quot;openssl speed&quot; command to get some raw figures; on my PC (a 2.4 GHz Core2 from two years ago), RC4 appears to be about twice faster than AES, but AES is already at 160 MBytes/s, i.e. 16 times faster than 100baseT Ethernet can transmit.&#160; The SSL cipher suite &quot;SSL_RSA_WITH_RC4_128_MD5&quot; is very light weight and there for would work well for BitTorrent. </p><p>Network overhead is about packet size. The initial handshake for SSL implies some asymmetric cryptography; the DHE cipher suites (when the server certificates is used for digital signatures only) imply a ServerKeyExchange message which will need a few hundred extra bytes compared with a RSA key exchange. This is a one-time cost, and clients will reuse sessions (continuing a previous SSL session with a symmetric-only shortened key exchange).&#160; This process of resuming SSL sessions is key for BitTorrent where many small chunks will be distributed among a subset of nodes.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2064" class="blockpost rowodd">
+	<h2><span><span class="conr">#9</span> <a href="viewtopic.php?pid=2064#p2064">2011-05-03 10:34:12</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Sandvine: How it Works, and Defeating It</h3>
+					<div class="postmsg">
+						<p>If MSE is not effective then SSL would not be effective for the very same reasons.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2072" class="blockpost roweven">
+	<h2><span><span class="conr">#10</span> <a href="viewtopic.php?pid=2072#p2072">2011-05-08 14:04:47</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=93230">TheRook</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Sandvine: How it Works, and Defeating It</h3>
+					<div class="postmsg">
+						<p>If someone implanted traffic shaping for BitTorrent over SSL then all protocols that use SSL (HTTPS,POPS...) would also be affected.&#160; &#160;Using a SSL based VPN is a common and well known solution to the bloking or rate limiting of MSE/BitTorrent.&#160; &#160;My proposal is make BitTorrent more secure by utilizing this proven defensive measure and I&#039;m happy to see that others agree with me.</p>
+						<p class="postedit"><em>Last edited by TheRook (2011-05-08 14:15:32)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2074" class="blockpost rowodd">
+	<h2><span><span class="conr">#11</span> <a href="viewtopic.php?pid=2074#p2074">2011-05-09 01:39:28</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Sandvine: How it Works, and Defeating It</h3>
+					<div class="postmsg">
+						<p>That is not correct. More sophisticated traffic shaping solutions do not break the encryption, they use timing/packet size patterns/side-channel information to identify streams. SSL wouldn&#039;t change that.</p><p>VPNs only work because they aggregate all bittorrent links into a single connection. Bittorrent over SSL on the other hand would establish 1 SSL connection to each bittorrent client that you&#039;re connecting to.</p><p>Those are two vastly different things. I suggest you refrain from making such suggestions until you have acquired some actual knowledge in that area.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2086" class="blockpost roweven">
+	<h2><span><span class="conr">#12</span> <a href="viewtopic.php?pid=2086#p2086">2011-05-13 14:58:37</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=93230">TheRook</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Sandvine: How it Works, and Defeating It</h3>
+					<div class="postmsg">
+						<p>Reinventing the wheal is one of the worst mistakes you can make when attempting to build a secure system.&#160; Thus,&#160; MSE should have never been built and it should be deprecated.&#160; Writing your own protocol can be fun but others shouldn&#039;t be subjected its shortcomings.</p>
+						<p class="postedit"><em>Last edited by TheRook (2011-05-13 15:01:07)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2092" class="blockpost rowodd">
+	<h2><span><span class="conr">#13</span> <a href="viewtopic.php?pid=2092#p2092">2011-05-20 09:11:40</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89602">arvid</a></strong></dt>
+						<dd class="usertitle"><strong>Administrator</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Sandvine: How it Works, and Defeating It</h3>
+					<div class="postmsg">
+						<p>I think that you hand wave away the performance problems of openssl a bit too lightly.</p><p>In my experience, the diffie hellman handshake is currently my far the most expensive operations in bittorrent. Even more expensive than sha-1 and rc4. Obviously it depends on peer churn. Using ssl would be pouring gas onto the fire.</p><p>Another possible conclusion from the fact that people can identify and throttle MSE is to stop using it all together.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2280" class="blockpost roweven">
+	<h2><span><span class="conr">#14</span> <a href="viewtopic.php?pid=2280#p2280">2011-08-17 11:30:11</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=93230">TheRook</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Sandvine: How it Works, and Defeating It</h3>
+					<div class="postmsg">
+						<p>@Arvid&#160; SSL does only what it has to in order to insure the best possible secuirty.&#160; &#160;This is not something you can just &quot;cut out&quot; of a protocol.&#160; &#160; Further more,&#160; you can use a ssl cipher suite with a DH Key exchange,&#160; with SHA1 and RC4.&#160; But I&#039;m not sure why you would want to because SHA1 and RC4 are both broken primitives.</p>
+						<p class="postedit"><em>Last edited by TheRook (2011-08-17 11:30:47)</em></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=30">Attacks against BitTorrent</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=6"><strong>Sandvine: How it Works, and Defeating It</strong></a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

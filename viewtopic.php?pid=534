@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>forum.bittorrent.org / Top-BT: a BT client to speed downloading twice with less traffic</title>
+<link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
+</head>
+<body>
+
+<div id="punwrap">
+<div id="punviewtopic" class="pun">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><span>forum.bittorrent.org</span></h1>
+			<p><span>BitTorrent.org community</span></p>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p>You are not logged in.</p>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<h2><span>Announcement</span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div>Posting about any illegal sharing of copyrighted content is strictly forbidden.</div>
+		</div>
+	</div>
+</div>
+
+<div class="linkst">
+	<div class="inbox">
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<p class="postlink conr">&nbsp;</p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Top-BT: a BT client to speed downloading twice with less traffic</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p492" class="blockpost rowodd firstpost">
+	<h2><span><span class="conr">#1&nbsp;</span><a href="viewtopic.php?pid=492#p492">2008-09-11 22:12:49</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90022">sren</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3>Top-BT: a BT client to speed downloading twice with less traffic</h3>
+				<div class="postmsg">
+					<p>Hi,<br /><br />We are researchers at the Ohio State University. We have implemented and released a new BitTorrent client software written in Python, called Top-BT. Different from previously released BT client, Top-BT actively discovers Internet topology, and uses this intelligence to always choose close peers to download file pieces. We have extensively evaluated and tested our client. Our study shows that, compared to native BT clients, Top-BT can accelerate downloading up to twice, but save up to 40% induced Internet traffic.<br /><br />You all are very welcome to try out our Top-BT client, and give us some advice, suggestions, and comments. Currently the Top-BT client can be downloaded from two places:<br /><br /><a href="http://sourceforge.net/projects/top-bt/" rel="nofollow">http://sourceforge.net/projects/top-bt/</a><br /><a href="http://www.cse.ohio-state.edu/~sren/topbt/" rel="nofollow">http://www.cse.ohio-state.edu/~sren/topbt/</a><br /><br />Regards,<br />Shansi</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p496" class="blockpost roweven">
+	<h2><span><span class="conr">#2&nbsp;</span><a href="viewtopic.php?pid=496#p496">2008-09-11 22:56:13</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Top-BT: a BT client to speed downloading twice with less traffic</h3>
+				<div class="postmsg">
+					<p>How does this differ from Ono and P4P?<br /><br />Also could you please discuss this in the context of BEPs?&nbsp; Are there some features you wish to standardize?&nbsp; Or write an informational BEP?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p497" class="blockpost rowodd">
+	<h2><span><span class="conr">#3&nbsp;</span><a href="viewtopic.php?pid=497#p497">2008-09-11 23:20:09</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90022">sren</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Top-BT: a BT client to speed downloading twice with less traffic</h3>
+				<div class="postmsg">
+					<p>We are writing a draft in which the difference between Top-BT and existing work such as P4P and Ono are discussed in detail. We will provide the draft once it is refined and ready.<br /><br />To be short, P4P is a framework through which ISPs can provide information to applications, so that applications can optimize their performance. P4P requires ISPs to widely deploy their frameworks. Another challenge for P4P is, what type of information ISPs should provide to satisfy different applications quality requirements.<br /><br />On the other hand, Ono utilizes existing CDN infrastructures to localize hosts, so that a host can choose close peers to connect to. Ono also has a few challenges: 1) when there are many native BT clients online, an Ono client is not able to accurately tell its distances to those native clients, because they do not localize themselves; 2) although a single Ono client sends only 32K DNS traffic per day, if there are 1 million Ono clients online simultaneously, it can cause 32G DNS trafic on CDN nameservers. This can trigger CDN to filter Ono DNS traffic.<br /><br />In comparison, our Top-BT client:&nbsp; 1) does not require modification to existing Internet infrastructure, and is a completely user-level tool; and 2) it runs well even when all the rest clients are native BT-clients; and 3) it directly measures distances to other peers, instead of using coordinates to calculate distances.<br /><br />As for the BEP suggestion, sorry I am new to this forum. I will spend some time to get familiar what is BEP and understand your questions.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p503" class="blockpost roweven">
+	<h2><span><span class="conr">#4&nbsp;</span><a href="viewtopic.php?pid=503#p503">2008-09-12 14:28:35</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Top-BT: a BT client to speed downloading twice with less traffic</h3>
+				<div class="postmsg">
+					<p>I'm sorry.&nbsp; My writing about BEPs was far afield from what I should've been saying.<br />Localization has been a hot topic in the IETF and in these forums.&nbsp; Please skim through this thread:<br /><br /><a href="http://forum.bittorrent.org/viewtopic.php?id=52" rel="nofollow">http://forum.bittorrent.org/viewtopic.php?id=52</a><br /><br />We would like to include localization mechanisms in uTorrent, but mainly to minimize inter-ISP transits while retaining enough connections to outside the ISP to aid piece propagation and when possible work around bad ISP policy.&nbsp; Clearly localization would help performance for very large swarms, i.e., on the scale where multiple peers can be found on the same LAN or campus.&nbsp; Still wondering as to whether it makes a difference for the swarms we see today (usually less than 10000s of peers).&nbsp; <br /><br />BTW do you have good research tools that you could contribute to the community?&nbsp; &nbsp;If so please please post about them in <br /><br /><a href="http://forum.bittorrent.org/viewforum.php?id=33" rel="nofollow">http://forum.bittorrent.org/viewforum.php?id=33</a></p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p514" class="blockpost rowodd">
+	<h2><span><span class="conr">#5&nbsp;</span><a href="viewtopic.php?pid=514#p514">2008-09-12 21:53:54</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90022">sren</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Top-BT: a BT client to speed downloading twice with less traffic</h3>
+				<div class="postmsg">
+					<p>Hi Dave,<br /><br />After quickly reading the posts on &quot;Latency Prioritizer&quot; through the link you provided, very interestingly, I found the ideas of doing pings to measure latency to peers are part of what we have implemented.<br /><br />In our Top-BT code, we not only do &quot;ping&quot; to peers, but also do &quot;traceroute&quot;. In this way, we can measure how many AS-hops (Autonomous System Hops) and link-hops to those peers. To balance download time and induced cross-ISP traffic, we also consider connections download rates and upload rates when deciding which peers to unchoke. <br /><br />We will be more than happy to share our experience with the community!</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p534" class="blockpost roweven">
+	<h2><span><span class="conr">#6&nbsp;</span><a href="viewtopic.php?pid=534#p534">2008-09-18 07:33:15</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=90037">astalavista</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Top-BT: a BT client to speed downloading twice with less traffic</h3>
+				<div class="postmsg">
+					<p>@sren - Just a quick question - will there be a &quot;windows installer&quot; in the works for this client?&nbsp; And if so, any idea of a ETA for a release?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox">
+		<p class="postlink conr">&nbsp;</p>
+		<p class="pagelink conl">Pages: <strong>1</strong></p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Top-BT: a BT client to speed downloading twice with less traffic</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div class="inbox">
+
+			<div class="conl">
+				<form id="qjump" method="get" action="viewforum.php">
+					<div><label>Jump to
+					<br /><select name="id" onchange="window.location=('viewforum.php?id='+this.options[this.selectedIndex].value)">
+						<optgroup label="BitTorrent">
+							<option value="26">Announcements</option>
+							<option value="25" selected="selected">BEPs</option>
+							<option value="29">BEP process</option>
+							<option value="27">General</option>
+							<option value="33">Research Tools</option>
+							<option value="32">Cooperation between BitTorrent and ISPs</option>
+							<option value="30">Attacks against BitTorrent</option>
+							<option value="28">Feature Requests, Found Bugs &gt;&gt;&gt;</option>
+					</optgroup>
+					</select>
+					<input type="submit" value=" Go " accesskey="g" />
+					</label></div>
+				</form>
+			</div>
+			<p class="conr">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-116155-1";
+_udn = "utorrent.com";
+urchinTracker();
+</script>
+
+</body>
+</html>

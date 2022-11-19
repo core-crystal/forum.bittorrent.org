@@ -1,0 +1,513 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>General (Page 3) / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="punviewforum" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex" class="isactive"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=27"><strong>General</strong></a></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><a class="item1" href="viewforum.php?id=27&amp;p=2">Previous</a> <a href="viewforum.php?id=27&amp;p=1">1</a> <a href="viewforum.php?id=27&amp;p=2">2</a> <strong>3</strong> <a href="viewforum.php?id=27&amp;p=4">4</a> <a href="viewforum.php?id=27&amp;p=4">Next</a></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="vf" class="blocktable">
+	<h2><span>General</span></h2>
+	<div class="box">
+		<div class="inbox">
+			<table cellspacing="0">
+			<thead>
+				<tr>
+					<th class="tcl" scope="col">Topic</th>
+					<th class="tc2" scope="col">Replies</th>
+					<th class="tc3" scope="col">Views</th>
+					<th class="tcr" scope="col">Last post</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="rowodd iclosed">
+					<td class="tcl">
+						<div class="icon"><div class="nosize">61</div></div>
+						<div class="tclcon">
+							<div>
+								<span class="closedtext">Closed:</span> <a href="viewtopic.php?id=184">what&#039;s up with the admin at utorrent anyway?</a> <span class="byuser">by HimandHer</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2">6</td>
+					<td class="tc3">1,936</td>
+					<td class="tcr"><a href="viewtopic.php?pid=1152#p1152">2010-03-19 14:01:06</a> <span class="byuser">by The 8472</span></td>
+				</tr>
+				<tr class="roweven">
+					<td class="tcl">
+						<div class="icon"><div class="nosize">62</div></div>
+						<div class="tclcon">
+							<div>
+								 <a href="viewtopic.php?id=180">Where to get torrents?</a> <span class="byuser">by yawtyler</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2">0</td>
+					<td class="tc3">985</td>
+					<td class="tcr"><a href="viewtopic.php?pid=1104#p1104">2010-03-08 18:15:22</a> <span class="byuser">by yawtyler</span></td>
+				</tr>
+				<tr class="rowodd">
+					<td class="tcl">
+						<div class="icon"><div class="nosize">63</div></div>
+						<div class="tclcon">
+							<div>
+								 <a href="viewtopic.php?id=174">Moving not completely downloaded files</a> <span class="byuser">by Piterek12</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2">1</td>
+					<td class="tc3">969</td>
+					<td class="tcr"><a href="viewtopic.php?pid=1066#p1066">2010-03-05 02:37:48</a> <span class="byuser">by DreadWingKnight</span></td>
+				</tr>
+				<tr class="roweven">
+					<td class="tcl">
+						<div class="icon"><div class="nosize">64</div></div>
+						<div class="tclcon">
+							<div>
+								 <a href="viewtopic.php?id=172">Newbie -- Is the standard free and open?</a> <span class="byuser">by ddiinnxx</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2">0</td>
+					<td class="tc3">819</td>
+					<td class="tcr"><a href="viewtopic.php?pid=1062#p1062">2010-03-04 10:52:01</a> <span class="byuser">by ddiinnxx</span></td>
+				</tr>
+				<tr class="rowodd">
+					<td class="tcl">
+						<div class="icon"><div class="nosize">65</div></div>
+						<div class="tclcon">
+							<div>
+								 <a href="viewtopic.php?id=164">Small size UDP packets</a> <span class="byuser">by Snusmumr</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2">0</td>
+					<td class="tc3">1,036</td>
+					<td class="tcr"><a href="viewtopic.php?pid=996#p996">2010-02-23 23:22:09</a> <span class="byuser">by Snusmumr</span></td>
+				</tr>
+				<tr class="roweven">
+					<td class="tcl">
+						<div class="icon"><div class="nosize">66</div></div>
+						<div class="tclcon">
+							<div>
+								 <a href="viewtopic.php?id=158">file list modification, continue seeding</a> <span class="byuser">by bridge2far</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2">2</td>
+					<td class="tc3">1,249</td>
+					<td class="tcr"><a href="viewtopic.php?pid=960#p960">2010-02-11 12:43:46</a> <span class="byuser">by bridge2far</span></td>
+				</tr>
+				<tr class="rowodd">
+					<td class="tcl">
+						<div class="icon"><div class="nosize">67</div></div>
+						<div class="tclcon">
+							<div>
+								 <a href="viewtopic.php?id=151">Propagating file perms (chmod) and types in BT?</a> <span class="byuser">by RyanMoore</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2">0</td>
+					<td class="tc3">936</td>
+					<td class="tcr"><a href="viewtopic.php?pid=928#p928">2010-01-25 20:35:42</a> <span class="byuser">by RyanMoore</span></td>
+				</tr>
+				<tr class="roweven">
+					<td class="tcl">
+						<div class="icon"><div class="nosize">68</div></div>
+						<div class="tclcon">
+							<div>
+								 <a href="viewtopic.php?id=147">Including previous downloads to Bittorrent</a> <span class="byuser">by flanker2000</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2">0</td>
+					<td class="tc3">894</td>
+					<td class="tcr"><a href="viewtopic.php?pid=896#p896">2010-01-01 05:57:40</a> <span class="byuser">by flanker2000</span></td>
+				</tr>
+				<tr class="rowodd">
+					<td class="tcl">
+						<div class="icon"><div class="nosize">69</div></div>
+						<div class="tclcon">
+							<div>
+								 <a href="viewtopic.php?id=135">About DHTs</a> <span class="byuser">by cha0s4u</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2">2</td>
+					<td class="tc3">1,699</td>
+					<td class="tcr"><a href="viewtopic.php?pid=883#p883">2009-12-24 15:19:31</a> <span class="byuser">by The 8472</span></td>
+				</tr>
+				<tr class="roweven">
+					<td class="tcl">
+						<div class="icon"><div class="nosize">70</div></div>
+						<div class="tclcon">
+							<div>
+								 <a href="viewtopic.php?id=143">Indirect seeding</a> <span class="byuser">by cndesu</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2">4</td>
+					<td class="tc3">3,067</td>
+					<td class="tcr"><a href="viewtopic.php?pid=880#p880">2009-12-18 09:29:13</a> <span class="byuser">by cndesu</span></td>
+				</tr>
+				<tr class="rowodd">
+					<td class="tcl">
+						<div class="icon"><div class="nosize">71</div></div>
+						<div class="tclcon">
+							<div>
+								 <a href="viewtopic.php?id=142">How to use BitTorrent in my .Net Application</a> <span class="byuser">by sachinkolate</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2">1</td>
+					<td class="tc3">1,193</td>
+					<td class="tcr"><a href="viewtopic.php?pid=874#p874">2009-12-17 07:44:49</a> <span class="byuser">by The 8472</span></td>
+				</tr>
+				<tr class="roweven">
+					<td class="tcl">
+						<div class="icon"><div class="nosize">72</div></div>
+						<div class="tclcon">
+							<div>
+								 <a href="viewtopic.php?id=104">Bittorrent future research area</a> <span class="byuser">by hustnn</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2">1</td>
+					<td class="tc3">1,948</td>
+					<td class="tcr"><a href="viewtopic.php?pid=796#p796">2009-11-15 13:04:47</a> <span class="byuser">by sys_err</span></td>
+				</tr>
+				<tr class="rowodd">
+					<td class="tcl">
+						<div class="icon"><div class="nosize">73</div></div>
+						<div class="tclcon">
+							<div>
+								 <a href="viewtopic.php?id=112">Speed limitation how to</a> <span class="byuser">by dmeet</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2">0</td>
+					<td class="tc3">1,509</td>
+					<td class="tcr"><a href="viewtopic.php?pid=648#p648">2009-10-12 19:01:12</a> <span class="byuser">by dmeet</span></td>
+				</tr>
+				<tr class="roweven">
+					<td class="tcl">
+						<div class="icon"><div class="nosize">74</div></div>
+						<div class="tclcon">
+							<div>
+								 <a href="viewtopic.php?id=107">Further developing private torrents</a> <span class="byuser">by thib</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2">0</td>
+					<td class="tc3">1,665</td>
+					<td class="tcr"><a href="viewtopic.php?pid=631#p631">2009-08-07 21:31:18</a> <span class="byuser">by thib</span></td>
+				</tr>
+				<tr class="rowodd">
+					<td class="tcl">
+						<div class="icon"><div class="nosize">75</div></div>
+						<div class="tclcon">
+							<div>
+								 <a href="viewtopic.php?id=103">a little help</a> <span class="byuser">by kalil</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2">1</td>
+					<td class="tc3">2,037</td>
+					<td class="tcr"><a href="viewtopic.php?pid=623#p623">2009-07-07 14:44:15</a> <span class="byuser">by Firon</span></td>
+				</tr>
+				<tr class="roweven">
+					<td class="tcl">
+						<div class="icon"><div class="nosize">76</div></div>
+						<div class="tclcon">
+							<div>
+								 <a href="viewtopic.php?id=101">Question on Tracker Inter Communication</a> <span class="byuser">by atevewr</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2">0</td>
+					<td class="tc3">1,551</td>
+					<td class="tcr"><a href="viewtopic.php?pid=620#p620">2009-06-20 11:11:37</a> <span class="byuser">by atevewr</span></td>
+				</tr>
+				<tr class="rowodd">
+					<td class="tcl">
+						<div class="icon"><div class="nosize">77</div></div>
+						<div class="tclcon">
+							<div>
+								 <a href="viewtopic.php?id=97">Torrent files: Length field Vs Piece length/Pieces</a> <span class="byuser">by druha</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2">0</td>
+					<td class="tc3">1,851</td>
+					<td class="tcr"><a href="viewtopic.php?pid=610#p610">2009-04-08 10:07:52</a> <span class="byuser">by druha</span></td>
+				</tr>
+				<tr class="roweven">
+					<td class="tcl">
+						<div class="icon"><div class="nosize">78</div></div>
+						<div class="tclcon">
+							<div>
+								 <a href="viewtopic.php?id=77">Why doesn&#039;t bittorrent use UDP?</a> <span class="byuser">by oskar</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2">9</td>
+					<td class="tc3">15,349</td>
+					<td class="tcr"><a href="viewtopic.php?pid=607#p607">2009-03-23 02:02:49</a> <span class="byuser">by stevie teever</span></td>
+				</tr>
+				<tr class="rowodd">
+					<td class="tcl">
+						<div class="icon"><div class="nosize">79</div></div>
+						<div class="tclcon">
+							<div>
+								 <a href="viewtopic.php?id=94">how to see the content of a .torrent file</a> <span class="byuser">by lupinacci</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2">0</td>
+					<td class="tc3">2,118</td>
+					<td class="tcr"><a href="viewtopic.php?pid=600#p600">2009-03-06 15:03:21</a> <span class="byuser">by lupinacci</span></td>
+				</tr>
+				<tr class="roweven">
+					<td class="tcl">
+						<div class="icon"><div class="nosize">80</div></div>
+						<div class="tclcon">
+							<div>
+								 <a href="viewtopic.php?id=93">Unkown UDP packet (undocumented?)</a> <span class="byuser">by Jasmine</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2">0</td>
+					<td class="tc3">1,761</td>
+					<td class="tcr"><a href="viewtopic.php?pid=599#p599">2009-02-25 02:06:51</a> <span class="byuser">by Jasmine</span></td>
+				</tr>
+				<tr class="rowodd">
+					<td class="tcl">
+						<div class="icon"><div class="nosize">81</div></div>
+						<div class="tclcon">
+							<div>
+								 <a href="viewtopic.php?id=92">Giving a seminar on the protocol..</a> <span class="byuser">by gunner_4</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2">0</td>
+					<td class="tc3">2,033</td>
+					<td class="tcr"><a href="viewtopic.php?pid=598#p598">2009-02-18 19:17:48</a> <span class="byuser">by gunner_4</span></td>
+				</tr>
+				<tr class="roweven">
+					<td class="tcl">
+						<div class="icon"><div class="nosize">82</div></div>
+						<div class="tclcon">
+							<div>
+								 <a href="viewtopic.php?id=91">TopBT: a fast BitTorrent client to significantly save induced traffic</a> <span class="byuser">by sren</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2">0</td>
+					<td class="tc3">2,065</td>
+					<td class="tcr"><a href="viewtopic.php?pid=595#p595">2009-01-23 01:57:44</a> <span class="byuser">by sren</span></td>
+				</tr>
+				<tr class="rowodd">
+					<td class="tcl">
+						<div class="icon"><div class="nosize">83</div></div>
+						<div class="tclcon">
+							<div>
+								 <a href="viewtopic.php?id=89">Help me with understanding the protocol</a> <span class="byuser">by giuffsalvo</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2">0</td>
+					<td class="tc3">2,038</td>
+					<td class="tcr"><a href="viewtopic.php?pid=593#p593">2009-01-04 08:28:44</a> <span class="byuser">by giuffsalvo</span></td>
+				</tr>
+				<tr class="roweven">
+					<td class="tcl">
+						<div class="icon"><div class="nosize">84</div></div>
+						<div class="tclcon">
+							<div>
+								 <a href="viewtopic.php?id=79">Top-BT: a BT client to speed downloading twice with less traffic</a> <span class="byuser">by sren</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2">3</td>
+					<td class="tc3">4,039</td>
+					<td class="tcr"><a href="viewtopic.php?pid=592#p592">2009-01-04 08:18:31</a> <span class="byuser">by giuffsalvo</span></td>
+				</tr>
+				<tr class="rowodd">
+					<td class="tcl">
+						<div class="icon"><div class="nosize">85</div></div>
+						<div class="tclcon">
+							<div>
+								 <a href="viewtopic.php?id=88">Good bit torrents</a> <span class="byuser">by Lenbob</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2">0</td>
+					<td class="tc3">2,115</td>
+					<td class="tcr"><a href="viewtopic.php?pid=587#p587">2008-12-23 09:53:56</a> <span class="byuser">by Lenbob</span></td>
+				</tr>
+				<tr class="roweven">
+					<td class="tcl">
+						<div class="icon"><div class="nosize">86</div></div>
+						<div class="tclcon">
+							<div>
+								 <a href="viewtopic.php?id=84">TorrentZEN.com -- New meta search engine!</a> <span class="byuser">by TorrentZEN</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2">4</td>
+					<td class="tc3">4,904</td>
+					<td class="tcr"><a href="viewtopic.php?pid=585#p585">2008-12-08 21:52:32</a> <span class="byuser">by TorrentZEN</span></td>
+				</tr>
+				<tr class="rowodd">
+					<td class="tcl">
+						<div class="icon"><div class="nosize">87</div></div>
+						<div class="tclcon">
+							<div>
+								 <a href="viewtopic.php?id=81">how can I stop the uploading</a> <span class="byuser">by proteusbw</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2">1</td>
+					<td class="tc3">3,133</td>
+					<td class="tcr"><a href="viewtopic.php?pid=584#p584">2008-12-06 23:53:54</a> <span class="byuser">by RussellG</span></td>
+				</tr>
+				<tr class="roweven">
+					<td class="tcl">
+						<div class="icon"><div class="nosize">88</div></div>
+						<div class="tclcon">
+							<div>
+								 <a href="viewtopic.php?id=35">Why BitTorrent adopts Kademlia as DHT protocol?</a> <span class="byuser">by Adele</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2">1</td>
+					<td class="tc3">3,215</td>
+					<td class="tcr"><a href="viewtopic.php?pid=582#p582">2008-12-04 10:32:01</a> <span class="byuser">by Aninhumer</span></td>
+				</tr>
+				<tr class="rowodd">
+					<td class="tcl">
+						<div class="icon"><div class="nosize">89</div></div>
+						<div class="tclcon">
+							<div>
+								 <a href="viewtopic.php?id=85">SDL Modeling BitTorrent</a> <span class="byuser">by fabsfernandes</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2">0</td>
+					<td class="tc3">1,633</td>
+					<td class="tcr"><a href="viewtopic.php?pid=577#p577">2008-12-01 18:30:51</a> <span class="byuser">by fabsfernandes</span></td>
+				</tr>
+				<tr class="roweven">
+					<td class="tcl">
+						<div class="icon"><div class="nosize">90</div></div>
+						<div class="tclcon">
+							<div>
+								 <a href="viewtopic.php?id=82">fake ratio</a> <span class="byuser">by seeds</span>
+							</div>
+						</div>
+					</td>
+					<td class="tc2">1</td>
+					<td class="tc3">3,948</td>
+					<td class="tcr"><a href="viewtopic.php?pid=569#p569">2008-11-20 15:58:53</a> <span class="byuser">by zhah</span></td>
+				</tr>
+			</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+<div class="linksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><a class="item1" href="viewforum.php?id=27&amp;p=2">Previous</a> <a href="viewforum.php?id=27&amp;p=1">1</a> <a href="viewforum.php?id=27&amp;p=2">2</a> <strong>3</strong> <a href="viewforum.php?id=27&amp;p=4">4</a> <a href="viewforum.php?id=27&amp;p=4">Next</a></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=27"><strong>General</strong></a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

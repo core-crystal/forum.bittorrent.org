@@ -1,0 +1,719 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>forum.bittorrent.org / Latency Prioritizer</title>
+<link rel="stylesheet" type="text/css" href="style/Kontrast.css" />
+</head>
+<body>
+
+<div id="punwrap">
+<div id="punviewtopic" class="pun">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><span>forum.bittorrent.org</span></h1>
+			<p><span>BitTorrent.org community</span></p>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://forum.bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p>You are not logged in.</p>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<h2><span>Announcement</span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div>Posting about any illegal sharing of copyrighted content is strictly forbidden.</div>
+		</div>
+	</div>
+</div>
+
+<div class="linkst">
+	<div class="inbox">
+		<p class="pagelink conl">Pages: <strong>1</strong>&nbsp;<a href="viewtopic.php?id=52&amp;p=2">2</a>&nbsp;<a href="viewtopic.php?id=52&amp;p=3">3</a></p>
+		<p class="postlink conr">&nbsp;</p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Latency Prioritizer</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p273" class="blockpost rowodd firstpost">
+	<h2><span><span class="conr">#1&nbsp;</span><a href="viewtopic.php?pid=273#p273">2008-07-19 22:03:14</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89901">DeathfireD</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3>Latency Prioritizer</h3>
+				<div class="postmsg">
+					<p>Before I begin id like to say sorry if this idea was already posted and please excuse my long confusing descriptions.<br /><br />So I've been reading about p4p that the ISP's are trying to adopt to replace p2p and clear up their pipes. One thing that got my eye was how they determine who and where to share with. Apparently they have a server side program that keeps track and sends back a connection map or cache of people within your area that are currently offering/sharing the same file. <br /><br />Obviously this isn’t something that can simply be done in Bittorrent without a lot of work. Although I think there was a similar feature in Azureus. But it got me thinking, why not add a latency prioritizer feature, and options, into bittorrent? Our client could do a (ping) latency check on IPs trying to connect to us and us trying to connect to ips. That way your client knows to only connect to people with lower then xxx ms/sec ping and prevents the high ping people from connecting until you run out of low ping people. After all if you have 60 or more connections with really high ping it causes a lot of latency, something bittorrent has a huge problem with.<br /><br />So the first thing needed would be an option to turn on or off this new latency prioritizer feature for people that may not want to use it. <br /><br />An option to specify the max latency (ping) and max connections before applying this latency check, so advanced users can alter the default setting at anytime to improve their speeds. If anyone connects with a higher ping then what is set, after that torrent has reached its max connections, your client would then start to block them from making a connection to that specific torrent in your client for however many mins, hours, or till torrent is completed.<br /><br />I suppose there are some draw backs to this idea that would need to be thought over.<br />1) Trackers located in other country's or being hit by a lot of traffic may end up having really bad ping. So if the client doesn't know that the IP it’s connecting to, or receiving data from is a tracker's ip, you may find your self blocking the tracker from updating your peers list. A solution to this would be to have the client take the tracker addresses found in the torrent file and add them to an internal white list either in a txt file for future use or in the programs memory until it’s closed. <br /><br />2) Second problem, a set max ping (latency) value may slow down your torrent’s completion time overall. If only two people have the torrent and they’re located half way around the world on a slow connection with high ping your client would clearly block them leaving you with 0 sources, which is a problem. So an algorithm would have to be thought up to prevent such things. As I suggested above a simple solution to this is, if a torrent has more then or equal to xxx (some value set in the options panel) start applying the latency check, else don't do anything and just accept the connection and share data like you normally do.<br /><br /><strong>So it would look something like this:</strong><br />$maxconnections = &quot;10&quot;;<br /><br />if (connections &gt;= $maxconnections) {<br />&nbsp; start_latency_prioritizer();<br />}else{<br />&nbsp; continue_sharing_like_normal();<br />}<br /><br /><strong>The function for start_latency_prioritizer would look something like this:</strong><br /><br />function start_latency_prioritizer() {<br /><br />$maxping = &quot;1000&quot; milliseconds; (ie. 1 second)<br /><br />if (ping &gt; $maxping){<br />&nbsp; Timeout at $maxping, reject connection, and refuse to make any connections to this person for however long you set in your client (probably 40 mins or until the torrent is complete).&nbsp; <br />}else{<br />&nbsp; make connection and start sharing<br />}<br /><br />}<br /><br />3) Once the max number of connections is reached and the latency check starts, to prevent an endless loop of kicking already connected people and then accepting them again, our client should only ping new connection attempts coming in or going out. So that means the 9 or 10 people that first connected to you would not be checked at all. This is so we at least have 9 sources for the file.<br /><br /><br />3a) Pinging people constantly may cause stress for the client, especially if the ping takes more then a few seconds to complete. Image having 60 people attempting to connect to you all at once because you just started to download a popular torrent. And 30 of those 60 people have ping higher then 2 seconds. That’s 60 seconds in total just to check those 30 people and 90 seconds to check everyone. So a timeout time would need to be set, which would obviously be the $maxping value you set in the options panel (you can see in the example code above for start_latency_prioritizer). So if people have a ping of something higher then your max ping, the client would just timeout at your max ping value and move on to the next person. So instead of taking 90 seconds to check 60 people it would take 60 seconds if your maxping value is set to 1 sec. Figuratively speaking, most of the time, pinging someone takes under a second so that’s why the option should be editable in the options panel for advanced users. Also the connection numbers above may seem large but please remember this pinging would only happen when you attempt to connect to someone or someone attempts to connect to you. Also, if you set the option that almost every bit torrent client already has built in to limit the number of sources per torrent to something reasonable, you wont be overwhelmed with ping requests. I have mine set to 40 max peers per torrent and I have it so only one or two torrents download at a time.<br /><br />4) Like Mentioned above, pings should only happen when your client is attempting to connect to someone for the first time or being connected by someone else for the first time. This way your client isn’t DoSing people every time they try and send a chunk to you or you to them. It would only ping them on the attempt to initiate a connection then if the ping was to high or timed out, they would be added to an ignore/block list. This way your client wont ping them again until their ignoring/banning time is up.<br /><br />Anyway I thought I'd toss this idea out there since bittorrent really does cause a lot of latency when in use and this may help alleviate it a bit. I know from personal experiences that some programs and services crap out when bit torrent is on. VoIP specifically has a hard time dealing with all the traffic coming in when bittorrent is on. I've also noticed a lot of discussion and blog posts on bittorrent's latency problems and I'm pretty surprised nothings been done to solve them except for people telling others to use QoS, which might I add, doesn’t always solve the problem and on older routers it just floods the ram to death. QoS is not the answer to everything. Programs should take at least a little responsibility if they have the ability too. Which I feel bit torrent does.<br /><br />So will my idea work and solve all latency problems? Probably not, but I feel it’s at least worthy of sharing with the torrent community. Please tell me your opinions and suggestions on this idea. If something doesn’t make sense or you think should be done a completely different way, please post. If you think this idea wont solve anything then please explain why.<br /><br />Thanks</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p275" class="blockpost roweven">
+	<h2><span><span class="conr">#2&nbsp;</span><a href="viewtopic.php?pid=275#p275">2008-07-21 00:27:32</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89879">herman</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<p>&gt; this isn’t something that can simply be done in Bittorrent without a lot of work.<br /><br />How about Ono? It seems clever and simple. Your peer contacts Akamai's CDN and retrieves a URL. If the URL matches any of your peers, you are neighbors. But being a neighbor doesn't guarantee low latency nor does having low latency guarantee faster speeds.<br /><br />&gt; Pinging people<br /><br />Could you measure the communication time between a request and response that is part of the Bittorrent protocol? What about routers that ignore your ping requests? Where do you place these peers on your list?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p276" class="blockpost rowodd">
+	<h2><span><span class="conr">#3&nbsp;</span><a href="viewtopic.php?pid=276#p276">2008-07-21 01:48:25</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89901">DeathfireD</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<p>&gt;&quot;How about Ono?&quot;<br />Thats why I mentioned Azureus may have had a feature similar to my idea already in the past. But in any case, your right, it wont solve the latency problem since we cant guarantee that the person is on a good connection. So pinging of some kind needs to still be done.<br /><br /><br />&gt;&quot;Could you measure the communication time between a request and response that is part of the Bittorrent protocol? What about routers that ignore your ping requests? Where do you place these peers on your list?&quot;<br /><br />I don't exactly understand what you mean by request and response. But about the router question, you're client would be pinging the person attempting to connect to you or you attempting to connect to them on the port you or they are using. Obviously if their router or firewall blocks the ping then it wont go threw the way it should. If that's the case then I guess it's ok to assume that they haven't port forwarded correctly so we should treat them as people that have high ping and ignore/block them for however many mins we have set in our client. This way the list of connections is only made up of low ping unblocking people, making the download speed faster and the network pipes less latency prone. At least I hope.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p277" class="blockpost roweven">
+	<h2><span><span class="conr">#4&nbsp;</span><a href="viewtopic.php?pid=277#p277">2008-07-21 11:14:42</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89879">herman</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<p>Says here latency not related to speed:<br /><br /><a href="http://forum.utorrent.com/viewtopic.php?pid=282543#p282543" rel="nofollow">http://forum.utorrent.com/viewtopic.php &hellip; 43#p282543</a><br /><a href="http://forum.utorrent.com/viewtopic.php?pid=317065#p317065" rel="nofollow">http://forum.utorrent.com/viewtopic.php &hellip; 65#p317065</a><br /><br />&gt; I don't exactly understand what you mean by request and response.<br /><br />Probably not the best example... but if you receive a &quot;Got Request&quot;, the time between receiving that request and when you are &quot;Sending Piece&quot; (assuming you are unchoked)? I am not a programmer, so I have limited understanding of the Bittorrent spec, but it was just an idea I am throwing out there.<br /><br />&gt; connect to them on the port<br /><br />I did not think you could ping specific ports.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p279" class="blockpost rowodd">
+	<h2><span><span class="conr">#5&nbsp;</span><a href="viewtopic.php?pid=279#p279">2008-07-21 15:13:21</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89901">DeathfireD</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<p>ahh your correct you cant ping or ICMP a specific port, I totally forgot. But you can attempt to make a connection on a specific port using a service like telnet or just a sock connection like the torrent client does and determine their speed that way. I guess that changes my idea a bit <img src="img/smilies/sad.png" width="15" height="15" alt="sad" />.<br /><br />Allowing the connection and then ignoring/banning the connection based on the amount of time it takes to completely connected might be better. Although I think that would only work one sided. Meaning you would have to initiate the connection to someone and they would have to accept it. The amount of time their client took to accept it would be the number of ms/sec their speed is. If it was the other way around we probably wouldn't be able to get that number since our client would just be accepting the connection and start sharing. Although I'm not sure, I could be wrong.<br /><br />I forgot if connections are <br />1)initiate<br />2)verify attempt<br />3)connecting<br />4)ok<br /><br />or if they are<br /><br />1)initiate connection<br />2)connect<br /><br />If its the first then it wont be one sided and it would work both ways which would be good and we could probably ditch the ping idea completely and just go by the amount of time it takes to make a connection.<br /><br />In any case, not everyone's router is set to block pings so the idea could still work. Say for example you attempt to ping me and my firewall blocks your ping, I would still see your IP since it would be given to my client from the tracker. So my client would end up pinging you and if your router accepts pings, it would go threw and all would work. Although your client would probably have blocked mine since your ping didn't go threw. So I guess it might not work <img src="img/smilies/sad.png" width="15" height="15" alt="sad" />. Something would have to be thought up about that. Any ideas?<br /><br />BTW. thanks for your input.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p280" class="blockpost roweven">
+	<h2><span><span class="conr">#6&nbsp;</span><a href="viewtopic.php?pid=280#p280">2008-07-22 17:45:41</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<p>What is really important is throughput prioritization.&nbsp; &nbsp;Delay correlates with performance... sometimes.&nbsp; We have been playing with an AS-level map on the client-side that measures rates from peers and remembers the AS.&nbsp; Peers within the same AS may all be residential or may be on a university network, peers in an AS may share ISP-imposed policy, etc.&nbsp; The client connects first peers that are in &quot;good ASes&quot;.<br /><br />In some cases the local AS is good... but in the case of Comcast it probably isn't.&nbsp; The fact that the local AS can be worse is a good thing to remember.<br /><br />However, this mechanism is outside the scope of the standards process because it requires no change to the BitTorrent protocol.<br /><br />--Dave</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p281" class="blockpost rowodd">
+	<h2><span><span class="conr">#7&nbsp;</span><a href="viewtopic.php?pid=281#p281">2008-07-22 18:00:21</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89901">DeathfireD</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<p>But AS wont be able to determine speed distinctions. It's just assuming people from the same area, university, isp have good speeds. But I guess it's still a pretty good idea to have later on. It sounds similar to Ono.<br /><br />&gt;However, this mechanism is outside the scope of the standards process because it requires no change to the BitTorrent protocol.<br /><br />ahh ic, so you're saying I should be posting this on different client forums and not on here?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p282" class="blockpost roweven">
+	<h2><span><span class="conr">#8&nbsp;</span><a href="viewtopic.php?pid=282#p282">2008-07-23 12:21:52</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<p>Ono performs greedy optimizations based on delay... not throughput.&nbsp; Why not base your optimization on what you are trying to optimize?&nbsp; I would like to see Ono compared to throughput-AS maps. <br /><br /></p><blockquote><div class="incqbox"><p>It's just assuming people from the same area, university, isp have good speeds.</p></div></blockquote><p>Exactly. We hypothesize that throughput between peers in the same AS correlates.&nbsp; It can only be determined experimentally... that's why we built it.&nbsp; :-)<br /><br />The hypothesis is not without reasoning.&nbsp; Some ASes rate limit.&nbsp; &nbsp;Some ASes are single well-connected campuses.<br /><br /></p><blockquote><div class="incqbox"><p>so you're saying I should be posting this on different client forums and not on here?</p></div></blockquote><p>I should've said that &quot;AS-throughput mapping requires no change to the BitTorrent protocol.&quot;&nbsp; Other techniques might require modifying the protocols and thus certainly would be within the standards process.<br /><br />Even things that don't result in changes to the protocol could be put in an informational BEP.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p284" class="blockpost rowodd">
+	<h2><span><span class="conr">#9&nbsp;</span><a href="viewtopic.php?pid=284#p284">2008-07-24 12:37:40</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<p>i think this generally isn't a good idea apart from the MAN or university net case, simply because there'll always be a remote, fast AS to outcompete your local AS. Think of colocated seedboxes, sweden, CDNs, japan, &lt;insert bandwidth haven here&gt;. So you'd basically end up with a measure which ISPs are fast. But biasing towards such ISPs means biasing towards far-away ISPs, i.e. decreasing locality. Not to mention that this could also mean that such ISPs get swarmed, and thus thinning out the bandwidth and thus negating the effect of their fast upload.<br /><br />And if you go by RTT instead of throughput then you're going after unrelated figures. RTT and throughput aren't related. In fact, my lair on the moon is connected via 20 multi-wavelength lasers with an aggregate throughput of 200Gigabit/s, but i must say the ping times are horrible... ~2 seconds.<br /><br />And low RTTs don't guarantee fast upload either... think of a neighbor attached to the same POP via... dialup.<br /><br /><br />So AS-based measuring only works in a few cases and thus would not serve a greater benefit. I think organization-local (instead of site-local) multicast or automatic local-tracker discovery are better approaches for such special networks.<br /><br />Long story short: Neither the AS nor RTTs are a good measure to optimize on</p>
+					<p class="postedit"><em>Last edited by The 8472 (2008-07-24 12:38:14)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p285" class="blockpost roweven">
+	<h2><span><span class="conr">#10&nbsp;</span><a href="viewtopic.php?pid=285#p285">2008-07-24 14:55:46</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89901">DeathfireD</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<p>&gt;RTT and throughput aren't related. In fact, my lair on the moon is connected via 20 multi-wavelength lasers with an aggregate throughput of 200Gigabit/s, but i must say the ping times are horrible... ~2 seconds.<br /><br />If that's the case then why would I want to connect to you other then your fast upload speed? So what if you have 200Gigabit/s, if the amount of time it takes to make the connection or ping you is 2 seconds then that's a sure fire way to tell that your gonna cause me a lot of latency plus whoever else is connected to me at the time. So sure, the file will download faster thanks to your speed but you will probably also cause the most lag time for my VoIP phone or my other similar programs. <br /><br />So yes, theres drawbacks to making checks based on ping time or connection time. That's why there should be an option to turn this on or off so people that don't care about latency and just want the file downloaded can just not turn the feature on.<br /><br />As for neighbor dialup ping time, I doubt it would be under 1sec. I did a test like this using my moms old Aol account who lives a few streets away from me and got just over 1 second of ping time. There's also a good chance that people around you will all have the same connection as you so theres little to worry about if they happen to be downloading the same torrent and connecting to you.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p286" class="blockpost rowodd">
+	<h2><span><span class="conr">#11&nbsp;</span><a href="viewtopic.php?pid=286#p286">2008-07-24 16:16:10</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>So sure, the file will download faster thanks to your speed but you will probably also cause the most lag time for my VoIP phone or my other similar programs.</p></div></blockquote><p>huh? just because the RTT to me is 2 seconds doesn't mean it would affect any other connection.<br /><br />the bittorrent transfer between you and me would have a latency of 2 seconds, yes. But the voip session between you and your friend in the next town would still have the same latency as always.<br /><br /></p><blockquote><div class="incqbox"><p>As for neighbor dialup ping time, I doubt it would be under 1sec.</p></div></blockquote><p>i'm talking link latency here, not ping times. Ping times can be higher if the line is congested and packets get queued. Which obviously should be avoided by adaptive speed limits and proper congestion avoidance.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p287" class="blockpost roweven">
+	<h2><span><span class="conr">#12&nbsp;</span><a href="viewtopic.php?pid=287#p287">2008-07-24 17:35:21</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89901">DeathfireD</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<p>&gt;the bittorrent transfer between you and me would have a latency of 2 seconds, yes. But the voip session between you and your friend in the next town would still have the same latency as always.<br /><br /><br />Please excuse me if I'm misunderstanding you or talking about the same thing you are lol.<br /><br />We are talking about Round-trip delay time (RTT) right? Why would I want to accept people with high RTT (1 or 2+ seconds)? That's bad and just because you have 200Gigabit/s speed wont change the fact that it's taking 2 or more seconds each time to pass data back and forth, plus however many other people are currently connected to me with 2+ second RTT. That stuff adds up and causes major congestion for my network. VoIP for example, is basically useless when bittorrent is running for me right now, even though I have 10mbs down and 2mbs up and the torrent downloading is set to only use 230kb/s down and 35kb/s up. Even when I've set it to download only 1 torrent at a time and a limit of 40 sources per torrent. Sure I can hear people fine on the phone but they cant hear me or theres static or cut offs. Can you explain what the cause of the latency is then because it sure isn't my pipes getting over clogged because of bandwidth.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p288" class="blockpost rowodd">
+	<h2><span><span class="conr">#13&nbsp;</span><a href="viewtopic.php?pid=288#p288">2008-07-24 19:10:05</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>because there'll always be a remote, fast AS to outcompete your local AS.</p></div></blockquote><p>Is that a problem?&nbsp; &nbsp;So it incurs extra transits.&nbsp; In the absence of ISP policy or a nearby cache, that seems like exactly the right thing to do.... and it would further motivate ISPs to install caches. <br /><br /></p><blockquote><div class="incqbox"><p>this could also mean that such ISPs get swarmed</p></div></blockquote><p>Yeah.&nbsp; Could happen.&nbsp; &nbsp;If greedy, larger swarms could swamp what has historically been a fast ISP.&nbsp; &nbsp;Rather than state a solution, I would rather say that if the correlation is significant then deciding how to exploit it safely becomes a research problem.<br /><br /></p><blockquote><div class="incqbox"><p>AS-based measuring only works in a few cases</p></div></blockquote><p>Are you sure that is the case?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p289" class="blockpost roweven">
+	<h2><span><span class="conr">#14&nbsp;</span><a href="viewtopic.php?pid=289#p289">2008-07-25 00:24:09</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>We are talking about Round-trip delay time (RTT) right? Why would I want to accept people with high RTT (1 or 2+ seconds)? That's bad and just because you have 200Gigabit/s speed wont change the fact that it's taking 2 or more seconds each time to pass data back and forth, plus however many other people are currently connected to me with 2+ second RTT.</p></div></blockquote><p>Sorry... that absolutely doesn't make sense. I said my super downlink from the moon to earth has a minimum RTT of 2 seconds. Your line on earth to your ISP has a RTT of 10ms. If we bittorrent with each other then the bittorrent connection has an RTT of 2+ seconds. If you VoIP with someone else on earth then the RTT to him will be more like 40ms.<br /><br />Just because you connect to me with a high RTT doesn't magically transfer that RTT to all your other connections. RTT is always endpoint-to-endpoint dependent.<br /><br />Hence latency does not matter.<br /><br /></p><blockquote><div class="incqbox"><blockquote><div class="incqbox"><p>AS-based measuring only works in a few cases</p></div></blockquote><p>Are you sure that is the case?</p></div></blockquote><p>Relatively. Assuming the common asymmetric connections and varying configurations resulting in different speeds per upload slot bittorrent will generally end up with matching up with those peers that give the best return for our upload. If everyone does that that means fast peers will pair up with fast peers and the large mass (asymmetric broadband) will pair up with _some_ other asymmetric broadband peer. But because that depends mostly on the configuration (upload speed per slot) and not on the overall upload speed of that peer the AS would not have a huge impact on the selection.<br /><br />Selection can only give you more bandwidth if there is &quot;free&quot; (seed) or unmatched bandwidth (very fast peer not finding his equal) in a swarm. But someone is already getting that bandwidth, preferentially connecting to such peers/seeds would only work if others don't do it.<br /><br />It's somewhat like only connecting to seeds, it might work if you're the only one doing it. If it were common behavior there would be no advantage in connecting to seeds as peer upload bandwidth would go unused.<br /><br /><br />AS-based profiling only makes sense if you have policed bandwidth stuff, like in MANs or university networks where network-internal connections are significantly faster than connections to the remaining internet.<br /><br /></p><blockquote><div class="incqbox"><p>Is that a problem?&nbsp; &nbsp;So it incurs extra transits.</p></div></blockquote><p>Isn't that one of the problems we'd like to avoid to take the burden of ISPs? Not to mention that it creates transit traffic w/o adding benefit since you'd just redistribute the already used bandwidth.</p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p290" class="blockpost rowodd">
+	<h2><span><span class="conr">#15&nbsp;</span><a href="viewtopic.php?pid=290#p290">2008-07-25 00:54:34</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89901">DeathfireD</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>Just because you connect to me with a high RTT doesn't magically transfer that RTT to all your other connections. RTT is always endpoint-to-endpoint dependent.</p></div></blockquote><p>So if you and 29 other people (30 in all) are sharing with me and they all have 2sec RTT, thats a total of 30secs, your saying I shouldn't notice any latency? Not to mention other people with 1sec or less also connected to you. Somehow that doesn't make sense to me. Turning on QoS solves most of the problem, and all QoS is doing is prioritizing the packets. So wouldn't limiting RTT connections to 1 sec alleviate some of that waiting time and make QoS less needed and Latency less of a problem?<br /><br />Sorry if I sound way off or something but it just doesn't sound right to me for some reason. I was always under the impression that you want people with lowest RTT and Ping to reduce load.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p291" class="blockpost roweven">
+	<h2><span><span class="conr">#16&nbsp;</span><a href="viewtopic.php?pid=291#p291">2008-07-25 02:09:08</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<p>RTT is neither transitive nor cumulative. As i said before, the RTT is specific to the connection between you and the other person. If you also establish a connection with someone else then that TCP connection will have its own RTT, independent of the first one.<br /><br />If you have problems with high latencies that is due to link congestion or possibly poor congestion control, but this is not due to the RTT of an individual link itself but due to your capacity being overloaded momentarily. Simply leaving a bit more room (like limiting your speeds to N% of the line's capacity) would solve the problem too. But QoS does achieve more or less the same by applying fair queueing and thus improving congestion control.<br /><br /><br />But that's not the issue here. Bittorrent is about throughput (you want the files downloaded at max speed). It does not matter if it takes another peer to 10ms or 500ms to respond to a piece request, as long as he can deliver the responses (data) at a high rate.<br />Thus bittorrent is not latency-sensitive.<br /><br /><br />Anyway, we're turning in circles.<br /><br /></p><blockquote><div class="incqbox"><h4>Andrew S. Tanenbaum wrote:</h4><p>Never underestimate the bandwidth of a station wagon full of tapes hurtling down the highway.</p></div></blockquote>
+					<p class="postedit"><em>Last edited by The 8472 (2008-07-25 02:16:10)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p292" class="blockpost rowodd">
+	<h2><span><span class="conr">#17&nbsp;</span><a href="viewtopic.php?pid=292#p292">2008-07-25 02:51:08</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89901">DeathfireD</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<p>well like I already mentioned setting download limits and speeds to N% of the line's capacity still results in latency for sensitive services like VoIP. At least for me anyway.<br /><br />I'm kinda getting what your saying but it's still not making 100% sense. In any case, I agree, where going around in circles so I'll wait and see how things progress in AS, Ono, and your project before posting any other thoughts.<br /><br />Thanks for your feedback so far. At least I now know more programmers are attempting to tackle this problem.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p293" class="blockpost roweven">
+	<h2><span><span class="conr">#18&nbsp;</span><a href="viewtopic.php?pid=293#p293">2008-07-25 04:03:09</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>well like I already mentioned setting download limits and speeds to N% of the line's capacity still results in latency for sensitive services like VoIP.</p></div></blockquote><p>Well... if that's your issue then your initial post was very misleading. Your problem stems from suboptimal packet queuing, a problem which can be solved by QoS / better packet schedulers.<br /><br />the &quot;problem&quot; is that bittorrent sends data in 16KiB chunks. Those chunks are split into roughly 1500byte sized TCP packets. If there also is a concurrent VoIP stream then the VoIP performance strongly depends on how those packets are queued.<br /><br />If the voip packets are interleaved with individual 1500-sized bittorrent packets everything works fine. If all 16KiB are sent at once before the voip packet gets scheduled then you'll experience high jitter rates.<br /><br />This is unrelated to bittorrent but more a matter of lower OS levels.</p>
+					<p class="postedit"><em>Last edited by The 8472 (2008-07-25 04:06:07)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p294" class="blockpost rowodd">
+	<h2><span><span class="conr">#19&nbsp;</span><a href="viewtopic.php?pid=294#p294">2008-07-25 14:40:31</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89901">DeathfireD</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>Well... if that's your issue then your initial post was very misleading.</p></div></blockquote><p>My initial post was about solving latency. My issue that I posted a post or so back is a mixture of both. Thats why I posted it, since I was interested in what others would say. It appears QoS is the only way to solve that particular problem right?</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p295" class="blockpost roweven">
+	<h2><span><span class="conr">#20&nbsp;</span><a href="viewtopic.php?pid=295#p295">2008-07-25 15:43:19</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>Selection can only give you more bandwidth if there is &quot;free&quot; (seed)</p></div></blockquote><p>Well-seeded swarms are common--- I should say that they are the dominant case among the most popular swarms on certain public trackers.&nbsp; Initial peer selection becomes relevant since peers turn away connections once they hit the bound on the number of open connections.&nbsp; This eliminates the opportunity for even sampling certain peers.&nbsp; <br /><br /></p><blockquote><div class="incqbox"><p>Isn't that one of the problems we'd like to avoid to take the burden of ISPs?</p></div></blockquote><p>It is a problem--- for some ISPs.&nbsp; DoCSIS networks are inverted.&nbsp; That's why I would rather leave it to policy.&nbsp; There is a panel in the next IETF meeting that covers the issue of peer-to-peer policy. <br /> <br />--Dave</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p296" class="blockpost rowodd">
+	<h2><span><span class="conr">#21&nbsp;</span><a href="viewtopic.php?pid=296#p296">2008-07-26 05:02:55</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>Well-seeded swarms are common--- I should say that they are the dominant case among the most popular swarms on certain public trackers.</p></div></blockquote><p>No. Being well-seeded is part of most torrents during some period in their life-cycle. During the landrush phase almost no torrent is well-seeded, and that's the time when every bit of bandwidth counts and you can't optimize as it would just mean &quot;stealing&quot; bandwidth from other peers. When a torrent is wellseeded on the other hand you don't want to optimize by &quot;fastest&quot; AS since the fastest AS is probably far away, you'd want to do something better-suited to your local ISP instead since you'll be able to max out your download capacity either way.<br /><br /></p><blockquote><div class="incqbox"><p>Initial peer selection becomes relevant since peers turn away connections once they hit the bound on the number of open connections.</p></div></blockquote><p>Really?<br />a) i don't see how this behavior would be AS-specific.<br />b) this is not the case, Azureus and µT have something we call optimistic disconnect to make room for new incoming connections. I.e. to perturb the swarm over time.<br /><br /></p><blockquote><div class="incqbox"><p>This eliminates the opportunity for even sampling certain peers.</p></div></blockquote><p>Even assuming that peers are maxed out in their connection and thus you cannot connect to them.... sampling would be useless in that case since you can't connect to them in the first place. But as i said above, you can connect to them, and thus you can probe peers and find the best reciprocators over time. Which is exactly what bittorrent is already doing.<br /><br /><br /></p><blockquote><div class="incqbox"><p>It is a problem--- for some ISPs.&nbsp; DoCSIS networks are inverted.</p></div></blockquote><p>Cable networks are only inverted in the sense that you want to avoid clustering certain hubs and should spread out the load as evenly among hubs as possible instead. But they'd still save transit bandwidth if you keep the traffic local to the ISP (just not local to the hub).<br /><br /></p><blockquote><div class="incqbox"><p>There is a panel in the next IETF meeting that covers the issue of peer-to-peer policy.</p></div></blockquote><p>Would be nice if you could provide us with the result / additional information. One generally doesn't see much information from standards making bodies seeping through to us.</p>
+					<p class="postedit"><em>Last edited by The 8472 (2008-07-26 05:21:42)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p302" class="blockpost roweven">
+	<h2><span><span class="conr">#22&nbsp;</span><a href="viewtopic.php?pid=302#p302">2008-07-30 15:37:31</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><p>No. Being well-seeded is part of most torrents during some period in their life-cycle.</p></div></blockquote><p>That is what I meant.&nbsp; The well-seeded period for the most popular swarms is typically longer than the land rush phase.&nbsp; So many of the most populous swarms are well seeded at any given time.<br /><br />I'm not advocating piracy, but I went to thepiratebay.org and pulled the top&nbsp; swarms:<br /><br />title/seeds/downloaders<br />Batman The Dark Knight 2008&nbsp; &nbsp; 4645&nbsp; &nbsp; 7929<br />Eureka.S03E01.HDTV.XviD-0TV&nbsp; &nbsp; 6421&nbsp; &nbsp; 3881<br />Wanted.REAL.PROPER.R5.LiNE&nbsp; &nbsp; 2272&nbsp; &nbsp; 6831<br />The.Dark.Knight.[2008.Eng]&nbsp; &nbsp; 2734&nbsp; &nbsp; 5051<br />Meet Dave[2008]DvDrip R5&nbsp; &nbsp; 2965&nbsp; &nbsp; 4682<br />Kung.Fu.Panda.[2008.Eng]&nbsp; &nbsp; 4005&nbsp; &nbsp; 3055<br />Weeds.S04E07.HDTV.XviD-LOL.&nbsp; &nbsp; 6518&nbsp; &nbsp; 4<br />Hellboy.2.The.Golden.Army&nbsp; &nbsp; 2589&nbsp; &nbsp; 3638<br />Harold &amp; Kumar-Escape From&nbsp; &nbsp; 3127&nbsp; &nbsp; 3017<br />Hancock - CAM.XviD-PLUBE.AVI&nbsp; &nbsp; 3648&nbsp; &nbsp; 2250<br />Never Back Down[2008]DvDrip&nbsp; &nbsp; 2381&nbsp; &nbsp; 2846<br />Stargate.Atlantis.S05E03&nbsp; &nbsp; 3650&nbsp; &nbsp; 767<br />Wanted [2008]DvDrip R5[Eng]&nbsp; &nbsp; 3226&nbsp; &nbsp; 904<br />The.Chronicles.of.Narnia&nbsp; &nbsp; 2301&nbsp; &nbsp; 1688<br />Wall.E.TS.XviD-PreVail&nbsp; &nbsp; &nbsp; &nbsp; 2923&nbsp; &nbsp; 764<br />21[2008]DvDrip-aXXo&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; 2504&nbsp; &nbsp; 676<br />The.Bank.Job[2008]DvDrip[Eng]&nbsp; &nbsp; 2521&nbsp; &nbsp; 618<br />Forgetting Sarah Marshall &nbsp; &nbsp; 2340&nbsp; &nbsp; 676<br />The.Dark.Knight.PROPER.&nbsp; &nbsp; &nbsp; &nbsp; 2216&nbsp; &nbsp; 739<br />Top.Gear.S11E06.WS.PDTV.XviD&nbsp; &nbsp; 1989&nbsp; &nbsp; 942<br />Street Kings[2008]DvDrip[Eng]&nbsp; &nbsp; 1925&nbsp; &nbsp; 996<br />Weeds.S04E06.HDTV.XviD-0TV&nbsp; &nbsp; 2813&nbsp; &nbsp; 85<br />Iron.Man.2008.Eng.TELESYNC.&nbsp; &nbsp; 1968&nbsp; &nbsp; 850<br />Felon.2008.DvDRip-FxM&nbsp; &nbsp; &nbsp; &nbsp; 2414&nbsp; &nbsp; 34<br /><br />Okay for this sample, the top swarms tend to be in the landrush phase.&nbsp; But as we go down there are numerous extermely well seeded swarms.<br /><br /></p><blockquote><div class="incqbox"><p>During the landrush phase almost no torrent is well-seeded, and that's the time when every bit of bandwidth counts and you can't optimize as it would just mean &quot;stealing&quot; bandwidth from other peers.</p></div></blockquote><p>It's also trivial to detect when the torrent is well inside the landrush phase.&nbsp; A tracker scrape reveals the number of downloaders and seeds.&nbsp; If the ratio is poor then connect to more random peers. <br /><br />What we want is to avoid yielding performance to optimize for proximity.&nbsp; If an ISP has strictly rate-limited BitTorrent then those peers will be less useful.&nbsp; If you also optimize for proximity and that causes you to preferentially open connections to a large set of useless peers then you have screwed yourself until you can hunt your way out of the hole.&nbsp; &nbsp;This is a REAL case that could occur when we start introducing policy.&nbsp; <br /><br />One way to make sure that ISPs don't force you into this position is to keep statistics about ISPs including your local ISP and work around their policy when it hurts your performance.&nbsp; This doesn't mean completely avoiding these ISPs or not doing the right thing when torrents have poor seeding.&nbsp; It means not greedily going straight for the worst peers when there are faster alternatives.<br /><br />If a peer can saturate its downlink and ISP policy requests minimizing transits then prefer nearby peers, but performance comes first.<br /><br />So how do we avoid policy killing the client?&nbsp; Help us.&nbsp; We (meaning Arvid and I)&nbsp; have proposed a way that could handle the most eggregious cases short of rate limiting all BT traffic and might improve performance in some general cases.&nbsp; It works by directly measuring performance at a level of aggregation that seems most likely to coincide with boundaries along which policy is likely to differ.<br /><br /></p><blockquote><div class="incqbox"><p>b) this is not the case, Azureus and µT have something we call optimistic disconnect to make room for new incoming connections. I.e. to perturb the swarm over time.</p></div></blockquote><p>I'm looking at the uTorrent source code.&nbsp; When a connection arrives, it is maintained through the handshake and is dropped if it has been banned.&nbsp; If it has not been banned then uTorrent checks against the torrent and global connection limit.&nbsp; If the incoming connection is a LAN connection then it closes the most inactive connection in favor of the LAN connection.&nbsp; Otherwise it disconnects the incoming connection.&nbsp; &nbsp;Maybe it should be smarter and drop the most inactive if all connections have been unchoked at least once (or a few times).<br /><br />Once per minute when at the global or per-torrent bound on the number of connections, uTorrent also drops connections that have been *inactive* .&nbsp; Here *inactive* means having neither sent nor received any data in the last 5 minutes.<br /><br />So yes, you are correct.&nbsp; But the process is slow and doesn't work at all if your neighboring peers are active but slow.<br /><br /></p><blockquote><div class="incqbox"><p>Cable networks are only inverted in the sense that you want to avoid clustering certain hubs</p></div></blockquote><p>I cannot speak for all DOCSIS network providers, but this is not what Comcast wants.&nbsp; They would prefer that all seeding be moved out of the last mile on all hubs if at all possible.&nbsp; Comcast claims that a few seeders on a CMTS can significantly affect other end-user performance.&nbsp; It doesn't seem like a small handful of persistent uploaders should make much difference if the CMTS scheduling algorithm is implemented correctly.&nbsp; Our information is second-hand and what evidence there is appears anecdotal.&nbsp; We (BitTorrent) do not have a large DOCSIS testbed to play with.&nbsp; We are trying to get access to one.<br /><br />We asked CableLabs what the real problem was and they don't even know.&nbsp; CableLabs only checks for conformance with the standard, and the standard intentionally does not specify how vendors implement their scheduling algorithms.&nbsp; The conjecture is that some (most?) vendors did a poor job of implementing the scheduling algorithms.&nbsp; Work by Professors James Martin and James Westall suggest that the problem may be in the design of DOCSIS itself-- possibly DOCSIS just doesn't play well with TCP.&nbsp; We have enlisted their help.&nbsp; They have a small DOCSIS testbed on which we want to test UTP.<br /><br />For DOCSIS networks, it looks like the quickest and most effective solution is to introduce a few terabytes of cache upstream from the CMTS(es) in each metro area.&nbsp; &nbsp;In lieu of caching, the best thing is probably to try avoid downloading from seeds on DOCSIS networks if a peer can saturate its downlink from elsewhere.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p306" class="blockpost rowodd">
+	<h2><span><span class="conr">#23&nbsp;</span><a href="viewtopic.php?pid=306#p306">2008-07-30 19:20:45</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89879">herman</a></strong></dt>
+					<dd class="usertitle"><strong>Member</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<p>Dave, what does AS stand for?<br /><br />Also, leecher counts from TPB search results have been inaccurate on some torrents for at least 4 weeks. I am not advocating piracy, but I suggest downloading the .torrent file and use the seeder &amp; leecher values from a Bittorrent client.</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p308" class="blockpost roweven">
+	<h2><span><span class="conr">#24&nbsp;</span><a href="viewtopic.php?pid=308#p308">2008-07-31 16:08:23</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89601">dave</a></strong></dt>
+					<dd class="usertitle"><strong>Editor</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<p>AS = Autonomous System.&nbsp; It is the granularity at which inter- (and to some extent intra-) ISP packet routing operates.&nbsp; Each ISP may have one or a small handful of AS numbers.&nbsp; College campuses and many corporations also have Autonomous System Numbers (ASNs).</p>
+				</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div id="p309" class="blockpost rowodd">
+	<h2><span><span class="conr">#25&nbsp;</span><a href="viewtopic.php?pid=309#p309">2008-08-01 05:50:05</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postleft">
+				<dl>
+					<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+					<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					<dd class="postavatar"></dd>
+				</dl>
+			</div>
+			<div class="postright">
+				<h3> Re: Latency Prioritizer</h3>
+				<div class="postmsg">
+					<blockquote><div class="incqbox"><h4>dave wrote:</h4><p>So yes, you are correct.&nbsp; But the process is slow and doesn't work at all if your neighboring peers are active but slow.</p></div></blockquote><p>Ah yes, we are a bit smarter about that and would get rid of the slow ones over time if there are faster alternatives.<br /><br /></p><blockquote><div class="incqbox"><p>I cannot speak for all DOCSIS network providers, but this is not what Comcast wants.&nbsp; They would prefer that all seeding be moved out of the last mile on all hubs if at all possible.</p></div></blockquote><p>Where else would the seeding happen? Nowhere. So comcast basically wants that their users don't seed at all. I do not think that this is a demand we can accomodate, since it would mean moving the load to other ISPs, which would be unfair and threaten their peering agreements since seeding is naturally an unidirectional transfer, whereas peering agreements depend on roughly equal inbound and outbound traffic.<br /><br /></p><blockquote><div class="incqbox"><p>Comcast claims that a few seeders on a CMTS can significantly affect other end-user performance.</p></div></blockquote><p>Hrrm, i vaguely remember some news article stating that they implemented packet scheduling in a way that cannot distinguish between individual users because it's too far upstream.<br />Anyway, further insight on this topic will certainly help us to find a solution.<br /><br /></p><blockquote><div class="incqbox"><p>For DOCSIS networks, it looks like the quickest and most effective solution is to introduce a few terabytes of cache upstream from the CMTS(es) in each metro area.&nbsp; &nbsp;In lieu of caching, the best thing is probably to try avoid downloading from seeds on DOCSIS networks if a peer can saturate its downlink from elsewhere.</p></div></blockquote><p>Yes, a cache might work indeed, the problem is that this would be protocol-specific. When a new-protocol-of-the-day comes along you can't use it anymore. So there's need to design a generic, protocol-independent, content-agnostic and lawyer-resistant caching system.<br />Shifting load to other ISPs because some ISP generally dislikes seeding for some reason on the other hand is a bad idea as i explained above.<br /><br />SSM would be the ideal solution here... but i guess hell will freeze over before that happens...<br /><br /></p><blockquote><div class="incqbox"><p>What we want is to avoid yielding performance to optimize for proximity.&nbsp; If an ISP has strictly rate-limited BitTorrent then those peers will be less useful.&nbsp; If you also optimize for proximity and that causes you to preferentially open connections to a large set of useless peers then you have screwed yourself until you can hunt your way out of the hole.&nbsp; &nbsp;This is a REAL case that could occur when we start introducing policy. <br /><br />One way to make sure that ISPs don't force you into this position is to keep statistics about ISPs including your local ISP and work around their policy when it hurts your performance.&nbsp; This doesn't mean completely avoiding these ISPs or not doing the right thing when torrents have poor seeding.&nbsp; It means not greedily going straight for the worst peers when there are faster alternatives.<br /><br />If a peer can saturate its downlink and ISP policy requests minimizing transits then prefer nearby peers, but performance comes first.<br /><br />So how do we avoid policy killing the client?&nbsp; Help us.&nbsp; We (meaning Arvid and I)&nbsp; have proposed a way that could handle the most eggregious cases short of rate limiting all BT traffic and might improve performance in some general cases.&nbsp; It works by directly measuring performance at a level of aggregation that seems most likely to coincide with boundaries along which policy is likely to differ.</p></div></blockquote><p>Well, keeping statistics is tricky business, as the user's ISP is just one of many factors. Are you getting poor speeds from him because he's runnong many torrents, has many upload slots, has a leecher client or because the ISP is shaping? Or maybe they're only shaping during certain hours of a day or on certain nodes (but all are within the same AS).<br />I think randomizing the optimization and making it less greedy is a better approach. E.g. when you try to connect to 70% local 30% remote peers but optimistically disconnect based on performance then you should be able to accumulate faster (remote) connections over time if the local, proximity-based ones aren't performing well. If you can max out your bandwidth from local peers too on the other hand then disconnecting based on performance will be random whereas connecting to peers will be biased towards local ones.<br /><br />The general problem is that we cannot trust information from the ISP as they might use it to minimize costs at the expense of other ISPs, their users' performance and bittorrent performance in general. So we should treat such information as hint but design algorithms that build on them to work towards optimal performance and just take this information as a hint how to achieve that goal.<br />A mostly stateless solution is preferable, if we can find one.<br /><br />Another problem is reliably estimating the max download bandwidth. Sure you can measure it by downloading a very well-seeded torrent, but that's not a realtime measure and bandwidth conditions can change due to periodic shaping, roaming within a mobile network or other reasons.</p>
+					<p class="postedit"><em>Last edited by The 8472 (2008-08-01 05:54:46)</em></p>
+				</div>
+				<div class="postsignature"><hr />Az dev</div>
+			</div>
+			<div class="clearer"></div>
+			<div class="postfootleft"><p>Offline</p></div>
+			<div class="postfootright"><div>&nbsp;</div></div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox">
+		<p class="postlink conr">&nbsp;</p>
+		<p class="pagelink conl">Pages: <strong>1</strong>&nbsp;<a href="viewtopic.php?id=52&amp;p=2">2</a>&nbsp;<a href="viewtopic.php?id=52&amp;p=3">3</a></p>
+		<ul><li><a href="index.php">Index</a></li><li>&nbsp;&raquo;&nbsp;<a href="viewforum.php?id=25">BEPs</a></li><li>&nbsp;&raquo;&nbsp;Latency Prioritizer</li></ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div class="inbox">
+
+			<div class="conl">
+				<form id="qjump" method="get" action="viewforum.php">
+					<div><label>Jump to
+					<br /><select name="id" onchange="window.location=('viewforum.php?id='+this.options[this.selectedIndex].value)">
+						<optgroup label="BitTorrent">
+							<option value="26">Announcements</option>
+							<option value="25" selected="selected">BEPs</option>
+							<option value="29">BEP process</option>
+							<option value="27">General</option>
+							<option value="33">Research Tools</option>
+							<option value="32">Cooperation between BitTorrent and ISPs</option>
+							<option value="30">Attacks against BitTorrent</option>
+							<option value="28">Feature Requests, Found Bugs &gt;&gt;&gt;</option>
+					</optgroup>
+					</select>
+					<input type="submit" value=" Go " accesskey="g" />
+					</label></div>
+				</form>
+			</div>
+			<p class="conr">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-116155-1";
+_udn = "utorrent.com";
+urchinTracker();
+</script>
+
+</body>
+</html>

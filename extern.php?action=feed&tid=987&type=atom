@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title type="html"><![CDATA[forum.bittorrent.org / Announcing tracker preferences]]></title>
+	<link rel="self" href="http://forum.bittorrent.org/extern.php?action=feed&amp;tid=987&amp;type=atom"/>
+	<link href="http://forum.bittorrent.org/viewtopic.php?id=987"/>
+	<updated>2012-07-19T07:53:33Z</updated>
+	<generator>FluxBB</generator>
+	<id>http://forum.bittorrent.org/viewtopic.php?id=987</id>
+	<entry>
+		<title type="html"><![CDATA[Re: Announcing tracker preferences]]></title>
+		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=3363#p3363"/>
+		<content type="html"><![CDATA[<p>UDP probing, cached globally per IP, only retry HTTP if UDP have failed for X attempts. Only connect to a IP once per torrent, even if multiple trackers in a torrents ultimately resolves to the same IP. This would be a good start at redirecting and minimizing real trafficload to trackers.</p><p>&quot;This representation would be simplified if the DENY keyword was removed and everything was assumed to be denied unless explicitly allowed. The PREFER keyword could also be replaced by a mark-up of the rules that&#039;s preferred, say by prefixing it with a &#039;+&#039; for instance. If the PREFER and DENY keywords are both removed, there&#039;s no need to say &quot;ALLOW&quot; either. We would get more well-defined semantics and shorter rules.&quot;</p><p>This is a very nice simplification of the syntax, the PREFER (+) markup can be left out if one would use the first PROTO:PORT group in the list as the preferred service. I am also for using &quot;BITTORRENT&quot; instead of &quot;BTTRACKER&quot;.</p><p>As for 404, it can be generated in all sorts of places along the way, like ISP based proxies or local missconfigured firewalls and antivirus software, so it&#039;s not to be trusted. Maybe to have a bencoded response saying that &quot;not a tracker HOSTNAME:PORT&quot;, that can be easily served as static files to allow sites to permanently store a DENY for (HTTP) tracker connections to it.</p><p>&quot;It would certainly help a lot if a tracker failure on one torrent backed off attempts across all jobs as well.&quot; - Yes!</p>]]></content>
+		<author>
+			<name><![CDATA[Fredrik Neij]]></name>
+			<uri>http://forum.bittorrent.org/profile.php?id=90545</uri>
+		</author>
+		<updated>2012-07-19T07:53:33Z</updated>
+		<id>http://forum.bittorrent.org/viewtopic.php?pid=3363#p3363</id>
+	</entry>
+	<entry>
+		<title type="html"><![CDATA[Re: Announcing tracker preferences]]></title>
+		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=3357#p3357"/>
+		<content type="html"><![CDATA[<p>Users inputting bad addresses and way too many addresses (dozens!) can be mitigated by only announcing to x number of tiers at a time. I like three, though I&#039;d prefer the multitracker spec be obeyed.</p><p>I like the idea of taking a 404 as a fatal error. I don&#039;t see why a proper tracker SHOULDN&#039;T give a good ol tracker error message instead of a 404, let the tracker respond properly instead of trying to compensate for bad behavior. It would certainly help a lot if a tracker failure on one torrent backed off attempts across all jobs as well.</p>]]></content>
+		<author>
+			<name><![CDATA[Kitsoran]]></name>
+			<uri>http://forum.bittorrent.org/profile.php?id=97059</uri>
+		</author>
+		<updated>2012-07-19T02:56:12Z</updated>
+		<id>http://forum.bittorrent.org/viewtopic.php?pid=3357#p3357</id>
+	</entry>
+	<entry>
+		<title type="html"><![CDATA[Re: Announcing tracker preferences]]></title>
+		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=3355#p3355"/>
+		<content type="html"><![CDATA[<p>one things clients could do is to treat 404 as &quot;never try this again&quot;.. Unfortunately, I think it&#039;s quite common that actual trackers to frequently 404 as well, so it may not be a good indicator. It would be nice to find some reliable indicator of a server just being a plain web server, not intended for running a tracker. If a sysadmin needs to take action when this happens you&#039;ve already bumped the hassle up, and I can&#039;t imagine it&#039;s makes that much difference *what* the sysadmin has to do. Running a small UDP responder that says &quot;interval: &lt;INT_MAX&gt;&quot; may not be that different from having to set up a TXT record for the domain (assuming that whoever abused the server used a hostname).</p><p>I&#039;ve seen trackers fail with an HTML response body, which is especially bad, since it makes it look like it&#039;s not intended to run a tracker.</p><p>As for bep31, a more reliable solution is to send a very large &quot;min interval&quot; response, and it already works with essentially every client.</p>]]></content>
+		<author>
+			<name><![CDATA[arvid]]></name>
+			<uri>http://forum.bittorrent.org/profile.php?id=89602</uri>
+		</author>
+		<updated>2012-07-18T16:29:12Z</updated>
+		<id>http://forum.bittorrent.org/viewtopic.php?pid=3355#p3355</id>
+	</entry>
+	<entry>
+		<title type="html"><![CDATA[Re: Announcing tracker preferences]]></title>
+		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=3353#p3353"/>
+		<content type="html"><![CDATA[<p>UDP tracker probing seems like good thing to do and is a fast and simple solution for openbittorrent and publicbts problem. However it doesn&#039;t fix the problem when a server unintentionally or maliciously gets added to a tracker list and hammered with requests.</p><p>cannonball #bittorrent irc.freenode.net November 11, 2011<br /><a href="http://echelog.com/logs/browse/bittorrent/1320966000">http://echelog.com/logs/browse/bittorrent/1320966000</a></p><div class="quotebox"><blockquote><div><p>...<br />[18:12:19] &lt;cannonball&gt; Hi all.&#160; I have a weird issue.&#160; I have some webservers (load balanced apache reverse proxies# that are getting hammered with requests for /tracker/announce.php.<br />[18:12:57] &lt;cannonball&gt; I&#039;ve verified that the proxy is not being abused #i.e. not an open proxy# to anonymize torrent access.<br />[18:14:15] &lt;cannonball&gt; The result generated is a 404.&#160; I&#039;m trying to figure out what could be happening that would cuase hundreds or thousands of hosts to be hitting my webservers for this /tracker/announce.php #our webservers are mod_perl, they don&#039;t do php at all, so it couldn&#039;t even be hosted there).<br />...</p></div></blockquote></div><p>The problem has been addressed before in BEP 31 &quot;Failure Retry Extension&quot; <a href="http://bittorrent.org/beps/bep_0031.html">http://bittorrent.org/beps/bep_0031.html</a> but I don&#039;t know if any client has implemented it.<br />A good thing with DNS is that it stops the request even before it reaches the server.</p><br /><p>If someone hasn&#039;t already read it: <a href="http://torrentfreak.com/largest-bittorrent-trackers-go-offline-in-protest-120716/">http://torrentfreak.com/largest-bittorr … st-120716/</a></p>]]></content>
+		<author>
+			<name><![CDATA[Encombe]]></name>
+			<uri>http://forum.bittorrent.org/profile.php?id=97051</uri>
+		</author>
+		<updated>2012-07-18T14:38:17Z</updated>
+		<id>http://forum.bittorrent.org/viewtopic.php?pid=3353#p3353</id>
+	</entry>
+	<entry>
+		<title type="html"><![CDATA[Re: Announcing tracker preferences]]></title>
+		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=3347#p3347"/>
+		<content type="html"><![CDATA[<p>+1 for the UDP tracker probing. It requires no additional changes on the tracker admin&#039;s side too, which is a nice plus.<br />DNS is generally quite user unfriendly, and using TXT records to define services is ugly, IMO. And without DNSSEC, there&#039;s really no security in it.</p>]]></content>
+		<author>
+			<name><![CDATA[Firon]]></name>
+			<uri>http://forum.bittorrent.org/profile.php?id=725</uri>
+		</author>
+		<updated>2012-07-18T02:45:44Z</updated>
+		<id>http://forum.bittorrent.org/viewtopic.php?pid=3347#p3347</id>
+	</entry>
+	<entry>
+		<title type="html"><![CDATA[Re: Announcing tracker preferences]]></title>
+		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=3345#p3345"/>
+		<content type="html"><![CDATA[<p>actually, I like probing for UDP tracker supports a lot better than the DNS idea. It seems simpler, more secure and more platform independent support.</p>]]></content>
+		<author>
+			<name><![CDATA[arvid]]></name>
+			<uri>http://forum.bittorrent.org/profile.php?id=89602</uri>
+		</author>
+		<updated>2012-07-18T01:39:30Z</updated>
+		<id>http://forum.bittorrent.org/viewtopic.php?pid=3345#p3345</id>
+	</entry>
+	<entry>
+		<title type="html"><![CDATA[Re: Announcing tracker preferences]]></title>
+		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=3343#p3343"/>
+		<content type="html"><![CDATA[<p>parg: I believe we already beat ourselves by 4 1/2 years with the UDP probing feature that checks for UDP before http.&#160; Jan 31, 2008, to be exact.</p>]]></content>
+		<author>
+			<name><![CDATA[TuxPaper]]></name>
+			<uri>http://forum.bittorrent.org/profile.php?id=97065</uri>
+		</author>
+		<updated>2012-07-18T01:06:42Z</updated>
+		<id>http://forum.bittorrent.org/viewtopic.php?pid=3343#p3343</id>
+	</entry>
+	<entry>
+		<title type="html"><![CDATA[Re: Announcing tracker preferences]]></title>
+		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=3341#p3341"/>
+		<content type="html"><![CDATA[<p>OK FrostWire Team, you&#039;re on!</p><p>Azureus Guys</p>]]></content>
+		<author>
+			<name><![CDATA[parg]]></name>
+			<uri>http://forum.bittorrent.org/profile.php?id=90633</uri>
+		</author>
+		<updated>2012-07-18T00:48:04Z</updated>
+		<id>http://forum.bittorrent.org/viewtopic.php?pid=3341#p3341</id>
+	</entry>
+	<entry>
+		<title type="html"><![CDATA[Re: Announcing tracker preferences]]></title>
+		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=3339#p3339"/>
+		<content type="html"><![CDATA[<p>Another simplification would be to, instead of marking up the preferred connection, just try them in the order they are defined. i.e. the first transport-port pair is the most preferred one.</p>]]></content>
+		<author>
+			<name><![CDATA[arvid]]></name>
+			<uri>http://forum.bittorrent.org/profile.php?id=89602</uri>
+		</author>
+		<updated>2012-07-17T22:54:33Z</updated>
+		<id>http://forum.bittorrent.org/viewtopic.php?pid=3339#p3339</id>
+	</entry>
+	<entry>
+		<title type="html"><![CDATA[Re: Announcing tracker preferences]]></title>
+		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=3337#p3337"/>
+		<content type="html"><![CDATA[<p>I wonder if it&#039;s possible to simplify the rules specified in the TXT record. For instance, how is this supposed to be interpreted:</p><p>&quot;BTTRACKER ALLOW TCP:80&quot;</p><p>Does it mean I&#039;m not allowed to connect to any other port than 80? Am I allowed to connect to any port over UDP? Or is this just a non-sensical statement?</p><p>Personally I&#039;m a fan of allowing concise statements. This could be possible by having a well defined default. Say, anything that isn&#039;t specified as allowed, should be considered denied. Obviously with the exception that if there&#039;s no BTTRACKER TXT record, everything should be considered allowed.</p><p>I&#039;m guessing that the most common use case would be to disallow everything except for the few services that are running. In which case denying all by default would make sense.</p><p>Another case that isn&#039;t well defined is when evaluation is terminated. From the examples, it looks like evaluation of expressions are evaluated in order of their apparence, from left to right. And evaluation is terminated when the current connection attempt is either allowed or denied, or there are no more rules (in which case I guess it&#039;s allowed?). The PREFER statement is an exception here though. It&#039;s not entirely clear what a client should do with that. Say UDP is preferred, but doesn&#039;t work. A client that rewrites any http:// to udp:// would break in that case, i.e. you would need much more complicated logic to deal with that.</p><p>Also, keep in mind that there needs to be a convenient internal representation of this rule-set as well. There should be a clear mapping to something like a port-filter. I&#039;m envisioning an internal representation of two port-filter lists (i.e. non-overlapping port-ranges defining allowed and disallowed ports). One for TCP and one for UDP.</p><p>This representation would be simplified if the DENY keyword was removed and everything was assumed to be denied unless explicitly allowed. The PREFER keyword could also be replaced by a mark-up of the rules that&#039;s preferred, say by prefixing it with a &#039;+&#039; for instance. If the PREFER and DENY kewords are both removed, there&#039;s no need to say &quot;ALLOW&quot; either. We would get more well-defined semantics and shorter rules.</p><p>For instance, one of examples; &quot;BTTRACKER ALLOW UDP:80 DENY TCP&quot; is unclear whether it allows UDP packets on ports other than 80.</p><p>One more thing, how about saying &quot;BITTORRENT&quot; instead of &quot;BTTRACKER&quot;? It creates a nice symmetry with the peer-protocol which also uses BitTorrent in the hand-shake, and it suggests that this belongs to the bittorrent protocol, and it doesn&#039;t contain an acronym.</p><p>Here are the examples from the BEP with the syntax I&#039;m suggesting:</p><div class="codebox"><pre><code>www.website.com. IN TXT &quot;BITTORRENT&quot;
+tracker.somedomain.com. IN TXT &quot;BITTORRENT +UDP:80 TCP:80&quot;
+udponlytracker.somedomain.com. IN TXT &quot;BITTORRENT UDP:80&quot;
+httpstracker.adomain.com. IN TXT &quot;BITTORRENT TCP:80 TCP:443&quot;</code></pre></div><p>The first one is unfortunately not very intuitive. I wonder how common it would be though.</p><p>This is sort of a brain dump of my impression reading and thinking about this BEP proposal. I&#039;m interested in what others think.</p>]]></content>
+		<author>
+			<name><![CDATA[arvid]]></name>
+			<uri>http://forum.bittorrent.org/profile.php?id=89602</uri>
+		</author>
+		<updated>2012-07-17T22:46:48Z</updated>
+		<id>http://forum.bittorrent.org/viewtopic.php?pid=3337#p3337</id>
+	</entry>
+	<entry>
+		<title type="html"><![CDATA[Re: Announcing tracker preferences]]></title>
+		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=3335#p3335"/>
+		<content type="html"><![CDATA[<p>As soon as a final solution has been decided we&#039;ll go ahead and implement it for the Azureus Core (unless the Azureus guys beat us to it)</p><p>FrostWire Team</p>]]></content>
+		<author>
+			<name><![CDATA[gubatron]]></name>
+			<uri>http://forum.bittorrent.org/profile.php?id=97057</uri>
+		</author>
+		<updated>2012-07-16T22:23:18Z</updated>
+		<id>http://forum.bittorrent.org/viewtopic.php?pid=3335#p3335</id>
+	</entry>
+	<entry>
+		<title type="html"><![CDATA[Re: Announcing tracker preferences]]></title>
+		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=3333#p3333"/>
+		<content type="html"><![CDATA[<p>In the short term, we could add a filter in uTorrent that turns certain hostname into udp:// if they aren&#039;t already. I take it this is for openbittorrent and publicbt. Do you know of any other trackers that suffer from this problem?</p>]]></content>
+		<author>
+			<name><![CDATA[arvid]]></name>
+			<uri>http://forum.bittorrent.org/profile.php?id=89602</uri>
+		</author>
+		<updated>2012-07-16T19:33:27Z</updated>
+		<id>http://forum.bittorrent.org/viewtopic.php?pid=3333#p3333</id>
+	</entry>
+	<entry>
+		<title type="html"><![CDATA[Re: Announcing tracker preferences]]></title>
+		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=3331#p3331"/>
+		<content type="html"><![CDATA[<p>This seems like a reasonable extension. However, it is somewhat complicated since there are no cross platform ways (that I know of) of querying such DNS records.</p><p>A less robust solution might be to respond with a &quot;min interval&quot; and a very large number. That would at least make people never try again (until restart).</p><p>Would that be too expensive?</p>]]></content>
+		<author>
+			<name><![CDATA[arvid]]></name>
+			<uri>http://forum.bittorrent.org/profile.php?id=89602</uri>
+		</author>
+		<updated>2012-07-16T18:41:19Z</updated>
+		<id>http://forum.bittorrent.org/viewtopic.php?pid=3331#p3331</id>
+	</entry>
+	<entry>
+		<title type="html"><![CDATA[Announcing tracker preferences]]></title>
+		<link rel="alternate" href="http://forum.bittorrent.org/viewtopic.php?pid=3241#p3241"/>
+		<content type="html"><![CDATA[<p>A problem with torrent clients are that when users create torrents and add trackers, some don&#039;t know what they are doing and are adding website URLs as trackers, this results in websites getting flooded with unwanted traffic from Bittorrent clients.</p><p>To prevent this flooding of unwanted traffic, I suggest creating a sort of accesslist in DNS, letting Bittorrent clients know of the preferred connection policy of a hostname.</p><p>This will also be helpful for example when a tracker switches from HTTP to UDP service, to prevent the tracker from being flooded with obsolete and/or unanswered HTTP requests. This could also serve as a hint for the client to use UDP instead of HTTP in a old torrent where only the previous service are listed.</p><p>By adding a TXT record in DNS announcing the preferences of the hostname, a site operator could let a Bittorrent client know it&#039;s connection preferences or completely prevent Bittorrent clients trying to access the host as a tracker.</p><p><a href="http://tfr.org/bep.html">http://tfr.org/bep.html</a></p>]]></content>
+		<author>
+			<name><![CDATA[Fredrik Neij]]></name>
+			<uri>http://forum.bittorrent.org/profile.php?id=90545</uri>
+		</author>
+		<updated>2012-05-16T05:25:12Z</updated>
+		<id>http://forum.bittorrent.org/viewtopic.php?pid=3241#p3241</id>
+	</entry>
+</feed>

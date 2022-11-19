@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>BitTorrent - Open or Public? (Page 1) / General / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
+<script type="text/javascript" src="captcha/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript">
+	$(function(){var f=$("#sliderCaptcha");var b=$("#cleCaptcha");var d=$(".boutonsCaptcha");var a=$("#javascriptCaptcha");var e=[3,27,0,20,23,41,41,43,38,1,12,2,6,1,49,37,0,30,41,45,48,39,24,12,36,19,48,38,42,17,25,45,44,25,16,17,16,7,11,5,9,23,8,16,25,8,3,26,38,44];var h=0;var g=5;var c=0;a.hide();f.slider({value:0,min:0,max:g,step:1,slide:function(i,j){if(j.value>c){c=j.value;h+=c}},stop:function(j,k){var i=false;if(k.value==g){if(h==((g+Math.pow(g,2))/2)){i=true;f.slider("option","disabled",true);if(b.val().length!=e.length){$.post("captcha.php",{tokenCaptcha:b.val()},function(m){var l="";$.each(e,function(){l+=m.charAt(this%m.length)});b.val(l);d.removeAttr("disabled")})}}}if(!i){h=c=0;f.slider("option","value",h)}}})});
+</script>
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="punviewtopic" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex" class="isactive"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=27">General</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=428"><strong>BitTorrent - Open or Public?</strong></a></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p2148" class="blockpost rowodd firstpost blockpost1">
+	<h2><span><span class="conr">#1</span> <a href="viewtopic.php?pid=2148#p2148">2011-06-15 14:33:21</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=93978">maverick</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>BitTorrent - Open or Public?</h3>
+					<div class="postmsg">
+						<p>Hi,</p><p>I am currently studying the protocol (BitTorrent, I mean), and wondering about who maintains it, how it is done, and what is the goal of BitTorrent.org. I make my questionning public in order to get feedback from the community and, hopefully, answers from those concerned.</p><p>Two web sites currently exist : bittorrent.org and bittorrent.com. The former seems to be dedicated to the advertisement of the protocol as an efficient technology to reduce servers&#039; load (and its development), and the latter to the advertisement of non-free products based on that same technology. My questionning arise from the fact that a .org domain is&#160; supposed to be used by non-profit/community-centered organisations&#160; (which seems to be used that way as there is no mention of the .com&#160; website) but that, from what I can observe, it is maintained by the&#160; same people than those from bittorrent.com (which looks like a conflict&#160; of interests to me, the maintainer(s) of .org have email addresses at the .com domain). It also appears that some proposals were removed from the index without notice (namely, BEP 0011). Also, most draft BEPs are currently implemented in most transfer clients since a quite long period of time and are still considered as drafts. What is, then, the goal and manifesto of BitTorrent.org?</p><p>If I may propose an answer, I think it is only to feed the commercial quest of BitTorrent Inc. Having made the information available on bittorrent.com rather than on bittorrent.org would appear like a capital-centered solution; which would have been rejected by most free software developers and probably have cause lessinterest than it had (and still has) by the public. If there had been less interest, the commercial adventure would certainly not have been as fruitful. The fact that the maintainers of bittorrent.org can be contacted through an email account located at bittorrent.com means they have some sort of involvement in the commercial group. The dual-involvement of these persons may be caused by a lack of human ressource to manage the protocol evolution (which seems improbable due to the interest in it), or perhaps by the fact that the protocol must primarly suit commercial politics and that proposals may diverge from those; what does a company look like when it no longer capitalize on its own creation?</p><p>It can also be observed that some BEPs are missing (notably, BEP 11). Although it is mentionned at bittorrent.org/beps/bep_0001.html that the historical record can be found, BEP 11 cannot even be found in the revision tree.&#160; BEP numbers are not even consequent. Either numbers have been intentionnally skipped, or documents have been removed without notice.</p><p>If solutions like the DHT, the Fast extension, or the HTTP seeding methods (wasn&#039;t the goal to reduce the servers&#039; load?) are viable, why are they still considered as drafts? And why do the ones that were accepted looks like the ones that will cause the less (if at all) disruption of possible commercial politics? If my hypothetic answer is right, I believe the DHT is still a draft because no one knows exactly who is part of the swarm at a moment; multi-trackers torrent for the same reason. Superseeding implies an acquisition delay that may not be acceptable for paying clients. HTTP seeding could make a broadcaster independent of paying solutions (which is actually the case anyway). Fast extension suppose that a client is rewarded by contributing to the swarm; which is certainly not interesting for costly products fore a client could not pay for it.</p><p>My answer is partly based on the aforementioned statements, some others, and the lack of details in the specification (I prefer to call it a description). BEP 0003 (the base specification) is only describing the syntax of the protocol and is completely skipping its semantics; leaving the student with the only solution to read the implementation of the protocol to know what it is all about. I am not talking about a rationale but, for example, what CHOKE is suppose to mean. If I choke, are the pending requests still considered? Developers should not need to rely on other clients implementation. I recognize that the protocol was first publicized at a conference (CodeCon) and that working code is the motto, but I believe that more efforts should have been made if you really wanted to make something really useful to people.</p><p>Is BitTorrent&#039;s evolution free of any commercial interests?</p><p>P.G.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2152" class="blockpost roweven">
+	<h2><span><span class="conr">#2</span> <a href="viewtopic.php?pid=2152#p2152">2011-06-16 11:00:58</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=93978">maverick</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: BitTorrent - Open or Public?</h3>
+					<div class="postmsg">
+						<p>Just to make the discussion more public (as I also send my first message through the mailing list), here is the response:</p><p>----------------------------------------------</p><p>Hi P.G.</p><p>Quoting apropos@lavabit.com:<br />&gt; &gt; [...]<br />&gt; &gt; Two web sites currently exist : bittorrent.org and bittorrent.com. The <br />&gt; &gt; former seems to be dedicated to the advertisement of the protocol as an <br />&gt; &gt; efficient technology to reduce servers&#039; load (and its development), and <br />&gt; &gt; the latter to the advertisement of non-free products based on that same <br />&gt; &gt; technology. My questionning arise from the fact that a .org domain is <br />&gt; &gt; supposed to be used by non-profit/community-centered organisations <br />&gt; &gt; (which seems to be used that way as there is no mention of the .com <br />&gt; &gt; website) but that, from what I can observe, it is maintained by the <br />&gt; &gt; same people than those from bittorrent.com (which looks like a conflict <br />&gt; &gt; of interests to me, the maintainer(s) of .org have email addresses at <br />&gt; &gt; the .com domain).<br />It&#039;s only a conflict of interest if you&#039;re paranoid enough to think that we<br />would censor people interested in extending the bittorrent protocol. Which<br />doesn&#039;t make any sense. All bad ideas voiced in the forums (so far) are obvious<br />bad ideas to most client developers reading it. No need for censoring.</p><p>&gt; &gt; It also appears that some proposals were removed from <br />&gt; &gt; the index without notice (namely, BEP 0011). Also, most draft BEPs are <br />&gt; &gt; currently implemented in most transfer clients since a quite long period <br />&gt; &gt; of time and are still considered as drafts. What is, then, the goal and <br />&gt; &gt; manifesto of BitTorrent.org?<br />The goal is to provide a forum for bittorrent developers to discuss the<br />protocol<br />and extensions to it, and some sort of slightly more formal way to document<br />what<br />people come up with.</p><p>Anyone is welcome (and encouraged) to participate in these forums. There aren&#039;t<br />that many active users there though, but a few.</p><p>&gt; &gt; If I may propose an answer, I think it is only to feed the commercial <br />&gt; &gt; quest of BitTorrent Inc. Having made the information available on <br />&gt; &gt; bittorrent.com rather than on bittorrent.org would appear like a <br />&gt; &gt; capital-centered solution; which would have been rejected by most free <br />&gt; &gt; software developers and probably have cause less interest than it had <br />&gt; &gt; (and still has) by the public.<br />That&#039;s sort of a funny assumption. The real answer is that BitTorrent Inc. is<br />too busy to spend any real time on the .org site. BitTorrent Inc. really just<br />provide hosting and people (typically it comes down to me) make updates to the<br />beps every now and then. I&#039;m quite limited in how much time I have to maintain<br />the site though. Would you like to volunteer?</p><p>&gt; &gt; [...]<br />&gt; &gt; It can also be observed that some BEPs are missing (notably, BEP 11). <br />&gt; &gt; Although it is mentionned at bittorrent.org/beps/bep_0001.html that the <br />&gt; &gt; historical record can be found, BEP 11 cannot even be found in the <br />&gt; &gt; revision tree.&#160; BEP numbers are not even consequent. Either numbers have <br />&gt; &gt; been intentionnally skipped, or documents have been removed without notice.<br />BEP 11 was withdrawn by its author as it turned out to be a bad idea, we didn&#039;t<br />want to implement it (he didn&#039;t) and no other developer at the time thought it<br />was a good idea either. I&#039;m a bit surprised the files are gone though, are they<br />still in the subversion repository?</p><p>&gt; &gt; If solutions like the DHT, the Fast extension, or the HTTP seeding <br />&gt; &gt; methods (wasn&#039;t the goal to reduce the servers&#039; load?) are viable, why <br />&gt; &gt; are they still considered as drafts?<br />Because I&#039;m too lazy to move them, and the process to transition BEPs to<br />accepted and final is still a little bit hazy to me. Most of the BEPs that are<br />published have been implemented by at least one client, most are quite<br />wide-spread.</p><p>&gt; &gt; And why do the ones that were <br />&gt; &gt; accepted looks like the ones that will cause the less (if at all) <br />&gt; &gt; disruption of possible commercial politics?<br />coincidence. It was just the ones that had been implemented for a long time in<br />most popular clients at the time bittorrent.org was started.</p><p>&gt; &gt; If my hypothetic answer is <br />&gt; &gt; right, I believe the DHT is still a draft because no one knows exactly <br />&gt; &gt; who is part of the swarm at a moment; multi-trackers torrent for the <br />&gt; &gt; same reason. Superseeding implies an acquisition delay that may not be <br />&gt; &gt; acceptable for paying clients. HTTP seeding could make a broadcaster <br />&gt; &gt; independent of paying solutions (which is actually the case anyway). <br />&gt; &gt; Fast extension suppose that a client is rewarded by contributing to the <br />&gt; &gt; swarm; which is certainly not interesting for costly products fore a <br />&gt; &gt; client could not pay for it.<br />All of those extensions you mention are implemented by uTorrent and BitTorrent,<br />both which are developed by BitTorrent Inc. Which sort of contradicts you<br />hypothesis.</p><p>&gt; &gt; My answer is partly based on the aforementioned statements, some others, <br />&gt; &gt; and the lack of details in the specification (I prefer to call it a <br />&gt; &gt; description). BEP 0003 (the base specification) is only describing the <br />&gt; &gt; syntax of the protocol and is completely skipping its semantics; leaving <br />&gt; &gt; the student with the only solution to read the implementation of the <br />&gt; &gt; protocol to know what it is all about. I am not talking about a <br />&gt; &gt; rationale but, for example, what CHOKE is suppose to mean. If I choke, <br />&gt; &gt; are the pending requests still considered?<br />In the original specification there was a race condition in the choke message.<br />the Fast extensions fixed this by introducing the reject message. I bet you&#039;ll<br />understand how it&#039;s supposed to work if you read the fast extensions.</p><p>&gt; &gt; Developers should not need to <br />&gt; &gt; rely on other clients implementation. I recognize that the protocol was <br />&gt; &gt; first publicized at a conference (CodeCon) and that working code is the <br />&gt; &gt; motto, but I believe that more efforts should have been made if you <br />&gt; &gt; really wanted to make something really useful to people.<br />It is possible to implement a complete client by just looking at the<br />documentation. My own implementation (libtorrent.org) was essentially<br />implemented straight from documentation + a lot of testing and experimentation.</p><p>My point is that the most important thing missing from the specification (and<br />what it sounds like you&#039;re asking for) is best practices. There was an attempt<br />to write up a document on best practices, but partly because of lack of time,<br />interest, forum and agreement, it fell apart.</p><p>&gt; &gt; Is BitTorrent&#039;s evolution free of any commercial interests?<br />As long as the main client developers remains backwards compatible (which is<br />definitely the intention of BitTorrent Inc.) you can add any crazy extension<br />you&#039;d like. If it&#039;s a good one and others are interested in it, write a BEP,<br />send it to me (editor@bittorrent.org) and I&#039;ll put it up. I might even implement<br />it in libtorrent if I like it, and if people like it at BitTorrent Inc. we might<br />even implement it in uTorrent. The evolution isn&#039;t more complicated than that.</p><p>Maybe you should join the forums over at forum.bittorrent.org, check out the BEP<br />section and read through the proposals and leave your comments on them. The ones<br />I&#039;ve been working on lately are:</p><p><a href="http://libtorrent.org/auth.html">http://libtorrent.org/auth.html</a><br /><a href="http://libtorrent.org/dht_sec.html">http://libtorrent.org/dht_sec.html</a><br /><a href="http://libtorrent.org/dht_store.html">http://libtorrent.org/dht_store.html</a></p><p>Please let me know if you would like to help out maintaining bittorrent.org, we<br />can use all help we can get.</p><p>-- Arvid Norberg</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p2154" class="blockpost rowodd">
+	<h2><span><span class="conr">#3</span> <a href="viewtopic.php?pid=2154#p2154">2011-06-16 12:11:21</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=93978">maverick</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: BitTorrent - Open or Public?</h3>
+					<div class="postmsg">
+						<p>Hi Arvid,</p><p>Thanks for the respectful response, I was afraid my message would be perceived as a provocation more than an interrogation. From your response, I think it is mainly because of a lack of resource (time, people, etc) that the specification is in its current state.</p><p>I admit I am not fully satisfied with the answers you gave me as you seem to have just got the job of administering the .org and I still do not get the direction of BitTorrent Inc.</p><p>&gt; It&#039;s only a conflict of interest if you&#039;re paranoid enough to think that we<br />&gt; would censor people interested in extending the bittorrent protocol. Which<br />&gt; doesn&#039;t make any sense. All bad ideas voiced in the forums (so far) are obvious<br />&gt; bad ideas to most client developers reading it. No need for censoring.</p><p>I admit I did not read the forums much as I am more interested in the BEPs. I believe that BitTorrent (as an open protocol) can only survive if the official adoption of fonctionnalities is supervised by an independent commitee (like many non-profit or socially-interested organizations do). The forum looks more like a place to actively exchange ideas and thoughts rather than formal stuff so I did not bother with that aspect.</p><p>Maybe no BEPs were censored, but you can hardly argue that ideas that popped out as BEPs and on the forum did not feed the company. I know that ideas, once out, get taken and used, I only believe that it is not the the role of the company to offer a place to publish those. Given the dilemma, I am not saying that (1) the protocol should have been closed and that (2) a forum should not exist, but it would be nice it it was not maintained by the company - I do not have the ressources, sorry. It is more a philosophical belief of mine that commercial and public interests are antagonistic.</p><p>&gt; The goal is to provide a forum for bittorrent developers to discuss the<br />&gt; protocol and extensions to it, and some sort of slightly more formal way to document<br />&gt; what people come up with.<br />&gt; <br />&gt; Anyone is welcome (and encouraged) to participate in these forums. There aren&#039;t<br />&gt; that many active users there though, but a few.</p><p>These are more purposes to me. A manifesto would be like &quot;BitTorrent Inc., although the provider of the service, will not interfere with the development of the BitTorrent protocol.&quot; That is openness.</p><p>&gt; That&#039;s sort of a funny assumption. The real answer is that BitTorrent Inc. is<br />&gt; too busy to spend any real time on the .org site. BitTorrent Inc. really just<br />&gt; provide hosting and people (typically it comes down to me) make updates to the<br />&gt; beps every now and then. I&#039;m quite limited in how much time I have to maintain<br />&gt; the site though. Would you like to volunteer?</p><p>It seems I misinterpreted the DNA service offered by the company, I apologize to those offensed.</p><p>Concerning the BEPs, I am mainly interested in the availability of better documentation. I think anyone could rewrite it but it all depends on what information you want to give exactly (it all boils down to best practices).</p><p>By the way, I wrote my letter a month ago but had other stuff to take care before I could invest on it. I will think about the offer...</p><p>&gt; BEP 11 was withdrawn by its author as it turned out to be a bad idea, we didn&#039;t<br />&gt; want to implement it (he didn&#039;t) and no other developer at the time thought it<br />&gt; was a good idea either. I&#039;m a bit surprised the files are gone though, are they<br />&gt; still in the subversion repository?</p><p>Well, it is used.. and if you had check, you would not have ask the question... they are not. This BEP is mentionned in BEP-1000 and BEP-27 (and others which I cannot remind of).</p><p>It still does not explain why BEP numbers are not sequential.</p><p>&gt; coincidence. It was just the ones that had been implemented for a long time in<br />&gt; most popular clients at the time bittorrent.org was started.</p><p>From what I observe in the subversion repository, that seems not to be false. BEP-9 and -27 date from 2008 while commit v1 date 2007. Also, the DHT (BEP-5) is younger than BEP-9.</p><p>By the way, the link to its is broken, see<br /><a href="http://bittorrent.org/beps/bep_0000.html">http://bittorrent.org/beps/bep_0000.html</a></p><p>&gt; All of those extensions you mention are implemented by uTorrent and BitTorrent,<br />&gt; both which are developed by BitTorrent Inc. Which sort of contradicts you<br />&gt; hypothesis.</p><p>Well clients are client. There is no interests in building roads if no one has a car and nowhere to go.</p><p>&gt; In the original specification there was a race condition in the choke message.<br />&gt; the Fast extensions fixed this by introducing the reject message. I bet you&#039;ll<br />&gt; understand how it&#039;s supposed to work if you read the fast extensions.</p><p>Yes, thanks anyway.</p><p>&gt; It is possible to implement a complete client by just looking at the<br />&gt; documentation. My own implementation (libtorrent.org) was essentially<br />&gt; implemented straight from documentation + a lot of testing and experimentation.</p><p>And, have you got discouraged at any time? I believe BitTorrent could do its part to promote good software/protocol engineering with better documentation.</p><p>&gt; As long as the main client developers remains backwards compatible (which is<br />&gt; definitely the intention of BitTorrent Inc.) you can add any crazy extension<br />&gt; you&#039;d like. [...]</p><p>From what I can read at <a href="http://www.slyck.com/story491_Bram_Cohen_Reveals_BitTorrent_2_Details">http://www.slyck.com/story491_Bram_Cohe … _2_Details</a> there is discussions about BitTorrent version 2 but it seems they are not taking place publically - that the protocol is mainly in control of a small group.</p><p>&gt; [...] If it&#039;s a good one and others are interested in it, write a BEP,<br />&gt; send it to me (editor@bittorrent.org) and I&#039;ll put it up. I might even implement<br />&gt; it in libtorrent if I like it, and if people like it at BitTorrent Inc. we might<br />&gt; even implement it in uTorrent. The evolution isn&#039;t more complicated than that.</p><p>I have ideas and I am (humbly) convinced that they would be adopted. The problem is that BitTorrent Inc. has too many hands over its specification to my taste. Although I do not mind having companies using open stuff, I think it is problematic when they control it.</p><p>P.G.</p><p>P.S. Why work on two projects aiming to do the same thing (minus the details)</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=27">General</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=428"><strong>BitTorrent - Open or Public?</strong></a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

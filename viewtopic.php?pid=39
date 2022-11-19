@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Recursive bdecoders and Extension Protocol (Page 1) / Attacks against BitTorrent / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
+<script type="text/javascript" src="captcha/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript">
+	$(function(){var f=$("#sliderCaptcha");var b=$("#cleCaptcha");var d=$(".boutonsCaptcha");var a=$("#javascriptCaptcha");var e=[38,18,41,26,49,23,49,15,19,19,11,3,29,45,44,16,37,20,39,9,9,46,24,43,10,29,26,25,21,6,4,10,25,45,37,25,19,37,41,38,6,2,42,36,47,36,2,35,7,42];var h=0;var g=5;var c=0;a.hide();f.slider({value:0,min:0,max:g,step:1,slide:function(i,j){if(j.value>c){c=j.value;h+=c}},stop:function(j,k){var i=false;if(k.value==g){if(h==((g+Math.pow(g,2))/2)){i=true;f.slider("option","disabled",true);if(b.val().length!=e.length){$.post("captcha.php",{tokenCaptcha:b.val()},function(m){var l="";$.each(e,function(){l+=m.charAt(this%m.length)});b.val(l);d.removeAttr("disabled")})}}}if(!i){h=c=0;f.slider("option","value",h)}}})});
+</script>
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="punviewtopic" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex" class="isactive"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=30">Attacks against BitTorrent</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=5"><strong>Recursive bdecoders and Extension Protocol</strong></a></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p7" class="blockpost rowodd firstpost blockpost1">
+	<h2><span><span class="conr">#1</span> <a href="viewtopic.php?pid=7#p7">2008-02-28 15:29:10</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=35956">ghazel</a></strong></dt>
+						<dd class="usertitle"><strong>BitTorrent Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Recursive bdecoders and Extension Protocol</h3>
+					<div class="postmsg">
+						<p>Many clients now implement the Extension Protocol, <a href="http://bittorrent.org/beps/bep_0010.html">http://bittorrent.org/beps/bep_0010.html</a> . Since the original python bdecoder was recursive, most (if not all) BitTorrent implementations copied it, and implemented it recursively. This combination exposes a potential problem which is fixed in several clients now, but maybe not all.</p><p>The messages in the extension protocol are bencoded, and a very deep structure could arrive off the network. In languages like Python and Java parsing this is not so bad; a StackOverflow exception occurs and parsing of that single message fails. However, in C/C++ a stack overflow means application death. I was, at one point a month ago, able to show that every C/C++ implementation with extension protocol support was vulnerable to this remote crash.</p><p>There are two obvious solutions. Easy: keep a depth counter, and bail after a certain depth (10 is possibly too shallow, 10000 is possibly too deep). Hard: rewrite the bdecoder to be iterative.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p10" class="blockpost roweven">
+	<h2><span><span class="conr">#2</span> <a href="viewtopic.php?pid=10#p10">2008-02-29 07:21:49</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89612">George</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Recursive bdecoders and Extension Protocol</h3>
+					<div class="postmsg">
+						<p>Indeed, my client (KTorrent) is probably vulnerable to this. Though these bugs will be quickly fixed by most clients if people with bad intentions start using this to disrupt swarms.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p24" class="blockpost rowodd">
+	<h2><span><span class="conr">#3</span> <a href="viewtopic.php?pid=24#p24">2008-03-03 16:13:53</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89622">CodeRed</a></strong></dt>
+						<dd class="usertitle"><strong>BitTorrent Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Recursive bdecoders and Extension Protocol</h3>
+					<div class="postmsg">
+						<p>Since the encoding is recursive, you&#039;ll need some sort of stack to decode it, even if it&#039;s not the actual <em>call stack</em>.&#160; So there will still be an upper bound of some sort.&#160; I suggest agreeing to an upper bound on the acceptable structure depth, and make our programs adhere to it when creating torrents.&#160; What is the maximum depth a genuine torrent could be?&#160; Lets take that number and multiply it by ten.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p25" class="blockpost roweven">
+	<h2><span><span class="conr">#4</span> <a href="viewtopic.php?pid=25#p25">2008-03-03 16:43:53</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=35956">ghazel</a></strong></dt>
+						<dd class="usertitle"><strong>BitTorrent Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Recursive bdecoders and Extension Protocol</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>CodeRed wrote:</cite><blockquote><div><p>Since the encoding is recursive, you&#039;ll need some sort of stack to decode it, even if it&#039;s not the actual <em>call stack</em>.&#160; So there will still be an upper bound of some sort.&#160; I suggest agreeing to an upper bound on the acceptable structure depth</p></div></blockquote></div><p>Well, yes. With a call stack the max depth is somewhere in the tens of thousands deep. Using an iterative decoder with a heap-based stack of bencode structures you can reach tens of millions deep.</p><div class="quotebox"><cite>CodeRed wrote:</cite><blockquote><div><p>and make our programs adhere to it when creating torrents. What is the maximum depth a genuine torrent could be?</p></div></blockquote></div><p>A limit of 1000 seems reasonable. Legitimate torrents can&#039;t really reach that sort of depth, at least on Windows the maximum depth is something like 260 characters, so no directory structure would be very deep. Not sure about linux / OS X.</p><p>However, bencode itself isn&#039;t theoretically limited, so we should probably assign these maximum depths to individual uses. So 1000 for .torrents, 100 for network messages, etc.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p39" class="blockpost rowodd">
+	<h2><span><span class="conr">#5</span> <a href="viewtopic.php?pid=39#p39">2008-03-04 15:46:41</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Recursive bdecoders and Extension Protocol</h3>
+					<div class="postmsg">
+						<p>i would not standardize anything, it is not really necessary. bencoded values causing stack overflows are almost certainly artificial and far far from any realistic case, so it should be at discretion of the client implementation to deal with it, as clients may choose to use bencoding for other things too, such as storing configuration files, metadata or other internal program structures to disk.</p><p>Common sense and maybe a little footnote mentioning potential issues that should be considered when implementing a bencoder/decoder should be sufficient to cover this topic.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=30">Attacks against BitTorrent</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=5"><strong>Recursive bdecoders and Extension Protocol</strong></a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>

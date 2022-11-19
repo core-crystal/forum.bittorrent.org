@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Cooperative downloading (Page 1) / BEPs / forum.bittorrent.org</title>
+<link rel="stylesheet" type="text/css" href="style/Air.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/style.css" />
+<link rel="stylesheet" type="text/css" href="captcha/css/redmond/jquery-ui-1.8.21.custom.css" />
+<script type="text/javascript" src="captcha/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="captcha/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript">
+	$(function(){var f=$("#sliderCaptcha");var b=$("#cleCaptcha");var d=$(".boutonsCaptcha");var a=$("#javascriptCaptcha");var e=[42,35,28,16,11,36,26,3,11,26,40,5,11,13,49,12,38,18,37,49,10,47,42,32,8,25,7,40,40,22,1,33,8,29,49,20,15,25,23,27,2,14,33,13,27,32,26,15,1,13];var h=0;var g=5;var c=0;a.hide();f.slider({value:0,min:0,max:g,step:1,slide:function(i,j){if(j.value>c){c=j.value;h+=c}},stop:function(j,k){var i=false;if(k.value==g){if(h==((g+Math.pow(g,2))/2)){i=true;f.slider("option","disabled",true);if(b.val().length!=e.length){$.post("captcha.php",{tokenCaptcha:b.val()},function(m){var l="";$.each(e,function(){l+=m.charAt(this%m.length)});b.val(l);d.removeAttr("disabled")})}}}if(!i){h=c=0;f.slider("option","value",h)}}})});
+</script>
+<!--[if lte IE 6]><script type="text/javascript" src="style/imports/minmax.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div id="punviewtopic" class="pun">
+<div class="top-box"><div><!-- Top Corners --></div></div>
+<div class="punwrap">
+
+<div id="brdheader" class="block">
+	<div class="box">
+		<div id="brdtitle" class="inbox">
+			<h1><a href="index.php">forum.bittorrent.org</a></h1>
+			<div id="brddesc">BitTorrent.org community</div>
+		</div>
+		<div id="brdmenu" class="inbox">
+			<ul>
+				<li id="navindex" class="isactive"><a href="index.php">Index</a></li>
+				<li id="navextra1"><a href="http://bittorrent.org">Homepage</a></li>
+				<li id="navextra2"><a href="https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers">Mailing List</a></li>
+				<li id="navextra3"><a href="irc://irc.freenode.net/bittorrent">IRC</a></li>
+				<li id="navuserlist"><a href="userlist.php">User list</a></li>
+				<li id="navrules"><a href="misc.php?action=rules">Rules</a></li>
+				<li id="navsearch"><a href="search.php">Search</a></li>
+				<li id="navregister"><a href="register.php">Register</a></li>
+				<li id="navlogin"><a href="login.php">Login</a></li>
+			</ul>
+		</div>
+		<div id="brdwelcome" class="inbox">
+			<p class="conl">You are not logged in.</p>
+			<ul class="conr">
+				<li><span>Topics: <a href="search.php?action=show_recent" title="Find topics with recent posts.">Active</a> | <a href="search.php?action=show_unanswered" title="Find topics with no replies.">Unanswered</a></span></li>
+			</ul>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+<div id="announce" class="block">
+	<div class="hd"><h2><span>Announcement</span></h2></div>
+	<div class="box">
+		<div id="announce-block" class="inbox">
+			<div class="usercontent">Forums are closed.
+Use the new mailing list!
+https://groups.google.com/a/bittorrent.com/forum/#!forum/bt-developers</div>
+		</div>
+	</div>
+</div>
+
+<div id="brdmain">
+<div class="linkst">
+	<div class="inbox crumbsplus">
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=312"><strong>Cooperative downloading</strong></a></li>
+		</ul>
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="p1810" class="blockpost rowodd firstpost blockpost1">
+	<h2><span><span class="conr">#1</span> <a href="viewtopic.php?pid=1810#p1810">2011-01-16 13:23:04</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=91968">mtekel</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Cooperative downloading</h3>
+					<div class="postmsg">
+						<p>Let&#039;s consider the following situation:</p><p>Two or more peers on the same local network are downloading content from the other peers which are outside of this network. The downloads go through the â€œsharedâ€ link which is connecting this network to the WAN/internet. Because these local peers donâ€™t coordinate which chunk they are downloading when, there can be a situation where one chunk is retrieved via this shared link more than once. Since the LAN bandwidth tends to be higher than the download speed of the torrent, the local peers soon â€œsync upâ€, all of them having the same pieces. As the download progresses, there are less and less remaining chunks to download and the likelihood of the clients selecting the same chunk at the same time increases. Moreover, because the local peers have the same chunks, they are not able to fully utilize their local upload bandwidth (as all the local peers already have the same chunks). The solution is to coordinate these local peers, so that they cooperate with downloading. This both enables peers to better utilize their local upload bandwidth by giving them diverse chunks to share and also improves usage efficiency of the shared downlink by avoiding transferring the same piece multiple times. This results in faster download rates. All this happens on-the-fly as the download progresses.</p><p>Solution:</p><p>The bit-torrent protocol is extended by the new message, START &lt;piece number&gt;. The syntax of this command is exactly the same as of the HAVE message. The START message is sent to local peers every time the peer sends chunk request to a non-local peer. This enables the local peers to know in advance which chunks will be retrieved to the local network and gives them possibility to select something else. This way the local peers de-facto divide the download workload dynamically and on-the-fly. Such technique can be also called random work stealing. From the point of view of the local peers, by selecting different pieces they not only utilize the local downlink more effectivelly, but also all the uplinks of all the other peers in the swarm (again by avoiding the situation where one peer has to upload the same piece possibly several times). Considering that the download speed of all the peers in the swarm can be only as high as the upload speed, which usually presents the real bottleneck, using cooperative downloading by all peers of the swarm can improve the cumulative upload and thus download speeds. Moreover, selecting different pieces for download improves on general â€œrandomnessâ€ and â€œdiversifies piece spreadâ€ among all the peers of the swarm. This behavior can be also seen as some sort of reversed super seeding. <br />The chunk selection algorithm in the client is modified only to prefer a â€œnon-startedâ€ chunks instead of those already STARTed. Yet if in the current situation are no non-started pieces available, the selection alg. should remain greedy and select even those chunks which are already requested to be retrieved by our local peers. The chunk selection alg. can otherwise remain the same as it was (random selection should be more preferable, because rarest piece selection can result in all the local peers selecting the same most rarest piece).</p><p>Added overhead:</p><p>The extension requires one START message per each chunk the peer retrieves. That is the same amount as HAVE messages. Because the START message has exactly the same syntax as HAVE message, the bandwidth usage is the same. Altogether the impact of the extension is the same as if the peer had to send twice as many HAVE messages as it would have to without the extension. Yet the start messages are sent only to local peers, where the LAN bandwidth is plentifull and latencies low, thus overall overhead is quite low. Because of the nature of the START message, the UDP protocol is preferable. </p><p>I think this extension is quite easy to implement and doesn&#039;t require big changes in the current BT clients. The added overhead is neglible and the possible speed gains indispensable. Another advantage is that this extension can only increase the transfer rates. </p><p>In reality this enhancement can have much more adverse (positive) effect - it only depends how exactly and by how many peers it is used, the proposed solution is the most easy to implement variant. I have tested this enhancement in the all-local environment with ~1000 peers and achieved (with other tweaks and changes) about 30% faster transfer rates.</p><p>What do you think about it? Any comments, questions or suggestions?</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1812" class="blockpost roweven">
+	<h2><span><span class="conr">#2</span> <a href="viewtopic.php?pid=1812#p1812">2011-01-16 13:37:24</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Cooperative downloading</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>mtekel wrote:</cite><blockquote><div><p>Since the LAN bandwidth tends to be higher than the download speed of the torrent, the local peers soon â€œsync upâ€, all of them having the same pieces.</p></div></blockquote></div><p>Thus significantly reducing the likelyhood of redundant downloads</p><div class="quotebox"><blockquote><div><p>As the download progresses, there are less and less remaining chunks to download and the likelihood of the clients selecting the same chunk at the same time increases.</p></div></blockquote></div><p>If even just 50 pieces remain the likelyhood of a redundant download is 2% (assuming 2 peers behind a shared connection). So this only really wastes a few MB.</p><div class="quotebox"><blockquote><div><p>Moreover, because the local peers have the same chunks, they are not able to fully utilize their local upload bandwidth (as all the local peers already have the same chunks).</p></div></blockquote></div><p>I don&#039;t see the problem here.</p><br /><div class="quotebox"><blockquote><div><p>I have tested this enhancement in the all-local environment with ~1000 peers and achieved (with other tweaks and changes) about 30% faster transfer rates.</p><p>What do you think about it? Any comments, questions or suggestions?</p></div></blockquote></div><p>That&#039;s an odd scenario. 1000 people runnign the same torrent at the same time and being within a lan?</p><p>It doesn&#039;t seem very realistic to me.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1824" class="blockpost rowodd">
+	<h2><span><span class="conr">#3</span> <a href="viewtopic.php?pid=1824#p1824">2011-01-17 11:44:06</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=91968">mtekel</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Cooperative downloading</h3>
+					<div class="postmsg">
+						<p>When the peers sync up and they don&#039;t use random piece selection, but e.g. the rarest piece selection, they end up selecting the same piece at the same time, then downloading it from outside and then being unable to contribute local LAN upload bandwidth, because the other peer has that piece too. </p><p>Some client implementations that use random piece selection don&#039;t use exactly per chunk granularity, but rather randomize their position once and then request e.g. 16 following chunks. Moreover, in order to achiever faster download speeds, peers have to &quot;pipeline&quot; - send requests ahead, thus at the given time, one peer has a queue of pending requests. These both increase the likelihood of requesting the same pieces. </p><p>Another factor is that upon joining the swarm, the local peers are given set of external peers that might not immediately have all the chunks available, thus reducing the available chunks selection and increasing the likelihood of requesting the same pieces. If you consider that some chunks can be retrieved faster, either because they are available on faster peers, or the cumulative upload bandwidth of all the peers that are willing to upload them is high, they will be retrieved among first. In order to achieve fast download rates on the remaining &quot;slow&quot; chunks, the peers will have to increase their request queues, which now select from smaller set of available chunks, further increasing the chances of duplicate downloads. Moreover, duplicate download of &quot;slow&quot; chunks is much more felt than a download of a fast one. The aggressive mode in the end of the download also explicitly adds duplicate downloads. </p><p>The 1000 peer scenario is from a file &quot;multicast&quot; inside datacenter, where you have plenty servers in the same rack, downloading the same file and all sharing same connection. The possibility of same piece selection is then very high and implementation of the cooperative downloads brings real improvements in download rates.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1826" class="blockpost roweven">
+	<h2><span><span class="conr">#4</span> <a href="viewtopic.php?pid=1826#p1826">2011-01-17 12:51:24</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=89618">The 8472</a></strong></dt>
+						<dd class="usertitle"><strong>Azureus Developer</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Cooperative downloading</h3>
+					<div class="postmsg">
+						<div class="quotebox"><cite>mtekel wrote:</cite><blockquote><div><p>The 1000 peer scenario is from a file &quot;multicast&quot; inside datacenter, where you have plenty servers in the same rack, downloading the same file and all sharing same connection. The possibility of same piece selection is then very high and implementation of the cooperative downloads brings real improvements in download rates.</p></div></blockquote></div><p>In that case only 1 peer should communicate with the outside world while the remaining bittorrent nodes only share stuff within the data center.</p>
+					</div>
+					<div class="postsignature postmsg"><hr /><p>Az dev</p></div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="p1828" class="blockpost rowodd">
+	<h2><span><span class="conr">#5</span> <a href="viewtopic.php?pid=1828#p1828">2011-01-17 13:20:04</a></span></h2>
+	<div class="box">
+		<div class="inbox">
+			<div class="postbody">
+				<div class="postleft">
+					<dl>
+						<dt><strong><a href="profile.php?id=91968">mtekel</a></strong></dt>
+						<dd class="usertitle"><strong>Member</strong></dd>
+					</dl>
+				</div>
+				<div class="postright">
+					<h3>Re: Cooperative downloading</h3>
+					<div class="postmsg">
+						<p>Because of redundancy, you want at least two. Moreover, you definitely want as many as to be able to fully saturate the shared link speeds. </p><p>Consider now that the cooperative downloading would be extended not only on the local peers, but also on the fast enough peers (what is fast enough depends on the exact conditions - real download speeds, latencies, chunk sizes and speeds of other slower peers). The goal is to speed up retrieving &quot;slow&quot;/rare chunks to the fast peers which can then easily spread them into the swarm. The biggest bottleneck is usually created by the upload links of the rare/&quot;slow&quot; chunk peers. If you can avoid duplicate (or more times) uploads there, the whole swarm would benefit...</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="inbox">
+			<div class="postfoot clearb">
+				<div class="postfootleft"><p><span>Offline</span></p></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="postlinksb">
+	<div class="inbox crumbsplus">
+		<div class="pagepost">
+			<p class="pagelink conl"><span class="pages-label">Pages: </span><strong class="item1">1</strong></p>
+		</div>
+		<ul class="crumbs">
+			<li><a href="index.php">Index</a></li>
+			<li><span>»&#160;</span><a href="viewforum.php?id=25">BEPs</a></li>
+			<li><span>»&#160;</span><a href="viewtopic.php?id=312"><strong>Cooperative downloading</strong></a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+</div>
+</div>
+
+<div id="brdfooter" class="block">
+	<h2><span>Board footer</span></h2>
+	<div class="box">
+		<div id="brdfooternav" class="inbox">
+			<div class="conl">
+			</div>
+			<div class="conr">
+				<p id="poweredby">Powered by <a href="http://fluxbb.org/">FluxBB</a></p>
+			</div>
+			<div class="clearer"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="end-box"><div><!-- Bottom corners --></div></div>
+</div>
+
+</body>
+</html>
