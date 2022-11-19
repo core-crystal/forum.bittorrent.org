@@ -1,0 +1,21 @@
+/viewtopic.php id=:id /_viewtopic/id/:id 200
+/viewtopic.php pid=:pid /_viewtopic/pid/:pid 200
+/viewtopic.php /_viewtopic/default 200
+
+/viewforum.php id=:id /_viewforum/id/:id 200
+/viewforum.php /_viewforum/default 200
+
+/search.php search_id=:id /_search/search_id/:id 200
+/search.php action=:act user_id=:uid /_search/action-uid/:act/:uid 200
+/search.php action=:act /_search/bare-action/:act 200
+/search.php /_search/default 200
+
+/profile.php id=:id /_profile/id/:id 200
+/profile.php /_profile/default 200
+
+/misc.php action=:act /_misc/action/:act 200
+/misc.php /_misc/default 200
+
+/extern.php fid=:fid /_extern/fid/:fid 200
+/extern.php tid=:tid /_extern/tid/:tid 200
+/extern.php /_extern/default 200
